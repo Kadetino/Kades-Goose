@@ -1,14 +1,14 @@
 import discord
+import pytesseract
+import io
+import requests
 from discord.ext import commands
-# try:
-#     from PIL import Image
-# except ImportError:
-#     import Image
-# import pytesseract
+from PIL import Image
 
 import config
 
-bot = commands.Bot(command_prefix='!')
+bot = commands.Bot(command_prefix='--')
+
 
 @bot.event
 async def on_ready():
@@ -16,22 +16,35 @@ async def on_ready():
 
 
 @bot.command()
-async def test(ctx, arg):
-    await ctx.send(arg)
+async def send_Embed(ctx, event_name="NaN - Event Name", event_description="NaN",
+                     event_requirements="NaN", event_choices="NaN"):
+    """Embed Для отправки ивента, найденного в базе данных"""
+
+    embedVar = discord.Embed(title=event_name, color=0x19ffe3)
+    embedVar.add_field(name="Requirements", value=event_requirements, inline=False)
+    embedVar.add_field(name="Description", value=event_description, inline=False)
+    embedVar.add_field(name="Event Choices", value=event_choices, inline=False)
+    embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
+    await ctx.reply(embed=embedVar)
 
 
 @bot.command(pass_context=True)
-async def addrole(ctx, message):
-    user = ctx.author
-    role = discord.utils.get(user.guild.roles, name="huh")
-    await user.add_roles(role)
+async def extract(ctx, img_url):
+    """"Это заполняешь ты"""
 
+    # Достать картинку
+    response = requests.get(img_url)
+    img = Image.open(io.BytesIO(response.content))
+    # Достать текст
+    pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
+    text = pytesseract.image_to_string(img)
 
-@bot.event
-async def on_message(message):
-    if message.content.startswith('$hello'):
-        await message.channel.send("pies are better than cakes. change my mind.")
+    await ctx.message.channel.send(text)
 
-    await bot.process_commands(message)
+@bot.command()
+@commands.is_owner()
+async def shutdown(ctx):
+    await ctx.bot.logout()
+
 
 bot.run(config.token)
