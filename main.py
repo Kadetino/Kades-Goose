@@ -30,7 +30,7 @@ async def send_Embed(ctx, event_name="NaN - Event Name", event_description="NaN"
 
 @bot.command(pass_context=True)
 async def extract(ctx, img_url):
-    """"Это заполняешь ты"""
+    """"help"""
 
     # Достать картинку
     response = requests.get(img_url)
@@ -38,8 +38,12 @@ async def extract(ctx, img_url):
     # Достать текст
     pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
     text = pytesseract.image_to_string(img)
-
+    # Логирование
+    with open('log.txt', 'at') as log_file:
+        log_file.write("Message:" + ctx.message.content)
+        log_file.write("\nOutput:\n" + text + "\n------------------\n")
     await ctx.message.channel.send(text)
+
 
 @bot.command()
 @commands.is_owner()
