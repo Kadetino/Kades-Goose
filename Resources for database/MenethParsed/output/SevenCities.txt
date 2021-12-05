@@ -1,0 +1,2841 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Our country:
+********** Any of the following:
+*********** Does not have the country flag sce_eventchain_flag
+*********** Does not have the country flag sce_end_eldorado_flag
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** Any bordering province:
+*********** In the continent 0 "South America
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2.0:
+********** Is colonized
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_eldorado
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_fountainofyouth
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cibola
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cityofcaesars
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_sierradelaplata
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_norumbega
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_saguenay
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_quivira
+******** Option: seven_cities_events.1.a:
+********* Our country:
+********** Sets the country flag sce_eventchain_flag
+********** Adds the modifier "sce_search_eldorado" for the rest of the campaign:
+*********** +0.25 prestige
+******** Option: seven_cities_events.1.b:
+********* Our country:
+********** Sets the country flag sce_end_eldorado_flag
+********** Changes administrative power stored by 50
+******* Gets the province event:
+******** ID is seven_cities_events.2
+******** title = seven_cities_events.2.t
+******** desc = seven_cities_events.2.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Our country:
+********** Any of the following:
+*********** Does not have the country flag sce_eventchain_flag
+*********** Does not have the country flag sce_end_fountainofyouth_flag
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** Any bordering province:
+*********** In the continent 0 "South America
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2.0:
+********** Is colonized
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_eldorado
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_fountainofyouth
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cibola
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cityofcaesars
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_sierradelaplata
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_norumbega
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_saguenay
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_quivira
+******** Option: seven_cities_events.2.a:
+********* Our country:
+********** Sets the country flag sce_eventchain_flag
+********** Modifies treasury by -0.25 years worth of income
+********** Adds the modifier "sce_search_fountainofyouth" for the rest of the campaign:
+*********** +0.25 prestige
+******** Option: seven_cities_events.2.b:
+********* Trigger:
+********** Our country:
+*********** has_mission_false = EMP_crusader_fountain_of_youth
+********* Our country:
+********** Sets the country flag sce_end_fountainofyouth_flag
+********** Changes administrative power stored by 50
+******* Gets the province event:
+******** ID is seven_cities_events.3
+******** title = seven_cities_events.3.t
+******** desc = seven_cities_events.3.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Our country:
+********** Any of the following:
+*********** Does not have the country flag sce_eventchain_flag
+*********** Does not have the country flag sce_end_cibola_flag
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** Region is mexico_region
+********** Region is central_america_region
+********** Any bordering province:
+*********** Any of the following:
+************ In the continent 0 "South America
+************ Region is central_america_region
+************ Region is mexico_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2.0:
+********** Is colonized
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_eldorado
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_fountainofyouth
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cibola
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cityofcaesars
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_sierradelaplata
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_norumbega
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_saguenay
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_quivira
+******** Option: seven_cities_events.3.a:
+********* Our country:
+********** Sets the country flag sce_eventchain_flag
+********** Adds the modifier "sce_search_cibola" for the rest of the campaign:
+*********** +0.25 prestige
+******** Option: seven_cities_events.3.b:
+********* Our country:
+********** Sets the country flag sce_end_cibola_flag
+********** Changes prestige by 5
+******* Gets the province event:
+******** ID is seven_cities_events.4
+******** title = seven_cities_events.4.t
+******** desc = seven_cities_events.4.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Our country:
+********** Any of the following:
+*********** Does not have the country flag sce_eventchain_flag
+*********** Does not have the country flag sce_end_cityofcaesars_flag
+********* Any of the following:
+********** area = patagonia_area
+********** area = southern_pampas_area
+********** area = patagonian_andes
+********** area = bahia_blanca_area
+********** area = nehuenken_area
+********** Any bordering province:
+*********** Any of the following:
+************ area = patagonia_area
+************ area = southern_pampas_area
+************ area = patagonian_andes
+************ area = bahia_blanca_area
+************ area = nehuenken_area
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2.0:
+********** Is colonized
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_eldorado
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_fountainofyouth
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cibola
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cityofcaesars
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_sierradelaplata
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_norumbega
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_saguenay
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_quivira
+******** Option: seven_cities_events.4.a:
+********* Our country:
+********** Sets the country flag sce_eventchain_flag
+********** Modifies treasury by -0.25 years worth of income
+********** Adds the modifier "sce_search_cityofcaesars" for the rest of the campaign:
+*********** +0.25 prestige
+******** Option: seven_cities_events.4.b:
+********* Our country:
+********** Sets the country flag sce_end_cityofcaesars_flag
+********** Changes diplomatic power stored by 50
+******* Gets the province event:
+******** ID is seven_cities_events.5
+******** title = seven_cities_events.5.t
+******** desc = seven_cities_events.5.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Our country:
+********** Any of the following:
+*********** Does not have the country flag sce_eventchain_flag
+*********** Does not have the country flag sce_end_cityofcaesars_flag
+********* Any of the following:
+********** Region is peru_region
+********** Region is la_plata_region
+********** Any bordering province:
+*********** Region is peru_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2.0:
+********** Is colonized
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_eldorado
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_fountainofyouth
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cibola
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cityofcaesars
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_sierradelaplata
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_norumbega
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_saguenay
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_quivira
+******** Option: seven_cities_events.5.a:
+********* Our country:
+********** Sets the country flag sce_eventchain_flag
+********** Adds the modifier "sce_search_sierradelaplata" for the rest of the campaign:
+*********** +0.25 prestige
+******** Option: seven_cities_events.5.b:
+********* Our country:
+********** Sets the country flag sce_end_cityofcaesars_flag
+********** Changes administrative power stored by 50
+******* Gets the province event:
+******** ID is seven_cities_events.6
+******** title = seven_cities_events.6.t
+******** desc = seven_cities_events.6.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Our country:
+********** Any of the following:
+*********** Does not have the country flag sce_eventchain_flag
+*********** Does not have the country flag sce_end_norumbega_flag
+********* Any of the following:
+********** Region is canada_region
+********** area = james_bay_area
+********** area = hudson_bay_area
+********** area = inner_ontario_area
+********** Region is northeast_america_region
+********** Region is southeast_america_region
+********** Any bordering province:
+*********** Any of the following:
+************ Region is canada_region
+************ area = james_bay_area
+************ area = inner_ontario_area
+************ area = hudson_bay_area
+************ Region is northeast_america_region
+************ Region is southeast_america_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2.0:
+********** Is colonized
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_eldorado
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_fountainofyouth
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cibola
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cityofcaesars
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_sierradelaplata
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_norumbega
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_saguenay
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_quivira
+******** Option: seven_cities_events.6.a:
+********* Our country:
+********** Sets the country flag sce_eventchain_flag
+********** Adds the modifier "sce_search_norumbega" for the rest of the campaign:
+*********** +0.25 prestige
+******** Option: seven_cities_events.6.b:
+********* Our country:
+********** Sets the country flag sce_end_norumbega_flag
+********** Changes prestige by 5
+******* Gets the province event:
+******** ID is seven_cities_events.7
+******** title = seven_cities_events.7.t
+******** desc = seven_cities_events.7.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Our country:
+********** Any of the following:
+*********** Does not have the country flag sce_eventchain_flag
+*********** Does not have the country flag sce_end_saguenay_flag
+********* Any of the following:
+********** Region is canada_region
+********** area = james_bay_area
+********** area = inner_ontario_area
+********** area = hudson_bay_area
+********** Region is northeast_america_region
+********** Region is southeast_america_region
+********** Any bordering province:
+*********** Any of the following:
+************ Region is canada_region
+************ area = james_bay_area
+************ area = inner_ontario_area
+************ area = hudson_bay_area
+************ Region is northeast_america_region
+************ Region is southeast_america_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** Culture group is 0 "Iroquoian
+********* Multiplies value by 2.0:
+********** Is colonized
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_eldorado
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_fountainofyouth
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cibola
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cityofcaesars
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_sierradelaplata
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_norumbega
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_saguenay
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_quivira
+******** Option: seven_cities_events.7.a:
+********* Our country:
+********** Sets the country flag sce_eventchain_flag
+********** Adds the modifier "sce_search_saguenay" for the rest of the campaign:
+*********** +0.25 prestige
+******** Option: seven_cities_events.7.b:
+********* Our country:
+********** Sets the country flag sce_end_saguenay_flag
+********** Changes prestige by 5
+******* Gets the province event:
+******** ID is seven_cities_events.8
+******** title = seven_cities_events.8.t
+******** desc = seven_cities_events.8.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Our country:
+********** Any of the following:
+*********** Does not have the country flag sce_eventchain_flag
+*********** Does not have the country flag sce_end_quivira_flag
+********* Any of the following:
+********** Region is canada_region
+********** area = james_bay_area
+********** area = inner_ontario_area
+********** area = hudson_bay_area
+********** Region is northeast_america_region
+********** Region is southeast_america_region
+********** Any bordering province:
+*********** Any of the following:
+************ Region is canada_region
+************ area = james_bay_area
+************ area = inner_ontario_area
+************ area = hudson_bay_area
+************ Region is northeast_america_region
+************ Region is southeast_america_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** Culture group is 0 "Iroquoian
+********* Multiplies value by 2.0:
+********** Is colonized
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_eldorado
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_fountainofyouth
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cibola
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_cityofcaesars
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_sierradelaplata
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_norumbega
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_saguenay
+********* Multiplies value by 0.5:
+********** Has the global flag sce_ultimate_quivira
+******** Option: seven_cities_events.8.a:
+********* Our country:
+********** Sets the country flag sce_eventchain_flag
+********** Adds the modifier "sce_search_quivira" for the rest of the campaign:
+*********** +0.25 prestige
+******** Option: seven_cities_events.8.b:
+********* Our country:
+********** Sets the country flag sce_end_quivira_flag
+********** Changes prestige by 5
+******* Gets the province event:
+******** ID is seven_cities_events.100
+******** title = seven_cities_events.100.t
+******** desc = seven_cities_events.100.d
+******** picture = GUARDED_TREASURE_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Our country:
+********** Has the country flag sce_eventchain_flag
+********** Does not have the country flag sce_action01_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_action01_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_eldorado"
+*********** Removes the country modifier "sce_search_fountainofyouth"
+*********** Removes the country modifier "sce_search_cibola"
+*********** Removes the country modifier "sce_search_cityofcaesars"
+*********** Removes the country modifier "sce_search_sierradelaplata"
+*********** Removes the country modifier "sce_search_norumbega"
+*********** Removes the country modifier "sce_search_saguenay"
+*********** Removes the country modifier "sce_search_quivira"
+********** Kills military leader: 
+******** Option: seven_cities_events.100.a:
+******* Gets the province event:
+******** ID is seven_cities_events.101
+******** title = seven_cities_events.101.t
+******** desc = seven_cities_events.101.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Our country:
+********** Has the country flag sce_eventchain_flag
+********** Does not have the country flag sce_action02_flag
+********* has_terrain = 0 "Desert
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Our country:
+********** Sets the country flag sce_action02_flag
+******** Option: seven_cities_events.101.a:
+********* Our country:
+********** Modifies treasury by -0.25 years worth of income
+******** Option: seven_cities_events.101.b:
+********* Our country:
+********** Changes prestige by -5
+******* Gets the province event:
+******** ID is seven_cities_events.102
+******** title = seven_cities_events.102.t
+******** desc = seven_cities_events.102.d
+******** picture = NATIVES_LOW_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Our country:
+********** Has the country flag sce_eventchain_flag
+********** Does not have the country flag sce_action03_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Our country:
+********** Sets the country flag sce_action03_flag
+******** Option: seven_cities_events.102.a:
+********* Our country:
+********** Changes diplomatic power stored by -50
+******** Option: seven_cities_events.102.b:
+********* Our country:
+********** Changes prestige by -5
+******* Gets the province event:
+******** ID is seven_cities_events.103
+******** title = seven_cities_events.103.t
+******** desc = seven_cities_events.103.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Our country:
+********** Has the country flag sce_eventchain_flag
+********** Does not have the country flag sce_action04_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Our country:
+********** Sets the country flag sce_action04_flag
+******** Option: seven_cities_events.103.a:
+********* Our country:
+********** Modifies treasury by 0.25 years worth of income
+******* Gets the province event:
+******** ID is seven_cities_events.104
+******** title = seven_cities_events.104.t
+******** desc = seven_cities_events.104.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Our country:
+********** Has the country flag sce_eventchain_flag
+********** Does not have the country flag sce_action05_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Our country:
+********** Sets the country flag sce_action05_flag
+******** Option: seven_cities_events.104.a:
+********* Our country:
+********** Changes military power stored by -50
+******** Option: seven_cities_events.104.b:
+********* Our country:
+********** Changes prestige by -5
+******* Gets the province event:
+******** ID is seven_cities_events.105
+******** title = seven_cities_events.105.t
+******** desc = seven_cities_events.105.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Our country:
+********** Has the country flag sce_eventchain_flag
+********** Does not have the country flag sce_action05_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Our country:
+********** Sets the country flag sce_action06_flag
+********** save_event_target_as = long_pig_country
+******** Option: seven_cities_events.105.a:
+********* Our country:
+********** Changes diplomatic power stored by -100
+******** Option: seven_cities_events.105.b:
+********* Our country:
+********** Every neighbor country:
+*********** Adds the opinion modifier "cannibal_conquistador" towards PREV
+*********** Hidden effect:
+************ Gets the country event:
+************* ID is seven_cities_events.500
+******* Gets the province event:
+******** ID is seven_cities_events.200
+******** title = seven_cities_events.200.t
+******** desc = seven_cities_events.200.d
+******* picture_false = NOTHING_FOUND_eventPicture
+******* is_triggered_only_false = yes
+******* Trigger:
+******** Does not have the DLC El Dorado
+******** Is colonized
+******** Not in the continent 0 "South America
+******** Our country:
+********* Does not have the country modifier "sce_search_eldorado"
+********* Any of the following:
+********** Does not have the country flag sce_action01_flag
+********** Does not have the country flag sce_action02_flag
+********** Does not have the country flag sce_action03_flag
+********** Does not have the country flag sce_action04_flag
+********** Does not have the country flag sce_action05_flag
+********** Does not have the country flag sce_action06_flag
+********** Does not have the country flag sce_end_eldorado_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Sets the country flag sce_end_eldorado_flag
+*********** Removes the country modifier "sce_search_eldorado"
+******** Option: seven_cities_events.200.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_eldorado"
+********** Changes prestige by -10
+******* Gets the province event:
+******** ID is seven_cities_events.201
+******** title = seven_cities_events.201.t
+******** desc = seven_cities_events.201.d
+******** picture = LAKE_TREASURE_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* In the continent 0 "South America
+********* Our country:
+********** Has the country modifier "sce_search_eldorado"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_eldorado_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Sets the country flag sce_end_eldorado_flag
+*********** Removes the country modifier "sce_search_eldorado"
+******** Option: seven_cities_events.201.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_eldorado"
+********** Changes treasury by 400 ducats
+********* Adds the modifier "el_dorado_mod" for the rest of the campaign:
+********** trade_goods_size_modifier = 0.5
+********** local_development_cost = -0.2
+********** local_unrest = -3
+********* Changes base tax by 2
+********* add_base_production = 2
+********* add_base_manpower = 2
+******* Gets the province event:
+******** ID is seven_cities_events.202
+******** title = seven_cities_events.202.t
+******** desc = seven_cities_events.202.d
+******** picture = GOLDEN_CITY_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* In the continent 0 "South America
+********* Does not have the global flag sce_ultimate_eldorado
+********* Is uncolonized
+********* Our country:
+********** Has the country modifier "sce_search_eldorado"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_eldorado_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the global flag sce_ultimate_eldorado
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Sets the country flag sce_end_eldorado_flag
+*********** Removes the country modifier "sce_search_eldorado"
+******** Option: seven_cities_events.202.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_eldorado"
+********** Changes treasury by 800 ducats
+********* Adds the modifier "el_dorado_mod" for the rest of the campaign:
+********** trade_goods_size_modifier = 0.5
+********** local_development_cost = -0.2
+********** local_unrest = -3
+********* Changes base tax by 4
+********* add_base_production = 4
+********* add_base_manpower = 4
+******* Gets the province event:
+******** ID is seven_cities_events.203
+******** title = seven_cities_events.203.t
+******** desc = seven_cities_events.203.d
+******** picture = SMALLPOX_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* In the continent 0 "South America
+********* Our country:
+********** has_mission_false = EMP_crusader_fountain_of_youth
+********** Has the country modifier "sce_search_fountainofyouth"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_fountainofyouth_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_fountainofyouth_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_fountainofyouth"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.203.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_fountainofyouth"
+********** Changes prestige by -10
+******* Gets the province event:
+******** ID is seven_cities_events.204
+******** title = seven_cities_events.204.t
+******** desc = seven_cities_events.204.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* In the continent 0 "South America
+********* Our country:
+********** Has the country modifier "sce_search_fountainofyouth"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_fountainofyouth_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_fountainofyouth_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_fountainofyouth"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.204.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_fountainofyouth"
+********** Changes treasury by 400 ducats
+********* Adds the modifier "sce_life_water" for the rest of the campaign:
+********** local_build_cost = -0.5
+********** +30 colonial growth
+********** local_unrest = -3
+********** +25% provincial tax income
+********* Changes base tax by 2
+********* add_base_production = 2
+********* add_base_manpower = 2
+******* Gets the province event:
+******** ID is seven_cities_events.205
+******** title = seven_cities_events.205.t
+******** desc = seven_cities_events.205.d
+******** picture = FOUNTAIN_OF_YOUTH_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* In the continent 0 "South America
+********* Does not have the global flag sce_ultimate_fountainofyouth
+********* Our country:
+********** Has the country modifier "sce_search_fountainofyouth"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_fountainofyouth_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the global flag sce_ultimate_fountainofyouth
+*********** Sets the country flag sce_end_fountainofyouth_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_fountainofyouth"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.205.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_fountainofyouth"
+********** Changes treasury by 800 ducats
+********* Adds the modifier "sce_life_water" for the rest of the campaign:
+********** local_build_cost = -0.5
+********** +30 colonial growth
+********** local_unrest = -3
+********** +25% provincial tax income
+********* Changes base tax by 4
+********* add_base_production = 4
+********* add_base_manpower = 4
+******* Gets the province event:
+******** ID is seven_cities_events.206
+******** title = seven_cities_events.206.t
+******** desc = seven_cities_events.206.d
+******* picture_false = NOTHING_FOUND_eventPicture
+******* is_triggered_only_false = yes
+******* Trigger:
+******** Does not have the DLC El Dorado
+******** Is colonized
+******** Any of the following:
+********* Not in the continent 1 "The New World
+********* Not in the continent 0 "South America
+********* Region is not mexico_region
+********* Region is not central_america_region
+******** Our country:
+********* Does not have the country modifier "sce_search_cibola"
+********* Any of the following:
+********** Does not have the country flag sce_action01_flag
+********** Does not have the country flag sce_action02_flag
+********** Does not have the country flag sce_action03_flag
+********** Does not have the country flag sce_action04_flag
+********** Does not have the country flag sce_action05_flag
+********** Does not have the country flag sce_action06_flag
+********** }
+********** Does not have the country flag sce_end_cibola_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_cibola_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_cibola"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.206.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_cibola"
+********** Changes prestige by -10
+******* Gets the province event:
+******** ID is seven_cities_events.207
+******** title = seven_cities_events.207.t
+******** desc = seven_cities_events.207.d
+******** picture = INCA_CITY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** Region is mexico_region
+********** Region is central_america_region
+********* Our country:
+********** Has the country modifier "sce_search_cibola"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_cibola_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_cibola_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_cibola"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.207.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_cibola"
+********** Changes treasury by 400 ducats
+********* Adds the modifier "sce_cibola_silver" for the rest of the campaign:
+********** global_tax_income = 5
+********* Changes base tax by 2
+********* add_base_production = 2
+********* add_base_manpower = 2
+******* Gets the province event:
+******** ID is seven_cities_events.208
+******** title = seven_cities_events.208.t
+******** desc = seven_cities_events.208.d
+******** picture = GOLDEN_CITY_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Does not have the global flag sce_ultimate_cibola
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** Region is mexico_region
+********** Region is central_america_region
+********* Our country:
+********** Has the country modifier "sce_search_cibola"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_cibola_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the global flag sce_ultimate_cibola
+*********** Sets the country flag sce_end_cibola_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_cibola"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.208.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_cibola"
+********** Changes treasury by 800 ducats
+********* Adds the modifier "sce_cibola_silver" for the rest of the campaign:
+********** global_tax_income = 5
+********* Changes base tax by 4
+********* add_base_production = 4
+********* add_base_manpower = 4
+******* Gets the province event:
+******** ID is seven_cities_events.209
+******** title = seven_cities_events.209.t
+******** desc = seven_cities_events.209.d
+******** picture = INCA_CITY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** area = patagonia_area
+********** area = southern_pampas_area
+********** area = patagonian_andes
+********** area = bahia_blanca_area
+********** area = nehuenken_area
+********* Our country:
+********** Has the country modifier "sce_search_cityofcaesars"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_cityofcaesars_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_cityofcaesars_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_cityofcaesars"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.209.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_cityofcaesars"
+********** Changes prestige by -10
+******* Gets the province event:
+******** ID is seven_cities_events.210
+******** title = seven_cities_events.210.t
+******** desc = seven_cities_events.210.d
+******** picture = INCA_CITY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** area = patagonia_area
+********** area = southern_pampas_area
+********** area = patagonian_andes
+********** area = bahia_blanca_area
+********** area = nehuenken_area
+********* Our country:
+********** Has the country modifier "sce_search_cityofcaesars"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_cityofcaesars_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_cityofcaesars_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_cityofcaesars"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.210.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_cityofcaesars"
+********** Changes treasury by 400 ducats
+********* Adds the modifier "sce_city_of_caesars" for the rest of the campaign:
+********** province_trade_power_modifier = 1
+********** trade_goods_size_modifier = 0.5
+********** local_development_cost = -0.2
+********* Changes base tax by 2
+********* add_base_production = 2
+********* add_base_manpower = 2
+******* Gets the province event:
+******** ID is seven_cities_events.211
+******** title = seven_cities_events.211.t
+******** desc = seven_cities_events.211.d
+******** picture = GOLDEN_CITY_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Does not have the global flag sce_ultimate_cityofcaesars
+********* Is uncolonized
+********* Any of the following:
+********** area = patagonia_area
+********** area = southern_pampas_area
+********** area = patagonian_andes
+********** area = bahia_blanca_area
+********** area = nehuenken_area
+********* Our country:
+********** Has the country modifier "sce_search_cityofcaesars"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_cityofcaesars_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the global flag sce_ultimate_cityofcaesars
+*********** Sets the country flag sce_end_cityofcaesars_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_cityofcaesars"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.211.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_cityofcaesars"
+********** Changes treasury by 800 ducats
+********* Adds the modifier "sce_city_of_caesars" for the rest of the campaign:
+********** province_trade_power_modifier = 1
+********** trade_goods_size_modifier = 0.5
+********** local_development_cost = -0.2
+********* Changes base tax by 4
+********* add_base_production = 4
+********* add_base_manpower = 4
+******* Gets the province event:
+******** ID is seven_cities_events.212
+******** title = seven_cities_events.212.t
+******** desc = seven_cities_events.212.d
+******** picture = NATIVES_LOW_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** Region is peru_region
+********** area = tucuman_area
+********** area = cuyo_area
+********** area = jujuy_area
+********** area = nehuenken_area
+********** area = southern_chile_area
+********** area = northern_chile_area
+********** area = central_chile_area
+********* Our country:
+********** Has the country modifier "sce_search_sierradelaplata"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_sierradelaplata_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_sierradelaplata_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_sierradelaplata"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.212.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_sierradelaplata"
+********** Changes prestige by -10
+******* Gets the province event:
+******** ID is seven_cities_events.213
+******** title = seven_cities_events.213.t
+******** desc = seven_cities_events.213.d
+******** picture = INCA_CITY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** Region is peru_region
+********** area = tucuman_area
+********** area = cuyo_area
+********** area = jujuy_area
+********** area = nehuenken_area
+********** area = southern_chile_area
+********** area = northern_chile_area
+********** area = central_chile_area
+********* Our country:
+********** Has the country modifier "sce_search_sierradelaplata"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_sierradelaplata_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_sierradelaplata_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_sierradelaplata"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.213.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_sierradelaplata"
+********** Changes treasury by 400 ducats
+********* Adds the modifier "sce_sierradelaplata_quartz" for the rest of the campaign:
+********** +50% provincial tax income
+********** local_institution_spread = 1
+********** local_development_cost = -0.2
+********* Changes base tax by 2
+********* add_base_production = 2
+********* add_base_manpower = 2
+******* Gets the province event:
+******** ID is seven_cities_events.214
+******** title = seven_cities_events.214.t
+******** desc = seven_cities_events.214.d
+******** picture = SIERRA_DE_LA_PLATA_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Does not have the global flag sce_ultimate_sierradelaplata
+********* Is uncolonized
+********* Any of the following:
+********** Region is peru_region
+********** area = tucuman_area
+********** area = cuyo_area
+********** area = jujuy_area
+********** area = nehuenken_area
+********** area = southern_chile_area
+********** area = northern_chile_area
+********** area = central_chile_area
+********* Our country:
+********** Has the country modifier "sce_search_sierradelaplata"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_sierradelaplata_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the global flag sce_ultimate_sierradelaplata
+*********** Sets the country flag sce_end_sierradelaplata_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_sierradelaplata"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.214.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_sierradelaplata"
+********** Changes treasury by 800 ducats
+********* Adds the modifier "sce_sierradelaplata_quartz" for the rest of the campaign:
+********** +50% provincial tax income
+********** local_institution_spread = 1
+********** local_development_cost = -0.2
+********* Changes base tax by 4
+********* add_base_production = 4
+********* add_base_manpower = 4
+******* Gets the province event:
+******** ID is seven_cities_events.215
+******** title = seven_cities_events.215.t
+******** desc = seven_cities_events.215.d
+******* picture_false = NOTHING_FOUND_eventPicture
+******* is_triggered_only_false = yes
+******* Trigger:
+******** Does not have the DLC El Dorado
+******** Is colonized
+******** Any of the following:
+********* Region is not canada_region
+********* area_false = james_bay_area
+********* area_false = inner_ontario_area
+********* area_false = hudson_bay_area
+********* Region is not northeast_america_region
+********* Region is not southeast_america_region
+******** Our country:
+********* Does not have the country modifier "sce_search_norumbega"
+********* Any of the following:
+********** Does not have the country flag sce_action01_flag
+********** Does not have the country flag sce_action02_flag
+********** Does not have the country flag sce_action03_flag
+********** Does not have the country flag sce_action04_flag
+********** Does not have the country flag sce_action05_flag
+********** Does not have the country flag sce_action06_flag
+********** }
+********** Does not have the country flag sce_end_norumbega_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_norumbega_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_norumbega"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.215.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_norumbega"
+********** Changes prestige by -10
+******* Gets the province event:
+******** ID is seven_cities_events.216
+******** title = seven_cities_events.216.t
+******** desc = seven_cities_events.216.d
+******** picture = NATIVES_LOW_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** Region is canada_region
+********** area = james_bay_area
+********** area = inner_ontario_area
+********** area = hudson_bay_area
+********** Region is northeast_america_region
+********** Region is southeast_america_region
+********* Our country:
+********** Has the country modifier "sce_search_norumbega"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_norumbega_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_norumbega_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_norumbega"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.216.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_norumbega"
+********** Changes treasury by 400 ducats
+********* Adds the modifier "sce_norumbega_abandoned" for the rest of the campaign:
+********** local_development_cost = -0.2
+********** province_trade_power_modifier = 0.5
+********** trade_goods_size_modifier = 0.5
+********* Changes base tax by 2
+********* add_base_production = 2
+********* add_base_manpower = 2
+******* Gets the province event:
+******** ID is seven_cities_events.217
+******** title = seven_cities_events.217.t
+******** desc = seven_cities_events.217.d
+******** picture = GOLDEN_CITY_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Does not have the global flag sce_ultimate_norumbega
+********* Is uncolonized
+********* Any of the following:
+********** Region is canada_region
+********** area = james_bay_area
+********** area = inner_ontario_area
+********** area = hudson_bay_area
+********** Region is northeast_america_region
+********** Region is southeast_america_region
+********* Our country:
+********** Has the country modifier "sce_search_norumbega"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_norumbega_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the global flag sce_ultimate_norumbega
+*********** Sets the country flag sce_end_norumbega_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_norumbega"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.217.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_norumbega"
+********** Changes treasury by 800 ducats
+********* Adds the modifier "sce_norumbega_abandoned" for the rest of the campaign:
+********** local_development_cost = -0.2
+********** province_trade_power_modifier = 0.5
+********** trade_goods_size_modifier = 0.5
+********* Changes base tax by 4
+********* add_base_production = 4
+********* add_base_manpower = 4
+******* Gets the province event:
+******** ID is seven_cities_events.218
+******** title = seven_cities_events.218.t
+******** desc = seven_cities_events.218.d
+******* picture_false = NOTHING_FOUND_eventPicture
+******* is_triggered_only_false = yes
+******* Trigger:
+******** Does not have the DLC El Dorado
+******** Is colonized
+******** Any of the following:
+********* Region is not canada_region
+********* area_false = james_bay_area
+********* area_false = inner_ontario_area
+********* area_false = hudson_bay_area
+********* Region is not northeast_america_region
+********* Region is not southeast_america_region
+******** Our country:
+********* Does not have the country modifier "sce_search_saguenay"
+********* Any of the following:
+********** Does not have the country flag sce_action01_flag
+********** Does not have the country flag sce_action02_flag
+********** Does not have the country flag sce_action03_flag
+********** Does not have the country flag sce_action04_flag
+********** Does not have the country flag sce_action05_flag
+********** Does not have the country flag sce_action06_flag
+********** }
+********** Does not have the country flag sce_end_saguenay_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_saguenay_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_saguenay"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.218.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_saguenay"
+********** Changes prestige by -10
+******* Gets the province event:
+******** ID is seven_cities_events.219
+******** title = seven_cities_events.219.t
+******** desc = seven_cities_events.219.d
+******** picture = NATIVES_HIGH_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** Region is canada_region
+********** area = james_bay_area
+********** area = inner_ontario_area
+********** area = hudson_bay_area
+********** Region is northeast_america_region
+********** Region is southeast_america_region
+********* Our country:
+********** Has the country modifier "sce_search_saguenay"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_saguenay_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_end_saguenay_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_saguenay"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.219.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_saguenay"
+********** Changes treasury by 400 ducats
+********* Adds the modifier "sce_saguenay_abandoned" for the rest of the campaign:
+********** trade_goods_size_modifier = 0.25
+********** province_trade_power_modifier = 0.25
+********** local_development_cost = -0.2
+********* Changes base tax by 2
+********* add_base_production = 2
+********* add_base_manpower = 2
+******* Gets the province event:
+******** ID is seven_cities_events.220
+******** title = seven_cities_events.220.t
+******** desc = seven_cities_events.220.d
+******** picture = GOLDEN_CITY_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Does not have the global flag sce_ultimate_saguenay
+********* Is uncolonized
+********* Any of the following:
+********** Region is canada_region
+********** area = james_bay_area
+********** area = inner_ontario_area
+********** area = hudson_bay_area
+********** Region is northeast_america_region
+********** Region is southeast_america_region
+********* Our country:
+********** Has the country modifier "sce_search_saguenay"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_saguenay_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the global flag sce_ultimate_saguenay
+*********** Sets the country flag sce_end_saguenay_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Removes the country modifier "sce_search_saguenay"
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+******** Option: seven_cities_events.220.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_saguenay"
+********** Changes treasury by 800 ducats
+********* Adds the modifier "sce_saguenay_abandoned" for the rest of the campaign:
+********** trade_goods_size_modifier = 0.25
+********** province_trade_power_modifier = 0.25
+********** local_development_cost = -0.2
+********* Changes base tax by 4
+********* add_base_production = 4
+********* add_base_manpower = 4
+******* Gets the province event:
+******** ID is seven_cities_events.221
+******** title = seven_cities_events.221.t
+******** desc = seven_cities_events.221.d
+******* picture_false = NOTHING_FOUND_eventPicture
+******* is_triggered_only_false = yes
+******* Trigger:
+******** Does not have the DLC El Dorado
+******** Is colonized
+******** Any of the following:
+********* Region is not canada_region
+********* area_false = james_bay_area
+********* area_false = inner_ontario_area
+********* area_false = hudson_bay_area
+********* Region is not northeast_america_region
+********* Region is not southeast_america_region
+******** Our country:
+********* Does not have the country modifier "sce_search_quivira"
+********* Any of the following:
+********** Does not have the country flag sce_action01_flag
+********** Does not have the country flag sce_action02_flag
+********** Does not have the country flag sce_action03_flag
+********** Does not have the country flag sce_action04_flag
+********** Does not have the country flag sce_action05_flag
+********** Does not have the country flag sce_action06_flag
+********** Does not have the country flag sce_end_quivira_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Sets the country flag sce_end_quivira_flag
+*********** Removes the country modifier "sce_search_quivira"
+******** Option: seven_cities_events.221.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_quivira"
+********** Changes prestige by -10
+******* Gets the province event:
+******** ID is seven_cities_events.222
+******** title = seven_cities_events.222.t
+******** desc = seven_cities_events.222.d
+******** picture = INCA_CITY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** Region is canada_region
+********** area = james_bay_area
+********** area = inner_ontario_area
+********** area = hudson_bay_area
+********** Region is northeast_america_region
+********** Region is southeast_america_region
+********* Our country:
+********** Has the country modifier "sce_search_quivira"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_quivira_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Sets the country flag sce_end_quivira_flag
+*********** Removes the country modifier "sce_search_quivira"
+******** Option: seven_cities_events.222.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_quivira"
+********** Changes treasury by 400 ducats
+********* Adds the modifier "sce_golden_cups" for the rest of the campaign:
+********** +25% production efficiency
+********** +25% provincial tax income
+********** local_build_cost = -0.5
+********** local_development_cost = -0.2
+********* Changes base tax by 2
+********* add_base_production = 2
+********* add_base_manpower = 2
+******* Gets the province event:
+******** ID is seven_cities_events.223
+******** title = seven_cities_events.223.t
+******** desc = seven_cities_events.223.d
+******** picture = GOLDEN_CITY_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Any of the following:
+********** Region is canada_region
+********** area = james_bay_area
+********** area = inner_ontario_area
+********** area = hudson_bay_area
+********** Region is northeast_america_region
+********** Region is southeast_america_region
+********* Does not have the global flag sce_ultimate_quivira
+********* Is uncolonized
+********* Our country:
+********** Has the country modifier "sce_search_quivira"
+********** Any of the following:
+*********** Has the country flag sce_action01_flag
+*********** Has the country flag sce_action02_flag
+*********** Has the country flag sce_action03_flag
+*********** Has the country flag sce_action04_flag
+*********** Has the country flag sce_action05_flag
+*********** Has the country flag sce_action06_flag
+*********** Has had the country flag "sce_eventchain_flag" for at least 365 days
+********** Does not have the country flag sce_end_quivira_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the global flag sce_ultimate_quivira
+*********** Removes the country flag sce_action01_flag
+*********** Removes the country flag sce_action02_flag
+*********** Removes the country flag sce_action03_flag
+*********** Removes the country flag sce_action04_flag
+*********** Removes the country flag sce_action05_flag
+*********** Removes the country flag sce_action06_flag
+*********** Removes the country flag sce_eventchain_flag
+*********** Sets the country flag sce_end_quivira_flag
+*********** Removes the country modifier "sce_search_quivira"
+******** Option: seven_cities_events.223.a:
+********* Our country:
+********** Tooltip:
+*********** Removes the country modifier "sce_search_quivira"
+********** Changes treasury by 800 ducats
+********* Adds the modifier "sce_golden_cups" for the rest of the campaign:
+********** +25% production efficiency
+********** +25% provincial tax income
+********** local_build_cost = -0.5
+********** local_development_cost = -0.2
+********* Changes base tax by 4
+********* add_base_production = 4
+********* add_base_manpower = 4
+******* Gets the province event:
+******** ID is seven_cities_events.300
+******** title = seven_cities_events.300.t
+******** desc = seven_cities_events.300.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is colonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********* The owner of the province:
+********** Any of the following:
+*********** Technology group is 0 "North American
+*********** Technology group is 0 "Mesoamerican
+*********** Technology group is 0 "South American
+*********** Technology group is 0 "Andean
+********** Capital:
+*********** Not in the continent 0 "Europe
+********** has_ruler_flag_false = sce_sacagawea_flag
+********* Our country:
+********** Does not have the country modifier "sce_sacagawea"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** The owner of the province:
+*********** set_ruler_flag = sce_sacagawea_flag
+******** Option: seven_cities_events.300.a:
+********* Our country:
+********** Modifies treasury by -0.25 years worth of income
+********** Changes administrative power stored by -50
+********** Adds the modifier "sce_sacagawea" for 20 years:
+*********** +5% land morale
+*********** +5% reinforcement speed
+******** Option: seven_cities_events.300.b:
+********* Our country:
+********** Changes prestige by 5
+******* Gets the province event:
+******** ID is seven_cities_events.301
+******** title = seven_cities_events.301.t
+******** desc = seven_cities_events.301.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is colonized
+********* The owner of the province:
+********** Any of the following:
+*********** Technology group is 0 "West African
+*********** Technology group is 0 "North American
+*********** Technology group is 0 "Mesoamerican
+*********** Technology group is 0 "South American
+*********** Technology group is 0 "Andean
+********** Capital:
+*********** Not in the continent 0 "Europe
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.301.a:
+********* Our country:
+********** Modifies treasury by -0.10 years worth of income
+********** Changes diplomatic power stored by 50
+********** Adds the opinion modifier "respected_tribe" from our country
+******** Option: seven_cities_events.301.b:
+********* Our country:
+********** Adds the opinion modifier "insulted_tribe" from our country
+******* Gets the province event:
+******** ID is seven_cities_events.302
+******** title = seven_cities_events.302.t
+******** desc = seven_cities_events.302.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Kills military leader: 
+******** Option: seven_cities_events.302.a:
+********* Our country:
+********** Removes the country flag sce_eventchain_flag
+********** If:
+*********** Limited to:
+************ Has the country modifier "sce_search_eldorado"
+*********** Removes the country modifier "sce_search_eldorado"
+********** If:
+*********** Limited to:
+************ Has the country modifier "sce_search_fountainofyouth"
+*********** Removes the country modifier "sce_search_fountainofyouth"
+********** If:
+*********** Limited to:
+************ Has the country modifier "sce_search_cibola"
+*********** Removes the country modifier "sce_search_cibola"
+********** If:
+*********** Limited to:
+************ Has the country modifier "sce_search_cityofcaesars"
+*********** Removes the country modifier "sce_search_cityofcaesars"
+********** If:
+*********** Limited to:
+************ Has the country modifier "sce_search_sierradelaplata"
+*********** Removes the country modifier "sce_search_sierradelaplata"
+********** If:
+*********** Limited to:
+************ Has the country modifier "sce_search_norumbega"
+*********** Removes the country modifier "sce_search_norumbega"
+********** If:
+*********** Limited to:
+************ Has the country modifier "sce_search_saguenay"
+*********** Removes the country modifier "sce_search_saguenay"
+******* Gets the province event:
+******** ID is seven_cities_events.303
+******** title = seven_cities_events.303.t
+******** desc = seven_cities_events.303.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* The owner of the province:
+********** Capital:
+*********** Not in the continent 0 "Europe
+********* Our country:
+********** Does not have the country modifier "sce_lost_woods_timer"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Adds the modifier "sce_lost_woods" for 12 months:
+*********** local_hostile_movement_speed = -0.5
+********** Our country:
+*********** Adds the modifier "sce_lost_woods_timer" for 5 years:
+************ No effects
+******** Option: seven_cities_events.303.a:
+********* Tooltip:
+********** Adds the modifier "sce_lost_woods_tooltip" for 3 months:
+*********** local_hostile_movement_speed = -0.5
+******** Option: seven_cities_events.303.b:
+********* Our country:
+********** Changes prestige by -5
+******* Gets the province event:
+******** ID is seven_cities_events.304
+******** title = seven_cities_events.304.t
+******** desc = seven_cities_events.304.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is colonized
+********* The owner of the province:
+********** Any of the following:
+*********** Technology group is 0 "West African
+*********** Technology group is 0 "North American
+*********** Technology group is 0 "Mesoamerican
+*********** Technology group is 0 "South American
+*********** Technology group is 0 "Andean
+********** Capital:
+*********** Not in the continent 0 "Europe
+********** }
+********** }
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.304.a:
+********* Our country:
+********** Changes prestige by 10
+********* The owner of the province:
+********** Adds the opinion modifier "threatening_punishment" towards our country
+******** Option: seven_cities_events.304.b:
+********* Our country:
+********** Changes prestige by -10
+********* The owner of the province:
+********** Adds the opinion modifier "friendly_natives" towards our country
+******* Gets the province event:
+******** ID is seven_cities_events.305
+******** title = seven_cities_events.305.t
+******** desc = seven_cities_events.305.d
+******** picture = NATIVES_LOW_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is colonized
+********* The owner of the province:
+********** Capital:
+*********** Not in the continent 0 "Europe
+********** Has an opinion of at least -50 with our country
+********** Any of the following:
+*********** Technology group is 0 "West African
+*********** Technology group is 0 "North American
+*********** Technology group is 0 "Mesoamerican
+*********** Technology group is 0 "South American
+*********** Technology group is 0 "Andean
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* Our country:
+********** Does not have the country modifier "sce_shortcut_timer"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Adds the modifier "sce_shortcut" for 12 months:
+*********** local_hostile_movement_speed = 0.33
+********** Our country:
+*********** Adds the modifier "sce_shortcut_timer" for 5 years:
+************ No effects
+******** Option: seven_cities_events.305.a:
+********* Our country:
+********** Changes administrative power stored by -50
+********* Tooltip:
+********** Adds the modifier "sce_shortcut_tooltip" for 3 months:
+*********** local_hostile_movement_speed = 0.33
+******* Gets the province event:
+******** ID is seven_cities_events.306
+******** title = seven_cities_events.306.t
+******** desc = seven_cities_events.306.d
+******** picture = NATIVES_HIGH_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is colonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* The owner of the province:
+********** Any of the following:
+*********** Technology group is 0 "West African
+*********** Technology group is 0 "North American
+*********** Technology group is 0 "Mesoamerican
+*********** Technology group is 0 "South American
+*********** Technology group is 0 "Andean
+********** Capital:
+*********** Not in the continent 0 "Europe
+********** Any neighbor country:
+*********** Capital:
+************ Not in the continent 0 "Europe
+*********** Any of the following:
+************ Considers PREV a rival
+************ Has an opinion of less than -75 with our country
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** save_event_target_as = conquistador_country
+********** The owner of the province:
+*********** Random neighbor country:
+************ Limited to:
+************* Capital:
+************** Not in the continent 0 "Europe
+************* Any of the following:
+************** Considers our country a rival
+************** Has an opinion of less than -75 with our country
+************ save_event_target_as = rival_tribe
+******** Option: seven_cities_events.306.a:
+********* event_target:rival_tribe:
+********** One of the following will happen:
+*********** 50 relative chance:
+************ Adds the opinion modifier "sce_reluctant_peace" towards our country
+************ Hidden effect:
+************* Gets the country event:
+************** ID is seven_cities_events.505
+************** Base mean time to happen of 1 days
+************ Adds the opinion modifier "sce_reluctant_peace" from our country
+************ Hidden effect:
+************* ROOT:
+************** The owner of the province:
+*************** Gets the country event:
+**************** ID is seven_cities_events.505
+**************** Base mean time to happen of 1 days
+*********** 50 relative chance:
+************ Our country:
+************* Adds the opinion modifier "sce_interfering_intruder" from our country
+************* Hidden effect:
+************** ROOT:
+*************** The owner of the province:
+**************** Gets the country event:
+***************** ID is seven_cities_events.506
+***************** Base mean time to happen of 1 days
+******** Option: seven_cities_events.306.b:
+********* Our country:
+********** Changes diplomatic power stored by 10
+******* Gets the province event:
+******** ID is seven_cities_events.307
+******** title = seven_cities_events.307.t
+******** desc = seven_cities_events.307.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is colonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* The owner of the province:
+********** Any of the following:
+*********** Technology group is 0 "West African
+*********** Technology group is 0 "North American
+*********** Technology group is 0 "Mesoamerican
+*********** Technology group is 0 "South American
+*********** Technology group is 0 "Andean
+********** Capital:
+*********** Not in the continent 0 "Europe
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.307.a:
+********* Our country:
+********** Modifies treasury by -0.25 years worth of income
+******** Option: seven_cities_events.307.b:
+********* Our country:
+********** Changes administrative power stored by -50
+******* Gets the province event:
+******** ID is seven_cities_events.308
+******** title = seven_cities_events.308.t
+******** desc = seven_cities_events.308.d
+******** picture = NATIVES_LOW_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Any of the following:
+********** All of the following:
+*********** Is colonized
+*********** The owner of the province:
+************ Any of the following:
+************* Technology group is 0 "West African
+************* Technology group is 0 "North American
+************* Technology group is 0 "Mesoamerican
+************* Technology group is 0 "South American
+************* Technology group is 0 "Andean
+************ Capital:
+************* Not in the continent 0 "Europe
+********** Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.308.a:
+********* Our country:
+********** Changes administrative power stored by 50
+******** Option: seven_cities_events.308.b:
+********* If:
+********** Limited to:
+*********** Is colonized
+*********** The owner of the province:
+************ Any of the following:
+************* Technology group is 0 "West African
+************* Technology group is 0 "North American
+************* Technology group is 0 "Mesoamerican
+************* Technology group is 0 "South American
+************* Technology group is 0 "Andean
+********** The owner of the province:
+*********** Adds the opinion modifier "friendly_natives" towards our country
+********* If:
+********** Limited to:
+*********** Is uncolonized
+********** Our country:
+*********** Changes diplomatic power stored by 50
+******* Gets the province event:
+******** ID is seven_cities_events.309
+******** title = seven_cities_events.309.t
+******** desc = seven_cities_events.309.d
+******** picture = HUNTER_GATHERERS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* The owner of the province:
+********** Capital:
+*********** Not in the continent 0 "Europe
+********* Our country:
+********** Does not have the country modifier "sce_mutiny_timer"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Adds the modifier "sce_mutiny_timer" for 12 months:
+************ No effects
+******** Option: seven_cities_events.309.a:
+********* Our country:
+********** Changes administrative power stored by -50
+******** Option: seven_cities_events.309.b:
+********* Our country:
+********** Changes military power stored by -50
+******* Gets the province event:
+******** ID is seven_cities_events.310
+******** title = seven_cities_events.310.t
+******** desc = seven_cities_events.310.d
+******** picture = HUNTER_GATHERERS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is colonized
+********* The owner of the province:
+********** Any of the following:
+*********** Technology group is 0 "West African
+*********** Technology group is 0 "North American
+*********** Technology group is 0 "Mesoamerican
+*********** Technology group is 0 "South American
+*********** Technology group is 0 "Andean
+********** Capital:
+*********** Not in the continent 0 "Europe
+********** }
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.310.a:
+********* The owner of the province:
+********** Adds the opinion modifier "friendly_natives" towards our country
+******* Gets the province event:
+******** ID is seven_cities_events.400
+******** title = seven_cities_events.400.t
+******** desc = seven_cities_events.400.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* Our country:
+********** Does not have the country modifier "sce_estevanico_timer"
+*********** Capital:
+************ Not in the continent 0 "Africa
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Kills military leader: 
+********** Our country:
+*********** Adds the modifier "sce_estevanico_timer" for 20 years:
+************ No effects
+******** Option: seven_cities_events.400.a:
+********* Our country:
+********** Creates a conquistador:
+*********** Named "Estevanico"
+*********** 1 skill in fire
+*********** 2 skill in shock
+*********** 3 skill in manuever
+*********** 1 skill in siege
+********** Changes prestige by -5
+******** Option: seven_cities_events.400.b:
+********* Our country:
+********** Changes administrative power stored by 50
+******* Gets the province event:
+******** ID is seven_cities_events.401
+******** title = seven_cities_events.401.t
+******** desc = seven_cities_events.401.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.401.c:
+********* Our country:
+********** Changes administrative power stored by 50
+******** Option: seven_cities_events.401.a:
+********* Our country:
+********** Changes diplomatic power stored by 50
+******** Option: seven_cities_events.401.b:
+********* Our country:
+********** Changes military power stored by 50
+******* Gets the province event:
+******** ID is seven_cities_events.402
+******** title = seven_cities_events.402.t
+******** desc = seven_cities_events.402.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.402.a:
+********* One of the following will happen:
+********** 50 relative chance:
+*********** Our country:
+************ Gets the country event:
+************* ID is seven_cities_events.403
+************* Tooltip:
+********** 50 relative chance:
+*********** Our country:
+************ Gets the country event:
+************* ID is seven_cities_events.404
+************* Tooltip:
+******** Option: seven_cities_events.402.b:
+********* Our country:
+********** Changes prestige by 5
+******* Gets the country event:
+******** ID is seven_cities_events.403
+******** title = seven_cities_events.403.t
+******** desc = seven_cities_events.403.d
+******** picture = LOADING_SHIP_eventPicture
+******** is_triggered_only = yes
+******** Option: seven_cities_events.403.a:
+********* Modifies treasury by 1 years worth of income
+******* Gets the country event:
+******** ID is seven_cities_events.404
+******** title = seven_cities_events.404.t
+******** desc = seven_cities_events.404.d
+******** picture = NATIVES_LOW_eventPicture
+******** is_triggered_only = yes
+******** Option: seven_cities_events.404.a:
+********* Changes prestige by 10
+******* Gets the province event:
+******** ID is seven_cities_events.405
+******** title = seven_cities_events.405.t
+******** desc = seven_cities_events.405.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* Our country:
+********** Does not have the country flag sce_jeanne_baret_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 0.5:
+********** Our country:
+*********** Has the country modifier "sce_sacagawea"
+******** Immediate effects:
+********* Hidden effect:
+********** Our country:
+*********** Sets the country flag sce_jeanne_baret_flag
+******** Option: seven_cities_events.405.a:
+********* Our country:
+********** Adds the modifier "sce_jeanne_baret" for 20 years:
+*********** +5% land morale
+******** Option: seven_cities_events.405.b:
+********* Our country:
+********** Changes prestige by 5
+******* Gets the province event:
+******** ID is seven_cities_events.406
+******** title = seven_cities_events.406.t
+******** desc = seven_cities_events.406.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* Our country:
+********** Does not have the country modifier "sce_poison_rock_timer"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** In the continent 0 "Oceania
+******** Immediate effects:
+********* Hidden effect:
+********** Adds the modifier "sce_poison_rock" for 12 months:
+*********** local_hostile_movement_speed = -0.5
+********** Our country:
+*********** Adds the modifier "sce_poison_rock_timer" for 5 years:
+************ No effects
+******** Option: seven_cities_events.406.a:
+********* Tooltip:
+********** Adds the modifier "sce_poison_rock_tooltip" for 12 months:
+*********** local_hostile_movement_speed = -0.5
+******* Gets the province event:
+******** ID is seven_cities_events.407
+******** title = seven_cities_events.407.t
+******** desc = seven_cities_events.407.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.407.a:
+********* Our country:
+********** Changes prestige by -5
+******* Gets the province event:
+******** ID is seven_cities_events.408
+******** title = seven_cities_events.408.t
+******** desc = seven_cities_events.408.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* Our country:
+********** Any of the following:
+*********** Does not have the country modifier "sce_cart_peddler_stopped"
+*********** Does not have the country modifier "sce_cart_peddler_killed"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.408.a:
+********* Our country:
+********** Adds the modifier "sce_cart_peddler_stopped" for 20 years:
+*********** +10% global spy defence
+******** Option: seven_cities_events.408.b:
+********* Our country:
+********** Adds the modifier "sce_cart_peddler_killed" for 20 years:
+*********** +10% spy offense
+******* Gets the province event:
+******** ID is seven_cities_events.409
+******** title = seven_cities_events.409.t
+******** desc = seven_cities_events.409.d
+******** picture = COASTLINE_MAP_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* Our country:
+********** Does not have the country modifier "sce_new_domains"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.409.a:
+********* Our country:
+********** Adds the modifier "sce_new_domains" for 20 years:
+*********** +10 global settler increase
+******* Gets the province event:
+******** ID is seven_cities_events.410
+******** title = seven_cities_events.410.t
+******** desc = seven_cities_events.410.d
+******** picture = AZTEC_PYRAMID_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* In the continent 0 "South America
+********* Our country:
+********** Does not have the country modifier "sce_mounds_timer"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.410.a:
+********* Adds the modifier "sce_mounds" for 12 months:
+********** local_hostile_movement_speed = -0.5
+********* Hidden effect:
+********** Our country:
+*********** Adds the modifier "sce_mounds_timer" for 5 years:
+************ No effects
+********* One of the following will happen:
+********** 50 relative chance:
+*********** Our country:
+************ Gets the country event:
+************* ID is seven_cities_events.411
+************* Base mean time to happen of 30 days
+************* Tooltip:
+********** 50 relative chance:
+*********** Our country:
+************ Gets the country event:
+************* ID is seven_cities_events.412
+************* Base mean time to happen of 30 days
+************* Tooltip:
+******** Option: seven_cities_events.410.b:
+********* Our country:
+********** Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is seven_cities_events.411
+******** title = seven_cities_events.411.t
+******** desc = seven_cities_events.411.d
+******* picture_false = NOTHING_FOUND_eventPicture
+******* is_triggered_only_false = yes
+******** Option: seven_cities_events.411.a:
+******** add_prestige_false = 5
+******* Gets the country event:
+******** ID is seven_cities_events.412
+******** title = seven_cities_events.412.t
+******** desc = seven_cities_events.412.d
+******** picture = AZTEC_PYRAMID_eventPicture
+******** is_triggered_only = yes
+******** Option: seven_cities_events.412.a:
+********* Modifies treasury by 0.25 years worth of income
+******* Gets the province event:
+******** ID is seven_cities_events.413
+******** title = seven_cities_events.413.t
+******** desc = seven_cities_events.413.d
+******** picture = NATIVES_LOW_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.413.a:
+********* Our country:
+********** Changes military power stored by 50
+******** Option: seven_cities_events.413.b:
+********* Our country:
+********** Changes administrative power stored by 50
+******* Gets the province event:
+******** ID is seven_cities_events.414
+******** title = seven_cities_events.414.t
+******** desc = seven_cities_events.414.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC El Dorado
+********* Is uncolonized
+********* Any of the following:
+********** In the continent 1 "The New World
+********** In the continent 0 "South America
+********** In the continent 0 "North America
+********** In the continent 0 "Africa
+********** In the continent 0 "Asia
+********** In the continent 0 "Oceania
+********* Our country:
+********** Does not have the country modifier "sce_monster_lake_timer"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: seven_cities_events.414.a:
+********* Adds the modifier "sce_monster_lake" for 12 months:
+********** local_hostile_movement_speed = -0.5
+********* Hidden effect:
+********** Our country:
+*********** Adds the modifier "sce_monster_lake_timer" for 12 months:
+************ No effects
+******** Option: seven_cities_events.414.b:
+********* One of the following will happen:
+********** 20 relative chance:
+*********** Kills military leader: 
+********** 80 relative chance:
+******* Gets the country event:
+******** ID is seven_cities_events.500
+******** title = seven_cities_events.500.t
+******** desc = seven_cities_events.500.d
+******** picture = HUNTER_GATHERERS_eventPicture
+******** is_triggered_only = yes
+******** Option: seven_cities_events.500.a:
+********* Tooltip:
+********** Adds the opinion modifier "cannibal_conquistador" towards event_target:long_pig_country
+******* Gets the country event:
+******** ID is seven_cities_events.501
+******** title = seven_cities_events.501.t
+******** desc = seven_cities_events.501.d
+******** picture = HUNTER_GATHERERS_eventPicture
+******** is_triggered_only = yes
+******** Option: seven_cities_events.501.a:
+********* Tooltip:
+********** Adds the opinion modifier "respected_tribe" towards our country
+******* Gets the country event:
+******** ID is seven_cities_events.502
+******** title = seven_cities_events.502.t
+******** desc = seven_cities_events.502.d
+******** picture = GUARDED_TREASURE_eventPicture
+******** is_triggered_only = yes
+******** Option: seven_cities_events.502.a:
+********* Tooltip:
+********** Adds the opinion modifier "insulted_tribe" towards our country
+******* Gets the country event:
+******** ID is seven_cities_events.503
+******** title = seven_cities_events.503.t
+******** desc = seven_cities_events.503.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Option: seven_cities_events.503.a:
+********* Tooltip:
+********** Adds the opinion modifier "threatening_punishment" towards our country
+******* Gets the country event:
+******** ID is seven_cities_events.504
+******** title = seven_cities_events.504.t
+******** desc = seven_cities_events.504.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Option: seven_cities_events.504.a:
+********* Tooltip:
+********** Adds the opinion modifier "friendly_natives" towards our country
+******* Gets the country event:
+******** ID is seven_cities_events.505
+******** title = seven_cities_events.505.t
+******** desc = seven_cities_events.505.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Option: seven_cities_events.505.a:
+********* Tooltip:
+********** Adds the opinion modifier "sce_reluctant_peace" towards our country
+******* Gets the country event:
+******** ID is seven_cities_events.506
+******** title = seven_cities_events.506.t
+******** desc = seven_cities_events.506.d
+******** picture = CONQUISTADORS_eventPicture
+******** is_triggered_only = yes
+******** Option: seven_cities_events.506.a:
+********* Tooltip:
+********** Adds the opinion modifier "sce_interfering_intruder" towards our country
+******* Gets the country event:
+******** ID is seven_cities_events.1000
+******** title = seven_cities_events.1000.t
+******** desc = seven_cities_events.1000.d
+******* picture_false = NOTHING_FOUND_eventPicture
+******* is_triggered_only_false = yes
+******* Trigger:
+******** Does not have the DLC El Dorado
+******** Does not have the idea group 0 "Exploration Ideas
+******** Any of the following:
+********* All of the following:
+********** 0 "South America:
+*********** type_false = all
+*********** Has not been discovered by our country
+********** Does not have the country modifier "sce_search_eldorado"
+*********** Does not have the country flag sce_end_eldorado_flag
+********** All of the following:
+*********** 0 "South America:
+************ Has been discovered by our country
+*********** Has the country modifier "sce_search_fountainofyouth"
+*********** Does not have the country flag sce_end_fountainofyouth_flag
+********** All of the following:
+*********** 1 "The New World:
+************ Has been discovered by our country
+*********** 0 "South America:
+************ Has been discovered by our country
+*********** mexico_region:
+************ Has been discovered by our country
+*********** central_america_region:
+************ Has been discovered by our country
+*********** Has the country modifier "sce_search_cibola"
+*********** Does not have the country flag sce_end_cibola_flag
+********** All of the following:
+*********** patagonia_area:
+************ Has been discovered by our country
+*********** patagonian_andes:
+************ Has been discovered by our country
+*********** southern_pampas_area:
+************ Has been discovered by our country
+*********** bahia_blanca_area:
+************ Has been discovered by our country
+*********** nehuenken_area:
+************ Has been discovered by our country
+*********** Has the country modifier "sce_search_cityofcaesars"
+*********** Does not have the country flag sce_end_cityofcaesars_flag
+********** All of the following:
+*********** peru_region:
+************ Has been discovered by our country
+*********** jujuy_area:
+************ Has been discovered by our country
+*********** nehuenken_area:
+************ Has been discovered by our country
+*********** tucuman_area:
+************ Has been discovered by our country
+*********** southern_chile_area:
+************ Has been discovered by our country
+*********** northern_chile_area:
+************ Has been discovered by our country
+*********** central_chile_area:
+************ Has been discovered by our country
+*********** cuyo_area:
+************ Has been discovered by our country
+*********** Has the country modifier "sce_search_sierradelaplata"
+*********** Does not have the country flag sce_end_sierradelaplata_flag
+********** All of the following:
+*********** canada_region:
+************ Has been discovered by our country
+*********** james_bay_area:
+************ Has been discovered by our country
+*********** inner_ontario_area:
+************ Has been discovered by our country
+*********** hudson_bay_area:
+************ Has been discovered by our country
+*********** northeast_america_region:
+************ Has been discovered by our country
+*********** southeast_america_region:
+************ Has been discovered by our country
+*********** Has the country modifier "sce_search_norumbega"
+*********** Does not have the country flag sce_end_norumbega_flag
+********** All of the following:
+*********** canada_region:
+************ Has been discovered by our country
+*********** james_bay_area:
+************ Has been discovered by our country
+*********** hudson_bay_area:
+************ Has been discovered by our country
+*********** inner_ontario_area:
+************ Has been discovered by our country
+*********** northeast_america_region:
+************ Has been discovered by our country
+*********** southeast_america_region:
+************ Has been discovered by our country
+*********** Has the country modifier "sce_search_saguenay"
+*********** Does not have the country flag sce_end_saguenay_flag
+********** All of the following:
+*********** canada_region:
+************ Has been discovered by our country
+*********** james_bay_area:
+************ Has been discovered by our country
+*********** hudson_bay_area:
+************ Has been discovered by our country
+*********** inner_ontario_area:
+************ Has been discovered by our country
+*********** northeast_america_region:
+************ Has been discovered by our country
+*********** southeast_america_region:
+************ Has been discovered by our country
+*********** Has the country modifier "sce_search_quivira"
+*********** Does not have the country flag sce_end_quivira_flag
+******** Immediate effects:
+********* Hidden effect:
+********** Removes the country flag sce_action01_flag
+********** Removes the country flag sce_action02_flag
+********** Removes the country flag sce_action03_flag
+********** Removes the country flag sce_action04_flag
+********** Removes the country flag sce_action05_flag
+********** Removes the country flag sce_action06_flag
+********** Removes the country flag sce_eventchain_flag
+********** Sets the country flag sce_end_eldorado_flag
+********** Removes the country modifier "sce_search_eldorado"
+********** Sets the country flag sce_end_fountainofyouth_flag
+********** Removes the country flag sce_eventchain_flag
+********** Removes the country modifier "sce_search_fountainofyouth"
+********** Removes the country flag sce_action01_flag
+********** Removes the country flag sce_action02_flag
+********** Removes the country flag sce_action03_flag
+********** Removes the country flag sce_action04_flag
+********** Removes the country flag sce_action05_flag
+********** Removes the country flag sce_action06_flag
+********** Sets the country flag sce_end_cibola_flag
+********** Removes the country flag sce_eventchain_flag
+********** Removes the country modifier "sce_search_cibola"
+********** Removes the country flag sce_action01_flag
+********** Removes the country flag sce_action02_flag
+********** Removes the country flag sce_action03_flag
+********** Removes the country flag sce_action04_flag
+********** Removes the country flag sce_action05_flag
+********** Removes the country flag sce_action06_flag
+********** Sets the country flag sce_end_cityofcaesars_flag
+********** Removes the country flag sce_eventchain_flag
+********** Removes the country modifier "sce_search_cityofcaesars"
+********** Removes the country flag sce_action01_flag
+********** Removes the country flag sce_action02_flag
+********** Removes the country flag sce_action03_flag
+********** Removes the country flag sce_action04_flag
+********** Removes the country flag sce_action05_flag
+********** Removes the country flag sce_action06_flag
+********** Sets the country flag sce_end_sierradelaplata_flag
+********** Removes the country flag sce_eventchain_flag
+********** Removes the country modifier "sce_search_sierradelaplata"
+********** Removes the country flag sce_action01_flag
+********** Removes the country flag sce_action02_flag
+********** Removes the country flag sce_action03_flag
+********** Removes the country flag sce_action04_flag
+********** Removes the country flag sce_action05_flag
+********** Removes the country flag sce_action06_flag
+********** Sets the country flag sce_end_norumbega_flag
+********** Removes the country flag sce_eventchain_flag
+********** Removes the country modifier "sce_search_norumbega"
+********** Removes the country flag sce_action01_flag
+********** Removes the country flag sce_action02_flag
+********** Removes the country flag sce_action03_flag
+********** Removes the country flag sce_action04_flag
+********** Removes the country flag sce_action05_flag
+********** Removes the country flag sce_action06_flag
+********** Sets the country flag sce_end_saguenay_flag
+********** Removes the country flag sce_eventchain_flag
+********** Removes the country modifier "sce_search_saguenay"
+********** Removes the country flag sce_action01_flag
+********** Removes the country flag sce_action02_flag
+********** Removes the country flag sce_action03_flag
+********** Removes the country flag sce_action04_flag
+********** Removes the country flag sce_action05_flag
+********** Removes the country flag sce_action06_flag
+********** Removes the country flag sce_action01_flag
+********** Removes the country flag sce_action02_flag
+********** Removes the country flag sce_action03_flag
+********** Removes the country flag sce_action04_flag
+********** Removes the country flag sce_action05_flag
+********** Removes the country flag sce_action06_flag
+********** Removes the country flag sce_eventchain_flag
+********** Sets the country flag sce_end_quivira_flag
+********** Removes the country modifier "sce_search_quivira"
+******** Option: seven_cities_events.1000.a:
+********* Changes prestige by -10

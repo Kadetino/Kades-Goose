@@ -1,0 +1,1287 @@
+******** Trigger:
+********* has_seat_in_parliament_false = no
+********* development = 25
+********* is_state = yes
+********* Has core on owner
+********* The owner of the province:
+********** has_parliament = yes
+******** Mean time to happen
+********* Base mean time to happen of 720 months
+******** Option: 0 "Grant it!:
+********* AI chance:
+********** Base chance of 90
+********* set_seat_in_parliament = yes
+******** Option: 0 "Refuse it!:
+********* AI chance:
+********** Base chance of 10
+********* Changes base tax by -1
+********* add_base_production = -1
+********* add_base_manpower = -1
+******* Gets the province event:
+******** ID is parlaments.2
+******** title = parlaments.2.t
+******** desc = parlaments.2.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* The owner of the province:
+********** has_parliament = yes
+********* has_seat_in_parliament = yes
+********* The province is not the capital of the country
+********* Does not have the province modifier "rotten_borough"
+********* development_false = 10
+********* The owner of the province:
+********** Any owned province:
+*********** development = 10
+*********** Has core on owner
+*********** has_seat_in_parliament_false = no
+*********** The province is not overseas
+*********** Any of the following:
+************ has_owner_accepted_culture = yes
+************ The province has the same culture as its owner
+******** is_mtth_scaled_to_size = 1
+******** Immediate effects:
+********* Hidden effect:
+********** The owner of the province:
+*********** Random owned province:
+************ Limited to:
+************* The province is not overseas
+************* Has core on owner
+************* Any of the following:
+************** has_owner_accepted_culture = yes
+************** The province has the same culture as its owner
+************* development = 10
+************* has_seat_in_parliament_false = no
+************ save_event_target_as = envious_province
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.8:
+********** development_false = 6
+********* Multiplies value by 0.7:
+********** development_false = 4
+******** Option: parlaments.2.a:
+********* AI chance:
+********** Base chance of 50
+********* The owner of the province:
+********** add_corruption = 0.5
+********* Adds the modifier "rotten_borough" until the end of the campaign:
+********** local_autonomy = 0.03
+******** Option: parlaments.2.b:
+********* goto = envious_province
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 4:
+*********** The owner of the province:
+************ Has at least 2 provinces where all of the following is true:
+************* Has the province modifier "rotten_borough"
+********* set_seat_in_parliament_false = no
+********* event_target:envious_province:
+********** set_seat_in_parliament = yes
+********* The owner of the province:
+********** Changes stability by -1
+********* Adds the modifier "withdrawn_parliamentary_seat" until the end of the campaign:
+********** local_unrest = 3
+******* Gets the province event:
+******** ID is parlaments.3
+******** title = parlaments.2.t
+******** desc = parlaments.2.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* The owner of the province:
+********** has_parliament = yes
+********* has_seat_in_parliament = yes
+********* The province is not the capital of the country
+********* Year is at least 1500
+********* Does not have the province modifier "rotten_borough"
+********* development_false = 20
+********* The owner of the province:
+********** Any owned province:
+*********** development = 20
+*********** Has core on owner
+*********** has_seat_in_parliament_false = no
+*********** The province is not overseas
+*********** Any of the following:
+************ has_owner_accepted_culture = yes
+************ The province has the same culture as its owner
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.8:
+********** development_false = 6
+********* Multiplies value by 0.7:
+********** development_false = 4
+******** Immediate effects:
+********* Hidden effect:
+********** The owner of the province:
+*********** Random owned province:
+************ Limited to:
+************* development = 20
+************* Has core on owner
+************* has_seat_in_parliament_false = no
+************* The province is not overseas
+************* Any of the following:
+************** has_owner_accepted_culture = yes
+************** The province has the same culture as its owner
+************ save_event_target_as = envious_province
+******** Option: parlaments.2.a:
+********* AI chance:
+********** Base chance of 50
+********* The owner of the province:
+********** add_corruption = 0.5
+********* Adds the modifier "rotten_borough" until the end of the campaign:
+********** local_autonomy = 0.03
+******** Option: parlaments.2.b:
+********* goto = envious_province
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 4:
+*********** The owner of the province:
+************ Has at least 2 provinces where all of the following is true:
+************* Has the province modifier "rotten_borough"
+********* set_seat_in_parliament_false = no
+********* event_target:envious_province:
+********** set_seat_in_parliament = yes
+********* The owner of the province:
+********** Changes stability by -1
+********* Adds the modifier "withdrawn_parliamentary_seat" until the end of the campaign:
+********** local_unrest = 3
+******* Gets the province event:
+******** ID is parlaments.4
+******** title = parlaments.4.t
+******** desc = parlaments.4.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* Has the province modifier "rotten_borough"
+********* has_seat_in_parliament = yes
+********* is_backing_current_issue = yes
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 120 months
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+******** Option: parlaments.4.a:
+********* back_current_issue_false = no
+******** Option: parlaments.4.b:
+********* The owner of the province:
+********** add_corruption = 0.5
+******* Gets the province event:
+******** ID is parlaments.5
+******** title = parlaments.5.t
+******** desc = parlaments.5.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* Has the 0 "University building
+********* Does not have the province modifier "rotten_borough"
+********* has_seat_in_parliament = yes
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue_false = no
+********* The owner of the province:
+********** current_debate = 0 "Fund Expansion of Universities
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 80 months
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.7
+******** Option: parlaments.5.a:
+********* back_current_issue = yes
+******* Gets the province event:
+******** ID is parlaments.6
+******** title = parlaments.6.t
+******** desc = parlaments.6.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Does not have the province modifier "rotten_borough"
+********* Any of the following:
+********** Is coastal
+********** Has the 0 "Naval Equipment Manufactory building
+********** Has the 0 "Dock building
+********** Has the 0 "Shipyard building
+********** Has the 0 "Grand Shipyard building
+********** Has the 0 "Market Place building
+********** Has the 0 "Trade Depot building
+********** Has the 0 "Stock Exchange building
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue_false = no
+********* Any of the following:
+********** The owner of the province:
+*********** current_debate = 0 "Expand Navy
+********** The owner of the province:
+*********** current_debate = 0 "Charter Trade Company
+********** The owner of the province:
+*********** current_debate = 0 "Impressment of Sailors
+********** The owner of the province:
+*********** current_debate = 0 "Issue Letters of Marque
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 80 months
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 1.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.6.a:
+********* back_current_issue = yes
+******* Gets the province event:
+******** ID is parlaments.7
+******** title = parlaments.7.t
+******** desc = parlaments.7.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Does not have the province modifier "rotten_borough"
+********* Any of the following:
+********** Has the 0 "Weapons Manufactory building
+********** Has the 0 "Barracks building
+********** Has the 0 "Regimental Camp building
+********** Has the 0 "Training Fields building
+********** Has the 0 "Conscription Center building
+********** fort_level = 1
+********** base_manpower = 6
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue_false = no
+********* Any of the following:
+********** The owner of the province:
+*********** current_debate = 0 "Support the War Effort
+********** The owner of the province:
+*********** current_debate = 0 "Expand the Army
+********** The owner of the province:
+*********** current_debate = 0 "Extend Officer Commissions
+********** The owner of the province:
+*********** current_debate = 0 "Tax Provinces for Fortifications
+********** The owner of the province:
+*********** current_debate = 0 "Quartering of Troops
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 80 months
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 1.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.7.a:
+********* back_current_issue = yes
+******* Gets the province event:
+******** ID is parlaments.8
+******** title = parlaments.8.t
+******** desc = parlaments.8.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Does not have the province modifier "rotten_borough"
+********* Any of the following:
+********** Has the 0 "Textile Manufactory building
+********** Has the 0 "Plantation building
+********** Has the 1 "Trade Station building
+********** Has the 0 "Workshop building
+********** Has the 0 "Counting House building
+********** base_production = 8
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue_false = no
+********* The owner of the province:
+********** current_debate = 0 "Restrict Imports
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 80 months
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 1.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.8.a:
+********* back_current_issue = yes
+******* Gets the province event:
+******** ID is parlaments.9
+******** title = parlaments.9.t
+******** desc = parlaments.9.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* The province is the capital of the country
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue_false = no
+********* Any of the following:
+********** The owner of the province:
+*********** current_debate = 0 "Fund Expansion of Bureaucracy
+********** The owner of the province:
+*********** current_debate = 0 "Expand the Diplomatic Corps
+********** The owner of the province:
+*********** current_debate = 0 "Administrative Reform
+********** The owner of the province:
+*********** current_debate = 0 "Contribute to Government Debt Payment
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 80 months
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 1.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.9.a:
+********* back_current_issue = yes
+******* Gets the province event:
+******** ID is parlaments.10
+******** title = parlaments.10.t
+******** desc = parlaments.10.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Does not have the province modifier "rotten_borough"
+********* The owner of the province:
+********** has_active_debate = yes
+********** Stability is lower than 0
+********* is_backing_current_issue_false = no
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 80 months
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 1.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.10.a:
+********* back_current_issue = yes
+******* Gets the province event:
+******** ID is parlaments.29
+******** title = parlaments.29.t
+******** desc = parlaments.29.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Does not have the province modifier "rotten_borough"
+********* The owner of the province:
+********** has_active_debate = yes
+********** legitimacy_equivalent = 80
+********* is_backing_current_issue_false = no
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 80 months
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 1.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.29.a:
+********* back_current_issue = yes
+******* Gets the province event:
+******** ID is parlaments.11
+******** title = parlaments.11.t
+******** desc = parlaments.11.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Does not have the province modifier "rotten_borough"
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 160 months
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 0.7:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 0.6:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.11.a:
+********* back_current_issue_false = no
+******* Gets the province event:
+******** ID is parlaments.30
+******** title = parlaments.30.t
+******** desc = parlaments.30.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Does not have the province modifier "rotten_borough"
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 180 months
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 0.7:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 0.6:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Has the monarchy government type
+*********** Legitimacy is less than 80
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Has the monarchy government type
+*********** Legitimacy is less than 65
+********* Multiplies value by 1.2:
+********** The owner of the province:
+*********** Has the monarchy government type
+*********** Legitimacy is at least 85
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has the monarchy government type
+*********** Legitimacy is at least 100
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Has the republic government type
+*********** Republican tradition is less than 80
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Has the republic government type
+*********** Republican tradition is less than 65
+********* Multiplies value by 1.2:
+********** The owner of the province:
+*********** Has the republic government type
+*********** Republican tradition is at least 85
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has the republic government type
+*********** Republican tradition is at least 100
+******** Option: parlaments.30.a:
+********* back_current_issue_false = no
+******* Gets the province event:
+******** ID is parlaments.12
+******** title = parlaments.12.t
+******** desc = parlaments.12.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Has the province modifier "rotten_borough"
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+********* The owner of the province:
+********** current_debate = 0 "Reform Rotten Boroughs
+******** Mean time to happen
+********* Base mean time to happen of 45 months
+******** Option: parlaments.12.a:
+********* back_current_issue_false = no
+******* Gets the province event:
+******** ID is parlaments.13
+******** title = parlaments.13.t
+******** desc = parlaments.13.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+********* The province is the capital of the country
+********* Any of the following:
+********** The owner of the province:
+*********** current_debate = 0 "Create Offices for Vassal Nobles
+********** The owner of the province:
+*********** current_debate = 0 "Harmonization of State Laws
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 140 months
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 0.7:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 0.6:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.13.a:
+********* back_current_issue_false = no
+******* Gets the province event:
+******** ID is parlaments.14
+******** title = parlaments.14.t
+******** desc = parlaments.14.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Any of the following:
+********** Has the 0 "Textile Manufactory building
+********** Has the 0 "Plantation building
+********** Has the 1 "Trade Station building
+********** Has the 0 "Workshop building
+********** Has the 0 "Counting House building
+********** base_production = 8
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+********* The owner of the province:
+********** current_debate = 0 "Reduce Trade Regulations
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 160 months
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 0.7:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 0.6:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.14.a:
+********* back_current_issue_false = no
+******* Gets the province event:
+******** ID is parlaments.15
+******** title = parlaments.15.t
+******** desc = parlaments.15.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Any of the following:
+********** Has the 0 "Weapons Manufactory building
+********** Has the 0 "Barracks building
+********** Has the 0 "Regimental Camp building
+********** Has the 0 "Training Fields building
+********** Has the 0 "Conscription Center building
+********** fort_level = 1
+********** base_manpower = 6
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+********* Any of the following:
+********** The owner of the province:
+*********** current_debate = 0 "Expand Navy
+********** The owner of the province:
+*********** current_debate = 0 "Charter Trade Company
+********** The owner of the province:
+*********** current_debate = 0 "Impressment of Sailors
+********** The owner of the province:
+*********** current_debate = 0 "Issue Letters of Marque
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 160 months
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 0.7:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 0.6:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.15.a:
+********* back_current_issue_false = no
+******* Gets the province event:
+******** ID is parlaments.16
+******** title = parlaments.16.t
+******** desc = parlaments.16.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Any of the following:
+********** Has the 0 "Naval Equipment Manufactory building
+********** Has the 0 "Dock building
+********** Has the 0 "Shipyard building
+********** Has the 0 "Grand Shipyard building
+********** Is coastal
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+********* Any of the following:
+********** The owner of the province:
+*********** current_debate = 0 "Support the War Effort
+********** The owner of the province:
+*********** current_debate = 0 "Expand the Army
+********** The owner of the province:
+*********** current_debate = 0 "Extend Officer Commissions
+********** The owner of the province:
+*********** current_debate = 0 "Tax Provinces for Fortifications
+********** The owner of the province:
+*********** current_debate = 0 "Quartering of Troops
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 160 months
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 0.7:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 0.6:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.16.a:
+********* back_current_issue_false = no
+******* Gets the province event:
+******** ID is parlaments.17
+******** title = parlaments.17.t
+******** desc = parlaments.17.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+********* Any of the following:
+********** The owner of the province:
+*********** current_debate = 0 "Conduct Nationwide Land Survey
+********** The owner of the province:
+*********** current_debate = 0 "Conduct Nationwide Census
+********** The owner of the province:
+*********** current_debate = 0 "Appropriate Land for the State
+********** The owner of the province:
+*********** current_debate = 0 "Land Reform
+********* Any of the following:
+********** Has a base tax of at least 6
+********** base_production = 6
+********** base_manpower = 6
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 160 months
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 0.7:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 0.6:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.17.a:
+********* back_current_issue_false = no
+******* Gets the province event:
+******** ID is parlaments.18
+******** title = parlaments.18.t
+******** desc = parlaments.18.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue_false = no
+********* Any of the following:
+********** The owner of the province:
+*********** current_debate = 0 "Conduct Nationwide Land Survey
+********** The owner of the province:
+*********** current_debate = 0 "Conduct Nationwide Census
+********* Has the 0 "University building
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 80 months
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Administrative technology is at least 20
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 0.7:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 0.6:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.18.a:
+********* back_current_issue = yes
+******* Gets the province event:
+******** ID is parlaments.19
+******** title = parlaments.19.t
+******** desc = parlaments.19.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+********* The owner of the province:
+********** current_debate = 0 "Increase Taxes
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 140 months
+********* Multiplies value by 0.5:
+********** is_looted = yes
+********* Multiplies value by 0.5:
+********** development_false = 10
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.25
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.5
+********* Multiplies value by 0.7:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.75
+********* Multiplies value by 0.6:
+********** The owner of the province:
+*********** percentage_backing_issue = 0.9
+******** Option: parlaments.19.a:
+********* back_current_issue_false = no
+******* Gets the country event:
+******** ID is parlaments.20
+******** title = parlaments.20.t
+******** desc = parlaments.20.d
+******** picture = PARLIAMENT_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_active_debate = yes
+********* Any owned province:
+********** is_backing_current_issue = yes
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 1.5:
+********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** percentage_backing_issue = 0.5
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ has_seat_in_parliament = yes
+************ is_backing_current_issue = yes
+*********** save_event_target_as = recalcitrant_seat
+******** Option: parlaments.20.a:
+********* Modifies treasury by -0.1 years worth of income
+******** Option: parlaments.20.b:
+********* goto = recalcitrant_seat
+********* event_target:recalcitrant_seat:
+********** back_current_issue_false = no
+******* Gets the country event:
+******** ID is parlaments.21
+******** title = parlaments.21.t
+******** desc = parlaments.21.d
+******** picture = PARLIAMENT_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_active_debate = yes
+********* Any owned province:
+********** The province is not the capital of the country
+********** is_backing_current_issue = yes
+********* Capital:
+********** Does not have the province modifier "parliamentary_scandal"
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ has_seat_in_parliament = yes
+************ is_backing_current_issue = yes
+************ The province is not the capital of the country
+*********** save_event_target_as = recalcitrant_seat
+********** Capital:
+*********** save_event_target_as = the capital
+******** Mean time to happen
+********* Base mean time to happen of 700 months
+********* Multiplies value by 1.5:
+********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.8:
+********** percentage_backing_issue = 0.5
+******** Option: parlaments.21.a:
+********* Changes prestige by -10
+********* goto = the capital
+********* Capital:
+********** Adds the modifier "parliamentary_scandal" until the end of the campaign:
+*********** local_unrest = 4
+******** Option: parlaments.21.b:
+********* goto = recalcitrant_seat
+********* event_target:recalcitrant_seat:
+********** back_current_issue_false = no
+******* Gets the country event:
+******** ID is parlaments.22
+******** title = parlaments.22.t
+******** desc = parlaments.22.d
+******** picture = PARLIAMENT_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_active_debate = yes
+********* Has at least 2 provinces where all of the following is true:
+********** is_backing_current_issue = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ has_seat_in_parliament = yes
+************ is_backing_current_issue = yes
+*********** Sets the province flag absentee_pm
+********** Random owned province:
+*********** Limited to:
+************ has_seat_in_parliament = yes
+************ is_backing_current_issue = yes
+************ Does not have the province flag absentee_pm
+*********** Sets the province flag absentee_pm
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+********* Multiplies value by 1.5:
+********** percentage_backing_issue_false = 0.5
+********* Multiplies value by 0.7:
+********** percentage_backing_issue = 0.5
+******** Option: parlaments.22.a:
+********* Every owned province:
+********** Limited to:
+*********** Has the province flag absentee_pm
+********** back_current_issue_false = no
+********** add_unrest = 4
+********** Removes the province flag absentee_pm
+********* Modifies treasury by 0.05 years worth of income
+******** Option: parlaments.22.b:
+********* Changes prestige by -10
+********* Hidden effect:
+********** Every owned province:
+*********** Limited to:
+************ Has the province flag absentee_pm
+*********** Removes the province flag absentee_pm
+******* Gets the country event:
+******** ID is parlaments.23
+******** title = parlaments.23.t
+******** desc = parlaments.23.d
+******** picture = PARLIAMENT_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* Administrative technology is at least 22
+********* Has at least 4 provinces
+********* Any owned province:
+********** Does not have the province modifier "demands_representation"
+********* has_reform_false = 0 "English Monarchy
+********* has_reform_false = parliamentary_reform
+********* has_reform_false = 0 "Steppe Nomads
+********* has_reform_false = 0 "Tribal Despotism
+********* has_reform_false = 0 "Tribal Monarchy
+********* has_reform_false = 0 "Tribal Federation
+********* has_reform_false = siberian_tribe
+********* has_reform_false = 0 "Elective Monarchy
+********* has_reform_false = free_city
+********* has_reform_false = 0 "Dutch Republic
+********* is_revolutionary_republic_trigger_false = yes
+********* has_reform_false = presidential_despot_reform
+********* has_reform_false = 0 "Ambrosian Republic
+********* has_reform_false = 0 "Celestial Empire
+********* has_reform_false = 0 "Peasants Republic
+********* has_reform_false = 0 "Iqta
+********* has_reform_false = 0 "Feudal Theocracy
+********* has_reform_false = 0 "Mamluk Government
+********* has_reform_false = 0 "Daimyo
+********* has_reform_false = 0 "Shogunate
+********* has_reform_false = 0 "Colonial Government
+********* has_reform_false = revolutionary_empire_reform
+********* Does not have the theocracy government type
+********* Does not have the native government type
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: parlaments.23.a:
+********* Changes administrative power stored by -75
+******** Option: parlaments.23.b:
+********* Random owned province:
+********** Limited to:
+*********** The province is not overseas
+*********** The province is not the capital of the country
+*********** Does not have the province modifier "demands_representation"
+********** Adds the modifier "demands_representation" until the end of the campaign:
+*********** local_unrest = 4
+********* Random owned province:
+********** Limited to:
+*********** The province is not overseas
+*********** The province is not the capital of the country
+*********** Does not have the province modifier "demands_representation"
+********** Adds the modifier "demands_representation" until the end of the campaign:
+*********** local_unrest = 4
+******* Gets the country event:
+******** ID is parlaments.24
+******** title = parlaments.24.t
+******** desc = parlaments.24.d
+******** picture = PARLIAMENT_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* Administrative technology is at least 22
+********* Has at least 2 provinces
+********* Has at least 5 active loans
+********* Has less than 50 ducats in the treasury
+********* Does not have the tribal government type
+********* Does not have the native government type
+********* has_reform_false = 0 "Elective Monarchy
+********* Does not have the republic government type
+********* has_reform_false = 0 "Celestial Empire
+********* has_reform_false = 0 "Peasants Republic
+********* has_reform_false = 0 "Iqta
+********* has_reform_false = 0 "Feudal Theocracy
+********* has_reform_false = 0 "Mamluk Government
+********* has_reform_false = 0 "Daimyo
+********* has_reform_false = 0 "Shogunate
+********* has_reform_false = 0 "Colonial Government
+********* has_reform_false = revolutionary_empire_reform
+********* Does not have the theocracy government type
+********* Does not have the country modifier "yearning_for_representation"
+********* has_ruler_flag_false = cities_offered_to_help
+******** Mean time to happen
+********* Base mean time to happen of 500 months
+********* Multiplies value by 0.6:
+********** has_reform_false = 0 "English Monarchy
+********** has_reform_false = parliamentary_reform
+******** Option: parlaments.24.a:
+********* Trigger:
+********** Any of the following:
+*********** has_reform = 0 "English Monarchy
+*********** has_reform = parliamentary_reform
+********* Random owned province:
+********** Limited to:
+*********** has_seat_in_parliament_false = no
+********** set_seat_in_parliament = yes
+********* Random owned province:
+********** Limited to:
+*********** has_seat_in_parliament_false = no
+********** set_seat_in_parliament = yes
+********* Modifies treasury by 0.25 years worth of income
+******** Option: parlaments.24.b:
+********* Trigger:
+********** Any of the following:
+*********** has_reform = 0 "English Monarchy
+*********** has_reform = parliamentary_reform
+********* Random owned province:
+********** Limited to:
+*********** has_seat_in_parliament_false = no
+********** add_unrest = 2
+********* Random owned province:
+********** Limited to:
+*********** has_seat_in_parliament_false = no
+********** add_unrest = 2
+******** Option: parlaments.24.c:
+********* Trigger:
+********** has_reform_false = 0 "English Monarchy
+********** has_reform_false = parliamentary_reform
+********* Modifies treasury by 0.15 years worth of income
+********* set_ruler_flag = cities_offered_to_help
+********* Adds the modifier "yearning_for_representation" for 10 years:
+********** +2 global unrest
+******** Option: parlaments.24.dd:
+********* Trigger:
+********** has_reform_false = 0 "English Monarchy
+********** has_reform_false = parliamentary_reform
+********* set_ruler_flag = cities_offered_to_help
+********* Changes prestige by 10
+******* Gets the province event:
+******** ID is parlaments.25
+******** title = parlaments.25.t
+******** desc = parlaments.25.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_owner_accepted_culture_false = no
+********* The province is not overseas
+********* Does not have the province modifier "demands_representation"
+********* The owner of the province:
+********** Administrative technology is at least 22
+********** Stability is lower than 2
+********** has_reform_false = 0 "English Monarchy
+********** has_reform_false = parliamentary_reform
+********** Does not have the tribal government type
+********** Does not have the native government type
+********** has_reform_false = 0 "Elective Monarchy
+********** Does not have the republic government type
+********** has_reform_false = 0 "Celestial Empire
+********** has_reform_false = 0 "Iqta
+********** has_reform_false = 0 "Feudal Theocracy
+********** has_reform_false = 0 "Mamluk Government
+********** has_reform_false = 0 "Peasants Republic
+********** has_reform_false = 0 "Daimyo
+********** has_reform_false = 0 "Shogunate
+********** has_reform_false = 0 "Colonial Government
+********** has_reform_false = revolutionary_empire_reform
+********** Does not have the theocracy government type
+********** has_ruler_flag_false = minorities_denied_representation
+********** Has at least 2 provinces where all of the following is true:
+*********** Culture is the same as our country
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Immediate effects:
+********* Hidden effect:
+********** The owner of the province:
+*********** Random owned province:
+************ Limited to:
+************* Culture is the same as our country
+************* Province is not our country
+************ save_event_target_as = other_province
+******** Option: parlaments.25.a:
+********* Adds the modifier "demands_representation" until the end of the campaign:
+********** local_unrest = 4
+********* event_target:other_province:
+********** Adds the modifier "demands_representation" until the end of the campaign:
+*********** local_unrest = 4
+******** Option: parlaments.25.b:
+********* Spawns revolt of size 1 of 0 "Revolutionary rebels
+********* event_target:other_province:
+********** Spawns revolt of size 1 of 0 "Revolutionary rebels
+********* The owner of the province:
+********** set_ruler_flag = minorities_denied_representation
+******* Gets the province event:
+******** ID is parlaments.26
+******** title = parlaments.26.t
+******** desc = parlaments.26.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Does not have the province modifier "rotten_borough"
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: parlaments.26.a:
+********* The owner of the province:
+********** Modifies treasury by 0.05 years worth of income
+******* Gets the province event:
+******** ID is parlaments.27
+******** title = parlaments.27.t
+******** desc = parlaments.27.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Does not have the province modifier "rotten_borough"
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: parlaments.27.a:
+********* The owner of the province:
+********** increase_legitimacy_medium_effect = yes
+******* Gets the province event:
+******** ID is parlaments.28
+******** title = parlaments.28.t
+******** desc = parlaments.28.d
+******** picture = PARLIAMENT_eventPicture
+******** goto = our country
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_seat_in_parliament = yes
+********* Does not have the province modifier "rotten_borough"
+********* The owner of the province:
+********** has_active_debate = yes
+********* is_backing_current_issue = yes
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: parlaments.28.a:
+********* The owner of the province:
+********** Changes administrative power stored by 50
+******* Gets the province event:
+******** ID is parlaments.99
+******** title = 0 "none
+******** desc = 0 "none
+******** picture = 0 "none
+******** hidden = yes
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Removes the province flag guarantee_religious_tolerance_flag

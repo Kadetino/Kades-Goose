@@ -1,0 +1,252 @@
+
+=== 0 "The Kingdom of God on Earth ===
+* Cannot fire randomly
+
+'''Option: 1 "All Men under one God!:'''
+
+* add_government_reform = kingdom_of_god_reform
+
+'''Option: 0 "Amen:'''
+
+* Changes prestige by 10
+
+=== 0 "The Pentarchy ===
+* Cannot fire randomly
+
+'''Option: 0 "The Wound is Healed!:'''
+
+* Changes prestige by 25
+* Adds 25 legitimacy
+* 0 "The Papal State:
+** Disables the Papacy
+
+=== 0 "Simony? ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Follows the 0 "Catholic religion
+* The 0 "Protestant religion is not enabled
+* Country is not 0 "The Papal State
+* Does not have the global flag pap_disables_simony_flag
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "We need the money!:'''
+
+* AI chance:
+** Base chance of 10
+** Multiplies value by 5:
+*** Has the global flag borgia_pope_global
+* Modifies treasury by 0.2 years worth of income
+* Adds 0.2% reform desire
+
+'''Option: 0 "It is a sin!:'''
+
+* AI chance:
+** Base chance of 10
+* Changes Papal Influence by 10
+* add_devotion = 1
+
+=== 0 "Selling of Indulgences ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Follows the 0 "Catholic religion
+* The 0 "Protestant religion is not enabled
+* Country is not 0 "The Papal State
+* Year is at least 1480
+* ruler_age = 45
+* Does not have the global flag pap_disables_indulgences_flag
+* is_excommunicated_false = no
+* Does not have the country modifier "0 "Papal Sanction for our Dynasty"
+* reverse_has_opinion_modifier:
+** who_false = 0 "The Papal State
+** modifier_false = bought_indulgence
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 1 "A donation to the Pope shall be arranged.:'''
+
+* AI chance:
+** Base chance of 10
+** Multiplies value by 0.5:
+*** Considers 0 "The Papal State a rival
+* Modifies treasury by -1 years worth of income
+* If:
+** Limited to:
+*** Has less than 6 provinces
+** add_curia_treasur_small_effect = yes
+* else:
+** add_curia_treasury_medium_effect = yes
+* Changes Papal Influence by 10
+* Adds 0.2% reform desire
+
+'''Option: 1 "Indulgences are the easy option; repentence is better.:'''
+
+* AI chance:
+** Base chance of 10
+** Multiplies value by 2:
+*** Has the global flag borgia_pope_global
+** Multiplies value by 0.5:
+*** Is allied with 0 "The Papal State
+* Adds -0.2% reform desire
+* Changes Papal Influence by -10
+* 0 "The Papal State:
+** Adds the opinion modifier "1 "Refused to pay Indulgences" towards our country
+
+=== 0 "Veneration of Relics ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Follows the 0 "Catholic religion
+* The 0 "Protestant religion is not enabled
+* Country is not 0 "The Papal State
+* Any owned province:
+** Follows the 0 "Catholic religion
+* Year is at least 1490
+* Does not have the global flag pap_disables_veneration_relics_flag
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Follows the 0 "Catholic religion
+*** save_event_target_as = unrest_province
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "But I just bought a vial of the milk of the Virgin Mary.:'''
+
+* AI chance:
+** Base chance of 10
+* Adds 0.5% reform desire
+* Changes Papal Influence by 2
+
+'''Option: 0 "Forgiveness can only come from God.:'''
+
+* goto = unrest_province
+* AI chance:
+** Base chance of 10
+** Multiplies value by 5:
+*** Has the global flag borgia_pope_global
+* event_target:unrest_province:
+** add_unrest = 5
+
+=== 1 "Veneration of the Virgin Mary ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Follows the 0 "Catholic religion
+* The 0 "Protestant religion is not enabled
+* Country is not 0 "The Papal State
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "May the Madonna forgive them.:'''
+
+* Adds 0.5% reform desire
+* Changes Papal Influence by 2
+
+'''Option: 0 "She is a special woman, but still just a woman.:'''
+
+* 0 "The Papal State:
+** Adds the opinion modifier "0 "Denying the Holy Mother" towards our country
+
+=== 0 "The Doctrine of Particular Judgment ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Follows the 0 "Catholic religion
+* The 0 "Protestant religion is not enabled
+* Country is not 0 "The Papal State
+* Any owned province:
+** Follows the 0 "Catholic religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Follows the 0 "Catholic religion
+*** save_event_target_as = unrest_province
+
+'''Option: 0 "He is probably a heretic.:'''
+
+* Adds 0.5% reform desire
+* Changes Papal Influence by 2
+
+'''Option: 0 "Sorry, there is nothing you can do for your dead loved ones.:'''
+
+* goto = unrest_province
+* Adds -0.5% reform desire
+* event_target:unrest_province:
+** add_unrest = 5
+
+=== 0 "A New Confession of Faith ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Follows the 0 "Catholic religion
+* The 0 "Protestant religion is not enabled
+* Country is not 0 "The Papal State
+* Reform desire is at least 50%
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Promote it.:'''
+
+* Adds 0.5% reform desire
+* Changes administrative power stored by 25
+
+'''Option: 0 "Nay, it will damn everyone.:'''
+
+* Adds 0.2% reform desire
+* Changes Papal Influence by 5
+* add_devotion = 1
+
+=== 0 "A Promise of Safe Passage? ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Follows the 0 "Catholic religion
+* The 0 "Protestant religion is not enabled
+* Country is not 0 "The Papal State
+* Reform desire is at least 95%
+* Year is at least 1520
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Our honor is our word.:'''
+
+* Adds 1% reform desire
+* Changes diplomatic power stored by 50
+
+'''Option: 0 "We are not bound by promises to a heretic.:'''
+
+* Adds 0.5% reform desire
+* Changes Papal Influence by 10
+* add_devotion = 1

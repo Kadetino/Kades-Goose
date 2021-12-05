@@ -1,0 +1,213 @@
+******** is_triggered_only = yes
+******** desc:
+********* Trigger:
+********** The owner of the province:
+*********** has_reform = 0 "Shogunate
+********** Our country:
+*********** has_reform = 0 "Shogunate
+********* desc = 0 "[new_shogunate.Monarch.GetName] has utterly defeated the shogun, and will crown [new_shogunate.Monarch.GetHerHis] brilliant campaign by having the Emperor name [new_shogunate.Monarch.GetHerHim] the new shogun - becoming the hereditary military dictator of Japan.\n\nOnly time will tell whether the [new_shogunate.Monarch.Dynasty.GetName] shogunate will be more successful than its predecessor when it comes to the task of solidifying the warring clans.
+******** desc:
+********* Trigger:
+********** The owner of the province:
+*********** has_reform = 0 "Shogunate
+********** Our country:
+*********** has_reform_false = 0 "Shogunate
+********* desc = 0 "With the fall of Kyoto [new_shogunate.GetName] has freed the Emperor and resumed the office of Shogun in his service. Long live the Empire of Japan!
+******** desc:
+********* Trigger:
+********** The owner of the province:
+*********** has_reform_false = 0 "Shogunate
+********* desc = 0 "With the fall of Kyoto the Emperor of Japan is no longer protected by the [From.GetName] Shogunate. The office has lost all relevance and the Daimyo of Japan will no longer pretend to honor the wishes of the old Shogun.
+******** Trigger:
+********* Province is 0 "Kyoto
+******** Immediate effects:
+********* Hidden effect:
+********** The owner of the province:
+*********** If:
+************ Limited to:
+************* Any of the following:
+************** has_reform = 0 "Daimyo
+************** has_reform = 0 "Independent Daimyo
+************ Adds core on 0 "Kyoto
+************ Sets capital to 0 "Kyoto
+************ grant_independence = yes
+************ add_government_reform = 0 "Shogunate
+************ save_event_target_as = new_shogunate
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ Our country:
+************* Country exists
+************ The owner of the province:
+************* has_reform = 0 "Shogunate
+************ Our country:
+************* has_reform = 0 "Shogunate
+*********** Our country:
+************ Every subject country:
+************* Limited to:
+************** is_subject_of_type = daimyo_vassal
+************* Sets the country flag tobe_daimyo_of_new_shogun
+************* grant_independence = yes
+************ event_target:new_shogunate:
+************* Vassalizes our country
+************ set_government_rank = 1
+************ add_government_reform = 0 "Daimyo
+*********** Every country:
+************ Limited to:
+************* Has the country flag tobe_daimyo_of_new_shogun
+************ event_target:new_shogunate:
+************* Vassalizes PREV
+*********** The owner of the province:
+************ Gets the country event:
+************* ID is japan.4
+************* Base mean time to happen of 1 days
+********** If:
+*********** Limited to:
+************ Our country:
+************* Country exists
+************ The owner of the province:
+************* has_reform_false = 0 "Shogunate
+************ Our country:
+************* has_reform = 0 "Shogunate
+*********** Our country:
+************ Every subject country:
+************* Limited to:
+************** is_subject_of_type = daimyo_vassal
+************* grant_independence = yes
+************* If:
+************** Limited to:
+*************** has_reform = 0 "Daimyo
+************** add_government_reform = 0 "Independent Daimyo
+************ add_government_reform = 0 "Independent Daimyo
+********** If:
+*********** Limited to:
+************ Our country:
+************* Country does not exist
+************ The owner of the province:
+************* has_reform = 0 "Shogunate
+*********** Every country:
+************ Limited to:
+************* has_reform = 0 "Daimyo
+************* Not at war with event_target:new_shogunate
+************ event_target:new_shogunate:
+************* Vassalizes PREV
+*********** Every country:
+************ Limited to:
+************* has_reform = 0 "Daimyo
+************* At war with event_target:new_shogunate
+************ add_government_reform = 0 "Independent Daimyo
+*********** Every country:
+************ Limited to:
+************* Country is SOO
+************* Any of the following:
+************** has_reform = pirate_republic_reform
+************** has_reform = pirate_king_reform
+************** has_reform = war_against_the_world_doctrine_reform
+************** has_reform = black_market_consortium_reform
+************* Not at war with event_target:new_shogunate
+************ Gets the country event:
+************* ID is japan.2
+********** If:
+*********** Limited to:
+************ Our country:
+************* Country does not exist
+************ The owner of the province:
+************* has_reform_false = 0 "Shogunate
+*********** Every country:
+************ Limited to:
+************* has_reform = 0 "Daimyo
+************ overlord:
+************* Release PREV from vassalage
+************ add_government_reform = 0 "Independent Daimyo
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ Any country:
+************* is_subject_of_type = daimyo_vassal
+************* overlord:
+************** has_reform_false = 0 "Shogunate
+*********** Every country:
+************ Limited to:
+************* is_subject_of_type = daimyo_vassal
+************* overlord:
+************** has_reform_false = 0 "Shogunate
+************ overlord:
+************* Release PREV from vassalage
+************ If:
+************* Limited to:
+************** has_reform = 0 "Daimyo
+************* remove_government_reform = 0 "Daimyo
+************* add_government_reform = 0 "Independent Daimyo
+******** Option: 0 "We will prevail!:
+********* If:
+********** Limited to:
+*********** The owner of the province:
+************ has_reform = 0 "Shogunate
+********* If:
+********** Limited to:
+*********** The owner of the province:
+************ has_reform_false = 0 "Shogunate
+********** The owner of the province:
+*********** If:
+************ Limited to:
+************* Does not have the country flag destroyed_shogunate
+************ Changes prestige by 20
+************ Changes administrative power stored by 50
+************ Changes diplomatic power stored by 50
+************ Changes military power stored by 50
+************ Sets the country flag destroyed_shogunate
+******* Gets the country event:
+******** ID is japan.2
+******** title = japan.2.name
+******** desc = japan.2.desc
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Option: japan.2.A:
+********* event_target:new_shogunate:
+********** Vassalizes our country
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** Has at least 10 provinces
+******** Option: japan.2.B:
+********* event_target:new_shogunate:
+********** Adds the opinion modifier "opinion_defy_new_shogun" towards our country
+********** Gets the country event:
+*********** ID is japan.3
+*********** Base mean time to happen of 5 days
+********** Gives the 0 "Subjugation casus belli against our country
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** Has less than 10 provinces
+******* Gets the country event:
+******** ID is japan.3
+******** title = japan.3.name
+******** desc = japan.3.desc
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Option: japan.3.opt:
+******* Gets the country event:
+******** ID is japan.4
+******** title = japan.4.t
+******** desc = japan.4.desc
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** hidden = yes
+******** Option: japan.4.a:
+********* Every country:
+********** Limited to:
+*********** Has the country flag tobe_daimyo_of_new_shogun
+********** Removes the country flag tobe_daimyo_of_new_shogun
+********** If:
+*********** Limited to:
+************ At war with our country
+************ Is a vassal of our country
+*********** grant_independence = yes
+*********** If:
+************ Limited to:
+************* has_reform = 0 "Daimyo
+************ add_government_reform = 0 "Independent Daimyo
+*********** Gives the 0 "Subjugation casus belli against the country to our country
+********* AI chance:
+********** Base chance of 1

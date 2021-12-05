@@ -1,0 +1,942 @@
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Norway
+**** All of the following:
+***** was_tag = 0 "Norway
+***** 0 "Norway does not exist
+***** Country is 0 "Scandinavia
+*** Year is less than 1452
+** Mean time to happen
+*** Base mean time to happen of 24 months
+** Option: 0 "He could be of use to the realm:
+*** Changes military power stored by 25
+*** Changes prestige by 10
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "Sigurd Jonsson"
+**** Culture is 0 "Norwegian
+**** discount = yes
+**** With a skill level of 2
+* Gets the country event:
+** ID is flavor_nor.2
+** title = 0 "Nils Henriksson
+** desc = 0 "The son of National Counselor Henrik Jensson, Nils Henriksson, has recently married Ingerd Ottesdatter and consolidated his possession of the Austrått estates. He is now one of Norway's largest landowners, with properties in Bergen, Vardøhus, Hålogaland, Fosen, Frosta, Stjørdal, Sunnmøre, Romsdal, Edøy, Selbu and Herjedalen. He has been suggested to the post of National Counselor.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Norway
+**** All of the following:
+***** was_tag = 0 "Norway
+***** 0 "Norway does not exist
+***** Country is 0 "Scandinavia
+*** Year is at least 1475
+*** Year is less than 1523
+** Mean time to happen
+*** Base mean time to happen of 144 months
+** Option: 0 "Let him become an advisor:
+*** Changes diplomatic power stored by 25
+*** Changes prestige by 10
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "Nils Henriksson"
+**** Culture is 0 "Norwegian
+**** discount = yes
+**** With a skill level of 2
+* Gets the country event:
+** ID is flavor_nor.3
+** title = 0 "Vardøhus Fortress
+** desc = 0 "The first fortification in Vardø Municipality in Finnmark county was built in 1306 and was called Varghøya. The second fortification was built in Østervågen, erected between 1450 and 1500, a rectangular fortification with two corner bastions.
+** picture = FORT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Norway
+**** All of the following:
+***** was_tag = 0 "Norway
+***** 0 "Norway does not exist
+***** Country is 0 "Scandinavia
+*** Year is less than 1500
+*** 0 "Finnmark:
+**** The province is owned by our country
+**** Controlled by our country
+** Mean time to happen
+*** Base mean time to happen of 168 months
+** Option: 0 "Fortify the fortress further:
+*** Modifies treasury by -0.5 years worth of income
+*** 0 "Finnmark:
+**** Constructs the 0 "Castle building
+**** Adds the modifier "0 "Local Fortifications" until the end of the campaign:
+***** +25% local defensiveness
+** Option: 0 "Increase defenses in the whole of Norway:
+*** Modifies treasury by -1 years worth of income
+*** Changes military power stored by 50
+*** Changes national manpower reserves by 5 years worth
+*** Adds the modifier "0 "Improved Fort Defense" for 15 years:
+**** +10% fort defence
+** Option: 0 "Do nothing:
+*** Changes prestige by -1
+* Gets the country event:
+** ID is flavor_nor.4
+** title = 0 "Bohus Fortress
+** desc = 0 "The final construction of the fortress in Bagahus, Båhuslen is done. A river forms a natural moat around the fortress as it commands its surroundings from a cliff 40 meters high. It serves as the main defense against Sweden with its four rectangular corner towers and the three meters thick wall which surrounds it.
+** picture = FORT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Norway
+**** All of the following:
+***** was_tag = 0 "Norway
+***** 0 "Norway does not exist
+***** Country is 0 "Scandinavia
+*** Year is less than 1470
+*** 0 "Bohuslän:
+**** The province is owned by our country
+**** Controlled by our country
+** Mean time to happen
+*** Base mean time to happen of 78 months
+** Option: 0 "Good:
+*** 0 "Bohuslän:
+**** Constructs the 0 "Castle building
+**** Adds the modifier "0 "Bohus Fortress" until the end of the campaign:
+***** +10% manpower modifier
+* Gets the country event:
+** ID is flavor_nor.5
+** title = 0 "A Strategic Marriage
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** desc:
+*** Trigger:
+**** Country is not 0 "Norway
+*** desc = 0 "Ever since the 13th century treaty of Perth, Scotland has been obligated to pay a yearly sum to the Norwegian Kingdom in exchange for control of the Hebrides. These payments are by now long overdue, however, and this has been the cause for tensions on and off. Regardless of our ancestral claims, however, our ability to project power in the Highlands is not what it was, and we have bigger issues closer to home to handle. It has been suggested that this conflict be settled once and for all. The [SCO.Monarch.Dynasty.GetName]s will marry a member of the [Root.Monarch.Dynasty.GetName] dynasty and the Jarldom of Orkney will be pawned and then transferred to the Scots.\nOrkney remains one of the highest ranked titles in the Kingdom of Norway however, one that has at times been a stepping stone to the Norwegian throne. While they remain a weak factor the Norwegian nobility are very wary of this deal.
+** desc:
+*** Trigger:
+**** Country is 0 "Norway
+*** desc = 0 "Ever since the 13th century treaty of Perth, Scotland has been obligated to pay a yearly sum to the Norwegian Kingdom in exchange for control of the Norwegian Hebrides. These payments are by now long overdue, however, and this has been the cause for tensions on and off. Regardless of our ancestral claims, however, our ability to project power in the Highlands is not what it was, and we have bigger issues closer to home to handle. It has been suggested that this conflict be settled once and for all. The [SCO.Monarch.Dynasty.GetName]s will marry a member of the [Root.Monarch.Dynasty.GetName] dynasty and the Jarldom of Orkney will be pawned and then transferred to the Scots.\nOrkney remains one of the highest ranked titles in our Kingdom however, one that has at times been a stepping stone to the Norwegian throne. If we give up these islands we will have surrendered the right to rule our former possessions forever.
+** Trigger:
+*** Year is at least 1460
+*** Year is less than 1475
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Norway
+***** Is not the lesser partner in a union
+**** Senior union partner over 0 "Norway
+*** 0 "Scotland exists
+*** 0 "Orkney:
+**** The province is owned by 0 "Norway
+**** Controlled by 0 "Norway
+*** 0 "Scotland:
+**** Any of the following:
+***** Owns 1 "Aberdeen
+***** Owns 0 "Inverness
+***** Owns 1 "Outer Hebrides
+***** Owns 0 "Sutherland
+**** Not at war with our country
+** Mean time to happen
+*** Base mean time to happen of 78 months
+** Option: 0 "Let us end this conflict.:
+*** AI chance:
+**** Base chance of 90
+**** Multiplies value by 0.01:
+***** Country is 0 "Norway
+*** 0 "Scotland:
+**** Gets the country event:
+***** ID is flavor_nor.6
+*** If:
+**** Limited to:
+***** Country is not 0 "Norway
+**** Tooltip:
+***** 0 "Norway:
+****** Adds the opinion modifier "0 "Gave Away Orkney" towards our country
+*** Tooltip:
+**** 0 "Orkney:
+***** Cedes province to 0 "Scotland
+***** Removes core on 0 "Norway
+**** 0 "Scotland:
+***** Adds the opinion modifier "0 "Strategic Marriage" towards our country
+*** If:
+**** Limited to:
+***** Owns 0 "Shetland
+**** Tooltip:
+***** 0 "Shetland:
+****** Cedes province to 0 "Scotland
+****** Removes core on 0 "Norway
+*** Tooltip:
+**** Changes treasury by 200 ducats
+**** add_truce_with = 0 "Scotland
+*** If:
+**** Limited to:
+***** Has no royal marriage with 0 "Scotland
+**** Tooltip:
+***** Creates a royal marriage with 0 "Scotland
+** Option: 0 "We will never give up our claim to these lands!:
+*** AI chance:
+**** Base chance of 10
+*** 0 "Norway:
+**** If:
+***** Limited to:
+****** is_permanent_claim_false = 253
+***** add_permanent_claim = 253
+**** If:
+***** Limited to:
+****** is_permanent_claim_false = 4110
+***** add_permanent_claim = 4110
+*** Hidden effect:
+**** Adds the opinion modifier "0 "Tensions Over the Hebrides" towards 0 "Scotland
+*** 0 "Scotland:
+**** If:
+***** Limited to:
+****** 0 "Orkney:
+******* is_permanent_claim_false = 0 "Scotland
+***** add_permanent_claim = 369
+**** If:
+***** Limited to:
+****** 0 "Shetland:
+******* The province is owned by 0 "Norway
+******* is_permanent_claim_false = 0 "Scotland
+***** add_permanent_claim = 1978
+**** Adds the opinion modifier "0 "Tensions Over the Hebrides" towards our country
+* Gets the country event:
+** ID is flavor_nor.6
+** title = 0 "Earldom of Orkney
+** desc = 0 "Ever since the 13th century treaty of Perth, Scotland has been obligated to pay a yearly sum to the Norwegian Kingdom in exchange for control of the Norwegian Hebrides. These payments are by now long overdue, however, and this has been the cause for tensions on and off. [From.GetName] has now suggested settling this conflict once and for all. The [Root.Monarch.Dynasty.GetName]s will marry a member of the [From.Monarch.Dynasty.GetName] dynasty and the Jarldom of Orkney will be pawned and then transferred to us.\nOrkney is one of the highest-ranked titles in Norway and the one our own northern lands would fall under if controlled by Norway. If they give up these islands they will have surrendered the right to rule their former possessions forever.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "Make the deal!:
+*** AI chance:
+**** Base chance of 100
+*** If:
+**** Limited to:
+***** Our country:
+****** Country is not 0 "Norway
+**** 0 "Norway:
+***** Gets the country event:
+****** ID is flavor_nor.7
+*** Tooltip:
+**** 0 "Norway:
+***** 0 "Orkney:
+****** Cedes province to 0 "Scotland
+****** Gives 0 "Scotland core on the province
+****** Removes core on 0 "Norway
+**** If:
+***** Limited to:
+****** 0 "Norway:
+******* Owns 0 "Shetland
+***** 0 "Norway:
+****** 0 "Shetland:
+******* Cedes province to 0 "Scotland
+******* Gives 0 "Scotland core on the province
+******* Removes core on 0 "Norway
+**** Our country:
+***** add_truce_with = our country
+*** Adds the opinion modifier "0 "Strategic Marriage" towards our country
+*** If:
+**** Limited to:
+***** Has no royal marriage with our country
+**** Creates a royal marriage with our country
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+***** Is not in regency
+***** has_consort_false = no
+***** has_government_attribute = queen
+**** define_consort:
+***** country_of_origin = our country
+***** Follows our country's religion
+***** Culture is the same as our country
+*** Changes treasury by -100 ducats
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_nor.8
+** Option: 0 "We would rather settle this with swords in hand.:
+*** AI chance:
+**** Base chance of 0
+*** Changes prestige by 5
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_nor.9
+*** Tooltip:
+**** 0 "Norway:
+***** 0 "Norway:
+****** If:
+******* Limited to:
+******** is_permanent_claim_false = 253
+******* add_permanent_claim = 253
+****** If:
+******* Limited to:
+******** is_permanent_claim_false = 4110
+******* add_permanent_claim = 4110
+*** 0 "Norway:
+**** Adds the opinion modifier "0 "Tensions Over the Hebrides" towards our country
+* Gets the country event:
+** ID is flavor_nor.7
+** title = 0 "Jarldom of Orknøyene
+** desc = 0 "Ever since the 13th century treaty of Perth, Scotland has been obligated to pay a yearly sum to the Norwegian Kingdom in exchange for control of the Norwegian Hebrides. These payments are by now long overdue, however, and this has been the cause for tensions on and off. Regardless of our ancestral claims, however, our new overlords have seen fit to end this conflict forever. The [SCO.Monarch.Dynasty.GetName]s will marry into their dynasty and the Jarldom of Orkney will be pawned and then transferred to the Scots.\nOrkney remains one of the highest-ranked titles in our Kingdom, one that has often been a stepping stone to the Norwegian throne. If we give up these islands we will have surrendered the right to rule our former possessions forever.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "It has to be done.:
+*** AI chance:
+**** Base chance of 100
+*** 0 "Orkney:
+**** Cedes province to 0 "Scotland
+**** Gives 0 "Scotland core on the province
+**** Removes core on 0 "Norway
+*** If:
+**** Limited to:
+***** Owns 0 "Shetland
+**** 0 "Shetland:
+***** Cedes province to 0 "Scotland
+***** Gives 0 "Scotland core on the province
+***** Removes core on 0 "Norway
+*** Hidden effect:
+**** overlord:
+***** ROOT:
+****** Adds the opinion modifier "0 "Gave Away Orkney" towards PREV
+*** AI chance:
+**** Base chance of 0
+** Option: 0 "We will never surrender!:
+*** overlord:
+**** 0 "Norway:
+***** Declares war on 0 "Independence using the PREV casus belli
+**** Gets the country event:
+***** ID is flavor_nor.10
+*** If:
+**** Limited to:
+***** is_permanent_claim_false = 253
+**** add_permanent_claim = 253
+*** If:
+**** Limited to:
+***** is_permanent_claim_false = 4110
+**** add_permanent_claim = 4110
+*** 0 "Scotland:
+**** Adds the opinion modifier "0 "Tensions Over the Hebrides" towards our country
+**** If:
+***** Limited to:
+****** 0 "Orkney:
+******* is_permanent_claim_false = 0 "Scotland
+***** add_permanent_claim = 369
+**** If:
+***** Limited to:
+****** 0 "Shetland:
+******* The province is owned by our country
+******* is_permanent_claim_false = 0 "Scotland
+***** add_permanent_claim = 1978
+* Gets the country event:
+** ID is flavor_nor.8
+** title = 0 "Scotland Accepts
+** desc = 0 "We have foregone the ancestral Norwegian claims to the Hebrides, Orkney Islands and any other part of the Highlands. Relations with the Scots have never been better.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "It is done.:
+*** Changes treasury by 200 ducats
+*** Our country:
+**** Adds the opinion modifier "0 "Strategic Marriage" towards our country
+**** add_truce_with = our country
+*** If:
+**** Limited to:
+***** Has no royal marriage with our country
+**** Creates a royal marriage with our country
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+***** 0 "Scotland:
+****** Is not in regency
+****** has_consort_false = no
+***** has_government_attribute = queen
+**** 0 "Scotland:
+***** define_consort:
+****** country_of_origin = our country
+****** Culture is the same as our country
+****** Follows our country's religion
+*** If:
+**** Limited to:
+***** Country is 0 "Norway
+**** 0 "Orkney:
+***** Cedes province to 0 "Scotland
+***** Gives 0 "Scotland core on the province
+***** Removes core on 0 "Norway
+**** If:
+***** Limited to:
+****** Owns 0 "Shetland
+***** 0 "Shetland:
+****** Cedes province to 0 "Scotland
+****** Gives 0 "Scotland core on the province
+****** Removes core on 0 "Norway
+**** If:
+***** Limited to:
+****** has_estate = estate_nobles
+***** add_estate_loyalty:
+****** estate = estate_nobles
+****** loyalty = -10
+* Gets the country event:
+** ID is flavor_nor.9
+** title = 0 "Scotland Refuses
+** desc = 0 "The Scots have refused our deal to settle the conflicting claims in the Hebrides and Orkney Islands. As a result tension is on the rise again.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "We will never surrender!:
+*** 0 "Norway:
+**** If:
+***** Limited to:
+****** is_permanent_claim_false = 253
+***** add_permanent_claim = 253
+**** If:
+***** Limited to:
+****** is_permanent_claim_false = 4110
+***** add_permanent_claim = 4110
+*** 0 "Scotland:
+**** Adds the opinion modifier "0 "Tensions Over the Hebrides" towards our country
+* Gets the country event:
+** ID is flavor_nor.10
+** title = 0 "Norway Deposes [Root.Monarch.GetName]!
+** desc = 0 "Rather than give up their claims to the Scottish islands the Norwegian nobility are rebelling against their rightful King. They have elected a Norwegian noble as their new ruler.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "I thought they would never dare!:
+*** Changes prestige by -10
+* Gets the country event:
+** ID is flavor_nor.11
+** title = 0 "Bergen Riots
+** desc = 0 "Olav Nilsson Skanke, popular commander of the Bergenhus fortress and a sworn enemy of the Hanseatic League in Norway has been killed by local merchants. Despite his long history of service to the crown Olav was also a pirate, hunting down Hanseatic ships all over the North Sea. In order to eliminate this threat to their interests the German merchants instigated a riot, cornering Olav in a local abbey and then burning it to the ground.\nOlav met his fate in the flames together with monks, local burghers and the Bishop of Bergen. Needless to say this is an event that could enflame the already strongly anti-Hanseatic Scandinavian disposition.
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1450
+*** Year is less than 1500
+*** 1 "Bergenhus:
+**** country_or_vassal_holds = our country
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Norway
+***** Is not the lesser partner in a union
+**** Senior union partner over 0 "Norway
+*** 0 "Lübeck exists
+*** Not at war with 0 "Lübeck
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** Country is 0 "Norway
+***** Changes stability by -1
+** Option: 0 "Nothing could be done really...:
+*** AI chance:
+**** Base chance of 70
+*** Changes prestige by -10
+*** Hidden effect:
+**** 0 "Lübeck:
+***** Gets the country event:
+****** ID is flavor_nor.14
+*** If:
+**** Limited to:
+***** Country is not 0 "Norway
+**** 0 "Norway:
+***** Gets the country event:
+****** ID is flavor_nor.12
+**** Tooltip:
+***** 0 "Norway:
+****** Adds the opinion modifier "0 "Hansa-Kalmar Union Conflict" towards our country
+** Option: 0 "This is the end of the Hanseaten in Bergen!:
+*** AI chance:
+**** Base chance of 30
+*** Changes treasury by -75 ducats
+*** 0 "Norway:
+**** Gets the country event:
+***** ID is flavor_nor.13
+*** 0 "Lübeck:
+**** Adds the opinion modifier "0 "Hansa-Kalmar Union Conflict" towards our country
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_nor.15
+*** Every known country:
+**** Limited to:
+***** is_in_trade_league_with = 0 "Lübeck
+**** Adds the opinion modifier "0 "Hansa-Kalmar Union Conflict" towards our country
+*** 1 "Bergenhus:
+**** Adds trade modifier:
+***** Affecting 0 "Lübeck
+***** Lasting 7300 days
+***** Changing trade power by -5
+***** Named "0 "Loss of Influence in Bergen"
+* Gets the country event:
+** ID is flavor_nor.12
+** title = 0 "Bergen Riots
+** desc = 0 "Olav Nilsson Skanke, popular commander of the Bergenhus fortress and a sworn enemy of the Hanseatic League in Norway has been killed by local merchants. Despite his long history of service to the crown Olav was also a pirate, hunting down Hanseatic ships all over the North Sea. In order to eliminate this threat to their interests the German merchants instigated a riot, cornering Olav in a local abbey and then burning it to the ground.\nOlav met his fate in the flames together with monks, local burghers and the Bishop of Bergen. The apparent unwillingness of [Root.Monarch.GetName] to reprimand the Hanseatics has further fueled the fires of Norwegian discontent.
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "This is an outrage!:
+*** Changes stability by -1
+*** overlord:
+**** Adds the opinion modifier "0 "Hansa-Kalmar Union Conflict" towards our country
+* Gets the country event:
+** ID is flavor_nor.13
+** title = 0 "Bergen Riots
+** desc = 0 "Olav Nilsson Skanke, popular commander of the Bergenhus fortress and a sworn enemy of the Hanseatic League in Norway has been killed by local merchants. Despite his long history of service to the crown Olav was also a pirate, hunting down Hanseatic ships all over the North Sea. In order to eliminate this threat to their interests the German merchants instigated a riot, cornering Olav in a local abbey and then burning it to the ground.\nOlav met his fate in the flames together with monks, local burghers and the Bishop of Bergen. Responding to the widespread anti-Hanseatic sentiments [Root.Monarch.GetName] has ordered the League to be expelled from Bergen and its vicinity.
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "This is an outrage!:
+*** Changes stability by -1
+*** overlord:
+**** Adds the opinion modifier "0 "Harsh on the Hansa" towards our country
+* Gets the country event:
+** ID is flavor_nor.14
+** title = 0 "Bergen Riots
+** desc = 0 "Olav Nilsson Skanke, popular commander of the Bergenhus fortress and a sworn enemy of the Hanseatic League in Norway has been killed by local merchants. Despite his long history of service to the crown Olav was also a pirate, hunting down Hanseatic ships all over the North Sea. In order to eliminate this threat to their interests the German merchants instigated a riot, cornering Olav in a local abbey and then burning it to the ground.\nOlav met his fate in the flames together with monks, local burghers and the Bishop of Bergen. The apparent unwillingness of [Root.Monarch.GetName] to reprimand the Hanseatics has further fueled the fires of Norwegian discontent.
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "Excellent...:
+*** Changes prestige by 5
+* Gets the country event:
+** ID is flavor_nor.15
+** title = 0 "Bergen Riots
+** desc = 0 "Olav Nilsson Skanke, popular commander of the Bergenhus fortress and a sworn enemy of the Hanseatic League in Norway has been killed by local merchants. Despite his long history of service to the crown Olav was also a pirate, hunting down Hanseatic ships all over the North Sea. In order to eliminate this threat to their interests the German merchants instigated a riot, cornering Olav in a local abbey and then burning it to the ground.\nOlav met his fate in the flames together with monks, local burghers and the Bishop of Bergen. Responding to the widespread anti-Hanseatic sentiments [Root.Monarch.GetName] has ordered the League to be expelled from Bergen and its vicinity.
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "This is an outrage!:
+*** Tooltip:
+**** 1 "Bergenhus:
+***** Adds trade modifier:
+****** Affecting 0 "Lübeck
+****** Lasting 7300 days
+****** Changing trade power by -5
+****** Named "0 "Loss of Influence in Bergen"
+*** Adds the opinion modifier "0 "Hansa-Kalmar Union Conflict" towards our country
+* Gets the country event:
+** ID is flavor_nor.16
+** title = 0 "Hollendertiden
+** desc = 0 "Timber has always been a major export of the Norwegian economy and trade ships from the Low Countries have become an increasingly common sight along the Norwegian coastline. Unlike the Hanseatic traders who have dominated our economy for centuries the Dutch are content to trade without meddling in local businesses or breaking the laws of the land.\nWith an ever growing demand from the Dutch shipbuilders the timber industry in Norway could well grow to be the biggest in Europe. As a seafaring and shipbuilding people we can undoubtedly learn a lot from the Dutch entrepreneurs by aligning with them against the Germans.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1500
+*** Year is less than 1600
+*** Any of the following:
+**** Country is 0 "Norway
+**** All of the following:
+***** was_tag = 0 "Norway
+***** 0 "Norway does not exist
+***** Country is 0 "Scandinavia
+*** 0 "Netherlands exists
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "The time of the Dutch has come.:
+*** Sets the country flag hollendertiden
+*** Adds the modifier "0 "Hollendertiden" for 50 years:
+**** -10% diplomatic technology cost
+**** Trade efficiency is at least 10%
+* Gets the country event:
+** ID is flavor_nor.17
+** title = 0 "In Search for Iron and Copper
+** desc = 0 "While Norwegian peasants have extracted copper and iron for centuries on a small scale there are no great iron or copper mines in our lands. This is contrasted by the thriving mining sector in the Swedish realm where great quantities of both metals have been mined, cast, and exported since the Middle Ages.\nThe Crown has recently acquired many pieces of land previously under the control of the Church and Nobility who did not have resources or inclination to search for metals. Let us invite experienced prospectors and miners and see what treasures lie beneath these mountains.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Norway
+**** Country is 0 "Denmark
+**** Country is 0 "Scandinavia
+*** Owns 0 "Akershus
+*** Owns 0 "Trøndelag
+*** Year is at least 1550
+*** Year is less than 1600
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Let us see what the mountains hide.:
+*** AI chance:
+**** Base chance of 1
+*** Modifies treasury by -0.5 years worth of income
+*** Adds the modifier "0 "Prospecting the Scandes" for 80 years:
+**** -5% global tax modifier
+** Option: 0 "Timber and fish have been good enough for our ancestors.:
+*** AI chance:
+**** Base chance of 0
+*** Changes prestige by 5
+* Gets the country event:
+** ID is flavor_nor.18
+** title = 0 "Prospectors Return
+** desc = 0 "Our prospectors have found large quantities of iron, lead and copper in the area between Bratsberg and Oslo. Developing the nearby villages into proper mining towns would be costly but the dream of becoming self-sufficient on weapon-related metals now seems to be within reach.
+** picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Has the country modifier "0 "Prospecting the Scandes"
+*** Does not have the country flag nor_mines_found
+*** Owns 0 "Akershus
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag nor_mines_found
+** Mean time to happen
+*** Base mean time to happen of 240 months
+** Option: 0 "We need iron for our armies!:
+*** AI chance:
+**** Base chance of 41
+*** 0 "Akershus:
+**** Changes trade goods produced to 0 "Iron
+*** Changes administrative power stored by -75
+** Option: 0 "We need copper for our guns!:
+*** AI chance:
+**** Base chance of 41
+*** 0 "Akershus:
+**** Changes trade goods produced to 0 "Copper
+*** Changes administrative power stored by -50
+** Option: 0 "Mining will have to remain a small-scale enterprise.:
+*** AI chance:
+**** Base chance of 18
+*** 0 "Akershus:
+**** add_base_production = 1
+* Gets the country event:
+** ID is flavor_nor.19
+** title = 0 "Copper found at Røros
+** desc = 0 "Prospectors have found large quantities of copper in Røros in Trøndelag. If we are willing to invest we may turn the nearby villages into proper mining towns and create a large-scale copper mine here.
+** picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Has the country modifier "0 "Prospecting the Scandes"
+*** Owns 0 "Trøndelag
+** Mean time to happen
+*** Base mean time to happen of 240 months
+** Option: 0 "Invest in the Røros Copper Mines.:
+*** AI chance:
+**** Base chance of 75
+*** 0 "Trøndelag:
+**** Changes trade goods produced to 0 "Copper
+*** Changes administrative power stored by -50
+** Option: 0 "Copper mining will have to remain a small-scale enterprise.:
+*** AI chance:
+**** Base chance of 25
+*** 0 "Trøndelag:
+**** add_base_production = 1
+* Gets the country event:
+** ID is flavor_nor.20
+** title = 0 "Silver found in Sandsvær
+** desc = 0 "While some claim the locals have known all along, our miners have now found promising quantities of silver in Sandsvær. The site of the would-be mine is both distant and desolate and there are few with the necessary expertise to develop it within our borders. If we are to be able to benefit from our findings we will have to invite foreigners from silver rich regions in Germany and Central Europe.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Has the country modifier "0 "Prospecting the Scandes"
+***** Has the country flag nor_mines_found
+**** All of the following:
+***** Any of the following:
+****** Country is 0 "Norway
+****** All of the following:
+******* was_tag = 0 "Norway
+******* 0 "Norway does not exist
+******* Country is 0 "Scandinavia
+***** Year is at least 1600
+***** Year is less than 1620
+*** Owns 0 "Akershus
+** Mean time to happen
+*** Base mean time to happen of 240 months
+** Option: 0 "This site shall from now on be known as Kongsberg!:
+*** AI chance:
+**** Base chance of 75
+*** Changes treasury by -300 ducats
+*** Changes administrative power stored by -50
+*** 0 "Akershus:
+**** Adds the modifier "0 "Kongsberg Silver Mine" for the rest of the campaign:
+***** tax_income = 5
+** Option: 0 "Silver Mining will have to remain a small-scale enterprise.:
+*** AI chance:
+**** Base chance of 25
+*** 0 "Akershus:
+**** add_base_production = 1
+* Gets the country event:
+** ID is flavor_nor.21
+** title = 0 "Peter Tordenskiold
+** desc = 0 "Through daring attacks and skillful maneuvers, Peter Jansen Wessel has been making a name for himself as a promising captain in the Norwegian navy. Wessel's unwillingness to ever back down from an engagement, regardless of the sizes of the involved ships or any other circumstance has catapulted him through the ranks. Today he stands before [Root.Monarch.GetName] to be ennobled for his great exploits on the open seas.
+** picture = NAVAL_MILITARY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Norway
+**** All of the following:
+***** was_tag = 0 "Norway
+***** 0 "Norway does not exist
+***** Country is 0 "Scandinavia
+*** Has at least 3 ports
+*** Year is at least 1711
+*** Year is less than 1720
+** Mean time to happen
+*** Base mean time to happen of 57 months
+** Option: 0 "Henceforth he shall be known as 'Tordenskiold' - Thundershield.:
+*** Creates an admiral:
+**** Named "Peter Tordenskiold"
+**** 2 skill in fire
+**** 6 skill in shock
+**** 5 skill in manuever
+* Gets the country event:
+** ID is flavor_nor.22
+** title = 0 "Cort Adeler
+** desc = 0 "At the age of 15 young skipper's son Cort Adeler left Norway behind for the open seas and he has since made a career as a successful merchant captain in the lowlands, the Mediterranean and even as far away as the Coromandel Coast in India. Having also acted as captain in times of war in Dutch, English, Venetian and Turkish naval engagements, Adeler is in possession of experience and contacts that few in his generation posses. Through his various mercantile enterprises he has acquired a considerable personal fortune, some of which he has invested in his home country, especially the estates he has begun to develop outside the Norwegian city of Skien.\nA man of Adelers caliber could surely be put to good use in the service of the state.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Norway
+**** All of the following:
+***** was_tag = 0 "Norway
+***** 0 "Norway does not exist
+***** Country is 0 "Scandinavia
+*** Has at least 3 ports
+*** Year is at least 1650
+*** Year is less than 1675
+** Mean time to happen
+*** Base mean time to happen of 75 months
+** Option: 0 "A remarkable man!:
+*** Creates an advisor of the 0 "Naval Reformer type:
+**** Named "Cort Adeler"
+**** Culture is 0 "Norwegian
+**** discount = yes
+**** With a skill level of 3
+* Gets the country event:
+** ID is flavor_nor.23
+** title = 0 "Great Fire of Oslo
+** desc = 0 "For three days fires have ravaged the timber city of Oslo and now all but a few buildings in our country's capital lie in ashes. While fire has haunted Oslo before the destruction we face now is so final that it has been suggested we should relocate the city entirely as we rebuild. Instead of building in timber and awaiting the next catastrophe it has been suggested that we rebuild closer to Akershus fortress, using sounder techniques of construction and city planning as befits a capital of our age.\nRebuilding closer to Akershus will also allow us to properly fortify the city, which can be of great benefit in these times. In practice previous rulers have found it hard to prevent the citizens of Oslo to rebuild in whichever materials and mode they wish however, so a proper renovation is likely to be very costly.
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Norway
+**** Country is 0 "Denmark
+**** Country is 0 "Scandinavia
+*** Owns 0 "Akershus
+*** Year is at least 1610
+*** Year is less than 1650
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "We must found a new city!:
+*** AI chance:
+**** Base chance of 100
+*** Modifies treasury by -0.75 years worth of income
+*** If:
+**** Limited to:
+***** Country is 0 "Denmark
+**** 0 "Akershus:
+***** Changes province capital name to Christiania
+*** 0 "Akershus:
+**** Adds the modifier "0 "Rebuilding Oslo" until the end of the campaign:
+***** -40% provincial tax income
+***** local_development_cost = -0.1
+***** +10% local defensiveness
+** Option: 0 "What was lost is gone, let people rebuild as they please.:
+*** AI chance:
+**** Base chance of 0
+*** 0 "Akershus:
+**** Changes base tax by -1
+**** add_base_production = -1
+* Gets the country event:
+** ID is flavor_nor.24
+** title = 0 "Dutch-Norwegian ties Strengthen
+** desc = 0 "Over time the extensive integration of Norway into the economy of the rich cities in the Low Countries have led to a growing shipbuilding industry at home. Norwegian cities strongly tied to the timber trade are quickly growing bigger than ever before, with Norwegian, Dutch, Danish, Scottish, English and Swedish merchants blending together to create a cosmopolitan maritime environment.\nYoung Norwegian men have also begun to migrate in increasing numbers to the Low Countries. Some settle there while others continue onto the open seas. The growing number of Norwegian expatriates and those who eventually return to our lands are together immersing our country ever more deeply into the emerging global economy.
+** picture = STREET_SPEECH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Has at least 1 ports
+*** Has the country flag hollendertiden
+*** Does not have the country modifier "0 "Hollendertiden"
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "The sea is our future and our past.:
+*** If:
+**** Limited to:
+***** Owns 1 "Bergenhus
+**** 1 "Bergenhus:
+***** Changes base tax by 1
+***** add_base_production = 1
+*** If:
+**** Limited to:
+***** Does not own 1 "Bergenhus
+**** Random owned province:
+***** Limited to:
+****** Is coastal
+****** is_in_capital_area = yes
+***** Changes base tax by 1
+***** add_base_production = 1
+*** Adds the modifier "0 "Dutch-Norwegian Ties" for 20 years:
+**** global_institution_spread = 0.1
+**** Trade efficiency is at least 10%
+**** -10% ship cost
+* Gets the country event:
+** ID is flavor_nor.25
+** title = 0 "Population Boom
+** desc = 0 "Centuries ago the Black Death devastated our lands, killing over 60% of our population, leaving large parts of the countryside entirely desolate and crushing the growing cities of the late Middle Ages. Politically this made union with the other Nordic countries a necessity and economically it left us the poorest of the members. Over time, however, the country has begun to heal. Large areas of open land and a rising economy has encouraged migration into Norway and made it easier for second or third sons to claim more lands for their families. While many on the coasts chose to migrate to the Low Countries the Norwegian inlands are experiencing an unprecedented level of population growth.
+** picture = STREET_SPEECH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Norway
+**** All of the following:
+***** was_tag = 0 "Norway
+***** 0 "Norway does not exist
+***** Country is 0 "Scandinavia
+*** Year is at least 1620
+*** Year is less than 1700
+*** Owns 0 "Akershus
+*** Owns 0 "Hålogaland
+*** Owns 1 "Opplanda
+*** Owns 0 "Agdesiden
+** Mean time to happen
+*** Base mean time to happen of 240 months
+** Option: 0 "Our time has come!:
+*** 0 "Akershus:
+**** Changes base tax by 2
+**** add_base_manpower = 2
+**** add_base_production = 1
+*** 0 "Hålogaland:
+**** Changes base tax by 1
+**** add_base_production = 1
+*** 1 "Opplanda:
+**** Changes base tax by 2
+**** add_base_manpower = 2
+**** add_base_production = 2
+*** 0 "Agdesiden:
+**** Changes base tax by 1
+**** add_base_manpower = 1
+* Gets the country event:
+** ID is flavor_nor.26
+** title = 0 "Tensions between Miners and Locals
+** desc = 0 "The influx of German miners and prospectors has in short time made small mining communities spring up all around our country even in areas where mining will never be the main source of income. These communities are, however, almost entirely small German colonies with German laws, customs and population. Surrounding Norwegian villages are required to provide the miners with food and other things they might need and this has over time lead to some tensions developing between the locals and the newcomers. In [hjartdal_standin.GetName] village upon village have begun to take up arms against the Germans, demanding that they leave and that Norwegian laws and customs be upheld.
+** picture = BAD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Norway
+**** Country is 0 "Denmark
+**** Country is 0 "Scandinavia
+*** Any owned province:
+**** Culture is 0 "Norwegian
+**** The province is not the capital of the country
+**** In the continent 0 "Europe
+*** Has the country modifier "0 "Prospecting the Scandes"
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Culture is 0 "Norwegian
+****** The province is not the capital of the country
+****** In the continent 0 "Europe
+***** save_event_target_as = hjartdal_standin
+***** Sets the province flag first_anti_miner_revolt
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "These peasants need to learn their place!:
+*** Random owned province:
+**** Limited to:
+***** Does not have the province flag first_anti_miner_revolt
+***** Culture is 0 "Norwegian
+***** The province is not the capital of the country
+***** In the continent 0 "Europe
+**** Spawns revolt of size 1 of 0 "Peasant rebels
+*** event_target:hjartdal_standin:
+**** Spawns revolt of size 1 of 0 "Peasant rebels
+**** Removes the province flag first_anti_miner_revolt
+* Gets the country event:
+** ID is flavor_nor.27
+** title = 0 "Proclamation in [hamar_or_standin.GetCapitalName]
+** desc = 0 "Worried about what they perceive to be an increasing encroachment on their privileges by the Danish Crown members of the Norwegian council and other prominents have gathered in [hamar_or_standin.GetCapitalName] to work out a number of demands upon the Crown for their continued support for the Union.\nThe demands put into print at [hamar_or_standin.GetCapitalName] include the restoration of lost Norwegian lands, affirming the traditional rights of the Norwegian church and nobility, strengthening the power of the Norwegian royal council, and in general affirming Norway's role as an equal party of Denmark in our Union. The intent is for the list of demands to be sent to [Root.Monarch.GetName] to be made part of [Root.Monarch.GetHerHis] traditional Håndfestning, the Electoral Capitulation, as [Root.Monarch.GetTitle] of Norway.
+** picture = BAD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Trigger:
+*** Country is 0 "Norway
+*** Year is at least 1500
+*** Year is less than 1550
+*** 0 "Denmark:
+**** Senior union partner over 0 "Norway
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** Owns 1 "Opplanda
+***** 1 "Opplanda:
+****** save_event_target_as = hamar_or_standin
+**** If:
+***** Limited to:
+****** Does not own 1 "Opplanda
+***** Random owned province:
+****** Limited to:
+******* is_in_capital_area = yes
+****** save_event_target_as = hamar_or_standin
+** Option: 0 "An excellent initiative!:
+*** AI chance:
+**** Base chance of 70
+*** 0 "Denmark:
+**** Gets the country event:
+***** ID is flavor_nor.28
+** Option: 0 "We would do better not to question Danish rule...:
+*** AI chance:
+**** Base chance of 30
+*** Changes stability by 1
+*** Changes prestige by -10
+* Gets the country event:
+** ID is flavor_nor.28
+** title = 0 "Demands of the Norwegian Council
+** desc = 0 "Together with a number of important persons in the realm the Norwegian Royal Council has sent us a list of demands that they feel must be met for Norway to accept the accession of [Root.Monarch.GetName]. According to the Council members the Danish crown have continued to trample the rights of the Norwegian people for too long and this must be reversed. If we do not agree they threaten to use their de jure power to elect another ruler.
+** picture = BAD_WITH_MONARCH_eventPicture
+** is_triggered_only = yes
+** Option: 0 "We must refuse these preposterous demands!:
+*** AI chance:
+**** Base chance of 20
+*** Changes prestige by 10
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_nor.30
+**** Adds 25 liberty desire
+** Option: 0 "These are minor things, let us agree to preserve the union.:
+*** AI chance:
+**** Base chance of 80
+*** Changes administrative power stored by -50
+*** Changes diplomatic power stored by -50
+*** Changes military power stored by -50
+*** Our country:
+**** Adds -25 liberty desire
+**** Gets the country event:
+***** ID is flavor_nor.29
+* Gets the country event:
+** ID is flavor_nor.29
+** title = 0 "[Root.Monarch.GetName] agrees to our demands!
+** desc = 0 "The Danes have agreed to our demands. Surely this will safeguard our independence going forward!
+** picture = GOOD_WITH_MONARCH_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Excellent!:
+*** Changes administrative power stored by 50
+*** Changes diplomatic power stored by 50
+*** Changes military power stored by 50
+* Gets the country event:
+** ID is flavor_nor.30
+** title = 0 "[Root.Monarch.GetName] refuses to meet the [hamar_or_standin.GetCapitalName] Demands
+** desc = 0 "A messenger from the Danish court has arrived with their reply to our demands. [Root.Monarch.GetName] refuses to meet any of them and has instead made a proposal of his own that addresses very few of our points of concern. Some feel we have no choice but to elect another ruler as is our right.
+** picture = BAD_WITH_MONARCH_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Let us elect our own king.:
+*** AI chance:
+**** Base chance of 80
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_nor.31
+**** Tooltip:
+***** 0 "Norway:
+****** Declares war on 0 "Independence using the PREV casus belli
+** Option: 0 "We must preserve the Union.:
+*** AI chance:
+**** Base chance of 20
+*** Changes prestige by -10
+*** Changes stability by -1
+* Gets the country event:
+** ID is flavor_nor.31
+** title = 0 "Revolt in Norway
+** desc = 0 "The Norwegian Royal Council has defied [Root.Monarch.GetName] and elected another man to lead their kingdom in the hopes of ending Danish rule forever.
+** picture = SIEGE_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Preposterous!:
+*** 0 "Norway:
+**** Declares war on 0 "Independence using the our country casus belli

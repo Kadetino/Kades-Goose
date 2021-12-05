@@ -1,0 +1,32 @@
+** Trigger:
+*** Province is 0 "Api-Api
+*** 0 "Sulu does not exist
+*** Year is at least 1450
+*** 0 "Sulu:
+**** Is uncolonized
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Let us hope the Sultan is reasonable, or the world may see its fall.:
+*** 0 "Sulu:
+**** Gives 0 "Sulu core on the province
+**** Cedes province to 0 "Sulu
+**** Changes trade goods produced to 0 "Gems
+*** moluccas_region:
+**** Limited to:
+***** Is colonized
+**** The owner of the province:
+***** Gets the country event:
+****** ID is flavor_sul.2
+* Gets the country event:
+** ID is flavor_sul.2
+** title = 0 "Rise of Sulu
+** desc = 0 "The islands in the Sea of Sulu have been inhabited for centuries, divided into smaller kingdoms. These lands are now united under their first Sultan. Known as a respected scholar of Islam, the Sultan has strengthened both political and religious institutions in the islands, which hold one of the oldest mosques in the region. Through inter-marriage, charisma and innovative diplomacy, they are now united by a common code of laws. The world has seen the rise of the Sultanate of Sulu.
+** picture = NAVAL_MILITARY_eventPicture
+** is_triggered_only = yes
+** Trigger:
+*** Does not own 0 "Api-Api
+** Option: 0 "Let us hope the Sultan is reasonable, or the world may see its fall.:
+*** Tooltip:
+**** 0 "Sulu:
+***** Gives 0 "Sulu core on the province
+***** Cedes province to 0 "Sulu

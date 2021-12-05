@@ -1,0 +1,129 @@
+** is_triggered_only = yes
+** Option: 0 "We must honor our legacy.:
+*** override_country_name = 0 "Pueblo
+*** Sets the country flag is_pue_flag
+*** Changes prestige by 50
+** Option: 0 "We shall keep our own name.:
+*** Changes prestige by 50
+* Gets the country event:
+** ID is flavor_pue.2
+** title = 0 "Start of the Pueblo Revolt
+** desc = 0 "They arrived with the first sun, their pale faces turned almost red by its rays. At first, they tried to talk to us; then, we saw their metal weapons. Years have passed since that first encounter and our land has been attacked, misused and insulted. Our people have seen soldiers, missionaries and settlers come and go through their own houses. But now we have had enough.\nSome of our leaders have gained support from more than 40 of our villages and have waited, patiently, for the right moment to strike. Each morning they would untie a knot from a cord, and when the last one was to be untied, the fight should start.\nToday was that morning.
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Primary culture is 0 "Pueblo
+*** Has the DLC Leviathan
+*** Year is at least 1680
+*** Year is less than 1692
+*** Any known country:
+**** Technology group is 0 "Western
+**** Is not allied with our country
+**** Any of the following:
+***** Has an opinion of less than 0 with our country
+***** Owns core province 1 "Tachii'nii
+***** At war with our country
+** Immediate effects:
+*** If:
+**** Limited to:
+***** Country is not 0 "Pueblo
+**** Changes stability by -1
+** Mean time to happen
+*** Base mean time to happen of 1 days
+*** Multiplies value by 0.75:
+**** is_revolutionary = yes
+** Option: 0 "We shall expel these invaders!:
+*** Adds the modifier "1 "Po'pay's Rebellion" for 10 years:
+**** +10% land morale
+**** -5% infantry cost
+*** Sets the country flag pue_pueblo_revolt
+*** Creates a general:
+**** Named "Po'pay"
+**** 4 skill in shock
+**** 2 skill in fire
+**** 4 skill in manuever
+**** 3 skill in siege
+* Gets the country event:
+** ID is flavor_pue.3
+** title = 0 "End of the Pueblo Revolt
+** desc = 0 "Through the curse of several sieges and battles, we managed to expel the invaders and recover the rightful control of our lands. Our people have never felt prouder and the gods have blessed us with good weather and healthy crops. However, they have now returned. We recognised their pale faces approaching our villages like old corpses, their crooked smiles pointing towards our leader’s tent.\nBut they have come with a peace offer, a promise of clemency and protection, should we pledge allegiance to their king. [Root.Monarch.GetName] takes a moment before answering.
+** picture = WOUNDED_SOLDIERS_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Has the DLC Leviathan
+*** Primary culture is 0 "Pueblo
+*** Has the country flag pue_pueblo_revolt
+*** Any known country:
+**** Technology group is 0 "Western
+**** At war with our country
+** Mean time to happen
+*** Base mean time to happen of 6 months
+** Option: 0 "We shall accept their peace offer.:
+*** AI chance:
+**** Base chance of 90
+*** Trigger:
+**** War score is at least 50
+*** Adds the modifier "0 "End of the Revolt" for 10 years:
+**** -2 global unrest
+**** +0.5 army tradition
+** Option: 0 "Their armies have betrayed us!:
+*** Trigger:
+**** War score lower than least 50
+*** Changes military power stored by -20
+*** Every owned province:
+**** add_unrest = 1
+** Option: 1 "We should aim for a bloodless agreement.:
+*** Trigger:
+**** Any known country:
+***** Technology group is 0 "Western
+***** Is allied with our country
+*** Changes stability by 1
+* Gets the country event:
+** ID is flavor_pue.4
+** title = 1 "Eyes in the Deep
+** desc = 1 "Cliff Palace's walls had stood untouched for many decades, even centuries. Empty rooms, filled only with silence. But now we have come back to it, our children playfully running through its intricate corridors, laughter can be heard from every staircase. And they have found something: Colors red, green, white, yellow, brown, all of them used in marvelous murals that decorate the most important rooms. Most of them represent hunting scenes, feasts, dances, simple lines and spirals. But there is one that does not look quite like the others. A big spider sets eyes on the entrance.
+** picture = ARTWORK_eventPicture
+** Trigger:
+*** Has the DLC Leviathan
+*** Primary culture is 0 "Pueblo
+*** Owns core province 1 "Tachii'nii
+*** 1 "Tachii'nii:
+**** Has the  great project
+***** tier = 1
+*** Does not have the country modifier "0 "Spider Grandmother"
+** Mean time to happen
+*** Base mean time to happen of 240 months
+** Option: 0 "Such a magnificent painting! We should restore it.:
+*** Trigger:
+**** Does not have the country flag pue_restored_murals
+*** Changes treasury by -25 ducats
+*** Changes prestige by 5
+*** Adds the modifier "0 "Spider Grandmother" for 20 years:
+**** -5% technology cost
+*** Sets the country flag pue_restored_murals
+** Option: 1 "Our conservation efforts shall continue.:
+*** Trigger:
+**** Has the country flag pue_restored_murals
+*** Changes treasury by -50 ducats
+*** Changes prestige by 5
+*** Adds the modifier "0 "Spider Grandmother" for 20 years:
+**** -5% technology cost
+** Option: 0 "Let's ignore it.:
+*** Changes administrative power stored by 25
+* Gets the country event:
+** ID is flavor_pue.5
+** title = 0 "Ceremonial Dancers
+** desc = 1 "There is a small fire in the center of our village tonight. People sit around it and lively chat with their friends and relatives. The air is filled with the smell of recently cooked food and the sky is clear without a single cloud. Nights like these are the ones that feel most like home.\nBut tonight is not just a regular night. Soon after midnight, a group of masked men dance towards the fire and everyone stays silent. They dance, representing stories of times long past.
+** picture = FEAST_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Trigger:
+*** Has the DLC Leviathan
+*** Primary culture is 0 "Pueblo
+*** Is not at war
+** Mean time to happen
+*** Base mean time to happen of 1 days
+** Option: 1 "It is indeed a wonderful night.:
+*** Adds the modifier "0 "Kachinas" for 10 years:
+**** +1% global missionary strength
+**** Follows the yes religion

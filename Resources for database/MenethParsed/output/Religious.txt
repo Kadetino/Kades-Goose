@@ -1,0 +1,1918 @@
+******** Trigger:
+********* Has the country modifier "0 "Counter-Reformation"
+********* Does not follow the 0 "Catholic religion
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: 0 "Time to Move On:
+********* Removes the country modifier "0 "Counter-Reformation"
+********* Adds the opinion modifier "0 "Disappointed Pope" from 0 "The Papal State
+******* Gets the country event:
+******** ID is 2051
+******** title = 0 "The Counter-Reformation Ends
+******** desc = 0 "The Counter-Reformation served its purpose, but the era of religious strife in Europe is coming to an end.
+******** picture = POPE_PREACHING_eventPicture
+******** major_false = no
+******** Trigger:
+********* Has the country modifier "0 "Counter-Reformation"
+********* The 0 "Protestant religion has existed for at least 150 years
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: 0 "Time to Move On:
+********* Removes the country modifier "0 "Counter-Reformation"
+******* Gets the country event:
+******** ID is 2052
+******** title = 0 "The Counter-Reformation Ends
+******** desc = 0 "With our new ideas of every men being equal without regard for their religion, the Counter-Reformation has come to an end in our country.
+******** picture = POPE_PREACHING_eventPicture
+******** major_false = no
+******** Trigger:
+********* Has the country modifier "0 "Counter-Reformation"
+********* Has the idea 0 "Liberté, Égalité, Fraternité
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: 0 "Time to Move On:
+********* Removes the country modifier "0 "Counter-Reformation"
+******* Gets the country event:
+******** ID is 2053
+******** title = 0 "The Counter-Reformation Ends
+******** desc = 0 "With our new ideas of religious tolerance towards heretics, the Counter-Reformation has come to an end in our country.
+******** picture = POPE_PREACHING_eventPicture
+******** major_false = no
+******** Trigger:
+********* Has the country modifier "0 "Counter-Reformation"
+********* Has the idea 0 "Ecumenism
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: 0 "Time to Move On:
+********* Removes the country modifier "0 "Counter-Reformation"
+******* Gets the province event:
+******** ID is 6163
+******** title = 0 "His Holiness is Concerned
+******** desc = 0 "Our Policy of tolerance to all faiths has led to some of our Catholic population deciding to embrace orthodoxy.
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Catholic religion
+********* The owner of the province:
+********** has_reform_false = papacy_reform
+********** Follows the 0 "Catholic religion
+********** 2 or more Orthodox provinces compared to state religion
+********* Any bordering province:
+********** Follows the 0 "Orthodox religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "I guess I shouldn't be surprised.:
+********* Changes religion to 0 "Orthodox
+******* Gets the province event:
+******** ID is 6164
+******** title = 0 "His Holiness is Outraged
+******** desc = 0 "Taking advantage of our tolerant society, people have decided to embrace the Reformed Faith. The Papal nuncio has already expressed to us the concern of the Church.
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* The 0 "Reformed religion is enabled
+********* Follows the 0 "Catholic religion
+********* The owner of the province:
+********** has_reform_false = papacy_reform
+********** Follows the 0 "Catholic religion
+********** 2 or more Reformed provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Reformed religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Hey, live and let live.:
+********* Changes religion to 0 "Reformed
+******* Gets the province event:
+******** ID is 6165
+******** title = 0 "His Holiness is Shocked
+******** desc = 0 "As we are an enlightened and tolerant society, some of our citizens have decided that the Catholic faith does not fit in with their current lifestyle choice and have decided instead to embrace Protestantism.
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* The 0 "Protestant religion is enabled
+********* Follows the 0 "Catholic religion
+********* The owner of the province:
+********** has_reform_false = papacy_reform
+********** Follows the 0 "Catholic religion
+********** 2 or more Protestant provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Protestant religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Well I am sure the Pope can live with this.:
+********* Changes religion to 0 "Protestant
+******* Gets the province event:
+******** ID is 6166
+******** title = 0 "The Orthodox Faith is Rocked
+******** desc = 0 "The Patriarch arrived today to express his anger that our policy of tolerance has allowed the schismatics who sacked holy Constantinople and abandoned the Roman Empire to spread their faith in our realm.
+******** picture = ORTHODOX_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Orthodox religion
+********* The owner of the province:
+********** Follows the 0 "Orthodox religion
+********** 2 or more Catholic provinces compared to state religion
+********* Any bordering province:
+********** Follows the 0 "Catholic religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Is it really that bad?:
+********* Changes religion to 0 "Catholic
+******* Gets the province event:
+******** ID is 6167
+******** title = 0 "The Patriarch is complaining
+******** desc = 0 "The Patriarch is concerned that we are showing too much tolerance when the news came the followers of Luther expanded their heretic beliefs in our realm.
+******** picture = ORTHODOX_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* The 0 "Protestant religion is enabled
+********* Follows the 0 "Orthodox religion
+********* The owner of the province:
+********** Follows the 0 "Orthodox religion
+********** 2 or more Protestant provinces compared to state religion
+********* Any bordering province:
+********** Follows the 0 "Protestant religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "These things happen.:
+********* Changes religion to 0 "Protestant
+******* Gets the province event:
+******** ID is 6168
+******** title = 0 "The Patriarch is concerned
+******** desc = 0 "The news has reached us today that Calvinism has spread in our realm. It seems that people are taking advantage of our tolerance to try out strange new faiths.
+******** picture = ORTHODOX_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* The 0 "Reformed religion is enabled
+********* Follows the 0 "Orthodox religion
+********* The owner of the province:
+********** Follows the 0 "Orthodox religion
+********** 2 or more Reformed provinces compared to state religion
+********* Any bordering province:
+********** Follows the 0 "Reformed religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Well such is the price you pay for tolerance.:
+********* Changes religion to 0 "Reformed
+******* Gets the province event:
+******** ID is 6169
+******** title = 0 "Bishops feel we are losing ground
+******** desc = 0 "The Archbishop today arrived to express his dismay that our tolerance has led to people turning their back on the true faith and returning to Catholicism.
+******** picture = RELIGIOUS_CONVERSION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Protestant religion
+********* The owner of the province:
+********** Follows the 0 "Protestant religion
+********** 2 or more Catholic provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+********* is_reformation_center_false = no
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Catholic religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "We are a modern state, these things happen.:
+********* Changes religion to 0 "Catholic
+******* Gets the province event:
+******** ID is 6170
+******** title = 0 "Bishops shocked
+******** desc = 0 "A delegation of senior bishops arrived today to discuss the effects of our continuing policy of tolerance for other faiths. They are especially concerned that the Orthodox faith is gaining ground in our country.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Protestant religion
+********* The owner of the province:
+********** Follows the 0 "Protestant religion
+********** 2 or more Orthodox provinces compared to state religion
+********* Any bordering province:
+********** Follows the 0 "Orthodox religion
+********* Does not have the province modifier "0 "Religious Zeal"
+********* is_reformation_center_false = no
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "They should not be so backward.:
+********* Changes religion to 0 "Orthodox
+******* Gets the province event:
+******** ID is 6171
+******** title = 0 "Bishops concerned
+******** desc = 0 "Our policy of tolerance has led to concerns amongst senior churchmen, since the news has reached us that the followers of Calvin are spreading their faith in our realm.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* The 0 "Reformed religion is enabled
+********* Follows the 0 "Protestant religion
+********* The owner of the province:
+********** Follows the 0 "Protestant religion
+********** 2 or more Reformed provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+********* is_reformation_center_false = no
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Reformed religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "This is not a problem.:
+********* Changes religion to 0 "Reformed
+******* Gets the province event:
+******** ID is 6172
+******** title = 0 "Church Elders think the apocalypse is coming
+******** desc = 0 "Church elders believe that, as God has ordained, that our tolerant policies should be punished with our people converting to Catholicism, the apocalypse is surely just round the corner.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Reformed religion
+********* The owner of the province:
+********** Follows the 0 "Reformed religion
+********** 2 or more Catholic provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+********* is_reformation_center_false = no
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Catholic religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "I think we should wait for a few more signs.:
+********* Changes religion to 0 "Catholic
+******* Gets the province event:
+******** ID is 6173
+******** title = 0 "God Punishing us?
+******** desc = 0 "Church Elders are of the opinion that our Merciful Lord is punishing us for the sinful policy of humanist tolerance. Certainly the Orthodox faith is advancing in our realm.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Reformed religion
+********* The owner of the province:
+********** Follows the 0 "Reformed religion
+********** 2 or more Orthodox provinces compared to state religion
+********* Any bordering province:
+********** Follows the 0 "Orthodox religion
+********* Does not have the province modifier "0 "Religious Zeal"
+********* is_reformation_center_false = no
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Would God really do that?:
+********* Changes religion to 0 "Orthodox
+******* Gets the province event:
+******** ID is 6174
+******** title = 0 "Church Elders concerned
+******** desc = 0 "Senior Elders in our church have expressed the opinion that the recent mass conversion to Protestantism was yet another sign of our Lord's divine wrath. Slightly more skeptical government officials think that our policy of tolerance may be a more likely cause.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Reformed religion
+********* The owner of the province:
+********** Follows the 0 "Reformed religion
+********** 2 or more Protestant provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+********* is_reformation_center_false = no
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Protestant religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "I guess you reap what you sow.:
+********* Changes religion to 0 "Protestant
+******* Gets the province event:
+******** ID is 6175
+******** title = 0 "Ulema Concerned
+******** desc = 0 "The Ulema are increasingly concerned that we are being too tolerant to the schismatic followers of Ali. They feel that Allah the compassionate, the merciful, will be angered by this. Regardless, their faith is advancing in our country.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Sunni religion
+********* The owner of the province:
+********** Follows the 0 "Sunni religion
+********** 2 or more Shiite provinces compared to state religion
+********* is_religious_center_province_false = yes
+********* Does not have the province modifier "0 "Religious Center"
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Shia religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "I am sure there will be no problems.:
+********* Changes religion to 0 "Shia
+********* The owner of the province:
+********** Changes piety by -10%
+******* Gets the province event:
+******** ID is 6176
+******** title = 0 "Ayatollahs are concerned
+******** desc = 0 "A delegation of senior Ayatollahs advised us today that our policy of tolerance has allowed the advancement of Sunni Islam in our realm. They are concerned that this may delay the return of the Mahdi.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Shia religion
+********* The owner of the province:
+********** Follows the 0 "Shia religion
+********** 2 or more Sunni provinces compared to state religion
+********* is_religious_center_province_false = yes
+********* Does not have the province modifier "0 "Religious Center"
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Sunni religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "I'm sure he will return on time.:
+********* Changes religion to 0 "Sunni
+********* The owner of the province:
+********** Changes piety by -10%
+******* Gets the province event:
+******** ID is 6178
+******** title = 0 "People turn to Philosophy!
+******** desc = 0 "In a move that could rock the Karma of the whole nation, some of our people have decided to turn their back on the teachings of the Lord Buddha and instead embrace the teachings of a Chinese philosopher. Senior Monks believe that our policy of tolerance is the cause of this.
+******** picture = BUDDHA_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Any of the following:
+********** Follows the 0 "Theravada religion
+********** Follows the 0 "Vajrayana religion
+********** Follows the 0 "Mahayana religion
+********* Any of the following:
+********** The owner of the province:
+*********** Follows the 0 "Theravada religion
+*********** 2 or more Confucian provinces compared to state religion
+********** The owner of the province:
+*********** Follows the 0 "Vajrayana religion
+*********** 2 or more Confucian provinces compared to state religion
+********** The owner of the province:
+*********** Follows the 0 "Mahayana religion
+*********** 2 or more Confucian provinces compared to state religion
+********* Any bordering province:
+********** Follows the 0 "Confucian religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "If only the Lord Buddha allowed us to be a bit more intolerant.:
+********* Changes religion to 0 "Confucian
+******* Gets the province event:
+******** ID is 6179
+******** title = 0 "The People turn to spirit worship
+******** desc = 0 "Our People have taken advantage of our policy of tolerance to embrace the spirit worship of Shintoism. Many monks are concerned.
+******** picture = BUDDHA_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Any of the following:
+********** Follows the 0 "Theravada religion
+********** Follows the 0 "Vajrayana religion
+********** Follows the 0 "Mahayana religion
+********* Any of the following:
+********** The owner of the province:
+*********** Follows the 0 "Theravada religion
+*********** 2 or more Shinto provinces compared to state religion
+********** The owner of the province:
+*********** Follows the 0 "Vajrayana religion
+*********** 2 or more Shinto provinces compared to state religion
+********** The owner of the province:
+*********** Follows the 0 "Mahayana religion
+*********** 2 or more Shinto provinces compared to state religion
+********* Culture group is japanese_g
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Shinto religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Such is the price for being such a forward looking country.:
+********* Changes religion to 0 "Shinto
+******* Gets the province event:
+******** ID is 6183
+******** title = 0 "People turn to Buddhism
+******** desc = 0 "Some of our people have decided that as we are so tolerant that there would be no problems in becoming Buddhists. Confucius says 'Do not be concerned about others appreciating you. Be concerned about your not appreciating others.'
+******** picture = BUDDHA_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Confucian religion
+********* The owner of the province:
+********** Follows the 0 "Confucian religion
+********** mahayana = 2
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Mahayana religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "We live in Interesting times.:
+********* Changes religion to 0 "Mahayana
+******* Gets the province event:
+******** ID is 6185
+******** title = 0 "Our People embrace Shintoism
+******** desc = 0 "Our Humanist Tolerance has led some of our people to become Shintoists. Confucius says 'If a man is without benevolences, then of what use are the rights? If a man is without benevolences, then of what use is music?'.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Confucian religion
+********* Culture group is japanese_g
+********* The owner of the province:
+********** Follows the 0 "Confucian religion
+********** 2 or more Shinto provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "At least we are tolerant.:
+********* Changes religion to 0 "Shinto
+******* Gets the province event:
+******** ID is 6186
+******** title = 0 "Our Priests express mild displeasure
+******** desc = 0 "Our Shinto priests are concerned that our tolerance is causing our people to turn their back on the religion of our ancestors and start worshiping Buddhism.
+******** picture = BUDDHA_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Shinto religion
+********* The owner of the province:
+********** Follows the 0 "Shinto religion
+********** mahayana = 2
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Mahayana religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Disharmonious development.:
+********* Changes religion to 0 "Mahayana
+******* Gets the province event:
+******** ID is 6188
+******** title = 0 "Our Priests suffer mild outrage
+******** desc = 0 "Our Priest are mildly outraged to discover that due to our humanist tolerance, some of our people are now following the teachings of Confucius.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Shinto religion
+********* The owner of the province:
+********** Follows the 0 "Shinto religion
+********** 2 or more Confucian provinces compared to state religion
+********* Any bordering province:
+********** Follows the 0 "Confucian religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "There is nothing that can be done here.:
+********* Changes religion to 0 "Confucian
+******* Gets the province event:
+******** ID is 6189
+******** title = 0 "The Spirits of Nature are concerned
+******** desc = 0 "The Spirits of the nature are telling our people that our policy of tolerance is allowing shamanism to spread in our realm.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Animist religion
+********* The owner of the province:
+********** Follows the 0 "Animist religion
+********** 2 or more Shamanist provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Fetishist religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Well, that is tolerance for you.:
+********* Changes religion to 0 "Fetishist
+******* Gets the province event:
+******** ID is 8000
+******** title = 0 "The Spirits of Nature are concerned
+******** desc = 0 "The Spirits of the nature are telling our people that our policy of tolerance is allowing Totemism to spread in our realm.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Animist religion
+********* The owner of the province:
+********** Follows the 0 "Animist religion
+********** totemism = 2
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Totemist religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Well, that is tolerance for you.:
+********* Changes religion to 0 "Totemist
+******* Gets the province event:
+******** ID is 6190
+******** title = 0 "Unhappy news from the hunting ground
+******** desc = 0 "Our Shamans are reporting that some of our people have decided that since we are so tolerant they will turn to Animism.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Fetishist religion
+********* The owner of the province:
+********** Follows the 0 "Fetishist religion
+********** 2 or more Animist provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Animist religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Still at least we are tolerant.:
+********* Changes religion to 0 "Animist
+******* Gets the province event:
+******** ID is 8001
+******** title = 0 "Unhappy news from the hunting ground
+******** desc = 0 "Our Shamans are reporting that some of our people have decided that since we are so tolerant they will turn to Totemism.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Fetishist religion
+********* The owner of the province:
+********** Follows the 0 "Fetishist religion
+********** totemism = 2
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Totemist religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Still at least we are tolerant.:
+********* Changes religion to 0 "Totemist
+******* Gets the province event:
+******** ID is 8002
+******** title = 0 "Spiritual connection in Danger
+******** desc = 0 "Our kinship with animals and plants are in danger as we have let Animism spread through our nation.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Totemist religion
+********* The owner of the province:
+********** Follows the 0 "Totemist religion
+********** 2 or more Animist provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Animist religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "This can't be good.:
+********* Changes religion to 0 "Animist
+******* Gets the province event:
+******** ID is 8003
+******** title = 0 "Spiritual connection in Danger
+******** desc = 0 "Our kinship with animals and plants are in danger as we have let Shamanism spread through our nation.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Totemist religion
+********* The owner of the province:
+********** Follows the 0 "Totemist religion
+********** 2 or more Shamanist provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Fetishist religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "This can't be good.:
+********* Changes religion to 0 "Fetishist
+******* Gets the province event:
+******** ID is religious_events.1
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Coptic faith.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Catholic religion
+********* The owner of the province:
+********** has_reform_false = papacy_reform
+********** Follows the 0 "Catholic religion
+********** coptic = 2
+********* Any bordering province:
+********** Follows the 0 "Coptic religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Coptic
+******* Gets the province event:
+******** ID is religious_events.2
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Coptic faith.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Protestant religion
+********* The owner of the province:
+********** Follows the 0 "Protestant religion
+********** coptic = 2
+********* Any bordering province:
+********** Follows the 0 "Coptic religion
+********* is_reformation_center_false = no
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Coptic
+******* Gets the province event:
+******** ID is religious_events.3
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Coptic faith.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Reformed religion
+********* The owner of the province:
+********** Follows the 0 "Reformed religion
+********** coptic = 2
+********* Any bordering province:
+********** Follows the 0 "Coptic religion
+********* is_reformation_center_false = no
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Coptic
+******* Gets the province event:
+******** ID is religious_events.4
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Coptic faith.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Orthodox religion
+********* The owner of the province:
+********** Follows the 0 "Orthodox religion
+********** coptic = 2
+********* Any bordering province:
+********** Follows the 0 "Coptic religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Coptic
+******* Gets the province event:
+******** ID is religious_events.5
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Catholic faith.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Coptic religion
+********* The owner of the province:
+********** Follows the 0 "Coptic religion
+********** 2 or more Catholic provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Catholic
+******* Gets the province event:
+******** ID is religious_events.6
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Protestant faith.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* The 0 "Protestant religion is enabled
+********* Follows the 0 "Coptic religion
+********* The owner of the province:
+********** Follows the 0 "Coptic religion
+********** 2 or more Protestant provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Protestant
+******* Gets the province event:
+******** ID is religious_events.7
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Reformed faith.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* The 0 "Reformed religion is enabled
+********* Follows the 0 "Coptic religion
+********* The owner of the province:
+********** Follows the 0 "Coptic religion
+********** 2 or more Reformed provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Reformed
+******* Gets the province event:
+******** ID is religious_events.8
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Orthodox faith.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Coptic religion
+********* The owner of the province:
+********** Follows the 0 "Coptic religion
+********** 2 or more Orthodox provinces compared to state religion
+********* Any bordering province:
+********** Follows the 0 "Orthodox religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Orthodox
+******* Gets the province event:
+******** ID is religious_events.9
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Ibadi faith.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Sunni religion
+********* The owner of the province:
+********** Follows the 0 "Sunni religion
+********** ibadi = 2
+********* is_religious_center_province_false = yes
+********* Does not have the province modifier "0 "Religious Center"
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Ibadi religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Ibadi
+********* The owner of the province:
+********** Changes piety by -10%
+******* Gets the province event:
+******** ID is religious_events.10
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Ibadi faith.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Shia religion
+********* The owner of the province:
+********** Follows the 0 "Shia religion
+********** ibadi = 2
+********* is_religious_center_province_false = yes
+********* Does not have the province modifier "0 "Religious Center"
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Ibadi religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Ibadi
+********* The owner of the province:
+********** Changes piety by -10%
+******* Gets the province event:
+******** ID is religious_events.11
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Sunni faith.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Ibadi religion
+********* The owner of the province:
+********** Follows the 0 "Ibadi religion
+********** 2 or more Sunni provinces compared to state religion
+********* is_religious_center_province_false = yes
+********* Does not have the province modifier "0 "Religious Center"
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Sunni religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Sunni
+********* The owner of the province:
+********** Changes piety by -10%
+******* Gets the province event:
+******** ID is religious_events.12
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Shiite faith.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Ibadi religion
+********* The owner of the province:
+********** Follows the 0 "Ibadi religion
+********** 2 or more Shiite provinces compared to state religion
+********* is_religious_center_province_false = yes
+********* Does not have the province modifier "0 "Religious Center"
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Shia religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Shia
+********* The owner of the province:
+********** Changes piety by -10%
+******* Gets the province event:
+******** ID is religious_events.13
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Sikhism faith.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Hindu religion
+********* The owner of the province:
+********** Follows the 0 "Hindu religion
+********** sikhism = 2
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Sikh religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Sikh
+******* Gets the province event:
+******** ID is religious_events.14
+******** title = 0 "Tolerant Policy
+******** desc = 0 "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Hinduism faith.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* The province is not the capital of the country
+********* Follows the 0 "Sikh religion
+********* The owner of the province:
+********** Follows the 0 "Sikh religion
+********** 2 or more Hindu provinces compared to state religion
+********* Does not have the province modifier "0 "Religious Zeal"
+******** Mean time to happen
+********* Base mean time to happen of 5000 months
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 4 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 5 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 6 Innovative ideas
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Has at least 7 Innovative ideas
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the theocracy government type
+********* Multiplies value by 0.95:
+********** Any bordering province:
+*********** Follows the 0 "Hindu religion
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Unwanted indeed:
+********* Changes religion to 0 "Hindu
+******* Gets the country event:
+******** ID is religious_events.15
+******** title = 0 "Resurgence of Neo-Confucianism
+******** desc = 0 "The philosophical ideas of Neo-Confucian thinker Chu Hsi regarding knowledge and action, with heavy emphasis on logical reasoning and coherence, have been brought to our attention once again by the works of Wang Yangming. These ideas take more influence from Taoism than the orthodox Confucian philosophy. We have to decide which path we want to choose for our state.
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* Follows the 0 "Confucian religion
+********* Does not have the country modifier "0 "Denounce Neo-Confucianism"
+********* Does not have the country modifier "0 "Neo-Confucianism"
+********* Stability is at least 1
+********* Is not at war
+********* Year is at least 1500
+******** Mean time to happen
+********* Base mean time to happen of 24 months
+******** Option: 0 "Promote Neo-Confucianism:
+********* Adds the modifier "0 "Neo-Confucianism" for the rest of the campaign:
+********** +2 tolerance of heretics
+********** Follows the yes religion
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Any of the following:
+************ Any owned province:
+************* Does not follow the religion of its owner
+************ At least 5% of provinces are in revolt
+************ 10 war exhaustion
+******** Option: 0 "Denounce Neo-Confucianism:
+********* Adds the modifier "0 "Denounce Neo-Confucianism" for the rest of the campaign:
+********** +1 global unrest
+********** +0.5% global missionary strength
+********** Legitimacy is at least 1
+********** Follows the yes religion
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0.1:
+*********** num_of_missionaries = 4
+******* Gets the country event:
+******** ID is religious_events.16
+******** title = 0 "Opposition to [Root.Monarch.GetName]
+******** desc = 1 "The sizeable Muslim community of [Root.GetName] has been raising objections to the coronation of [Root.Monarch.GetName]. As the old Muslim aristocrats and clergy remain very influential in our country and still hold many positions of power within our state this is not a small problem. It has been suggested that perhaps the situation might be defused by [Root.Monarch.GetName] abdicating in favor of a relative who would then convert to Islam. This would allow power to remain with the [Root.Monarch.Dynasty.GetName] family while still placating the Ulema and leading aristocrats. Should [Root.Monarch.GetName] to continue to govern our country we may find that these elements within our state are likely to attempt to enthrone a candidate of their own with more favorable attitudes towards Islam.
+******** picture = COURT_eventPicture
+******** Trigger:
+********* Follows the 0 "Hindu religion
+********* is_revolutionary_false = no
+********* Does not have the country flag had_religious_coup
+********* Was not converted by force
+********* Any of the following:
+********** is_free_or_tributary_trigger = yes
+********** overlord:
+*********** Is in the 0 "Muslim religion group
+********* Any of the following:
+********** Country is 0 "Bengal
+********** Country is 0 "Bijapur
+********** Country is 0 "Bahmanis
+********** Country is 0 "Delhi
+********** Country is 0 "Golkonda
+********** Country is 0 "Deccan
+********** Country is 0 "Mughals
+********** Country is 0 "Ahmednagar
+********** Country is 0 "Gujarat
+********** Country is 0 "Jaunpur
+********** Country is 0 "Malwa
+********** Country is 0 "Multan
+********** Country is 1 "Sindh
+********** Country is 0 "Berar
+********** Country is 0 "Kashmir
+********** Country is 0 "Khandesh
+********** Country is 0 "Oudh
+********** Country is 0 "Habsan
+********** Country is 0 "Nagaur
+********** Country is 0 "Sirhind
+********** Country is 0 "Deccan
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag had_religious_coup
+********** If:
+*********** Limited to:
+************ Any of the following:
+************* Country is 0 "Bengal
+************* Country is 0 "Delhi
+************* Country is 0 "Deccan
+************* Country is 0 "Mughals
+************* Country is 0 "Ahmednagar
+************* Country is 0 "Jaunpur
+************* Country is 0 "Malwa
+************* Country is 0 "Multan
+************* Country is 1 "Sindh
+************* Country is 0 "Berar
+************* Country is 0 "Khandesh
+************* Country is 0 "Habsan
+************* Country is 0 "Nagaur
+************* Country is 0 "Sirhind
+*********** Sets the country flag sunni_coup
+********** If:
+*********** Limited to:
+************ Any of the following:
+************* Country is 0 "Bijapur
+************* Country is 0 "Bahmanis
+************* Country is 0 "Golkonda
+************* Country is 0 "Gujarat
+************* Country is 0 "Kashmir
+************* Country is 0 "Oudh
+************* Country is 0 "Deccan
+*********** Sets the country flag shia_coup
+******** Mean time to happen
+********* Base mean time to happen of 6 months
+********* AI chance:
+********** Base chance of 90
+******** Option: 0 "[Root.Monarch.GetName] abdicates.:
+********* If:
+********** Limited to:
+*********** Has the country flag sunni_coup
+********** Changes religion to 0 "Sunni
+********** Removes the country flag sunni_coup
+********* If:
+********** Limited to:
+*********** Has the country flag shia_coup
+********** Changes religion to 0 "Shia
+********** Removes the country flag shia_coup
+********* If:
+********** Limited to:
+*********** Has an heir
+********** Kills the ruler of the country
+********* If:
+********** Limited to:
+*********** Has no heir
+********** Spawns a ruler:
+*********** Ruler's dynasty is our country
+********** If:
+*********** Limited to:
+************ has_states_general_mechanic = yes
+*********** change_statists_vs_orangists = 1
+********* Changes stability by 2
+********* If:
+********** Limited to:
+*********** has_estate = estate_nobles
+********** add_estate_loyalty:
+*********** estate = estate_nobles
+*********** loyalty = 10
+********* If:
+********** Limited to:
+*********** Has the idea group 0 "South Indian Ideas
+********** Switch to new country's idea group
+********* If:
+********** Limited to:
+*********** Does not have the monarchy government type
+********** change_government_to_monarchy = yes
+********* add_government_reform = indian_sultanate_reform
+********* Hidden effect:
+********** Every neighbor country:
+*********** Gets the country event:
+************ ID is religious_events.17
+******** Option: 0 "We will never again bow to infidels!:
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 0:
+*********** Has less than 2 provinces
+********** Multiplies value by 0:
+*********** has_estate = estate_nobles
+*********** estate_loyalty:
+************ estate_false = estate_nobles
+************ loyalty_false = 40
+********* Changes stability by -1
+********* Adds the modifier "0 "Religious Tensions" for 5 years:
+********** -1 tolerance of heathens
+********** +3 global unrest
+********** Follows the yes religion
+********* If:
+********** Limited to:
+*********** has_estate = estate_nobles
+********** add_estate_loyalty:
+*********** estate = estate_nobles
+*********** loyalty = -10
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+********* If:
+********** Limited to:
+*********** Has the country flag sunni_coup
+********** Removes the country flag sunni_coup
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ The owner of the province:
+************* Has at least 1 of the 0 "Castle building
+************ Has the 0 "Castle building
+*********** Spawns revolt of size 2 of 0 "Religious rebels
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ The owner of the province:
+************* Has less than 1 of the 0 "Castle building
+*********** Spawns revolt of size 2 of 0 "Religious rebels
+********* If:
+********** Limited to:
+*********** Has the country flag shia_coup
+********** Removes the country flag shia_coup
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ The owner of the province:
+************* Has at least 1 of the 0 "Castle building
+************ Has the 0 "Castle building
+*********** Spawns revolt of size 2 of 0 "Religious rebels
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ The owner of the province:
+************* Has less than 1 of the 0 "Castle building
+*********** Spawns revolt of size 2 of 0 "Religious rebels
+******* Gets the country event:
+******** ID is religious_events.17
+******** title = 0 "Coup in [From.GetName]
+******** desc = 1 "The rise of a Hindu dynasty in [From.GetName] has enraged the Muslim establishment in the area. A Muslim convert from the [From.Monarch.Dynasty.GetName] has now been enthroned to avoid an outright revolt while still keeping the dynasty in power.
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "This is an outrage!:
+********* Trigger:
+********** Is not in 0 "Muslim's religion group
+******** Option: 0 "Excellent.:
+********* Trigger:
+********** Is in the 0 "Muslim religion group
+******* Gets the country event:
+******** ID is religious_events.18
+******** title = 0 "[Root.GetName] Converts to Christianity
+******** desc = 0 "Christian communities in our country rejoice as they learn of our intention to make their religion our own. All those missionaries sent to the court in [Root.Capital.GetName] have finally paid off.
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "The Holy Father will be impressed.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Catholic religion
+********* Changes religion to 0 "Catholic
+********* Changes stability by -4
+******** Option: 0 "We shall be as a new Rome.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Orthodox religion
+********* Changes religion to 0 "Orthodox
+********* Changes stability by -4
+******** Option: 0 "We must send word to the Coptic Patriarch.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Coptic religion
+********* Changes religion to 0 "Coptic
+********* Changes stability by -4
+******** Option: 0 "God has ordained this.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Reformed religion
+********* Changes religion to 0 "Reformed
+********* Changes stability by -4
+******** Option: 0 "The time has come for a State Church.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Protestant religion
+********* Changes religion to 0 "Protestant
+********* Changes stability by -4
+******** Option: 0 "Our [Root.Monarch.GetTitle] shall lead the new Church.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the anglican religion
+********* Changes religion to anglican
+********* Changes stability by -4
+******** Option: 0 "We shall follow the teachings of Hus.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the hussite religion
+********* Changes religion to hussite
+********* Changes stability by -4
+******** Option: 0 "Let us remain true to the faith of our ancestors.:
+********* AI chance:
+********** Base chance of 1
+******* Gets the country event:
+******** ID is religious_events.19
+******** title = 0 "[Root.GetName] Converts to Islam
+******** desc = 0 "Muslim communities in our country rejoice as they learn of our intention to make their religion our own. All those missionaries sent to the court in [Root.Capital.GetName] have finally paid off.
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "We will henceforth follow the Sunnah.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Sunni religion
+********* Changes religion to 0 "Sunni
+********* Changes stability by -4
+******** Option: 0 "It is time we honored the Imams.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Shia religion
+********* Changes religion to 0 "Shia
+********* Changes stability by -4
+******** Option: 0 "We will follow in the tradition of Ibn Ibad.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Ibadi religion
+********* Changes religion to 0 "Ibadi
+********* Changes stability by -4
+******** Option: 0 "Let us remain true to the faith of our ancestors.:
+********* AI chance:
+********** Base chance of 1
+******* Gets the country event:
+******** ID is religious_events.20
+******** title = 0 "[Root.GetName] Converts to Buddhism
+******** desc = 0 "Eastern communities in our country rejoice as they learn of our intention to make their religion our own. All those monks and scholars sent to the court in [Root.Capital.GetName] have finally paid off.
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "We will henceforth follow the Pali Cannons.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Theravada religion
+********* Changes religion to 0 "Theravada
+********* Changes stability by -4
+******** Option: 0 "We must invite a Lama to [Root.Capital.GetCapitalName] as soon as possible.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Vajrayana religion
+********* Changes religion to 0 "Vajrayana
+********* Changes stability by -4
+******** Option: 0 "We should study the Mahayana sutras.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Mahayana religion
+********* Changes religion to 0 "Mahayana
+********* Changes stability by -4
+******** Option: 0 "Through careful study of the classics we shall find a better way.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Confucian religion
+********* Changes religion to 0 "Confucian
+********* Changes stability by -4
+******** Option: 0 "We must strive to understand the way of the Kami.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Shinto religion
+********* Changes religion to 0 "Shinto
+********* Changes stability by -4
+******** Option: 0 "Let us remain true to the faith of our ancestors.:
+********* AI chance:
+********** Base chance of 1
+******* Gets the country event:
+******** ID is religious_events.21
+******** title = 0 "Conversion of [Root.GetName]
+******** desc = 0 "Dharmic communities in our country rejoice as they learn of our intention to make their religion our own. The Gurus sent to the court in [Root.Capital.GetName] have finally been heard!
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "We will henceforth respect the Sanatana Dharma.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Hindu religion
+********* Changes religion to 0 "Hindu
+********* Changes stability by -4
+******** Option: 0 "We shall follow in the footsteps of the great Gurus.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the 0 "Sikh religion
+********* Changes religion to 0 "Sikh
+********* Changes stability by -4
+******** Option: 0 "Let us remain true to the faith of our ancestors.:
+********* AI chance:
+********** Base chance of 1
+******* Gets the country event:
+******** ID is religious_events.22
+******** title = 0 "[Root.GetName] Converts to Zoroastrianism
+******** desc = 0 "Zoroastrian communities in our country rejoice as they learn of our intention to make their religion our own. The Fires of their faith shall burn forever in [Root.Capital.GetName]!
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Good thoughts, good words and good deeds.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the zoroastrian religion
+********* Changes religion to zoroastrian
+********* Changes stability by -4
+******** Option: 0 "Let us remain true to the faith of our ancestors.:
+********* AI chance:
+********** Base chance of 1
+******* Gets the country event:
+******** ID is religious_events.23
+******** title = 0 "[Root.GetName] Converts to Judaism
+******** desc = 0 "Jewish communities in our country rejoice as they learn of our intention to make their religion our own.
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Hear O Israel, the Lord is our God, the Lord is One.:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** Any owned province:
+*********** Follows the jewish religion
+********* Changes religion to jewish
+********* Changes stability by -4
+******** Option: 0 "Let us remain true to the faith of our ancestors.:
+********* AI chance:
+********** Base chance of 1

@@ -1,0 +1,211 @@
+** Trigger:
+*** Primary culture is 0 "Powhatan
+*** Has the DLC Leviathan
+*** Any country:
+**** Capital:
+***** In the continent 0 "Europe
+**** Any owned province:
+***** In the continent 0 "North America
+**** Country is not 0 "England
+**** Country is not 0 "Great Britain
+*** Does not have the country flag the_virginia_company
+*** Does not have the country flag european_first_contact
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Option: 0 "Everything has changed.:
+*** add_reform_progress_small_effect = yes
+*** Adds the modifier "0 "First Contact" for 20 years:
+**** -15% technology cost
+*** Random owned province:
+**** Limited to:
+***** base_production = 2
+**** add_base_production = -1
+*** Sets the country flag european_first_contact
+* Gets the country event:
+** ID is flavor_pow.2
+** title = 0 "The Virginia Company
+** desc = 0 "More easterners have landed on our coast. Their initial aggressive attitude has led to some skirmishes between them and some members of our tribe. After a while, they moved north and built a fort to seek protection from further hostilities.\nToday, one of their leaders has approached our village in peace, and with apparent good will. He has given us many presents brought from their distant home, stating that they need our help to survive in this foreign land, his hands almost trembling, stiffly grabbing a small piece of paper. When asked about it, his voice quivered while he offered us the opportunity to play allegiance to their ruler in exchange for protection under the crown, and some knowledge of their form of government.
+** picture = COLONIZATION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Primary culture is 0 "Powhatan
+*** Has the DLC Leviathan
+*** Year is at least 1606
+*** Does not have the country flag the_virginia_company
+*** Has the country flag european_first_contact
+*** If:
+**** Limited to:
+***** 0 "England exists
+**** 0 "England:
+***** Any owned province:
+****** In the continent 0 "North America
+*** else_if:
+**** Limited to:
+***** 0 "Great Britain exists
+**** 0 "Great Britain:
+***** Any owned province:
+****** In the continent 0 "North America
+*** else:
+**** Any known country:
+***** Capital:
+****** In the continent 0 "Europe
+***** Any owned province:
+****** In the continent 0 "North America
+***** Culture group is 0 "British
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Option: 0 "Considering other options could be useful.:
+*** Sets the country flag the_virginia_company
+*** add_reform_progress_small_effect = yes
+*** Capital:
+**** add_institution_embracement:
+***** which = feudalism
+***** value = 50
+** Option: 0 "That will never work here.:
+*** Sets the country flag the_virginia_company
+*** add_reform_progress_small_effect = yes
+*** add_tribal_allegiance = 25
+* Gets the country event:
+** ID is flavor_pow.3
+** title = 0 "Anglo-Powhatan Wars
+** desc = 0 "First, they came in peace. They reached our shores with promises of alliance and help, they asked for food, for maps, for guidance in this - for them - uncharted territory. Our generosity knew no limits. We assisted them in everything, we invited them to join our feasts, to meet our rulers. We showed them how to farm the land and which path to follow when going into the wilderness.\nThen, they started to ask for more. They retired to their forts; they did not need us anymore, but they needed our land. [Root.Monarch.GetName] takes a moment to observe the marching of their armies with an unsettling sorrow - the final arrival of what he thought inevitable.
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Primary culture is 0 "Powhatan
+*** Has the DLC Leviathan
+*** Year is at least 1609
+*** Has the country flag the_virginia_company
+*** Does not have the country flag anglopowhatan_wars
+*** If:
+**** Limited to:
+***** 0 "England exists
+**** 0 "England:
+***** At war with our country
+*** else_if:
+**** Limited to:
+***** 0 "Great Britain exists
+**** 0 "Great Britain:
+***** At war with our country
+*** else:
+**** Any known country:
+***** Capital:
+****** In the continent 0 "Europe
+***** Country is not 0 "Castile
+***** Country is not 0 "France
+***** At war with our country
+** Mean time to happen
+*** Base mean time to happen of 32 months
+*** Multiplies value by 0.5:
+**** At war with 0 "England
+*** Multiplies value by 0.9:
+**** At war with 0 "Great Britain
+** Option: 1 "We shall crush them!:
+*** Changes army tradition by 25
+*** Changes military power stored by 100
+*** Sets the country flag anglopowhatan_wars
+** Option: 1 "We will need allies to defeat them.:
+*** If:
+**** Limited to:
+***** 0 "Castile exists
+**** 0 "Castile:
+***** Adds the opinion modifier "0 "The Enemy of My Enemy" towards our country
+*** else_if:
+**** Limited to:
+***** 0 "Spain exists
+**** 0 "Spain:
+***** Adds the opinion modifier "0 "The Enemy of My Enemy" towards our country
+*** If:
+**** Limited to:
+***** 0 "France exists
+**** 0 "France:
+***** Adds the opinion modifier "0 "The Enemy of My Enemy" towards our country
+*** Every country:
+**** Limited to:
+***** Any of the following:
+****** If:
+******* Limited to:
+******** 0 "Great Britain exists
+******* Considers 0 "Great Britain a rival
+****** else:
+******* Considers 0 "England a rival
+***** Country is not 0 "Spain
+***** Country is not 0 "Castile
+***** Country is not 0 "France
+**** Adds the opinion modifier "0 "The Enemy of My Enemy" towards our country
+*** Sets the country flag anglopowhatan_wars
+* Gets the country event:
+** ID is flavor_pow.4
+** title = 0 "Tribal Trade
+** desc = 0 "For decades and even centuries, trade has been an essential part of our lives. We have traded within and beyond Tsenacommacah, following east-west trade routes. Shell beads and fur would be given in exchange for copper and red dye, all of them luxury items that could help us prove our high status. Today, one of our allies has sent a merchant to our village. This man has offered to teach us where to find these things ourselves, a testament to the sincerity of the alliance between our peoples.
+** picture = ECONOMY_eventPicture
+** Trigger:
+*** Primary culture is 0 "Powhatan
+*** Has the DLC Leviathan
+*** Any owned province:
+**** Any of the following:
+***** Has the 0 "Storehouse building
+***** Has the 0 "Workshop building
+***** Has the 0 "Market Place building
+*** Any ally:
+**** Technology group is 0 "North American
+**** Any owned province:
+***** In the continent 0 "North America
+** Mean time to happen
+*** Base mean time to happen of 360 months
+*** Multiplies value by 0.8:
+**** Follows the 0 "Totemist religion
+** Option: 0 "This could be really useful.:
+*** Random owned province:
+**** Limited to:
+***** Does not produce 0 "Copper
+**** Changes trade goods produced to 0 "Copper
+** Option: 0 "It would be better to focus on our own goods.:
+*** Every owned province:
+**** Limited to:
+***** Has core on our country
+**** Adds the modifier "0 "Indigenous Trade Goods" until the end of the campaign:
+***** +25% production efficiency
+* Gets the country event:
+** ID is flavor_pow.5
+** title = 0 "European Trade
+** desc = 1 "A European merchant came to our village this morning; he was no stranger to us, since we had seen him around his fair-skinned companions. He has come to us with a trade deal: the need for food has taken its toll on their people and their crops have withered from the lack of knowledge about their cultivation.\nIn exchange for some food, this man has offered to teach us how to use iron to improve our weapons. He could also give us some cloth that they use to protect themselves from the weather.
+** picture = ECONOMY_eventPicture
+** Trigger:
+*** Primary culture is 0 "Powhatan
+*** Has the DLC Leviathan
+*** Any of the following:
+**** Has the country flag the_virginia_company
+**** Has the country flag european_first_contact
+*** Any known country:
+**** Capital:
+***** In the continent 0 "Europe
+**** Any owned province:
+***** In the continent 0 "North America
+**** Not at war with our country
+*** Any owned province:
+**** base_production = 2
+** Mean time to happen
+*** Base mean time to happen of 480 months
+*** Multiplies value by 0.6:
+**** Has the idea group 0 "Economic Ideas
+** Option: 0 "Iron would definitely benefit our warfare.:
+*** Random owned province:
+**** Limited to:
+***** Does not produce 0 "Iron
+***** base_production = 2
+**** add_base_production = -1
+**** Changes trade goods produced to 0 "Iron
+** Option: 0 "We could use some cloth.:
+*** Random owned province:
+**** Limited to:
+***** Does not produce 0 "Wool
+***** base_production = 2
+**** add_base_production = -1
+**** Changes trade goods produced to 0 "Wool
+** Option: 0 "It would be better to focus on our own goods.:
+*** Every owned province:
+**** Limited to:
+***** Has core on our country
+**** Adds the modifier "0 "Indigenous Trade Goods" until the end of the campaign:
+***** +25% production efficiency

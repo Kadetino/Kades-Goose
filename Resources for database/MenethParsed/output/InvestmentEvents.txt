@@ -1,0 +1,781 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* Any owned province:
+********** is_owned_by_trade_company = yes
+********** Any of the following:
+*********** has_trade_company_investment_in_area:
+************ investment = local_quarter
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = permanent_quarters
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = officers_mess
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = company_administration
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = military_administration
+************ investor = our country
+********** superregion = india_superregion
+********** Does not have the province modifier "0 "Sepoy Recruitment"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_owned_by_trade_company = yes
+************ superregion = india_superregion
+************ Does not have the province modifier "0 "Sepoy Recruitment"
+************ Any of the following:
+************* has_trade_company_investment_in_area:
+************** investment = local_quarter
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = permanent_quarters
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = officers_mess
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = company_administration
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = military_administration
+************** investor = our country
+*********** save_event_target_as = sepoy_province
+******** Option: investment_events.1.a:
+********* Changes national manpower by 1 years worth of men
+********* event_target:sepoy_province:
+********** Adds the modifier "0 "Sepoy Recruitment" until the end of the campaign:
+*********** local_regiment_cost = -0.2
+*********** regiment_recruit_speed = -0.25
+******** Option: investment_events.1.b:
+********* If:
+********** Limited to:
+*********** Has the DLC Cradle of Civilization
+********** add_army_professionalism = 0.01
+********* else:
+********** Changes army tradition by 5
+******* Gets the country event:
+******** ID is investment_events.2
+******** title = investment_events.2.t
+******** desc = investment_events.2.d
+******** picture = 15_Trade_Company_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any owned province:
+********** is_owned_by_trade_company = yes
+********** Any of the following:
+*********** has_trade_company_investment_in_area:
+************ investment = brokers_office
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = brokers_exchange
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = property_appraiser
+************ investor = our country
+********** Any bordering province:
+*********** The province is not owned by our country
+*********** The owner of the province:
+************ Any of the following:
+************* Technology group is 0 "Indian
+************* Technology group is east_african
+************* Technology group is central_african
+************* Technology group is 0 "West African
+************* Technology group is 0 "Chinese
+********* Does not have the country modifier "0 "Fair Land Purchases"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_owned_by_trade_company = yes
+************ Any of the following:
+************* has_trade_company_investment_in_area:
+************** investment = brokers_office
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = brokers_exchange
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = property_appraiser
+************** investor = our country
+************ Any bordering province:
+************* The province is not owned by our country
+************* The owner of the province:
+************** Any of the following:
+*************** Technology group is 0 "Indian
+*************** Technology group is east_african
+*************** Technology group is central_african
+*************** Technology group is 0 "West African
+*************** Technology group is 0 "Chinese
+*********** save_event_target_as = land_purchase_province
+*********** Random bordering province:
+************ Limited to:
+************* The owner of the province:
+************** Any of the following:
+*************** Technology group is 0 "Indian
+*************** Technology group is east_african
+*************** Technology group is central_african
+*************** Technology group is 0 "West African
+*************** Technology group is 0 "Chinese
+************ The owner of the province:
+************* save_event_target_as = land_purchase_country
+******** Option: investment_events.2.a:
+********* event_target:land_purchase_country:
+********** Adds the opinion modifier "opinion_company_land_purchase" towards our country
+********* event_target:land_purchase_province:
+********** Adds claim to event_target:land_purchase_country
+********** One of the following will happen:
+*********** 33 relative chance:
+************ Changes base tax by 1
+*********** 33 relative chance:
+************ add_base_production = 1
+*********** 33 relative chance:
+************ add_base_manpower = 1
+******** Option: investment_events.2.b:
+********* event_target:land_purchase_country:
+********** Adds the opinion modifier "0 "Fair Land Purchase" towards our country
+********* Adds the modifier "0 "Fair Land Purchases" for 20 years:
+********** +1 diplomatic reputation
+******* Gets the country event:
+******** ID is investment_events.3
+******** title = investment_events.3.t
+******** desc = investment_events.3.d
+******** picture = 18_Trade_Company_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any owned province:
+********** is_owned_by_trade_company = yes
+********** Any of the following:
+*********** Region is west_india_region
+*********** Region is bengal_region
+********** Any of the following:
+*********** has_trade_company_investment_in_area:
+************ investment = company_warehouse
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = company_depot
+************ investor = our country
+********** Produces 0 "Spices
+********** No owned province:
+*********** Has the province modifier "0 "Opium Production"
+********* 0 "Canton:
+********** Has been discovered by our country
+********** The owner of the province:
+*********** Culture group is 0 "Chinese
+********** The province is not owned by our country
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_owned_by_trade_company = yes
+************ Any of the following:
+************* Region is west_india_region
+************* Region is bengal_region
+************ Any of the following:
+************* has_trade_company_investment_in_area:
+************** investment = company_warehouse
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = company_depot
+************** investor = our country
+************ Produces 0 "Spices
+*********** save_event_target_as = opium_province
+********** 0 "Canton:
+*********** The owner of the province:
+************ save_event_target_as = canton_owner
+******** Option: investment_events.3.a:
+********* event_target:canton_owner:
+********** Adds the opinion modifier "0 "Angry" towards our country
+********** Gives the 0 "Trade War casus belli against our country
+********* event_target:opium_province:
+********** Adds the modifier "0 "Opium Production" until the end of the campaign:
+*********** trade_goods_size_modifier = 0.5
+*********** province_trade_power_modifier = 0.25
+********* 0 "Canton:
+********** Adds trade modifier:
+*********** Affecting our country
+*********** Lasting 7300 days
+*********** Changing trade power by 35
+*********** Named "0 "Trading in Opium"
+******** Option: investment_events.3.b:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is investment_events.4
+******** title = investment_events.4.t
+******** desc = investment_events.4.d
+******** picture = 16_Trade_Company_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any owned province:
+********** is_owned_by_trade_company = yes
+********** Any of the following:
+*********** has_trade_company_investment_in_area:
+************ investment = officers_mess
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = 0 "Admiralty
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = governor_general_mansion
+************ investor = our country
+********** No owned province:
+*********** Has the province modifier "0 "Factors Pursue Private Interests"
+********* Does not have the country modifier "0 "Honorable Company"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_owned_by_trade_company = yes
+************ Any of the following:
+************* has_trade_company_investment_in_area:
+************** investment = officers_mess
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = 0 "Admiralty
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = governor_general_mansion
+************** investor = our country
+********** Multiplies value by corrupt_factor_province:
+********** set_saved_name:
+********** Multiplies value by corrupt_factor_name:
+*********** scope = our country
+******** Option: investment_events.4.a:
+********* Adds 100% mercantilism
+******** Multiplies value by :
+********** Adds the modifier "0 "Factors Pursue Private Interests" until the end of the campaign:
+*********** province_trade_power_modifier = 0.25
+*********** +15% production efficiency
+*********** local_unrest = -3
+******** Option: investment_events.4.b:
+********* add_corruption = -0.5
+********* Adds the modifier "0 "Honorable Company" for 20 years:
+********** yearly_corruption = -0.05
+******** after:
+******** Multiplies value by corrupt_factor_name:
+******* Gets the country event:
+******** ID is investment_events.5
+******** title = investment_events.5.t
+******** desc = investment_events.5.d
+******** picture = 17_Trade_Company_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any owned province:
+********** is_owned_by_trade_company = yes
+********** Any of the following:
+*********** num_investments_in_trade_company_region:
+************ investment = company_administration
+************ value = 3
+*********** num_investments_in_trade_company_region:
+************ investment = military_administration
+************ value = 3
+********** has_trade_company_investment_in_area:
+*********** investment = governor_general_mansion
+*********** investor = our country
+********* Does not have the country modifier "0 "Company Rule"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_owned_by_trade_company = yes
+************ Any of the following:
+************* num_investments_in_trade_company_region:
+************** investment = company_administration
+************** value = 3
+************* num_investments_in_trade_company_region:
+************** investment = military_administration
+************** value = 3
+************ has_trade_company_investment_in_area:
+************* investment = governor_general_mansion
+************* investor = our country
+*********** save_event_target_as = company_rule_province
+******** Option: investment_events.5.a:
+********* Adds the modifier "0 "Company Rule" for 20 years:
+********** Trade efficiency is at least 15%
+******* Gets the country event:
+******** ID is investment_events.6
+******** title = investment_events.6.t
+******** desc = investment_events.6.d
+******** picture = 15_Trade_Company_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any owned province:
+********** Is not in our country's religion group
+********** is_owned_by_trade_company = yes
+********** Any of the following:
+*********** has_trade_company_investment_in_area:
+************ investment = settlements
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = district
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = townships
+************ investor = our country
+********** No owned province:
+*********** Has the province modifier "0 "Missionaries Allowed to Proselytize"
+********* Does not have the country modifier "0 "Prohibited Proselytizing"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 0.5:
+********** Has completed the 0 "Religious Ideas idea group
+********* Multiplies value by 1.5:
+********** Has completed the 0 "Humanist Ideas idea group
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_owned_by_trade_company = yes
+************ Is not in our country's religion group
+************ Any of the following:
+************* has_trade_company_investment_in_area:
+************** investment = settlements
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = district
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = townships
+************** investor = our country
+*********** save_event_target_as = company_missionary_province
+******** Option: investment_events.6.a:
+********* AI chance:
+********** Base chance of 0
+********* increase_religious_currency_effect = yes
+********* event_target:company_missionary_province:
+********** Changes religion to our country
+********** Adds the modifier "0 "Missionaries Allowed to Proselytize" until the end of the campaign:
+*********** local_unrest = 10
+******** Option: investment_events.6.b:
+********* AI chance:
+********** Base chance of 1
+********* reduce_religious_currency_effect = yes
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = -10
+********* Adds the modifier "0 "Prohibited Proselytizing" for 20 years:
+********** +1 tolerance of heathens
+******* Gets the country event:
+******** ID is investment_events.7
+******** title = investment_events.7.t
+******** desc = investment_events.7.d
+******** picture = 16_Trade_Company_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any owned province:
+********** is_owned_by_trade_company = yes
+********** Any of the following:
+*********** has_trade_company_investment_in_area:
+************ investment = company_warehouse
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = company_depot
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = brokers_office
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = brokers_exchange
+************ investor = our country
+********** Any bordering province:
+*********** The province is not owned by our country
+*********** The owner of the province:
+************ Any of the following:
+************* Technology group is 0 "Indian
+************* Technology group is east_african
+************* Technology group is central_african
+************* Technology group is 0 "West African
+************* Technology group is 0 "Chinese
+********** No owned province:
+*********** Has the province modifier "0 "Company Mint"
+********* Does not have the country modifier "0 "Appropriated Currency"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_owned_by_trade_company = yes
+************ Any of the following:
+************* has_trade_company_investment_in_area:
+************** investment = company_warehouse
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = company_depot
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = brokers_office
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = brokers_exchange
+************** investor = our country
+************ Any bordering province:
+************* The province is not owned by our country
+************* The owner of the province:
+************** Any of the following:
+*************** Technology group is 0 "Indian
+*************** Technology group is east_african
+*************** Technology group is central_african
+*************** Technology group is 0 "West African
+*************** Technology group is 0 "Chinese
+*********** save_event_target_as = company_mint_province
+*********** Random bordering province:
+************ Limited to:
+************* The province is not owned by our country
+************* The owner of the province:
+************** Any of the following:
+*************** Technology group is 0 "Indian
+*************** Technology group is east_african
+*************** Technology group is central_african
+*************** Technology group is 0 "West African
+*************** Technology group is 0 "Chinese
+************ The owner of the province:
+************* save_event_target_as = appropriated_currency_country
+******** Option: investment_events.7.a:
+********* AI chance:
+********** Base chance of 25
+********* If:
+********** Limited to:
+*********** has_estate = estate_burghers
+********** add_estate_loyalty:
+*********** estate = estate_burghers
+*********** loyalty = 10
+********* event_target:company_mint_province:
+********** Adds the modifier "0 "Company Mint" until the end of the campaign:
+*********** +25% trade value
+******** Option: investment_events.7.b:
+********* AI chance:
+********** Base chance of 25
+********* Adds the modifier "0 "Appropriated Currency" for 20 years:
+********** Reduces inflation by 0.02 per year
+********* event_target:appropriated_currency_country:
+********** Adds the opinion modifier "opinion_appropriated_currency" towards our country
+******* Gets the country event:
+******** ID is investment_events.8
+******** title = investment_events.8.t
+******** desc = investment_events.8.d
+******** picture = 16_Trade_Company_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any owned province:
+********** is_owned_by_trade_company = yes
+********** Any of the following:
+*********** has_trade_company_investment_in_area:
+************ investment = settlements
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = district
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = townships
+************ investor = our country
+********** Any of the following:
+*********** Does not have the 0 "Temple building
+*********** Does not have the 0 "Cathedral building
+********** No owned province:
+*********** Has the province modifier "0 "Thriving Settlement"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_owned_by_trade_company = yes
+************ Any of the following:
+************* has_trade_company_investment_in_area:
+************** investment = settlements
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = district
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = townships
+************** investor = our country
+************ Any of the following:
+************* Does not have the 0 "Temple building
+************* Does not have the 0 "Cathedral building
+*********** save_event_target_as = company_settlement
+******** Option: investment_events.8.a:
+********* event_target:company_settlement:
+********** Constructs the 0 "Temple building
+******** Option: investment_events.8.b:
+********* event_target:company_settlement:
+********** Adds the modifier "0 "Thriving Settlement" until the end of the campaign:
+*********** local_build_cost = -0.33
+******* Gets the country event:
+******** ID is investment_events.9
+******** title = investment_events.9.t
+******** desc = investment_events.9.d
+******** picture = 18_Trade_Company_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any owned province:
+********** is_owned_by_trade_company = yes
+********** Is coastal
+********** Any of the following:
+*********** has_trade_company_investment_in_area:
+************ investment = company_depot
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = company_warehouse
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = 0 "Admiralty
+************ investor = our country
+********** Any bordering province:
+*********** The province is not owned by our country
+*********** The owner of the province:
+************ Any of the following:
+************* Technology group is 0 "Indian
+************* Technology group is east_african
+************* Technology group is central_african
+************* Technology group is 0 "West African
+************* Technology group is 0 "Chinese
+********* Does not have the country modifier "0 "Rogue Traders Prosecuted"
+********** No owned province:
+*********** Has the province modifier "0 "Monopoly Enforced"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_owned_by_trade_company = yes
+************ Is coastal
+************ Any of the following:
+************* has_trade_company_investment_in_area:
+************** investment = company_depot
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = company_warehouse
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = 0 "Admiralty
+************** investor = our country
+************ Any bordering province:
+************* The province is not owned by our country
+************* The owner of the province:
+************** Any of the following:
+*************** Technology group is 0 "Indian
+*************** Technology group is east_african
+*************** Technology group is central_african
+*************** Technology group is 0 "West African
+*************** Technology group is 0 "Chinese
+*********** save_event_target_as = monopoly_ignored_province
+*********** Random bordering province:
+************ Limited to:
+************* The province is not owned by our country
+************* The owner of the province:
+************** Any of the following:
+*************** Technology group is 0 "Indian
+*************** Technology group is east_african
+*************** Technology group is central_african
+*************** Technology group is 0 "West African
+*************** Technology group is 0 "Chinese
+************ The owner of the province:
+************* save_event_target_as = monopoly_ignored_country
+******** Option: investment_events.9.a:
+********* Adds 100% mercantilism
+********* event_target:monopoly_ignored_province:
+********** Adds the modifier "0 "Monopoly Enforced" until the end of the campaign:
+*********** province_trade_power_modifier = 0.25
+********* event_target:monopoly_ignored_country:
+********** Adds the opinion modifier "opinion_monopoly_enforced_company" towards our country
+******** Option: investment_events.9.b:
+********* Adds the modifier "0 "Rogue Traders Prosecuted" for 20 years:
+********** global_ship_trade_power = 0.2
+********* event_target:monopoly_ignored_province:
+********** Adds the modifier "0 "Rogue Traders Prosecuted" until the end of the campaign:
+*********** +25% trade value
+******* Gets the country event:
+******** ID is investment_events.10
+******** title = investment_events.10.t
+******** desc = investment_events.10.d
+******** picture = 15_Trade_Company_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any owned province:
+********** is_owned_by_trade_company = yes
+********** Any of the following:
+*********** has_trade_company_investment_in_area:
+************ investment = local_quarter
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = permanent_quarters
+************ investor = our country
+*********** has_trade_company_investment_in_area:
+************ investment = officers_mess
+************ investor = our country
+********** Any bordering province:
+*********** The province is not owned by our country
+*********** The owner of the province:
+************ Is at war
+************ Not at war with our country
+************ Any of the following:
+************* Technology group is 0 "Indian
+************* Technology group is east_african
+************* Technology group is central_african
+************* Technology group is 0 "West African
+************* Technology group is 0 "Chinese
+************ Any country:
+************* Not at war with our country
+************* Any of the following:
+************** is_in_war:
+*************** attacker_leader = this
+*************** defender_leader = prev
+************** is_in_war:
+*************** attacker_leader = prev
+*************** defender_leader = this
+************* Any of the following:
+************** Technology group is 0 "Indian
+************** Technology group is east_african
+************** Technology group is central_african
+************** Technology group is 0 "West African
+************** Technology group is 0 "Chinese
+********* Does not have the country modifier "0 "Company Interference in Local Conflicts"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_owned_by_trade_company = yes
+************ Any of the following:
+************* has_trade_company_investment_in_area:
+************** investment = local_quarter
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = permanent_quarters
+************** investor = our country
+************* has_trade_company_investment_in_area:
+************** investment = officers_mess
+************** investor = our country
+************ Any bordering province:
+************* The province is not owned by our country
+************* The owner of the province:
+************** Is at war
+************** Not at war with our country
+************** Any of the following:
+*************** Technology group is 0 "Indian
+*************** Technology group is east_african
+*************** Technology group is central_african
+*************** Technology group is 0 "West African
+*************** Technology group is 0 "Chinese
+************** Any country:
+*************** Not at war with our country
+*************** Any of the following:
+**************** is_in_war:
+***************** attacker_leader = this
+***************** defender_leader = prev
+**************** is_in_war:
+***************** attacker_leader = prev
+***************** defender_leader = this
+*************** Any of the following:
+**************** Technology group is 0 "Indian
+**************** Technology group is east_african
+**************** Technology group is central_african
+**************** Technology group is 0 "West African
+**************** Technology group is 0 "Chinese
+*********** save_event_target_as = company_interference_province
+*********** Random bordering province:
+************ Limited to:
+************* The province is not owned by our country
+************* The owner of the province:
+************** Is at war
+************** Not at war with our country
+************** Any of the following:
+*************** Technology group is 0 "Indian
+*************** Technology group is east_african
+*************** Technology group is central_african
+*************** Technology group is 0 "West African
+*************** Technology group is 0 "Chinese
+************** Any country:
+*************** Not at war with our country
+*************** Any of the following:
+**************** is_in_war:
+***************** attacker_leader = this
+***************** defender_leader = prev
+**************** is_in_war:
+***************** attacker_leader = prev
+***************** defender_leader = this
+*************** Any of the following:
+**************** Technology group is 0 "Indian
+**************** Technology group is east_african
+**************** Technology group is central_african
+**************** Technology group is 0 "West African
+**************** Technology group is 0 "Chinese
+************ The owner of the province:
+************* save_event_target_as = company_interference_country_1
+************* Random country:
+************** Limited to:
+*************** Any of the following:
+**************** is_in_war:
+***************** attacker_leader = this
+***************** defender_leader = prev
+**************** is_in_war:
+***************** attacker_leader = prev
+***************** defender_leader = this
+*************** Any of the following:
+**************** Technology group is 0 "Indian
+**************** Technology group is east_african
+**************** Technology group is central_african
+**************** Technology group is 0 "West African
+**************** Technology group is 0 "Chinese
+************** save_event_target_as = company_interference_country_2
+******** Option: investment_events.10.a:
+********* AI chance:
+********** Base chance of 0
+********* Changes national manpower by -0.5 years worth of men
+********* Modifies treasury by -0.25 years worth of income
+********* Adds the modifier "0 "Company Interference in Local Conflicts" for 20 years:
+********** +20% spy offense
+********* event_target:company_interference_country_1:
+********** Adds the opinion modifier "0 "Supported our War" towards our country
+********** Gets the country event:
+*********** ID is investment_events.11
+*********** Base mean time to happen of 3 days
+********* event_target:company_interference_country_2:
+********** Adds the opinion modifier "0 "Supported our Enemy" towards our country
+******** Option: investment_events.10.b:
+********* AI chance:
+********** Base chance of 0
+********* Changes national manpower by -0.5 years worth of men
+********* Modifies treasury by -0.25 years worth of income
+********* Adds the modifier "0 "Company Interference in Local Conflicts" for 20 years:
+********** +20% spy offense
+********* event_target:company_interference_country_2:
+********** Adds the opinion modifier "0 "Supported our War" towards our country
+********** Gets the country event:
+*********** ID is investment_events.11
+*********** Base mean time to happen of 3 days
+********* event_target:company_interference_country_1:
+********** Adds the opinion modifier "0 "Supported our Enemy" towards our country
+******** Option: investment_events.10.c:
+********* AI chance:
+********** Base chance of 1
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is investment_events.11
+******** title = investment_events.11.t
+******** desc = investment_events.11.d
+******** picture = 15_Trade_Company_eventPicture
+******** is_triggered_only = yes
+******** Option: investment_events.11.a:
+********* Changes national manpower by 0.5 years worth of men
+********* Modifies treasury by 0.25 years worth of income

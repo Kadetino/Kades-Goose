@@ -1,0 +1,754 @@
+********* Trigger:
+********** Does not have the country flag pirate_death_election
+********** Does not have the country flag pirate_mutineer_council
+********* desc = pirates.1.desc
+******** desc:
+********* Trigger:
+********** Has the country flag pirate_death_election
+********* desc = pirates.1.desc2
+******** desc:
+********* Trigger:
+********** Has the country flag pirate_mutineer_council
+********* desc = pirates.1.desc3
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** has_reform = pirate_republic_reform
+********** has_reform = pirate_king_reform
+********** has_reform = war_against_the_world_doctrine_reform
+********** has_reform = black_market_consortium_reform
+********* If:
+********** Limited to:
+*********** Has the country flag pirate_mutineer_council
+********** Republican tradition is at least 50
+******** Option: pirates.1.keep:
+********* Trigger:
+********** Is not in regency
+********** Does not have the country flag pirate_death_election
+********* AI chance:
+********** Base chance of 60
+********** Multiplies value by 0:
+*********** Republican tradition is less than 25
+********** Multiplies value by 0.5:
+*********** Republican tradition is less than 50
+********** Multiplies value by 0.5:
+*********** Republican tradition is less than 75
+********** Multiplies value by 2.0:
+*********** Republican tradition is at least 90
+********* If:
+********** Limited to:
+*********** has_ruler_flag = historical_pirate
+********* Changes ruler's administrative skill by 1
+********* Changes ruler's diplomatic skill by 1
+********* Changes ruler's military skill by 1
+********* If:
+********** Limited to:
+*********** has_ruler_flag_false = historical_pirate
+********** add_scaled_republican_tradition = -10
+********* If:
+********** Limited to:
+*********** pr_buccaneers is in power
+********** Changes the influence of pr_buccaneers by -10
+********* One of the following will happen:
+********** 10 relative chance:
+*********** Changes administrative power stored by 50
+********** 10 relative chance:
+*********** Changes diplomatic power stored by 50
+********** 10 relative chance:
+*********** Changes military power stored by 50
+********* add_karma = -5
+******** Option: pirates.1.a:
+********* AI chance:
+********** Base chance of 20
+********* If:
+********** Limited to:
+*********** has_active_policy = mandatory_service
+********** Spawns a ruler:
+*********** Ruler's military skill is at least 1
+*********** Ruler's administrative skill is at least 4
+*********** Ruler's diplomatic skill is at least 1
+*********** random_gender = yes
+********* else:
+********** Spawns a ruler:
+*********** Ruler's military skill is at least 1
+*********** Ruler's administrative skill is at least 4
+*********** Ruler's diplomatic skill is at least 1
+********* If:
+********** Limited to:
+*********** has_faction = pr_buccaneers
+********** Changes the influence of pr_buccaneers by 20
+********* add_karma = 10
+******** Option: pirates.1.b:
+********* AI chance:
+********** Base chance of 20
+********* If:
+********** Limited to:
+*********** has_active_policy = mandatory_service
+********** Spawns a ruler:
+*********** Ruler's diplomatic skill is at least 4
+*********** Ruler's administrative skill is at least 1
+*********** Ruler's military skill is at least 1
+*********** random_gender = yes
+********* else:
+********** Spawns a ruler:
+*********** Ruler's diplomatic skill is at least 4
+*********** Ruler's administrative skill is at least 1
+*********** Ruler's military skill is at least 1
+********* If:
+********** Limited to:
+*********** has_faction = pr_smugglers
+********** Changes the influence of pr_smugglers by 20
+********* add_karma = 10
+******** Option: pirates.1.c:
+********* AI chance:
+********** Base chance of 20
+********* If:
+********** Limited to:
+*********** has_active_policy = mandatory_service
+********** Spawns a ruler:
+*********** Ruler's military skill is at least 4
+*********** Ruler's administrative skill is at least 1
+*********** Ruler's diplomatic skill is at least 1
+*********** random_gender = yes
+********* else:
+********** Spawns a ruler:
+*********** Ruler's military skill is at least 4
+*********** Ruler's administrative skill is at least 1
+*********** Ruler's diplomatic skill is at least 1
+********* If:
+********** Limited to:
+*********** has_faction = pr_captains
+********** Changes the influence of pr_captains by 20
+********* add_karma = 10
+******** Option: pirates.1.d:
+********* AI chance:
+********** Base chance of 1000
+********* Trigger:
+********** Does not have the global flag blackbeard_flag
+********** Year is at least 1700
+********** Year is less than 1720
+********** Capital:
+*********** Region is carribeans_region
+********* Spawns a ruler:
+********** Named "Edward 'Blackbeard' Teach"
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 6
+********** Culture is 0 "English
+********* If:
+********** Limited to:
+*********** has_or_building_flagship_false = no
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_flagship:
+************ Named "Queen Anne's Revenge"
+********* else_if:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_named_ship:
+************ Named "Queen Anne's Revenge"
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag blackbeard_flag
+******** Option: pirates.1.e:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag calico_jack
+********** Year is at least 1702
+********** Year is less than 1720
+********** Capital:
+*********** Region is carribeans_region
+********* Spawns a ruler:
+********** Named "'Calico' Jack Rackham"
+********** Ruler's administrative skill is at least 2
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 4
+********** Culture is 0 "English
+********* If:
+********** Limited to:
+*********** has_or_building_flagship_false = no
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_flagship:
+************ Named "Kingston"
+********* else_if:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_named_ship:
+************ Named "Kingston"
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag calico_jack
+******** Option: pirates.1.f:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag anne_bonny
+********** Year is at least 1716
+********** Year is less than 1782
+********** Capital:
+*********** Region is carribeans_region
+********* Spawns a ruler:
+********** Named "Anne Bonny"
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 2
+********** Ruler's military skill is at least 5
+********** Culture is 0 "Irish
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_or_building_flagship_false = no
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_flagship:
+************ Named "William"
+********* else_if:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_named_ship:
+************ Named "William"
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag anne_bonny
+******** Option: pirates.1.g:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag mary_read
+********** Year is at least 1703
+********** Year is less than 1721
+********** Capital:
+*********** Region is carribeans_region
+********* Spawns a ruler:
+********** Named "Mary Read"
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 5
+********** Culture is 0 "English
+********** Ruler is female
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag mary_read
+******** Option: pirates.1.h:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag charles_vane
+********** Year is at least 1702
+********** Year is less than 1720
+********** Capital:
+*********** Region is carribeans_region
+********* Spawns a ruler:
+********** Named "Charles Vane"
+********** Ruler's administrative skill is at least 2
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 5
+********** Culture is 0 "English
+********* If:
+********** Limited to:
+*********** has_or_building_flagship_false = no
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_flagship:
+************ Named "Ranger"
+********* else_if:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_named_ship:
+************ Named "Ranger"
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag charles_vane
+******** Option: pirates.1.i:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag black_caesar
+********** Year is at least 1702
+********** Year is less than 1720
+********** Capital:
+*********** Region is carribeans_region
+********* Spawns a ruler:
+********** Named "Black Caesar"
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 5
+********** Culture is 0 "Yoruba
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag black_caesar
+******** Option: pirates.1.j:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag ching_shih
+********** Year is at least 1795
+********** Capital:
+*********** Any of the following:
+************ superregion = east_indies_superregion
+************ superregion = china_superregion
+************ superregion = far_east_superregion
+********* Spawns a ruler:
+********** Named "Ching Shih"
+********** Ruler's administrative skill is at least 5
+********** Ruler's diplomatic skill is at least 5
+********** Ruler's military skill is at least 6
+********** Culture is 0 "Cantonese
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_or_building_flagship_false = no
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_flagship:
+************ Named "Red Flag"
+********* else_if:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_named_ship:
+************ Named "Red Flag"
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag ching_shih
+******** Option: pirates.1.k:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag jack_ward
+********** Year is at least 1605
+********** Year is less than 1610
+********** Capital:
+*********** Region is maghreb_region
+********* Spawns a ruler:
+********** Named "Jack Ward"
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 5
+********** Culture is 0 "English
+********* If:
+********** Limited to:
+*********** has_or_building_flagship_false = no
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_flagship:
+************ Named "Gift"
+********* else_if:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_named_ship:
+************ Named "Gift"
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag jack_ward
+******** Option: pirates.1.l:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag laurens_de_graaf
+********** Year is at least 1682
+********** Year is less than 1704
+********** Capital:
+*********** Region is carribeans_region
+********* Spawns a ruler:
+********** Named "Laurens de Graaf"
+********** Ruler's administrative skill is at least 2
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 5
+********** Culture is 0 "Dutch
+********* If:
+********** Limited to:
+*********** has_or_building_flagship_false = no
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_flagship:
+************ Named "Tigre"
+********* else_if:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_named_ship:
+************ Named "Tigre"
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag laurens_de_graaf
+******** Option: pirates.1.m:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag michel_de_gramont
+********** Year is at least 1670
+********** Year is less than 1686
+********** Capital:
+*********** Region is carribeans_region
+********* Spawns a ruler:
+********** Named "Michel de Grammont"
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 5
+********** Culture is 0 "Francien
+********* If:
+********** Limited to:
+*********** has_or_building_flagship_false = no
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_flagship:
+************ Named "Hardi"
+********* else_if:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_named_ship:
+************ Named "Hardi"
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag michel_de_gramont
+******** Option: pirates.1.n:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag piet_hein
+********** Year is at least 1607
+********** Year is less than 1629
+********** Primary culture is 0 "Dutch
+********* Spawns a ruler:
+********** Named "Piet Heyn"
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 5
+********** Culture is 0 "Dutch
+********* If:
+********** Limited to:
+*********** has_or_building_flagship_false = no
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_flagship:
+************ Named "Hollandia"
+********* else_if:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_named_ship:
+************ Named "Hollandia"
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag piet_hein
+******** Option: pirates.1.o:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag grace_omalley_flag
+********** Does not have the global flag wih_grainnenimhaille_flag
+********** Year is at least 1530
+********** Year is less than 1605
+********** Primary culture is 0 "Irish
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag grace_omalley_flag
+********* Gets the country event:
+********** ID is women_history_events.22
+******** Option: pirates.1.p:
+********* AI chance:
+********** Base chance of 500
+********* Trigger:
+********** Does not have the global flag francois_olonnais
+********** Year is at least 1650
+********** Year is less than 1669
+********** Capital:
+*********** Region is carribeans_region
+********* Spawns a ruler:
+********** Named "FranÃ§ois l'Olonnais"
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 1
+********** Ruler's military skill is at least 5
+********** Culture is 0 "Francien
+********* set_ruler_flag = historical_pirate
+********* Sets the global flag francois_olonnais
+******** after:
+********* Removes the country flag pirate_death_election
+********* Removes the country flag pirate_mutineer_council
+******* Gets the country event:
+******** ID is pirates.10
+******** title = pirates.10.t
+******** picture = FLAGSHIP_SUNK_eventPicture
+******** desc = pirates.10.d
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Golden Century
+********* has_reform = pirate_republic_reform
+********* Capital:
+********** Region is carribeans_region
+********* If:
+********** Limited to:
+*********** Has the DLC El Dorado
+********** carribeans_region:
+*********** recent_treasure_ship_passage = yes
+********* Any country:
+********** Capital:
+*********** In the continent 0 "Europe
+********** Any subject country:
+*********** Any of the following:
+************ Owns core province 0 "Mexico
+************ Owns core province 0 "Potosi
+******** Immediate effects:
+********* Hidden effect:
+********** Random country:
+*********** Limited to:
+************ Capital:
+************* In the continent 0 "Europe
+************ Any subject country:
+************* Any of the following:
+************** Owns core province 0 "Mexico
+************** Owns core province 0 "Potosi
+*********** save_event_target_as = sunken_ship_country
+******** Option: pirates.10.a:
+********* Changes the influence of pr_captains by 10
+******** Option: pirates.10.b:
+********* Changes the influence of pr_buccaneers by 10
+********* add_yearly_sailors = -5
+********* One of the following will happen:
+********** 10 relative chance:
+*********** Modifies treasury by 2 years worth of income
+********** 90 relative chance:
+******* Gets the country event:
+******** ID is pirates.11
+******** title = pirates.11.t
+******** picture = PIRATE_CAPTAINS_eventPicture
+******** desc = pirates.11.d
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Golden Century
+********* has_reform = pirate_republic_reform
+******** Immediate effects:
+********* Hidden effect:
+********** set_saved_name:
+*********** Named "captain_name"
+*********** scope = our country
+******** Option: pirates.11.a:
+********* Changes stability by -1
+********* Changes the influence of pr_buccaneers by 10
+********* Changes the influence of pr_captains by -10
+******** Option: pirates.11.b:
+********* add_scaled_republican_tradition = -10
+********* Changes the influence of pr_captains by 10
+********* Changes the influence of pr_buccaneers by -10
+******* Gets the country event:
+******** ID is pirates.12
+******** title = pirates.12.t
+******** picture = BUCCANEERS_eventPicture
+******** desc = pirates.12.d
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Golden Century
+********* has_reform = pirate_republic_reform
+********* has_privateers = yes
+******** Option: pirates.12.a:
+********* Changes administrative power stored by 50
+********* Changes the influence of pr_buccaneers by 10
+******** Option: pirates.12.b:
+********* Changes diplomatic power stored by 50
+********* Changes the influence of pr_smugglers by 10
+********* Changes the influence of pr_buccaneers by -5
+******** Option: pirates.12.c:
+********* Changes military power stored by 50
+********* Changes the influence of pr_captains by 10
+********* Changes the influence of pr_buccaneers by -5
+******* Gets the country event:
+******** ID is pirates.13
+******** title = pirates.13.t
+******** picture = SMUGGLERS_eventPicture
+******** desc = pirates.13.d
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Golden Century
+********* has_reform = pirate_republic_reform
+******** Immediate effects:
+********* Hidden effect:
+********** set_saved_name:
+*********** Named "skilled_forger"
+*********** scope = our country
+******** Option: pirates.13.a:
+********* Changes the influence of pr_smugglers by 10
+********* Creates an advisor of the 0 "Trader type:
+********** With a skill level of 2
+********** Named "skilled_forger"
+********** cost_multiplier = 0.5
+********* Hidden effect:
+********** clear_saved_name = skilled_forger
+******* Gets the country event:
+******** ID is pirates.14
+******** title = pirates.14.t
+******** picture = PIRATE_CAPTAINS_eventPicture
+******** desc = pirates.14.d
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Golden Century
+********* has_reform = pirate_republic_reform
+********* Any country:
+********** Has at least 3 heavy ships
+********** any_trade_node:
+*********** privateer_power:
+************ country = prev
+************ share = 1
+********** Capital:
+*********** Has been discovered by our country
+********* Any owned province:
+********** Is coastal
+******** Immediate effects:
+********* Hidden effect:
+********** Random country:
+*********** Limited to:
+************ Has at least 3 heavy ships
+************ any_trade_node:
+************* privateer_power:
+************** country = prev
+************** share = 1
+************ Capital:
+************* Has been discovered by our country
+*********** save_event_target_as = privateer_origin_country
+********* Hidden effect:
+********** set_saved_name:
+*********** Named "defecting_privateer"
+*********** scope = event_target:privateer_origin_country
+******** Option: pirates.14.a:
+********* Changes the influence of pr_captains by 10
+********* Creates an admiral at  extra naval tradition
+********** tradition = 50
+********** Named "defecting_privateer"
+********* If:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** Spawns a heavy ship belonging to our country
+********* else:
+********** Random owned province:
+*********** Limited to:
+************ Is coastal
+*********** Spawns a heavy ship belonging to our country
+********* Adds the opinion modifier "0 "Defected Privateer" from event_target:privateer_origin_country
+******* Gets the country event:
+******** ID is pirates.15
+******** title = pirates.15.t
+******** picture = BUCCANEERS_eventPicture
+******** desc = pirates.15.d
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Golden Century
+********* has_reform = pirate_republic_reform
+********* has_privateers = yes
+********* Any active trade node:
+********** Any province owned by a trade node member:
+*********** Any of the following:
+************ Produces 0 "Slaves
+************ Produces 0 "Sugar
+************ Produces 0 "Cotton
+************ Produces 0 "Tobacco
+************ Produces 0 "Cocoa
+******** Option: pirates.15.a:
+********* Changes national manpower by 1 years worth of men
+********* add_yearly_sailors = 2
+********* Changes the influence of pr_buccaneers by 10
+******** Option: pirates.15.b:
+********* Trigger:
+********** has_reform_false = war_against_the_world_doctrine_reform
+********* Modifies treasury by 0.5 years worth of income
+********* Changes the influence of pr_smugglers by 10
+********* Changes the influence of pr_buccaneers by -10
+******* Gets the country event:
+******** ID is pirates.16
+******** title = pirates.16.t
+******** picture = PIRATE_CAPTAINS_eventPicture
+******** desc = pirates.16.d
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Golden Century
+********* has_reform = pirate_republic_reform
+********* Navy is at least as large as 5's
+********* Does not have the country modifier "0 "Thorough Careening"
+********* Does not have the country modifier "0 "Relaxed Careening"
+******** Option: pirates.16.a:
+********* Changes the influence of pr_captains by 10
+********* Adds the modifier "0 "Thorough Careening" for 10 years:
+********** +10% ship durability
+******** Option: pirates.16.b:
+********* Changes the influence of pr_buccaneers by 10
+********* Adds the modifier "0 "Relaxed Careening" for 10 years:
+********** +5% naval morale
+********** -5% ship durability
+******* Gets the country event:
+******** ID is pirates.17
+******** title = pirates.17.t
+******** picture = SMUGGLERS_eventPicture
+******** desc = pirates.17.d
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Golden Century
+********* has_reform = pirate_republic_reform
+********* Does not have the country modifier "0 "Smugglers Struggling"
+******** Option: pirates.17.a:
+********* Changes the influence of pr_smugglers by -10
+********* Adds the modifier "0 "Smugglers Struggling" for 10 years:
+********** Trade efficiency is at least -5%
+******* Gets the country event:
+******** ID is pirates.18
+******** title = pirates.18.t
+******** picture = BUCCANEERS_eventPicture
+******** desc = pirates.18.d
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Golden Century
+********* has_reform = pirate_republic_reform
+********* has_flagship = yes
+******** Immediate effects:
+********* Hidden effect:
+********** set_saved_name:
+*********** Named "crew_representative"
+*********** scope = our country
+********** set_saved_name:
+*********** Named "captains_puppet"
+*********** scope = our country
+******** Option: pirates.18.a:
+********* Creates an advisor of the 0 "Quartermaster type:
+********** With a skill level of 2
+********** Named "crew_representative"
+********** cost_multiplier = 0.5
+********* Changes the influence of pr_buccaneers by 10
+********* Changes the influence of pr_captains by -10
+******** Option: pirates.18.b:
+********* Creates an advisor of the 0 "Naval Reformer type:
+********** With a skill level of 2
+********** Named "captains_puppet"
+********** cost_multiplier = 0.5
+********* Changes the influence of pr_captains by 10
+********* Changes the influence of pr_buccaneers by -10
+******* Gets the country event:
+******** ID is pirates.19
+******** title = pirates.19.t
+******** picture = SMUGGLERS_eventPicture
+******** desc = pirates.19.d
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Golden Century
+********* has_reform = pirate_republic_reform
+******** Option: pirates.19.a:
+********* Adds the modifier "0 "Blacklisted Crew" for 10 years:
+********** +10% stability cost modifier
+********* Changes the influence of pr_smugglers by 10
+********* Changes the influence of pr_buccaneers by -10
+******** Option: pirates.19.b:
+********* Changes prestige by -10
+********* Changes the influence of pr_buccaneers by 10
+********* Changes the influence of pr_smugglers by -10

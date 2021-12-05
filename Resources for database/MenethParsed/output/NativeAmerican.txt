@@ -1,0 +1,1160 @@
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* The owner of the province:
+********** Has the native government type
+********** Capital:
+*********** has_climate_false = 0 "Arctic
+********** Does not have the country flag natives_adapted_arctic
+********* The province is a colony
+********* Colony has a population of at least 100
+********* Colony has a population lower than 500
+********* has_climate = 0 "Arctic
+********* Any of the following:
+********** It is the 10. month of the year or later
+********** It is before the 5. month of the year
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+******** Option: native_americans.1.a:
+********* AI chance:
+********** Base chance of 75
+********* Changes population of colony by 200
+********* The owner of the province:
+********** Changes stability by -1
+********** Sets the country flag natives_adapted_arctic
+******** Option: native_americans.1.b:
+********* AI chance:
+********** Base chance of 25
+********* Changes population of colony by -100
+******* Gets the province event:
+******** ID is native_americans.2
+******** title = native_americans.2.t
+******** desc = native_americans.2.d
+******** picture = FAMINE_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* The owner of the province:
+********** Has the native government type
+********** Capital:
+*********** has_climate_false = 0 "Arid
+********** Does not have the country flag natives_adapted_arid
+********* The province is a colony
+********* Colony has a population of at least 100
+********* Colony has a population lower than 500
+********* has_climate = 0 "Arid
+********* It is the 5. month of the year or later
+********* It is before the 10. month of the year
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+******** Option: native_americans.2.a:
+********* AI chance:
+********** Base chance of 75
+********* Changes population of colony by 200
+********* The owner of the province:
+********** Changes stability by -1
+********** Sets the country flag natives_adapted_arid
+******** Option: native_americans.2.b:
+********* AI chance:
+********** Base chance of 25
+********* Changes population of colony by -100
+******* Gets the province event:
+******** ID is native_americans.3
+******** title = native_americans.3.t
+******** desc = native_americans.3.d
+******** picture = EXPLORERS_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* The owner of the province:
+********** Has the native government type
+********** Has less than 2 provinces
+********** Has less than 1 colonies
+********** Any neighbor country:
+*********** Capital:
+************ has_climate = 0 "Arctic
+********** Does not have the country flag natives_adapted_arctic
+********* has_climate = 0 "Arctic
+********* Any of the following:
+********** It is the 10. month of the year or later
+********** It is before the 5. month of the year
+******** Mean time to happen
+********* Base mean time to happen of 480 months
+******** Option: native_americans.3.a:
+********* The owner of the province:
+********** Random neighbor country:
+*********** Limited to:
+************ Capital:
+************* has_climate = 0 "Arctic
+*********** Adds the opinion modifier "0 "Pleased" towards our country
+*********** Sets the country flag natives_adapted_arctic
+********** Changes prestige by -10
+******** Option: native_americans.3.b:
+********* Adds the modifier "learning_from_the_land" until the end of the campaign:
+********** -25% production efficiency
+********* The owner of the province:
+********** Changes national manpower reserves by -2 years worth
+********** Sets the country flag natives_adapted_arctic
+******* Gets the province event:
+******** ID is native_americans.4
+******** title = native_americans.4.t
+******** desc = native_americans.4.d
+******** picture = EXPLORERS_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* The owner of the province:
+********** Has the native government type
+********** Has less than 2 provinces
+********** Has less than 1 colonies
+********** Any neighbor country:
+*********** Capital:
+************ has_climate = 0 "Arctic
+********** Does not have the country flag natives_adapted_arid
+********* has_climate = 0 "Arid
+********* It is the 5. month of the year or later
+********* It is before the 10. month of the year
+******** Mean time to happen
+********* Base mean time to happen of 480 months
+******** Option: native_americans.4.a:
+********* The owner of the province:
+********** Random neighbor country:
+*********** Limited to:
+************ Capital:
+************* has_climate = 0 "Arctic
+*********** Adds the opinion modifier "0 "Pleased" towards our country
+*********** Sets the country flag natives_adapted_arid
+********** Changes prestige by -10
+******** Option: native_americans.4.b:
+********* Adds the modifier "learning_from_the_land" until the end of the campaign:
+********** -25% production efficiency
+********* The owner of the province:
+********** Changes national manpower reserves by -2 years worth
+********** Sets the country flag natives_adapted_arid
+******* Gets the country event:
+******** ID is native_americans.5
+******** title = native_americans.5.t
+******** desc = native_americans.5.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Does not have the country flag natives_discounting_coup
+********* Has the 0 "Army Reformer advisor
+******** Mean time to happen
+********* Base mean time to happen of 480 months
+******** Option: native_americans.5.a:
+********* Changes military power stored by 100
+********* Changes prestige by -20
+********* Sets the country flag natives_discounting_coup
+******** Option: native_americans.5.b:
+********* Adds the ruler modifier "counting_coup" until the ruler's death:
+********** -5% infantry power
+********** +1 army tradition
+******* Gets the country event:
+******** ID is native_americans.6
+******** title = native_americans.6.t
+******** desc = native_americans.6.d
+******** picture = LAND_MILITARY_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Is at war
+********* Does not have the country flag appointed_war_chief
+********* 20 army tradition
+******** Mean time to happen
+********* Base mean time to happen of 96 months
+********* Multiplies value by 0.5:
+********** Has the ruler modifier counting_coup
+******** Option: native_americans.6.a:
+********* Sets the country flag appointed_war_chief
+********* Spawns a ruler:
+********** Changes ruler's administrative skill by 0
+********** Changes ruler's diplomatic skill by 1
+********** Changes ruler's military skill by 5
+******** Option: native_americans.6.b:
+********* Changes diplomatic power stored by 10
+******* Gets the country event:
+******** ID is native_americans.7
+******** title = native_americans.7.t
+******** desc = native_americans.7.d
+******** picture = CONQUEST_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the country flag appointed_war_chief
+******** Option: native_americans.7.a:
+********* Spawns a ruler:
+********** Changes ruler's administrative skill by 2
+********** Changes ruler's diplomatic skill by 2
+********* Removes the country flag appointed_war_chief
+******** Option: native_americans.7.b:
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is native_americans.8
+******** title = native_americans.8.t
+******** desc = native_americans.8.d
+******** picture = MERCHANTS_TALKING_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Has at least 2 provinces
+********* Any neighbor country:
+********** Has the native government type
+********** Has less than 2 provinces
+********** Has less than 1 colonies
+******** Mean time to happen
+********* Base mean time to happen of 720 months
+******** Option: native_americans.8.a:
+********* Random neighbor country:
+********** Limited to:
+*********** Has the native government type
+*********** Has less than 2 provinces
+*********** Has less than 1 colonies
+********** Gets the country event:
+*********** ID is native_americans.9
+*********** Base mean time to happen of 10 tooltip days
+******** Option: native_americans.8.b:
+********* Changes prestige by 10
+********* Random neighbor country:
+********** Limited to:
+*********** Has the native government type
+*********** Has less than 2 provinces
+*********** Has less than 1 colonies
+********** Adds the opinion modifier "0 "Insulted" towards our country
+******* Gets the country event:
+******** ID is native_americans.9
+******** title = native_americans.8.t
+******** desc = native_americans.9.d
+******** picture = MERCHANTS_TALKING_eventPicture
+******** is_triggered_only = yes
+******** Option: native_americans.9.a:
+********* Changes administrative power stored by 25
+********* Changes diplomatic power stored by 25
+********* Adds the modifier "intercultural_exchange" for 5 years:
+********** Trade efficiency is at least 5%
+********* Our country:
+********** Adds the opinion modifier "0 "Reconciling differences" towards our country
+********** Hidden effect:
+*********** Gets the country event:
+************ ID is native_americans.11
+************ Base mean time to happen of 10 days
+******** Option: native_americans.9.b:
+********* Changes prestige by 10
+********* Our country:
+********** Adds the opinion modifier "0 "Insulted" towards our country
+********** Hidden effect:
+*********** Gets the country event:
+************ ID is native_americans.10
+************ Base mean time to happen of 10 days
+******* Gets the country event:
+******** ID is native_americans.10
+******** title = native_americans.8.t
+******** desc = native_americans.10.d
+******** picture = BORDER_TENSION_eventPicture
+******** is_triggered_only = yes
+******** Option: native_americans.10.a:
+******* Gets the country event:
+******** ID is native_americans.11
+******** title = native_americans.8.t
+******** desc = native_americans.11.d
+******** picture = MERCHANTS_TALKING_eventPicture
+******** is_triggered_only = yes
+******** Option: native_americans.11.a:
+********* Changes administrative power stored by 25
+********* Changes diplomatic power stored by 25
+********* Adds the modifier "intercultural_exchange" for 5 years:
+********** Trade efficiency is at least 5%
+******* Gets the province event:
+******** ID is native_americans.12
+******** title = native_americans.12.t
+******** desc = native_americans.12.d
+******** picture = DIPLOMACY_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Produces 0 "Tobacco
+********* The owner of the province:
+********** Has the native government type
+********* Any of the following:
+********** Does not have the province modifier "restricted_tobacco"
+********** Does not have the province modifier "encouraged_tobacco"
+******** Mean time to happen
+********* Base mean time to happen of 960 months
+******** Option: native_americans.12.a:
+********* The owner of the province:
+********** Changes prestige by 5
+********* Adds the modifier "restricted_tobacco" until the end of the campaign:
+********** -10% production efficiency
+******** Option: native_americans.12.b:
+********* Adds the modifier "encouraged_tobacco" until the end of the campaign:
+********** +10% production efficiency
+********** -20% manpower modifier
+******* Gets the country event:
+******** ID is native_americans.14
+******** title = native_americans.14.t
+******** desc = native_americans.14.d
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Is not at war
+********* Capital:
+********** Region is great_plains_region
+********* It is the 3. month of the year or later
+********* It is before the 8. month of the year
+********* Does not have the country flag preparing_sundance
+******** Mean time to happen
+********* Base mean time to happen of 120 months
+******** Option: native_americans.14.a:
+********* Gets the country event:
+********** ID is native_americans.15
+********** Base mean time to happen of 60 tooltip days
+********* Changes national manpower reserves by -3 years worth
+********* Changes treasury by -20 ducats
+********* Changes prestige by 5
+********* Sets the country flag preparing_sundance
+******** Option: native_americans.14.b:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is native_americans.15
+******** title = native_americans.15.t
+******** desc = native_americans.15.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: native_americans.15.a:
+********* add_stability_or_adm_power = yes
+********* Removes the country flag preparing_sundance
+******* Gets the country event:
+******** ID is native_americans.16
+******** title = native_americans.16.t
+******** desc = native_americans.16.d
+******** picture = FARMING_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Has less than 2 provinces
+********* Has less than 1 colonies
+********* Capital:
+********** Produces 0 "Fur
+********** Does not have the province modifier "great_hunters"
+********** Does not have the 0 "Three-Sisters Field building
+******** Mean time to happen
+********* Base mean time to happen of 480 months
+********* Multiplies value by 0.5:
+********** Capital:
+*********** development = 9
+******** Option: native_americans.16.a:
+********* Capital:
+********** Constructs the 0 "Three-Sisters Field building
+******** Option: native_americans.16.b:
+********* Changes prestige by 10
+********* Capital:
+********** Adds the modifier "great_hunters" until the end of the campaign:
+*********** +10% production efficiency
+******* Gets the province event:
+******** ID is native_americans.17
+******** title = native_americans.17.t
+******** desc = native_americans.17.d
+******** picture = EXPLORERS_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* The owner of the province:
+********** Has the native government type
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has at least 10 provinces
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has at least 20 provinces
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has at least 30 provinces
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has at least 50 provinces
+******** Option: native_americans.17.a:
+********* One of the following will happen:
+********** 80 relative chance:
+*********** Gets the province event:
+************ ID is native_americans.18
+************ Base mean time to happen of 14 tooltip days
+********** 20 relative chance:
+*********** Gets the province event:
+************ ID is native_americans.19
+************ Base mean time to happen of 14 tooltip days
+******** Option: native_americans.17.b:
+********* The owner of the province:
+********** Changes administrative power stored by -10
+******* Gets the province event:
+******** ID is native_americans.18
+******** title = native_americans.18.t
+******** desc = native_americans.18.d
+******** picture = FARMING_eventPicture
+******** is_triggered_only = yes
+******** Option: native_americans.18.a:
+********* Adds the modifier "land_shaped_by_fire" until the end of the campaign:
+********** +10% production efficiency
+******* Gets the province event:
+******** ID is native_americans.19
+******** title = native_americans.19.t
+******** desc = native_americans.19.d
+******** picture = COUNTRY_COLLAPSE_eventPicture
+******** is_triggered_only = yes
+******** Option: native_americans.19.a:
+********* The owner of the province:
+********** Changes stability by -1
+******* Gets the country event:
+******** ID is native_americans.20
+******** title = native_americans.20.t
+******** desc = native_americans.20.d
+******** picture = LIBERUM_VETO_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Has at least 2 provinces
+********* Any owned province:
+********** Has a base tax of at least 2
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has a base tax of at least 2
+*********** Sets the province flag straying_son_origin
+********** Random owned province:
+*********** Limited to:
+************ Does not have the province flag straying_son_origin
+*********** Sets the province flag straying_son_target
+******** Option: native_americans.20.a:
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag straying_son_origin
+********** add_unrest = 2
+********* Hidden effect:
+********** Every owned province:
+*********** Removes the province flag straying_son_origin
+*********** Removes the province flag straying_son_target
+******** Option: native_americans.20.b:
+********* Adds the modifier "0 "Increased Decentralization" for 10 years:
+********** global_autonomy = 0.05
+********** -1 global unrest
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag straying_son_origin
+********** Changes base tax by -1
+********** Hidden effect:
+*********** Removes the province flag straying_son_origin
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag straying_son_target
+********** Changes base tax by 1
+********** Hidden effect:
+*********** Removes the province flag straying_son_target
+******* Gets the country event:
+******** ID is native_americans.21
+******** title = native_americans.21.t
+******** desc = native_americans.21.d
+******** picture = CULTURE_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Has at least 3 provinces
+********* Capital:
+********** Has a base tax of at least 2
+******** Mean time to happen
+********* Base mean time to happen of 1800 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+*********** Sets the province flag large_band_split_targets
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ Does not have the province flag large_band_split_targets
+*********** Sets the province flag large_band_split_targets
+******** Option: native_americans.21.a:
+********* Changes stability by -1
+********* Random owned province:
+********** Limited to:
+*********** The province is the capital of the country
+********** Changes base tax by -1
+********* Every owned province:
+********** Limited to:
+*********** Has the province flag large_band_split_targets
+********** Changes base tax by 1
+********** Hidden effect:
+*********** Removes the province flag large_band_split_targets
+******** Option: native_americans.21.b:
+********* Adds the modifier "0 "Increased Centralization" for 10 years:
+********** global_autonomy = -0.05
+********** +1 global unrest
+********* Hidden effect:
+********** Every owned province:
+*********** Limited to:
+************ Has the province flag large_band_split_targets
+*********** Removes the province flag large_band_split_targets
+******* Gets the country event:
+******** ID is native_americans.22
+******** title = native_americans.22.t
+******** desc = native_americans.22.d
+******** picture = FEAST_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Has at least 2 provinces
+********* Any owned province:
+********** Produces 0 "Fur
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+******** Option: native_americans.22.a:
+********* Changes administrative power stored by -50
+********* Changes prestige by 10
+******** Option: native_americans.22.b:
+********* Changes treasury by -10 ducats
+********* Random owned province:
+********** Limited to:
+*********** Produces 0 "Fur
+********** Constructs the 0 "Three-Sisters Field building
+******* Gets the province event:
+******** ID is native_americans.23
+******** title = native_americans.23.t
+******** desc = native_americans.23.d
+******** picture = ARTWORK_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* The owner of the province:
+********** Country is 0 "Navajo
+********** Does not have the country flag navajo_weaves
+********* Any of the following:
+********** Produces 0 "Wool
+********** Produces 0 "Cotton
+********** Produces 0 "Cloth
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+******** Option: native_americans.23.a:
+********* The owner of the province:
+********** Changes prestige by 15
+********** Sets the country flag navajo_weaves
+******* Gets the country event:
+******** ID is native_americans.24
+******** title = native_americans.24.t
+******** desc = native_americans.24.d
+******** picture = GREAT_BUILDING_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Does not have the country flag moundbuilders_completed
+********* Capital:
+********** Any of the following:
+*********** Region is mississippi_region
+*********** Region is northeast_america_region
+*********** Region is southeast_america_region
+********* Any neighbor country:
+********** Capital:
+*********** In the continent 0 "Europe
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.24.a:
+********* Changes treasury by -100 ducats
+********* Changes national manpower reserves by -2 years worth
+********* Changes prestige by 30
+********* Sets the country flag moundbuilders_completed
+******** Option: native_americans.24.b:
+********* Changes prestige by -15
+******* Gets the country event:
+******** ID is native_americans.28
+******** title = native_americans.28.t
+******** desc = native_americans.28.d
+******** picture = ADVISOR_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.28.a:
+********* Hidden effect:
+********** Sets the country flag deer
+********* Gets the country event:
+********** ID is native_americans.29
+********** Base mean time to happen of 1 days
+******** Option: native_americans.28.b:
+********* Trigger:
+********** Capital:
+*********** Region is cascadia_region
+********* Hidden effect:
+********** Sets the country flag salmon
+********* Gets the country event:
+********** ID is native_americans.29
+********** Base mean time to happen of 1 days
+******** Option: native_americans.28.c:
+********* Trigger:
+********** Capital:
+*********** Any of the following:
+************ Region is cascadia_region
+************ Region is california_region
+********* Hidden effect:
+********** Sets the country flag seal
+********* Gets the country event:
+********** ID is native_americans.29
+********** Base mean time to happen of 1 days
+******** Option: native_americans.28.e:
+********* Trigger:
+********** Capital:
+*********** Any of the following:
+************ Region is california_region
+************ Region is great_plains_region
+************ Region is rio_grande_region
+************ area = red_river_area
+************ area = saskatchewan_area
+************ area = prairies_area
+************ area = athabasca_area
+************ area = assiniboia_area
+************ area = manitoba_area
+********* Hidden effect:
+********** Sets the country flag pronghorn
+********* Gets the country event:
+********** ID is native_americans.29
+********** Base mean time to happen of 1 days
+******** Option: native_americans.28.f:
+********* Trigger:
+********** Capital:
+*********** Any of the following:
+************ Region is great_plains_region
+************ Region is rio_grande_region
+************ area = red_river_area
+************ area = saskatchewan_area
+************ area = prairies_area
+************ area = athabasca_area
+************ area = assiniboia_area
+************ area = manitoba_area
+************ Region is great_lakes_region
+************ Region is mississippi_region
+********* Hidden effect:
+********** Sets the country flag bison
+********* Gets the country event:
+********** ID is native_americans.29
+********** Base mean time to happen of 1 days
+******* Gets the country event:
+******** ID is native_americans.29
+******** title = native_americans.29.t
+******** desc:
+********* Trigger:
+********** Has the country flag deer
+********* desc = native_americans.29.d1
+******** desc:
+********* Trigger:
+********** Has the country flag salmon
+********* desc = native_americans.29.d2
+******** desc:
+********* Trigger:
+********** Has the country flag seal
+********* desc = native_americans.29.d3
+******** desc:
+********* Trigger:
+********** Has the country flag pronghorn
+********* desc = native_americans.29.d4
+******** desc:
+********* Trigger:
+********** Has the country flag bison
+********* desc = native_americans.29.d5
+******** picture = NATIVES_eventPicture
+******** is_triggered_only = yes
+******** Option: native_americans.29.a:
+********* One of the following will happen:
+********** 80 relative chance:
+********** 20 relative chance:
+*********** Changes prestige by 15
+********* Hidden effect:
+********** Removes the country flag deer
+********** Removes the country flag salmon
+********** Removes the country flag seal
+********** Removes the country flag pronghorn
+********** Removes the country flag bison
+******* Gets the country event:
+******** ID is native_americans.25
+******** title = native_americans.25.t
+******** desc = native_americans.25.d
+******** picture = FEAST_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Any of the following:
+********** Primary culture is athabascan
+********** Primary culture is chinook
+********** Primary culture is haida
+********** Primary culture is salish
+********* All of the following:
+********** It is the 0. month of the year or later
+********** It is before the 2. month of the year
+********** It is the 11. month of the year or later
+********* Does not have the country modifier "potlatch_held"
+********* Is not at war
+******** Mean time to happen
+********* Base mean time to happen of 120 months
+******** Option: native_americans.25.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has less than 100 ducats in the treasury
+********* Changes treasury by -100 ducats
+********* Changes prestige by 15
+********* Adds 1 legitimacy
+********* Adds the modifier "potlatch_held" for 12 months:
+********** -1% prestige decay
+********* Hidden effect:
+********** Random known country:
+*********** Gets the country event:
+************ ID is native_americans.26
+************ Base mean time to happen of 1 days
+************ Randomized by 15
+******** Option: native_americans.25.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than 100 ducats in the treasury
+********* Changes prestige by -15
+********* Hidden effect:
+********** Random known country:
+*********** Gets the country event:
+************ ID is native_americans.27
+************ Base mean time to happen of 1 days
+************ Randomized by 15
+******* Gets the country event:
+******** ID is native_americans.26
+******** title = native_americans.26.t
+******** desc = native_americans.26.d
+******** picture = FEAST_eventPicture
+******** is_triggered_only = yes
+******** Option: native_americans.26.a:
+********* AI chance:
+********** Base chance of 25
+********** Multiplies value by 2:
+*********** Is allied with our country
+********** Multiplies value by 1.25:
+*********** Has an opinion of at least 150 with our country
+********** Multiplies value by 1.25:
+*********** Has an opinion of at least 50 with our country
+********** Multiplies value by 0.75:
+*********** Has an opinion of less than 0 with our country
+********** Multiplies value by 0.5:
+*********** Has an opinion of less than -50 with our country
+********** Multiplies value by 0.5:
+*********** Has an opinion of less than -150 with our country
+********* Adds the opinion modifier "potlatch_good" towards our country
+******** Option: native_americans.26.b:
+********* AI chance:
+********** Base chance of 25
+********** Multiplies value by 1:
+*********** Is allied with our country
+********** Multiplies value by 1.10:
+*********** Has an opinion of at least 150 with our country
+********** Multiplies value by 1.10:
+*********** Has an opinion of at least 50 with our country
+********** Multiplies value by 0.9:
+*********** Has an opinion of less than 0 with our country
+********** Multiplies value by 0.75:
+*********** Has an opinion of less than -50 with our country
+********** Multiplies value by 0.75:
+*********** Has an opinion of less than -150 with our country
+********* Adds the opinion modifier "potlatch_nice" towards our country
+******** Option: native_americans.26.c:
+********* AI chance:
+********** Base chance of 25
+********** Multiplies value by 1:
+*********** Is allied with our country
+********** Multiplies value by 0.9:
+*********** Has an opinion of at least 150 with our country
+********** Multiplies value by 0.9:
+*********** Has an opinion of at least 50 with our country
+********** Multiplies value by 1.1:
+*********** Has an opinion of less than 0 with our country
+********** Multiplies value by 1.25:
+*********** Has an opinion of less than -50 with our country
+********** Multiplies value by 1.25:
+*********** Has an opinion of less than -150 with our country
+******** Option: native_americans.26.e:
+********* AI chance:
+********** Base chance of 25
+********** Multiplies value by 0.5:
+*********** Is allied with our country
+********** Multiplies value by 0.5:
+*********** Has an opinion of at least 150 with our country
+********** Multiplies value by 0.75:
+*********** Has an opinion of at least 50 with our country
+********** Multiplies value by 1.25:
+*********** Has an opinion of less than 0 with our country
+********** Multiplies value by 1.25:
+*********** Has an opinion of less than -50 with our country
+********** Multiplies value by 2:
+*********** Has an opinion of less than -150 with our country
+********* Adds the opinion modifier "potlatch_bad" towards our country
+******* Gets the country event:
+******** ID is native_americans.27
+******** title = native_americans.27.t
+******** desc = native_americans.27.d
+******** picture = FEAST_eventPicture
+******** is_triggered_only = yes
+******** Option: native_americans.27.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Is allied with our country
+********** Multiplies value by 1.25:
+*********** Has an opinion of at least 150 with our country
+********** Multiplies value by 1.25:
+*********** Has an opinion of at least 50 with our country
+********** Multiplies value by 0.75:
+*********** Has an opinion of less than 0 with our country
+********** Multiplies value by 0.5:
+*********** Has an opinion of less than -50 with our country
+********** Multiplies value by 0.5:
+*********** Has an opinion of less than -150 with our country
+******** Option: native_americans.27.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 1:
+*********** Is allied with our country
+********** Multiplies value by 1.10:
+*********** Has an opinion of at least 150 with our country
+********** Multiplies value by 1.10:
+*********** Has an opinion of at least 50 with our country
+********** Multiplies value by 0.9:
+*********** Has an opinion of less than 0 with our country
+********** Multiplies value by 0.75:
+*********** Has an opinion of less than -50 with our country
+********** Multiplies value by 0.75:
+*********** Has an opinion of less than -150 with our country
+********* Adds the opinion modifier "potlatch_bad" towards our country
+********* Gives the 0 "Diplomatic Insult casus belli against our country
+******* Gets the country event:
+******** ID is native_americans.30
+******** title = native_americans.30.t
+******** desc = native_americans.30.d
+******** picture = ACCUSATION_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Any of the following:
+********** Primary culture is athabascan
+********** Primary culture is chinook
+********** Primary culture is haida
+********** Primary culture is salish
+********* Does not have the country modifier "shame_pole"
+******** Option: native_americans.30.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has less than 100 ducats in the treasury
+********* Changes treasury by -100 ducats
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.30.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has at least 100 ducats in the treasury
+********* Adds the modifier "shame_pole" for 10 years:
+********** +2% prestige decay
+******* Gets the country event:
+******** ID is native_americans.31
+******** title = native_americans.31.t
+******** desc = native_americans.31.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Any of the following:
+********** Primary culture is athabascan
+********** Primary culture is chinook
+********** Primary culture is haida
+********** Primary culture is salish
+********* Any ally:
+********** Does not have the country modifier "honour_pole"
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.31.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has less than 50 ducats in the treasury
+********* Changes treasury by -50 ducats
+********* Random ally:
+********** Limited to:
+*********** Does not have the country modifier "honour_pole"
+********** Adds the modifier "honour_pole" for 10 years:
+*********** -1% prestige decay
+********** Adds the opinion modifier "honour_pole" towards our country
+******** Option: native_americans.31.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has at least 50 ducats in the treasury
+******* Gets the country event:
+******** ID is native_americans.32
+******** title = native_americans.32.t
+******** desc = native_americans.32.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Any of the following:
+********** Primary culture is athabascan
+********** Primary culture is chinook
+********** Primary culture is haida
+********** Primary culture is salish
+********* Does not have the country modifier "honour_pole"
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.32.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has less than 100 ducats in the treasury
+********* Changes treasury by -100 ducats
+********* Adds the modifier "honour_pole" for 10 years:
+********** -1% prestige decay
+******** Option: native_americans.32.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has at least 100 ducats in the treasury
+******* Gets the country event:
+******** ID is native_americans.33
+******** title = native_americans.33.t
+******** desc:
+********* Trigger:
+********** Military technology is lower than 6
+********* desc = native_americans.33.d1
+******** desc:
+********* Trigger:
+********** Military technology is at least 6
+********* desc = native_americans.33.d2
+******** picture = ACCUSATION_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Any of the following:
+********** Culture group is caddoan
+********** Culture group is plains_algonquian
+********** Culture group is 0 "Siouan
+********** Primary culture is chipewyan
+********** Primary culture is kiowa
+********** Primary culture is 0 "Shoshone
+********* Military technology is lower than 6
+********* Any of the following:
+********** Does not have the country modifier "travois_no_dogs"
+********** Does not have the country modifier "travois_no_horses"
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.33.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has less than 50 ducats in the treasury
+********* Changes treasury by -50 ducats
+******** Option: native_americans.33.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than 50 ducats in the treasury
+********* If:
+********** Limited to:
+*********** Military technology is at least 6
+********** Adds the modifier "travois_no_horses" for 12 months:
+*********** migration_cost = -0.1
+********* else:
+********** Adds the modifier "travois_no_dogs" for 12 months:
+*********** migration_cost = -0.1
+******* Gets the country event:
+******** ID is native_americans.34
+******** title = native_americans.34.t
+******** desc = native_americans.34.d
+******** picture = STREET_SPEECH_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Any of the following:
+********** Culture group is caddoan
+********** Culture group is plains_algonquian
+********** Culture group is 0 "Siouan
+********** Primary culture is chipewyan
+********** Primary culture is kiowa
+********** Primary culture is 0 "Shoshone
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.34.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has less than 50 ducats in the treasury
+********* Changes treasury by -50 ducats
+******** Option: native_americans.34.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than 50 ducats in the treasury
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is native_americans.35
+******** title = native_americans.35.t
+******** desc = native_americans.35.d
+******** picture = NATIVES_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Any of the following:
+********** Culture group is caddoan
+********** Culture group is plains_algonquian
+********** Culture group is 0 "Siouan
+********** Primary culture is chipewyan
+********** Primary culture is kiowa
+********** Primary culture is 0 "Shoshone
+********* Military technology is at least 6
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.35.a:
+********* Changes stability by 1
+******* Gets the country event:
+******** ID is native_americans.36
+******** title = native_americans.36.t
+******** desc = native_americans.36.d
+******** picture = ECONOMY_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Any of the following:
+********** Culture group is caddoan
+********** Culture group is plains_algonquian
+********** Culture group is 0 "Siouan
+********** Primary culture is chipewyan
+********** Primary culture is kiowa
+********** Primary culture is 0 "Shoshone
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.36.a:
+********* Changes treasury by 50 ducats
+******* Gets the country event:
+******** ID is native_americans.37
+******** title = native_americans.37.t
+******** desc = native_americans.37.d
+******** picture = DIPLOMACY_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Any of the following:
+********** Culture group is caddoan
+********** Culture group is plains_algonquian
+********** Culture group is 0 "Siouan
+********** Primary culture is chipewyan
+********** Primary culture is kiowa
+********** Primary culture is 0 "Shoshone
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.37.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has at least 50 ducats in the treasury
+********* Changes treasury by -50 ducats
+********* Random known country:
+********** Limited to:
+*********** Any of the following:
+************ Culture group is caddoan
+************ Culture group is plains_algonquian
+************ Culture group is 0 "Siouan
+************ Primary culture is chipewyan
+************ Primary culture is kiowa
+************ Primary culture is 0 "Shoshone
+********** Adds the opinion modifier "0 "Successful Diplomacy" towards our country
+******** Option: native_americans.37.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than 50 ducats in the treasury
+********* Random known country:
+********** Limited to:
+*********** Any of the following:
+************ Culture group is caddoan
+************ Culture group is plains_algonquian
+************ Culture group is 0 "Siouan
+************ Primary culture is chipewyan
+************ Primary culture is kiowa
+************ Primary culture is 0 "Shoshone
+********** Gives the 0 "Diplomatic Insult casus belli against our country
+******* Gets the country event:
+******** ID is native_americans.38
+******** title = native_americans.38.t
+******** desc = native_americans.38.d
+******** picture = PLAGUE_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Primary culture is yokuts
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.38.a:
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is native_americans.39
+******** title = native_americans.39.t
+******** desc = native_americans.39.d
+******** picture = ARTWORK_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Primary culture is yokuts
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.39.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has less than 50 ducats in the treasury
+********* Changes treasury by -50 ducats
+********* Changes stability by 1
+******** Option: native_americans.39.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has at least 50 ducats in the treasury
+******* Gets the country event:
+******** ID is native_americans.40
+******** title = native_americans.40.t
+******** desc = native_americans.40.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Is not at war
+********* Primary culture is yokuts
+******** Mean time to happen
+********* Base mean time to happen of 120 months
+******** Option: native_americans.40.a:
+********* Changes national manpower reserves by -3 years worth
+********* Changes treasury by -20 ducats
+********* Changes prestige by 5
+********* add_stability_or_adm_power = yes
+******** Option: native_americans.40.b:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is native_americans.41
+******** title = native_americans.41.t
+******** desc = native_americans.41.d
+******** picture = MERCHANTS_TALKING_eventPicture
+******** Trigger:
+********* Has the DLC Conquest of Paradise
+********* Has the native government type
+********* Any of the following:
+********** Culture group is caddoan
+********** Culture group is plains_algonquian
+********** Culture group is 0 "Siouan
+********** Primary culture is chipewyan
+********** Primary culture is kiowa
+********** Primary culture is 0 "Shoshone
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: native_americans.41.a:
+********* Changes treasury by 50 ducats
+********* Changes prestige by 5

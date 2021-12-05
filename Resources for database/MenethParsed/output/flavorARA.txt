@@ -1,0 +1,362 @@
+
+=== 0 "Consulate of the Sea ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** All of the following:
+*** Does not have the DLC Golden Century
+*** Country is 0 "Aragon
+*** Year is less than 1500
+*** Does not have the country modifier "0 "Consulate of the Sea"
+** Has the country flag ara_consulate_flag
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Option: 0 "Good!:'''
+
+* Adds the modifier "0 "Consulate of the Sea" for 50 years:
+** +10% trade power
+** Trade efficiency is at least 20%
+
+=== 0 "Book of the Consulate of the Sea ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aragon
+* Has the country modifier "0 "Consulate of the Sea"
+* Does not have the country modifier "0 "Book of the Consulate of the Sea"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Option: 0 "Fund the manuscript:'''
+
+* Modifies treasury by -0.5 years worth of income
+* If:
+** Limited to:
+*** has_completed_all_reforms_trigger_false = yes
+** add_reform_progress_small_effect = yes
+* Removes the country modifier "0 "Consulate of the Sea"
+* Adds the modifier "0 "Book of the Consulate of the Sea" for the rest of the campaign:
+** +0.25 prestige
+** -5% diplomatic technology cost
+** +10% trade power
+** Trade efficiency is at least 5%
+
+'''Option: 0 "Ignore the manuscript:'''
+
+* Changes prestige by -1
+
+=== 0 "Antonio Beccadelli ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aragon
+* Year is less than 1471
+* Any of the following:
+** Ruler's diplomatic skill is at least 3
+** Ruler's administrative skill is at least 3
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Option: 0 "Yes, hire him:'''
+
+* Changes administrative power stored by 10
+* Changes prestige by 10
+* Creates an advisor of the 0 "Artist type:
+** Named "Antonio Beccadelli"
+** Culture is 0 "Sicilian
+** With a skill level of 2
+** discount = yes
+* add_innovativeness_small_effect = yes
+
+=== 0 "Iovianus Pontanus ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aragon
+* Year is less than 1503
+* Any of the following:
+** Ruler's diplomatic skill is at least 3
+** Ruler's administrative skill is at least 3
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Option: 0 "He could not have done it without us!:'''
+
+* Changes prestige by 10
+* add_innovativeness_small_effect = yes
+
+'''Option: 0 "His success is that of the people:'''
+
+* add_stability_or_adm_power = yes
+* add_innovativeness_small_effect = yes
+
+=== 0 "Monastery of Santa Maria de Sigena ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aragon
+* Year is less than 1520
+* Does not have the country modifier "0 "Monastery of Santa María de Sigena"
+* Follows the 0 "Catholic religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Option: 0 "Fund the monastery:'''
+
+* Modifies treasury by -0.5 years worth of income
+* Adds the modifier "0 "Monastery of Santa María de Sigena" for 50 years:
+** +2% global missionary strength
+
+'''Option: 0 "Fund the artist:'''
+
+* Modifies treasury by -0.5 years worth of income
+* Adds the modifier "0 "The artist of the Monastery of Santa María de Sigena" for 50 years:
+** +0.25 prestige
+
+'''Option: 0 "Ignore it:'''
+
+* Changes prestige by -1
+
+=== 0 "Sindicat Remença ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aragon
+* Year is less than 1500
+* Any of the following:
+** Ruler's administrative skill is at least 4
+** Ruler's diplomatic skill is at least 4
+* Any owned province:
+** Culture is 0 "Catalan
+** No owned province:
+*** Has the province modifier "0 "Sindicat Remença"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Has core on our country
+**** Culture is 0 "Catalan
+*** Sets the province flag ara_sindicat_remença_flag
+** Random owned province:
+*** Limited to:
+**** Has core on our country
+**** Culture is 0 "Catalan
+**** Does not have the province flag ara_sindicat_remença_flag
+*** Sets the province flag ara_sindicat_remença_flag
+** Random owned province:
+*** Limited to:
+**** Has core on our country
+**** Culture is 0 "Catalan
+**** Does not have the province flag ara_sindicat_remença_flag
+*** Sets the province flag ara_sindicat_remença_flag
+
+'''Option: 0 "Allow the peasants to form a Sindicat Remença:'''
+
+* Adds the modifier "0 "Increased Decentralization" for 10 years:
+** global_autonomy = 0.05
+** -1 global unrest
+* Every owned province:
+** Limited to:
+*** Has the province flag ara_sindicat_remença_flag
+** add_local_autonomy = 25
+** Adds the modifier "0 "Sindicat Remença" until the end of the campaign:
+*** +20% trade goods output
+*** -10% manpower modifier
+*** local_unrest = -1
+*** local_autonomy = 0.05
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Has the province flag ara_sindicat_remença_flag
+*** Removes the province flag ara_sindicat_remença_flag
+
+'''Option: 0 "Ignore the peasant rabble:'''
+
+* Every owned province:
+** Limited to:
+*** Has the province flag ara_sindicat_remença_flag
+** Removes the province flag ara_sindicat_remença_flag
+** Spawns revolt of size 1 of 0 "Peasant rebels
+
+=== title = "flavor_ara.EVTNAME7" ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aragon
+* Ruler's name is not Alfons V
+* Does not have the country flag alfonso_died_yes_really
+* 0 "Naples:
+** Junior union partner under 0 "Aragon
+* Year is less than 1500
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 2 months
+
+'''Immediate effects:'''
+
+* Sets the country flag alfonso_died_yes_really
+
+'''Option: flavor_ara.EVTOPTA7:'''
+
+* AI chance:
+** Base chance of 20
+* Hidden effect:
+** 0 "Naples:
+*** Gets the country event:
+**** ID is flavor_ara.8
+* set_ruler_flag = alfonsos_successor
+
+'''Option: flavor_ara.EVTOPTB7:'''
+
+* AI chance:
+** Base chance of 1
+* Adds -25 legitimacy
+* 0 "Naples:
+** Adds 50 liberty desire
+
+=== title = "flavor_ara.EVTNAME8" ===
+* Cannot fire randomly
+
+'''Option: flavor_ara.EVTOPTA8:'''
+
+* Spawns a ruler:
+** Named "Ferrando I"
+** Ruler's dynasty is de Trastámara
+** Ruler's diplomatic skill is at least 4
+** Ruler's military skill is at least 4
+** Ruler's administrative skill is at least 2
+** Legitimacy of 50
+* 0 "The Papal State:
+** Gets the country event:
+*** ID is flavor_ara.9
+*** Base mean time to happen of 1 days
+* Breaks the union with 0 "Aragon
+
+'''Option: flavor_ara.EVTOPTB8:'''
+
+* Spawns a ruler:
+** Named "Ferrando I"
+** Ruler's dynasty is de Trastámara
+** Ruler's diplomatic skill is at least 4
+** Ruler's military skill is at least 4
+** Ruler's administrative skill is at least 2
+** Legitimacy of 50
+* Breaks the union with 0 "Aragon
+* Adds -20 legitimacy
+* Changes treasury by -100 ducats
+* 0 "The Papal State:
+** Gets the country event:
+*** ID is flavor_ara.10
+*** Base mean time to happen of 1 days
+* Sets the country flag naples_submits_to_the_pope
+
+=== title = "flavor_ara.EVTNAME9" ===
+* Cannot fire randomly
+
+'''Option: flavor_ara.EVTOPTA9:'''
+
+* Trigger:
+** 0 "France:
+*** Does not have the country flag claimed_naples
+* 0 "France:
+** Gets the country event:
+*** ID is flavor_fra.3105
+*** Base mean time to happen of 7 days
+* 0 "Naples:
+** Adds the opinion modifier "opinion_interfering_pope" towards 0 "The Papal State
+
+'''Option: flavor_ara.EVTOPTB9:'''
+
+* Trigger:
+** Any of the following:
+*** 0 "France:
+**** Has the country flag claimed_naples
+*** Is not AI controlled
+* Gives the 0 "Subjugation casus belli against 0 "Naples
+* 0 "Naples:
+** Adds the opinion modifier "opinion_interfering_pope" towards 0 "The Papal State
+
+'''Option: flavor_ara.EVTOPTC9:'''
+
+* AI chance:
+** Base chance of 0
+* Changes prestige by -40
+
+=== title = "flavor_ara.EVTNAME10" ===
+* Cannot fire randomly
+
+'''Option: flavor_ara.EVTOPTA10:'''
+
+* Changes treasury by 100 ducats
+* Adds the opinion modifier "opinion_NAP_paid_tribute" towards 0 "Naples
+
+=== title = "flavor_ara.EVTNAME11" ===
+* Can only fire once
+
+'''Trigger:'''
+
+* 0 "Naples:
+** Country exists
+** Is not a vassal
+* Does not have the 0 "Restoration of Union casus belli against 0 "Naples
+* Any of the following:
+** All of the following:
+*** Country is 0 "Aragon
+*** Has the monarchy government type
+*** Has the country flag alfonso_died_yes_really
+*** has_ruler_flag_false = alfonsos_successor
+*** Is not a vassal
+** All of the following:
+*** 0 "Aragon does not exist
+*** Country is 0 "Spain
+*** Has the monarchy government type
+*** Is not a vassal
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 6 months
+
+'''Option: flavor_ara.EVTOPTA11:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Is allied with 0 "Naples
+* Gives the 0 "Restoration of Union casus belli against 0 "Naples
+* 0 "Naples:
+** Adds the opinion modifier "0 "Claimed Naples" towards our country
+
+'''Option: flavor_ara.EVTOPTB11:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Is not allied with 0 "Naples
+* 0 "Naples:
+** Adds the opinion modifier "0 "Did Not Claim Naples" towards our country

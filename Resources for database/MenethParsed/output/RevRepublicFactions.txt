@@ -1,0 +1,335 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** Has the DLC Rights of Man
+********** Has the DLC Emperor
+********* Any of the following:
+********** is_revolutionary_republic_trigger = yes
+********** has_reform = revolutionary_empire_reform
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: revolutionary_republic_factions.0.a:
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** add_revolutionary_zeal = 5
+********* else:
+********** Changes republican tradition by 500%
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_jacobins by 10
+******** Option: revolutionary_republic_factions.0.b:
+********* Changes national manpower by 0.25 years worth of men
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_royalists by 10
+******** Option: revolutionary_republic_factions.0.c:
+********* add_revolutionary_zeal = -5
+********* Changes army tradition by 10
+********* Changes the influence of rr_girondists by 10
+******* Gets the country event:
+******** ID is revolutionary_republic_factions.1
+******** title = revolutionary_republic_factions.1.t
+******** desc = revolutionary_republic_factions.1.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** Has the DLC Rights of Man
+********** Has the DLC Emperor
+********* Any of the following:
+********** is_revolutionary_republic_trigger = yes
+********** has_reform = revolutionary_empire_reform
+********* Does not have the country modifier "state_atheism"
+********* Does not have the country modifier "clerical_support"
+********* Does not have the country modifier "clerical_pragmatism"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: revolutionary_republic_factions.1.a:
+********* Trigger:
+********** Does not have the country modifier "0 "Cult of Reason"
+********* add_revolutionary_zeal = -5
+********* Adds the modifier "state_atheism" for 5 years:
+********** -1 tolerance of the true faith
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_jacobins by 10
+******** Option: revolutionary_republic_factions.1.a2:
+********* highlight = yes
+********* Trigger:
+********** Has the country modifier "0 "Cult of Reason"
+********* add_revolutionary_zeal = 5
+********* Adds the modifier "state_atheism" for 5 years:
+********** -1 tolerance of the true faith
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_jacobins by 10
+******** Option: revolutionary_republic_factions.1.b:
+********* Trigger:
+********** Does not have the country modifier "0 "Cult of Reason"
+********* add_revolutionary_zeal = 5
+********* Adds the modifier "clerical_support" for 5 years:
+********** +10% stability cost modifier
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_royalists by 10
+******** Option: revolutionary_republic_factions.1.b2:
+********* add_revolutionary_zeal = 10
+********* Trigger:
+********** Has the country modifier "0 "Cult of Reason"
+********* Adds the modifier "clerical_support" for 5 years:
+********** +10% stability cost modifier
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_royalists by 10
+******** Option: revolutionary_republic_factions.1.c:
+********* Adds the modifier "clerical_pragmatism" for 5 years:
+********** global_autonomy = 0.05
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_girondists by 10
+******* Gets the country event:
+******** ID is revolutionary_republic_factions.2
+******** title = revolutionary_republic_factions.2.t
+******** desc = revolutionary_republic_factions.2.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** Has the DLC Rights of Man
+********** Has the DLC Emperor
+********* Any of the following:
+********** is_revolutionary_republic_trigger = yes
+********** has_reform = revolutionary_empire_reform
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: revolutionary_republic_factions.2.a:
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** add_revolutionary_zeal = 5
+********* else:
+********** Changes prestige by 10
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_jacobins by 10
+******** Option: revolutionary_republic_factions.2.b:
+********* Changes national manpower by 0.35 years worth of men
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_girondists by 10
+******** Option: revolutionary_republic_factions.2.c:
+********* add_revolutionary_zeal = -5
+********* Changes diplomatic power stored by 25
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_royalists by 10
+******* Gets the country event:
+******** ID is revolutionary_republic_factions.3
+******** title = revolutionary_republic_factions.3.t
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** desc:
+********* Trigger:
+********** Has the country flag defecting_girondist
+********* desc = revolutionary_republic_factions.3.da
+******** desc:
+********* Trigger:
+********** Has the country flag defecting_royalist
+********* desc = revolutionary_republic_factions.3.db
+******** desc:
+********* Trigger:
+********** Has the country flag defecting_jacobin
+********* desc = revolutionary_republic_factions.3.dc
+******** is_triggered_only = yes
+******** Trigger:
+********* has_faction = rr_girondists
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** One of the following will happen:
+*********** 33 relative chance:
+************ Sets the country flag defecting_jacobin
+*********** 33 relative chance:
+************ Sets the country flag defecting_royalist
+*********** 33 relative chance:
+************ Sets the country flag defecting_girondist
+******** Option: revolutionary_republic_factions.3.a:
+********* trigger_switch:
+********** on_trigger = has_country_flag
+********** defecting_girondist:
+*********** Changes the influence of rr_girondists by -10
+*********** Removes the country flag defecting_girondist
+********** defecting_royalist:
+*********** Changes the influence of rr_royalists by -10
+*********** Removes the country flag defecting_royalist
+********** defecting_jacobin:
+*********** Changes the influence of rr_jacobins by -10
+*********** Removes the country flag defecting_jacobin
+******* Gets the country event:
+******** ID is revolutionary_republic_factions.4
+******** title = revolutionary_republic_factions.4.t
+******** desc = revolutionary_republic_factions.4.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_faction = rr_jacobins
+********* rr_jacobins is in power
+********* Does not have the country modifier "revolutionary_tribunals"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: revolutionary_republic_factions.4.a:
+********* add_revolutionary_zeal = 5
+********* Adds the modifier "revolutionary_tribunals" for 5 years:
+********** Republican tradition is at least 0.1
+********* Changes the influence of rr_jacobins by 5
+******* Gets the country event:
+******** ID is revolutionary_republic_factions.5
+******** title = revolutionary_republic_factions.5.t
+******** desc = revolutionary_republic_factions.5.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_faction = rr_royalists
+********* rr_royalists is in power
+********* Does not have the country modifier "consolidation_of_power"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: revolutionary_republic_factions.5.a:
+********* add_revolutionary_zeal = -5
+********* Adds the modifier "consolidation_of_power" for 5 years:
+********** Republican tradition is at least -0.1
+********** -1 global unrest
+********* Changes the influence of rr_royalists by 5
+******* Gets the country event:
+******** ID is revolutionary_republic_factions.6
+******** title = revolutionary_republic_factions.6.t
+******** desc = revolutionary_republic_factions.6.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_faction = rr_girondists
+********* rr_girondists is in power
+********* Does not have the country modifier "constitutional_project"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: revolutionary_republic_factions.6.a:
+********* add_revolutionary_zeal = 5
+********* Adds the modifier "constitutional_project" for 5 years:
+********** global_trade_goods_size_modifier = 0.1
+********* Changes the influence of rr_girondists by 5
+******* Gets the country event:
+******** ID is revolutionary_republic_factions.7
+******** title = revolutionary_republic_factions.7.t
+******** desc:
+********* Trigger:
+********** has_faction = rr_girondists
+********* desc = revolutionary_republic_factions.7.d
+******** desc:
+********* Trigger:
+********** has_faction_false = rr_girondists
+********* desc = revolutionary_republic_factions.7.d2
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** Has the DLC Rights of Man
+********** Has the DLC Emperor
+********* Any of the following:
+********** is_revolutionary_republic_trigger = yes
+********** has_reform = revolutionary_empire_reform
+********* If:
+********** Limited to:
+*********** has_faction = rr_girondists
+********** rr_girondists is not in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: revolutionary_republic_factions.7.a:
+********* Changes stability by -1
+********* Adds the modifier "suffering_administration" for 5 years:
+********** global_autonomy = 0.1 #Base reduction is high due to government rank 3.
+******** Option: revolutionary_republic_factions.7.b:
+********* add_revolutionary_zeal = -5
+********* Adds the modifier "suffering_administration" for 2.5 years:
+********** global_autonomy = 0.1 #Base reduction is high due to government rank 3.
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_royalists by 5
+******* Gets the country event:
+******** ID is revolutionary_republic_factions.8
+******** title = revolutionary_republic_factions.8.t
+******** desc = revolutionary_republic_factions.8.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** Has the DLC Rights of Man
+********** Has the DLC Emperor
+********* Any of the following:
+********** is_revolutionary_republic_trigger = yes
+********** has_reform = revolutionary_empire_reform
+********* rr_royalists is not in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: revolutionary_republic_factions.8.a:
+********* Adds the modifier "imperial_faction_in_army" for 5 years:
+********** Republican tradition is at least -0.1
+******** Option: revolutionary_republic_factions.8.b:
+********* add_revolutionary_zeal = -5
+********* Changes army tradition by -10
+********* Adds the modifier "imperial_faction_in_army" for 2.5 years:
+********** Republican tradition is at least -0.1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Changes the influence of rr_royalists by 5
+******* Gets the country event:
+******** ID is revolutionary_republic_factions.9
+******** title = revolutionary_republic_factions.9.t
+******** desc:
+********* Trigger:
+********** has_faction = rr_jacobins
+********* desc = revolutionary_republic_factions.9.d
+******** desc:
+********* Trigger:
+********** has_faction_false = rr_jacobins
+********* desc = revolutionary_republic_factions.9.d2
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** Has the DLC Rights of Man
+********** Has the DLC Emperor
+********* Any of the following:
+********** is_revolutionary_republic_trigger = yes
+********** has_reform = revolutionary_empire_reform
+********* rr_jacobins is not in power
+********* Capital:
+********** Does not have the province modifier "radical_massacres"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: revolutionary_republic_factions.9.a:
+********* add_revolutionary_zeal = 5
+********* Capital:
+********** Adds the modifier "radical_massacres" until the end of the campaign:
+*********** -15% trade goods output
+*********** local_unrest = 2
+******** Option: revolutionary_republic_factions.9.b:
+********* add_revolutionary_zeal = -5
+********* Capital:
+********** Spawns revolt of size 1 of 0 "Revolutionary rebels
+********** Adds the modifier "radical_massacres" until the end of the campaign:
+*********** -15% trade goods output
+*********** local_unrest = 2
+********* Changes the influence of rr_jacobins by 5

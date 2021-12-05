@@ -1,0 +1,312 @@
+******** is_triggered_only = yes
+******** picture = CIVIL_WAR_eventPicture
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Has at least 8 provinces
+********* Has the idea group 0 "Byzantine Ideas
+********* Does not have the idea 0 "Delegated Power
+********* Has the monarchy government type
+********* has_reform_false = 0 "Steppe Nomads
+********* Any of the following:
+********** Legitimacy is less than 50
+********** Is in regency
+******** title = 0 "A Pretender arises
+******** desc = 0 "As the Empire's power returns, so returns one of its greatest weaknesses. Ambitious nobles and prominent generals have ever been ready to attempt to seize the reins of Imperial power for themselves.
+******** Option: 0 "Death to traitors!:
+********* Trigger:
+********** Legitimacy is less than 50
+********* Random owned province:
+********** Spawns 2 revolt size of pretender rebels
+******* Gets the country event:
+******** ID is purple_phoenix.2
+******** title = 0 "Athens reclaimed!
+******** desc = 0 "For centuries Athens was a center of Byzantine culture and art, until it was lost to the Latins in the Fourth Crusade. More recently, the city has been the capital of an independent duchy ruled by various western families. That time is at an end, however, and for the first time since 1204 Athens is part of the Byzantine Empire again.
+******** picture = ATHENS_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Follows the 0 "Orthodox religion
+********* Owns 0 "Athens
+******** Mean time to happen
+********* Base mean time to happen of 7 days
+******** Option: 0 "And forever more!:
+********* Changes prestige by 10
+********* Changes diplomatic power stored by 50
+******* Gets the country event:
+******** ID is purple_phoenix.3
+******** title = 0 "Nikomedia reclaimed!
+******** desc = 0 "Nikomedia, or Izmit as the Turks called it, was a key Byzantine city on the Asia Minor coast for over a thousand years before finally being lost to the invading Turkish forces in 1337. Its return puts us in an ideal position to expand back into Asia minor once more.
+******** fire_only_once = yes
+******** picture = SIEGE_eventPicture
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Follows the 0 "Orthodox religion
+********* Owns 0 "Kocaeli
+******** Mean time to happen
+********* Base mean time to happen of 7 days
+******** Option: 0 "And so we shall!:
+********* Changes prestige by 10
+********* Changes diplomatic power stored by 50
+********* 0 "Kocaeli:
+********** Changes province name to Optimatoi
+********** Changes province capital name to Nikomedia
+******* Gets the country event:
+******** ID is purple_phoenix.4
+******** title = 0 "Antioch reclaimed!
+******** desc = 0 "Lost to the Turks in 1084, Antioch has been called the cradle of Christianity. While it is no longer the metropolis it once was, it remains an important holy city.
+******** picture = SIEGE_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Follows the 0 "Orthodox religion
+********* Owns 0 "Antioch
+******** Mean time to happen
+********* Base mean time to happen of 7 days
+******** Option: 0 "Deus vult!:
+********* Changes Patriarch authority by 20%
+********* Changes diplomatic power stored by 50
+********* 0 "Antioch:
+********** Changes province capital name to Antioch
+******* Gets the country event:
+******** ID is purple_phoenix.5
+******** title = 0 "Jerusalem reclaimed!
+******** desc = 0 "Lost to the Arabs in 634, Jerusalem was once a center of Christian worship in the Empire. Its recapture is sure to boost the morale of all Christian peoples.
+******** picture = JERUSALEM_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Follows the 0 "Orthodox religion
+********* Owns 0 "Jerusalem
+******** Mean time to happen
+********* Base mean time to happen of 7 days
+******** Option: 0 "Deus vult!:
+********* Changes Patriarch authority by 20%
+********* Changes diplomatic power stored by 50
+******* Gets the country event:
+******** ID is purple_phoenix.6
+******** title = 0 "Rome reclaimed!
+******** desc = 0 "Although not always directly controlled by the Empire, Rome finally severed all Byzantine ties when Pope Leo III crowned Charlemagne Holy Roman Emperor. Now, however, the city is back in our hands, and although it has suffered much it is still a highly prestigious city to control.
+******** picture = ST_PETERS_CHURCH_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Follows the 0 "Orthodox religion
+********* Owns 0 "Roma
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Rome, the city where it all began, is once again in our hands:
+********* Changes prestige by 25
+********* Changes diplomatic power stored by 50
+******* Gets the country event:
+******** ID is purple_phoenix.7
+******** title = 0 "Rome Orthodoxy restored!
+******** desc = 0 "The people of Rome once again follow the Orthodox faith, the few die-hard Papists that remain are in hiding. While this certainly doesn't end the Great Schism, if anything it deepens it, it certainly gives the Eastern Orthodox Church an advantage the eternal battle for religious authority.
+******** picture = ORTHODOX_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Always false
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Follows the 0 "Orthodox religion
+********* Owns 0 "Roma
+********* 0 "Roma:
+********** Follows the 0 "Orthodox religion
+******** Option: 0 "Take that, Schismatics!:
+********* Changes Patriarch authority by 20%
+******* Gets the country event:
+******** ID is purple_phoenix.8
+******** title = 0 "Turks driven from the Western Balkans!
+******** desc = 0 "The forces of the Ottoman Empire have been driven out of the Western Balkans. This is a significant point in our Empire's restoration.
+******** picture = BATTLE_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Any of the following:
+********** Owns 0 "Epirus
+********** Owns 0 "Thessaly
+********** Owns 0 "Macedonia
+********* serbia_area:
+********** The province is not owned by 0 "Ottomans
+********* rascia_area:
+********** The province is not owned by 0 "Ottomans
+********* bosnia_area:
+********** The province is not owned by 0 "Ottomans
+********* croatia_area:
+********** The province is not owned by 0 "Ottomans
+********* east_adriatic_coast_area:
+********** The province is not owned by 0 "Ottomans
+******** Mean time to happen
+********* Base mean time to happen of 7 days
+******** Option: 0 "The Phoenix rises!:
+********* Changes military power stored by 50
+********* Changes diplomatic power stored by 50
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is purple_phoenix.9
+******** title = 0 "Turks driven from the Eastern Balkans!
+******** desc = 0 "The forces of the Ottoman Empire have been driven out of the Eastern Balkans. At long last Constantinople's European borders are secure!
+******** picture = BATTLE_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Any of the following:
+********** Owns 0 "Edirne
+********** Owns 1 "Nikopol
+********** Owns 0 "Burgas
+********* bulgaria_area:
+********** The province is not owned by 0 "Ottomans
+********* wallachia_area:
+********** The province is not owned by 0 "Ottomans
+********* macedonia_area:
+********** The province is not owned by 0 "Ottomans
+********* albania_area:
+********** The province is not owned by 0 "Ottomans
+******** Mean time to happen
+********* Base mean time to happen of 7 days
+******** Option: 0 "The Phoenix rises!:
+********* Changes military power stored by 50
+********* Changes diplomatic power stored by 50
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is purple_phoenix.10
+******** title = 0 "Turks driven from Anatolia!
+******** desc = 0 "The forces of the Ottoman Empire have been driven out of Anatolia, which was once the seat of their power. With Anatolia secured our prosperity is assured!
+******** picture = BATTLE_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Any of the following:
+********** Owns 0 "Kocaeli
+********** Owns 0 "Ankara
+********** Owns 0 "Sivas
+********* anatolia_region:
+********** The province is not owned by 0 "Ottomans
+******** Mean time to happen
+********* Base mean time to happen of 7 days
+******** Option: 0 "The Phoenix rises!:
+********* Changes military power stored by 50
+********* Changes diplomatic power stored by 50
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is purple_phoenix.11
+******** title = 0 "Court factions influence ruler
+******** desc = 0 "Factions in the Imperial court have recently come out strongly in favor of the military, and are all for a greater Imperial focus on military matters.
+******** picture = BYZANTINE_EAGLE_eventPicture
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Does not have the idea 0 "Delegated Power
+********* Has the idea group 0 "Byzantine Ideas
+********* Any of the following:
+********** Does not have the country flag 0 "Recent faction activity
+********** Has had the country flag "0 "Recent faction activity" for at least 365 days
+******** Immediate effects:
+********* Sets the country flag 0 "Recent faction activity
+******** Mean time to happen
+********* Base mean time to happen of 36 months
+******** Option: 0 "We could use more soldiers!:
+********* Changes military power stored by 50
+******* Gets the country event:
+******** ID is purple_phoenix.12
+******** title = 0 "Court factions influence ruler
+******** desc = 0 "The military has fallen out of favor with the Imperial court lately, powerful factions are conspiring to reduce military funding at every turn.
+******** picture = BYZANTINE_EAGLE_eventPicture
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Does not have the idea 0 "Delegated Power
+********* Has the idea group 0 "Byzantine Ideas
+********* Any of the following:
+********** Does not have the country flag 0 "Recent faction activity
+********** Has had the country flag "0 "Recent faction activity" for at least 365 days
+******** Immediate effects:
+********* Sets the country flag 0 "Recent faction activity
+******** Mean time to happen
+********* Base mean time to happen of 72 months
+******** Option: 0 "Will they fight instead?:
+********* Changes military power stored by -25
+******* Gets the country event:
+******** ID is purple_phoenix.13
+******** title = 0 "Court factions influence ruler
+******** desc = 0 "Factions in the Imperial court have recently come out strongly in favor of a more diplomatic approach, and insist upon a greater Imperial focus on resolving things peacefully.
+******** picture = BYZANTINE_EMPEROR_eventPicture
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Does not have the idea 0 "Delegated Power
+********* Has the idea group 0 "Byzantine Ideas
+********* Any of the following:
+********** Does not have the country flag 0 "Recent faction activity
+********** Has had the country flag "0 "Recent faction activity" for at least 365 days
+******** Immediate effects:
+********* Sets the country flag 0 "Recent faction activity
+******** Mean time to happen
+********* Base mean time to happen of 36 months
+******** Option: 0 "Violence never solved anything:
+********* Changes diplomatic power stored by 50
+******* Gets the country event:
+******** ID is purple_phoenix.14
+******** title = 0 "Court factions influence ruler
+******** desc = 0 "The diplomatic corps has fallen out of favor with the Imperial court lately, powerful factions are devoting themselves to sabotaging our diplomatic efforts.
+******** picture = BYZANTINE_EMPEROR_eventPicture
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Does not have the idea 0 "Delegated Power
+********* Has the idea group 0 "Byzantine Ideas
+********* Any of the following:
+********** Does not have the country flag 0 "Recent faction activity
+********** Has had the country flag "0 "Recent faction activity" for at least 365 days
+******** Immediate effects:
+********* Sets the country flag 0 "Recent faction activity
+******** Mean time to happen
+********* Base mean time to happen of 72 months
+******** Option: 0 "That's fighting talk!:
+********* Changes diplomatic power stored by -25
+******* Gets the country event:
+******** ID is purple_phoenix.15
+******** title = 0 "Court factions influence ruler
+******** desc = 0 "Factions in the Imperial court have recently come out strongly in favor of better administration, and are supporting an expansion of the Imperial bureaucracy.
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Does not have the idea 0 "Delegated Power
+********* Has the idea group 0 "Byzantine Ideas
+********* Any of the following:
+********** Does not have the country flag 0 "Recent faction activity
+********** Has had the country flag "0 "Recent faction activity" for at least 365 days
+******** Immediate effects:
+********* Sets the country flag 0 "Recent faction activity
+******** Mean time to happen
+********* Base mean time to happen of 36 months
+******** Option: 0 "The Empire runs on paper:
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is purple_phoenix.16
+******** title = 0 "Court factions influence ruler
+******** desc = 0 "The bureaucracy has fallen out of favor with the Imperial court lately, powerful factions are insisting that administrative funding be cut back.
+******** picture = BAD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Country is 0 "Byzantium
+********* Has the DLC Purple Phoenix
+********* Has the idea group 0 "Byzantine Ideas
+********* Does not have the idea 0 "Delegated Power
+********* Any of the following:
+********** Does not have the country flag 0 "Recent faction activity
+********** Has had the country flag "0 "Recent faction activity" for at least 365 days
+******** Immediate effects:
+********* Sets the country flag 0 "Recent faction activity
+******** Mean time to happen
+********* Base mean time to happen of 72 months
+******** Option: 0 "But who will collect the tax?:
+********* Changes administrative power stored by -25

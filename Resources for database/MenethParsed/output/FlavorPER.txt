@@ -1,0 +1,543 @@
+** Trigger:
+*** Does not have the country flag PER_had_event_3560
+*** Year is at least 1450
+*** Year is less than 1550
+*** Country is 0 "Persia
+*** Follows the 0 "Shia religion
+*** Any neighbor country:
+**** Country is 0 "Ottomans
+**** Follows the 0 "Sunni religion
+**** Any owned province:
+***** Follows the 0 "Shia religion
+*** 0 "Ottomans:
+**** is_free_or_tributary_trigger = yes
+*** Is not allied with 0 "Ottomans
+*** Not at war with 0 "Ottomans
+** Mean time to happen
+*** Base mean time to happen of 2000 months
+** Immediate effects:
+*** Sets the country flag PER_had_event_3560
+** Option: 0 "Support the Turkish Shiites:
+*** add_stability_or_adm_power = yes
+*** Modifies treasury by -0.2 years worth of income
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Supported Rebels" towards our country
+**** Gets the country event:
+***** ID is flavor_tur.3360
+***** Base mean time to happen of 10 tooltip days
+** Option: 0 "Leave them to their fate:
+*** Changes stability by -1
+** Option: 0 "Betray the Turkish rebels:
+*** Changes stability by -2
+*** Adds the opinion modifier "0 "Did Not Support Rebels" towards our country
+* Gets the country event:
+** ID is flavor_per.3562
+** title = 0 "Murad III's campaigns against Persia
+** desc = 0 "Murad III, a Sultan ruled by women, fought the Persians in an exhausting war (1578-90) that severely strained the Empire and forced heavy taxes upon the citizens. Though the war was not for nothing - Persia had to cede Azerbaijan, Tiflis and Hamadan to the Ottomans - the resources might have been better spent elsewhere.
+** picture = BATTLE_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Teach the Turks a lesson!:
+*** add_stability_or_adm_power = yes
+*** 0 "Ottomans:
+**** Random owned province:
+***** Limited to:
+****** Has no core on 0 "Persia
+****** The province is not claimed by 0 "Persia
+****** Any bordering province:
+******* The province is owned by 0 "Persia
+***** Adds claim to 0 "Persia
+**** Adds the opinion modifier "0 "Border Aggression" towards our country
+** Option: 0 "Ignore the Turkish threat:
+*** Changes stability by -1
+** Option: 0 "Seek a diplomatic solution:
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Successful Diplomacy" towards our country
+* Gets the country event:
+** ID is flavor_per.3563
+** title = 0 "Turko-Persian Tension
+** desc = 0 "The Spahi revolts in Eastern Anatolia encouraged the Persian Shah to seek revenge for the humiliating losses incurred by Murad III. War broke out yet again in 1603.
+** picture = LAND_MILITARY_eventPicture
+** Trigger:
+*** Does not have the country flag PER_had_event_3563
+*** Year is at least 1600
+*** Year is less than 1650
+*** Country is 0 "Persia
+*** Any neighbor country:
+**** Country is 0 "Ottomans
+**** Any owned province:
+***** Controlled by 0 "Rebels
+*** 0 "Ottomans:
+**** is_free_or_tributary_trigger = yes
+*** Is not allied with 0 "Ottomans
+*** Not at war with 0 "Ottomans
+** Mean time to happen
+*** Base mean time to happen of 1000 months
+** Immediate effects:
+*** Sets the country flag PER_had_event_3563
+** Option: 0 "Support the Turkish rebels and prepare for war:
+*** Modifies treasury by -0.2 years worth of income
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Supported Rebels" towards our country
+**** Gets the country event:
+***** ID is flavor_tur.3363
+***** Base mean time to happen of 10 tooltip days
+** Option: 0 "Concentrate on internal issues:
+*** Changes administrative power stored by 25
+* Gets the country event:
+** ID is flavor_per.1
+** title = 0 "The Reforms of [Root.Monarch.GetName]
+** desc = 0 "[Root.Monarch.GetTitle] [Root.Monarch.GetName] was not only a great conqueror but also a great consolidator and reformer. His competent rule laid the foundation for the resurrected Persian state. The people, who had suffered terribly under Tamerlane and the Turkmen tribes, regarded their Shah as a saint and set to their tasks with great enthusiasm.
+** picture = REFORM_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Hail [Root.Monarch.GetTitle] [Root.Monarch.GetName]:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** If:
+**** Limited to:
+***** government_rank_false = 3
+**** set_government_rank = 3
+*** 0 "Tabriz:
+**** Changes base tax by 2
+**** add_base_production = 2
+**** add_base_manpower = 1
+*** 0 "Isfahan:
+**** Changes base tax by 3
+**** add_base_production = 3
+**** add_base_manpower = 1
+*** 0 "Qazvin:
+**** Changes base tax by 2
+**** add_base_production = 2
+**** add_base_manpower = 1
+*** 0 "Shiraz:
+**** Changes base tax by 2
+**** add_base_production = 2
+*** 0 "Teheran:
+**** Changes base tax by 1
+**** add_base_production = 1
+**** add_base_manpower = 1
+*** 0 "Yazd:
+**** Changes base tax by 1
+**** add_base_production = 1
+*** 0 "Qom:
+**** Changes base tax by 1
+**** add_base_production = 1
+**** add_base_manpower = 1
+*** 0 "Zanjan:
+**** Changes base tax by 1
+**** add_base_production = 1
+**** add_base_manpower = 1
+* Gets the country event:
+** ID is flavor_per.2
+** title = 0 "The Reforms of Abbas the Great
+** desc = 0 "The reign of Shah Abbas the Great marked the pinnacle of the Safavid dynasty. He developed a disciplined standing army, crushed the Uzbeks and avenged himself on the Ottomans. In 1598, he chose Isfahan as his new capital. A supporter of the arts, especially architecture, he adorned Isfahan with some of the finest Islamic monuments in the world. He built a number of mosques, schools, bridges and a major bazaar. During his reign, Persian craftsmen and artists excelled in creating fine silks, cloths, porcelain, metalwork, calligraphy, miniatures and carpets.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Year is at least 1580
+*** Owns 0 "Isfahan
+*** Year is less than 1640
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Hail [Root.Monarch.GetTitle] [Root.Monarch.GetName]:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes piety by 25%
+*** Changes administrative power stored by 50
+*** Changes military power stored by 50
+*** Changes diplomatic power stored by 50
+* Gets the country event:
+** ID is flavor_per.3
+** title = 0 "The Advisors of Abbas the Great
+** desc = 0 "Shah Abbas greatly admired the military skills of the Western Europeans and gladly accepted Christian missionaries to his realm, even pretending to be on the verge of converting himself. The Shah finally secured the help of two Englishmen - Anthony and Robert Sherley - to reform the Persian army and navy. The results were not long in coming. Abbas took Bahrain from the Portuguese and sacked their base at Hormuz. The European advisors, however, were not popular in all quarters...
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Year is at least 1590
+*** Owns 0 "Isfahan
+*** Year is less than 1640
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Hire the English advisors:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Adds the ruler modifier "0 "The Advisors of Abbas the Great" until the ruler's death:
+**** -20% technology cost
+*** Changes stability by -1
+** Option: 0 "Rely on domestic advisors:
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_per.4
+** title = 0 "Political Turmoil
+** desc = 0 "Safavid power was based on the Kizilbash (Shiite Turkmen) tribesmen of Asia Minor who originally defeated the Ak Koyunlu. Unfortunately, the clans were unruly, constantly fighting each other and vying for control of the Shah. Under Abbas they were kept on a tight leash, but with his passing Persia was once more plagued by their infighting. Eventually their power waned, but they were only to be replaced by rebellious warlords from Afghanistan and Baluchistan in the 18th century.
+** picture = LIBERUM_VETO_eventPicture
+** Trigger:
+*** Country is 0 "Persia
+*** Year is at least 1580
+*** Does not have the country modifier "per_political_turmoil_timer"
+*** Ruler's military skill is less than 4
+*** Ruler's diplomatic skill is less than 4
+*** Ruler's administrative skill is less than 4
+*** Is not in regency
+** Mean time to happen
+*** Base mean time to happen of 500 months
+** Option: 0 "Let the Clans fight:
+*** Hidden effect:
+**** Adds the modifier "per_political_turmoil_timer" for 12 months:
+***** No effects
+*** Changes stability by -1
+** Option: 0 "Buy the loyalty of the Clans:
+*** Hidden effect:
+**** Adds the modifier "per_political_turmoil_timer" for 12 months:
+***** No effects
+*** Modifies treasury by -1 years worth of income
+* Gets the country event:
+** ID is flavor_per.5
+** title = 0 "Political Fragmentation
+** desc = 0 "The death of Abbas consigned Iran to a long and painful slide into chaos. The decline resulted from weak rulers, interference by the women of the harem in politics, the re-emergence of Kizilbash rivalries, maladministration of state lands, excessive taxation, the decline of trade, and the weakening of Safavid military organization.
+** picture = LIBERUM_VETO_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Year is at least 1635
+*** Does not have the country modifier "per_political_fragmentation_timer"
+** Mean time to happen
+*** Base mean time to happen of 500 months
+** Option: 0 "Let the factions conspire:
+*** Hidden effect:
+**** Adds the modifier "per_political_fragmentation_timer" for 12 months:
+***** No effects
+*** add_stability_or_adm_power = yes
+** Option: 0 "Tighten state control:
+*** Hidden effect:
+**** Adds the modifier "per_political_fragmentation_timer" for 12 months:
+***** No effects
+*** Changes stability by -1
+*** Random owned province:
+**** Limited to:
+***** Has core on 0 "Persia
+**** Changes base tax by 1
+**** add_base_manpower = 1
+* Gets the country event:
+** ID is flavor_per.6
+** title = 0 "The Afghan Rebellions
+** desc = 0 "The Afghans, under the leadership of Mir Ways, have risen up in rebellion in their home provinces!
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Primary culture is not afghani
+*** 0 "Afghanistan does not exist
+*** Any owned province:
+**** Culture is afghani
+** Mean time to happen
+*** Base mean time to happen of 2000 months
+** Option: 0 "Curses!:
+*** Random owned province:
+**** Limited to:
+***** Culture is afghani
+**** area:
+***** Limited to:
+****** The province is owned by our country
+***** Adds the modifier "0 "Peasants Rage" until the end of the campaign:
+****** local_unrest = 10
+* Gets the country event:
+** ID is flavor_per.7
+** title = flavor_per.7.t
+** desc = flavor_per.7.d
+** picture = BIG_BOOK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Year is less than 1600
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: flavor_per.7.a:
+*** Changes prestige by 10
+*** Adds the modifier "per_miniature_school" for 10 years:
+**** +1 prestige
+* Gets the country event:
+** ID is flavor_per.8
+** title = flavor_per.8.t
+** desc = flavor_per.8.d
+** picture = BIG_BOOK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Year is at least 1620
+*** Year is less than 1635
+** Mean time to happen
+*** Base mean time to happen of 45 months
+** Option: flavor_per.8.a:
+*** Adds 10 legitimacy
+*** Changes prestige by 5
+* Gets the country event:
+** ID is flavor_per.9
+** title = flavor_per.9.t
+** desc = flavor_per.9.d
+** picture = PRAYING_eventPicture
+** is_triggered_only = yes
+** Option: flavor_per.9.a:
+*** AI chance:
+**** Base chance of 1
+*** Modifies treasury by -0.1 years worth of income
+*** 0 "Samawat:
+**** Adds the modifier "per_najaf" until the end of the campaign:
+***** Legitimacy is at least 0.5
+***** Follows the yes religion
+** Option: flavor_per.9.b:
+*** AI chance:
+**** Base chance of 0
+*** 0 "Samawat:
+**** Adds the modifier "per_najaf" until the end of the campaign:
+***** Legitimacy is at least 0.5
+***** Follows the yes religion
+* Gets the country event:
+** ID is flavor_per.10
+** title = flavor_per.10.t
+** desc = flavor_per.10.d
+** picture = RELIGIOUS_CONVERSION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is not 0 "Mushasha
+*** Year is at least 1445
+*** Year is less than 1455
+*** Any owned province:
+**** Has core on 0 "Mushasha
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Option: flavor_per.10.a:
+*** Every province in the world:
+**** Limited to:
+***** Has core on 0 "Mushasha
+***** The province is not owned by 0 "Mushasha
+**** Adds the modifier "per_mushashaiya" until the end of the campaign:
+***** local_unrest = 5
+* Gets the country event:
+** ID is flavor_per.11
+** title = flavor_per.11.t
+** desc = flavor_per.11.d
+** picture = RELIGIOUS_CONVERSION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is not 0 "Ardabil
+*** Year is at least 1455
+*** Year is less than 1465
+*** Any of the following:
+**** Any neighbor country:
+***** Country is 0 "Ardabil
+**** Any owned province:
+***** Has core on 0 "Ardabil
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Option: flavor_per.11.a:
+*** Every province in the world:
+**** Limited to:
+***** The province is not owned by 0 "Ardabil
+***** Any of the following:
+****** Has core on 0 "Ardabil
+****** All of the following:
+******* Follows the 0 "Shia religion
+******* Any bordering province:
+******** The province is owned by 0 "Ardabil
+**** Adds the modifier "per_safawiya" until the end of the campaign:
+***** local_unrest = 5
+* Gets the country event:
+** ID is flavor_per.12
+** title = flavor_per.12.t
+** desc = flavor_per.12.d
+** picture = RELIGIOUS_TURMOIL_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** 0 "Persia exists
+*** Country is not 0 "Persia
+*** Year is at least 1450
+*** Year is less than 1580
+*** Has at least 6 provinces where all of the following is true:
+**** Culture is 0 "Persian
+** Mean time to happen
+*** Base mean time to happen of 390 months
+*** Multiplies value by 0.75:
+**** Any owned province:
+***** Has the province modifier "per_mushashaiya"
+*** Multiplies value by 0.75:
+**** Any owned province:
+***** Has the province modifier "per_safawiya"
+*** Multiplies value by 0.75:
+**** Has at least 8 provinces where all of the following is true:
+***** Culture is 0 "Persian
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Culture is 0 "Persian
+***** Sets the province flag per_qizilbash
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Culture is 0 "Persian
+****** Does not have the province flag per_qizilbash
+***** Sets the province flag per_qizilbash
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Culture is 0 "Persian
+****** Does not have the province flag per_qizilbash
+***** Sets the province flag per_qizilbash
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Has core on 0 "Persia
+****** Culture is azerbaijani
+****** Does not have the province flag per_qizilbash
+***** Sets the province flag per_qizilbash
+** Option: flavor_per.12.a:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag per_qizilbash
+**** Spawns revolt of size 1 of 0 "Separatists rebels
+*** Every owned province:
+**** Limited to:
+***** Has the province flag per_qizilbash
+**** Spawns revolt of size 1 of 0 "Separatists rebels
+**** Removes the province flag per_qizilbash
+* Gets the country event:
+** ID is flavor_per.13
+** title = flavor_per.13.t
+** desc = flavor_per.13.d
+** picture = RELIGIOUS_CONVERSION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** is_free_or_tributary_trigger = yes
+*** Year is less than 1630
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Option: flavor_per.13.a:
+*** AI chance:
+**** Base chance of 1
+*** If:
+**** Limited to:
+***** Does not follow the 0 "Shia religion
+**** Changes religion to 0 "Shia
+*** Adds the modifier "per_shia_conversion_policy" for 10 years:
+**** +2% global heretic missionary strength
+**** -3 tolerance of heretics
+**** Follows the yes religion
+*** Sets the country flag per_shiite_policies
+** Option: flavor_per.13.b:
+*** AI chance:
+**** Base chance of 0
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_per.14
+** title = flavor_per.14.t
+** desc = flavor_per.14.d
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Follows the 0 "Shia religion
+*** Has the country flag per_shiite_policies
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Option: flavor_per.14.a:
+*** AI chance:
+**** Base chance of 1
+*** Adds the modifier "per_pragmatic_ulema" for 10 years:
+**** +20% religious unity
+**** Follows the yes religion
+** Option: flavor_per.14.b:
+*** AI chance:
+**** Base chance of 0
+*** Adds the modifier "per_conversion_of_the_clergy" for 5 years:
+**** +1% global heretic missionary strength
+**** Follows the yes religion
+* Gets the country event:
+** ID is flavor_per.15
+** title = flavor_per.15.t
+** desc = flavor_per.15.d
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Follows the 0 "Shia religion
+*** Has the country flag per_shiite_policies
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Option: flavor_per.15.a:
+*** AI chance:
+**** Base chance of 1
+*** Changes piety by 10%
+*** Every country:
+**** Limited to:
+***** Any of the following:
+****** Follows the 0 "Shia religion
+****** Any owned province:
+******* Follows the 0 "Shia religion
+**** Adds the opinion modifier "0 "Irritated" towards 0 "Persia
+*** Adds the modifier "per_shiite_immigration" for 20 years:
+**** -10% advisor cost
+**** -5% idea cost
+**** global_institution_spread = 0.05
+**** Follows the yes religion
+* Gets the country event:
+** ID is flavor_per.16
+** title = flavor_per.16.t
+** desc = flavor_per.16.d
+** picture = CITY_VIEW_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Follows the 0 "Shia religion
+*** Year is at least 1580
+*** Year is less than 1630
+*** Owns core province 0 "Isfahan
+*** Capital is not 0 "Isfahan
+*** Has at least 0.2 years worth of income
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: flavor_per.16.a:
+*** AI chance:
+**** Base chance of 1
+*** Modifies treasury by -0.15 years worth of income
+*** Sets the country flag per_isfahan_construction
+*** Sets capital to 0 "Isfahan
+*** 0 "Isfahan:
+**** Adds the modifier "per_building_isfahan" until the end of the campaign:
+***** -25% provincial tax income
+***** local_development_cost = -0.1
+** Option: flavor_per.16.b:
+*** AI chance:
+**** Base chance of 0
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_per.17
+** title = flavor_per.17.t
+** desc = flavor_per.17.d
+** picture = CITY_VIEW_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Has had the country flag "per_isfahan_construction" for at least 3650 days
+*** Owns core province 0 "Isfahan
+*** 0 "Isfahan:
+**** Has the province modifier "per_building_isfahan"
+** Mean time to happen
+*** Base mean time to happen of 168 months
+** Option: flavor_per.17.a:
+*** Changes prestige by 20
+*** 0 "Isfahan:
+**** Removes the country modifier "per_building_isfahan"
+**** Adds the modifier "per_isfahan_maidan" until the end of the campaign:
+***** Legitimacy is at least 1
+***** +10% production efficiency
+***** local_development_cost = -0.1

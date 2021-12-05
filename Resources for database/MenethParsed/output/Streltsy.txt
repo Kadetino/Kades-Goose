@@ -1,0 +1,491 @@
+******** Trigger:
+********* Has the DLC Third Rome
+********* Any of the following:
+********** All of the following:
+*********** government_rank = 1
+*********** num_of_streltsy = 25
+********** All of the following:
+*********** government_rank = 3
+*********** num_of_streltsy = 40
+********* is_in_war:
+********** Lasting 1825 days
+********* Does not have the country modifier "streltsy_concessions"
+********* Does not have the country modifier "streltsy_angered"
+********* Does not have the country modifier "streltsy_revolted"
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** save_event_target_as = streltsy_revolt
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** 5 war exhaustion
+********* Multiplies value by 2:
+********** 10 war exhaustion
+********* Multiplies value by 2:
+********** 15 war exhaustion
+********* Multiplies value by 4:
+********** 20 war exhaustion
+********* Multiplies value by 0.5:
+********** Has the country modifier "streltsy_inspection"
+******** Option: streltsy_events.1.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Has at least 30 provinces
+*********** Army is at least 80% of the force limit
+********* Adds the modifier "streltsy_concessions" for 30 years:
+********** +10% land maintenance
+******** Option: streltsy_events.1.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Army is less than 60% of the force limit
+********* If:
+********** Limited to:
+*********** has_government_mechanic = russian_mechanic
+********** add_government_power:
+*********** government_mechanic = russian_mechanic
+*********** which = 0 "Military
+*********** -15 will be built
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ Less than 5 war exhaustion
+*********** One of the following will happen:
+************ 75 relative chance:
+************ 25 relative chance:
+************* Gets the country event:
+************** ID is streltsy_events.2
+********** If:
+*********** Limited to:
+************ 5 war exhaustion
+************ Less than 10 war exhaustion
+*********** One of the following will happen:
+************ 65 relative chance:
+************ 35 relative chance:
+************* Gets the country event:
+************** ID is streltsy_events.2
+********** If:
+*********** Limited to:
+************ 15 war exhaustion
+************ Less than 19 war exhaustion
+*********** One of the following will happen:
+************ 50 relative chance:
+************ 50 relative chance:
+************* Gets the country event:
+************** ID is streltsy_events.2
+********** If:
+*********** Limited to:
+************ 19 war exhaustion
+*********** One of the following will happen:
+************ 25 relative chance:
+************ 75 relative chance:
+************* Gets the country event:
+************** ID is streltsy_events.2
+********* Adds the modifier "streltsy_angered" for 30 years:
+********** +2 global unrest
+******** Option: streltsy_events.1.c:
+********* AI chance:
+********** Base chance of 0
+********* If:
+********** Limited to:
+*********** has_government_mechanic = russian_mechanic
+********** add_government_power:
+*********** government_mechanic = russian_mechanic
+*********** which = 0 "Military
+*********** -15 will be built
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is streltsy_events.2
+******* Gets the country event:
+******** ID is streltsy_events.2
+******** title = streltsy_events.2.t
+******** desc = streltsy_events.2.d
+******** picture = STRELTSY_MARCHING_eventPicture
+******** is_triggered_only = yes
+******** Option: streltsy_events.2.a:
+********* Trigger:
+********** Has the monarchy government type
+********* Removes the country modifier "streltsy_angered"
+********* Adds the modifier "streltsy_revolted" for 30 years:
+********** -1 global unrest
+********* If:
+********** Limited to:
+*********** num_of_streltsy_false = 30
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 1 of 0 "Pretender rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 30
+*********** num_of_streltsy_false = 45
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 1 of 0 "Pretender rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Pretender rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 45
+*********** num_of_streltsy_false = 60
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 1 of 0 "Pretender rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Pretender rebels
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** Spawns revolt of size 1 of 0 "Pretender rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 60
+*********** num_of_streltsy_false = 75
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 1 of 0 "Pretender rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Pretender rebels
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** Spawns revolt of size 1 of 0 "Pretender rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Pretender rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 75
+*********** num_of_streltsy_false = 90
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 2 of 0 "Pretender rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Pretender rebels
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** Spawns revolt of size 1 of 0 "Pretender rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Pretender rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 90
+*********** num_of_streltsy_false = 105
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 2 of 0 "Pretender rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Pretender rebels
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** Spawns revolt of size 2 of 0 "Pretender rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Pretender rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 105
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 2 of 0 "Pretender rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 2 of 0 "Pretender rebels
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** Spawns revolt of size 2 of 0 "Pretender rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Pretender rebels
+******** Option: streltsy_events.2.a:
+********* Trigger:
+********** Does not have the monarchy government type
+********* Removes the country modifier "streltsy_angered"
+********* Adds the modifier "streltsy_revolted" for 30 years:
+********** -1 global unrest
+********* If:
+********** Limited to:
+*********** num_of_streltsy_false = 30
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 1 of 0 "Peasant rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 30
+*********** num_of_streltsy_false = 45
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 1 of 0 "Peasant rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Peasant rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 45
+*********** num_of_streltsy_false = 60
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 1 of 0 "Peasant rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Peasant rebels
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** Spawns revolt of size 1 of 0 "Peasant rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 60
+*********** num_of_streltsy_false = 75
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 1 of 0 "Peasant rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Peasant rebels
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** Spawns revolt of size 1 of 0 "Peasant rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Peasant rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 75
+*********** num_of_streltsy_false = 90
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 2 of 0 "Peasant rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Peasant rebels
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** Spawns revolt of size 1 of 0 "Peasant rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Peasant rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 90
+*********** num_of_streltsy_false = 105
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 2 of 0 "Peasant rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Peasant rebels
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** Spawns revolt of size 2 of 0 "Peasant rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Peasant rebels
+********* If:
+********** Limited to:
+*********** num_of_streltsy = 105
+********** event_target:streltsy_revolt:
+*********** Spawns revolt of size 2 of 0 "Peasant rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 2 of 0 "Peasant rebels
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** Spawns revolt of size 2 of 0 "Peasant rebels
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province is not the capital of the country
+************ Spawns revolt of size 1 of 0 "Peasant rebels
+******* Gets the country event:
+******** ID is streltsy_events.3
+******** title = streltsy_events.3.t
+******** desc = streltsy_events.3.d
+******** picture = PEASANTS_ON_STEPPES_eventPicture
+******** Trigger:
+********* Has the DLC Third Rome
+********* num_of_streltsy = 5
+********* Is not at war
+********* had_recent_war_false = 6
+********* has_government_mechanic = russian_mechanic
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: streltsy_events.3.a:
+********* AI chance:
+********** Base chance of 80
+********** Multiplies value by 0:
+*********** Has less than 0.35 years worth of income
+********* Modifies treasury by -0.25 years worth of income
+********* Changes army tradition by 10
+********* add_army_professionalism = 0.01
+******** Option: streltsy_events.3.b:
+********* AI chance:
+********** Base chance of 20
+********* add_government_power:
+********** government_mechanic = russian_mechanic
+********** which = 0 "Military
+********** -25 will be built
+******* Gets the country event:
+******** ID is streltsy_events.4
+******** title = streltsy_events.4.t
+******** desc = streltsy_events.4.d
+******** picture = STRELTSY_MARCHING_eventPicture
+******** Trigger:
+********* Has the DLC Third Rome
+********* num_of_streltsy = 5
+********* Is not at war
+********* had_recent_war_false = 6
+********* Military technology is at least 6
+********* Does not have the country modifier "streltsy_inspection"
+********* has_government_mechanic = russian_mechanic
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: streltsy_events.4.a:
+********* AI chance:
+********** Base chance of 80
+********** Multiplies value by 0:
+*********** Has less than 0.25 years worth of income
+********* Modifies treasury by -0.25 years worth of income
+********* add_army_professionalism = 0.01
+********* add_government_power:
+********** government_mechanic = russian_mechanic
+********** which = 0 "Military
+********** 10 will be built
+********* Adds the modifier "streltsy_inspection" for 10 years:
+********** +5% land morale
+********** -10% global tax modifier
+******** Option: streltsy_events.4.b:
+********* AI chance:
+********** Base chance of 20
+********* add_government_power:
+********** government_mechanic = russian_mechanic
+********** which = 0 "Military
+********** -15 will be built
+******* Gets the country event:
+******** ID is streltsy_events.5
+******** title = streltsy_events.5.t
+******** desc = streltsy_events.5.d
+******** picture = STRELTSY_MARCHING_eventPicture
+******** Trigger:
+********* Has the DLC Third Rome
+********* num_of_streltsy = 5
+********* Does not have the country modifier "streltsy_garrison"
+********* Any of the following:
+********** All of the following:
+*********** num_of_streltsy = 5
+*********** Has a land force limit lower than 20
+********** All of the following:
+*********** num_of_streltsy = 10
+*********** Has a land force limit lower than 30
+********** All of the following:
+*********** num_of_streltsy = 15
+*********** Has a land force limit lower than 50
+********** All of the following:
+*********** num_of_streltsy = 20
+*********** Has a land force limit lower than 60
+********** All of the following:
+*********** num_of_streltsy = 30
+*********** Has a land force limit lower than 70
+********** All of the following:
+*********** num_of_streltsy = 40
+*********** Has a land force limit lower than 80
+********** num_of_streltsy = 50
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: streltsy_events.5.a:
+********* add_army_professionalism = 0.01
+********* Adds the modifier "streltsy_garrison" for 10 years:
+********** +10% fort defence
+********** garrison_size = 0.1
+********* If:
+********** Limited to:
+*********** has_government_mechanic = russian_mechanic
+********** add_government_power:
+*********** government_mechanic = russian_mechanic
+*********** which = 0 "Military
+*********** 15 will be built
+******* Gets the country event:
+******** ID is streltsy_events.6
+******** title = streltsy_events.6.t
+******** desc = streltsy_events.6.d
+******** picture = STRELTSY_MARCHING_eventPicture
+******** Trigger:
+********* Has the DLC Third Rome
+********* Any of the following:
+********** has_reform = 1 "Russian Principality
+********** has_reform = veche_republic
+********** has_reform = 0 "Tsardom
+********* has_government_mechanic = russian_mechanic
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: streltsy_events.6.a:
+********* add_government_power:
+********** government_mechanic = russian_mechanic
+********** which = 0 "Military
+********** 25 will be built
+********* Changes military power stored by -40
+******** Option: streltsy_events.6.b:
+********* add_government_power:
+********** government_mechanic = russian_mechanic
+********** which = 0 "Military
+********** 25 will be built
+********* Modifies treasury by -0.25 years worth of income
+******** Option: streltsy_events.6.c:
+********* Changes military power stored by 5

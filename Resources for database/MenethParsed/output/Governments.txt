@@ -1,0 +1,62 @@
+******** Trigger:
+********* Has the monarchy government type
+********* reform_level = 5
+********* has_reform_false = parliamentary_reform
+********* has_reform_false = 0 "Constitutional Monarchy
+********* has_reform_false = 0 "Celestial Empire
+********* Has the country modifier "0 "Separation of Power"
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: 0 "Why don't you forget about that.:
+********* Removes the country modifier "0 "Separation of Power"
+********* Changes stability by -2
+********* Random owned province:
+********** Limited to:
+*********** Has core on our country
+********** Spawns 3 revolt size of noble rebels
+******** Option: 0 "Well, when you put it that way...:
+********* add_government_reform = parliamentary_reform
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is 9480
+******** title = 0 "The worst excesses stop
+******** desc = 0 "Things are slowly returning to normal in $COUNTRY$. These days, it is almost safe to profess religious belief, or even support for a non-decimal calendar. The sleep of reason gives birth to demons, but the cult to father most demons may very well have been that whose expressed purpose was the worship of reason.
+******** picture = CITY_DEVELOPMENT_eventPicture
+******** Trigger:
+********* is_revolutionary_republic_trigger_false = yes
+********* Has the country modifier "0 "Cult of Reason"
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: 0 "Maybe it is for the best:
+********* add_stability_or_adm_power = yes
+********* Removes the country modifier "0 "Cult of Reason"
+******* Gets the country event:
+******** ID is 9900
+******** title = free_cities.2.t
+******** desc = free_cities.2.d
+******** picture = HRE_eventPicture
+******** Trigger:
+********* Does not have the DLC Common Sense
+********* Has at least 2 provinces
+********* has_reform = free_city
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: free_cities.2.a:
+********* remove_government_reform = free_city
+******* Gets the country event:
+******** ID is government_events.1
+******** title = 0 "Change of Administration
+******** desc = 0 "Having abandoned the religion of our ancestors we are also changing some of our administrative customs. Rather than relying on the Islamic establishment for legitimacy all power now comes from the Monarch and the circle around [Root.Monarch.GetHerHim] instead.
+******** picture = COURT_eventPicture
+******** Trigger:
+********* Is not in 0 "Muslim's religion group
+********* Any of the following:
+********** has_reform = 0 "Iqta
+********** has_reform = 0 "Mamluk Government
+********** has_reform = indian_sultanate_reform
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: 0 "Ok.:
+********* remove_government_reform = 0 "Iqta
+********* remove_government_reform = 0 "Mamluk Government
+********* remove_government_reform = indian_sultanate_reform

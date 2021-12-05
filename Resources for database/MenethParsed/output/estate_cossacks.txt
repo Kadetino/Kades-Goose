@@ -1,0 +1,987 @@
+
+=== title = cossack_estate_events.1.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_cossacks
+* Any owned province:
+** has_terrain = 0 "Steppes
+* estate_influence:
+** estate = estate_nobles
+** influence = 50
+* estate_influence:
+** estate = estate_cossacks
+** influence = 25
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_SERFS_HUNTED
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_SERFS_TO_COSSACKS
+* Any owned province:
+** base_production = 2
+** Any of the following:
+*** has_terrain = 0 "Steppes
+*** Any bordering province:
+**** The province is owned by our country
+**** has_terrain = 0 "Steppes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag colonization_of_the_steppes_flag
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** has_terrain = 0 "Steppes
+***** Any bordering province:
+****** The province is owned by our country
+****** has_terrain = 0 "Steppes
+**** yes is a city
+*** Sets the province flag serfs_are_fleeing
+** Random owned province:
+*** Limited to:
+**** has_terrain = 0 "Steppes
+*** Sets the province flag serfs_are_arriving
+
+'''Option: cossack_estate_events.1.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_cossacks
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_nobles
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_SERFS_HUNTED
+** influence = -10
+** Lasting 3650 days
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_SERFS_BROUGHT_BACK
+** influence = 10
+** Lasting 3650 days
+* Random owned province:
+** Limited to:
+*** Has the province flag serfs_are_fleeing
+** add_base_production = 1
+** Removes the province flag serfs_are_fleeing
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Has the province flag serfs_are_arriving
+*** Removes the province flag serfs_are_arriving
+
+'''Option: cossack_estate_events.1.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.2:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_nobles
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_SERFS_TO_COSSACKS
+** influence = 10
+** Lasting 3650 days
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_SERFS_DEFECTING
+** influence = -10
+** Lasting 3650 days
+* Random owned province:
+** Limited to:
+*** Has the province flag serfs_are_arriving
+** add_base_manpower = 1
+** Removes the province flag serfs_are_arriving
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Has the province flag serfs_are_fleeing
+*** Removes the province flag serfs_are_fleeing
+
+=== title = cossack_estate_events.2.t ===
+* Trigger:
+** has_estate = estate_burghers
+** has_estate = estate_nobles
+* desc = cossack_estate_events.2.d
+* Trigger:
+** has_estate = estate_nomadic_tribes
+* desc = cossack_estate_events.2.d.tribes
+* Trigger:
+** Any of the following:
+*** All of the following:
+**** has_estate_false = estate_burghers
+**** has_estate_false = estate_nobles
+*** has_estate_false = estate_nomadic_tribes
+* desc = cossack_estate_events.2.d.fallback
+
+'''Trigger:'''
+
+* Has the DLC The Cossacks
+* Has at least 6 provinces
+* has_reform_false = cossacks_reform
+* Any of the following:
+** All of the following:
+*** has_estate = estate_burghers
+*** has_estate = estate_nobles
+** has_estate = estate_nomadic_tribes
+* Any owned province:
+** Has a base tax of at least 2
+** Region is not scandinavia_region
+** Region is not baltic_region
+** Region is not east_siberia_region
+** Region is not west_siberia_region
+** superregion_false = europe_superregion
+** Any bordering province:
+*** The province is not owned by our country
+*** yes is a city
+*** The owner of the province:
+**** Not at war with our country
+**** estate_influence:
+***** estate = estate_cossacks
+***** influence = 15
+**** Any of the following:
+***** Considers our country a rival
+***** ai_attitude:
+****** Affecting our country
+****** attitude = 0 "Disloyal
+***** ai_attitude:
+****** Affecting our country
+****** attitude = 0 "Outraged
+***** ai_attitude:
+****** Affecting our country
+****** attitude = 0 "Rebellious
+***** ai_attitude:
+****** Affecting our country
+****** attitude = 0 "Hostile
+**** has_estate_influence_modifier:
+***** estate_false = estate_cossacks
+***** modifier_false = EST_VAL_COSSACK_AGGRESSIONS
+**** has_estate_influence_modifier:
+***** estate_false = estate_cossacks
+***** modifier_false = EST_VAL_STOPPED_COSSACK_AGGRESSIONS
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 500 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Has a base tax of at least 2
+**** Region is not scandinavia_region
+**** Region is not baltic_region
+**** Region is not east_siberia_region
+**** Region is not west_siberia_region
+**** superregion_false = europe_superregion
+**** Any bordering province:
+***** The province is not owned by our country
+***** yes is a city
+***** The owner of the province:
+****** Not at war with our country
+****** estate_influence:
+******* estate = estate_cossacks
+******* influence = 15
+****** Any of the following:
+******* Considers our country a rival
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Disloyal
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Outraged
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Rebellious
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Hostile
+****** has_estate_influence_modifier:
+******* estate_false = estate_cossacks
+******* modifier_false = EST_VAL_COSSACK_AGGRESSIONS
+****** has_estate_influence_modifier:
+******* estate_false = estate_cossacks
+******* modifier_false = EST_VAL_STOPPED_COSSACK_AGGRESSIONS
+*** Random bordering province:
+**** Limited to:
+***** The province is not owned by our country
+***** yes is a city
+***** The owner of the province:
+****** Not at war with our country
+****** estate_influence:
+******* estate = estate_cossacks
+******* influence = 15
+****** Any of the following:
+******* Considers our country a rival
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Disloyal
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Outraged
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Rebellious
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Hostile
+****** has_estate_influence_modifier:
+******* estate_false = estate_cossacks
+******* modifier_false = EST_VAL_COSSACK_AGGRESSIONS
+****** has_estate_influence_modifier:
+******* estate_false = estate_cossacks
+******* modifier_false = EST_VAL_STOPPED_COSSACK_AGGRESSIONS
+**** The owner of the province:
+***** Sets the country flag cossack_raids_started_here
+**** The owner of the province:
+***** save_event_target_as = cossacks_here_target
+
+'''Option: cossack_estate_events.2.a:'''
+
+* AI chance:
+** Base chance of 100
+* Random neighbor country:
+** Limited to:
+*** Has the country flag cossack_raids_started_here
+** Gets the country event:
+*** ID is cossack_estate_events.3
+
+'''Option: cossack_estate_events.2.b:'''
+
+* AI chance:
+** Base chance of 0
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = -10
+* If:
+** Limited to:
+*** has_estate = estate_nobles
+** add_estate_loyalty:
+*** estate = estate_nobles
+*** loyalty = -10
+* If:
+** Limited to:
+*** has_estate = estate_nomadic_tribes
+** add_estate_loyalty:
+*** estate = estate_nomadic_tribes
+*** loyalty = -10
+* Random owned province:
+** Limited to:
+*** Has a base tax of at least 2
+*** Any bordering province:
+**** The owner of the province:
+***** Has the country flag cossack_raids_started_here
+** Changes base tax by -1
+** The owner of the province:
+*** Removes the country flag cossack_raids_started_here
+** If:
+*** Limited to:
+**** The owner of the province:
+***** Any of the following:
+****** All of the following:
+******* has_estate_false = estate_burghers
+******* has_estate_false = estate_nobles
+****** has_estate_false = estate_nomadic_tribes
+*** add_unrest = 5
+
+=== title = cossack_estate_events.3.t ===
+* Cannot fire randomly
+
+'''Option: cossack_estate_events.3.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_cossacks
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** Is a vassal of our country
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_COSSACK_AGGRESSIONS
+** influence = 10
+** Lasting 5475 days
+* Our country:
+** Gets the country event:
+*** ID is cossack_estate_events.4
+* Adds the opinion modifier "cossack_raids_opinion" towards our country
+* Tooltip:
+** Our country:
+*** Gives the 0 "Border Friction casus belli against our country
+
+'''Option: cossack_estate_events.3.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_cossacks
+**** loyalty_false = 40
+** Multiplies value by 2.0:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_STOPPED_COSSACK_AGGRESSIONS
+** influence = -10
+** Lasting 5475 days
+* Our country:
+** Gets the country event:
+*** ID is cossack_estate_events.5
+
+=== title = cossack_estate_events.4.t ===
+* Cannot fire randomly
+
+'''Option: cossack_estate_events.4.a:'''
+
+* Adds the opinion modifier "cossack_raids_opinion" towards our country
+* Random owned province:
+** Limited to:
+*** Has a base tax of at least 2
+*** Any bordering province:
+**** The province is owned by our country
+** Changes base tax by -1
+* Gives the 0 "Border Friction casus belli against our country
+* Our country:
+** Removes the country flag cossack_raids_started_here
+
+=== title = cossack_estate_events.5.t ===
+* Cannot fire randomly
+
+'''Option: cossack_estate_events.5.a:'''
+
+* Changes prestige by 5
+* Our country:
+** Removes the country flag cossack_raids_started_here
+
+=== title = cossack_estate_events.6.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_cossacks
+* Any owned province:
+** has_terrain = 0 "Steppes
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACKS_ADVANCES
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACKS_ADVANCES_20
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACKS_DECLINES
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: cossack_estate_events.6.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_COSSACKS_ADVANCES
+** influence = 10
+** Lasting 5475 days
+
+=== title = cossack_estate_events.7.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_cossacks
+* Any owned province:
+** has_terrain = 0 "Steppes
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACKS_ADVANCES
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACKS_ADVANCES_20
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACKS_DECLINES
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: cossack_estate_events.7.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_COSSACKS_DECLINES
+** influence = -10
+** Lasting 5475 days
+
+=== title = cossack_estate_events.8.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_cossacks
+* Any owned province:
+** has_terrain = 0 "Steppes
+** is_territory_false = no
+* estate_territory:
+** estate = estate_cossacks
+** territory = 1
+* Manpower are less than 95% of maximum
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACK_PRIVILEGES
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_DENIED_COSSACK_PRIVILEGES
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: cossack_estate_events.8.a:'''
+
+* Changes national manpower by 1 years worth of men
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_cossacks
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_COSSACK_PRIVILEGES
+** influence = 10
+** Lasting 5475 days
+
+'''Option: cossack_estate_events.8.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_cossacks
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_DENIED_COSSACK_PRIVILEGES
+** influence = -10
+** Lasting 5475 days
+
+=== title = cossack_estate_events.9.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_cossacks
+* Any owned province:
+** has_terrain = 0 "Steppes
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_SUPPLIED_COSSACKS
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACKS_FENDING_FOR_THEMSELVES
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: cossack_estate_events.9.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_cossacks
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+* Modifies treasury by -0.25 years worth of income
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_SUPPLIED_COSSACKS
+** influence = 10
+** Lasting 5475 days
+
+'''Option: cossack_estate_events.9.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_cossacks
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_COSSACKS_FENDING_FOR_THEMSELVES
+** influence = -10
+** Lasting 5475 days
+
+=== title = cossack_estate_events.10.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_cossacks
+* has_estate = estate_burghers
+* Any owned province:
+** has_terrain = 0 "Steppes
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_SUPPORTED_COSSACKS
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_SUPPORTED_BURGHERS_VS_COSSACKS
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: cossack_estate_events.10.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = 15
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_SUPPORTED_COSSACKS
+** influence = 10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_SUPPORTED_COSSACKS
+** influence = -10
+** Lasting 5475 days
+
+'''Option: cossack_estate_events.10.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_cossacks
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = -15
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_SUPPORTED_BURGHERS_VS_COSSACKS
+** influence = -10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_SUPPORTED_BURGHERS_VS_COSSACKS
+** influence = 10
+** Lasting 5475 days
+
+=== title = cossack_estate_events.11.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_cossacks
+* num_of_colonists = 1
+* Any owned province:
+** Any of the following:
+*** Region is central_asia_region
+*** Region is west_siberia_region
+*** Region is east_siberia_region
+** has_terrain = 0 "Steppes
+** is_territory_false = no
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACK_SETTLERS
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_NO_COSSACK_SETTLERS
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** has_terrain = 0 "Steppes
+**** Any of the following:
+***** Region is west_siberia_region
+***** Region is east_siberia_region
+***** Region is central_asia_region
+**** is_territory_false = no
+*** save_event_target_as = cossack_settlers_province
+
+'''Option: cossack_estate_events.11.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_cossacks
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+* Adds the modifier "cossack_settlers" for 15 years:
+** +10 global settler increase
+** +5% colonist chance
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_COSSACK_SETTLERS
+** influence = 10
+** Lasting 5475 days
+
+'''Option: cossack_estate_events.11.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_cossacks
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_NO_COSSACK_SETTLERS
+** influence = -10
+** Lasting 5475 days
+
+=== title = cossack_estate_events.12.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_cossacks
+* Any owned province:
+** has_terrain = 0 "Steppes
+** is_territory_false = no
+** The province is not the capital of the country
+** yes is a city
+* estate_territory:
+** estate = estate_cossacks
+** territory = 1
+* estate_loyalty:
+** estate_false = estate_cossacks
+** loyalty_false = 30
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACK_INDEPENDENCE
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_COSSACK_UPRISING
+* estate_territory:
+** estate = estate_cossacks
+** territory = 10
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag cossack_revolt
+***** value_false = estate
+***** estate_false = estate_cossacks
+**** Any owned province:
+***** has_terrain = 0 "Steppes
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag cossack_revolt
+**** check_reducing_estate_revolt_size_trigger:
+***** FLAG = cossack_revolt
+*** Random owned province:
+**** Limited to:
+***** has_terrain = 0 "Steppes
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag cossack_revolt
+**** Sets the province flag cossack_revolt
+
+'''Option: cossack_estate_events.12.a:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 60
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_COSSACK_INDEPENDENCE
+** influence = 10
+** Lasting 7300 days
+* If:
+** Limited to:
+*** estate_territory:
+**** estate_false = estate_cossacks
+**** territory_false = 10
+** Hidden effect:
+*** Every owned province:
+**** Limited to:
+***** has_terrain = 0 "Steppes
+**** add_local_autonomy = 10
+* else_if:
+** Limited to:
+*** estate_territory:
+**** estate = estate_cossacks
+**** territory = 10
+*** estate_territory:
+**** estate_false = estate_cossacks
+**** territory_false = 20
+** Hidden effect:
+*** Every owned province:
+**** Limited to:
+***** has_terrain = 0 "Steppes
+**** add_local_autonomy = 20
+* else_if:
+** Limited to:
+*** estate_territory:
+**** estate = estate_cossacks
+**** territory = 20
+** Hidden effect:
+*** Every owned province:
+**** Limited to:
+***** has_terrain = 0 "Steppes
+**** add_local_autonomy = 33
+
+'''Option: cossack_estate_events.12.b:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_cossacks
+**** influence = 70
+** Multiplies value by 0:
+*** Manpower are less than 80% of maximum
+** Multiplies value by 0:
+*** Is at war
+** Multiplies value by 0:
+*** 1 war exhaustion
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_COSSACK_UPRISING
+** influence = -15
+** Lasting 7300 days
+* Every owned province:
+** Limited to:
+*** Has the province flag cossack_revolt
+** Spawns revolt of size 1 of 0 "Peasant rebels
+
+=== title = cossack_estate_events.13.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_cossacks
+* Any owned province:
+** has_terrain = 0 "Steppes
+** The province is not the capital of the country
+** The province is not overseas
+** is_territory_false = no
+** yes is a city
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** has_terrain = 0 "Steppes
+**** The province is not the capital of the country
+**** The province is not overseas
+**** is_territory_false = no
+**** yes is a city
+*** save_event_target_as = growing_cossack_communities
+
+'''Option: cossack_estate_events.13.a:'''
+
+* event_target:growing_cossack_communities:
+** add_base_manpower = 1
+* give_estate_land_share_small:
+** estate = estate_cossacks
+
+'''Option: cossack_estate_events.13.b:'''
+
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = -15
+* event_target:growing_cossack_communities:
+** One of the following will happen:
+*** 25 relative chance:
+**** Spawns revolt of size 1 of 0 "Peasant rebels
+*** 75 relative chance:
+
+=== title = cossack_estate_events.14.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_cossacks
+* Any owned province:
+** has_terrain = 0 "Steppes
+* estate_influence:
+** estate = estate_cossacks
+** influence = 70
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_EXTENDED_COSSACK_PRIVILEGES
+* has_estate_influence_modifier:
+** estate_false = estate_cossacks
+** modifier_false = EST_VAL_NO_EXTENDED_COSSACK_PRIVILEGES
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: cossack_estate_events.14.a:'''
+
+* AI chance:
+** Base chance of 1
+* add_estate_loyalty:
+** estate = estate_cossacks
+** loyalty = -25
+* Changes stability by -1
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_NO_EXTENDED_COSSACK_PRIVILEGES
+** influence = -10
+** Lasting 3650 days
+
+'''Option: cossack_estate_events.14.b:'''
+
+* AI chance:
+** Base chance of 0
+* add_estate_influence_modifier:
+** estate = estate_cossacks
+** desc = EST_VAL_EXTENDED_COSSACK_PRIVILEGES
+** influence = 10
+** Lasting 7300 days
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -20
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -20
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -20
+
+=== title = cossack_estate_events.15.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: cossack_estate_events.15.a:'''
+

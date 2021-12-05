@@ -1,0 +1,1665 @@
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* Capital:
+********** In the continent 0 "Europe
+********* The 0 "Protestant religion is enabled
+********* The 0 "Protestant religion has existed for less than 100 years
+********* Does not have the country modifier "harbouring_reformer"
+********* Any known country:
+********** Has at least 5 provinces
+********** Follows the 0 "Catholic religion
+********** At least 1 provinces follow the 0 "Protestant religion
+********** Any of the following:
+*********** Has the country modifier "0 "Counter-Reformation"
+*********** Has the idea group 0 "Religious Ideas
+********** Capital:
+*********** In the continent 0 "Europe
+********** Does not have the country flag reformer_fleeing_from_here
+******** Immediate effects:
+********* Hidden effect:
+********** Random known country:
+*********** Limited to:
+************ Follows the 0 "Catholic religion
+************ At least 1 provinces follow the 0 "Protestant religion
+************ Has at least 5 provinces
+************ Any of the following:
+************* Has the country modifier "0 "Counter-Reformation"
+************* Has the idea group 0 "Religious Ideas
+*********** Sets the country flag reformer_fleeing_from_here
+******** Mean time to happen
+********* Base mean time to happen of 700 months
+********* Multiplies value by 0.7:
+********** Any known country:
+*********** Follows the 0 "Catholic religion
+*********** At least 1 provinces follow the 0 "Protestant religion
+*********** Any of the following:
+************ Has the country modifier "0 "Counter-Reformation"
+************ Has the idea group 0 "Religious Ideas
+*********** Primary culture is the same as in our country
+******** Option: protestantism_events.1.a:
+********* add_church_power = 20
+********* Adds the modifier "harbouring_reformer" for 20 years:
+********** church_power_modifier = 0.15
+********** +1 prestige
+********** Follows the yes religion
+********* Random known country:
+********** Limited to:
+*********** Has the country flag reformer_fleeing_from_here
+********** Adds the opinion modifier "protected_reformer" towards our country
+********** Gets the country event:
+*********** ID is protestantism_events.2
+*********** Base mean time to happen of 12 days
+********** Removes the country flag reformer_fleeing_from_here
+********* Sets the country flag recieved_reformer
+******** Option: protestantism_events.1.b:
+********* add_church_power = -20
+********* Random known country:
+********** Limited to:
+*********** Has the country flag reformer_fleeing_from_here
+********** Adds the opinion modifier "did_not_protect_reformer" towards our country
+********** Removes the country flag reformer_fleeing_from_here
+******* Gets the country event:
+******** ID is protestantism_events.2
+******** title = protestantism_events.2.t
+******** desc = protestantism_events.2.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** is_triggered_only = yes
+******** Option: protestantism_events.2.a:
+********* Changes prestige by -5
+********* Our country:
+********** Adds the opinion modifier "protected_reformer" towards our country
+******* Gets the country event:
+******** ID is protestantism_events.3
+******** title = protestantism_events.3.t
+******** desc = protestantism_events.3.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* Has the country modifier "harbouring_reformer"
+******** Mean time to happen
+********* Base mean time to happen of 120 months
+******** Option: protestantism_events.3.a:
+********* AI chance:
+********** Base chance of 90
+********* One of the following will happen:
+********** 15 relative chance:
+*********** Gets the country event:
+************ ID is protestantism_events.5
+********** 75 relative chance:
+*********** Gets the country event:
+************ ID is protestantism_events.4
+******** Option: protestantism_events.3.b:
+********* AI chance:
+********** Base chance of 10
+********* remove_church_aspect = random
+********* add_church_power = -50
+******* Gets the country event:
+******** ID is protestantism_events.4
+******** title = protestantism_events.4.t
+******** desc = protestantism_events.4.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** is_triggered_only = yes
+******** Option: protestantism_events.4.a:
+********* Removes the country modifier "harbouring_reformer"
+********* Removes the country flag recieved_reformer
+********* add_church_power = -15
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is protestantism_events.5
+******** title = protestantism_events.5.t
+******** desc = protestantism_events.5.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** is_triggered_only = yes
+******** Option: protestantism_events.5.a:
+********* add_church_power = 15
+******* Gets the country event:
+******** ID is protestantism_events.6
+******** title = protestantism_events.6.t
+******** desc = protestantism_events.6.d
+******** picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* Does not have the country modifier "rumored_crypto_catholics"
+********* Does not have the country modifier "catholics_in_hiding"
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+********* Multiplies value by 0.75:
+********** Has the idea group 0 "Humanist Ideas
+******** Option: protestantism_events.6.a:
+********* add_church_power = 10
+********* Changes administrative power stored by -20
+******** Option: protestantism_events.6.b:
+********* add_church_power = 20
+********* Adds the modifier "catholics_in_hiding" for 5 years:
+********** church_power_modifier = 0.1
+********** +0.5	#Church and state is one. tolerance of the true faith
+********** -1	#Strikes directly at Catholic provinces. tolerance of heretics
+********** Follows the yes religion
+******** Option: protestantism_events.6.c:
+********* add_church_power = -20
+********* Changes administrative power stored by 50
+********* Adds the modifier "rumored_crypto_catholics" for 5 years:
+********** +1 global unrest
+********** Follows the yes religion
+******* Gets the province event:
+******** ID is protestantism_events.7
+******** title = protestantism_events.7.t
+******** desc = protestantism_events.7.d
+******** picture = PROTESTANT_RELIGIOUS_TENSIONS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* The owner of the province:
+********** Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* The 0 "Protestant religion is enabled
+********* The province is not the capital of the country
+********* Does not have the province modifier "millenarianism"
+********* The owner of the province:
+********** num_of_aspects_false = 3
+********** church_power_false = 200
+********** Does not have the country modifier "fear_of_god"
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+********* Multiplies value by 0.8:
+********** The 0 "Protestant religion has existed for less than 200 years
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** 4 war exhaustion
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Stability is lower than 1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has the country flag trying_to_quell_millenarianism
+*********** } 
+********* Multiplies value by 1.2:
+********** The owner of the province:
+*********** Has the country flag trying_to_quell_millenarianism
+*********** } 
+******** Option: protestantism_events.7.a:
+********* AI chance:
+********** Base chance of 5
+********* Adds the modifier "millenarianism" until the end of the campaign:
+********** local_unrest = 5
+********** -10% trade goods output
+******** Option: protestantism_events.7.b:
+********* AI chance:
+********** Base chance of 90
+********* The owner of the province:
+********** Sets the country flag trying_to_quell_millenarianism
+********** add_church_power = -25
+******** Option: protestantism_events.7.c:
+********* AI chance:
+********** Base chance of 5
+********* Adds the modifier "millenarianism" until the end of the campaign:
+********** local_unrest = 5
+********** -10% trade goods output
+********* The owner of the province:
+********** Adds the modifier "fear_of_god" for 2 years:
+*********** +1 global unrest
+*********** church_power_modifier = 0.15
+*********** Follows the yes religion
+******* Gets the country event:
+******** ID is protestantism_events.8
+******** title = protestantism_events.8.t
+******** desc = protestantism_events.8.d
+******** picture = PROTESTANT_PRINTED_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* has_church_aspect = allow_usury_aspect
+********* The 0 "Protestant religion is enabled
+********* Any owned province:
+********** Does not have the province modifier "prot_economic_downturn"
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+********* Multiplies value by 0.8:
+********** The 0 "Protestant religion has existed for less than 150 years
+********* Multiplies value by 1.2:
+********** The 0 "Protestant religion has existed for less than 250 years
+******** Option: protestantism_events.8.a:
+********* AI chance:
+********** Base chance of 50
+********* add_church_power = 25
+********* If:
+********** Limited to:
+*********** has_estate = estate_burghers
+********** add_estate_loyalty:
+*********** estate = estate_burghers
+*********** loyalty = 10
+********* Random owned province:
+********** Limited to:
+*********** Does not have the province modifier "prot_economic_downturn"
+********** Adds the modifier "prot_economic_downturn" until the end of the campaign:
+*********** local_unrest = 2
+*********** -10% trade goods output
+******** Option: protestantism_events.8.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** has_estate = estate_burghers
+*********** estate_loyalty:
+************ estate_false = estate_burghers
+************ loyalty_false = 40
+********* If:
+********** Limited to:
+*********** has_estate = estate_burghers
+********** add_estate_loyalty:
+*********** estate = estate_burghers
+*********** loyalty = -10
+********* Adds the modifier "stricter_usury_regulations" for 5 years:
+********** -0.05 #modifies the +0.1 from allowed usury% production efficiency
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is protestantism_events.9
+******** title = protestantism_events.9.t
+******** desc = protestantism_events.9.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* The 0 "Protestant religion is enabled
+********* church_power = 50
+********* Does not have the country modifier "prot_peace"
+********* Does not have the country modifier "prot_wars"
+********* Does not have the country modifier "prot_purity_of_faith"
+********* Does not have the country modifier "prot_christian_unity"
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: protestantism_events.9.a:
+********* Trigger:
+********** Is not at war
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** Less than 1 war exhaustion
+********* add_church_power = -50
+********* Adds the modifier "prot_peace" for 10 years:
+********** -0.01 war exhaustion
+********** Follows the yes religion
+******** Option: protestantism_events.9.b:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** Has less than 4 provinces
+********** Multiplies value by 2:
+*********** Is at war
+********* add_church_power = -50
+********* Adds the modifier "prot_wars" for 10 years:
+********** -10% diplomatic point cost for unjustified demands
+********** Follows the yes religion
+******** Option: protestantism_events.9.c:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** 100% religious unity
+********* add_church_power = -50
+********* Adds the modifier "prot_purity_of_faith" for 10 years:
+********** +1% global heretic missionary strength
+********** Follows the yes religion
+******** Option: protestantism_events.9.dd:
+********* AI chance:
+********** Base chance of 1
+********* add_church_power = -50
+********* Adds the modifier "prot_christian_unity" for 10 years:
+********** +0.5 tolerance of the true faith
+********** Follows the yes religion
+******** Option: protestantism_events.9.e:
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** church_power_false = 100
+******* Gets the province event:
+******** ID is protestantism_events.10
+******** title = protestantism_events.10.t
+******** desc = protestantism_events.10.d
+******** picture = PROTESTANT_RELIGIOUS_TENSIONS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* The owner of the province:
+********** num_of_aspects_false = 3
+********** church_power_false = 200
+********** Follows the 0 "Protestant religion
+********** Has at least 2 provinces
+********* The province is not the capital of the country
+********* is_reformation_center_false = no
+********* Any of the following:
+********** All of the following:
+*********** The owner of the province:
+************ Less than 1 Catholic provinces compared to state religion
+*********** Follows the 0 "Protestant religion
+********** Follows the 0 "Catholic religion
+********* The 0 "Protestant religion has existed for less than 80 years
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: protestantism_events.10.a:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** The owner of the province:
+************ Any of the following:
+************* Stability is lower than 1
+************* 4 war exhaustion
+************* num_of_rebel_armies = 3
+********* The owner of the province:
+********** If:
+*********** Limited to:
+************ has_estate = estate_church
+*********** add_estate_loyalty:
+************ estate = estate_church
+************ loyalty = 10
+********* Spawns revolt of size 2 of 0 "Religious rebels
+******** Option: protestantism_events.10.b:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0.1:
+*********** The owner of the province:
+************ has_estate = estate_church
+************ estate_loyalty:
+************* estate_false = estate_church
+************* loyalty_false = 40
+********* The owner of the province:
+********** add_church_power = -25
+********** If:
+*********** Limited to:
+************ has_estate = estate_church
+*********** add_estate_loyalty:
+************ estate = estate_church
+************ loyalty = -10
+********* Adds the modifier "catholic_stronghold" until the end of the campaign:
+********** -5% missionary strength
+********** -10% provincial tax income
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Catholic religion
+********** Changes religion to 0 "Catholic
+******* Gets the country event:
+******** ID is protestantism_events.11
+******** title = protestantism_events.11.t
+******** desc = protestantism_events.11.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* The 0 "Protestant religion is enabled
+********* The 0 "Protestant religion has existed for less than 80 years
+********* } 
+********* Does not have the country flag troublesome_theologian_1
+********* Has the 0 "Theologian advisor
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: protestantism_events.11.a:
+********* AI chance:
+********** Base chance of 1
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+********* Changes prestige by -10
+********* Removes the 0 "Theologian advisor
+********* reduce_meritocracy_effect = yes
+******** Option: protestantism_events.11.b:
+********* AI chance:
+********** Base chance of 1
+********* add_church_power = 25
+********* Changes prestige by -15
+********* Removes the 0 "Theologian advisor
+********* reduce_meritocracy_effect = yes
+******** Option: protestantism_events.11.c:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** has_estate = estate_church
+*********** estate_loyalty:
+************ estate_false = estate_church
+************ loyalty_false = 40
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = -10
+********* reduce_meritocracy_effect = yes
+********* Changes prestige by 10
+********* add_church_power = -25
+******* Gets the country event:
+******** ID is protestantism_events.12
+******** title = protestantism_events.12.t
+******** desc = protestantism_events.12.d
+******** picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* The 0 "Protestant religion is enabled
+********* Any of the following:
+********** employed_advisor:
+*********** Follows the 0 "Catholic religion
+********** employed_advisor:
+*********** Follows the 0 "Catholic religion
+********* has_ruler_flag_false = catholic_advisor_at_court
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 1.2:
+********** Has the idea group 0 "Humanist Ideas
+********* Multiplies value by 1.1:
+********** Is part of the Holy Roman Empire
+********** The 0 "Protestant religion has existed for at least 100 years
+********* Multiplies value by 1.2:
+********** The 0 "Protestant religion has existed for at least 150 years
+********* Multiplies value by 0.9:
+********** Has the idea group 0 "Religious Ideas
+********* Multiplies value by 0.8:
+********** Is the defender of the faith
+********* Multiplies value by 0.8:
+********** Has a Natural Scientist with a skill of at least 3
+********* Multiplies value by 0.8:
+********** Has a Philosopher with a skill of at least 3
+******** Immediate effects:
+********* Hidden effect:
+********** set_ruler_flag = catholic_advisor_at_court
+******** Option: protestantism_events.12.a:
+********* add_church_power = -10
+******** Option: protestantism_events.12.b:
+********* Changes prestige by -10
+********* reduce_meritocracy_effect = yes
+********* If:
+********** Limited to:
+*********** employed_advisor:
+********** Removes the 0 "Natural Scientist advisor
+********* If:
+********** Limited to:
+*********** employed_advisor:
+********** Removes the 0 "Philosopher advisor
+******* Gets the country event:
+******** ID is protestantism_events.13
+******** title = protestantism_events.13.t
+******** desc = protestantism_events.13.d
+******** picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* The 0 "Protestant religion is enabled
+********* Any of the following:
+********** employed_advisor:
+*********** Follows the 0 "Reformed religion
+********** employed_advisor:
+*********** Follows the 0 "Reformed religion
+********** employed_advisor:
+*********** Follows the 0 "Reformed religion
+********** employed_advisor:
+*********** Follows the 0 "Reformed religion
+********** employed_advisor:
+*********** Follows the 0 "Reformed religion
+********** employed_advisor:
+*********** Follows the 0 "Reformed religion
+********* has_ruler_flag_false = calvinist_advisor_at_court
+******** Immediate effects:
+********* Hidden effect:
+********** set_ruler_flag = calvinist_advisor_at_court
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: protestantism_events.13.a:
+********* add_church_power = -25
+******** Option: protestantism_events.13.b:
+********* reduce_meritocracy_effect = yes
+********* Changes prestige by -10
+********* If:
+********** Limited to:
+*********** Has the 0 "Inquisitor advisor
+********** Removes the 0 "Inquisitor advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Master of Mint advisor
+********** Removes the 0 "Master of Mint advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Theologian advisor
+********** Removes the 0 "Theologian advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Artist advisor
+********** Removes the 0 "Artist advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Philosopher advisor
+********** Removes the 0 "Philosopher advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Treasurer advisor
+********** Removes the 0 "Treasurer advisor
+******* Gets the country event:
+******** ID is protestantism_events.14
+******** title = protestantism_events.14.t
+******** desc = protestantism_events.14.d
+******** picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* Is not in regency
+********* The 0 "Protestant religion is enabled
+********* Does not have the country flag catholic_leaning_heir
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* has_reform_false = 0 "Elective Monarchy
+********* Has an heir
+********* Heir is at least 9 years old
+********* Heir is less than 25 years old
+********* Year is less than 1680
+********* Any of the following:
+********** employed_advisor:
+*********** Follows the 0 "Catholic religion
+********** Has the idea group 0 "Humanist Ideas
+********** Has the idea group 0 "Innovative Ideas
+********** Any known country:
+*********** Has a royal marriage with our country
+*********** Follows the 0 "Catholic religion
+******** Mean time to happen
+********* Base mean time to happen of 1000 months
+******** Option: protestantism_events.14.a:
+********* AI chance:
+********** Base chance of 1
+********* Sets the country flag catholic_leaning_heir
+********* set_ruler_flag = heir_catholic
+******** Option: protestantism_events.14.b:
+********* AI chance:
+********** Base chance of 1
+******* Gets the country event:
+******** ID is protestantism_events.15
+******** title = protestantism_events.15.t
+******** desc = protestantism_events.15.d
+******** picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* The 0 "Protestant religion is enabled
+********* Is not in regency
+********* Has the monarchy government type
+********* Is not the lesser partner in a union
+********* Has the country flag catholic_leaning_heir
+********* Does not have the country flag catholic_leaning_monarch_happened
+********* Does not have the country flag heir_no_longer_catholic
+********* has_ruler_flag_false = heir_catholic
+******** is_triggered_only = yes
+******** Option: protestantism_events.15.a:
+********* AI chance:
+********** Base chance of 1
+********* set_ruler_flag = personal_catholic_sympathies
+********* Sets the country flag catholic_leaning_monarch_happened
+********* Adds the ruler modifier "tolerant_monarch" until the ruler's death:
+********** +1.5 tolerance of heretics
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is protestantism_events.16
+*********** Base mean time to happen of 3650 days
+******* Gets the country event:
+******** ID is protestantism_events.16
+******** title = protestantism_events.16.t
+******** desc = protestantism_events.16.d
+******** picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* The 0 "Protestant religion is enabled
+********* Is not the lesser partner in a union
+********* has_ruler_flag = personal_catholic_sympathies
+******** is_triggered_only = yes
+******** Option: protestantism_events.16.a:
+********* AI chance:
+********** Base chance of 1
+********* add_church_power = -50
+********* Changes stability by -1
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 15
+********* If:
+********** Limited to:
+*********** Has no heir
+********** Spawns a ruler:
+*********** Ruler's dynasty is our country
+********** If:
+*********** Limited to:
+************ has_states_general_mechanic = yes
+*********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has an heir
+********** Kills the ruler of the country
+******** Option: protestantism_events.16.b:
+********* AI chance:
+********** Base chance of 1
+********* add_church_power = -25
+********* Adds the ruler modifier "plagued_concience" until the ruler's death:
+********** -0.5 tolerance of the true faith
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is protestantism_events.17
+******** title = protestantism_events.17.t
+******** desc = protestantism_events.17.d
+******** picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* The 0 "Protestant religion is enabled
+********* Is not in regency
+********* Has the country flag catholic_leaning_heir
+********* has_ruler_flag = heir_catholic
+********* Is not the lesser partner in a union
+********* Heir is at least 26 years old
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: protestantism_events.17.a:
+********* AI chance:
+********** Base chance of 1
+********* Hidden effect:
+********** One of the following will happen:
+*********** 85 relative chance:
+************ Gets the country event:
+************* ID is protestantism_events.18
+*********** 15 relative chance:
+************ Gets the country event:
+************* ID is protestantism_events.20
+******** Option: protestantism_events.17.b:
+********* AI chance:
+********** Base chance of 1
+********* add_church_power = -50
+******* Gets the country event:
+******** ID is protestantism_events.18
+******** title = protestantism_events.18.t
+******** desc = protestantism_events.18.d
+******** picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+******** is_triggered_only = yes
+******** Option: protestantism_events.18.a:
+********* AI chance:
+********** Base chance of 1
+********* add_church_power = 25
+********* Hidden effect:
+********** One of the following will happen:
+*********** 80 relative chance:
+************ Sets the country flag heir_no_longer_catholic
+*********** 20 relative chance:
+******* Gets the country event:
+******** ID is protestantism_events.19
+******** title = protestantism_events.19.t
+******** desc = protestantism_events.19.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** is_triggered_only = yes
+******** Option: protestantism_events.19.a:
+********* Adds the ruler modifier "catholic_zealot" until the ruler's death:
+********** +1.5% global heretic missionary strength
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is protestantism_events.20
+******** title = protestantism_events.20.t
+******** desc = protestantism_events.20.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** is_triggered_only = yes
+******** Option: protestantism_events.20.a:
+********* AI chance:
+********** Base chance of 1
+********* add_church_power = -50
+******** Option: protestantism_events.20.b:
+********* AI chance:
+********** Base chance of 0
+********* Sets the country flag heir_no_longer_catholic
+********* Changes stability by -2
+********* Kills the heir of the country
+******* Gets the country event:
+******** ID is protestantism_events.21
+******** title = protestantism_events.21.t
+******** desc = protestantism_events.21.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* The 0 "Protestant religion is enabled
+********* Any of the following:
+********** The 0 "Protestant religion has existed for at least 80 years
+********** Has had the country flag "converted_to_protestantism" for at least 7300 days
+********** Has the country flag troublesome_theologian_1
+********* Has the 0 "Theologian advisor
+********* has_ruler_flag_false = troublesome_theologian_2
+******** Immediate effects:
+********* set_ruler_flag = troublesome_theologian_2
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: protestantism_events.21.a:
+********* AI chance:
+********** Base chance of 1
+********* Changes prestige by -10
+********* Removes the 0 "Theologian advisor
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+******** Option: protestantism_events.21.b:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** has_estate = estate_church
+*********** estate_loyalty:
+************ estate_false = estate_church
+************ loyalty_false = 40
+********* add_church_power = -25
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = -10
+******* Gets the country event:
+******** ID is protestantism_events.22
+******** title = protestantism_events.22.t
+******** desc = protestantism_events.22.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* The 0 "Protestant religion is enabled
+********* The 0 "Protestant religion has existed for at least 70 years
+********* The 0 "Protestant religion has existed for less than 150 years
+********* Does not have the ruler modifier phillipists
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: protestantism_events.22.a:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** has_estate = estate_church
+*********** estate_loyalty:
+************ estate_false = estate_church
+************ loyalty_false = 40
+********* Adds the modifier "phillipists" for 5 years:
+********** -2% global heretic missionary strength
+********** +0.5 tolerance of heretics
+********** Follows the yes religion
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = -10
+******** Option: protestantism_events.22.b:
+********* AI chance:
+********** Base chance of 1
+********* add_church_power = 25
+********* Changes stability by -1
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+******* Gets the country event:
+******** ID is protestantism_events.23
+******** title = protestantism_events.23.t
+******** desc = protestantism_events.23.d
+******** picture = CITY_DEVELOPMENT_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* The 0 "Protestant religion is enabled
+********* 2 or more Protestant provinces compared to state religion
+********* Any known country:
+********** Follows the 0 "Catholic religion
+********** Capital:
+*********** In the continent 0 "Europe
+********** Any of the following:
+*********** Has the idea group 0 "Religious Ideas
+*********** has_disaster = 0 "French Wars of Religion
+*********** has_disaster = 0 "Religious Turmoil
+*********** Has the country modifier "0 "Counter-Reformation"
+********** 1 or more Protestant provinces compared to state religion
+********** Does not have the country flag fleeing_protestants
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.8:
+********** Is the defender of the faith
+********* Multiplies value by 0.9:
+********** Has the idea group 0 "Religious Ideas
+********* Multiplies value by 0.9:
+********** Has the idea group 0 "Humanist Ideas
+********* Multiplies value by 0.9:
+********** Has the country flag recieved_reformer
+******** Immediate effects:
+********* Hidden effect:
+********** Random known country:
+*********** Limited to:
+************ Follows the 0 "Catholic religion
+************ Capital:
+************* In the continent 0 "Europe
+************ Any of the following:
+************* Has the idea group 0 "Religious Ideas
+************* has_disaster = 0 "French Wars of Religion
+************* has_disaster = 0 "Religious Turmoil
+************* Has the country modifier "0 "Counter-Reformation"
+************ 1 or more Protestant provinces compared to state religion
+*********** Sets the country flag fleeing_protestants
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Protestant religion
+************ Does not have the province flag protestants_arrived
+*********** Sets the province flag protestants_arrived
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Protestant religion
+************ Does not have the province flag protestants_arrived
+*********** Sets the province flag protestants_arrived
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Protestant religion
+************ Does not have the province flag protestants_arrived
+*********** Sets the province flag protestants_arrived
+******** Option: protestantism_events.23.a:
+********* add_church_power = -25
+********* Changes prestige by 10
+********* Adds the modifier "protestant_influx" for 10 years:
+********** -10% advisor cost
+********** +10% stability cost modifier
+********** Follows the yes religion
+********* Every province in the world:
+********** Limited to:
+*********** Has the province flag protestants_arrived
+********** Adds the modifier "protestant_refugees" until the end of the campaign:
+*********** +10% provincial tax income
+*********** +10% trade goods output
+*********** local_unrest = 2
+********** Removes the province flag protestants_arrived
+********* Random known country:
+********** Limited to:
+*********** Has the country flag fleeing_protestants
+********** Removes the country flag fleeing_protestants
+********** Adds the opinion modifier "welcomed_fleeing_protestants" towards our country
+******** Option: protestantism_events.23.b:
+********* add_church_power = 25
+********* Adds the modifier "protestant_influx" for 5 years:
+********** -10% advisor cost
+********** +10% stability cost modifier
+********** Follows the yes religion
+********* Random owned province:
+********** Limited to:
+*********** Follows the 0 "Protestant religion
+*********** Does not have the province flag protestants_arrived
+********** Adds the modifier "protestant_refugees" until the end of the campaign:
+*********** +10% provincial tax income
+*********** +10% trade goods output
+*********** local_unrest = 2
+********** Sets the province flag protestants_arrived
+********* Random known country:
+********** Limited to:
+*********** Has the country flag fleeing_protestants
+********** Removes the country flag fleeing_protestants
+********** Adds the opinion modifier "welcomed_fleeing_protestants" towards our country
+******** Option: protestantism_events.23.dd:
+********* Trigger:
+********** colony = 1
+********** Any known country:
+*********** is_colonial_nation_of = our country
+*********** Does not have the country flag protestant_refugees_to_the_colonies
+********* Random known country:
+********** Limited to:
+*********** Has the country flag fleeing_protestants
+********** Removes the country flag fleeing_protestants
+********** Adds the opinion modifier "welcomed_fleeing_protestants" towards our country
+********* Random known country:
+********** Limited to:
+*********** is_colonial_nation_of = our country
+********** Adds the modifier "protestant_refugees_to_the_colonies" for 10 years:
+*********** +5 global settler increase
+*********** +1 colonist
+*********** Follows the yes religion
+********** Sets the country flag religious_immigrants
+******** Option: protestantism_events.23.c:
+********* add_church_power = -5
+********* Random known country:
+********** Limited to:
+*********** Has the country flag fleeing_protestants
+********** Removes the country flag fleeing_protestants
+********** Adds the opinion modifier "turned_away_fleeing_protestants" towards our country
+******* Gets the country event:
+******** ID is protestantism_events.24
+******** title = protestantism_events.24.t
+******** desc = protestantism_events.24.d
+******** picture = PROTESTANT_PRINTED_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* The 0 "Protestant religion is enabled
+********* has_church_aspect = translated_bibles_aspect
+********* Does not have the country modifier "new_bible_translation"
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: protestantism_events.24.a:
+********* add_church_power = 25
+********* Adds the modifier "controversy_over_official_bible" for 5 years:
+********** -0.5 tolerance of the true faith
+********** Legitimacy is at least 0.5
+********** Republican tradition is at least 0.2
+********** devotion = 0.5
+********** Follows the yes religion
+******** Option: protestantism_events.24.b:
+********* add_church_power = -25
+********* Modifies treasury by -0.1 years worth of income
+********* Adds the modifier "new_bible_translation" for 10 years:
+********** +1 prestige
+********** church_power_modifier = 0.1
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is protestantism_events.25
+******** title = protestantism_events.25.t
+******** desc = protestantism_events.25.d
+******** picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* The 0 "Protestant religion is enabled
+********* ruler_age = 18
+********* Has the monarchy government type
+********* Has no heir
+********* is_free_or_tributary_trigger = yes
+********* has_church_aspect_false = legalised_divorces_aspect
+********* Does not have the ruler modifier protestant_bigamy
+******** Mean time to happen
+********* Base mean time to happen of 1000 months
+********* Multiplies value by 0.7:
+********** Has the country flag allowed_bigamy
+******** Option: protestantism_events.25.a:
+********* AI chance:
+********** Base chance of 90
+********* add_stability_or_adm_power = yes
+******** Option: protestantism_events.25.b:
+********* Trigger:
+********** Does not have the country flag allowed_bigamy
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 0:
+*********** has_estate = estate_church
+*********** estate_loyalty:
+************ estate_false = estate_church
+************ loyalty_false = 40
+********* add_church_power = -100
+********* Changes prestige by -20
+********* Adds the ruler modifier "protestant_bigamy" until the ruler's death:
+********** +100% chance of getting an heir
+********** +2 diplomatic relations limit
+********** Follows the yes religion
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = -15
+********* Sets the country flag allowed_bigamy
+******** Option: protestantism_events.25.c:
+********* Trigger:
+********** Has the country flag allowed_bigamy
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 0:
+*********** has_estate = estate_church
+*********** estate_loyalty:
+************ estate_false = estate_church
+************ loyalty_false = 40
+********* add_church_power = -100
+********* Changes prestige by -20
+********* Adds the ruler modifier "protestant_bigamy" until the ruler's death:
+********** +100% chance of getting an heir
+********** +2 diplomatic relations limit
+********** Follows the yes religion
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = -15
+********* Every known country:
+********** Limited to:
+*********** Any of the following:
+************ Follows the 0 "Protestant religion
+************ Has a royal marriage with our country
+*********** Does not have the ruler modifier protestant_bigamy
+********** Adds the opinion modifier "bigamy_of_ruler" towards our country
+******* Gets the country event:
+******** ID is protestantism_events.26
+******** title = protestantism_events.26.t
+******** desc = protestantism_events.26.d
+******** picture = PROTESTANT_PRINTED_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* Always false
+********* The 0 "Protestant religion is enabled
+********* Has at least 4 provinces
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: protestantism_events.26.a:
+********* Modifies treasury by 0.05 years worth of income
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Does not have the province modifier "mosaic_law_accusations"
+********** Adds the modifier "mosaic_law_accusations" until the end of the campaign:
+*********** local_unrest = 2
+*********** -5% trade goods output
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Does not have the province modifier "mosaic_law_accusations"
+********** Adds the modifier "mosaic_law_accusations" until the end of the campaign:
+*********** local_unrest = 2
+*********** -5% trade goods output
+******** Option: protestantism_events.26.b:
+********* Modifies treasury by -0.05 years worth of income
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Does not have the province modifier "mosaic_law_accusations"
+********** Adds the modifier "mosaic_law_accusations" until the end of the campaign:
+*********** local_unrest = 2
+*********** -5% trade goods output
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Does not have the province modifier "mosaic_law_accusations"
+********** Adds the modifier "mosaic_law_accusations" until the end of the campaign:
+*********** local_unrest = 2
+*********** -5% trade goods output
+******* Gets the country event:
+******** ID is protestantism_events.27
+******** title = protestantism_events.27.t
+******** desc = protestantism_events.27.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* Does not have the country modifier "stern_theologian_education"
+********* Does not have the country modifier "stern_theologian_mission"
+********* Does not have the country modifier "stern_theologian_leader"
+********* The 0 "Protestant religion has existed for at least 80 years
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.9:
+********** Year is at least 1650
+********* Multiplies value by 0.9:
+********** Year is at least 1700
+********* Multiplies value by 0.9:
+********** Has the idea group 0 "Religious Ideas
+******** Option: protestantism_events.27.a:
+********* Adds the modifier "stern_theologian_education" for 10 years:
+********** +0.5 tolerance of the true faith
+********** +1% global heretic missionary strength
+********** Follows the yes religion
+******** Option: protestantism_events.27.b:
+********* Adds the modifier "stern_theologian_mission" for 10 years:
+********** +2% global missionary strength
+********** Follows the yes religion
+******** Option: protestantism_events.27.c:
+********* Trigger:
+********** num_of_aspects_false = 3
+********* Adds the modifier "stern_theologian_leader" for 10 years:
+********** -1 global unrest
+********** church_power_modifier = 0.1
+********** Follows the yes religion
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+******* Gets the country event:
+******** ID is protestantism_events.28
+******** title = protestantism_events.28.t
+******** desc = protestantism_events.28.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* has_church_aspect = holy_sacraments_aspect
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: protestantism_events.28.a:
+********* add_church_power = -25
+******** Option: protestantism_events.28.b:
+********* Trigger:
+********** The 0 "Reformed religion is enabled
+********* Changes administrative power stored by -10
+******** Option: protestantism_events.28.c:
+********* Trigger:
+********** The 0 "Reformed religion is not enabled
+********* Changes administrative power stored by -25
+******* Gets the country event:
+******** ID is protestantism_events.29
+******** title = protestantism_events.29.t
+******** desc = protestantism_events.29.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* The 0 "Protestant religion has existed for less than 100 years
+********* Does not have the country modifier "reformer_praises_church_timer"
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.9:
+********** Has the country flag recieved_reformer
+********* Multiplies value by 0.9:
+********** Has the idea group 0 "Religious Ideas
+********* Multiplies value by 0.9:
+********** 100% religious unity
+********* Multiplies value by 2:
+********** calc_true_if:
+*********** Every country:
+************ Follows the 0 "Protestant religion
+*********** 10 will be built
+********* Multiplies value by 3:
+********** calc_true_if:
+*********** Every country:
+************ Follows the 0 "Protestant religion
+*********** 20 will be built
+******** Immediate effects:
+********* Hidden effect:
+********** Adds the modifier "reformer_praises_church_timer" for 10 years:
+*********** No effects
+******** Option: protestantism_events.29.a:
+********* add_church_power = 25
+******** Option: protestantism_events.29.b:
+********* Hidden effect:
+********** Every known country:
+*********** Limited to:
+************ Follows the 0 "Catholic religion
+*********** Adds the opinion modifier "beacon_of_protestantism" towards our country
+********** Every known country:
+*********** Limited to:
+************ Follows the 0 "Protestant religion
+*********** Adds the opinion modifier "protestant_ideal" towards our country
+******* Gets the province event:
+******** ID is protestantism_events.30
+******** title = protestantism_events.30.t
+******** desc = protestantism_events.30.d
+******** picture = PROTESTANT_RELIGIOUS_TENSIONS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* Does not have the province modifier "local_witch_hunts"
+********* Does not have the province modifier "prot_witch_trials"
+********* Does not have the province modifier "prot_stopped_witch_trials"
+********* The owner of the province:
+********** num_of_aspects_false = 3
+********** church_power_false = 200
+********** Follows the 0 "Protestant religion
+********** Does not have the country modifier "nationwide_witch_hunts"
+********** Does not have the country modifier "forbade_witch_hunts"
+********** Any of the following:
+*********** Stability is lower than 2
+*********** 3 war exhaustion
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Any owned province:
+************ Has the province modifier "prot_witch_trials"
+******** Option: protestantism_events.30.a:
+********* The owner of the province:
+********** add_church_power = 10
+********* Adds the modifier "prot_witch_trials" until the end of the campaign:
+********** local_unrest = 2
+********** -10% trade goods output
+******** Option: protestantism_events.30.b:
+********* Adds the modifier "prot_witch_trials" until the end of the campaign:
+********** local_unrest = 2
+********** -10% trade goods output
+******** Option: protestantism_events.30.c:
+********* The owner of the province:
+********** add_church_power = -25
+********* One of the following will happen:
+********** 20 relative chance:
+*********** Gets the province event:
+************ ID is protestantism_events.40
+********** 80 relative chance:
+*********** Adds the modifier "prot_stopped_witch_trials" until the end of the campaign:
+************ local_unrest = 1
+******* Gets the country event:
+******** ID is protestantism_events.31
+******** title = protestantism_events.31.t
+******** desc = protestantism_events.31.d
+******** picture = PROTESTANT_PRINTED_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* Any of the following:
+********** has_church_aspect = legalised_divorces_aspect
+********** has_church_aspect = heretics_deported_aspect
+********** has_church_aspect = priests_may_marry_aspect
+********** has_church_aspect = adult_baptism_aspect
+********** has_church_aspect = saints_accept_prayers_aspect
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: protestantism_events.31.a:
+********* add_church_power = -25
+******** Option: protestantism_events.31.b:
+********* Changes administrative power stored by -50
+******* Gets the country event:
+******** ID is protestantism_events.32
+******** title = protestantism_events.32.t
+******** desc = protestantism_events.32.d
+******** picture = BIG_BOOK_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+********* has_church_aspect = parish_registers_aspect
+********* Any owned province:
+********** Province last switched owner less than 60 months ago
+********** Does not have the province flag parish_register_new
+********** The province is nto under siege
+********** yes is a city
+********** Follows the 0 "Protestant religion
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Province last switched owner less than 60 months ago
+************ Does not have the province flag parish_register_new
+************ The province is nto under siege
+************ yes is a city
+************ Follows the 0 "Protestant religion
+*********** Sets the province flag parish_register_new
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: protestantism_events.32.a:
+********* add_church_power = -25
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag parish_register_new
+********** Changes base tax by 1
+******* Gets the country event:
+******** ID is protestantism_events.33
+******** title = protestantism_events.33.t
+******** desc = protestantism_events.33.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* The 0 "Protestant religion has existed for at least 220 years
+********* num_of_aspects_false = 3
+********* church_power_false = 200
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+********* Multiplies value by 0.9:
+********** Any owned province:
+*********** Has the province modifier "millenarianism"
+********* Multiplies value by 0.9:
+********** Has the country modifier "fear_of_god"
+******** Option: protestantism_events.33.a:
+********* AI chance:
+********** Base chance of 90
+********* add_church_power = -75
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+******** Option: protestantism_events.33.b:
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 0:
+*********** has_estate = estate_church
+*********** estate_loyalty:
+************ estate_false = estate_church
+************ loyalty_false = 40
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = -10
+********* Adds the modifier "spread_of_pietism" for 5 years:
+********** +1 tolerance of heretics
+********** +1% global missionary strength
+********** church_power_modifier = -0.2
+********** Follows the yes religion
+******* Gets the province event:
+******** ID is protestantism_events.34
+******** title = protestantism_events.34.t
+******** desc = protestantism_events.34.d
+******** picture = PROTESTANT_RELIGIOUS_TENSIONS_eventPicture
+******** Trigger:
+********* Follows the 0 "Protestant religion
+********* The owner of the province:
+********** Follows the 0 "Protestant religion
+********* The province is not the capital of the country
+********* Has the DLC Common Sense
+********* The owner of the province:
+********** num_of_aspects_false = 3
+********** church_power_false = 200
+********* The owner of the province:
+********** has_church_aspect = icons_images_aspect
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: protestantism_events.34.a:
+********* The owner of the province:
+********** add_church_power = 25
+********* Spawns revolt of size 2 of 0 "Religious rebels
+******** Option: protestantism_events.34.b:
+********* Adds the modifier "iconoclast_riot" until the end of the campaign:
+********** local_unrest = 2
+******* Gets the province event:
+******** ID is protestantism_events.35
+******** title = protestantism_events.35.t
+******** desc = protestantism_events.35.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* Does not have the province modifier "patriot_preacher"
+********* Does not have the province modifier "loyalist_preacher"
+********* Does not have the province modifier "colonial_religious_tensions"
+********* Any of the following:
+********** Follows the 0 "Protestant religion
+********** Follows the 0 "Reformed religion
+********* The owner of the province:
+********** Follows the 0 "Protestant religion
+********** Is a colonial nation
+********** Colonial parent:
+*********** Follows the 0 "Protestant religion
+*********** has_church_aspect = heretics_deported_aspect
+********* The province is not the capital of the country
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Colonial parent:
+************ Has the country modifier "spread_of_pietism"
+******** Option: protestantism_events.35.a:
+********* Adds the modifier "patriot_preacher" until the end of the campaign:
+********** -5% missionary strength
+********** local_unrest = 1
+******** Option: protestantism_events.35.b:
+********* Adds the modifier "colonial_religious_tensions" until the end of the campaign:
+********** local_unrest = 2
+******* Gets the province event:
+******** ID is protestantism_events.36
+******** title = protestantism_events.36.t
+******** desc = protestantism_events.36.d
+******** picture = PROTESTANT_RELIGIOUS_TENSIONS_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* Does not have the province modifier "colonial_religious_tensions"
+********* Does not have the province modifier "loyalist_preacher"
+********* Any of the following:
+********** Follows the 0 "Protestant religion
+********** Follows the 0 "Reformed religion
+********* The owner of the province:
+********** Follows the 0 "Protestant religion
+********** Is a colonial nation
+********** Colonial parent:
+*********** Follows the 0 "Protestant religion
+*********** has_church_aspect = heretics_deported_aspect
+********* The province is not the capital of the country
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: protestantism_events.36.a:
+********* Adds the modifier "colonial_religious_tensions" until the end of the campaign:
+********** local_unrest = 2
+******** Option: protestantism_events.36.b:
+********* Changes religion to 0 "Protestant
+********* The owner of the province:
+********** Random owned province:
+*********** Limited to:
+************ Any of the following:
+************* In the continent 0 "North America
+************* In the continent 0 "South America
+************ Borders an uncolonized province
+*********** Random uncolonized bordering province:
+************ Founds a colony
+************ Changes religion to 0 "Reformed
+******** Option: protestantism_events.36.c:
+********* Changes religion to 0 "Reformed
+********* The owner of the province:
+********** Random owned province:
+*********** Limited to:
+************ Any of the following:
+************* In the continent 0 "North America
+************* In the continent 0 "South America
+************ Borders an uncolonized province
+*********** Random uncolonized bordering province:
+************ Founds a colony
+************ Changes religion to 0 "Protestant
+******* Gets the province event:
+******** ID is protestantism_events.37
+******** title = protestantism_events.37.t
+******** desc = protestantism_events.37.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* Does not have the province modifier "loyalist_preacher"
+********* Any of the following:
+********** Follows the 0 "Protestant religion
+********** Follows the 0 "Reformed religion
+********* The owner of the province:
+********** Follows the 0 "Protestant religion
+********** Is a colonial nation
+********** Colonial parent:
+*********** Follows the 0 "Protestant religion
+*********** has_church_aspect = heretics_deported_aspect
+*********** num_of_aspects_false = 3
+*********** church_power_false = 200
+********* The province is not the capital of the country
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Colonial parent:
+************ Has the 0 "Theologian advisor
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Colonial parent:
+************ Has the 0 "Inquisitor advisor
+********* Multiplies value by 0.9:
+********** Has the province modifier "colonial_religious_tensions"
+******** Option: protestantism_events.37.a:
+********* If:
+********** Limited to:
+*********** Has the province modifier "colonial_religious_tensions"
+********** Removes the country modifier "colonial_religious_tensions"
+********* If:
+********** Limited to:
+*********** Has the province modifier "patriot_preacher"
+********** Removes the country modifier "patriot_preacher"
+********* Adds the modifier "loyalist_preacher" until the end of the campaign:
+********** +2% missionary strength
+********** local_unrest = -1
+******** Option: protestantism_events.37.b:
+********* If:
+********** Limited to:
+*********** Does not have the province modifier "colonial_religious_tensions"
+********** Adds the modifier "colonial_religious_tensions" until the end of the campaign:
+*********** local_unrest = 2
+******* Gets the country event:
+******** ID is protestantism_events.38
+******** title = protestantism_events.38.t
+******** desc = protestantism_events.38.d
+******** picture = PROTESTANT_RELIGIOUS_TENSIONS_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* Follows the 0 "Protestant religion
+********* Is a colonial nation
+********* Has at least 10 provinces
+********* Any of the following:
+********** Has at least 6 provinces where all of the following is true:
+*********** Any of the following:
+************ Follows the 0 "Reformed religion
+************ Has the province modifier "patriot_preacher"
+********** Has at least 8 provinces where all of the following is true:
+*********** Has the province modifier "colonial_religious_tensions"
+********* Colonial parent:
+********** Follows the 0 "Protestant religion
+********** num_of_aspects_false = 3
+********** church_power_false = 200
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: protestantism_events.38.a:
+********* Changes administrative power stored by -50
+********* Random owned province:
+********** Limited to:
+*********** Any of the following:
+************ Has the province modifier "colonial_religious_tensions"
+************ Follows the 0 "Reformed religion
+********** If:
+*********** Limited to:
+************ Does not follow the 0 "Protestant religion
+*********** Changes religion to 0 "Protestant
+********** If:
+*********** Limited to:
+************ Has the province modifier "colonial_religious_tensions"
+*********** Removes the country modifier "colonial_religious_tensions"
+********* If:
+********** Limited to:
+*********** Colonial parent:
+************ num_of_aspects_false = 3
+********** Gets the country event:
+*********** ID is protestantism_events.39
+*********** Base mean time to happen of 30 days
+******** Option: protestantism_events.38.b:
+********* If:
+********** Limited to:
+*********** Colonial parent:
+************ num_of_aspects_false = 3
+********** Gets the country event:
+*********** ID is protestantism_events.39
+*********** Base mean time to happen of 30 days
+********* If:
+********** Limited to:
+*********** Colonial parent:
+************ num_of_aspects = 3
+********** Adds the opinion modifier "opinion_religious_tension" towards our country
+******* Gets the country event:
+******** ID is protestantism_events.39
+******** title = protestantism_events.39.t
+******** desc = protestantism_events.39.d
+******** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+******** is_triggered_only = yes
+******** Option: protestantism_events.39.a:
+********* add_church_power = 10
+********* Our country:
+********** Adds 10 liberty desire
+******** Option: protestantism_events.39.b:
+********* add_church_power = -15
+********* Our country:
+********** Adds -5 liberty desire
+******* Gets the province event:
+******** ID is protestantism_events.40
+******** title = protestantism_events.40.t
+******** desc = protestantism_events.40.d
+******** picture = PROTESTANT_RELIGIOUS_TENSIONS_eventPicture
+******** is_triggered_only = yes
+******** Option: protestantism_events.40.a:
+********* Spawns revolt of size 1 of 0 "Peasant rebels
+******* Gets the country event:
+******** ID is protestantism_events.41
+******** title = protestantism_events.41.t
+******** desc = protestantism_events.41.d
+******** picture = PROTESTANT_RELIGIOUS_TENSIONS_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* num_of_aspects_false = 3
+********* Follows the 0 "Protestant religion
+********* Any owned province:
+********** Has the province modifier "prot_witch_trials"
+********** Has a base tax of at least 2
+********* Any of the following:
+********** Does not have the country flag had_escalated_with_trials
+********** Has had the country flag "had_escalated_with_trials" for at least 14600 days
+******** Mean time to happen
+********* Base mean time to happen of 90 months
+******** Option: protestantism_events.41.a:
+********* Changes stability by -1
+********* add_church_power = -25
+********* Random owned province:
+********** Limited to:
+*********** Has the province modifier "prot_witch_trials"
+********** Removes the country modifier "prot_witch_trials"
+******** Option: protestantism_events.41.b:
+********* add_church_power = 25
+********* Random owned province:
+********** Limited to:
+*********** Has the province modifier "prot_witch_trials"
+********** Changes base tax by -1
+********** Removes the country modifier "prot_witch_trials"
+********** Adds the modifier "escalated_witch_trials" until the end of the campaign:
+*********** local_unrest = 2
+*********** -50% trade goods output
+******* Gets the country event:
+******** ID is protestantism_events.42
+******** title = protestantism_events.42.t
+******** desc = protestantism_events.42.d
+******** picture = DEATH_OF_HEIR_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* has_ruler_flag = heir_catholic
+********* Has no heir
+********* Follows the 0 "Protestant religion
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: protestantism_events.42.a:
+********* clr_ruler_flag = heir_catholic

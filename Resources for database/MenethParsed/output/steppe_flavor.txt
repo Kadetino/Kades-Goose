@@ -1,0 +1,717 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = 0 "Steppe Nomads
+********* Is not at war
+********* had_recent_war_false = 2
+********* Capital:
+********** Any of the following:
+*********** Region is west_siberia_region
+*********** Region is east_siberia_region
+*********** Region is mongolia_region
+*********** Region is manchuria_region
+*********** Region is central_asia_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 1.1:
+********** Ruler's military skill is less than 3
+******** Option: 0 "If I had one scalp, for every time...:
+********* AI chance:
+********** Base chance of 10
+********* Changes prestige by -10
+******** Option: 0 "Can you not see the benefits, though?:
+********* Trigger:
+********** Has the idea group 0 "Administrative Ideas
+********* AI chance:
+********** Base chance of 90
+********** Multiplies value by 0:
+*********** 50 prestige
+********* Changes army tradition by -5
+******* Gets the country event:
+******** ID is randomeventsstapehordes.2
+******** title = 0 "Exhaustion is for the Weak
+******** desc = 0 "While the settlers cover behind their tall walls and starve in fear our host is our people. Hordes fear no war, hordes live for war.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = 0 "Steppe Nomads
+********* 2 war exhaustion
+********* Capital:
+********** Any of the following:
+*********** Region is west_siberia_region
+*********** Region is east_siberia_region
+*********** Region is mongolia_region
+*********** Region is manchuria_region
+*********** Region is central_asia_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Strength through unity.:
+********* AI chance:
+********** Base chance of 10
+********* Changes war exhaustion by -2
+******** Option: 0 "Send our spies to infiltrate their strongholds.:
+********* Trigger:
+********** Has the idea group 0 "Espionage Ideas
+********* AI chance:
+********** Base chance of 90
+********* Changes war exhaustion by -5
+********* Changes prestige by 3
+******* Gets the country event:
+******** ID is randomeventsstapehordes.3
+******** title = 0 "This is a Good Day to Die
+******** desc = 0 "Rumors of our glorious military exploits spread to our neighbors both near and far. Bands of strong young warriors pour across the tribal lands into our service, in search of life of glory and plunder.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = 0 "Steppe Nomads
+********* Is at war
+********* Manpower are less than 90% of maximum
+********* Capital:
+********** Any of the following:
+*********** Region is west_siberia_region
+*********** Region is east_siberia_region
+*********** Region is mongolia_region
+*********** Region is manchuria_region
+*********** Region is central_asia_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Most welcome news indeed.:
+********* AI chance:
+********** Base chance of 10
+********* Changes national manpower by 1.00 years worth of men
+******** Option: 0 "Have them train the next generation instead.:
+********* Trigger:
+********** Has the idea group 0 "Quality Ideas
+********* AI chance:
+********** Base chance of 90
+********* Changes army tradition by 10
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is randomeventsstapehordes.4
+******** title = 1 "Friendly Tribe Migrates into [Root.GetName]
+******** desc = 1 "A friendly tribe with blood ties to our own has crossed our border and settled in the open lands of [friendly_tribe_province.GetName]. Among these herdsmen live excellent and tough warriors and hunters, willing to answer the call to arms of our [Root.Monarch.GetTitle].
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Steppe Nomads
+********** has_reform = 0 "Tribal Federation
+********* has_estate = estate_nomadic_tribes
+********* estate_territory:
+********** estate = estate_nomadic_tribes
+********** territory = 10
+********* Any owned province:
+********** base_manpower_false = 3
+********** Culture group is the same as our country
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ base_manpower_false = 3
+************ Culture group is the same as our country
+*********** save_event_target_as = friendly_tribe_province
+******** Option: 0 "They are most welcome.:
+********* AI chance:
+********** Base chance of 100
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = 10
+********* event_target:friendly_tribe_province:
+********** add_base_manpower = 1
+******* Gets the country event:
+******** ID is randomeventsstapehordes.5
+******** title = 1 "Hostile Tribes Raid [hostile_migrating_tribes_province.GetName]
+******** desc = 1 "A hostile tribe from [hostile_migrating_tribes_country.GetName] has crossed into [hostile_migrating_tribes_province.GetName], raiding and pillaging our people. Before our hosts could hunt them down they disappeared back into their cursed homeland carrying with them countless slaves and sizeable loot.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Steppe Nomads
+********** has_reform = 0 "Tribal Federation
+********* Any owned province:
+********** Any bordering province:
+*********** The province is not owned by our country
+*********** The owner of the province:
+************ Any of the following:
+************* has_reform = 0 "Steppe Nomads
+************* has_reform = 0 "Tribal Federation
+************ Has an opinion of less than 0 with our country
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Any bordering province:
+************* The province is not owned by our country
+************* The owner of the province:
+************** Any of the following:
+*************** has_reform = 0 "Steppe Nomads
+*************** has_reform = 0 "Tribal Federation
+************** Has an opinion of less than 0 with our country
+*********** save_event_target_as = hostile_migrating_tribes_province
+*********** Random bordering province:
+************ Limited to:
+************* The owner of the province:
+************** Any of the following:
+*************** has_reform = 0 "Steppe Nomads
+*************** has_reform = 0 "Tribal Federation
+************** Has an opinion of less than 0 with our country
+************ The owner of the province:
+************* save_event_target_as = hostile_migrating_tribes_country
+******** Option: 0 "Vultures, hunt them down!:
+********* AI chance:
+********** Base chance of 100
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = -10
+********* event_target:hostile_migrating_tribes_province:
+********** add_devastation = 5
+********* Adds the opinion modifier "" towards event_target:hostile_migrating_tribes_country modifier
+******* Gets the country event:
+******** ID is randomeventsstapehordes.6
+******** title = 0 "Migrating Tribes in [migration_province.GetName]
+******** desc = 0 "A huge tribe of herders has settled in one of our provinces. Friendly and willing to acknowledge our rule, these people will bring economic benefits in the long run.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Steppe Nomads
+********** has_reform = 0 "Tribal Federation
+********* Any neighbor country:
+********** Has an opinion of at least 0 with our country
+********** Any of the following:
+*********** has_reform = 0 "Steppe Nomads
+*********** has_reform = 0 "Tribal Federation
+********* Any owned province:
+********** Produces 0 "Livestock
+********** Any bordering province:
+*********** The province is not owned by our country
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Produces 0 "Livestock
+************ Any bordering province:
+************* The province is not owned by our country
+*********** save_event_target_as = migration_province
+******** Option: 0 "They are more than welcome!:
+********* AI chance:
+********** Base chance of 100
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = 10
+********* event_target:migration_province:
+********** add_base_production = 1
+******* Gets the country event:
+******** ID is randomeventsstapehordes.7
+******** title = 0 "Migrating Tribes in [migration_province.GetName]
+******** desc = 0 "A big clan of sheep herdsmen has migrated into one of our border provinces searching for better pastures and milder winters. Peaceful in nature they are willing to accept our rule and pay the tribute.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Steppe Nomads
+********** has_reform = 0 "Tribal Federation
+********* Any neighbor country:
+********** Has an opinion of at least 50 with our country
+********** Any of the following:
+*********** has_reform = 0 "Tribal Federation
+*********** has_reform = 0 "Steppe Nomads
+********* Any owned province:
+********** Produces 0 "Wool
+********** Any bordering province:
+*********** The province is not owned by our country
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Produces 0 "Wool
+************ Any bordering province:
+************* The province is not owned by our country
+*********** save_event_target_as = migration_province
+******** Option: 0 "More wool, sounds good.:
+********* AI chance:
+********** Base chance of 100
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = 10
+********* event_target:migration_province:
+********** add_base_production = 1
+******* Gets the country event:
+******** ID is randomeventsstapehordes.8
+******** title = 0 "War Games
+******** desc = 0 "A huge event in the daily life of steppe dwellers is about to take place. Warriors from places both far and near will gather in our capital to participate in a display of skill. Horseback archery, strength contests and agility challenges will take place and may give birth to new champions and legends.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = 0 "Steppe Nomads
+********* Is not at war
+********* Is not in regency
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Ok.:
+********* AI chance:
+********** Base chance of 100
+********* One of the following will happen:
+********** 25 relative chance:
+*********** Gets the country event:
+************ ID is randomeventsstapehordes.9
+************ Base mean time to happen of 3 random days
+********** 25 relative chance:
+*********** Gets the country event:
+************ ID is randomeventsstapehordes.10
+************ Base mean time to happen of 3 random days
+********** 25 relative chance:
+*********** Gets the country event:
+************ ID is randomeventsstapehordes.11
+************ Base mean time to happen of 3 random days
+********** 25 relative chance:
+*********** Gets the country event:
+************ ID is randomeventsstapehordes.12
+************ Base mean time to happen of 3 random days
+********** 15 relative chance:
+*********** Gets the country event:
+************ ID is randomeventsstapehordes.15
+************ Base mean time to happen of 3 random days
+********** 5 relative chance:
+*********** Gets the country event:
+************ ID is randomeventsstapehordes.16
+************ Base mean time to happen of 3 random days
+******* Gets the country event:
+******** ID is randomeventsstapehordes.9
+******** title = 0 "Glorious Khan
+******** desc = 0 "Rejoice! Our glorious Khan [Root.Monarch.GetName] has won the close combat contest. How shall we remember the performance?
+******** picture = MONGOL_BANNERS_eventPicture
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Divine Blessing!:
+********* AI chance:
+********** Base chance of 33
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = 10
+********* add_horde_unity = 33
+******** Option: 0 "Holy Warrior!:
+********* AI chance:
+********** Base chance of 33
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = 10
+********* Changes prestige by 25
+******* Gets the country event:
+******** ID is randomeventsstapehordes.10
+******** title = 0 "Successful Games
+******** desc = 0 "Our war games have been a full success: both domestic and warriors from afar have displayed their skill and knowledge of warfare. We have many new champions and legends, and all shall remember this event for generations to come.
+******** picture = MONGOL_BANNERS_eventPicture
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Excellent.:
+********* AI chance:
+********** Base chance of 100
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = 10
+********* add_stability_or_adm_power = yes
+********* Changes army tradition by 5
+******* Gets the country event:
+******** ID is randomeventsstapehordes.11
+******** title = 0 "Ruinous Games
+******** desc = 0 "Oh horrors! As the war games started, two members of feuding clans started a squabble that got out of control and turned into massive brawl. Before our palace guards could stop them, the arena pit was damaged, and two large pagodas set on fire, ruining the rest of this event!
+******** picture = MONGOL_BANNERS_eventPicture
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Punish the culprits!:
+********* AI chance:
+********** Base chance of 100
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = -10
+********* Changes stability by -1
+********* Changes army tradition by -5
+******* Gets the country event:
+******** ID is randomeventsstapehordes.12
+******** title = 0 "Legendary Games
+******** desc = 0 "The whole event went better than we could ever have hoped for! Every single contest turned out to be a contest of bitter rivalry with opponents of matching skill pitted against each other. So impressed were our elders, that after the event even the oldest among them could not remember a more successful games!
+******** picture = MONGOL_BANNERS_eventPicture
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Splendid!:
+********* AI chance:
+********** Base chance of 100
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = 10
+********* Changes prestige by 15
+********* Changes national manpower by 0.1 years worth of men
+******* Gets the country event:
+******** ID is randomeventsstapehordes.13
+******** title = 0 "Clansmen Flock our Hosts
+******** desc = 0 "Hearing the rumors that our mighty hosts are being depleted of manpower young warriors emerge from the deepest parts of our realm, flocking into our armies. Some seek the life of nomadic warriors and mercenaries, others merely the loot.
+******** picture = MONGOL_BANNERS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Steppe Nomads
+********** has_reform = 0 "Tribal Federation
+********* Manpower are less than 50% of maximum
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "May the sons join their fathers.:
+********* AI chance:
+********** Base chance of 100
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = 10
+********* Changes national manpower by 0.15 years worth of men
+******* Gets the country event:
+******** ID is randomeventsstapehordes.14
+******** title = 0 "Restless Nomads
+******** desc = 0 "Enraged with the current state of peace and lack of raiding and looting an entire clan, comprised mostly of highly experienced warriors and huntsmen has left our horde and went on to join one of our neighbors instead.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = 0 "Steppe Nomads
+********* Manpower are less than 50% of maximum
+********* Is not at war
+********* Capital:
+********** Any of the following:
+*********** Region is west_siberia_region
+*********** Region is east_siberia_region
+*********** Region is mongolia_region
+*********** Region is manchuria_region
+*********** Region is central_asia_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Traitorous scum!:
+********* AI chance:
+********** Base chance of 100
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = -10
+********* Changes national manpower by -0.75 years worth of men
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is randomeventsstapehordes.15
+******** title = 0 "Rising Star
+******** desc = 0 "One of our tribal leaders has displayed great skill at arms during our recent war games. Many clansmen suggest that he would make a superb general to lead our host. Should we announce the promotion?
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Trigger:
+********* has_estate_influence_modifier:
+********** estate_false = estate_nomadic_tribes
+********** modifier_false = EST_VAL_RANDOMSTEPPE_LEADER
+******** Option: 0 "A most excellent idea.:
+********* AI chance:
+********** Base chance of 50
+********* Changes prestige by 2
+********* Creates a general at  extra army tradition
+********** tradition = 50
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = 15
+********** add_estate_influence_modifier:
+*********** desc = EST_VAL_RANDOMSTEPPE_LEADER
+*********** estate = estate_nomadic_tribes
+*********** influence = 10
+*********** Lasting 3650 days
+******** Option: 0 "We cannot risk his influence.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** has_estate = estate_nomadic_tribes
+*********** estate_loyalty:
+************ estate_false = estate_nomadic_tribes
+************ loyalty_false = 40
+********* Trigger:
+********** has_estate = estate_nomadic_tribes
+********* add_estate_loyalty:
+********** estate = estate_nomadic_tribes
+********** loyalty = -15
+******* Gets the country event:
+******** ID is randomeventsstapehordes.16
+******** title = 0 "Shining Star
+******** desc = 0 "One of our tribal leaders has displayed a legendary skill at arms during our recent war games. Many clansmen and tribal elders suggest that he would make a superb general to lead our host. Should we grant this promotion?
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Trigger:
+********* has_estate_influence_modifier:
+********** estate_false = estate_nomadic_tribes
+********** modifier_false = EST_VAL_RANDOMSTEPPE_LEADER
+******** Option: 0 "A most excellent idea.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0.25:
+*********** estate_influence:
+************ estate = estate_nomadic_tribes
+************ influence = 60
+********* Changes prestige by 5
+********* Creates a general at  extra army tradition
+********** tradition = 75
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = 15
+********** add_estate_influence_modifier:
+*********** desc = EST_VAL_RANDOMSTEPPE_LEADER
+*********** estate = estate_nomadic_tribes
+*********** influence = 10
+*********** Lasting 3650 days
+******** Option: 0 "We cannot risk his influence.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** has_estate = estate_nomadic_tribes
+*********** estate_loyalty:
+************ estate_false = estate_nomadic_tribes
+************ loyalty_false = 40
+********* Trigger:
+********** has_estate = estate_nomadic_tribes
+********* add_estate_loyalty:
+********** estate = estate_nomadic_tribes
+********** loyalty = -15
+******* Gets the country event:
+******** ID is randomeventsstapehordes.17
+******** title = 0 "Tribal Feud
+******** desc = 0 "During the height of the summer festivities in our capital members of two feuding tribes have decided to have a public showdown and fight it out in front of the entire political and religious leadership of our state! The ensuing violence was so fierce that not only the feuding tribesmen lost their lives, but also countless bystanders and even members of the [Root.Monarch.GetTitle]'s guard.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Steppe Nomads
+********** has_reform = 0 "Tribal Federation
+********** has_reform = 0 "Tribal Monarchy
+********** has_reform = 0 "Tribal Despotism
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Vile rabble! How dare they!:
+********* AI chance:
+********** Base chance of 100
+********* If:
+********** Limited to:
+*********** Has the DLC The Cossacks
+*********** has_reform = 0 "Steppe Nomads
+********** add_horde_unity = -10
+********* else:
+********** Changes stability by -1
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = -10
+******* Gets the country event:
+******** ID is randomeventsstapehordes.19
+******** title = 0 "Hunting Accident
+******** desc = 2 "While on a hunt [Root.Heir.GetName], our designated heir, was ambushed by a band of unknown assassins. Outnumbered and attacked from cover all but one fell there and then. The survivor, though wounded by a poison arrow, lived long enough to tell us of a valiant last stand of [Root.Heir.GetName]. Tall and mighty he stood, cutting the creatures of the night one by one as they surrounded him, until the last of his body guards succumbed. Shaken and in mourning, our people celebrate the legacy of [Root.Heir.GetName] as he achieves immortality in their memory.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Steppe Nomads
+********** has_reform = 0 "Tribal Federation
+********** has_reform = 0 "Tribal Monarchy
+********** has_reform = 0 "Tribal Despotism
+********* Has an heir
+********* Heir is at least 11 years old
+********* Heir is male
+********* is_free_or_tributary_trigger = yes
+********* Is not the lesser partner in a union
+********* Any of the following:
+********** Legitimacy is less than 50
+********** horde_unity_false = 50
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Hunt them down!:
+********* AI chance:
+********** Base chance of 100
+********* Changes prestige by -10
+********* Kills the heir of the country
+******* Gets the country event:
+******** ID is randomeventsstapehordes.20
+******** title = 0 "We Look Weak
+******** desc = 0 "Our armies are so small and pathetic that not only the elders but even local tribal rulers dare to tarnish the name of our [Root.Monarch.GetTitle].
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Steppe Nomads
+********** has_reform = 0 "Tribal Federation
+********** has_reform = 0 "Tribal Monarchy
+********** has_reform = 0 "Tribal Despotism
+********* Army is less than 50% of the force limit
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Ignore the rabble, a dog that barks won't bite.:
+********* AI chance:
+********** Base chance of 100
+********* Changes prestige by -10
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = -10
+******* Gets the country event:
+******** ID is randomeventsstapehordes.21
+******** title = 0 "Authority Undermined
+******** desc = 0 "Our armies are so small and pathetic that many tribal leaders and elders are openly questioning our [Root.Monarch.GetTitle]'s ability to lead us.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = 0 "Steppe Nomads
+********* Army is less than 50% of the force limit
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Their words mean nothing.:
+********* AI chance:
+********** Base chance of 100
+********* add_horde_unity = -5
+********* Changes prestige by -10
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = -10
+******* Gets the country event:
+******** ID is randomeventsstapehordes.22
+******** title = 0 "Military Tradition Scorned
+******** desc = 0 "Our armies are so small and pathetic that our commanders are starting to wonder whether their service has any point at all.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = 0 "Steppe Nomads
+********* Army is less than 50% of the force limit
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Oh ye of little faith.:
+********* AI chance:
+********** Base chance of 100
+********* Changes army tradition by -5
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = -10
+********* Randomized by 
+********** Acquisition chance:
+********** Changes stability by -1
+******* Gets the country event:
+******** ID is randomeventsstapehordes.23
+******** title = 0 "Military Tradition Scorned
+******** desc = 0 "Our armies are so small and pathetic that our commanders are starting to wonder whether their service has any point at all. Demoralized by the lack of any prospect for the glorious life of raiding and looting, the men are starting to leave our hosts, and instead go to other tribes or form local bands of looters and bandits.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = 0 "Steppe Nomads
+********* Army is less than 50% of the force limit
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Oh ye of little faith.:
+********* AI chance:
+********** Base chance of 100
+********* Changes prestige by -2
+********* Changes national manpower by -0.2 years worth of men
+********* If:
+********** Limited to:
+*********** has_estate = estate_nomadic_tribes
+********** add_estate_loyalty:
+*********** estate = estate_nomadic_tribes
+*********** loyalty = -10
+********* Randomized by 
+********** Acquisition chance:
+********** Changes stability by -1
+******* Gets the country event:
+******** ID is randomeventsstapehordes.24
+******** title = 0 "War, What is it Good For
+******** desc = 1 "As they were standing on top of a hill, observing our almighty hosts marching on into the enemy's land, a servant approaches our [Root.Monarch.GetTitle], looks him in the eye and asks: 'War, what is it good for?' to which our [Root.Monarch.GetTitle] replies: 'Absolutely everything.'
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = 0 "Steppe Nomads
+********* Any of the following:
+********** Legitimacy is at least 99
+********** horde_unity = 99
+********* Is at war
+********* Capital:
+********** Any of the following:
+*********** Region is west_siberia_region
+*********** Region is east_siberia_region
+*********** Region is mongolia_region
+*********** Region is manchuria_region
+*********** Region is central_asia_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Yes, indeed.:
+********* Changes prestige by 10
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is randomeventsstapehordes.25
+******** title = 0 "The Will of the Horde
+******** desc = 0 "The mounted warriors that dominate both our society and our armies have grown weary of our tendency to emulate the settled peoples. Our destiny is to rule the weak sedentary populations not to make their weaknesses our own.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** Trigger:
+********* Always false
+********* Technology group is 0 "Nomadic
+********* has_institution_false = feudalism
+********* has_reform_false = 0 "Steppe Nomads
+********* has_reform_false = 0 "Celestial Empire
+********* Does not have the DLC Dharma
+********* Does not have the DLC Emperor
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: 0 "Long may we prosper!:
+********* Changes government type to monarchy

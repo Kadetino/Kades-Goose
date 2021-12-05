@@ -1,0 +1,43 @@
+** Trigger:
+*** Owns core province 4714
+*** 4714::
+**** development = 20
+*** Primary culture is 0 "Swabian
+*** Has the monarchy government type
+*** Is not in regency
+** Mean time to happen
+*** Base mean time to happen of 60 years
+*** Multiplies value by 0.5:
+**** 4714::
+***** is_capital_of = our country
+*** Multiplies value by 0.5:
+**** Any of the following:
+***** Country is 0 "Baden
+***** was_tag = 0 "Baden
+** Option: flavour_swa.1.A:
+*** Modifies treasury by -1 years worth of income
+*** 4714::
+**** Changes province name to Karlsruhe
+**** Changes province capital name to Karlsruhe
+**** Changes base tax by 3
+**** add_nationalism = 15
+*** Changes prestige by 15
+*** AI chance:
+**** Base chance of 5
+**** Multiplies value by 0.5:
+***** is_in_large_debt = yes
+**** Multiplies value by 0:
+***** is_in_large_debt = yes
+** Option: flavour_swa.1.B:
+*** Changes prestige by -15
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 2:
+***** Has at least 2 active loans
+**** Multiplies value by 2:
+***** Has at least 5 active loans
+**** Multiplies value by 2:
+***** Has at least 10 active loans
+**** Multiplies value by 2:
+***** 4714::
+****** unrest = 10

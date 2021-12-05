@@ -1,0 +1,494 @@
+
+=== title = elective_monarchy.1.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* has_foreign_heir = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.1.a:'''
+
+* add_heir_support = 10
+
+=== title = elective_monarchy.2.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* has_foreign_heir = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.2.a:'''
+
+* add_heir_support = -10
+
+=== title = elective_monarchy.3.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* Has the monarchy government type
+* Any known country:
+** has_reform = 0 "Elective Monarchy
+** heir_nationality = our country
+* Has at least 0.5 years worth of income
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.3.a:'''
+
+* Modifies treasury by -0.5 years worth of income
+* Changes prestige by 3
+* Random known country:
+** Limited to:
+*** has_reform = 0 "Elective Monarchy
+*** heir_nationality = our country
+** add_heir_support = 25
+
+'''Option: elective_monarchy.3.b:'''
+
+* Changes prestige by -1
+* Random known country:
+** Limited to:
+*** has_reform = 0 "Elective Monarchy
+*** heir_nationality = our country
+** add_heir_support = -10
+
+=== title = elective_monarchy.4.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* has_foreign_heir = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.4.a:'''
+
+* AI chance:
+** Base chance of 20
+* One of the following will happen:
+** 50 relative chance:
+*** Kills the heir of the country
+*** Hidden effect:
+**** Gets the country event:
+***** ID is elective_monarchy.7
+** 50 relative chance:
+*** Random known country:
+**** Limited to:
+***** ROOT:
+****** heir_nationality = PREV
+**** Tooltip:
+***** Adds the opinion modifier "attempted_assassination_of_heir" towards our country
+***** Gives the 0 "Diplomatic Insult casus belli against our country
+**** Hidden effect:
+***** Gets the country event:
+****** ID is elective_monarchy.5
+
+'''Option: elective_monarchy.4.b:'''
+
+* AI chance:
+** Base chance of 80
+* Changes stability by -1
+
+=== title = elective_monarchy.5.t ===
+* Cannot fire randomly
+
+'''Option: elective_monarchy.5.a:'''
+
+* Adds the opinion modifier "attempted_assassination_of_heir" towards our country
+* Gives the 0 "Diplomatic Insult casus belli against our country
+
+=== title = elective_monarchy.6.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* Has the monarchy government type
+* Any known country:
+** has_reform = 0 "Elective Monarchy
+** heir_nationality = our country
+** Does not follow our country's religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.6.a:'''
+
+* Changes stability by -1
+* AI chance:
+** Base chance of 75
+* Random known country:
+** Limited to:
+*** has_reform = 0 "Elective Monarchy
+*** heir_nationality = our country
+*** Does not follow our country's religion
+*** has_ruler_flag_false = elective_monarchy_heir_converted
+** add_heir_support = 10
+** set_ruler_flag = elective_monarchy_heir_converted
+
+'''Option: elective_monarchy.6.b:'''
+
+* AI chance:
+** Base chance of 25
+* Random known country:
+** Limited to:
+*** has_reform = 0 "Elective Monarchy
+*** heir_nationality = our country
+*** Does not follow our country's religion
+*** has_ruler_flag_false = elective_monarchy_heir_converted
+** add_heir_support = -100
+** set_ruler_flag = elective_monarchy_heir_converted
+** set_ruler_flag = elective_monarchy_heir_refused_converted
+
+=== title = elective_monarchy.7.t ===
+* Cannot fire randomly
+
+'''Option: elective_monarchy.7.a:'''
+
+
+=== title = elective_monarchy.8.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* ruler_is_foreigner = yes
+* Any known country:
+** Ruler's dynasty is our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.8.a:'''
+
+* Random known country:
+** Limited to:
+*** Ruler's dynasty is our country
+** Adds the opinion modifier "dynastic_diplomacy" towards our country
+
+=== title = elective_monarchy.9.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* ruler_is_foreigner = yes
+* Any known country:
+** Ruler's dynasty is our country
+** Is not a vassal
+** same_continent = our country
+** Any owned province:
+*** The province is not claimed by our country
+*** Has no core on our country
+*** is_in_capital_area = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Random known country:
+** Limited to:
+*** Ruler's dynasty is our country
+*** Is not the lesser partner in a union
+*** same_continent = our country
+*** Any owned province:
+**** The province is not claimed by our country
+**** Has no core on our country
+**** is_in_capital_area = yes
+** Random owned province:
+*** Limited to:
+**** The province is not claimed by our country
+**** Has no core on our country
+**** is_in_capital_area = yes
+*** save_event_target_as = claim_province
+
+'''Option: elective_monarchy.9.a:'''
+
+* goto = claim_province
+* event_target:claim_province:
+** Random owned province:
+*** Limited to:
+**** The province is not claimed by our country
+**** Has no core on our country
+**** is_in_capital_area = yes
+*** Adds claim to our country
+
+'''Option: elective_monarchy.9.b:'''
+
+* Changes prestige by -5
+
+=== title = elective_monarchy.10.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* ruler_is_foreigner = yes
+* ruler_age = 65
+* Any known country:
+** Ruler's dynasty is our country
+** Is not the lesser partner in a union
+** ROOT:
+*** heir_nationality_false = PREV
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.10.a:'''
+
+* Kills the ruler of the country
+
+'''Option: elective_monarchy.10.b:'''
+
+* Changes stability by -1
+* add_heir_support = -10
+
+=== title = elective_monarchy.11.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* ruler_is_foreigner = yes
+* Any known country:
+** Ruler's dynasty is our country
+** Is not the lesser partner in a union
+** Does not follow our country's religion
+** has_ruler_flag_false = elective_monarchy_heir_refused_converted
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.11.a:'''
+
+* Adds the ruler modifier "converted_monarch" until the ruler's death:
+** +2% global missionary strength
+** -1 tolerance of heretics
+
+=== title = elective_monarchy.12.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* ruler_is_foreigner = yes
+* Is not the lesser partner in a union
+* Is at war
+* War score lower than least -25
+* Any known country:
+** In a defensive war against our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.12.a:'''
+
+* Changes stability by -1
+
+'''Option: elective_monarchy.12.b:'''
+
+* Adds -15 legitimacy
+* Changes war exhaustion by -5
+
+=== title = elective_monarchy.13.t ===
+* Province event
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* The owner of the province:
+** has_reform = 0 "Elective Monarchy
+** ruler_is_foreigner = yes
+** Any known country:
+*** Ruler's dynasty is PREV
+*** Is not the lesser partner in a union
+*** Primary culture is the same as in our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Option: elective_monarchy.13.a:'''
+
+* Adds the modifier "local_popularity" until the end of the campaign:
+** local_unrest = -3
+** +30% provincial tax income
+
+=== title = elective_monarchy.14.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* ruler_is_foreigner = yes
+* Any known country:
+** Ruler's dynasty is not our country
+** ROOT:
+*** heir_nationality = PREV
+* Any known country:
+** Ruler's dynasty is our country
+** Is not the lesser partner in a union
+** ROOT:
+*** heir_nationality_false = PREV
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.14.a:'''
+
+* add_heir_support = -10
+
+'''Option: elective_monarchy.14.b:'''
+
+* add_heir_support = 10
+* Random known country:
+** Limited to:
+*** Ruler's dynasty is our country
+*** Is not the lesser partner in a union
+*** ROOT:
+**** heir_nationality_false = PREV
+** Tooltip:
+*** Adds the opinion modifier "sided_with_foreign_heir" towards our country
+** Hidden effect:
+*** Gets the country event:
+**** ID is elective_monarchy.15
+* Random known country:
+** Limited to:
+*** Ruler's dynasty is not our country
+*** ROOT:
+**** heir_nationality = PREV
+** Tooltip:
+*** Adds the opinion modifier "sided_with_supported_heir" towards our country
+** Hidden effect:
+*** Gets the country event:
+**** ID is elective_monarchy.16
+
+'''Option: elective_monarchy.14.c:'''
+
+* Changes prestige by 10
+
+=== title = elective_monarchy.15.t ===
+* Cannot fire randomly
+
+'''Option: elective_monarchy.15.a:'''
+
+* Tooltip:
+** Our country:
+*** add_heir_support = 10
+* Adds the opinion modifier "sided_with_foreign_heir" towards our country
+
+=== title = elective_monarchy.16.t ===
+* Cannot fire randomly
+
+'''Option: elective_monarchy.16.a:'''
+
+* Tooltip:
+** Our country:
+*** add_heir_support = 10
+* Adds the opinion modifier "sided_with_supported_heir" towards our country
+
+=== title = elective_monarchy.17.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* ruler_is_foreigner = yes
+* has_ruler_flag_false = considered_golden_liberty
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.17.a:'''
+
+* set_ruler_flag = considered_golden_liberty
+* Adds the ruler modifier "golden_liberty" until the ruler's death:
+** +20% stability cost modifier
+** -20% advisor cost
+* Changes prestige by -10
+* Adds 10 legitimacy
+
+'''Option: elective_monarchy.17.b:'''
+
+* set_ruler_flag = considered_golden_liberty
+* Changes administrative power stored by 50
+* Changes diplomatic power stored by 50
+* Changes military power stored by 50
+* Adds -20 legitimacy
+
+=== title = elective_monarchy.18.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Res Publica
+* has_reform = 0 "Elective Monarchy
+* ruler_is_foreigner = yes
+* Any known country:
+** Ruler's dynasty is our country
+** Has the monarchy government type
+** Is not a vassal
+** Is not at war
+** Is not in regency
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: elective_monarchy.18.a:'''
+
+* Random known country:
+** Limited to:
+*** Ruler's dynasty is our country
+*** Has the monarchy government type
+*** Is not a vassal
+*** Is not at war
+*** Is not in regency
+** Tooltip:
+*** Gives the 0 "Restoration of Union casus belli against our country
+** Hidden effect:
+*** Gets the country event:
+**** ID is elective_monarchy.19
+
+=== title = elective_monarchy.19.t ===
+* Cannot fire randomly
+
+'''Option: elective_monarchy.19.a:'''
+
+* Gives the 0 "Restoration of Union casus belli against our country

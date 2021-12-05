@@ -1,0 +1,402 @@
+******** Trigger:
+********* is_owned_by_trade_company = yes
+********* trade_company_size = 5
+********* Can build the 0 "Plantation building
+********* num_free_building_slots = 1
+********* Culture group is not owner
+********* Has a base tax of at least 2
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.9:
+********** trade_company_size = 10
+********* Multiplies value by 0.9:
+********** trade_company_size = 15
+********* Multiplies value by 0.9:
+********** trade_company_size = 20
+******** Option: 0 "Support this initiative:
+********* AI chance:
+********** Base chance of 75
+********* Changes base tax by -1
+********* add_unrest = 5
+********* Constructs the 0 "Plantation building
+********* Sets the province flag resettlement_plan
+******** Option: 0 "Forbid these actions:
+********* AI chance:
+********** Base chance of 25
+********* Adds the modifier "0 "Trade Company Upset" until the end of the campaign:
+********** local_unrest = 5
+********** province_trade_power_modifier = -0.5
+******* Gets the province event:
+******** ID is trade_company_events.2
+******** title = 0 "Resettlement Plan Fails
+******** desc = 0 "The plan for resettling [Root.Owner.Culture.GetName] colonists in [Root.GetName] has not panned out as planned. It seems very few are willing to emigrate there.
+******** picture = COLONIZATION_eventPicture
+******** goto = our country
+******** Trigger:
+********* is_owned_by_trade_company = yes
+********* Has the province flag resettlement_plan
+********* Culture group is not owner
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 1.05:
+********** trade_company_size = 10
+********* Multiplies value by 1.05:
+********** trade_company_size = 15
+********* Multiplies value by 1.05:
+********** trade_company_size = 20
+******** Option: 0 "Forget the project:
+********* AI chance:
+********** Base chance of 25
+********* Adds the modifier "0 "Trade Company Upset" until the end of the campaign:
+********** local_unrest = 5
+********** province_trade_power_modifier = -0.5
+********* Removes the province flag resettlement_plan
+******** Option: 0 "Award some incentives:
+********* AI chance:
+********** Base chance of 75
+********* Changes base tax by 1
+********* Changes culture to owner
+********* The owner of the province:
+********** Modifies treasury by -0.25 years worth of income
+********** Changes administrative power stored by -25
+********** Changes diplomatic power stored by -25
+********* Removes the province flag resettlement_plan
+******* Gets the province event:
+******** ID is trade_company_events.3
+******** title = 0 "Resettlement Plan Succeeds
+******** desc = 0 "The plans for resettling [Root.Owner.Culture.GetName] colonists in [Root.GetName] have attracted enough people.
+******** picture = COLONIZATION_eventPicture
+******** goto = our country
+******** Trigger:
+********* is_owned_by_trade_company = yes
+********* Has the province flag resettlement_plan
+********* Culture group is not owner
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.95:
+********** trade_company_size = 10
+********* Multiplies value by 0.95:
+********** trade_company_size = 15
+********* Multiplies value by 0.95:
+********** trade_company_size = 20
+******** Option: 0 "Excellent:
+********* Changes base tax by 1
+********* Changes culture to owner
+********* Removes the province flag resettlement_plan
+******* Gets the province event:
+******** ID is trade_company_events.5
+******** title = 0 "Border Conflict
+******** desc = 0 "The aggressive behavior of [Root.TradeCompany.GetName] has provoked a conflict with [enemy_country.GetUsableName] over the province of [target_province.GetName].
+******** picture = BORDER_TENSION_eventPicture
+******** goto = our country
+******** Trigger:
+********* is_owned_by_trade_company = yes
+********* trade_company_size = 5
+********* Any bordering province:
+********** The province is not owned by our country
+********** is_owned_by_trade_company = yes
+********** Has no core on our country
+********** The province is not claimed by our country
+******** is_mtth_scaled_to_size = 1
+******** Immediate effects:
+********* Hidden effect:
+********** Random bordering province:
+*********** Limited to:
+************ The province is not owned by our country
+************ is_owned_by_trade_company = yes
+************ Has no core on our country
+************ The province is not claimed by our country
+*********** save_event_target_as = target_province
+*********** The owner of the province:
+************ save_event_target_as = enemy_country
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.95:
+********** trade_company_size = 10
+********* Multiplies value by 0.95:
+********** trade_company_size = 15
+********* Multiplies value by 0.95:
+********** trade_company_size = 20
+******** Option: 0 "Force them to stand down:
+********* AI chance:
+********** Base chance of 50
+********* Adds the modifier "0 "Trade Company Upset" until the end of the campaign:
+********** local_unrest = 5
+********** province_trade_power_modifier = -0.5
+******** Option: 0 "Endorse their behavior:
+********* AI chance:
+********** Base chance of 50
+********* goto = target_province
+********* event_target:target_province:
+********** Adds claim to our country
+******* Gets the province event:
+******** ID is trade_company_events.6
+******** title = 0 "[Root.GetName] Massacre
+******** desc = 2 "A conspiracy has been discovered in [Root.GetName]! Some disgruntled foreign employees of [Root.TradeCompany.GetName] together with traders from [enemy_country.GetUsableName], led by none other than a governor of [target_province.TradeCompany.GetName], planned to storm and seize the local fort and murder the local governor in an attempt to undercut the trade company's business. All conspirators were convicted, sentenced to death and beheaded by the order of the governor. This incident has naturally stirred up quite the reaction though...
+******** picture = REFORM_eventPicture
+******** goto = our country
+******** Trigger:
+********* is_owned_by_trade_company = yes
+********* trade_company_size = 10
+********* Any bordering province:
+********** The province is not owned by our country
+********** is_owned_by_trade_company = yes
+********** The owner of the province:
+*********** Is not allied with our country
+******** Immediate effects:
+********* Hidden effect:
+********** Random bordering province:
+*********** Limited to:
+************ The province is not owned by our country
+************ is_owned_by_trade_company = yes
+************ The owner of the province:
+************* Is not allied with our country
+*********** save_event_target_as = target_province
+*********** The owner of the province:
+************ save_event_target_as = enemy_country
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 500 months
+********* Multiplies value by 0.95:
+********** trade_company_size = 15
+********* Multiplies value by 0.95:
+********** trade_company_size = 20
+********* Multiplies value by 0.95:
+********** trade_company_size = 25
+********* Multiplies value by 0.75:
+********** Any bordering province:
+*********** The province is not owned by our country
+*********** is_owned_by_trade_company = yes
+*********** The owner of the province:
+************ Is not allied with our country
+************ Any of the following:
+************* Considers our country a rival
+************* At war with our country
+******** Option: 0 "Imprison the governor:
+********* AI chance:
+********** Base chance of 50
+********* Adds the modifier "0 "Trade Company Greatly Upset" until the end of the campaign:
+********** local_unrest = 10
+********** province_trade_power_modifier = -0.75
+******** Option: 0 "Support the governor:
+********* AI chance:
+********** Base chance of 50
+********* The owner of the province:
+********** Tooltip:
+*********** Adds the opinion modifier "" from event_target:enemy_country modifier
+********* Hidden effect:
+********** event_target:target_province:
+*********** Gets the province event:
+************ ID is trade_company_events.7
+************ Base mean time to happen of 1 days
+******* Gets the province event:
+******** ID is trade_company_events.7
+******** title = 0 "[From.GetName] Massacre
+******** desc = 0 "The governor of [Root.TradeCompany.GetName] in [Root.GetName] and several others have been murdered! The [From.Owner.Culture.GetName] governor of [From.TradeCompany.GetName] in [From.GetName] captured, convicted and beheaded them based on vague accusations of some sort of conspiracy.
+******** picture = WOUNDED_SOLDIERS_eventPicture
+******** goto = our country
+******** is_triggered_only = yes
+******** Option: 0 "Outrages!:
+********* The owner of the province:
+********** Adds the opinion modifier "0 "Beheaded Governor" towards our country
+******* Gets the province event:
+******** ID is trade_company_events.8
+******** title = 0 "Expand Trade Company
+******** desc = 0 "[Root.TradeCompany.GetName] are unhappy with the competition from other trade companies in the region. They demand that we claim surrounding provinces in order to expand the company's operational base.
+******** picture = REFORM_eventPicture
+******** goto = our country
+******** Trigger:
+********* is_owned_by_trade_company = yes
+********* trade_company_size = 3
+********* Any bordering province:
+********** The province is not owned by our country
+********** Has no core on our country
+********** The province is not claimed by our country
+********** The owner of the province:
+*********** Is not allied with our country
+*********** Has no truce with our country
+*********** Is not a vassal of our country
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 1.1:
+********** trade_company_size = 10
+********* Multiplies value by 1.25:
+********** trade_company_size = 15
+********* Multiplies value by 1.5:
+********** trade_company_size = 20
+******** Immediate effects:
+********* Hidden effect:
+********** Random bordering province:
+*********** Limited to:
+************ The province is not owned by our country
+************ Has no core on our country
+************ The province is not claimed by our country
+************ The owner of the province:
+************* Is not allied with our country
+************* Has no truce with our country
+************* Is not a vassal of our country
+*********** save_event_target_as = claim_province
+******** Option: 0 "Go ahead and claim it:
+********* goto = claim_province
+********* AI chance:
+********** Base chance of 50
+********* event_target:claim_province:
+********** Adds claim to our country
+********** Sets the province flag claimed_for_trade_company
+********* Hidden effect:
+********** One of the following will happen:
+*********** 40 relative chance:
+************ Gets the province event:
+************* ID is trade_company_events.9
+************* Base mean time to happen of 1095 days
+*********** 40 relative chance:
+************ Gets the province event:
+************* ID is trade_company_events.9
+************* Base mean time to happen of 1825 days
+*********** 20 relative chance:
+************ Gets the province event:
+************* ID is trade_company_events.9
+************* Base mean time to happen of 3650 days
+********* Sets the province flag trade_company_claimer
+******** Option: 0 "Ignore their demand:
+********* AI chance:
+********** Base chance of 50
+********* Adds the modifier "0 "Trade Company Upset" until the end of the campaign:
+********** local_unrest = 5
+********** province_trade_power_modifier = -0.5
+******* Gets the province event:
+******** ID is trade_company_events.9
+******** title = 0 "Trade Company Unhappy
+******** desc = 0 "[Root.TradeCompany.GetName] is extremely unhappy with the lack of support from [Root.Owner.GetName]. Several years ago they asked us to help expand their borders into neighboring provinces. We even claimed one of them. But so far there has been no progress in this matter.
+******** picture = LIBERUM_VETO_eventPicture
+******** goto = claim_province
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the province flag trade_company_claimer
+********* is_owned_by_trade_company = yes
+********* Any bordering province:
+********** Has the province flag claimed_for_trade_company
+********** The owner of the province:
+*********** Not at war with our country
+********** The province is not owned by our country
+********** The province is claimed by our country
+******** Immediate effects:
+********* Hidden effect:
+********** Random bordering province:
+*********** Limited to:
+************ The province is not owned by our country
+************ Has the province flag claimed_for_trade_company
+************ The province is claimed by our country
+************ The owner of the province:
+************* Not at war with our country
+*********** save_event_target_as = claim_province
+******** Option: 0 "Renew the promise:
+********* AI chance:
+********** Base chance of 30
+********* goto = our country
+********* Trigger:
+********** Does not have the province flag renewed_promise
+********* Adds the modifier "0 "Trade Company Annoyed" until the end of the campaign:
+********** local_unrest = 3
+********** province_trade_power_modifier = -0.25
+********* Sets the province flag renewed_promise
+********* Hidden effect:
+********** 0 "Memel:
+*********** Gets the province event:
+************ ID is trade_company_events.9
+************ Base mean time to happen of 365 days
+******** Option: 0 "Support them in other ways:
+********* AI chance:
+********** Base chance of 40
+********* The owner of the province:
+********** Changes diplomatic power stored by -25
+********** Changes military power stored by -25
+********* Removes the province flag renewed_promise
+********* Hidden effect:
+********** event_target:claim_province:
+*********** Removes the province flag claimed_for_trade_company
+******** Option: 0 "Ignore their concerns:
+********* AI chance:
+********** Base chance of 30
+********* goto = our country
+********* Adds the modifier "0 "Trade Company Greatly Upset" until the end of the campaign:
+********** local_unrest = 10
+********** province_trade_power_modifier = -0.75
+********* Removes the province flag trade_company_claimer
+********* Removes the province flag renewed_promise
+********* Hidden effect:
+********** event_target:claim_province:
+*********** Removes the province flag claimed_for_trade_company
+******* Gets the province event:
+******** ID is trade_company_events.10
+******** title = 0 "Trade Company Boom
+******** desc = 0 "Our [Root.TradeCompany.GetName] has had a period of steady growth and part of their success is now starting to trickle back to [Root.Owner.GetName].
+******** picture = HARBOUR_eventPicture
+******** goto = our country
+******** Trigger:
+********* is_owned_by_trade_company = yes
+********* trade_company_size = 5
+********* The owner of the province:
+********** Does not have the country modifier "0 "Trade Company Boom"
+********** Does not have the country modifier "0 "Trade Company Trouble"
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.95:
+********** trade_company_size = 10
+********* Multiplies value by 0.95:
+********** trade_company_size = 15
+********* Multiplies value by 0.95:
+********** trade_company_size = 20
+******** Option: 0 "Take advantage of this trend:
+********* AI chance:
+********** Base chance of 75
+********* The owner of the province:
+********** Adds the modifier "0 "Trade Company Boom" for 10 years:
+*********** Trade efficiency is at least 10%
+******** Option: 0 "Demand dividend on our investment:
+********* AI chance:
+********** Base chance of 25
+********* The owner of the province:
+********** Modifies treasury by 0.25 years worth of income
+******* Gets the province event:
+******** ID is trade_company_events.11
+******** title = 0 "Trade Company Trouble
+******** desc = 0 "Our [Root.TradeCompany.GetName] has run into serious financial troubles. They cite lack of expansion together with increased competition from other nations' trade companies. In the long run we need to help them to expand and make sure they are the most powerful company in the region. For now though, what they need is an infusion of working capital and military and naval resources.
+******** picture = ELECTION_REPUBLIC_eventPicture
+******** goto = our country
+******** Trigger:
+********* is_owned_by_trade_company = yes
+********* trade_company_size = 5
+********* The owner of the province:
+********** Does not have the country modifier "0 "Trade Company Boom"
+********** Does not have the country modifier "0 "Trade Company Trouble"
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+********* Multiplies value by 0.95:
+********** trade_company_size = 10
+********* Multiplies value by 0.95:
+********** trade_company_size = 15
+********* Multiplies value by 0.95:
+********** trade_company_size = 20
+******** Option: 0 "It is in our interest:
+********* AI chance:
+********** Base chance of 75
+********* The owner of the province:
+********** Changes administrative power stored by -50
+********** Changes diplomatic power stored by -50
+********** Changes military power stored by -50
+******** Option: 0 "It is not our problem:
+********* AI chance:
+********** Base chance of 25
+********* Adds the modifier "0 "Trade Company Greatly Upset" until the end of the campaign:
+********** local_unrest = 10
+********** province_trade_power_modifier = -0.75
+********* The owner of the province:
+********** Adds the modifier "0 "Trade Company Trouble" for 5 years:
+*********** Trade efficiency is at least -10%

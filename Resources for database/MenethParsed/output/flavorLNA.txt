@@ -1,0 +1,63 @@
+** is_triggered_only = yes
+** Trigger:
+*** Is in the 0 "Eastern religion group
+*** Our country:
+**** Any of the following:
+***** Has the province modifier "emerald_buddha"
+***** Has the province modifier "emerald_buddha_alternate"
+**** The province is not owned by our country
+**** The owner of the province:
+***** Any of the following:
+****** is_in_war:
+******* defenders_false = PREV
+******* defenders_false = our country
+****** is_in_war:
+******* attackers_false = PREV
+******* attackers_false = our country
+** Immediate effects:
+*** Hidden effect:
+**** Our country:
+***** save_global_event_target_as = emerald_buddha_province
+***** Removes the country modifier "emerald_buddha"
+***** Removes the country modifier "emerald_buddha_alternate"
+** Option: flavor_lna.1.a:
+*** Changes prestige by 10
+*** Hidden effect:
+**** Our country:
+***** The owner of the province:
+****** Gets the country event:
+******* ID is flavor_lna.2
+*** Capital:
+**** Adds the modifier "emerald_buddha" for the rest of the campaign:
+***** +0.5 prestige
+***** monthly_karma = 0.1
+* Gets the country event:
+** ID is flavor_lna.2
+** title = flavor_lna.2.t
+** desc = flavor_lna.2.d
+** picture = BUDDHA_eventPicture
+** is_triggered_only = yes
+** Option: flavor_lna.2.a:
+*** If:
+**** Limited to:
+***** Is in the 0 "Eastern religion group
+**** Changes prestige by -20
+**** Adds -10 legitimacy
+*** else:
+**** Changes prestige by -5
+** after:
+*** clear_global_event_target = emerald_buddha_province
+* Gets the country event:
+** ID is flavor_lna.3
+** title = flavor_lna.3.t
+** desc = flavor_lna.3.d
+** picture = BIG_BOOK_eventPicture
+** is_triggered_only = yes
+** Option: flavor_lna.3.a:
+*** If:
+**** Limited to:
+***** Does not have the monarchy government type
+**** Changes government type to monarchy
+*** add_government_reform = siamese_absolutism
+** Option: flavor_lna.3.b:
+*** Changes prestige by 25

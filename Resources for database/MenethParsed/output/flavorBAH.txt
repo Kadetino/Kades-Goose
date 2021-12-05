@@ -1,0 +1,227 @@
+
+=== title = flavor_bah.1.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Bahmanis
+* Is in the 0 "Muslim religion group
+* Ruler's name is Ala ud-Din Ahmad Shah II
+* Has at least 0.25 years worth of income
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 18 months
+
+'''Option: flavor_bah.1.a:'''
+
+* Changes administrative power stored by -50
+* Modifies treasury by -0.2 years worth of income
+* Capital:
+** Adds the modifier "bah_bidar_fort" until the end of the campaign:
+*** +0.5 prestige
+*** +25% local defensiveness
+
+'''Option: flavor_bah.1.b:'''
+
+* Changes prestige by -5
+
+=== title = flavor_bah.2.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Bahmanis
+* Is in the 0 "Muslim religion group
+* Year is less than 1460
+* Has less than 1 ports
+* Has at least 0.1 years worth of income
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 48 months
+
+'''Option: flavor_bah.2.a:'''
+
+* AI chance:
+** Base chance of 1
+* Modifies treasury by -0.05 years worth of income
+* Changes prestige by 10
+* Adds the modifier "bah_attracting_the_right_people" for 10 years:
+** -10% advisor cost
+** +100% available advisors
+* Sets the country flag bah_pr_campaign
+
+'''Option: flavor_bah.2.b:'''
+
+* AI chance:
+** Base chance of 0
+* Changes stability by -1
+* Changes piety by -10%
+
+=== title = flavor_bah.3.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** All of the following:
+*** Does not have the DLC Dharma
+*** Any of the following:
+**** 80 prestige
+**** Has the country flag bah_pr_campaign
+*** Year is at least 1450
+*** Year is less than 1480
+*** Country is 0 "Bahmanis
+*** Is in the 0 "Muslim religion group
+** All of the following:
+*** Has the DLC Dharma
+*** Has the country flag mahmud_gawan_flag
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 90 months
+
+'''Option: flavor_bah.3.a:'''
+
+* Changes administrative power stored by 25
+* Changes diplomatic power stored by 25
+* add_meritocracy_effect = yes
+* If:
+** Limited to:
+*** has_completed_all_reforms_trigger_false = yes
+** add_reform_progress_small_effect = yes
+* Creates an advisor of the 0 "Trader type:
+** Named "Mahmud Gawan"
+** Culture is 0 "Persian
+** Follows the 0 "Shia religion
+** With a skill level of 3
+** discount = yes
+
+=== title = flavor_bah.4.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Bahmanis
+* Is in the 0 "Muslim religion group
+* Has the country flag bah_deccanis_gharbians_conflict
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 90 months
+* AI chance:
+** Base chance of 90
+
+'''Option: flavor_bah.4.a:'''
+
+* Adds the modifier "bah_habhsis" for the rest of the campaign:
+** +5% fort defence
+
+'''Option: flavor_bah.4.b:'''
+
+* AI chance:
+** Base chance of 10
+
+=== title = flavor_bah.5.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Bahmanis
+* Is in the 0 "Muslim religion group
+* Year is at least 1460
+* Year is less than 1500
+* Has the country flag bah_pr_campaign
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 100 months
+* AI chance:
+** Base chance of 90
+
+'''Option: flavor_bah.5.a:'''
+
+* Sets the country flag bah_deccanis_gharbians_conflict
+* Adds the modifier "bah_deccanis_gharbians" for the rest of the campaign:
+** +1 global unrest
+
+'''Option: flavor_bah.5.b:'''
+
+* AI chance:
+** Base chance of 5
+* Sets the country flag bah_deccanis_gharbians_conflict
+* Changes stability by -1
+* Adds the modifier "bah_gharbians" for the rest of the campaign:
+** +5% land morale
+** +10% stability cost modifier
+
+'''Option: flavor_bah.5.c:'''
+
+* AI chance:
+** Base chance of 5
+* Sets the country flag bah_deccanis_gharbians_conflict
+* Changes stability by -1
+* Adds the modifier "bah_deccanis" for the rest of the campaign:
+** -1 global unrest
+** +10% stability cost modifier
+
+=== title = flavor_bah.6.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Bahmanis
+* Is in the 0 "Muslim religion group
+* Capital is 0 "Bidar
+* Has the country flag bah_pr_campaign
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 180 months
+
+'''Option: flavor_bah.6.a:'''
+
+* Capital:
+** add_base_production = 2
+** Adds the modifier "bah_bidriware_boom" until the end of the campaign:
+*** +35% provincial tax income
+*** +0.5 prestige
+
+=== title = flavor_bah.7.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Bahmanis
+* Is in the 0 "Muslim religion group
+* Owns 0 "Golconda
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 468 months
+
+'''Option: flavor_bah.7.a:'''
+
+* Changes prestige by 30
+
+'''Option: flavor_bah.7.b:'''
+
+* Modifies treasury by 0.25 years worth of income
+
+=== title = flavor_bah.8.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Bahmanis
+* Year is at least 1460
+* Year is less than 1472
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 30 months
+
+'''Option: flavor_bah.8.a:'''
+
+* Changes diplomatic power stored by 25

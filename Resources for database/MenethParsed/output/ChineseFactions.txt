@@ -1,0 +1,2483 @@
+
+=== 0 "Trade Regulations ===
+
+'''Trigger:'''
+
+* Any owned province:
+** The province is not the capital of the country
+** is_state = yes
+** Does not have the province modifier "0 "Local Trade Regulations"
+** Does not have the province modifier "0 "Trade Office Closed Down"
+* Any of the following:
+** 2 "Offices of Maritime Trade is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** is_state = yes
+**** Does not have the province modifier "0 "Local Trade Regulations"
+**** Does not have the province modifier "0 "Trade Office Closed Down"
+*** save_event_target_as = trade_problems_province
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Has the 0 "Market Place building
+**** Does not have the province modifier "0 "Local Trade Regulations"
+**** Does not have the province modifier "0 "Trade Office Closed Down"
+*** save_event_target_as = trade_problems_province
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Is coastal
+**** Does not have the province modifier "0 "Local Trade Regulations"
+**** Does not have the province modifier "0 "Trade Office Closed Down"
+*** save_event_target_as = trade_problems_province
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Is coastal
+**** Has the 0 "Market Place building
+**** Does not have the province modifier "0 "Local Trade Regulations"
+**** Does not have the province modifier "0 "Trade Office Closed Down"
+*** save_event_target_as = trade_problems_province
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** province_has_center_of_trade_of_level = 1
+**** Does not have the province modifier "0 "Local Trade Regulations"
+**** Does not have the province modifier "0 "Trade Office Closed Down"
+*** save_event_target_as = trade_problems_province
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "I am sure the people of [trade_problems_province.GetName] best know how to rule themselves.:'''
+
+* boost_eunuchs_effect = yes
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds -5 legitimacy
+* event_target:trade_problems_province:
+** Adds the modifier "0 "Local Trade Regulations" until the end of the campaign:
+*** +200% provincial trade power
+*** -35% provincial tax income
+
+'''Option: 0 "We cannot let this slip past us!:'''
+
+* reduce_eunuchs_effect = yes
+* add_mandate_effect = yes
+* event_target:trade_problems_province:
+** Adds the modifier "0 "Trade Office Closed Down" until the end of the campaign:
+*** local_unrest = 2
+
+=== 0 "Incident in [port_incident_location.GetName] ===
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Offices of Maritime Trade is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+* Any owned province:
+** Is coastal
+** is_state = yes
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Is coastal
+**** is_state = yes
+*** save_event_target_as = port_incident_location
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Fine them but allow them to continue.:'''
+
+* reduce_legitimacy_small_effect = yes
+* boost_eunuchs_effect = yes
+* reduce_mandate_effect = yes
+* Modifies treasury by 0.3 years worth of income
+
+'''Option: 0 "Close down the office and expel the foreigners.:'''
+
+* boost_temples_effect = yes
+* add_mandate_effect = yes
+* event_target:port_incident_location:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "0 "Order Restored" until the end of the campaign:
+**** local_unrest = -4
+**** -10% provincial tax income
+
+=== 0 "The Isolation of [Root.Monarch.GetName] ===
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Offices of Maritime Trade is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "[Root.Monarch.GetName] is clearly getting good advice.:'''
+
+* reduce_mandate_effect = yes
+* boost_eunuchs_effect = yes
+* add_stability_or_adm_power = yes
+
+'''Option: 0 "The [Root.Monarch.GetTitle] takes advice from no one!:'''
+
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds 10 legitimacy
+** Changes diplomatic power stored by 50
+* reduce_meritocracy_large_effect = yes
+* reduce_eunuchs_effect = yes
+
+=== 0 "A Grand Burial ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "The state has no money to spend.:'''
+
+* If:
+** Limited to:
+*** Stability is at least -2
+** Changes stability by -1
+* reduce_stability_or_adm_power = yes
+* reduce_mandate_effect = yes
+* reduce_eunuchs_effect = yes
+
+'''Option: 0 "He deserves nothing less than a grand ceremony.:'''
+
+* boost_eunuchs_effect = yes
+* add_mandate_effect = yes
+* Modifies treasury by -0.25 years worth of income
+* AI chance:
+** Base chance of 1
+** Multiplies value by 50:
+*** Has less than 10 active loans
+*** Is not bankrupt
+
+=== 0 "Yellow River Dikes ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Any owned province:
+** Region is north_china_region
+** area_false = hebei_area
+** area_false = west_gansu_area
+** is_state = yes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "This will surely please the officials!:'''
+
+* Modifies treasury by -0.5 years worth of income
+* Random owned province:
+** Limited to:
+*** is_state = yes
+*** The province is not the capital of the country
+*** Region is north_china_region
+*** area_false = hebei_area
+*** area_false = west_gansu_area
+** If:
+*** Limited to:
+**** Has the DLC Mandate of Heaven
+*** If:
+**** Limited to:
+***** prosperity_false = 100
+**** add_prosperity = 75
+*** add_base_production = 2
+** If:
+*** Limited to:
+**** Does not have the DLC Mandate of Heaven
+*** Changes base tax by 1
+*** add_base_production = 1
+*** add_base_manpower = 1
+* boost_eunuchs_effect = yes
+
+'''Option: 0 "Alas we have no money to spare.:'''
+
+* Changes prestige by -5
+* reduce_eunuchs_effect = yes
+
+=== 0 "A Gift ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "We must accept this offering!:'''
+
+* Modifies treasury by 1 years worth of income
+* Changes prestige by 10
+* reduce_mandate_effect = yes
+* boost_eunuchs_large_effect = yes
+
+'''Option: 0 "We cannot risk our reputation.:'''
+
+* add_corruption = -1
+
+=== 0 "Destitute Banknotes ===
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Offices of Maritime Trade is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "This all sounds very interesting!:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* boost_eunuchs_effect = yes
+* Modifies treasury by -0.25 years worth of income
+* Adds 10 legitimacy
+
+'''Option: 0 "We cannot appear this weak, we must act!:'''
+
+* Trigger:
+** Has the DLC Mandate of Heaven
+* add_mandate_effect = yes
+* Modifies treasury by -0.5 years worth of income
+
+'''Option: 0 "I have trust in the Grand Secretariat.:'''
+
+* reduce_eunuchs_effect = yes
+* reduce_mandate_effect = yes
+* Changes inflation by 2
+
+=== 0 "Quick-Fingered Treasurer ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Execute him!:'''
+
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds -10 legitimacy
+
+'''Option: 0 "Best to keep quiet about this.:'''
+
+* add_corruption = 1
+
+=== 0 "Optimus Excels at Examinations ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Has at least 2 provinces
+* Any owned province:
+** The province is not the capital of the country
+** is_state = yes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "This man must be granted a place in court!:'''
+
+* Creates an advisor of the 0 "Philosopher type:
+** With a skill level of 3
+** Follows the 0 "Confucian religion
+** discount = yes
+* boost_bureaucrats_effect = yes
+
+'''Option: 0 "I'm sure he can find work in the provinces.:'''
+
+* Random owned province:
+** Limited to:
+*** is_state = yes
+*** The province is not the capital of the country
+** If:
+*** Limited to:
+**** Has the DLC Mandate of Heaven
+*** If:
+**** Limited to:
+***** prosperity_false = 100
+**** add_prosperity = 75
+*** area:
+**** Limited to:
+***** The province is owned by our country
+**** Adds the modifier "0 "Gifted Official" until the end of the campaign:
+***** +25% trade goods output
+** If:
+*** Limited to:
+**** Does not have the DLC Mandate of Heaven
+*** add_base_production = 1
+* boost_eunuchs_effect = yes
+
+=== 0 "The Eunuch's Vice ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "I suppose we can overlook this.:'''
+
+* boost_temples_effect = yes
+* reduce_mandate_effect = yes
+
+'''Option: 0 "It would be cheaper to fire him.:'''
+
+* reduce_temples_effect = yes
+* reduce_meritocracy_large_effect = yes
+
+=== 0 "The Examinations of $YEAR$ ===
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Only the best are good enough.:'''
+
+* add_meritocracy_large_effect = yes
+* boost_bureaucrats_large_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Changes prestige by 5
+
+'''Option: 0 "We can certainly use more loyal administrators.:'''
+
+* add_mandate_effect = yes
+* boost_bureaucrats_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds 10 legitimacy
+
+=== 0 "The Southern Elites ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_ruler_flag_false = quotas_discussed
+* Any of the following:
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+* Any owned province:
+** Region is south_china_region
+** is_state = yes
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** set_ruler_flag = quotas_discussed
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "We need better quotas!:'''
+
+* reduce_meritocracy_large_effect = yes
+* add_mandate_effect = yes
+* boost_bureaucrats_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Changes diplomatic power stored by 50
+
+'''Option: 0 "Northern Literati just don't compare to southerners...:'''
+
+* reduce_mandate_effect = yes
+* add_meritocracy_large_effect = yes
+* reduce_bureaucrats_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Modifies treasury by 0.25 years worth of income
+* random_owned_area:
+** Limited to:
+*** Region is south_china_region
+*** is_state = yes
+** add_local_autonomy = 15
+
+=== 0 "The [levy_province.GetName] Levy ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Commanderies of the Five Armies is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+* Any owned province:
+** The province is not the capital of the country
+** is_state = yes
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** is_state = yes
+**** The province is not the capital of the country
+*** save_event_target_as = levy_province
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Naturally these reforms are called for.:'''
+
+* boost_temples_effect = yes
+* event_target:levy_province:
+** add_base_manpower = 2
+
+'''Option: 0 "No need to harass the peasantry.:'''
+
+* boost_bureaucrats_effect = yes
+* boost_eunuchs_effect = yes
+* event_target:levy_province:
+** If:
+*** Limited to:
+**** Has the DLC Mandate of Heaven
+*** If:
+**** Limited to:
+***** prosperity_false = 100
+**** add_prosperity = 50
+*** Changes base tax by 1
+** If:
+*** Limited to:
+**** Does not have the DLC Mandate of Heaven
+*** Changes base tax by 2
+
+=== 0 "Field Marshal Dishonored ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Commanderies of the Five Armies is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+** Has the country modifier "0 "Lost Mandate of Heaven"
+* Any owned province:
+** fort_level = 2
+* has_leaders:
+** value = 1
+** include_monarch_false = no
+** include_heir_false = no
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** fort_level = 2
+*** save_event_target_as = corrupt_fort
+*** Sets the province flag corrupt_fort_flag
+** Random owned province:
+*** Limited to:
+**** fort_level = 2
+**** Does not have the province flag corrupt_fort_flag
+*** save_event_target_as = corrupt_fort2
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Execute him!:'''
+
+* event_target:corrupt_fort:
+** Adds the modifier "0 "Forts in Disrepair" until the end of the campaign:
+*** -50% local defensiveness
+** Removes the province flag corrupt_fort_flag
+* event_target:corrupt_fort2:
+** Adds the modifier "0 "Forts in Disrepair" until the end of the campaign:
+*** -50% local defensiveness
+* reduce_temples_effect = yes
+* Kills military leader: 
+
+'''Option: 0 "Forgive him so that he can help amend this problem.:'''
+
+* boost_temples_effect = yes
+* reduce_mandate_effect = yes
+* Changes military power stored by -50
+* If:
+** Limited to:
+*** Any of the following:
+**** Does not have the DLC Mandate of Heaven
+**** Has the country modifier "0 "Lost Mandate of Heaven"
+** Adds -5 legitimacy
+
+=== 0 "Heir Lends an Ear ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Has an heir
+* Heir is at least 15 years old
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 1 "[Root.Heir.GetName] should align with the Secretariat.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* boost_bureaucrats_effect = yes
+
+'''Option: 1 "[Root.Heir.GetName] should align with the Commanderis.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* boost_temples_effect = yes
+
+'''Option: 1 "[Root.Heir.GetName] should align with the Trade Offices.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* boost_temples_effect = yes
+
+'''Option: 0 "[Root.Heir.GetName] must stay aloof of court politics.:'''
+
+* Trigger:
+** Has the DLC Mandate of Heaven
+* add_mandate_effect = yes
+
+'''Option: 0 "[Root.Heir.GetName] must find [Root.Heir.GetHerHis] own way.:'''
+
+* Trigger:
+** Has the DLC Mandate of Heaven
+* reduce_mandate_effect = yes
+* One of the following will happen:
+** 50 relative chance:
+** 25 relative chance:
+*** change_heir_dip = 1
+** 25 relative chance:
+*** change_heir_adm = 1
+
+=== 0 "'If people have enough, can the ruler have too little?' ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Does not have the country modifier "0 "Efficient Taxation"
+* Any of the following:
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** meritocracy = 70
+* Stability is at least 1
+* Any owned province:
+** is_state = yes
+** devastation_false = 1
+** Does not have the province modifier "0 "Lowered Taxes"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** is_state = yes
+**** devastation_false = 1
+**** Does not have the province modifier "0 "Lowered Taxes"
+*** save_event_target_as = prosperity_boost_here
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "I sense a great future for this man.:'''
+
+* goto = prosperity_boost_here
+* boost_bureaucrats_effect = yes
+* If:
+** Limited to:
+*** Has the DLC Mandate of Heaven
+** event_target:prosperity_boost_here:
+*** If:
+**** Limited to:
+***** prosperity_false = 100
+**** add_prosperity = 25
+*** area:
+**** Adds the modifier "0 "Lowered Taxes" until the end of the campaign:
+***** -20% provincial tax income
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** add_stability_or_adm_power = yes
+
+'''Option: 0 "We must stay clear of such dangerous Mencian Influence!:'''
+
+* reduce_bureaucrats_effect = yes
+* reduce_meritocracy_effect = yes
+* Adds the modifier "0 "Efficient Taxation" for 10 years:
+** +10% global tax modifier
+
+=== 0 "Literati Publishes ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "He is a credit to the Empire.:'''
+
+* add_meritocracy_effect = yes
+* boost_bureaucrats_effect = yes
+
+'''Option: 0 "We cannot give him official recognition for this work.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* reduce_bureaucrats_effect = yes
+
+=== 0 "Retainer Flogged ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "He's setting an excellent example!:'''
+
+* boost_bureaucrats_effect = yes
+* reduce_mandate_effect = yes
+
+'''Option: 0 "Relieve the Official.:'''
+
+* reduce_bureaucrats_effect = yes
+* reduce_meritocracy_large_effect = yes
+
+=== 0 "Drama on the River ===
+* Cannot fire randomly
+* Trigger:
+** Any owned province:
+*** Any of the following:
+**** area = west_guangdong_area
+**** area = guangdong_area
+**** area = guangxi_area
+* desc = 0 "A Pearl River tax barge, containing a significant share of this year's taxes from the southern provinces, has been boarded and seized by criminals. The official responsible for maintaining security has reportedly suffered a nervous breakdown and is now locked up in his bedchamber, refusing to come out
+* Trigger:
+*** No owned province:
+**** Any of the following:
+***** area = west_guangdong_area
+***** area = guangdong_area
+***** area = guangxi_area
+* desc = 0 "A River tax barge, containing a significant share of this year's taxes from many of our provinces, has been boarded and seized by criminals. The official responsible for maintaining security has reportedly suffered a nervous breakdown after hearing about the incident and is reportedly locked up in his bedchamber, refusing to come out.
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "I guess we can kiss those taxes goodbye.:'''
+
+* Modifies treasury by -0.5 years worth of income
+
+'''Option: 0 "Levy extra taxes to remedy the situation.:'''
+
+* reduce_mandate_large_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Changes stability by -1
+** Adds -5 legitimacy
+
+=== 0 "Gold Mine Discovered ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** meritocracy = 70
+* Has less than 2 provinces producing gold
+* Any owned province:
+** Does not produce 0 "Gold
+** Is not coastal
+** development_false = 10
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Dig deep and greedily!:'''
+
+* Random owned province:
+** Limited to:
+*** Does not produce 0 "Gold
+*** development_false = 10
+*** Is not coastal
+** Changes trade goods produced to 0 "Gold
+* boost_bureaucrats_effect = yes
+
+'''Option: 0 "Let sleeping dogs lie.:'''
+
+* Changes inflation by -5
+* add_mandate_effect = yes
+* reduce_bureaucrats_effect = yes
+
+=== 0 "Bullion Leaves the Country ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Blame the local officials.:'''
+
+* reduce_eunuchs_effect = yes
+* boost_bureaucrats_effect = yes
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Changes inflation by 2
+
+'''Option: 0 "Renew efforts to import bullion.:'''
+
+* boost_bureaucrats_effect = yes
+* reduce_eunuchs_effect = yes
+* Modifies treasury by -0.5 years worth of income
+
+=== 0 "Renovating a Pagoda ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Naturally we shall restore it.:'''
+
+* Modifies treasury by -0.5 years worth of income
+* add_mandate_effect = yes
+* boost_bureaucrats_effect = yes
+
+'''Option: 0 "We have no time for such nonsense.:'''
+
+* Changes prestige by -5
+* reduce_bureaucrats_effect = yes
+
+=== 0 "Frontier Hero ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Commanderies of the Five Armies is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate = 80
+* has_leaders:
+** value = 1
+** include_monarch_false = no
+** include_heir_false = no
+* Trigger:
+** Any owned province:
+*** Has the province modifier "domain_of_spouses_family"
+* desc = 0 "Word has reached us from the frontier provinces of a young general, a brother to [Root.Consort.GetName] who has made a name for himself as an excellent warrior and a great leader. Due to his influence together with that of [Root.Consort.GetName] the [Root.Consort.Dynasty.GetName] family has grown ever more influential at court.\nDespite [Root.Monarch.GetHerHis] great love for [Root.Monarch.GetHerHis] consort [Root.Monarch.GetName] is growing more and more fearful of the influence of the house of [Root.Consort.Dynasty.GetName].
+* Trigger:
+*** No owned province:
+**** Has the province modifier "domain_of_spouses_family"
+* desc = 0 "Word has reached us from the frontier provinces of a young general from one of our most influential families. The young man has made a name for himself as an excellent warrior and a great leader. His success has also made his family grow ever more influential at court.\n[Root.Monarch.GetName] is growing more and more fearful of their influence in court politics.
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Charge the General with Corruption.:'''
+
+* boost_bureaucrats_effect = yes
+* add_corruption = 1
+* If:
+** Limited to:
+*** Any owned province:
+**** Has the province modifier "domain_of_spouses_family"
+** Random owned province:
+*** Limited to:
+**** Has the province modifier "domain_of_spouses_family"
+*** Adds the modifier "0 "Upset Nobles" until the end of the campaign:
+**** local_unrest = 4
+* Kills military leader: 
+
+'''Option: 0 "We must replace him and distance ourselves from that family.:'''
+
+* reduce_temples_effect = yes
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Any owned province:
+**** Has the province modifier "domain_of_spouses_family"
+** remove_consort = yes
+** Random owned province:
+*** Limited to:
+**** Has the province modifier "domain_of_spouses_family"
+*** Removes the country modifier "domain_of_spouses_family"
+*** area:
+**** Limited to:
+***** The province is owned by our country
+**** Adds the modifier "0 "Upset Nobles" until the end of the campaign:
+***** local_unrest = 4
+* If:
+** Limited to:
+**** No owned province:
+***** Has the province modifier "domain_of_spouses_family"
+** random_owned_area:
+*** Limited to:
+**** The province is not the capital of the country
+**** is_state = yes
+*** Adds the modifier "0 "Upset Nobles" until the end of the campaign:
+**** local_unrest = 4
+* Kills military leader: 
+
+'''Option: 0 "We cannot touch this hero of the people!:'''
+
+* boost_temples_effect = yes
+* reduce_mandate_large_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds -10 legitimacy
+
+=== 0 "'Students by Purchase' ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Just a few additional reserved spots can surely do no harm?:'''
+
+* reduce_bureaucrats_effect = yes
+* reduce_meritocracy_effect = yes
+* Modifies treasury by 0.25 years worth of income
+
+'''Option: 0 "We must not risk the quality of our bureaucrats!:'''
+
+* boost_bureaucrats_effect = yes
+* Changes prestige by 5
+
+=== 0 "Rogue Diplomacy ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Any known country:
+** Any owned province:
+*** our country% colonial range
+** Is not a vassal of our country
+** Any active trade node:
+*** has_merchant = our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random known country:
+*** Limited to:
+**** Any owned province:
+***** our country% colonial range
+**** Is not a vassal of our country
+**** Any active trade node:
+***** has_merchant = our country
+*** save_event_target_as = country_of_interest
+
+'''Option: 0 "That he may go in peace.:'''
+
+* event_target:country_of_interest:
+** Adds the opinion modifier "0 "Trade Opportunities" towards our country
+* boost_eunuchs_large_effect = yes
+
+'''Option: 0 "That he best prepare his defenses.:'''
+
+* event_target:country_of_interest:
+** Gives the 0 "Trade War casus belli against the country to our country
+* boost_temples_large_effect = yes
+
+=== 0 "The Favor of [Root.Monarch.GetName] ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** has_reform = 0 "Celestial Empire
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Let us favor the [Root.Monarch.GetDaughterSon] of a Viceroy.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* boost_eunuchs_effect = yes
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+*** Is not in regency
+*** has_consort_false = no
+*** has_government_attribute = queen
+** define_consort:
+*** country_of_origin = our country
+*** Follows our country's religion
+*** Culture is the same as our country
+
+'''Option: 0 "The [Root.Consort.GetSisterBrother] of our marshal is the most favored consort.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* boost_temples_effect = yes
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+*** Is not in regency
+*** has_consort_false = no
+*** has_government_attribute = queen
+** define_consort:
+*** country_of_origin = our country
+*** Follows our country's religion
+*** Culture is the same as our country
+
+'''Option: 0 "Prefer the Grand [Root.Monarch.GetDaughterSon] of the grand Secretary.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* boost_bureaucrats_effect = yes
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+*** Is not in regency
+*** has_consort_false = no
+*** has_government_attribute = queen
+** define_consort:
+*** country_of_origin = our country
+*** Culture is the same as our country
+*** Follows our country's religion
+
+'''Option: 0 "The court in [Root.Capital.GetCapitalName] is truly the center of the Empire.:'''
+
+* Trigger:
+** Has the DLC Mandate of Heaven
+* add_mandate_effect = yes
+
+=== 0 "Imperial Insults ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Commanderies of the Five Armies is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+* Any known country:
+** Is not a vassal of our country
+** Has at least 20 provinces
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random known country:
+*** Limited to:
+**** Is not a vassal of our country
+**** Has at least 20 provinces
+*** save_event_target_as = country_of_interest
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Accept the gifts.:'''
+
+* Modifies treasury by 0.35 years worth of income
+* Changes prestige by 5
+* boost_eunuchs_effect = yes
+* event_target:country_of_interest:
+** Adds the opinion modifier "0 "Trade Opportunities" towards our country
+
+'''Option: 0 "Refuse to deal with their ambassador again.:'''
+
+* add_mandate_effect = yes
+* boost_temples_effect = yes
+* event_target:country_of_interest:
+** Gives the 0 "Diplomatic Insult casus belli against the country to our country
+
+=== 0 "Inspecting The Banners ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Commanderies of the Five Armies is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Commend the generals for their work:'''
+
+* Changes army tradition by 20
+* boost_temples_effect = yes
+
+'''Option: 0 "It is time we weakened the armed forces.:'''
+
+* Changes army tradition by -20
+* add_mandate_effect = yes
+* reduce_temples_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** add_stability_or_adm_power = yes
+** Adds 5 legitimacy
+
+=== 0 "Failures of the Examination System ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** has_reform = 0 "Celestial Empire
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate = 90
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Everything has beauty, but not everyone sees it.:'''
+
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds 10 legitimacy
+** Changes prestige by 5
+* add_mandate_effect = yes
+
+'''Option: 0 "All good and well but perhaps we should expand the quota for next year?:'''
+
+* add_meritocracy_effect = yes
+* boost_bureaucrats_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Changes administrative power stored by 75
+
+=== 0 "Examining the Examinations ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** has_reform = 0 "Celestial Empire
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+* Does not have the country modifier "0 "Renewing the Imperial Examinations"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Learning without thought is labor lost, thought without learning is perilous.:'''
+
+* add_mandate_effect = yes
+* add_stability_or_adm_power = yes
+
+'''Option: 0 "Real knowledge is to know the extent of one's ignorance.:'''
+
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds -10 legitimacy
+* Adds the modifier "0 "Renewing the Imperial Examinations" for 10 years:
+** -10% technology cost
+
+=== 0 "The fall of [From.From.GetName] ===
+* Cannot fire randomly
+
+'''Option: 0 "We must be merciful if we are to build something lasting.:'''
+
+* Changes administrative power stored by -75
+* Changes diplomatic power stored by -75
+* Changes military power stored by -75
+* Modifies treasury by -0.5 years worth of income
+* add_meritocracy_effect = yes
+* add_mandate_large_effect = yes
+
+'''Option: 0 "Purge any remaining loyalists!:'''
+
+* add_stability_or_adm_power = yes
+
+'''Option: 0 "The Imperial treasury needs to be filled first.:'''
+
+* reduce_mandate_large_effect = yes
+* Changes stability by -2
+* Modifies treasury by 1.5 years worth of income
+
+=== 0 "History of the [From.From.GetName] Empire ===
+* Trigger:
+** Has the DLC Mandate of Heaven
+* desc = 1 "[Root.Monarch.GetTitle], your reign has ushered in a new era and as the [Root.Monarch.Dynasty.GetName] complete their take-over China will undoubtedly prosper for many years to come. Perhaps the time has come to look back to the [From.From.GetName] empire and start the compilation of their history. Compiling a the fortunes of China during their entire reign would cost a fair bit of money and take many bureaucrats quite some time, but the benefits might outweigh the costs.
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* desc = 0 "[Root.Monarch.GetTitle], your reign has ushered in a new era and China will undoubtedly prosper for many years to come. Perhaps the time has come to look back to the past days of the [Root.GetName] empire and start the compilation of our history. Compiling a the fortunes of China during the entire reign would cost a fair bit of money and take many bureaucrats quite some time, but the benefits might outweigh the costs.
+
+'''Trigger:'''
+
+* Any of the following:
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+** All of the following:
+*** Has the country modifier "0 "The Mandate of Heaven"
+*** Legitimacy is less than 80
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Time is of the essence!:'''
+
+* add_mandate_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** add_stability_or_adm_power = yes
+** Adds 5 legitimacy
+
+'''Option: 0 "A thorough work for a solid rule.:'''
+
+* Trigger:
+** Has the DLC Mandate of Heaven
+* add_mandate_large_effect = yes
+* reduce_meritocracy_effect = yes
+* Modifies treasury by -0.5 years worth of income
+
+=== 0 "A Tibetan Monk ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* 2 "Commanderies of the Five Armies is in power
+* Always false
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Of course he is free to preach:'''
+
+* Changes administrative power stored by 35
+* Changes prestige by 5
+* Random owned province:
+** Limited to:
+*** Does not follow the 0 "Mahayana religion
+*** is_reformation_center_false = no
+** Changes religion to 0 "Mahayana
+* Changes the influence of 2 "Commanderies of the Five Armies by -3
+
+'''Option: 0 "We should weed out this pest!:'''
+
+* Changes stability by -1
+* Gives the 0 "Diplomatic Insult casus belli against 0 "Tibet
+* Changes the influence of 2 "Commanderies of the Five Armies by 4
+
+=== 0 "The Four Treasures of the Scholar's Studio ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Any of the following:
+** employed_advisor:
+** employed_advisor:
+** employed_advisor:
+** employed_advisor:
+** employed_advisor:
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Death awaits [Root.Adm_Advisor.GetHerHim].:'''
+
+* If:
+** Limited to:
+*** Has the 0 "Treasurer advisor
+** Kills the 0 "Treasurer advisor
+* If:
+** Limited to:
+*** Has the 0 "Philosopher advisor
+** Kills the 0 "Philosopher advisor
+* If:
+** Limited to:
+*** Has the 0 "Artist advisor
+** Kills the 0 "Artist advisor
+* If:
+** Limited to:
+*** Has the 0 "Master of Mint advisor
+** Kills the 0 "Master of Mint advisor
+* If:
+** Limited to:
+*** Has the 0 "Natural Scientist advisor
+** Kills the 0 "Natural Scientist advisor
+* Changes administrative power stored by -50
+* reduce_meritocracy_large_effect = yes
+
+'''Option: 0 "Killing [Root.Adm_Advisor.GetHerHim] would be a greater crime.:'''
+
+* reduce_mandate_large_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds -10 legitimacy
+
+=== 0 "Protecting the Frontier ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Any of the following:
+** All of the following:
+*** Does not have the DLC Mandate of Heaven
+*** 2 "Commanderies of the Five Armies is in power
+** imperial_mandate = 80
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "An excellent idea!:'''
+
+* boost_temples_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds 5 legitimacy
+* add_mandate_effect = yes
+* Modifies treasury by -0.1 years worth of income
+
+'''Option: 0 "We must strengthen our defenses instead.:'''
+
+* Changes military power stored by 40
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds -5 legitimacy
+
+=== 0 "Jin Era Statuette ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Cannot fire randomly
+
+'''Option: 0 "The Grand Historian.:'''
+
+* add_meritocracy_effect = yes
+* boost_bureaucrats_effect = yes
+* Changes administrative power stored by 10
+
+'''Option: 0 "The Most Influential Family.:'''
+
+* Changes prestige by 10
+* boost_eunuchs_effect = yes
+* If:
+** Limited to:
+*** Any owned province:
+**** Has the province modifier "domain_of_spouses_family"
+** Random owned province:
+*** Limited to:
+**** Has the province modifier "domain_of_spouses_family"
+*** Changes base tax by 1
+
+'''Option: 0 "The Grand Marshal.:'''
+
+* Changes army tradition by 10
+* boost_temples_effect = yes
+
+=== 0 "The Classic of Music ===
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* desc = 0 "Apart from the five classic texts compiled by Confucius, tradition also speaks of a sixth Classic: The Classic of Music. One of the 305 songs originally contained in this work, which has been lost since 'The Burning of Books' has been rediscovered during an inventory of an old library in one of the Southern provinces. The claim to this marvelous discovery undoubtedly belongs partly to the Head Librarian, but other candidates also claim to have had part in the discovery.
+* Trigger:
+** Has the DLC Mandate of Heaven
+* desc = 0 "Apart from the five classic texts compiled by Confucius, tradition also speaks of a sixth Classic: The Classic of Music. One of the 305 songs originally contained in this work, which has been lost since 'The Burning of Books' has been rediscovered during an inventory of an old library in one of the Southern provinces. This marvelous discovery is seen by some as a sign of our divine mandate.
+
+'''Trigger:'''
+
+* Any of the following:
+** has_reform = 0 "Celestial Empire
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "The Province Governor.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* boost_bureaucrats_effect = yes
+
+'''Option: 0 "A Local Literati.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* boost_eunuchs_effect = yes
+
+'''Option: 0 "The Empire of China is in good hands.:'''
+
+* Trigger:
+** Has the DLC Mandate of Heaven
+* add_mandate_effect = yes
+
+=== 0 "Cheating at Examinations ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 50
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "We must deal forcefully with the Examinators.:'''
+
+* add_corruption = 2
+* reduce_bureaucrats_effect = yes
+* reduce_meritocracy_large_effect = yes
+* Changes administrative power stored by -20
+
+'''Option: 0 "We must tolerate this for now.:'''
+
+* add_corruption = 2
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Has the country modifier "0 "Lost Mandate of Heaven"
+** Adds -5 legitimacy
+
+=== 0 "Withdrawing Excess Paper ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "As much as we can afford.:'''
+
+* Changes inflation by 2
+* boost_eunuchs_effect = yes
+
+'''Option: 0 "As much as it takes.:'''
+
+* add_mandate_large_effect = yes
+* boost_bureaucrats_effect = yes
+* Modifies treasury by -0.5 years worth of income
+
+=== 0 "Honoring the Ancestors ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Follows the 0 "Confucian religion
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Red meat, to keep them fed.:'''
+
+* boost_temples_effect = yes
+* Changes administrative power stored by -50
+* Changes military power stored by 50
+
+'''Option: 0 "Candles, to light their way.:'''
+
+* boost_bureaucrats_effect = yes
+* Changes diplomatic power stored by -50
+* Changes administrative power stored by 50
+
+'''Option: 0 "Spirit money, to pay their dues.:'''
+
+* boost_eunuchs_effect = yes
+* Changes military power stored by -50
+* Adds 5 legitimacy
+* add_meritocracy_effect = yes
+
+=== 0 "Bad Feng Shui ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Celestial Empire
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "The diviner himself is clearly gone mad.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* reduce_bureaucrats_effect = yes
+
+'''Option: 0 "The builder did not consult the diviners.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* reduce_eunuchs_effect = yes
+
+'''Option: 0 "Whoever put me up to building it must be blamed.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* reduce_temples_effect = yes
+
+'''Option: 0 "They are mistaken, the building must be put to use.:'''
+
+* Trigger:
+** Has the DLC Mandate of Heaven
+* reduce_mandate_effect = yes
+
+'''Option: 0 "Whoever put me up to building it must be blamed.:'''
+
+* Trigger:
+** Has the DLC Mandate of Heaven
+* reduce_meritocracy_large_effect = yes
+* Modifies treasury by -0.5 years worth of income
+
+=== 0 "Court Bickering ===
+
+'''Trigger:'''
+
+* Any of the following:
+** 2 "Commanderies of the Five Armies is in power
+** 2 "Grand Secretariat is in power
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** has_reform = 0 "Celestial Empire
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Relieve the Marshal of his duties.:'''
+
+* reduce_temples_effect = yes
+* Changes army tradition by -10
+
+'''Option: 0 "Relieve the Secretary of his duties.:'''
+
+* reduce_bureaucrats_effect = yes
+* reduce_meritocracy_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Changes administrative power stored by -25
+
+'''Option: 0 "Denounce both for wasting the time of the Imperial Court.:'''
+
+* Trigger:
+** Has the DLC Mandate of Heaven
+* reduce_meritocracy_effect = yes
+* Changes army tradition by -10
+* add_mandate_effect = yes
+
+=== 0 "A capital for the [Root.GetName] Empire ===
+
+'''Trigger:'''
+
+* Is not at war
+* Any of the following:
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** has_reform = 0 "Celestial Empire
+*** Country is not 0 "Ming
+** All of the following:
+*** Does not have the DLC Mandate of Heaven
+*** Country is not 0 "Ming
+*** Culture group is 0 "Chinese
+* Country is not 0 "Yuan
+* Does not have the country flag eoc_capital_picked
+* calc_true_if:
+** Owns core province 0 "Beijing
+** Owns core province 0 "Nanjing
+** Owns core province 0 "Xi'an
+** Owns core province 0 "Luoyang
+** 2 will be built
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag eoc_capital_picked
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "A [Root.Monarch.GetDaughterSon] of heaven must guard the northern frontier.:'''
+
+* Trigger:
+** Owns core province 0 "Beijing
+* Sets capital to 0 "Beijing
+* 0 "Beijing:
+** Changes base tax by 1
+** add_base_production = 1
+** add_base_manpower = 1
+* add_mandate_effect = yes
+
+'''Option: 0 "The city of the Golden Hills!:'''
+
+* Trigger:
+** Owns core province 0 "Nanjing
+* Sets capital to 0 "Nanjing
+* 0 "Nanjing:
+** Changes base tax by 1
+** add_base_production = 1
+** add_base_manpower = 1
+* add_mandate_effect = yes
+
+'''Option: 0 "The Ancient City of Eternal Peace.:'''
+
+* Trigger:
+** Owns core province 0 "Xi'an
+* Sets capital to 0 "Xi'an
+* add_mandate_effect = yes
+* 0 "Xi'an:
+** Changes province name to Chang'an
+** Changes province capital name to Chang'an
+** Changes base tax by 1
+** add_base_production = 1
+** add_base_manpower = 1
+
+'''Option: 0 "Along the Lou River in Luoyang.:'''
+
+* Trigger:
+** Owns core province 0 "Luoyang
+* Sets capital to 0 "Luoyang
+* 0 "Luoyang:
+** Changes base tax by 1
+** add_base_production = 1
+** add_base_manpower = 1
+* add_mandate_effect = yes
+
+'''Option: 0 "Let us remain in the seat of our ancestors at [Root.Capital.GetCapitalName].:'''
+
+* Changes prestige by 10
+
+=== 0 "The Gilded Pagoda ===
+
+'''Trigger:'''
+
+* Always false
+* Any of the following:
+** 2 "Commanderies of the Five Armies is in power
+** 2 "Grand Secretariat is in power
+** 2 "Offices of Maritime Trade is in power
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Eunuchs: Melt it down and mint the gold!:'''
+
+* Modifies treasury by 0.5 years worth of income
+* Changes the influence of 2 "Offices of Maritime Trade by 4
+
+'''Option: 0 "Bureaucrats: Turn it into an examination center!:'''
+
+* Changes administrative power stored by 40
+* Changes the influence of 2 "Grand Secretariat by 4
+
+'''Option: 0 "Temples: Leave its beauty undisturbed:'''
+
+* Changes prestige by 10
+* If:
+** Limited to:
+*** Is not the lesser partner in a union
+** Adds 10 legitimacy
+* Changes the influence of 2 "Commanderies of the Five Armies by 4
+
+=== 0 "Rise of Millenarianism ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 50
+* num_of_states = 2
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** random_owned_area:
+*** Limited to:
+**** is_state = yes
+**** Does not have the province modifier "0 "Millenarian Societies"
+*** Sets the province flag chinese_millenarianism
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "What can they do against the might of the Empire?:'''
+
+* random_owned_area:
+** Limited to:
+*** Has the province flag chinese_millenarianism
+** Removes the province flag chinese_millenarianism
+** Adds the modifier "0 "Millenarian Societies" until the end of the campaign:
+*** local_unrest = 6
+
+'''Option: 0 "We must act decisively to stomp this out!:'''
+
+* Every province in the world:
+** Limited to:
+*** Has the province flag chinese_millenarianism
+** Removes the province flag chinese_millenarianism
+* Changes administrative power stored by -50
+* Changes military power stored by -50
+
+=== 0 "Floods ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 50
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "It is our duty to restore what we can.:'''
+
+* Modifies treasury by -0.5 years worth of income
+
+'''Option: 0 "We can clearly no longer protect these people.:'''
+
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds -10 legitimacy
+* reduce_mandate_effect = yes
+
+=== 0 "Brigands on the Silk Road ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 21
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "The Military must handle this.:'''
+
+* Adds the modifier "0 "Military Protecting Infrastructure" for 10 years:
+** -20% land forcelimit
+
+'''Option: 0 "Let them fend for themselves.:'''
+
+* Adds the modifier "0 "Lack of Law and Order" for 10 years:
+** -20% global tax modifier
+** -20% trade power
+
+=== 0 "The Shadow that Stalks the Corridor ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 50
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Enemies are everywhere!:'''
+
+* AI chance:
+** Base chance of 80
+* Changes stability by -1
+* reduce_meritocracy_effect = yes
+
+'''Option: 0 "Surely I can trust everyone here, I just need to rest.:'''
+
+* AI chance:
+** Base chance of 20
+* reduce_mandate_effect = yes
+* boost_bureaucrats_effect = yes
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Adds -5 legitimacy
+
+=== 0 "Portentous Solar Eclipse ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 50
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Execute and blame the court astrologer.:'''
+
+* reduce_meritocracy_large_effect = yes
+* reduce_bureaucrats_effect = yes
+* Changes stability by -1
+
+'''Option: 0 "Prohibit all discussion of the topic.:'''
+
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Any of the following:
+**** Does not have the DLC Mandate of Heaven
+**** Has the country modifier "0 "Lost Mandate of Heaven"
+** Adds -10 legitimacy
+
+=== 0 "Disloyal Officials ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 21
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "We must purge such heresy!:'''
+
+* If:
+** Limited to:
+*** Does not have the DLC Mandate of Heaven
+** Changes stability by -1
+* Adds the modifier "0 "Purging Officials" for 10 years:
+** meritocracy = -0.5
+** -25% global tax modifier
+
+'''Option: 0 "In time we will earn their trust again.:'''
+
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Any of the following:
+**** Does not have the DLC Mandate of Heaven
+**** Has the country modifier "0 "Lost Mandate of Heaven"
+** Adds -10 legitimacy
+
+=== 0 "Lacking Authority ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 21
+* num_of_subjects = 1
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random subject country:
+*** save_event_target_as = unruly_subject
+
+'''Option: 0 "Fear will keep them in line!:'''
+
+* Every subject country:
+** Gets the country event:
+*** ID is china_events.62
+** Adds the opinion modifier "0 "Emperor without Mandate" towards our country
+** Adds 20 liberty desire
+
+=== 0 "Plague Strikes The Court ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 50
+* Capital:
+** Does not have the province modifier "0 "Severe Plague"
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Flee to a countryside province.:'''
+
+* reduce_mandate_large_effect = yes
+* If:
+** Limited to:
+*** Any of the following:
+**** Does not have the DLC Mandate of Heaven
+**** Has the country modifier "0 "Lost Mandate of Heaven"
+** Changes administrative power stored by -35
+** Changes diplomatic power stored by -35
+** Changes military power stored by -35
+* Capital:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "0 "Severe Plague" until the end of the campaign:
+**** -25% manpower modifier
+**** -25% provincial tax income
+**** trade_goods_size_modifier = -0.25
+**** local_unrest = -3
+**** local_autonomy = 0.05
+
+'''Option: 0 "We shall all remain in the capital.:'''
+
+* reduce_mandate_effect = yes
+* reduce_meritocracy_large_effect = yes
+* If:
+** Limited to:
+*** Any of the following:
+**** Does not have the DLC Mandate of Heaven
+**** Has the country modifier "0 "Lost Mandate of Heaven"
+** Changes stability by -1
+* Capital:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "0 "Severe Plague" until the end of the campaign:
+**** -25% manpower modifier
+**** -25% provincial tax income
+**** trade_goods_size_modifier = -0.25
+**** local_unrest = -3
+**** local_autonomy = 0.05
+
+=== 0 "Daggers in the Dark ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 50
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "We cannot rest until we've found the culprits!:'''
+
+* Changes military power stored by -25
+* Changes diplomatic power stored by -25
+* Changes administrative power stored by -25
+
+'''Option: 0 "Can the [Root.Monarch.GetTitle] trust no one?:'''
+
+* Adds the modifier "0 "Plots and Assassinations" for 10 years:
+** meritocracy = -0.5
+** global_autonomy = 0.1
+
+=== 0 "The Concubine's Child ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 21
+* has_government_attribute = heir
+* Has no heir
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "The strength of the [Root.Monarch.Dynasty.GetName] dynasty will reveal itself in time.:'''
+
+* Spawns an heir:
+** age = 0
+** Ruler's dynasty is our country
+** Legitimacy of 20
+** max_random_dip = 4
+** max_random_adm = 4
+** max_random_mil = 4
+* Changes stability by -1
+
+=== 0 "The Riches of China ===
+* Trigger:
+** event_target:empire_of_china:
+*** Does not have the country modifier "0 "Lost Mandate of Heaven"
+* Trigger:
+** event_target:empire_of_china:
+*** Has the country modifier "0 "Lost Mandate of Heaven"
+** is_emperor_of_china_false = yes
+* Trigger:
+** event_target:empire_of_china:
+*** Has the country modifier "0 "Lost Mandate of Heaven"
+** is_emperor_of_china = yes
+
+'''Trigger:'''
+
+* is_free_or_tributary_trigger = yes
+* Any neighbor country:
+** Any of the following:
+*** Has the country modifier "0 "The Mandate of Heaven Lost"
+*** Has the country modifier "0 "Lost Mandate of Heaven"
+*** All of the following:
+**** Has the DLC Mandate of Heaven
+**** is_emperor_of_china = yes
+**** imperial_mandate_false = 50
+** Has at least 5 provinces
+** Is not allied with our country
+** Is not a vassal of our country
+** Any owned province:
+*** Any bordering province:
+**** The province is owned by our country
+*** The province is not claimed by our country
+*** Has no core on our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random neighbor country:
+*** Limited to:
+**** Any of the following:
+***** Has the country modifier "0 "The Mandate of Heaven Lost"
+***** Has the country modifier "0 "Lost Mandate of Heaven"
+***** All of the following:
+****** Has the DLC Mandate of Heaven
+****** is_emperor_of_china = yes
+****** imperial_mandate_false = 50
+**** Has at least 5 provinces
+**** Is not allied with our country
+*** save_event_target_as = 0 "Claim The Empire of China
+*** Random owned province:
+**** Limited to:
+***** Has no core on our country
+***** The province is not claimed by our country
+***** Any bordering province:
+****** The province is owned by our country
+**** Sets the province flag here_be_china
+**** save_event_target_as = chinese_border_province
+
+'''Option: 0 "Time to end this Empire!:'''
+
+* Tooltip:
+** event_target:empire_of_china:
+*** random_owned_area:
+**** Limited to:
+***** Has the province flag here_be_china
+**** Adds claim to our country
+* Hidden effect:
+** event_target:empire_of_china:
+*** Gets the country event:
+**** ID is china_events.61
+
+'''Option: 0 "The [empire_of_china.GetName] are our friends!:'''
+
+* Trigger:
+** is_emperor_of_china_false = yes
+* event_target:empire_of_china:
+** Adds the opinion modifier "0 "Did not Encroach on our Land" towards our country
+* Hidden effect:
+** event_target:empire_of_china:
+*** Every owned province:
+**** Limited to:
+***** Has the province flag here_be_china
+**** Removes the province flag here_be_china
+
+=== 0 "Flawed Insights ===
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* desc = 0 "The Grand Secretaries have recently delivered their reports on the past years' advancements within their respective areas of expertise, and there is dire news. One of the Offices has significantly lowered their estimates of the rate of future progress, and the faction responsible for that department is bound to lose a great deal of face over the event. These news come at a time when it is becoming increasingly more evident that we no longer enjoy the Mandate of Heaven.\nWhich Office was mismanaged?
+* Trigger:
+** Has the DLC Mandate of Heaven
+* desc = 0 "The Grand Secretaries have recently delivered their reports on the past years' advancements within their respective areas of expertise, and there is dire news. One of the Offices has significantly lowered their estimates of the rate of future progress. These news come at a time when it is becoming increasingly more evident that we no longer enjoy the Mandate of Heaven.
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 50
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Office of Administration.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* Changes administrative power stored by -40
+* reduce_bureaucrats_effect = yes
+
+'''Option: 0 "Office of Taxation & Trade.:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* Changes diplomatic power stored by -60
+* reduce_eunuchs_effect = yes
+
+'''Option: 0 "Office of War!:'''
+
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* Changes military power stored by -50
+* reduce_temples_effect = yes
+
+'''Option: 0 "These are indeed dire times.:'''
+
+* Trigger:
+** Has the DLC Mandate of Heaven
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Has the country modifier "0 "Lost Mandate of Heaven"
+** Adds -5 legitimacy
+
+=== 0 "Mou Fan ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 21
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Any country with provinces cored by this nation:
+***** Country is not our country
+*** Random country with provinces cored by this nation:
+**** Limited to:
+***** Country is not our country
+**** save_event_target_as = low_mandate_separatism_country
+**** Every core province:
+***** Limited to:
+****** The province is owned by our country
+***** Sets the province flag low_mandate_separatism
+** Random owned province:
+*** Limited to:
+**** Does not have the province flag low_mandate_separatism
+**** Any country with provinces cored by this nation:
+***** Country is not our country
+*** Random country with provinces cored by this nation:
+**** Limited to:
+***** Country is not our country
+**** save_event_target_as = low_mandate_separatism_country_2
+**** Every core province:
+***** Limited to:
+****** The province is owned by our country
+***** Sets the province flag low_mandate_separatism_2
+** Random owned province:
+*** Limited to:
+**** Does not have the province flag low_mandate_separatism
+**** Any country with provinces cored by this nation:
+***** Country is not our country
+*** Random country with provinces cored by this nation:
+**** Limited to:
+***** Country is not our country
+**** save_event_target_as = low_mandate_separatism_country_3
+**** Every core province:
+***** Limited to:
+****** The province is owned by our country
+***** Sets the province flag low_mandate_separatism_3
+
+'''Option: 0 "The Imperial System is Crumbling...:'''
+
+* Changes stability by -2
+* If:
+** Limited to:
+*** Any owned province:
+**** Has the province flag low_mandate_separatism
+* Hidden effect:
+** Every province in the world:
+*** Limited to:
+**** Has the province flag low_mandate_separatism
+*** Adds the modifier "0 "Local Separatism" until the end of the campaign:
+**** local_unrest = 10
+* If:
+** Limited to:
+*** Any owned province:
+**** Does not have the province flag low_mandate_separatism
+**** Has the province flag low_mandate_separatism_2
+* Hidden effect:
+** Every province in the world:
+*** Limited to:
+**** Has the province flag low_mandate_separatism_2
+*** Adds the modifier "0 "Local Separatism" until the end of the campaign:
+**** local_unrest = 10
+* If:
+** Limited to:
+*** Any owned province:
+**** Does not have the province flag low_mandate_separatism
+**** Does not have the province flag low_mandate_separatism_2
+**** Has the province flag low_mandate_separatism_3
+* Hidden effect:
+** Every province in the world:
+*** Limited to:
+**** Has the province flag low_mandate_separatism_3
+*** Adds the modifier "0 "Local Separatism" until the end of the campaign:
+**** local_unrest = 10
+*** Removes the province flag low_mandate_separatism_3
+** Every province in the world:
+*** Limited to:
+**** Any of the following:
+***** Has the province flag low_mandate_separatism
+***** Has the province flag low_mandate_separatism_2
+***** Has the province flag low_mandate_separatism_3
+*** Removes the province flag low_mandate_separatism
+*** Removes the province flag low_mandate_separatism_2
+*** Removes the province flag low_mandate_separatism_3
+
+=== 0 "Grand Secretary Howls at the Moon ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 21
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Sha-la-la-la!:'''
+
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Any of the following:
+**** Does not have the DLC Mandate of Heaven
+**** Has the country modifier "0 "Lost Mandate of Heaven"
+** Adds -15 legitimacy
+
+'''Option: 0 "He has taken the law and thrown it away!:'''
+
+* reduce_meritocracy_large_effect = yes
+* If:
+** Limited to:
+*** Any of the following:
+**** Does not have the DLC Mandate of Heaven
+**** Has the country modifier "0 "Lost Mandate of Heaven"
+** Changes stability by -1
+
+=== 0 "Tax Barges Sink ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 50
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Sigh. Not much to do, is there?:'''
+
+* Modifies treasury by -0.5 years worth of income
+
+'''Option: 0 "Mint to recoup the losses.:'''
+
+* Changes inflation by 2
+
+=== 0 "False Edicts ===
+
+'''Trigger:'''
+
+* Does not have the country modifier "0 "False Edicts"
+* Any of the following:
+** Has the country modifier "0 "The Mandate of Heaven Lost"
+** Has the country modifier "0 "Lost Mandate of Heaven"
+** All of the following:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+*** imperial_mandate_false = 21
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Pretend that they are yours.:'''
+
+* Adds the modifier "0 "False Edicts" for 10 years:
+** global_autonomy = 0.12 #Base reduction is high due to government rank 3.
+
+'''Option: 0 "Rescind them.:'''
+
+* reduce_mandate_effect = yes
+* If:
+** Limited to:
+*** Any of the following:
+**** Does not have the DLC Mandate of Heaven
+**** Has the country modifier "0 "Lost Mandate of Heaven"
+** Adds -10 legitimacy
+
+=== 0 "Treason! ===
+* Cannot fire randomly
+
+'''Option: 0 "This is intolerable!:'''
+
+* random_owned_area:
+** Limited to:
+*** Has the province flag here_be_china
+** Adds claim to our country
+** Removes the province flag here_be_china
+
+=== 0 "Waning Imperial Power ===
+* Cannot fire randomly
+
+'''Option: 0 "They are our overlord in name only.:'''
+
+* Our country:
+** Adds the opinion modifier "0 "Emperor without Mandate" towards our country

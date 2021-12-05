@@ -1,0 +1,355 @@
+** Trigger:
+*** Country is 0 "Saxony
+*** Year is at least 1700
+*** Year is less than 1750
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Ok:
+*** Changes administrative power stored by 10
+*** Changes prestige by 10
+*** add_innovativeness_small_effect = yes
+* Gets the province event:
+** ID is flavor_sax.3
+** title = flavor_sax.3.name
+** desc = flavor_sax.3.desc
+** picture = INVENTION_eventPicture
+** is_triggered_only = yes
+** Option: flavor_sax.3.A:
+*** If:
+**** Limited to:
+***** Does not produce 0 "Coal
+**** Changes trade goods produced to 0 "Paper
+*** center_of_trade = 1
+*** Changes base tax by 3
+*** add_base_production = 3
+* Gets the country event:
+** ID is flavor_sax.4
+** title = flavor_sax.4.name
+** desc = flavor_sax.4.desc
+** picture = BAD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 18 months
+** Trigger:
+*** Country is 0 "Saxony
+*** Senior union partner over 0 "Thuringia
+*** Owns core province 0 "Wittenberg
+*** Is not at war
+*** Year is at least 1445
+*** Ruler's name is Friedrich II
+*** Ruler's dynasty is von Wettin
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag sax_thuringen_split_to_happen
+** Option: flavor_sax.4.A:
+*** Tooltip:
+**** 0 "Wittenberg:
+***** Removes core on our country
+***** Gives 0 "Thuringia core on the province
+***** Cedes province to 0 "Thuringia
+*** Hidden effect:
+**** 0 "Thuringia:
+***** Gets the country event:
+****** ID is flavor_sax.5
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_sax.4.B:
+*** Tooltip:
+**** 0 "Thuringia:
+***** Capital:
+****** Spawns revolt of size 2 of 0 "Pretender rebels
+***** Adds claim to 0 "Wittenberg
+*** Hidden effect:
+**** 0 "Thuringia:
+***** Gets the country event:
+****** ID is flavor_sax.51
+*** Hidden effect:
+**** One of the following will happen:
+***** 2 relative chance:
+****** Sets the country flag sax_provoked_wilhelm_bad
+***** 1 relative chance:
+****** Sets the country flag sax_provoked_wilhelm_worse
+*** AI chance:
+**** Base chance of 2
+* Gets the country event:
+** ID is flavor_sax.5
+** title = flavor_sax.5.name
+** desc = flavor_sax.5.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Excellent:
+*** from:
+**** 0 "Wittenberg:
+***** Removes core on our country
+***** Gives 0 "Thuringia core on the province
+***** Cedes province to 0 "Thuringia
+* Gets the country event:
+** ID is flavor_sax.51
+** title = flavor_sax.51.name
+** desc = flavor_sax.51.desc
+** picture = BAD_WITH_MONARCH_eventPicture
+** is_triggered_only = yes
+** Option: flavor_sax.51.opt:
+*** Capital:
+**** Spawns revolt of size 2 of 0 "Pretender rebels
+*** Adds claim to 0 "Wittenberg
+* Gets the country event:
+** ID is flavor_sax.6
+** title = flavor_sax.6.name
+** desc = flavor_sax.6.desc
+** picture = FORT_eventPicture
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 5 years
+** Trigger:
+*** Country is 0 "Saxony
+*** Senior union partner over 0 "Thuringia
+*** 0 "Thuringia:
+**** num_of_rebel_armies_false = 1
+**** num_of_rebel_controlled_provinces_false = 1
+*** Is not at war
+*** Ruler's dynasty is von Wettin
+*** Has the country flag sax_provoked_wilhelm_bad
+*** }
+** Option: flavor_sax.6.A:
+*** 0 "Thuringia:
+**** Adds 30 liberty desire
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0.5:
+***** 0 "Thuringia:
+****** Liberty desire is at least 60
+**** Multiplies value by 2:
+***** 0 "Thuringia:
+****** Liberty desire is less than 30
+** Option: flavor_sax.6.B:
+*** Changes stability by -1
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0.15:
+***** Stability is lower than 0
+**** Multiplies value by 0.5:
+***** Stability is lower than 1
+**** Multiplies value by 2:
+***** Stability is at least 2
+* Gets the country event:
+** ID is flavor_sax.7
+** title = flavor_sax.7.name
+** desc = flavor_sax.7.desc
+** picture = CIVIL_WAR_eventPicture
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 5 years
+** Trigger:
+*** Country is 0 "Saxony
+*** Senior union partner over 0 "Thuringia
+*** 0 "Thuringia:
+**** num_of_rebel_armies_false = 1
+**** num_of_rebel_controlled_provinces_false = 1
+*** Is not at war
+*** Ruler's dynasty is von Wettin
+*** Has the country flag sax_provoked_wilhelm_worse
+*** }
+** Immediate effects:
+*** Hidden effect:
+**** Random neighbor country:
+***** save_event_target_as = neighbour
+**** Random neighbor country:
+***** Limited to:
+****** Any of the following:
+******* Considers our country a rival
+******* Considers our country an enemy
+***** save_event_target_as = neighbour
+**** Random neighbor country:
+***** Limited to:
+****** Country is 0 "Bohemia
+****** Is not allied with our country
+****** Is not a vassal of our country
+****** Does not have our country as a vassal
+***** save_event_target_as = neighbour
+** Option: flavor_sax.7.A:
+*** Changes treasury by -200 ducats
+*** AI chance:
+**** Base chance of 2
+**** Multiplies value by 0:
+***** All of the following:
+****** Has less than 150 ducats in the treasury
+****** Has at least 5 active loans
+**** Multiplies value by 0.5:
+***** All of the following:
+****** Has less than 200 ducats in the treasury
+****** Has at least 1 active loans
+**** Multiplies value by 2:
+***** Has at least 250 ducats in the treasury
+** Option: flavor_sax.7.B:
+*** Kills the heir of the country
+**** allow_new_heir_false = no
+*** Adds the ruler modifier "sax_grieving_death_of_sons" until the ruler's death:
+**** -75% chance of getting an heir
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_sax.8
+** title = flavor_sax.8.name
+** desc = flavor_sax.8.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Trigger:
+*** Country is 0 "Saxony
+*** Ruler's dynasty is von Wettin
+*** Has the country flag sax_thuringen_split_to_happen
+*** Senior union partner over 0 "Thuringia
+*** Is not in regency
+** Immediate effects:
+*** Hidden effect:
+**** Removes the country flag sax_thuringen_split_to_happen
+** Option: flavor_sax.8.A:
+*** Tooltip:
+**** 0 "Thuringia:
+***** Breaks the union with our country
+***** Spawns a ruler:
+****** Named "Ernst"
+****** Ruler's dynasty is von Wettin
+****** age = 30
+****** Ruler's diplomatic skill is at least 2
+****** Ruler's administrative skill is at least 2
+****** Ruler's military skill is at least 2
+*** Hidden effect:
+**** 0 "Thuringia:
+***** Gets the country event:
+****** ID is flavor_sax.81
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_sax.8.B:
+*** Adds -60 legitimacy
+*** Tooltip:
+**** 0 "Thuringia:
+***** Adds 50 liberty desire
+*** Adds the ruler modifier "sax_really_bad_reputation" until the ruler's death:
+**** -2 diplomatic reputation
+*** Hidden effect:
+**** 0 "Thuringia:
+***** Gets the country event:
+****** ID is flavor_sax.82
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_sax.81
+** title = flavor_sax.81.name
+** desc = flavor_sax.81.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_sax.81.opt:
+*** Breaks the union with 0 "Saxony
+*** Spawns a ruler:
+**** Named "Ernst"
+**** Ruler's dynasty is von Wettin
+**** age = 30
+**** Ruler's diplomatic skill is at least 2
+**** Ruler's administrative skill is at least 2
+**** Ruler's military skill is at least 2
+*** Hidden effect:
+**** 0 "Saxony:
+***** remove_casus_belli:
+****** target = 0 "Thuringia
+* Gets the country event:
+** ID is flavor_sax.82
+** title = flavor_sax.82.name
+** desc = flavor_sax.82.desc
+** picture = BAD_WITH_MONARCH_eventPicture
+** is_triggered_only = yes
+** Option: flavor_sax.82.opt:
+*** Tooltip:
+**** 0 "Saxony:
+***** Adds -60 legitimacy
+***** Adds the ruler modifier "sax_really_bad_reputation" until the ruler's death:
+****** -2 diplomatic reputation
+*** Adds 50 liberty desire
+* Gets the country event:
+** ID is flavor_sax.9
+** title = flavor_sax.9.name
+** desc:
+*** desc = flavor_sax.9.desc
+*** Trigger:
+**** Isn't the Holy Roman Emperor
+** desc:
+*** desc = flavor_sax.9.desc.emperor
+*** Trigger:
+**** Is the Holy Roman Emperor
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 1 years
+** Trigger:
+*** Country is 0 "Thuringia
+*** Is not an elector in the Holy Roman Empire
+*** Ruler's dynasty is von Wettin
+*** 0 "Saxony:
+**** Is a vassal of 0 "Thuringia
+**** Is an elector in the Holy Roman Empire
+*** Any of the following:
+**** Is the Holy Roman Emperor
+**** Holy Roman Emperor:
+***** Is allied with our country
+** Option: flavor_sax.9.A:
+*** Trigger:
+**** Isn't the Holy Roman Emperor
+*** Holy Roman Emperor:
+**** Gets the country event:
+***** ID is flavor_sax.11
+*** 0 "Saxony:
+**** Adds 50 liberty desire
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_sax.9.B:
+*** Trigger:
+**** Is the Holy Roman Emperor
+*** 0 "Saxony:
+**** elector_false = no
+**** Adds the opinion modifier "opinion_bav_repealed_electorate" towards our country
+**** Adds 50 liberty desire
+*** elector = yes
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_sax.9.C:
+*** Changes prestige by 10
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_sax.10
+** title = flavor_sax.9.name
+** desc = flavor_sax.9.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** fire_only_once = yes
+** Option: flavor_sax.9.A:
+*** Holy Roman Emperor:
+**** Gets the country event:
+***** ID is flavor_sax.11
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_sax.9.C:
+*** Changes prestige by 10
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_sax.11
+** title = flavor_sax.11.name
+** desc = flavor_sax.11.desc
+** picture = HRE_eventPicture
+** major = yes
+** is_triggered_only = yes
+** Option: flavor_sax.11.A:
+*** 0 "Saxony:
+**** elector_false = no
+**** Adds the opinion modifier "opinion_bav_repealed_electorate" towards our country
+*** 0 "Thuringia:
+**** elector = yes
+**** Adds the opinion modifier "opinion_bav_gave_electorate" towards our country
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_sax.11.B:
+*** 0 "Thuringia:
+**** Adds the opinion modifier "opinion_bav_refused_to_transfer_electorate" towards our country
+*** AI chance:
+**** Base chance of 0

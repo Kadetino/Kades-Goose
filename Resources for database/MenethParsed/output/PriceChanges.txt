@@ -1,0 +1,1771 @@
+******** Trigger:
+********* colony = 1
+********* Does not have the global flag triangle_happened
+********* Any subject country:
+********** Is a colonial nation
+********** Any of the following:
+*********** Capital:
+************ In the continent 0 "North America
+*********** Capital:
+************ In the continent 0 "South America
+*********** Capital:
+************ In the continent 1 "The New World
+********** Any of the following:
+*********** Has at least 4 provinces producing tobacco
+*********** Has at least 4 provinces producing sugar
+*********** Has at least 4 provinces producing cotton
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.1.a:
+********* change_price:
+********** Produces 0 "Slaves
+********** Named "TRIANGLE_TRADE"
+********** value = 0.5
+********** Lasting -1 days
+********* Modifies treasury by 0.25 years worth of income
+********* Changes prestige by 20
+********* Sets the global flag triangle_happened
+******* Gets the country event:
+******** ID is prices.2
+******** title = prices.2.t
+******** desc = prices.2.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Capital:
+********** In the continent 0 "Europe
+********* Any of the following:
+********** 0 "Guangzhou Bay:
+*********** trade_share:
+************ country = our country
+************ share = 5
+********** 0 "Hangzhou:
+*********** trade_share:
+************ country = our country
+************ share = 5
+********* Does not have the global flag europeans_in_china_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag europeans_in_china_happened
+******** Option: prices.2.a:
+********* change_price:
+********** Produces 0 "Chinaware
+********** Named "EUROPEANS_IN_CHINA"
+********** value = 0.5
+********** Lasting -1 days
+********* Modifies treasury by 0.25 years worth of income
+********* Changes prestige by 20
+******* Gets the country event:
+******** ID is prices.3
+******** title = prices.3.t
+******** desc = prices.3.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** goto = 61
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Owns 0 "Dresden
+********* Any of the following:
+********** mission_completed = emp_sax_meissen_porcelain
+********** All of the following:
+*********** Administrative technology is at least 24
+*********** Has the global flag europeans_in_china_happened
+********* Does not have the global flag bottger_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag bottger_happened
+******** Option: prices.3.a:
+********* 0 "Dresden:
+********** add_base_production = 4
+********** Changes trade goods produced to 0 "Chinaware
+********** If:
+*********** Limited to:
+************ Has the 0 "Weapons Manufactory building
+*********** Hidden effect:
+************ Removes the 0 "Weapons Manufactory building
+*********** Constructs the 0 "Mill building
+********* change_price:
+********** Produces 0 "Chinaware
+********** Named "JOHAN_FRIEDRICH_BOTTGER"
+********** value = -0.5
+********** Lasting -1 days
+********* Changes prestige by 20
+******* Gets the country event:
+******** ID is prices.4
+******** title = prices.4.t
+******** desc = prices.4.d
+******** picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Follows the 0 "Catholic religion
+********* The 0 "Protestant religion is enabled
+********* is_papal_controller = yes
+********* calc_true_if:
+********** Every country:
+*********** Follows the 0 "Protestant religion
+********** 5 will be built
+********* Does not have the global flag protestant_fish_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.4.a:
+********* change_price:
+********** Produces 0 "Fish
+********** Named "PROTESTANT_DONT_EAT_FISH"
+********** value = -0.1
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.5
+******** title = prices.5.t
+******** desc = prices.5.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Any of the following:
+********** Capital:
+*********** In the continent 0 "Europe
+********** All of the following:
+*********** Any owned province:
+************ In the continent 0 "Europe
+*********** Diplomatic technology is at least 20
+********* Does not have the global flag coffee_boom_happened
+********* Any of the following:
+********** Any owned province:
+*********** Region is malaya_region
+*********** Produces 0 "Coffee
+********** Any subject country:
+*********** Is a colonial nation
+*********** Has at least 4 provinces producing coffee
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.5.a:
+********* change_price:
+********** Produces 0 "Coffee
+********** Named "COFFEE_BOOM"
+********** value = 0.5
+********** Lasting -1 days
+********* Modifies treasury by 0.25 years worth of income
+********* Changes prestige by 20
+******* Gets the country event:
+******** ID is prices.6
+******** title = prices.6.t
+******** desc = prices.6.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** major = yes
+******** Trigger:
+********* is_great_power = yes
+********* Capital:
+********** In the continent 0 "Europe
+********* Any owned province:
+********** Produces 0 "Wool
+********** In the continent 0 "Europe
+********* Any of the following:
+********** 0 "Thatta:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Central Doab:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Comorin Cape:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Ganges Delta:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********* Does not have the country flag cotton_imports
+********* Does not have the global flag cotton_imports_global
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Sets the global flag cotton_imports_global
+******** Option: prices.6.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 1.5:
+*********** Has at least 6 provinces producing wool
+********** Multiplies value by 1.5:
+*********** Has at least 12 provinces producing cotton
+********** Multiplies value by 1.5:
+*********** Has at least 18 provinces producing cotton
+********* change_price:
+********** Produces 0 "Wool
+********** Named "COTTON_IMPORTS"
+********** value = -0.10
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Cotton
+********** Named "COTTON_IMPORTS"
+********** value = 0.20
+********** Lasting -1 days
+********* Adds -200% mercantilism
+******** Option: prices.6.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 1.5:
+*********** Has at least 6 provinces producing wool
+********** Multiplies value by 1.5:
+*********** Has at least 12 provinces producing wool
+********** Multiplies value by 1.5:
+*********** Has at least 18 provinces producing wool
+********* Sets the country flag cotton_imports
+********* 0 "Thatta:
+********** Adds trade modifier:
+*********** Affecting our country
+*********** Lasting -1 days
+*********** Changing trade power by -10
+*********** Named "COTTON_IMPORTS_BANNED"
+********* 0 "Central Doab:
+********** Adds trade modifier:
+*********** Affecting our country
+*********** Lasting -1 days
+*********** Changing trade power by -10
+*********** Named "COTTON_IMPORTS_BANNED"
+********* 0 "Comorin Cape:
+********** Adds trade modifier:
+*********** Affecting our country
+*********** Lasting -1 days
+*********** Changing trade power by -10
+*********** Named "COTTON_IMPORTS_BANNED"
+********* 0 "Ganges Delta:
+********** Adds trade modifier:
+*********** Affecting our country
+*********** Lasting -1 days
+*********** Changing trade power by -10
+*********** Named "COTTON_IMPORTS_BANNED"
+******* Gets the country event:
+******** ID is prices.7
+******** title = prices.7.t
+******** desc = prices.7.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Any of the following:
+********** Capital:
+*********** In the continent 0 "Europe
+********** All of the following:
+*********** Any owned province:
+************ In the continent 0 "Europe
+*********** Diplomatic technology is at least 20
+********* Any of the following:
+********** Any subject country:
+*********** Is a colonial nation
+*********** Any owned province:
+************ Produces 0 "Sugar
+********** Any owned province:
+*********** Produces 0 "Sugar
+*********** In the continent 1 "The New World
+********** Any owned province:
+*********** Produces 0 "Sugar
+*********** In the continent 0 "North America
+********** Any owned province:
+*********** Produces 0 "Sugar
+*********** In the continent 0 "South America
+********* Any of the following:
+********** 0 "Guangzhou Bay:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Hangzhou:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** Any owned province:
+*********** Produces 0 "Tea
+********* Does not have the global flag tea_and_sugar_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.7.a:
+********* change_price:
+********** Produces 0 "Tea
+********** Named "TEA_AND_SUGAR"
+********** value = 0.25
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Sugar
+********** Named "TEA_AND_SUGAR"
+********** value = 0.25
+********** Lasting -1 days
+********* Modifies treasury by 0.25 years worth of income
+********* Changes prestige by 20
+******* Gets the country event:
+******** ID is prices.8
+******** title = prices.8.t
+******** desc = prices.8.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Has the idea 0 "Quest for the New World
+********* Has at least 4 ports
+********* Capital:
+********** Not in the continent 0 "Asia
+********* Capital:
+********** Not in the continent 0 "Oceania
+********* Has discovered 0 "Cape of Good Hope
+********* Technology group is 0 "Western
+********* Any active trade node:
+********** has_merchant = PREV
+********** Any of the following:
+*********** Province is 0 "Straits of Johor
+*********** Province is 0 "Ganges Delta
+*********** Province is 0 "Thatta
+*********** Province is 0 "Comorin Cape
+********* Does not have the global flag spice_trade_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.8.a:
+********* change_price:
+********** Produces 0 "Spices
+********** Named "SPICE_TRADE"
+********** value = 0.5
+********** Lasting -1 days
+********* Modifies treasury by 0.25 years worth of income
+********* Changes prestige by 20
+******* Gets the country event:
+******** ID is prices.9
+******** title = prices.9.t
+******** desc = prices.9.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Has the country modifier "the_abolish_slavery_act"
+********* Does not have the global flag abolitionism_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.9.a:
+********* change_price:
+********** Produces 0 "Slaves
+********** Named "ABOLITIONISM"
+********** value = -0.4
+********** Lasting -1 days
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is prices.10
+******** title = prices.10.t
+******** desc = prices.10.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Any of the following:
+********** Owns 0 "Arequipa
+********** Owns 0 "Camana
+********** Owns 0 "Puno
+********* Year is at least 1600
+********* not:
+********** Year is at least 1610
+******** Mean time to happen
+********* Base mean time to happen of 3 months
+******** Option: prices.10.a:
+********* change_price:
+********** Produces 0 "Grain
+********** Named "HUAYNAPUTINA"
+********** value = -0.75
+********** Lasting 730 days
+********* change_price:
+********** Produces 0 "Wine
+********** Named "HUAYNAPUTINA"
+********** value = -0.75
+********** Lasting 730 days
+******* Gets the country event:
+******** ID is prices.11
+******** title = prices.11.t
+******** desc = prices.11.d
+******** picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Any of the following:
+********** Owns 0 "Akureyri
+********** Owns 0 "Reykjavik
+********* Year is at least 1650
+********* not:
+********** Year is at least 1660
+******** Mean time to happen
+********* Base mean time to happen of 3 months
+******** Option: prices.11.a:
+********* change_price:
+********** Produces 0 "Grain
+********** Named "LITTLE_ICE_AGE"
+********** value = -0.25
+********** Lasting 3650 days
+********* change_price:
+********** Produces 0 "Livestock
+********** Named "LITTLE_ICE_AGE"
+********** value = -0.25
+********** Lasting 3650 days
+********* change_price:
+********** Produces 0 "Wine
+********** Named "LITTLE_ICE_AGE"
+********** value = -0.25
+********** Lasting 3650 days
+********* change_price:
+********** Produces 0 "Fish
+********** Named "LITTLE_ICE_AGE"
+********** value = -0.25
+********** Lasting 3650 days
+********* change_price:
+********** Produces 0 "Salt
+********** Named "LITTLE_ICE_AGE"
+********** value = 0.25
+********** Lasting 3650 days
+********* change_price:
+********** Produces 0 "Fur
+********** Named "LITTLE_ICE_AGE"
+********** value = 0.25
+********** Lasting 3650 days
+******* Gets the country event:
+******** ID is prices.12
+******** title = prices.12.t
+******** desc = prices.12.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Diplomatic technology is at least 20
+********* Has at least 1 provinces producing wine
+********* glass = 1
+********* Does not have the global flag wine_corks_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.12.a:
+********* change_price:
+********** Produces 0 "Wine
+********** Named "WINE_CORKS"
+********** value = 0.25
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Glass
+********** Named "WINE_CORKS"
+********** value = 0.15
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.13
+******** title = prices.13.t
+******** desc = prices.13.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Diplomatic technology is at least 11
+********* Has at least 1 provinces producing cloth
+********* Does not have the global flag new_draperies_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.13.a:
+********* change_price:
+********** Produces 0 "Cloth
+********** Named "NEW_DRAPERIES"
+********** value = 0.20
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Wool
+********** Named "NEW_DRAPERIES"
+********** value = -0.20
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.14
+******** title = prices.14.t
+******** desc = prices.14.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Military technology is at least 21
+********* Does not have the global flag regulated_uniforms_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.14.a:
+********* change_price:
+********** Produces 0 "Cloth
+********** Named "REGULATED_UNIFORMS"
+********** value = 0.15
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Wool
+********** Named "REGULATED_UNIFORMS"
+********** value = 0.1
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Dyes
+********** Named "REGULATED_UNIFORMS"
+********** value = 0.25
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.15
+******** title = prices.15.t
+******** desc = prices.15.d
+******** picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Any of the following:
+********** Owns core province 0 "Beothuk
+********** Owns core province 0 "Placentia
+********** Owns core province 0 "Taqamkuk
+********* Does not have the global flag great_fisheries_happened
+********* Capital:
+********** Not in the continent 0 "North America
+********* Capital:
+********** Not in the continent 1 "The New World
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.15.a:
+********* change_price:
+********** Produces 0 "Fish
+********** Named "GREAT_FISHERIES"
+********** value = -0.1
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Salt
+********** Named "GREAT_FISHERIES"
+********** value = 0.1
+********** Lasting -1 days
+********* newfoundland_area:
+********** Adds the modifier "0 "Grand Bank Fisheries" for the rest of the campaign:
+*********** +200% trade goods output
+******* Gets the country event:
+******** ID is prices.16
+******** title = prices.16.t
+******** desc = prices.16.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Capital:
+********** In the continent 0 "Europe
+********* Diplomatic technology is at least 22
+********* Any of the following:
+********** 0 "Thatta:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Central Doab:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Comorin Cape:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Ganges Delta:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********* Does not have the country flag cotton_imports
+********* Does not have the global flag calicoes_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.16.a:
+********* change_price:
+********** Produces 0 "Cotton
+********** Named "CALICOES"
+********** value = 0.45
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.17
+******** title = prices.17.t
+******** desc = prices.17.d
+******** picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Capital:
+********** In the continent 0 "Europe
+********* Owns 0 "Dresden
+********* Does not have the global flag depleted_beaver_happened
+********* Year is at least 1570
+******** Mean time to happen
+********* Base mean time to happen of 3 months
+******** Option: prices.17.a:
+********* change_price:
+********** Produces 0 "Fur
+********** Named "DEPLETION_OF_EUROPEAN_BEAVER"
+********** value = 0.4
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.18
+******** title = prices.18.t
+******** desc = prices.18.d
+******** picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Any of the following:
+********** Capital:
+*********** In the continent 0 "Europe
+********** Is a colonial nation
+********* Any of the following:
+********** Any owned province:
+*********** Produces 0 "Fur
+*********** In the continent 0 "North America
+********** Any owned province:
+*********** Produces 0 "Fur
+*********** In the continent 1 "The New World
+********* Does not have the global flag felt_hats_happened
+******** Mean time to happen
+********* Base mean time to happen of 3 months
+******** Option: prices.18.a:
+********* change_price:
+********** Produces 0 "Fur
+********** Named "FELT_HATS"
+********** value = 0.35
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.19
+******** title = prices.19.t
+******** desc = prices.19.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Diplomatic technology is at least 22
+********* Has at least 3 ports
+********* Does not have the global flag permanent_navies_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.19.a:
+********* change_price:
+********** Produces 0 "Naval Supplies
+********** Named "PERMANENT_NAVIES"
+********** value = 0.5
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Glass
+********** Named "PERMANENT_NAVIES"
+********** value = 0.15
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Livestock
+********** Named "PERMANENT_NAVIES"
+********** value = 0.10
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.20
+******** title = prices.20.t
+******** desc = prices.20.d
+******** picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Military technology is at least 7
+********* Has at least 1 provinces producing copper
+********* Does not have the global flag bronze_cannons_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.20.a:
+********* change_price:
+********** Produces 0 "Copper
+********** Named "BRONZE_CANNONS"
+********** value = 0.5
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.21
+******** title = prices.21.t
+******** desc = prices.21.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Diplomatic technology is at least 8
+********* Any of the following:
+********** has_reform = 0 "Shogunate
+********** Country is 0 "Japan
+********* Does not have the global flag japanese_tea_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.21.a:
+********* change_price:
+********** Produces 0 "Tea
+********** Named "JAPANESE_TEA_CULTURE"
+********** value = 0.25
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Incense
+********** Named "JAPANESE_TEA_CULTURE"
+********** value = 0.10
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.22
+******** title = prices.22.t
+******** desc = prices.22.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Year is at least 1600
+********* Capital:
+********** In the continent 0 "Europe
+********* Is in the 0 "Christian religion group
+********* Has at least 3 provinces producing spices
+********* Any known country:
+********** Capital:
+*********** In the continent 0 "Europe
+********** Is in the 0 "Christian religion group
+********** Has at least 3 provinces producing spices
+********* Does not have the global flag decline_of_spices_happened
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: prices.22.a:
+********* change_price:
+********** Produces 0 "Spices
+********** Named "DECLINE_OF_SPICE_TRADE"
+********** value = -0.4
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.23
+******** title = prices.23.t
+******** desc = prices.23.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Any of the following:
+********** Capital:
+*********** In the continent 0 "Europe
+********** All of the following:
+*********** Any owned province:
+************ In the continent 0 "Europe
+*********** Diplomatic technology is at least 25
+********* Has at least 5 provinces producing sugar
+********* Diplomatic technology is at least 20
+********* Any of the following:
+********** Controls at least 5% of the 0 "Cocoa market
+********** Controls at least 5% of the 0 "Tea market
+********** Controls at least 5% of the 0 "Coffee market
+********* Does not have the global flag popularization_of_sugar_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.23.a:
+********* change_price:
+********** Produces 0 "Sugar
+********** Named "POPULARIZATION_OF_SUGAR"
+********** value = 0.5
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.24
+******** title = prices.24.t
+******** desc = prices.24.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Capital:
+********** In the continent 0 "Europe
+********* Diplomatic technology is at least 18
+********* Any of the following:
+********** current_age = 0 "Age of Absolutism
+********** current_age = 0 "Age of Revolutions
+********* Any of the following:
+********** 0 "Thatta:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Central Doab:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Comorin Cape:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Ganges Delta:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Guangzhou Bay:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********** 0 "Hangzhou:
+*********** trade_share:
+************ country = our country
+************ share = 10
+********* Does not have the global flag popular_silk_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.24.a:
+********* change_price:
+********** Produces 0 "Silk
+********** Named "POPULAR_SILK_FABRICS"
+********** value = 0.25
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.25
+******** title = prices.25.t
+******** desc = prices.25.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Capital:
+********** In the continent 0 "Europe
+********* Owns 0 "Tirhut
+********* Owns 0 "Etawah
+********* bengal_region:
+********** The province is owned by our country
+********* bihar_area:
+********** The province is owned by our country
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: prices.25.a:
+********* Random owned province:
+********** Limited to:
+*********** Region is bengal_region
+*********** Does not produce 0 "Silk
+*********** Does not produce 0 "Dyes
+********** Changes trade goods produced to 0 "Dyes
+********* Random owned province:
+********** Limited to:
+*********** area = bihar_area
+*********** Does not produce 0 "Silk
+*********** Does not produce 0 "Dyes
+********** Changes trade goods produced to 0 "Dyes
+********* Every owned province:
+********** Limited to:
+*********** Produces 0 "Dyes
+********** add_unrest = 5
+********* change_price:
+********** Produces 0 "Dyes
+********** Named "BENGALI_INDIGO_PRODUCTION"
+********** value = -0.25
+********** Lasting -1 days
+******** Option: prices.25.b:
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is prices.26
+******** title = prices.26.t
+******** desc = prices.26.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Capital:
+********** In the continent 0 "Europe
+********* Diplomatic technology is at least 12
+********* Any of the following:
+********** current_age = 0 "Age of Reformation
+********** current_age = 0 "Age of Absolutism
+********** current_age = 0 "Age of Revolutions
+********* Any of the following:
+********** 0 "Central Doab:
+*********** trade_share:
+************ country = our country
+************ share = 5
+********** 0 "Comorin Cape:
+*********** trade_share:
+************ country = our country
+************ share = 5
+********** 0 "Ganges Delta:
+*********** trade_share:
+************ country = our country
+************ share = 5
+********** 0 "Straits of Johor:
+*********** trade_share:
+************ country = our country
+************ share = 5
+********** 0 "Gulf of Siam:
+*********** trade_share:
+************ country = our country
+************ share = 5
+********* Does not have the global flag veneering_happened
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: prices.26.a:
+********* change_price:
+********** Produces 0 "Tropical Wood
+********** Named "VENEERING"
+********** value = 0.5
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.27
+******** title = prices.27.t
+******** desc = prices.27.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Year is at least 1750
+********* Capital:
+********** Region is indo_china_region
+********* Does not have the global flag ivory_shortage_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.27.a:
+********* change_price:
+********** Produces 0 "Ivory
+********** Named "IVORY_SHORTAGE"
+********** value = 0.25
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.28
+******** title = prices.28.t
+******** desc = prices.28.d
+******** picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Military technology is at least 18
+********* Does not have the global flag iron_working_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.28.a:
+********* change_price:
+********** Produces 0 "Iron
+********** Named "IRON_WORKING"
+********** value = 0.5
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Copper
+********** Named "IRON_WORKING"
+********** value = -0.35
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.29
+******** title = prices.29.t
+******** desc = prices.29.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Diplomatic technology is at least 16
+********* colony = 1
+********* Any subject country:
+********** Is a colonial nation
+********** Any of the following:
+*********** Capital:
+************ In the continent 0 "North America
+*********** Capital:
+************ In the continent 0 "South America
+*********** Capital:
+************ In the continent 1 "The New World
+********** cocoa = 7
+********** Has at least 1 provinces producing sugar
+********* Does not have the global flag hot_chocolate_happened
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.29.a:
+********* change_price:
+********** Produces 0 "Cocoa
+********** Named "HOT_CHOCOLATE"
+********** value = 0.35
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.30
+******** title = prices.30.t
+******** desc = prices.30.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Diplomatic technology is at least 16
+********* colony = 1
+********* Does not have the global flag popularization_of_tobacco_happened
+********* Any subject country:
+********** Is a colonial nation
+********** Any of the following:
+*********** Capital:
+************ In the continent 0 "North America
+*********** Capital:
+************ In the continent 0 "South America
+*********** Capital:
+************ In the continent 1 "The New World
+********** Has at least 4 provinces producing tobacco
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.30.a:
+********* change_price:
+********** Produces 0 "Tobacco
+********** Named "POPULARIZATION_OF_TOBACCO"
+********** value = 0.5
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.31
+******** title = prices.31.t
+******** desc = prices.31.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** goto = java_coffee_here
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag mocha_killed
+********* Does not own 0 "Mokha
+********* Has at least 2 provinces producing coffee
+********* Has discovered 0 "Mokha
+********* Any owned province:
+********** Has the 0 "Plantation building
+********** Produces 0 "Coffee
+********** Not in the continent 0 "Africa
+********** Region is not arabia_region
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Hidden effect:
+********** 0 "Mokha:
+*********** The owner of the province:
+************ save_event_target_as = owner_of_mocha
+*********** save_event_target_as = mocha
+********** Random owned province:
+*********** Limited to:
+************ Has the 0 "Plantation building
+************ Produces 0 "Coffee
+************ Not in the continent 0 "Africa
+************ Region is not arabia_region
+*********** save_event_target_as = java_coffee_here
+******** Option: prices.31.a:
+********* Modifies treasury by 1 years worth of income
+********* Changes prestige by 20
+********* change_price:
+********** Produces 0 "Coffee
+********** Named "JAVA_COFFEE"
+********** value = -0.4
+********** Lasting -1 days
+********* 0 "Mokha:
+********** Tooltip:
+*********** Removes the country modifier "0 "Coffea Arabica"
+********* event_target:owner_of_mocha:
+********** Gets the country event:
+*********** ID is prices.32
+********** Adds the opinion modifier "0 "Dissemination of the Coffee Plant" towards our country
+******* Gets the country event:
+******** ID is prices.32
+******** title = prices.32.t
+******** desc = prices.32.d
+******** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+******** goto = 387
+******** is_triggered_only = yes
+******** Option: prices.32.a:
+********* 0 "Mokha:
+********** Removes the country modifier "0 "Coffea Arabica"
+********* Our country:
+********** Adds the opinion modifier "0 "Dissemination of the Coffee Plant" towards our country
+******* Gets the country event:
+******** ID is prices.33
+******** title = prices.33.t
+******** desc = prices.33.d
+******** picture:
+********* Trigger:
+********** Does not have the DLC Rights of Man
+********* picture = TRADEGOODS_eventPicture
+******** picture:
+********* Trigger:
+********** Has the DLC Rights of Man
+********* picture = PRINTING_PRESS_eventPicture
+******** goto = bookmarket_here
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag printing_paper_prices_rise
+********* has_institution = printing_press
+********* Any owned province:
+********** Has the province modifier "birthplace_of_printing_press"
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has the province modifier "birthplace_of_printing_press"
+*********** save_event_target_as = bookmarket_here
+******** Option: prices.33.a:
+********* AI chance:
+********** Base chance of 100
+********* Trigger:
+********** event_target:bookmarket_here:
+*********** Does not produce 0 "Paper
+*********** province_without_special_goods_produced_trigger = yes
+********* add_innovativeness_small_effect = yes
+********* event_target:bookmarket_here:
+********** If:
+*********** Limited to:
+************ Does not produce 0 "Paper
+*********** Changes trade goods produced to 0 "Paper
+********* change_price:
+********** Produces 0 "Paper
+********** Named "INCREASED_PRINTING"
+********** value = 0.25
+********** Lasting -1 days
+******** Option: prices.33.b:
+********* AI chance:
+********** Base chance of 1
+********* add_innovativeness_small_effect = yes
+********* event_target:bookmarket_here:
+********** add_base_production = 2
+********* change_price:
+********** Produces 0 "Paper
+********** Named "INCREASED_PRINTING"
+********** value = 0.25
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.34
+******** title = prices.34.t
+******** desc = prices.34.d
+******** picture:
+********* Trigger:
+********** Does not have the DLC Rights of Man
+********* picture = TRADEGOODS_eventPicture
+******** picture:
+********* Trigger:
+********** Has the DLC Rights of Man
+********* picture = PRINTING_PRESS_eventPicture
+******** goto = hollender_beater_province
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag hollender_beater_flag
+******** Multiplies value by manufactories:
+********* Any owned province:
+********** province_without_special_goods_produced_trigger = yes
+********** is_state = yes
+********** Any of the following:
+*********** Has the 0 "Workshop building
+*********** Has the 0 "Counting House building
+*********** base_production = 6
+*********** Is coastal
+********** Any of the following:
+*********** Produces 0 "Cloth
+*********** Produces 0 "Naval Supplies
+*********** Produces 0 "Wool
+********** Does not have the 0 "Textile Manufactory building
+********** Does not have the 0 "Naval Equipment Manufactory building
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ province_without_special_goods_produced_trigger = yes
+************ is_state = yes
+************ Any of the following:
+************* Has the 0 "Workshop building
+************* Has the 0 "Counting House building
+************* base_production = 6
+************* Is coastal
+************ Any of the following:
+************* Produces 0 "Cloth
+************* Produces 0 "Naval Supplies
+************* Produces 0 "Wool
+************ Does not have the 0 "Textile Manufactory building
+************ Does not have the 0 "Naval Equipment Manufactory building
+*********** save_event_target_as = hollender_beater_province
+********** Random owned province:
+*********** Limited to:
+************ province_without_special_goods_produced_trigger = yes
+************ is_state = yes
+************ num_free_building_slots = 1
+************ Any of the following:
+************* Has the 0 "Workshop building
+************* Has the 0 "Counting House building
+************* base_production = 6
+************* Is coastal
+************ Any of the following:
+************* Produces 0 "Cloth
+************* Produces 0 "Naval Supplies
+************* Produces 0 "Wool
+************ Does not have the 0 "Textile Manufactory building
+************ Does not have the 0 "Naval Equipment Manufactory building
+*********** save_event_target_as = hollender_beater_province
+********** Random owned province:
+*********** Limited to:
+************ province_without_special_goods_produced_trigger = yes
+************ is_state = yes
+************ num_free_building_slots = 1
+************ Any of the following:
+************* Has the 0 "Workshop building
+************* Has the 0 "Counting House building
+************* base_production = 6
+************* Is coastal
+************ Any of the following:
+************* Produces 0 "Cloth
+************* Produces 0 "Naval Supplies
+************* Produces 0 "Wool
+************ Does not have the 0 "Textile Manufactory building
+************ Does not have the 0 "Naval Equipment Manufactory building
+************ base_production = 6
+*********** save_event_target_as = hollender_beater_province
+********** Random owned province:
+*********** Limited to:
+************ province_without_special_goods_produced_trigger = yes
+************ is_state = yes
+************ num_free_building_slots = 1
+************ Any of the following:
+************* Has the 0 "Workshop building
+************* Has the 0 "Counting House building
+************* base_production = 6
+************* Is coastal
+************ Any of the following:
+************* Produces 0 "Cloth
+************* Produces 0 "Naval Supplies
+************* Produces 0 "Wool
+************ Does not have the 0 "Textile Manufactory building
+************ Does not have the 0 "Naval Equipment Manufactory building
+************ base_production = 10
+*********** save_event_target_as = hollender_beater_province
+********** Random owned province:
+*********** Limited to:
+************ province_without_special_goods_produced_trigger = yes
+************ is_state = yes
+************ num_free_building_slots = 1
+************ Any of the following:
+************* Has the 0 "Workshop building
+************* Has the 0 "Counting House building
+************* base_production = 6
+************* Is coastal
+************ Any of the following:
+************* Produces 0 "Cloth
+************* Produces 0 "Naval Supplies
+************* Produces 0 "Wool
+************ Does not have the 0 "Textile Manufactory building
+************ Does not have the 0 "Naval Equipment Manufactory building
+************ base_production = 14
+*********** save_event_target_as = hollender_beater_province
+******** Option: prices.34.a:
+********* Changes administrative power stored by 75
+********* event_target:hollender_beater_province:
+********** Changes trade goods produced to 0 "Paper
+********** If:
+*********** Limited to:
+************ num_free_building_slots = 1
+*********** Constructs the 0 "Mill building
+*********** else:
+************ add_base_production = 4
+********* change_price:
+********** Produces 0 "Paper
+********** Named "HOLLENDER_BEATER"
+********** value = -0.5
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.35
+******** title = prices.35.t
+******** desc = prices.35.d
+******** picture = BIG_BOOK_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag paper_in_bureaucracies
+********* Administrative technology is at least 6
+********* has_institution = feudalism
+********* Any of the following:
+********** Has at least 50 provinces
+********** colony = 1
+********* Does not have the tribal government type
+********* Any of the following:
+********** colony = 1
+********** All of the following:
+*********** Capital:
+************ In the continent 0 "Europe
+*********** Any owned province:
+************ Not in the continent 0 "Europe
+********** All of the following:
+*********** Capital:
+************ In the continent 0 "Africa
+*********** Any owned province:
+************ Not in the continent 0 "Africa
+********** All of the following:
+*********** Capital:
+************ In the continent 0 "Asia
+*********** Any owned province:
+************ Not in the continent 0 "Asia
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.35.a:
+********* change_price:
+********** Produces 0 "Paper
+********** Named "PAPER_IN_BUREAUCRACY"
+********** value = 0.25
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.36
+******** title = prices.36.t
+******** desc = prices.36.d
+******** picture = BIG_BOOK_eventPicture
+******** goto = lending_libraries_here
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag popular_literacy
+********* has_institution = enlightenment
+********* Any of the following:
+********** Has completed the 0 "Innovative Ideas idea group
+********** Has at least 5 of the 0 "University building
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ The province is the capital of the country
+*********** save_event_target_as = lending_libraries_here
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ Has the 0 "University building
+*********** save_event_target_as = lending_libraries_here
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_state = yes
+************ Has the 0 "University building
+*********** save_event_target_as = lending_libraries_here
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.36.a:
+********* add_innovativeness_small_effect = yes
+********* event_target:lending_libraries_here:
+********** If:
+*********** Limited to:
+************ province_without_special_goods_produced_trigger = yes
+*********** If:
+************ Limited to:
+************* Does not produce 0 "Paper
+************ Changes trade goods produced to 0 "Paper
+*********** Adds the modifier "0 "Great Bookmarket" for the rest of the campaign:
+************ +100% trade goods output
+************ local_institution_spread = 0.25
+********* change_price:
+********** Produces 0 "Paper
+********** Named "LENDING_LIBRARIES"
+********** value = 0.35
+********** Lasting -1 days
+********* If:
+********** Limited to:
+*********** has_parliament_false = no
+********** Adds the modifier "0 "Spread of Enlightenment Philosophy" for 10 years:
+*********** +4 global unrest
+*********** global_institution_spread = 0.15
+******* Gets the country event:
+******** ID is prices.37
+******** title = prices.37.t
+******** desc = prices.37.d
+******** picture = EXPLORERS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag columbian_exchange_happened
+********* is_institution_enabled = new_world_i
+********* Any owned province:
+********** Any of the following:
+*********** In the continent 0 "Europe
+*********** In the continent 0 "Asia
+*********** In the continent 0 "Africa
+********** Any of the following:
+*********** Produces 0 "Grain
+*********** Produces 0 "Livestock
+********* Any of the following:
+********** Any owned province:
+*********** Any of the following:
+************ In the continent 0 "North America
+************ In the continent 0 "South America
+************ In the continent 1 "The New World
+*********** Any of the following:
+************ Produces 0 "Grain
+************ Produces 0 "Livestock
+********** Any subject country:
+*********** Any owned province:
+************ Any of the following:
+************* In the continent 0 "North America
+************* In the continent 0 "South America
+************* In the continent 1 "The New World
+************ Any of the following:
+************* Produces 0 "Grain
+************* Produces 0 "Livestock
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.37.a:
+********* change_price:
+********** Produces 0 "Grain
+********** Named "COLUMBIAN_EXCHANGE"
+********** value = -0.20
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Livestock
+********** Named "COLUMBIAN_EXCHANGE"
+********** value = 0.25
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.38
+******** title = prices.38.t
+******** desc = prices.38.d
+******** picture = TRADEGOODS_eventPicture
+******** goto = diamond_city
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag faceting_happened
+********* has_institution = renaissance
+********* 50 prestige
+********* Any owned province:
+********** renaissance = 100
+********** Any of the following:
+*********** Produces 0 "Glass
+*********** Produces 0 "Gems
+********** development = 15
+********** is_state = yes
+********** yes is a city
+********** province_without_special_goods_produced_trigger = yes
+********** Province is not 0 "Venezia
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ renaissance = 100
+************ Any of the following:
+************* Produces 0 "Glass
+************* Produces 0 "Gems
+************ development = 15
+************ is_state = yes
+************ yes is a city
+************ province_without_special_goods_produced_trigger = yes
+************ Province is not 0 "Venezia
+*********** save_event_target_as = diamond_city
+******** Option: prices.38.a:
+********* event_target:diamond_city:
+********** If:
+*********** Limited to:
+************ Does not produce 0 "Gems
+*********** Changes trade goods produced to 0 "Gems
+********** Adds the modifier "0 "Diamond District" for the rest of the campaign:
+*********** +50% trade goods output
+*********** +15% trade value
+********* change_price:
+********** Produces 0 "Gems
+********** Named "FACETING"
+********** value = 0.25
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.39
+******** title = prices.39.t
+******** desc = prices.39.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag brazilian_gems_happened
+********* current_age_false = 0 "Age of Discovery
+********* primitives_false = no
+********* Any owned province:
+********** Produces 0 "Gems
+********** Any of the following:
+*********** In the continent 1 "The New World
+*********** In the continent 0 "North America
+*********** In the continent 0 "South America
+********* calc_true_if:
+********** all_province:
+*********** Produces 0 "Gems
+*********** Any of the following:
+************ In the continent 1 "The New World
+************ In the continent 0 "North America
+************ In the continent 0 "South America
+********** 8 will be built
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.39.a:
+********* Modifies treasury by 1.5 years worth of income
+********* Changes prestige by 20
+********* change_price:
+********** Produces 0 "Gems
+********** Named "BRAZILIAN_DIAMONDS"
+********** value = -0.5
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.40
+******** title = prices.40.t
+******** desc = prices.40.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag incense_rejected
+********* The 0 "Reformed religion is enabled
+********* Follows the 0 "Reformed religion
+********* Any owned province:
+********** is_reformation_center = yes
+********** Follows the 0 "Reformed religion
+********* calc_true_if:
+********** Every country:
+*********** Any of the following:
+************ Follows the 0 "Protestant religion
+************ Follows the 0 "Reformed religion
+********** 10 will be built
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.40.a:
+********* add_fervor = 15
+********* change_price:
+********** Produces 0 "Incense
+********** Named "REFORMED_REJECTION_OF_INCENSE"
+********** value = -0.25
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.41
+******** title = prices.41.t
+******** desc = prices.41.d
+******** picture = TRADEGOODS_eventPicture
+******** goto = perfume_city_grass
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* has_institution = global_trade
+********* Does not have the global flag perfume_industry
+********* Any owned province:
+********** has_terrain = 0 "Farmlands
+********** The province is not the capital of the country
+********** development = 15
+********** is_state = yes
+********** yes is a city
+********** province_without_special_goods_produced_trigger = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ has_terrain = 0 "Farmlands
+************ The province is not the capital of the country
+************ development = 15
+************ is_state = yes
+************ yes is a city
+************ province_without_special_goods_produced_trigger = yes
+*********** save_event_target_as = perfume_city_grass
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.41.a:
+********* event_target:perfume_city_grass:
+********** Changes trade goods produced to 0 "Incense
+********** Adds the modifier "0 "Perfume Capital" for the rest of the campaign:
+*********** +15% trade value
+*********** +50% trade goods output
+********** If:
+*********** Limited to:
+************ Has the 0 "Mill building
+*********** Removes the 0 "Mill building
+*********** Constructs the 1 "Trade Station building
+********** else_if:
+*********** Limited to:
+************ Has the 0 "Farm Estate building
+*********** Removes the 0 "Farm Estate building
+*********** Constructs the 1 "Trade Station building
+********** else_if:
+*********** Limited to:
+************ Has the 0 "Plantation building
+*********** Removes the 0 "Plantation building
+*********** Constructs the 1 "Trade Station building
+********** else_if:
+*********** Limited to:
+************ Has the 0 "Textile Manufactory building
+*********** Removes the 0 "Textile Manufactory building
+*********** Constructs the 1 "Trade Station building
+********** else_if:
+*********** Limited to:
+************ Has the 0 "Weapons Manufactory building
+*********** Removes the 0 "Weapons Manufactory building
+*********** Constructs the 1 "Trade Station building
+********** else:
+*********** Removes the 0 "Naval Equipment Manufactory building
+*********** Constructs the 1 "Trade Station building
+********* change_price:
+********** Produces 0 "Incense
+********** Named "GROWTH_OF_PERFUME_BUSINESS"
+********** value = 0.35
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.42
+******** title = prices.42.t
+******** desc = prices.42.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* has_institution = enlightenment
+********* Does not have the global flag selective_breeding_happened
+********* livestock = 5
+********* Any owned province:
+********** enlightenment = 100
+********** Produces 0 "Livestock
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.42.a:
+********* Changes diplomatic power stored by 100
+********* add_innovativeness_small_effect = yes
+********* change_price:
+********** Produces 0 "Livestock
+********** Named "SELECTIVE_BREEDING"
+********** value = 0.35
+********** Lasting -1 days
+********* change_price:
+********** Produces 0 "Wool
+********** Named "SELECTIVE_BREEDING"
+********** value = 0.35
+********** Lasting -1 days
+********* Random owned province:
+********** Limited to:
+*********** enlightenment = 100
+*********** Produces 0 "Livestock
+********** add_base_production = 3
+******* Gets the country event:
+******** ID is prices.43
+******** title = prices.43.t
+******** desc = prices.43.d
+******** picture = TRADEGOODS_eventPicture
+******** goto = 1771
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Any of the following:
+********** Has the country flag bohemian_crystal_flag
+********** All of the following:
+*********** Any of the following:
+************ Does not have the DLC Emperor
+************ 0 "Bohemia:
+************* Does not own 0 "Erz
+*********** Does not have the global flag bohemian_glass
+*********** Owns 0 "Erz
+*********** Diplomatic technology is at least 17
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag bohemian_glass_flag
+******** Option: prices.43.a:
+********* Changes prestige by 15
+********* change_price:
+********** Produces 0 "Glass
+********** Named "BOHEMIAN_GLASS"
+********** value = 0.25
+********** Lasting -1 days
+********* 0 "Erz:
+********** add_base_production = 2
+********** Changes base tax by 2
+******* Gets the country event:
+******** ID is prices.44
+******** title = prices.44.t
+******** desc = prices.44.d
+******** picture = TRADEGOODS_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag development_of_optics
+********* Diplomatic technology is at least 18
+********* has_institution = global_trade
+********* Any owned province:
+********** Produces 0 "Glass
+********** Has the 0 "Mill building
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.44.a:
+********* Changes diplomatic power stored by 100
+********* add_innovativeness_small_effect = yes
+********* change_price:
+********** Produces 0 "Glass
+********** Named "MODERN_OPTICS"
+********** value = 0.25
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.45
+******** title = prices.45.t
+******** desc = prices.45.d
+******** picture = TRADEGOODS_eventPicture
+******** goto = glass_province
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag lead_crystal_happened
+********* Diplomatic technology is at least 18
+******** Multiplies value by manufactories:
+********* Any owned province:
+********* Multiplies value by 100:
+********** is_state = yes
+********** The province is not the capital of the country
+********** Any of the following:
+*********** Has the 0 "Workshop building
+*********** Has the 0 "Counting House building
+********** province_without_special_goods_produced_trigger = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag lead_crystal_happened
+********** Random owned province:
+*********** Limited to:
+*********** Multiplies value by 100:
+************ is_state = yes
+************ The province is not the capital of the country
+************ Any of the following:
+************* Has the 0 "Workshop building
+************* Has the 0 "Counting House building
+************ province_without_special_goods_produced_trigger = yes
+*********** save_event_target_as = glass_province
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.45.a:
+********* Modifies treasury by 1 years worth of income
+********* event_target:glass_province:
+********** Changes trade goods produced to 0 "Glass
+********** Constructs the 0 "Mill building
+********** add_base_production = 2
+********* change_price:
+********** Produces 0 "Glass
+********** Named "LEAD_CRYSTAL"
+********** value = -0.65
+********** Lasting -1 days
+******* Gets the country event:
+******** ID is prices.46
+******** title = prices.46.t
+******** desc = prices.46.d
+******** picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Does not have the global flag steam_engine_happened
+********* Has the country flag watt_steam_engine_flag
+********* Has the country flag coke_blast_furnaces_flag
+********* has_institution = enlightenment
+********* Any owned province:
+********** Produces 0 "Coal
+********** Has the 0 "Furnace building
+********* coal = 10
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Produces 0 "Coal
+************ Has the 0 "Furnace building
+*********** save_event_target_as = coal_province
+********** If:
+*********** Limited to:
+************ Any owned province:
+************* Produces 0 "Coal
+************* Does not have the 0 "Furnace building
+*********** Random owned province:
+************ Limited to:
+************* Produces 0 "Coal
+************* Does not have the 0 "Furnace building
+************ save_event_target_as = potential_furnace
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: prices.46.a:
+********* Modifies treasury by 1 years worth of income
+********* Changes diplomatic power stored by 50
+********* If:
+********** Limited to:
+*********** has_saved_event_target = potential_furnace
+********** event_target:coal_province:
+*********** add_base_production = 2
+********** event_target:potential_furnace:
+*********** Constructs the 0 "Furnace building
+********* else:
+********** event_target:coal_province:
+*********** add_base_production = 6
+********* change_price:
+********** Produces 0 "Coal
+********** Named "IMPROVED_COAL_MINING"
+********** value = -0.30
+********** Lasting -1 days

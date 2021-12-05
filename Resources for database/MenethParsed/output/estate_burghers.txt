@@ -1,0 +1,1311 @@
+
+=== title = burghers_estate_events.1.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHERS_ADVANCE
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHERS_ADVANCE_20
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHERS_DECLINE
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: burghers_estate_events.1.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHERS_ADVANCE
+** influence = 10
+** Lasting 5475 days
+
+=== title = burghers_estate_events.2.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* has_estate = estate_nobles
+* estate_influence:
+** estate = estate_nobles
+** influence = 25
+* estate_territory:
+** estate = estate_burghers
+** territory = 1
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHERS_ROBBER_BARONS
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHERS_DEFEATED_ROBBER_BARONS
+* Any owned province:
+** is_territory_false = no
+** The province is not the capital of the country
+** yes is a city
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: burghers_estate_events.2.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 65
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_nobles
+**** influence = 65
+* Random owned province:
+** Limited to:
+*** is_territory_false = no
+*** The province is not the capital of the country
+*** yes is a city
+** Changes base tax by 1
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = 15
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHERS_ROBBER_BARONS
+** influence = -10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NOBLES_ROBBER_BARONS
+** influence = 10
+** Lasting 5475 days
+
+'''Option: burghers_estate_events.2.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 65
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_nobles
+**** influence = 65
+* Random owned province:
+** Limited to:
+*** is_territory_false = no
+*** The province is not the capital of the country
+*** yes is a city
+** add_base_production = 1
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NOBLES_DEFEATED_ROBBER_BARONS
+** influence = -10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHERS_DEFEATED_ROBBER_BARONS
+** influence = 10
+** Lasting 5475 days
+
+=== title = burghers_estate_events.3.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHERS_ADVANCE
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHERS_ADVANCE_20
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHERS_DECLINE
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: burghers_estate_events.3.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHERS_DECLINE
+** influence = -10
+** Lasting 5475 days
+
+=== title = burghers_estate_events.4.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* Any owned province:
+** The province is not overseas
+** has_seat_in_parliament_false = no
+** Any of the following:
+*** development = 10
+*** province_has_center_of_trade_of_level = 1
+** The province is not the capital of the country
+** is_territory_false = no
+** yes is a city
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHERS_ADVANCE
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.5:
+** Is not in 0 "Christian's religion group
+* Multiplies value by 1.2:
+** Any owned province:
+*** The province is not overseas
+*** The province is not the capital of the country
+*** has_seat_in_parliament_false = no
+*** Any of the following:
+**** development = 10
+**** province_has_center_of_trade_of_level = 1
+*** has_river_estuary_trigger = yes
+*** yes is a city
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not overseas
+**** has_seat_in_parliament_false = no
+**** Any of the following:
+***** development = 10
+***** province_has_center_of_trade_of_level = 1
+**** The province is not the capital of the country
+**** is_territory_false = no
+**** yes is a city
+*** save_event_target_as = growing_city
+
+'''Option: burghers_estate_events.4.a:'''
+
+* give_estate_land_share_medium:
+** estate = estate_burghers
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 15
+* event_target:growing_city:
+** Changes base tax by 2
+
+'''Option: burghers_estate_events.4.b:'''
+
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_CITY_PRIVILEGES_DENIED
+** influence = -10
+** Lasting 5475 days
+
+=== title = burghers_estate_events.5.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* estate_territory:
+** estate = estate_burghers
+** territory = 1
+* Any owned province:
+** Any of the following:
+*** The owner of the province:
+**** Has the republic government type
+*** development = 10
+*** province_trade_power = 5
+** The province is not the capital of the country
+** yes is a city
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_FREE_OF_MEDDLING
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_PRICE_MEDDLING
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 2.0:
+** Inflation is less than 5
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag bread_revolt_vs_burghers
+***** value_false = estate
+***** estate_false = estate_burghers
+**** Any owned province:
+***** Any of the following:
+****** The owner of the province:
+******* Has the republic government type
+****** development = 10
+****** province_trade_power = 5
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag bread_revolt_vs_burghers
+**** check_reducing_estate_revolt_size_more_trigger:
+***** FLAG = bread_revolt_vs_burghers
+*** Random owned province:
+**** Limited to:
+***** Any of the following:
+****** The owner of the province:
+******* Has the republic government type
+****** development = 10
+****** province_trade_power = 5
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag bread_revolt_vs_burghers
+**** Sets the province flag bread_revolt_vs_burghers
+
+'''Option: burghers_estate_events.5.a:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.2:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 65
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Has the province flag bread_revolt_vs_burghers
+*** Removes the province flag bread_revolt_vs_burghers
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -20
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_PRICE_MEDDLING
+** influence = -10
+** Lasting 5475 days
+
+'''Option: burghers_estate_events.5.b:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 2.0:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 65
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_FREE_OF_MEDDLING
+** influence = 10
+** Lasting 5475 days
+* Every owned province:
+** Limited to:
+*** Has the province flag bread_revolt_vs_burghers
+** Removes the province flag bread_revolt_vs_burghers
+** Spawns revolt of size 1 of 0 "Peasant rebels
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 15
+
+'''Option: burghers_estate_events.5.c:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** Has less than 0.2 years worth of income
+** Multiplies value by 2.0:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 65
+* Modifies treasury by -0.15 years worth of income
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_FREE_OF_MEDDLING
+** influence = 10
+** Lasting 5475 days
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 15
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Has the province flag bread_revolt_vs_burghers
+*** Removes the province flag bread_revolt_vs_burghers
+
+=== title = burghers_estate_events.6.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* estate_influence:
+** estate = estate_burghers
+** influence = 25
+* estate_influence:
+** estate = estate_church
+** influence = 25
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHER_AUTHORITY_ASSERTED
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHER_AUTHORITY_QUESTIONED
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: burghers_estate_events.6.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 65
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 65
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 15
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHER_AUTHORITY_ASSERTED
+** influence = 10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_BURGHER_AUTHORITY_ASSERTED
+** influence = -10
+** Lasting 5475 days
+
+'''Option: burghers_estate_events.6.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 65
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 65
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -15
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHER_AUTHORITY_QUESTIONED
+** influence = -10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_BURGHER_AUTHORITY_QUESTIONED
+** influence = 10
+** Lasting 5475 days
+
+=== title = burghers_estate_events.7.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* estate_influence:
+** estate = estate_burghers
+** influence = 70
+* Any owned province:
+** Any of the following:
+*** development = 15
+*** province_trade_power = 8
+** yes is a city
+** The province is not the capital of the country
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHER_RIGHTS_EXTENDED
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHER_RIGHTS_REFUSED
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag extended_burgher_privileges
+***** value_false = estate
+***** estate_false = estate_burghers
+**** Any owned province:
+***** Any of the following:
+****** development = 15
+****** province_trade_power = 8
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag extended_burgher_privileges
+*** Random owned province:
+**** Limited to:
+***** Any of the following:
+****** development = 15
+****** province_trade_power = 8
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag extended_burgher_privileges
+**** Sets the province flag extended_burgher_privileges
+
+'''Option: burghers_estate_events.7.a:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 65
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHER_RIGHTS_EXTENDED
+** influence = 10
+** Lasting 5475 days
+* Every owned province:
+** Limited to:
+*** Has the province flag extended_burgher_privileges
+** add_local_autonomy = 33
+** Removes the province flag extended_burgher_privileges
+
+'''Option: burghers_estate_events.7.b:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 85
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -20
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHER_RIGHTS_REFUSED
+** influence = -10
+** Lasting 5475 days
+
+=== title = burghers_estate_events.8.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* num_of_trade_embargos = 1
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHER_BYPASSING_EMBARGO
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHER_DENIED_BYPASS_OF_EMBARGO
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: burghers_estate_events.8.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 60
+* Adds the modifier "burgher_favorable_trade_laws" for 10 years:
+** Trade efficiency is at least 10%
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHER_BYPASSING_EMBARGO
+** influence = 10
+** Lasting 3650 days
+
+'''Option: burghers_estate_events.8.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 60
+* Adds the modifier "burgher_unfavorable_trade_laws" for 10 years:
+** Trade efficiency is at least -10%
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHER_DENIED_BYPASS_OF_EMBARGO
+** influence = -10
+** Lasting 3650 days
+
+=== title = burghers_estate_events.9.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* Diplomatic technology is at least 5
+* Has at least 8 provinces
+* estate_territory:
+** estate = estate_burghers
+** territory = 1
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BURGHER_PROTO_CAPITALISTS
+** No owned province:
+*** Has the province modifier "thankful_guilds"
+** No owned province:
+*** Has the province modifier "conflict_within_city"
+* Any owned province:
+** Any of the following:
+*** The owner of the province:
+**** Has the republic government type
+*** development = 10
+*** province_trade_power = 5
+** The province is not the capital of the country
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+**** The province is not the capital of the country
+*** Sets the province flag putting_out_system
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+**** The province is not the capital of the country
+**** Does not have the province flag putting_out_system
+**** The owner of the province:
+***** Has at least 12 provinces
+*** Sets the province flag putting_out_system
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+**** The province is not the capital of the country
+**** Does not have the province flag putting_out_system
+**** The owner of the province:
+***** Has at least 18 provinces
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the province flag putting_out_system
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+**** The province is not the capital of the country
+**** Does not have the province flag putting_out_system
+**** The owner of the province:
+***** Has at least 24 provinces
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the province flag putting_out_system
+
+'''Option: burghers_estate_events.9.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -15
+* Every owned province:
+** Limited to:
+*** Has the province flag putting_out_system
+** add_base_production = 1
+** Adds the modifier "conflict_within_city" until the end of the campaign:
+*** local_unrest = 8
+** Removes the province flag putting_out_system
+
+'''Option: burghers_estate_events.9.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BURGHER_PROTO_CAPITALISTS
+** influence = 10
+** Lasting 3650 days
+* Every owned province:
+** Limited to:
+*** Has the province flag putting_out_system
+** Adds the modifier "thankful_guilds" until the end of the campaign:
+*** local_unrest = -2
+*** +15% provincial tax income
+** Removes the province flag putting_out_system
+
+=== title = burghers_estate_events.10.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* estate_influence:
+** estate = estate_burghers
+** influence = 70
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_NEW_MEN
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BARRED_FROM_CAREERS
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: burghers_estate_events.10.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 60
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_NEW_MEN
+** influence = 10
+** Lasting 7300 days
+* Adds the modifier "new_men" for 10 years:
+** -15% advisor cost
+* If:
+** Limited to:
+*** has_estate = estate_nobles
+** add_estate_loyalty:
+*** estate = estate_nobles
+*** loyalty = -20
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_loyalty:
+*** estate = estate_church
+*** loyalty = -20
+* add_meritocracy_effect = yes
+
+'''Option: burghers_estate_events.10.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 85
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_BARRED_FROM_CAREERS
+** influence = -10
+** Lasting 7300 days
+* Adds the modifier "held_back_commoners" for 15 years:
+** -5% trade power
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -20
+* If:
+** Limited to:
+*** has_estate = estate_nobles
+** add_estate_loyalty:
+*** estate = estate_nobles
+*** loyalty = 15
+** Changes army tradition by -15
+** Changes navy tradition by -15
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_loyalty:
+*** estate = estate_church
+*** loyalty = 15
+** Changes administrative power stored by -75
+* reduce_meritocracy_effect = yes
+
+=== title = burghers_estate_events.11.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* estate_territory:
+** estate = estate_burghers
+** territory = 1
+* estate_influence:
+** estate = estate_burghers
+** influence = 60
+* estate_loyalty:
+** estate = estate_burghers
+** loyalty = 60
+** No active trade node:
+*** has_merchant = prev
+*** our country has the "" trade modifier
+* Any owned province:
+** Any of the following:
+*** The owner of the province:
+**** Has the republic government type
+*** development = 10
+*** province_trade_power = 5
+** The province is not the capital of the country
+** yes is a city
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** One of the following will happen:
+*** 65 relative chance:
+**** Sets the country flag growing_trade_influence
+*** 35 relative chance:
+**** Sets the country flag growing_cities
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: burghers_estate_events.11.a:'''
+
+* trigger_switch:
+** on_trigger = has_country_flag
+** growing_trade_influence:
+*** Random owned province:
+**** Limited to:
+***** Any of the following:
+****** The owner of the province:
+******* Has the republic government type
+****** development = 10
+****** province_trade_power = 5
+***** The province is not the capital of the country
+***** yes is a city
+**** Adds trade modifier:
+***** Affecting our country
+***** Lasting 5475 days
+***** Changing trade power by 15
+***** Named "STRONG_MERCHANTS"
+*** Removes the country flag growing_trade_influence
+** growing_cities:
+*** Random owned province:
+**** Limited to:
+***** Any of the following:
+****** The owner of the province:
+******* Has the republic government type
+****** development = 10
+****** province_trade_power = 5
+***** yes is a city
+**** add_base_production = 1
+*** Removes the country flag growing_cities
+
+=== title = burghers_estate_events.12.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_COMPENSATING_LOSSES
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_BAD_FORTUNES
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: burghers_estate_events.12.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 60
+* Modifies treasury by -0.5 years worth of income
+* Adds 100% mercantilism
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** influence = 10
+** desc = EST_VAL_COMPENSATING_LOSSES
+** Lasting 5475 days
+
+'''Option: burghers_estate_events.12.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** influence = -10
+** desc = EST_VAL_BAD_FORTUNES
+** Lasting 5475 days
+
+=== title = burghers_estate_events.13.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* estate_territory:
+** estate = estate_burghers
+** territory = 1
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_NOT_SUPPORTING_CITY_GROWTH
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_SUPPORTED_CITY_GROWTH
+* Any owned province:
+** Any of the following:
+*** The owner of the province:
+**** Has the republic government type
+*** development = 10
+*** province_trade_power = 5
+** yes is a city
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+**** yes is a city
+*** Sets the province flag urbanisation
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+**** Does not have the province flag urbanisation
+**** The owner of the province:
+***** Has at least 8 provinces
+**** yes is a city
+*** Sets the province flag urbanisation
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+**** Does not have the province flag urbanisation
+**** The owner of the province:
+***** Has at least 14 provinces
+**** yes is a city
+*** Sets the province flag urbanisation
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+**** Does not have the province flag urbanisation
+**** The owner of the province:
+***** Has at least 18 provinces
+**** yes is a city
+*** Sets the province flag urbanisation
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+**** Does not have the province flag urbanisation
+**** The owner of the province:
+***** Has at least 22 provinces
+**** yes is a city
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the province flag urbanisation
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+**** Does not have the province flag urbanisation
+**** The owner of the province:
+***** Has at least 28 provinces
+**** yes is a city
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the province flag urbanisation
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: burghers_estate_events.13.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 60
+* Modifies treasury by -0.25 years worth of income
+* Every owned province:
+** Limited to:
+*** Has the province flag urbanisation
+** Changes base tax by 1
+** Removes the province flag urbanisation
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** influence = 10
+** desc = EST_VAL_SUPPORTED_CITY_GROWTH
+** Lasting 7300 days
+
+'''Option: burghers_estate_events.13.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 60
+* Every owned province:
+** Limited to:
+*** Has the province flag urbanisation
+** Adds the modifier "unsanitary_suburbs" until the end of the campaign:
+*** local_development_cost = 0.15
+*** local_unrest = 4
+** Removes the province flag urbanisation
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** influence = -10
+* desc_false = EST_VAL_NOT_SUPPORTING_CITY_GROWTH
+* duration_false = 7300
+
+=== title = burghers_estate_events.14.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* estate_influence:
+** estate = estate_burghers
+** influence = 70
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_REFUSED_CHANGE_IN_TRADE_POLICY
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_CHANGE_IN_TRADE_POLICY
+* Mercantilism is at least 1500%
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 2.0:
+** Diplomatic technology is at least 20
+
+'''Option: burghers_estate_events.14.a:'''
+
+* AI chance:
+** Base chance of 25
+* Adds -300% mercantilism
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_CHANGE_IN_TRADE_POLICY
+** influence = 10
+** Lasting 5475 days
+
+'''Option: burghers_estate_events.14.b:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.25:
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 45
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -20
+* add_estate_influence_modifier:
+** estate = estate_burghers
+** desc = EST_VAL_REFUSED_CHANGE_IN_TRADE_POLICY
+** influence = -5
+** Lasting 5475 days
+
+=== title = burghers_estate_events.15.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* estate_loyalty:
+** estate_false = estate_burghers
+** loyalty_false = 30
+* estate_territory:
+** estate = estate_burghers
+** territory = 10
+* Any owned province:
+** Any of the following:
+*** The owner of the province:
+**** Has the republic government type
+*** development = 10
+*** province_trade_power = 5
+** The province is not the capital of the country
+** yes is a city
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag city_protests
+***** value_false = estate
+***** estate_false = estate_burghers
+**** Any owned province:
+***** Any of the following:
+****** The owner of the province:
+******* Has the republic government type
+****** development = 10
+****** province_trade_power = 5
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag city_protests
+**** check_reducing_estate_revolt_size_trigger:
+***** FLAG = city_protests
+*** Random owned province:
+**** Limited to:
+***** Any of the following:
+****** The owner of the province:
+******* Has the republic government type
+****** development = 10
+****** province_trade_power = 5
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag city_protests
+**** Sets the province flag city_protests
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 2.0:
+** estate_loyalty:
+*** estate_false = estate_burghers
+*** loyalty_false = 15
+
+'''Option: burghers_estate_events.15.a:'''
+
+* AI chance:
+** Base chance of 0
+* Every owned province:
+** Limited to:
+*** Has the province flag city_protests
+** Removes the province flag city_protests
+** Spawns revolt of size 1 of 0 "Particularist rebels
+
+'''Option: burghers_estate_events.15.b:'''
+
+* AI chance:
+** Base chance of 1
+* Every owned province:
+** Limited to:
+*** Has the province flag city_protests
+** Removes the province flag city_protests
+** add_local_autonomy = 33
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 15
+
+=== title = burghers_estate_events.16.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: burghers_estate_events.16.a:'''
+
+
+=== title = burghers_estate_events.17.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_burghers
+* has_estate_privilege = estate_burghers_tropical_nation
+* Any owned province:
+** has_climate = 0 "Tropical
+** Does not have the province modifier "estate_burghers_tropical_mod"
+* Cannot fire randomly
+
+'''Option: burghers_estate_events.17.a:'''
+
+* Every owned province:
+** Limited to:
+*** has_climate = 0 "Tropical
+*** Does not have the province modifier "estate_burghers_tropical_mod"
+** Adds the modifier "estate_burghers_tropical_mod" until the end of the campaign:
+*** +10 colonial growth
+*** local_development_cost = -0.05

@@ -1,0 +1,204 @@
+******** Trigger:
+********* Has the DLC Mandate of Heaven
+********* is_emperor_of_china = yes
+********* meritocracy_false = 80
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: meritocracy_events.1.a:
+********* add_meritocracy_large_effect = yes
+********* add_corruption = 1
+******** Option: meritocracy_events.1.b:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is meritocracy_events.2
+******** title = meritocracy_events.2.t
+******** desc = meritocracy_events.2.d
+******** picture = IMPERIAL_EXAMINATION_eventPicture
+******** Trigger:
+********* Has the DLC Mandate of Heaven
+********* is_emperor_of_china = yes
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: meritocracy_events.2.a:
+********* add_meritocracy_effect = yes
+******* Gets the country event:
+******** ID is meritocracy_events.3
+******** title = meritocracy_events.3.t
+******** desc = meritocracy_events.3.d
+******** picture = MERITOCRACY_eventPicture
+******** Trigger:
+********* Has the DLC Mandate of Heaven
+********* is_emperor_of_china = yes
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ meritocracy_false = 50
+*********** One of the following will happen:
+************ 18 relative chance:
+************* Sets the country flag corrupt_grand_secretary
+************ 18 relative chance:
+************* Sets the country flag incompetent_grand_secretary
+************ 18 relative chance:
+************* Sets the country flag plotting_grand_secretary
+************ 18 relative chance:
+************* Sets the country flag impopular_grand_secretary
+************ 6 relative chance:
+************* Sets the country flag efficient_grand_secretary
+************ 6 relative chance:
+************* Sets the country flag incorruptible_grand_secretary
+************ 6 relative chance:
+************* Sets the country flag scholarly_grand_secretary
+************ 6 relative chance:
+************* Sets the country flag loyal_grand_secretary
+********** If:
+*********** Limited to:
+************ meritocracy = 50
+************ meritocracy_false = 80
+*********** One of the following will happen:
+************ 12 relative chance:
+************* Sets the country flag corrupt_grand_secretary
+************ 12 relative chance:
+************* Sets the country flag incompetent_grand_secretary
+************ 12 relative chance:
+************* Sets the country flag plotting_grand_secretary
+************ 12 relative chance:
+************* Sets the country flag impopular_grand_secretary
+************ 12 relative chance:
+************* Sets the country flag efficient_grand_secretary
+************ 12 relative chance:
+************* Sets the country flag incorruptible_grand_secretary
+************ 12 relative chance:
+************* Sets the country flag scholarly_grand_secretary
+************ 12 relative chance:
+************* Sets the country flag loyal_grand_secretary
+********** If:
+*********** Limited to:
+************ meritocracy = 80
+*********** One of the following will happen:
+************ 6 relative chance:
+************* Sets the country flag corrupt_grand_secretary
+************ 6 relative chance:
+************* Sets the country flag incompetent_grand_secretary
+************ 6 relative chance:
+************* Sets the country flag plotting_grand_secretary
+************ 6 relative chance:
+************* Sets the country flag impopular_grand_secretary
+************ 18 relative chance:
+************* Sets the country flag efficient_grand_secretary
+************ 18 relative chance:
+************* Sets the country flag incorruptible_grand_secretary
+************ 18 relative chance:
+************* Sets the country flag scholarly_grand_secretary
+************ 18 relative chance:
+************* Sets the country flag loyal_grand_secretary
+******** Option: meritocracy_events.3.a:
+********* Trigger:
+********** Has the country flag corrupt_grand_secretary
+********* Removes the country flag corrupt_grand_secretary
+********* add_corruption = 1
+******** Option: meritocracy_events.3.b:
+********* Trigger:
+********** Has the country flag incompetent_grand_secretary
+********* Removes the country flag incompetent_grand_secretary
+********* reduce_meritocracy_effect = yes
+******** Option: meritocracy_events.3.c:
+********* Trigger:
+********** Has the country flag plotting_grand_secretary
+********* Removes the country flag plotting_grand_secretary
+********* Changes diplomatic power stored by -50
+******** Option: meritocracy_events.3.dd:
+********* Trigger:
+********** Has the country flag impopular_grand_secretary
+********* Removes the country flag impopular_grand_secretary
+********* reduce_mandate_effect = yes
+******** Option: meritocracy_events.3.e:
+********* Trigger:
+********** Has the country flag efficient_grand_secretary
+********* Removes the country flag efficient_grand_secretary
+********* add_meritocracy_effect = yes
+******** Option: meritocracy_events.3.f:
+********* Trigger:
+********** Has the country flag incorruptible_grand_secretary
+********* Removes the country flag incorruptible_grand_secretary
+********* add_corruption = -1
+******** Option: meritocracy_events.3.g:
+********* Trigger:
+********** Has the country flag scholarly_grand_secretary
+********* Removes the country flag scholarly_grand_secretary
+********* Changes administrative power stored by 10
+********* Changes military power stored by 10
+********* Changes diplomatic power stored by 10
+******** Option: meritocracy_events.3.h:
+********* Trigger:
+********** Has the country flag loyal_grand_secretary
+********* Removes the country flag loyal_grand_secretary
+********* add_mandate_effect = yes
+******* Gets the country event:
+******** ID is meritocracy_events.4
+******** title = meritocracy_events.4.t
+******** desc = meritocracy_events.4.d
+******** picture = IMPERIAL_EXAMINATION_eventPicture
+******** Trigger:
+********* Has the DLC Mandate of Heaven
+********* is_emperor_of_china = yes
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: meritocracy_events.4.a:
+********* reduce_meritocracy_effect = yes
+******* Gets the country event:
+******** ID is meritocracy_events.5
+******** title = meritocracy_events.5.t
+******** desc = meritocracy_events.5.d
+******** picture = MERITOCRACY_eventPicture
+******** Trigger:
+********* Has the DLC Mandate of Heaven
+********* is_emperor_of_china = yes
+********* corruption = 1
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** One of the following will happen:
+*********** 25 relative chance:
+************ Sets the country flag trader_bribe
+*********** 25 relative chance:
+************ Sets the country flag diplomat_bribe
+*********** 25 relative chance:
+************ Sets the country flag treasurer_bribe
+*********** 25 relative chance:
+************ Sets the country flag master_of_mint_bribe
+******** Option: meritocracy_events.5.a:
+********* reduce_meritocracy_effect = yes
+********* add_corruption = -1
+******** Option: meritocracy_events.5.b:
+********* reduce_meritocracy_effect = yes
+********* trigger_switch:
+********** on_trigger = has_country_flag
+********** trader_bribe:
+*********** Creates an advisor of the 0 "Trader type:
+************ Follows the 0 "Confucian religion
+************ discount = yes
+*********** Removes the country flag trader_bribe
+********** diplomat_bribe:
+*********** Creates an advisor of the 0 "Diplomat type:
+************ Follows the 0 "Confucian religion
+************ discount = yes
+*********** Removes the country flag diplomat_bribe
+********** treasurer_bribe:
+*********** Creates an advisor of the 0 "Treasurer type:
+************ Follows the 0 "Confucian religion
+************ discount = yes
+*********** Removes the country flag treasurer_bribe
+********** master_of_mint_bribe:
+*********** Creates an advisor of the 0 "Master of Mint type:
+************ Follows the 0 "Confucian religion
+************ discount = yes
+*********** Removes the country flag master_of_mint_bribe

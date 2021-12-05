@@ -1,0 +1,3544 @@
+
+=== 0 "Tariffs Too High ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any subject country:
+** is_colonial_nation_of = our country
+** tariff_value = 0.25
+** Any of the following:
+*** Does not have the country flag 0 "Increased Tariffs
+*** Has had the country flag "0 "Increased Tariffs" for at least 3650 days
+** Any of the following:
+*** Does not have the country flag 0 "Reduced Tariffs
+*** Has had the country flag "0 "Reduced Tariffs" for at least 3650 days
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** tariff_value = 0.5
+** Any of the following:
+*** Does not have the country flag 0 "Increased Tariffs
+*** Has had the country flag "0 "Increased Tariffs" for at least 3650 days
+** Any of the following:
+*** Does not have the country flag 0 "Reduced Tariffs
+*** Has had the country flag "0 "Reduced Tariffs" for at least 3650 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** tariff_value = 0.75
+** Any of the following:
+*** Does not have the country flag 0 "Increased Tariffs
+*** Has had the country flag "0 "Increased Tariffs" for at least 3650 days
+** Any of the following:
+*** Does not have the country flag 0 "Reduced Tariffs
+*** Has had the country flag "0 "Reduced Tariffs" for at least 3650 days
+* Multiplies value by 1.1:
+** Year is at least 1650
+* Multiplies value by 1.1:
+** Year is at least 1700
+* Multiplies value by 1.1:
+** Year is at least 1750
+* Multiplies value by 1.1:
+** Year is at least 1800
+
+'''Option: 0 "Better show them who rule the colonies!:'''
+
+* AI chance:
+** Base chance of 50
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+** Tooltip:
+*** Adds 10 liberty desire
+*** add_tariff_value = 0.10
+** Hidden effect:
+*** Sets the country flag 0 "Increased Tariffs
+*** Gets the country event:
+**** ID is colonial_nation.2
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Accept to lower the tariffs:'''
+
+* AI chance:
+** Base chance of 50
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+** Tooltip:
+*** Adds -10 liberty desire
+*** add_tariff_value = -0.10
+** Hidden effect:
+*** Sets the country flag 0 "Reduced Tariffs
+*** Gets the country event:
+**** ID is colonial_nation.3
+**** Base mean time to happen of 1 days
+
+=== 0 "Increased Tariffs ===
+* Cannot fire randomly
+
+'''Option: 0 "Push us far enough...:'''
+
+* Adds 10 liberty desire
+* add_tariff_value = 0.1
+
+=== 0 "Decreased Tariffs ===
+* Cannot fire randomly
+
+'''Option: 0 "Good news!:'''
+
+* Adds -10 liberty desire
+* add_tariff_value = -0.1
+
+=== 0 "Freedom Fighter or Rebel? ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Liberty desire is at least 50
+* Does not have the country flag colonial_nation_freedom_fighter
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Liberty desire is at least 60
+* Multiplies value by 1.25:
+** Liberty desire is at least 70
+* Multiplies value by 1.25:
+** Liberty desire is at least 80
+* Multiplies value by 1.25:
+** Liberty desire is at least 90
+* Multiplies value by 1.25:
+** Year is at least 1650
+* Multiplies value by 1.25:
+** Year is at least 1700
+* Multiplies value by 1.25:
+** Year is at least 1750
+* Multiplies value by 1.25:
+** Year is at least 1800
+
+'''Immediate effects:'''
+
+* Sets the country flag colonial_nation_freedom_fighter
+
+'''Option: 0 "Promote him to general!:'''
+
+* AI chance:
+** Base chance of 75
+* Creates a general at  extra army tradition
+** tradition = 100
+* Adds 1 liberty desire
+* Hidden effect:
+** Colonial parent:
+*** Gets the country event:
+**** ID is colonial_nation.5
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "He must be executed!:'''
+
+* AI chance:
+** Base chance of 25
+* Adds 10 liberty desire
+* Hidden effect:
+** Colonial parent:
+*** Gets the country event:
+**** ID is colonial_nation.6
+**** Base mean time to happen of 1 days
+
+=== 0 "Trouble in [From.GetName] ===
+* Cannot fire randomly
+
+'''Option: 0 "How dare they?!:'''
+
+* Tooltip:
+** Our country:
+*** Adds 1 liberty desire
+
+=== 0 "Colonial Rebel Executed ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps a too swift solution...:'''
+
+* Tooltip:
+** Our country:
+*** Adds 10 liberty desire
+
+=== 0 "Colonial Wars ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any subject country:
+** is_colonial_nation_of = our country
+** cb_on_primitives = yes
+** Does not have the country modifier "the_proclamation_of_year_timer"
+** Any of the following:
+*** Does not have the country flag 0 "Restricted Colonial Wars
+*** Has had the country flag "0 "Restricted Colonial Wars" for at least 10950 days
+** Any neighbor country:
+*** primitives = yes
+*** Any of the following:
+**** Is allied with our country
+**** Has an opinion of at least 100 with our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any country:
+*** primitives = yes
+*** Is allied with our country
+
+'''Immediate effects:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** cb_on_primitives = yes
+*** Does not have the country modifier "the_proclamation_of_year_timer"
+*** Any of the following:
+**** Does not have the country flag 0 "Restricted Colonial Wars
+**** Has had the country flag "0 "Restricted Colonial Wars" for at least 10950 days
+*** Any neighbor country:
+**** primitives = yes
+**** Any of the following:
+***** Is allied with our country
+***** Has an opinion of at least 100 with our country
+** Sets the country flag the_proclamation_of_year_country
+
+'''Option: 0 "Keep them on a tight leash!:'''
+
+* AI chance:
+** Base chance of 25
+* Random country:
+** Limited to:
+*** Has the country flag the_proclamation_of_year_country
+*** is_colonial_nation_of = our country
+*** cb_on_primitives = yes
+*** Does not have the country modifier "the_proclamation_of_year_timer"
+*** Any of the following:
+**** Does not have the country flag 0 "Restricted Colonial Wars
+**** Has had the country flag "0 "Restricted Colonial Wars" for at least 10950 days
+*** Any neighbor country:
+**** primitives = yes
+**** Any of the following:
+***** Is allied with our country
+***** Has an opinion of at least 100 with our country
+** Tooltip:
+*** Adds 25 liberty desire
+*** Adds the modifier "0 "Proclamation of Peace" for 10 years:
+**** fabricate_claims_cost = 0.35
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.11
+**** Base mean time to happen of 1 days
+* Every country:
+** Limited to:
+*** primitives = yes
+*** Any of the following:
+**** Is allied with our country
+**** Has an opinion of at least 100 with our country
+*** Any neighbor country:
+**** Has the country flag the_proclamation_of_year_country
+**** is_colonial_nation_of = our country
+**** cb_on_primitives = yes
+**** Does not have the country modifier "the_proclamation_of_year_timer"
+**** Any of the following:
+***** Does not have the country flag 0 "Restricted Colonial Wars
+***** Has had the country flag "0 "Restricted Colonial Wars" for at least 10950 days
+** Adds the opinion modifier "0 "Restricted Colonial Wars" towards our country
+
+'''Option: 0 "It is not in our interest:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0:
+*** Any subject country:
+**** is_colonial_nation_of = our country
+**** cb_on_primitives = yes
+**** Does not have the country modifier "the_proclamation_of_year_timer"
+**** Any of the following:
+***** Does not have the country flag 0 "Restricted Colonial Wars
+***** Has had the country flag "0 "Restricted Colonial Wars" for at least 10950 days
+**** Any neighbor country:
+***** primitives = yes
+***** Is allied with our country
+* Every country:
+** Limited to:
+*** primitives = yes
+*** Any of the following:
+**** Is allied with our country
+**** Has an opinion of at least 100 with our country
+*** Any neighbor country:
+**** Has the country flag the_proclamation_of_year_country
+**** is_colonial_nation_of = our country
+**** cb_on_primitives = yes
+**** Does not have the country modifier "the_proclamation_of_year_timer"
+**** Any of the following:
+***** Does not have the country flag 0 "Restricted Colonial Wars
+***** Has had the country flag "0 "Restricted Colonial Wars" for at least 10950 days
+** Adds the opinion modifier "0 "Non-restricted Colonial Wars" towards our country
+* Hidden effect:
+** Random country:
+*** Limited to:
+**** Has the country flag the_proclamation_of_year_country
+**** is_colonial_nation_of = our country
+**** cb_on_primitives = yes
+**** Does not have the country modifier "the_proclamation_of_year_timer"
+**** Any of the following:
+***** Does not have the country flag 0 "Restricted Colonial Wars
+***** Has had the country flag "0 "Restricted Colonial Wars" for at least 10950 days
+**** Any neighbor country:
+***** primitives = yes
+***** Any of the following:
+****** Is allied with our country
+****** Has an opinion of at least 100 with our country
+*** Removes the country flag the_proclamation_of_year_country
+
+=== 0 "The Proclamation of [GetYear] ===
+* Cannot fire randomly
+
+'''Option: 0 "This is an outrage!:'''
+
+* Adds 25 liberty desire
+* Adds the modifier "0 "Proclamation of Peace" for 10 years:
+** fabricate_claims_cost = 0.35
+* Removes the country flag the_proclamation_of_year_country
+* Removes the country flag 0 "Restricted Colonial Wars
+* Sets the country flag 0 "Restricted Colonial Wars
+* Adds the modifier "the_proclamation_of_year_timer" for 10 years:
+
+=== 0 "Colonial Expansion ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any of the following:
+*** Does not have the country flag 0 "Restricted Colonial Expansion
+*** Has had the country flag "0 "Restricted Colonial Expansion" for at least 10950 days
+** Any owned province:
+*** The province is a colony
+** Any neighbor country:
+*** primitives = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any of the following:
+**** Does not have the country flag 0 "Restricted Colonial Expansion
+**** Has had the country flag "0 "Restricted Colonial Expansion" for at least 10950 days
+*** Any owned province:
+**** The province is a colony
+*** Any neighbor country:
+**** primitives = yes
+** save_event_target_as = restricted_colonial_expansion_country
+
+'''Option: 0 "Restrict it!:'''
+
+* AI chance:
+** Base chance of 75
+* event_target:restricted_colonial_expansion_country:
+** Tooltip:
+*** Adds 25 liberty desire
+*** Adds the modifier "0 "Restricted Colonial Expansion" for 5 years:
+**** -10 global settler increase
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.13
+**** Base mean time to happen of 1 days
+** Every neighbor country:
+*** Limited to:
+**** primitives = yes
+*** Adds the opinion modifier "0 "Restricted Colonial Expansion" towards our country
+
+'''Option: 0 "Let them expand freely:'''
+
+* AI chance:
+** Base chance of 25
+* event_target:restricted_colonial_expansion_country:
+** Every neighbor country:
+*** Limited to:
+**** primitives = yes
+*** Adds the opinion modifier "0 "Non-restricted Colonial Expansion" towards our country
+
+=== 0 "Restricted Colonial Expansion ===
+* Cannot fire randomly
+
+'''Option: 0 "Intolerable!:'''
+
+* Adds 25 liberty desire
+* Sets the country flag 0 "Restricted Colonial Expansion
+* Adds the modifier "0 "Restricted Colonial Expansion" for 5 years:
+** -10 global settler increase
+
+=== 0 "The Burden of War ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any of the following:
+*** Does not have the country flag the_burden_of_war
+*** Has had the country flag "the_burden_of_war" for at least 7300 days
+** Any neighbor country:
+*** Has a truce with our country
+* 4 war exhaustion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Let the colonies pay!:'''
+
+* AI chance:
+** Base chance of 50
+* Changes war exhaustion by -2
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any of the following:
+**** Does not have the country flag the_burden_of_war
+**** Has had the country flag "the_burden_of_war" for at least 7300 days
+*** Any neighbor country:
+**** Has a truce with our country
+** Tooltip:
+*** Adds 10 liberty desire
+*** Changes administrative power stored by -25
+** Hidden effect:
+*** Sets the country flag the_burden_of_war
+*** Gets the country event:
+**** ID is colonial_nation.15
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "We will shoulder the burden:'''
+
+* AI chance:
+** Base chance of 50
+* Changes administrative power stored by -50
+
+=== 0 "The Burden of War ===
+* Cannot fire randomly
+
+'''Option: 0 "Intolerable!:'''
+
+* Adds 10 liberty desire
+* Changes administrative power stored by -25
+
+=== 0 "Spread the Revolution ===
+
+'''Trigger:'''
+
+* Is a former colonial nation
+* is_free_or_tributary_trigger = yes
+* Is not at war
+* Manpower are at least 75% of maximum
+* Any neighbor country:
+** Is a colonial nation
+** Liberty desire is at least 50
+** Is not at war
+** Does not have the country flag received_revolutionary_support
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 2000 months
+* Multiplies value by 0.75:
+** Year is at least 1650
+* Multiplies value by 0.75:
+** Year is at least 1700
+* Multiplies value by 0.75:
+** Year is at least 1750
+* Multiplies value by 0.75:
+** Year is at least 1800
+* Multiplies value by 0.75:
+** 0 "Venezuela does not exist
+* Multiplies value by 0.75:
+** 1 "United Central America does not exist
+* Multiplies value by 0.75:
+** 0 "Quebec does not exist
+* Multiplies value by 0.75:
+** 0 "Peru does not exist
+* Multiplies value by 0.75:
+** 0 "Paraguay does not exist
+* Multiplies value by 0.75:
+** 0 "Mexico does not exist
+* Multiplies value by 0.75:
+** 0 "Louisiana does not exist
+* Multiplies value by 0.75:
+** 0 "La Plata does not exist
+* Multiplies value by 0.75:
+** 0 "Haiti does not exist
+* Multiplies value by 0.75:
+** 0 "Colombia does not exist
+* Multiplies value by 0.75:
+** 0 "Chile does not exist
+* Multiplies value by 0.75:
+** 0 "Canada does not exist
+* Multiplies value by 0.75:
+** 0 "Brazil does not exist
+* Multiplies value by 0.75:
+** 1 "United States does not exist
+
+'''Option: 0 "Viva la revolución!:'''
+
+* AI chance:
+** Base chance of 100
+* Changes national manpower reserves by -2 years worth
+* Random neighbor country:
+** Limited to:
+*** Is a colonial nation
+*** Liberty desire is at least 50
+*** Is not at war
+*** Does not have the country flag received_revolutionary_support
+** Tooltip:
+*** Changes national manpower reserves by 2 years worth
+*** If:
+**** Limited to:
+***** ROOT:
+****** 25 army tradition
+****** Less than 50 army tradition
+**** Changes army tradition by 5
+*** If:
+**** Limited to:
+***** ROOT:
+****** 50 army tradition
+****** Less than 75 army tradition
+**** Changes army tradition by 10
+*** If:
+**** Limited to:
+***** ROOT:
+****** 75 army tradition
+**** Changes army tradition by 15
+*** Adds the opinion modifier "0 "Supported the Revolution" towards our country
+** Sets the country flag received_revolutionary_support
+** Gets the country event:
+*** ID is colonial_nation.76
+*** Base mean time to happen of 1 tooltip days
+
+'''Option: 0 "Don't upset the balance:'''
+
+* AI chance:
+** Base chance of 0
+* Changes prestige by -10
+
+=== 0 "The Domino Effect ===
+* Cannot fire randomly
+
+'''Option: 0 "Embrace these ideas and their help!:'''
+
+* AI chance:
+** Base chance of 100
+* Adds 10 liberty desire
+* Changes national manpower reserves by 2 years worth
+* If:
+** Limited to:
+*** Our country:
+**** 25 army tradition
+**** Less than 50 army tradition
+** Changes army tradition by 5
+* If:
+** Limited to:
+*** Our country:
+**** 50 army tradition
+**** Less than 75 army tradition
+** Changes army tradition by 10
+* If:
+** Limited to:
+*** Our country:
+**** 75 army tradition
+** Changes army tradition by 15
+* Adds the opinion modifier "0 "Supported the Revolution" towards our country
+
+'''Option: 0 "We will remain loyal:'''
+
+* AI chance:
+** Base chance of 0
+* Adds -5 liberty desire
+
+=== 0 "Revolutionary Spirit ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Liberty desire is at least 75
+* Is not at war
+* Does not have the country flag 0 "Revolutionary Spirit
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Year is at least 1650
+* Multiplies value by 1.25:
+** Year is at least 1700
+* Multiplies value by 1.25:
+** Year is at least 1750
+* Multiplies value by 1.25:
+** Year is at least 1800
+
+'''Immediate effects:'''
+
+* Sets the country flag 0 "Revolutionary Spirit
+
+'''Option: 0 "Expand the army!:'''
+
+* AI chance:
+** Base chance of 100
+* Adds 10 liberty desire
+* Adds the modifier "0 "Revolutionary Spirit" for 25 years:
+** +25% land forcelimit
+
+'''Option: 0 "Reject these troublemakers:'''
+
+* AI chance:
+** Base chance of 0
+* Changes stability by -1
+
+=== 0 "New Government! ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_free_or_tributary_trigger = yes
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Removes the country modifier "0 "Colonial Reforms"
+** Removes the country modifier "0 "Jesuits Expelled"
+** Removes the country modifier "0 "Colonial Policies: Las Casas"
+** Removes the country modifier "0 "Colonial Policies: Sepúlveda"
+** Removes the country modifier "0 "Laws of Burgos"
+
+'''Option: 0 "We need a Monarchy!:'''
+
+* AI chance:
+** Base chance of 40
+** Multiplies value by 2:
+*** Colonial parent:
+**** Has the monarchy government type
+* Changes government type to monarchy
+* Kills the ruler of the country
+
+'''Option: 0 "We must be a Republic!:'''
+
+* AI chance:
+** Base chance of 40
+** Multiplies value by 2:
+*** Colonial parent:
+**** Has the republic government type
+* remove_government_reform = 0 "Colonial Government
+* Kills the ruler of the country
+
+=== 0 "Treaty of [Root.Capital.GetCapitalName] ===
+* Cannot fire randomly
+
+'''Option: 0 "Off with [From.Monarch.GetHerHis] head!:'''
+
+* Our country:
+** Tooltip:
+*** If:
+**** Limited to:
+***** Does not have the republic government type
+**** Changes government type to republic
+*** add_government_reform = 0 "Colonial Government
+*** Kills the ruler of the country
+*** Adds 10 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.92
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Show leniency:'''
+
+* Changes prestige by -10
+* Our country:
+** Tooltip:
+*** add_government_reform = 0 "Colonial Government
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.93
+**** Base mean time to happen of 1 days
+
+=== 0 "Independence War Fails ===
+* Cannot fire randomly
+
+'''Option: 0 "We will bide our time...:'''
+
+* If:
+** Limited to:
+*** Does not have the republic government type
+** Changes government type to republic
+* add_government_reform = 0 "Colonial Government
+* Kills the ruler of the country
+* Adds 10 liberty desire
+* Changes administrative power stored by 25
+* Changes diplomatic power stored by 25
+* Changes military power stored by 25
+
+=== 0 "Independence War Fails ===
+* Cannot fire randomly
+
+'''Option: 0 "I guess we should be thankful...:'''
+
+* If:
+** Limited to:
+*** Does not have the republic government type
+** Changes government type to republic
+* add_government_reform = 0 "Colonial Government
+
+=== 0 "Tariffs on Grain ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Grain
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Grain
+** Has had the country flag "0 "Tariffs on Grain" for at least 7300 days
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing grain
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing grain
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing grain
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Grain
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.101
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Grain
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Grain
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Grain ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the grain into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Wine ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Wine
+** Has had the country flag "0 "Tariffs on Wine" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Wine
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing wine
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing wine
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing wine
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Wine
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.103
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Wine
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Wine
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Wine ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the wine into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Wool ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Wool
+** Has had the country flag "0 "Tariffs on Wool" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Wool
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing wool
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing wool
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing wool
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Wool
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.105
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Wool
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Wool
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Wool ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the wool into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Cloth ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Cloth
+** Has had the country flag "0 "Tariffs on Cloth" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Cloth
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing cloth
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing cloth
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing cloth
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Cloth
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.107
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Cloth
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Cloth
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Cloth ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the cloth into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Fish ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Fish
+** Has had the country flag "0 "Tariffs on Fish" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Fish
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing fish
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing fish
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing fish
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Fish
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.109
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Fish
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Fish
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Fish ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the fish into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Fur ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Fur
+** Has had the country flag "0 "Tariffs on Fur" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Fur
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing fur
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing fur
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing fur
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Fur
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.111
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Fur
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Fur
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Fur ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the fur into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Salt ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Salt
+** Has had the country flag "0 "Tariffs on Salt" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Salt
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing salt
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing salt
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing salt
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Salt
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.113
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Salt
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Salt
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Salt ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the salt into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Naval Supplies ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Naval Supplies
+** Has had the country flag "0 "Tariffs on Naval Supplies" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Naval Supplies
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing naval supplies
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing naval supplies
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing naval supplies
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Naval Supplies
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.115
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Naval Supplies
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Naval Supplies
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Naval Supplies ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the naval supplies into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Copper ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Copper
+** Has had the country flag "0 "Tariffs on Copper" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Copper
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing copper
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing copper
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing copper
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Copper
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.117
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Copper
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Copper
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Copper ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the copper into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Iron ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Iron
+** Has had the country flag "0 "Tariffs on Iron" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Iron
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing iron
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing iron
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing iron
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Iron
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.119
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Iron
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Iron
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Iron ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the iron into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Ivory ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Ivory
+** Has had the country flag "0 "Tariffs on Ivory" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Ivory
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing ivory
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing ivory
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing ivory
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Ivory
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.121
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Ivory
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Ivory
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Ivory ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the ivory into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Tea ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Tea
+** Has had the country flag "0 "Tariffs on Tea" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Tea
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing tea
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing tea
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing tea
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Tea
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.123
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Tea
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Tea
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Tea ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should have a tea party...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Chinaware ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Chinaware
+** Has had the country flag "0 "Tariffs on Chinaware" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Chinaware
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing Chinaware
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing Chinaware
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing Chinaware
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Chinaware
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.125
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Chinaware
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Chinaware
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Chinaware ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the chinaware into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Spices ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Spices
+** Has had the country flag "0 "Tariffs on Spices" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Spices
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing spices
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing spices
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing spices
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Spices
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.127
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Spices
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Spices
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Spices ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the spices into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Coffee ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Coffee
+** Has had the country flag "0 "Tariffs on Coffee" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Coffee
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing coffee
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing coffee
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing coffee
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Coffee
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.129
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Coffee
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Coffee ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the coffee into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Cotton ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Cotton
+** Has had the country flag "0 "Tariffs on Cotton" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Cotton
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing cotton
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing cotton
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing cotton
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Cotton
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.131
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Cotton
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Cotton
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Cotton ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the cotton into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Sugar ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Sugar
+** Has had the country flag "0 "Tariffs on Sugar" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Sugar
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing sugar
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing sugar
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing sugar
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Sugar
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.133
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Sugar
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Sugar
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Sugar ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the sugar into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Tobacco ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Tobacco
+** Has had the country flag "0 "Tariffs on Tobacco" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Tobacco
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 3 provinces producing tobacco
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 5 provinces producing tobacco
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** Has at least 7 provinces producing tobacco
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Tobacco
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.135
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Tobacco
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Tobacco
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Tobacco ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the tobacco into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Tariffs on Cocoa ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country flag 0 "Tariffs on Cocoa
+** Has had the country flag "0 "Tariffs on Cocoa" for at least 7300 days
+* Any subject country:
+** is_colonial_nation_of = our country
+** Any owned province:
+*** Produces 0 "Cocoa
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** cocoa = 3
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** cocoa = 5
+* Multiplies value by 1.25:
+** Any subject country:
+*** is_colonial_nation_of = our country
+*** cocoa = 7
+
+'''Option: 0 "Tax it!:'''
+
+* Random country:
+** Limited to:
+*** is_colonial_nation_of = our country
+*** Any owned province:
+**** Produces 0 "Cocoa
+** Tooltip:
+*** add_tariff_value = 0.05
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.137
+**** Base mean time to happen of 1 days
+* Sets the country flag 0 "Tariffs on Cocoa
+
+'''Option: 0 "Better leave it be:'''
+
+* Sets the country flag 0 "Tariffs on Cocoa
+* One of the following will happen:
+** 33 relative chance:
+*** Changes administrative power stored by 10
+** 33 relative chance:
+*** Changes diplomatic power stored by 10
+** 33 relative chance:
+*** Changes military power stored by 10
+
+=== 0 "Tariffs on Cocoa ===
+* Cannot fire randomly
+
+'''Option: 0 "Perhaps we should throw the cocoa into the sea instead...:'''
+
+* add_tariff_value = 0.05
+
+=== 0 "Smuggling of Grain ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Grain
+* Does not have the country modifier "0 "Smuggling of Grain"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Grain
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing grain
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing grain
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing grain
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.141
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Grain" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Grain ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Grain
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Wine ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Wine
+* Does not have the country modifier "0 "Smuggling of Wine"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Wine
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing wine
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing wine
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing wine
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.143
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Wine" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Wine ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Wine
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Wool ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Wool
+* Does not have the country modifier "0 "Smuggling of Wool"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Wool
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing wool
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing wool
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing wool
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.145
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Wool" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Wool ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Wool
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Cloth ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Cloth
+* Does not have the country modifier "0 "Smuggling of Cloth"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Cloth
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing cloth
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing cloth
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing cloth
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.147
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.05
+* Adds the modifier "0 "Smuggling of Cloth" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Cloth ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Cloth
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Fish ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Fish
+* Does not have the country modifier "0 "Smuggling of Fish"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Fish
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing fish
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing fish
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing fish
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.149
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Fish" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Fish ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Fish
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Fur ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Fur
+* Does not have the country modifier "0 "Smuggling of Fur"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Fur
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing fur
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing fur
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing fur
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.151
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Fur" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Fur ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Fur
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Salt ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Salt
+* Does not have the country modifier "0 "Smuggling of Salt"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Salt
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing salt
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing salt
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing salt
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.153
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Salt" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Salt ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Salt
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Naval Supplies ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Naval Supplies
+* Does not have the country modifier "0 "Smuggling of Naval Supplies"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Naval Supplies
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing naval supplies
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing naval supplies
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing naval supplies
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.155
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Naval Supplies" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Naval Supplies ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Naval Supplies
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Copper ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Copper
+* Does not have the country modifier "0 "Smuggling of Copper"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Copper
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing copper
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing copper
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing copper
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.157
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Copper" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Copper ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Copper
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Iron ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Iron
+* Does not have the country modifier "0 "Smuggling of Iron"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Iron
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing iron
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing iron
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing iron
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.159
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Iron" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Iron ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Iron
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Ivory ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Ivory
+* Does not have the country modifier "0 "Smuggling of Ivory"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Ivory
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing ivory
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing ivory
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing ivory
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.161
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Ivory" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Ivory ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Ivory
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Tea ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Tea
+* Does not have the country modifier "0 "Smuggling of Tea"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Tea
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing tea
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing tea
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing tea
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.163
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Tea" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Tea ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Tea
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Chinaware ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Chinaware
+* Does not have the country modifier "0 "Smuggling of Chinaware"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Chinaware
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing Chinaware
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing Chinaware
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing Chinaware
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.165
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Chinaware" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Chinaware ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Chinaware
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Spices ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Spices
+* Does not have the country modifier "0 "Smuggling of Spices"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Spices
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing spices
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing spices
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing spices
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.167
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Spices" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Spices ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Spices
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Coffee ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Coffee
+* Does not have the country modifier "0 "Smuggling of Coffee"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Coffee
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing coffee
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing coffee
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing coffee
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.169
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Coffee" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Coffee ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Coffee
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Cotton ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Cotton
+* Does not have the country modifier "0 "Smuggling of Cotton"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Cotton
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing cotton
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing cotton
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing cotton
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.171
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Cotton" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Cotton ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Cotton
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Sugar ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Sugar
+* Does not have the country modifier "0 "Smuggling of Sugar"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Sugar
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing sugar
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing sugar
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing sugar
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.173
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Sugar" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Sugar ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Sugar
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Tobacco ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Tobacco
+* Does not have the country modifier "0 "Smuggling of Tobacco"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Tobacco
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** Has at least 3 provinces producing tobacco
+* Multiplies value by 1.25:
+** Has at least 5 provinces producing tobacco
+* Multiplies value by 1.25:
+** Has at least 7 provinces producing tobacco
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.175
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Tobacco" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Tobacco ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Tobacco
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Smuggling of Cocoa ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is a colonial nation
+* Has the country flag 0 "Tariffs on Cocoa
+* Does not have the country modifier "0 "Smuggling of Cocoa"
+* tariff_value = 0.01
+* Any owned province:
+** Produces 0 "Cocoa
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.25:
+** cocoa = 3
+* Multiplies value by 1.25:
+** cocoa = 5
+* Multiplies value by 1.25:
+** cocoa = 7
+
+'''Option: 0 "Send a delegation:'''
+
+* Changes diplomatic power stored by -50
+* Colonial parent:
+** Gets the country event:
+*** ID is colonial_nation.177
+*** Base mean time to happen of 30 tooltip days
+
+'''Option: 0 "Let them smuggle:'''
+
+* add_tariff_value = -0.01
+* Adds the modifier "0 "Smuggling of Cocoa" for 10 years:
+** -5% global tax modifier
+
+=== 0 "Smuggling of Cocoa ===
+* Cannot fire randomly
+
+'''Option: 0 "Send the demand!:'''
+
+* Our country:
+** Tooltip:
+*** Adds 5 liberty desire
+** Hidden effect:
+*** Gets the country event:
+**** ID is colonial_nation.180
+**** Base mean time to happen of 1 days
+
+'''Option: 0 "Lift the tariff:'''
+
+* Our country:
+** Tooltip:
+*** Adds -5 liberty desire
+*** add_tariff_value = -0.01
+** Hidden effect:
+*** Removes the country flag 0 "Tariffs on Cocoa
+*** Gets the country event:
+**** ID is colonial_nation.181
+**** Base mean time to happen of 1 days
+
+=== 0 "Delegation Returns Unsuccessful ===
+* Cannot fire randomly
+
+'''Option: 0 "This will not be popular:'''
+
+* Adds 5 liberty desire
+
+=== 0 "Delegation Returns Successful ===
+* Cannot fire randomly
+
+'''Option: 0 "Good news!:'''
+
+* Adds -5 liberty desire
+* add_tariff_value = -0.01
+
+=== title = colonial_nation.182.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* is_subject_of_type = crown_colony
+* corruption = 3
+* Any of the following:
+** Ruler's administrative skill is less than 3
+** ruler_has_bad_adm_personality = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: colonial_nation.182.a:'''
+
+* Modifies treasury by -0.15 years worth of income
+* Random owned province:
+** add_unrest = 1
+* Random owned province:
+** add_unrest = 1
+* Adds the ruler modifier "colonial_corrupted_governor" until the ruler's death:
+** +5% stability cost modifier
+
+=== title = colonial_nation.183.t ===
+* Trigger:
+** Has the DLC Mandate of Heaven
+* picture = ADVISOR_eventPicture
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* picture = LIBERUM_VETO_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* is_subject_of_type = crown_colony
+* Ruler's diplomatic skill is less than 3
+* Ruler's administrative skill is less than 2
+* Ruler's military skill is less than 2
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: colonial_nation.183.a:'''
+
+* exile_ruler_as = colonial_exiled_governor
+* Spawns a ruler:
+** Culture is the same as our country
+** Changes ruler's administrative skill by 4
+** Changes ruler's diplomatic skill by 3
+** Changes ruler's military skill by 3
+* Randomized by 
+** Acquisition chance:
+** Random owned province:
+*** Spawns revolt of size 1 of 0 "Noble rebels
+
+'''Option: colonial_nation.183.b:'''
+
+* Trigger:
+** Does not have the ruler modifier colonial_corrupted_governor
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = 10
+* Randomized by 
+** Acquisition chance:
+** Random owned province:
+*** Spawns revolt of size 1 of 0 "Separatists rebels
+
+=== title = colonial_nation.184.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* is_subject_of_type = private_enterprise
+* Has less than 150 ducats in the treasury
+* Any of the following:
+** Has at least 3 active loans
+** is_in_large_debt = yes
+* Stability is lower than 0
+* Does not have the country flag colonial_company_in_debt
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag colonial_company_in_debt
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: colonial_nation.184.a:'''
+
+* Changes administrative power stored by -100
+* Changes diplomatic power stored by -100
+* area:
+** Limited to:
+*** The province is owned by our country
+** add_unrest = -1
+* add_corruption = -0.5
+
+'''Option: colonial_nation.184.b:'''
+
+* Capital:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** add_unrest = 1
+
+=== title = colonial_nation.185.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* is_subject_of_type = private_enterprise
+* Has less than 200 ducats in the treasury
+* Has at least 5 active loans
+* Stability is lower than 1
+* Has the country flag colonial_company_in_debt
+* Does not have the country flag revoked_royal_charter
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: colonial_nation.185.a:'''
+
+* change_subject_type:
+** subject_type = crown_colony
+* Capital:
+** add_unrest = 1
+* Adds 10 liberty desire
+* Changes stability by -1
+* Sets the country flag revoked_royal_charter
+
+=== title = colonial_nation.186.t ===
+* Trigger:
+** Has the DLC Mandate of Heaven
+* picture = CITY_DEVELOPMENT_eventPicture
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* picture = ELECTION_REPUBLICAN_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* Any of the following:
+** is_subject_of_type = private_enterprise
+** is_subject_of_type = crown_colony
+** is_subject_of_type = self_governing_colony
+* total_development_false = 70
+* Manpower are less than 90% of maximum
+* Stability is at least 0
+* has_adm_advisor = yes
+* Does not have the country flag colonist_incentives
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: colonial_nation.186.a:'''
+
+* Adds the modifier "colonist_incentives" for 10 years:
+** +3 tolerance of the true faith
+** +2 tolerance of heathens
+** +2 tolerance of heretics
+** Trade efficiency is at least 10%
+* If:
+** Limited to:
+*** Manpower are less than 100% of maximum
+** Changes national manpower reserves by 1 years worth
+* Modifies treasury by -0.2 years worth of income
+* Sets the country flag colonist_incentives
+
+=== title = colonial_nation.187.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* is_subject_of_type = self_governing_colony
+* estate_influence:
+** estate = estate_nobles
+** influence = 20
+* estate_loyalty:
+** estate_false = estate_burghers
+** loyalty_false = 75
+* Any of the following:
+** Has the 0 "Diplomat advisor
+** Has the 0 "Commandant advisor
+** Has the 0 "Grand Captain advisor
+* Does not have the country flag unhappy_burghers
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag unhappy_burghers
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: colonial_nation.187.a:'''
+
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 10
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -10
+
+'''Option: colonial_nation.187.b:'''
+
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = 10
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -10
+
+=== title = colonial_nation.188.t ===
+* Trigger:
+** Has the DLC Mandate of Heaven
+* picture = COURT_eventPicture
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* picture = GREAT_BUILDING_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* is_subject_of_type = self_governing_colony
+* estate_influence:
+** estate = estate_burghers
+** influence = 20
+* estate_loyalty:
+** estate_false = estate_nobles
+** loyalty_false = 75
+* Any of the following:
+** Has the 0 "Statesman advisor
+** Has the 0 "Trader advisor
+** Has the 0 "Master of Mint advisor
+* Does not have the country flag unhappy_nobles
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag unhappy_nobles
+
+'''Option: colonial_nation.188.a:'''
+
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = 10
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -10
+
+'''Option: colonial_nation.188.b:'''
+
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 10
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -10
+
+=== title = colonial_nation.189.t ===
+* Trigger:
+** Has the DLC Mandate of Heaven
+* picture = CITY_VIEW_eventPicture
+* Trigger:
+** Does not have the DLC Mandate of Heaven
+* picture = CIVIL_WAR_eventPicture
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* is_subject_of_type = private_enterprise
+* unrest = 3
+* Has less than 500 ducats in the treasury
+* Does not have the country flag rival_company
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag rival_company
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: colonial_nation.189.a:'''
+
+* Trigger:
+** has_adm_advisor = yes
+* Changes administrative power stored by -50
+* Changes prestige by -2
+
+'''Option: colonial_nation.189.b:'''
+
+* Trigger:
+** Follows the 0 "Catholic religion
+** Any of the following:
+*** employed_advisor:
+**** Follows the 0 "Catholic religion
+*** employed_advisor:
+**** Follows the 0 "Catholic religion
+* Random owned province:
+** Limited to:
+*** Does not follow the 0 "Catholic religion
+** Adds the modifier "colonial_missionaries" until the end of the campaign:
+*** +3% missionary strength
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 10
+
+'''Option: colonial_nation.189.c:'''
+
+* Trigger:
+** Diplomatic technology is at least 3
+** Any of the following:
+*** has_dip_advisor = yes
+*** ruler_has_personality_ancestor:
+**** Named "silver_tongue"
+*** consort_has_personality = silver_tongue_personality
+*** ruler_has_good_dip_personality = yes
+*** Ruler's diplomatic skill is at least 4
+* Changes diplomatic power stored by -50
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -5
+
+'''Option: colonial_nation.189.e:'''
+
+* Capital:
+** Spawns revolt of size 2 of 0 "Pretender rebels
+
+=== title = colonial_nation.190.t ===
+
+'''Trigger:'''
+
+* Any owned province:
+** The province is a colony
+** Does not have the province flag absent_governor
+* Has the DLC Leviathan
+* Any of the following:
+** Is a colonial nation
+** The owner of the province:
+*** Is a colonial nation
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is a colony
+*** save_event_target_as = absent_governor_province
+** Sets the province flag absent_governor
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Option: colonial_nation.190.a:'''
+
+* event_target:absent_governor_province:
+** add_unrest = 2
+
+=== title = colonial_nation.191.t ===
+* Province event
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* Any of the following:
+** The province is a colony
+** The owner of the province:
+*** Is a colonial nation
+* Year is less than 1700
+* Follows the 0 "Catholic religion
+* The owner of the province:
+** Stability is lower than 2
+* Does not have the province flag miraculous_colony
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the province flag miraculous_colony
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Option: colonial_nation.191.a:'''
+
+* If:
+** Limited to:
+*** Does not have the 0 "Temple building
+** Constructs the 0 "Temple building
+* else:
+** The owner of the province:
+*** add_estate_loyalty:
+**** estate = estate_church
+**** loyalty = 5
+
+'''Option: colonial_nation.191.b:'''
+
+* Trigger:
+** The owner of the province:
+*** Country is not 0 "The Papal State
+* The owner of the province:
+** Changes Papal Influence by 10
+* Adds the modifier "miraculous_colony" until the end of the campaign:
+** local_unrest = -3
+** +0.5 prestige
+
+'''Option: colonial_nation.191.c:'''
+
+* The owner of the province:
+** Changes administrative power stored by 50
+** add_estate_loyalty:
+*** estate = estate_church
+*** loyalty = -5
+* add_unrest = 1
+
+=== title = colonial_nation.192.t ===
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* Is a colonial nation
+* Any of the following:
+** All of the following:
+*** is_subject_of_type = crown_colony
+*** has_reform_false = crown_colony_government
+** All of the following:
+*** is_subject_of_type = private_enterprise
+*** has_reform_false = private_enterprise_colony_government
+** All of the following:
+*** is_subject_of_type = self_governing_colony
+*** has_reform_false = self_governing_colony_government
+* Does not have the country flag colonial_nation_government_assignment_failed
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: colonial_nation.192.a:'''
+
+* If:
+** Limited to:
+*** is_subject_of_type = crown_colony
+** If:
+*** Limited to:
+**** Does not have the republic government type
+*** Changes government type to republic
+** add_government_reform = crown_colony_government
+* else_if:
+** Limited to:
+*** is_subject_of_type = private_enterprise
+** If:
+*** Limited to:
+**** Does not have the republic government type
+*** Changes government type to republic
+** add_government_reform = private_enterprise_colony_government
+* else_if:
+** Limited to:
+*** is_subject_of_type = self_governing_colony
+** If:
+*** Limited to:
+**** Does not have the republic government type
+*** Changes government type to republic
+** add_government_reform = self_governing_colony_government
+* else:
+** Sets the country flag colonial_nation_government_assignment_failed
+* AI chance:
+** Base chance of 1

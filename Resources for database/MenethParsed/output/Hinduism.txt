@@ -1,0 +1,1485 @@
+******** Trigger:
+********* Follows the 0 "Hindu religion
+********* Has the DLC Wealth of Nations
+********* Is not in regency
+********* Any of the following:
+********** Has the country flag brahmin_deity_interaction
+********** All of the following:
+*********** has_personal_deity_false = buddha
+*********** has_personal_deity_false = shiva
+*********** has_personal_deity_false = ganesha
+*********** has_personal_deity_false = surya
+*********** has_personal_deity_false = ganga
+*********** has_personal_deity_false = shakti
+*********** has_personal_deity_false = vishnu
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: hindu_events.1.a:
+********* change_personal_deity = shiva
+******** Option: hindu_events.1.b:
+********* change_personal_deity = shakti
+******** Option: hindu_events.1.c:
+********* change_personal_deity = vishnu
+******** Option: hindu_events.1.e:
+********* change_personal_deity = ganga
+******** Option: hindu_events.1.f:
+********* change_personal_deity = ganesha
+******** Option: hindu_events.1.g:
+********* change_personal_deity = surya
+******** Option: hindu_events.1.h:
+********* change_personal_deity = buddha
+********* Trigger:
+********** Does not have the country flag brahmin_deity_interaction
+******** Option: hindu_events.1.i:
+******** after:
+********* Removes the country flag brahmin_deity_interaction
+******* Gets the country event:
+******** ID is hindu_events.2
+******** title = hindu_events.2.t
+******** desc = hindu_events.2.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* has_personal_deity = shiva
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* employed_advisor:
+********** Follows the 0 "Hindu religion
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+********* Multiplies value by 0.9:
+********** Stability is at least 2
+********* Multiplies value by 0.8:
+********** Stability is at least 3
+******** Option: hindu_events.2.a:
+********* Adds the ruler modifier "hindu_shaiva_1" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.3
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.2.b:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.3
+******** title = hindu_events.3.t
+******** desc = hindu_events.3.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shaiva_1
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.3.a:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 6
+********** Changes ruler's administrative skill by 1
+********** else:
+*********** Changes administrative power stored by 50
+********* Adds the ruler modifier "shiva_srishti" until the ruler's death:
+********** -10% build cost
+********** Follows the yes religion
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.4
+******** title = hindu_events.4.t
+******** desc = hindu_events.4.d
+******** picture = CITY_VIEW_eventPicture
+******** Trigger:
+********* has_personal_deity = shiva
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* employed_advisor:
+********** Follows the 0 "Hindu religion
+********* Stability is at least 1
+********* Is not at war
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+********* Multiplies value by 0.9:
+********** Stability is at least 2
+********* Multiplies value by 0.8:
+********** Stability is at least 3
+******** Option: hindu_events.4.a:
+********* Adds the ruler modifier "hindu_shaiva_2" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.5
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.4.b:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.5
+******** title = hindu_events.5.t
+******** desc = hindu_events.5.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shaiva_2
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.5.a:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 5
+********** Changes ruler's administrative skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's administrative skill is less than 6
+************ Changes ruler's administrative skill by 1
+************ Changes administrative power stored by 50
+************ else:
+************* Changes administrative power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.6
+******** title = hindu_events.6.t
+******** desc = hindu_events.6.d
+******** picture = BATTLE_eventPicture
+******** Trigger:
+********* has_personal_deity = shiva
+********* Is at war
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* employed_advisor:
+********** Follows the 0 "Hindu religion
+********* War score is at least 20
+********* Any known country:
+********** In a defensive war against our country
+******** Mean time to happen
+********* Base mean time to happen of 1000 months
+********* Multiplies value by 0.75:
+********** War score is at least 50
+******** Option: hindu_events.6.a:
+********* Adds the ruler modifier "hindu_shaiva_3" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.7
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.6.b:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.7
+******** title = hindu_events.7.t
+******** desc = hindu_events.7.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shaiva_3
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.7.a:
+********* If:
+********** Limited to:
+*********** Ruler's military skill is less than 5
+********** Changes ruler's military skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's military skill is less than 6
+************ Changes ruler's military skill by 1
+************ Changes military power stored by 50
+************ else:
+************* Changes military power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.8
+******** title = hindu_events.8.t
+******** desc = hindu_events.8.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* has_personal_deity = shiva
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* employed_advisor:
+********** Follows the 0 "Hindu religion
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+********* Multiplies value by 0.9:
+********** Stability is at least 2
+********* Multiplies value by 0.8:
+********** Stability is at least 3
+******** Option: hindu_events.8.a:
+********* Adds the ruler modifier "hindu_shaiva_4" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.9
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.8.b:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.9
+******** title = hindu_events.9.t
+******** desc = hindu_events.9.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shaiva_4
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.9.a:
+********* If:
+********** Limited to:
+*********** Ruler's diplomatic skill is less than 6
+********** Changes ruler's diplomatic skill by 1
+********** else:
+*********** Changes diplomatic power stored by 50
+********* Adds the ruler modifier "shiva_tirodhana" until the ruler's death:
+********** -5% stability cost modifier
+********** Follows the yes religion
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.10
+******** title = hindu_events.10.t
+******** desc = hindu_events.10.d
+******** picture = DIPLOMACY_eventPicture
+******** Trigger:
+********* has_personal_deity = shiva
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Any ally:
+********** has_personal_deity = vishnu
+********** Is not in regency
+********** Does not have the ruler modifier hindu_withdrawn_contemplation
+********** Does not have the ruler modifier jnana
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+********* Multiplies value by 0.9:
+********** Stability is at least 2
+********* Multiplies value by 0.8:
+********** Stability is at least 3
+******** Immediate effects:
+********* Random ally:
+********** Limited to:
+*********** has_personal_deity = vishnu
+*********** Is not in regency
+*********** Does not have the ruler modifier hindu_withdrawn_contemplation
+*********** Does not have the ruler modifier jnana
+********** Hidden effect:
+*********** save_event_target_as = event_ally
+********** Gets the country event:
+*********** ID is hindu_events.30
+*********** Base mean time to happen of 1 days
+******** Option: hindu_events.10.a:
+********* Adds the ruler modifier "hindu_shaiva_5" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.11
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.10.b:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.11
+******** title = hindu_events.11.t
+******** desc = hindu_events.11.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shaiva_5
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.11.a:
+********* If:
+********** Limited to:
+*********** Ruler's military skill is less than 6
+********** Changes ruler's military skill by 1
+********** else:
+*********** Changes military power stored by 50
+********* Adds the ruler modifier "shiva_anugraha" until the ruler's death:
+********** +1% global missionary strength
+********** Follows the yes religion
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.12
+******** title = hindu_events.12.t
+******** desc = hindu_events.12.d
+******** picture = DIPLOMACY_eventPicture
+******** Trigger:
+********* has_personal_deity = shakti
+********* Any known country:
+********** Has a royal marriage with our country
+********** has_personal_deity = vishnu
+********** Is not in regency
+********** Does not have the ruler modifier hindu_withdrawn_contemplation
+********** Does not have the ruler modifier jnana
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+********* Multiplies value by 0.9:
+********** Stability is at least 2
+********* Multiplies value by 0.8:
+********** Stability is at least 3
+******** Immediate effects:
+********* Hidden effect:
+********** Random known country:
+*********** Limited to:
+************ Has a royal marriage with our country
+************ has_personal_deity = vishnu
+************ Is not in regency
+************ Does not have the ruler modifier hindu_withdrawn_contemplation
+************ Does not have the ruler modifier jnana
+*********** save_event_target_as = marriage_with_country
+******** Option: hindu_events.12.a:
+********* Changes diplomatic power stored by 20
+********* event_target:marriage_with_country:
+********** Adds the opinion modifier "0 "Reconciling differences" towards our country
+********** Hidden effect:
+*********** Gets the country event:
+************ ID is hindu_events.24
+************ Base mean time to happen of 1 days
+******* Gets the country event:
+******** ID is hindu_events.13
+******** title = hindu_events.13.t
+******** desc = hindu_events.13.d
+******** picture = NEW_HEIR_eventPicture
+******** Trigger:
+********* has_personal_deity = shakti
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier hindu_shakta_1_rejected
+********* Has an heir
+********* Heir is less than 2 years old
+********* Ruler is male
+******** Mean time to happen
+********* Base mean time to happen of 72 months
+********* Multiplies value by 0.9:
+********** Stability is at least 2
+********* Multiplies value by 0.8:
+********** Stability is at least 3
+******** Option: hindu_events.13.a:
+********* Adds the ruler modifier "hindu_shakta_1" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.15
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.13.b:
+********* Changes prestige by 2
+********* Adds the ruler modifier "hindu_shakta_1_rejected" until the ruler's death:
+********** No effects
+******* Gets the country event:
+******** ID is hindu_events.14
+******** title = hindu_events.14.t
+******** desc = hindu_events.14.d
+******** picture = NEW_HEIR_eventPicture
+******** Trigger:
+********* has_personal_deity = shakti
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier hindu_shakta_1_rejected
+********* Has an heir
+********* Heir is less than 1 years old
+********* Ruler is female
+******** Mean time to happen
+********* Base mean time to happen of 36 months
+********* Multiplies value by 0.9:
+********** Stability is at least 2
+********* Multiplies value by 0.8:
+********** Stability is at least 3
+******** Option: hindu_events.14.a:
+********* Adds the ruler modifier "hindu_shakta_1" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.15
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.14.b:
+********* Changes prestige by 2
+********* Adds the ruler modifier "hindu_shakta_1_rejected" until the ruler's death:
+********** No effects
+******* Gets the country event:
+******** ID is hindu_events.15
+******** title = hindu_events.15.t
+******** desc = hindu_events.15.d
+******** picture = CULTURE_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shakta_1
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.15.a:
+********* If:
+********** Limited to:
+*********** Ruler's diplomatic skill is less than 5
+********** Changes ruler's diplomatic skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's diplomatic skill is less than 6
+************ Changes ruler's diplomatic skill by 1
+************ Changes diplomatic power stored by 50
+************ else:
+************* Changes diplomatic power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.16
+******** title = hindu_events.16.t
+******** desc = hindu_events.16.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* has_personal_deity = shakti
+********* Has the ruler modifier hindu_shakta_1
+********* Has the ruler modifier jnana
+********* Is not in regency
+********* Does not have the ruler modifier hindu_withdrawn_meditation
+********* Does not have the ruler modifier shakti_parvati
+********* Does not have the ruler modifier shakti_prakrti
+********* Has at least 2 royal marriages
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.8:
+********** Has at least 3 royal marriages
+********* Multiplies value by 0.8:
+********** Has at least 4 royal marriages
+******** Option: hindu_events.16.a:
+********* Adds the ruler modifier "hindu_shakta_1t_a" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_meditation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** +1 global unrest
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.17
+*********** Base mean time to happen of 731 days
+******** Option: hindu_events.16.b:
+********* Adds the ruler modifier "hindu_shakta_1t_b" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_meditation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** +1 global unrest
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.18
+*********** Base mean time to happen of 731 days
+******** Option: hindu_events.16.c:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.17
+******** title = hindu_events.17.t
+******** desc = hindu_events.17.d
+******** picture = CULTURE_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shakta_1t_a
+********* Does not have the ruler modifier hindu_withdrawn_meditation
+********* Does not have the ruler modifier shakti_parvati
+******** is_triggered_only = yes
+******** Option: hindu_events.17.a:
+********* Adds the ruler modifier "shakti_parvati" until the ruler's death:
+********** +1 diplomatic relations limit
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.18
+******** title = hindu_events.18.t
+******** desc = hindu_events.18.d
+******** picture = CULTURE_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shakta_1t_b
+********* Does not have the ruler modifier hindu_withdrawn_meditation
+********* Does not have the ruler modifier shakti_prakrti
+******** is_triggered_only = yes
+******** Option: hindu_events.18.a:
+********* Adds the ruler modifier "shakti_prakrti" until the ruler's death:
+********** -2 global unrest
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.19
+******** title = hindu_events.19.t
+******** desc = hindu_events.19.d
+******** picture = RELIGIOUS_TURMOIL_eventPicture
+******** Trigger:
+********* has_personal_deity = shakti
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Is at war
+********* Any known country:
+********** Any of the following:
+*********** offensive_war_with = our country
+*********** is_in_war:
+************ attacker_leader = our country
+************ casus_belli = 0 "Independence
+********* War score lower than least -1
+******** Mean time to happen
+********* Base mean time to happen of 500 months
+********* Multiplies value by 0.75:
+********** War score lower than least -15
+******** Option: hindu_events.19.a:
+********* Adds the ruler modifier "hindu_shakta_2" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.20
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.19.b:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.20
+******** title = hindu_events.20.t
+******** desc = hindu_events.20.d
+******** picture = RELIGIOUS_TURMOIL_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shakta_2
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.20.a:
+********* If:
+********** Limited to:
+*********** Ruler's military skill is less than 5
+********** Changes ruler's military skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's military skill is less than 6
+************ Changes ruler's military skill by 1
+************ Changes military power stored by 50
+************ else:
+************* Changes military power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.21
+******** title = hindu_events.21.t
+******** desc = hindu_events.21.d
+******** picture = BATTLE_eventPicture
+******** Trigger:
+********* has_personal_deity = shakti
+********* Has the ruler modifier hindu_shakta_2
+********* Has the ruler modifier jnana
+********* Is not in regency
+********* Does not have the ruler modifier hindu_withdrawn_meditation
+********* Does not have the ruler modifier shakti_kali
+********* Does not have the ruler modifier shakti_tara
+********* Is at war
+********* Any known country:
+********** In a defensive war against our country
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: hindu_events.21.a:
+********* Adds the ruler modifier "hindu_shakta_2t_a" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_meditation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** +1 global unrest
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.22
+*********** Base mean time to happen of 731 days
+******** Option: hindu_events.21.b:
+********* Adds the ruler modifier "hindu_shakta_2t_b" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_meditation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** +1 global unrest
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.23
+*********** Base mean time to happen of 731 days
+******** Option: hindu_events.21.c:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.22
+******** title = hindu_events.22.t
+******** desc = hindu_events.22.d
+******** picture = RELIGIOUS_TURMOIL_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shakta_2t_a
+********* Does not have the ruler modifier hindu_withdrawn_meditation
+********* Does not have the ruler modifier shakti_kali
+******** is_triggered_only = yes
+******** Option: hindu_events.22.a:
+********* Adds the ruler modifier "shakti_kali" until the ruler's death:
+********** -15% diplomatic point cost for unjustified demands
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.23
+******** title = hindu_events.23.t
+******** desc = hindu_events.23.d
+******** picture = RELIGIOUS_TURMOIL_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_shakta_2t_b
+********* Does not have the ruler modifier hindu_withdrawn_meditation
+********* Does not have the ruler modifier shakti_tara
+******** is_triggered_only = yes
+******** Option: hindu_events.23.a:
+********* Adds the ruler modifier "shakti_tara" until the ruler's death:
+********** +5% land morale
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.24
+******** title = hindu_events.24.t
+******** desc = hindu_events.24.d
+******** picture = CULTURE_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** has_consort = yes
+********** is_origin_of_consort = our country
+******** Option: hindu_events.24.a:
+********* Adds the ruler modifier "hindu_vaishnava_1a" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.25
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.24.b:
+********* Adds the ruler modifier "hindu_vaishnava_1b" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.26
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.24.c:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.25
+******** title = hindu_events.25.t
+******** desc = hindu_events.25.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_vaishnava_1a
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.25.a:
+********* If:
+********** Limited to:
+*********** Ruler's diplomatic skill is less than 5
+********** Changes ruler's diplomatic skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's diplomatic skill is less than 6
+************ Changes diplomatic power stored by 50
+************ Changes ruler's diplomatic skill by 1
+************ else:
+************* Changes diplomatic power stored by 100
+********* Adds the ruler modifier "vishnu_lakshmi" until the ruler's death:
+********** +20% chance of getting an heir
+********** Follows the yes religion
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.26
+******** title = hindu_events.26.t
+******** desc = hindu_events.26.d
+******** picture = CULTURE_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_vaishnava_1b
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.26.a:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 5
+********** Changes ruler's administrative skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's administrative skill is less than 6
+************ Changes ruler's administrative skill by 1
+************ Changes administrative power stored by 50
+************ else:
+************* Changes administrative power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******** Option: hindu_events.26.b:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 6
+********** Changes ruler's administrative skill by 1
+********** else:
+*********** Changes administrative power stored by 50
+********* change_personal_deity = shakti
+********* Changes prestige by -10
+********* Hidden effect:
+********** Removes the country modifier "hindu_vaishnava_1b"
+******** Option: hindu_events.26.c:
+********* If:
+********** Limited to:
+*********** Ruler's military skill is less than 6
+********** Changes ruler's military skill by 1
+********** else:
+*********** Changes military power stored by 50
+********* change_personal_deity = shakti
+********* Changes prestige by -10
+********* Hidden effect:
+********** Removes the country modifier "hindu_vaishnava_1b"
+******* Gets the country event:
+******** ID is hindu_events.27
+******** title = hindu_events.27.t
+******** desc = hindu_events.27.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* has_personal_deity = vishnu
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* employed_advisor:
+********** Follows the 0 "Hindu religion
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+********* Multiplies value by 0.9:
+********** Stability is at least 2
+********* Multiplies value by 0.8:
+********** Stability is at least 3
+******** Option: hindu_events.27.a:
+********* Adds the ruler modifier "hindu_vaishnava_2a" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.28
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.27.b:
+********* Adds the ruler modifier "hindu_vaishnava_2b" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "vishnu_brahma" until the ruler's death:
+********** -10% advisor cost
+********** Follows the yes religion
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.29
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.27.c:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.28
+******** title = hindu_events.28.t
+******** desc = hindu_events.28.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_vaishnava_2a
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.28.a:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 5
+********** Changes ruler's administrative skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's administrative skill is less than 6
+************ Changes ruler's administrative skill by 1
+************ Changes administrative power stored by 50
+************ else:
+************* Changes administrative power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.29
+******** title = hindu_events.29.t
+******** desc = hindu_events.29.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_vaishnava_2b
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.29.a:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 6
+********** Changes ruler's administrative skill by 1
+********** else:
+*********** Changes administrative power stored by 50
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.30
+******** title = hindu_events.30.t
+******** desc = hindu_events.30.d
+******** picture = DIPLOMACY_eventPicture
+******** is_triggered_only = yes
+******** Option: hindu_events.30.a:
+********* Adds the ruler modifier "hindu_vaishnava_3a" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.31
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.30.b:
+********* Adds the ruler modifier "hindu_vaishnava_3b" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.32
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.30.c:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.31
+******** title = hindu_events.31.t
+******** desc = hindu_events.31.d
+******** picture = PRAYING_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_vaishnava_3a
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.31.a:
+********* If:
+********** Limited to:
+*********** Ruler's diplomatic skill is less than 5
+********** Changes ruler's diplomatic skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's diplomatic skill is less than 6
+************ Changes diplomatic power stored by 50
+************ Changes ruler's diplomatic skill by 1
+************ else:
+************* Changes diplomatic power stored by 100
+********* Changes prestige by 10
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.32
+******** title = hindu_events.32.t
+******** desc = hindu_events.32.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_vaishnava_3b
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.32.a:
+********* If:
+********** Limited to:
+*********** Ruler's diplomatic skill is less than 5
+********** Changes ruler's diplomatic skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's diplomatic skill is less than 6
+************ Changes diplomatic power stored by 50
+************ Changes ruler's diplomatic skill by 1
+************ else:
+************* Changes diplomatic power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******** Option: hindu_events.32.b:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 6
+********** Changes ruler's administrative skill by 1
+********** else:
+*********** Changes administrative power stored by 50
+********* change_personal_deity = shiva
+********* Changes prestige by -10
+********* Hidden effect:
+********** Removes the country modifier "hindu_vaishnava_3b"
+******** Option: hindu_events.32.c:
+********* If:
+********** Limited to:
+*********** Ruler's military skill is less than 6
+********** Changes ruler's military skill by 1
+********** else:
+*********** Changes military power stored by 50
+********* change_personal_deity = shiva
+********* Changes prestige by -10
+********* Hidden effect:
+********** Removes the country modifier "hindu_vaishnava_3b"
+******* Gets the country event:
+******** ID is hindu_events.33
+******** title = hindu_events.33.t
+******** desc = hindu_events.33.d
+******** picture = BAD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* has_personal_deity = vishnu
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Has the monarchy government type
+********* Has no heir
+********* has_government_attribute = heir
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.9:
+********** Stability is at least 2
+********* Multiplies value by 0.8:
+********** Stability is at least 3
+******** Option: hindu_events.33.a:
+********* Adds the ruler modifier "hindu_vaishnava_4a" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "vishnu_celibacy" until the ruler's death:
+********** -100% chance of getting an heir
+********** Follows the yes religion
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.34
+*********** Base mean time to happen of 2921 days
+******** Option: hindu_events.33.b:
+********* Adds the ruler modifier "hindu_vaishnava_4b" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Adds the ruler modifier "vishnu_celibacy" until the ruler's death:
+********** -100% chance of getting an heir
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.35
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.33.c:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.34
+******** title = hindu_events.34.t
+******** desc = hindu_events.34.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_vaishnava_4a
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.34.a:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 5
+********** Changes ruler's administrative skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's administrative skill is less than 6
+************ Changes administrative power stored by 50
+************ Changes ruler's administrative skill by 1
+************ else:
+************* Changes administrative power stored by 100
+********* If:
+********** Limited to:
+*********** Ruler's diplomatic skill is less than 5
+********** Changes ruler's diplomatic skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's diplomatic skill is less than 6
+************ Changes diplomatic power stored by 50
+************ Changes ruler's diplomatic skill by 1
+************ else:
+************* Changes diplomatic power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.35
+******** title = hindu_events.35.t
+******** desc = hindu_events.35.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_vaishnava_4b
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.35.a:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 6
+********** Changes ruler's administrative skill by 1
+********** else:
+*********** Changes administrative power stored by 50
+********* If:
+********** Limited to:
+*********** Ruler's diplomatic skill is less than 6
+********** Changes ruler's diplomatic skill by 1
+********** else:
+*********** Changes diplomatic power stored by 50
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.36
+******** title = hindu_events.36.t
+******** desc = hindu_events.36.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* has_personal_deity = ganesha
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* all_neighbor_country:
+********** tech_difference_false = 0
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+********* Multiplies value by 0.5:
+********** all_neighbor_country:
+*********** tech_difference_false = -1
+********* Multiplies value by 0.9:
+********** Stability is at least 2
+********* Multiplies value by 0.8:
+********** Stability is at least 3
+******** Option: hindu_events.36.a:
+********* Adds the ruler modifier "hindu_ganesha" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.37
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.36.b:
+********* Changes prestige by 2
+******* Gets the country event:
+******** ID is hindu_events.37
+******** title = hindu_events.37.t
+******** desc = hindu_events.37.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_ganesha
+********* Is not in regency
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.37.a:
+********* If:
+********** Limited to:
+*********** Ruler's diplomatic skill is less than 5
+********** Changes ruler's diplomatic skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's diplomatic skill is less than 6
+************ Changes ruler's diplomatic skill by 1
+************ Changes diplomatic power stored by 50
+************ else:
+************* Changes diplomatic power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.38
+******** title = hindu_events.38.t
+******** desc = hindu_events.38.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_ganesha
+********* Has the ruler modifier jnana
+********* It is the 7. month of the year or later
+********* It is before the 9. month of the year
+******** Mean time to happen
+********* Base mean time to happen of 24 months
+******** Option: hindu_events.38.a:
+********* Modifies treasury by -0.3 years worth of income
+********* Gets the country event:
+********** ID is hindu_events.39
+********** Base mean time to happen of 30 days
+********** Tooltip:
+******** Option: hindu_events.38.b:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is hindu_events.39
+******** title = hindu_events.39.t
+******** desc = hindu_events.39.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: hindu_events.39.a:
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is hindu_events.40
+******** title = hindu_events.40.t
+******** desc = hindu_events.40.d
+******** picture = KING_SICK_IN_BED_eventPicture
+******** Trigger:
+********* has_personal_deity = ganga
+********* ruler_age = 60
+********* Does not have the ruler modifier hindu_ganga
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+********* Multiplies value by 0.33:
+********** ruler_age = 70
+********* Multiplies value by 0.9:
+********** Stability is at least 3
+******** Option: hindu_events.40.a:
+********* Sets the country flag ganga_funeral
+********* Adds the ruler modifier "hindu_ganga" until the ruler's death:
+********** No effects
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+******** Option: hindu_events.40.b:
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is hindu_events.41
+******** title = hindu_events.41.t
+******** desc = hindu_events.41.d
+******** picture = EXPLORERS_eventPicture
+******** Trigger:
+********* has_personal_deity = ganga
+********* Has the country flag ganga_funeral
+********* Is not in regency
+********* Does not have the ruler modifier hindu_ganga
+********* Does not own 0 "Garhwal
+********* Does not own 0 "Delhi
+********* Does not own 0 "Lucknow
+********* Does not own 0 "Central Doab
+********* Does not own 0 "Jaunpur
+********* Does not own 0 "Lower Doab
+********* Does not own 1 "Pataliputra
+********* Does not own 0 "Bengal Delta
+********* Does not own 0 "Gauda
+********* Does not own 0 "Dhaka
+********* Does not own 0 "Bhagalpur
+********* Does not own 0 "Upper Doab
+********* Does not own 0 "Katehar
+********* Does not own 0 "Etawah
+********* Does not own 0 "Kumaon
+********* Does not own 0 "Varanasi
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: hindu_events.41.a:
+********* Removes the country flag ganga_funeral
+********* Modifies treasury by -0.1 years worth of income
+********* Changes administrative power stored by -10
+********* Changes diplomatic power stored by -10
+********* Changes military power stored by -10
+********* Adds the ruler modifier "hindu_ganges_pilgrimage" until the ruler's death:
+********** -1 diplomatic relations limit
+********** +30% stability cost modifier
+********** Follows the yes religion
+********* Gets the country event:
+********** ID is hindu_events.43
+********** Base mean time to happen of 365 days
+********** Tooltip:
+******** Option: hindu_events.41.b:
+********* Changes prestige by -10
+********* Removes the country flag ganga_funeral
+******* Gets the country event:
+******** ID is hindu_events.42
+******** title = hindu_events.42.t
+******** desc = hindu_events.42.d
+******** picture = DEATH_OF_HEIR_eventPicture
+******** Trigger:
+********* has_personal_deity = ganga
+********* Has the country flag ganga_funeral
+********* Is not in regency
+********* Does not have the ruler modifier hindu_ganga
+********* Any of the following:
+********** Owns 0 "Garhwal
+********** Owns 0 "Delhi
+********** Owns 0 "Lucknow
+********** Owns 0 "Central Doab
+********** Owns 0 "Jaunpur
+********** Owns 0 "Lower Doab
+********** Owns 1 "Pataliputra
+********** Owns 0 "Bengal Delta
+********** Owns 0 "Gauda
+********** Owns 0 "Dhaka
+********** Owns 0 "Bhagalpur
+********** Owns 0 "Upper Doab
+********** Owns 0 "Katehar
+********** Owns 0 "Etawah
+********** Owns 0 "Kumaon
+********** Owns 0 "Varanasi
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: hindu_events.42.a:
+********* Removes the country flag ganga_funeral
+********* Modifies treasury by -0.1 years worth of income
+********* Changes administrative power stored by -5
+********* Changes diplomatic power stored by -5
+********* Changes military power stored by -5
+********* Gets the country event:
+********** ID is hindu_events.43
+********** Base mean time to happen of 30 days
+********** Tooltip:
+******** Option: hindu_events.42.b:
+********* Changes prestige by -10
+********* Removes the country flag ganga_funeral
+******* Gets the country event:
+******** ID is hindu_events.43
+******** title = hindu_events.43.t
+******** desc = hindu_events.43.d
+******** picture = CULTURE_eventPicture
+******** is_triggered_only = yes
+******** Option: hindu_events.43.a:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 5
+********** Changes ruler's administrative skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's administrative skill is less than 6
+************ Changes ruler's administrative skill by 1
+************ Changes administrative power stored by 50
+************ else:
+************* Changes administrative power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.44
+******** title = hindu_events.44.t
+******** desc = hindu_events.44.d
+******** picture = CITY_VIEW_eventPicture
+******** Trigger:
+********* has_personal_deity = surya
+********* Is not in regency
+********* Does not have the ruler modifier jnana
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Capital:
+********** Has the 0 "Temple building
+******** Mean time to happen
+********* Base mean time to happen of 1400 months
+********* Multiplies value by 0.75:
+********** Has at least 3 of the 0 "Temple building
+********* Multiplies value by 0.75:
+********** Every owned province:
+*********** Has the 0 "Temple building
+******** Option: hindu_events.44.a:
+********* Adds the ruler modifier "hindu_surya" until the ruler's death:
+********** No effects
+********* Modifies treasury by -0.2 years worth of income
+********* Adds the ruler modifier "hindu_withdrawn_contemplation" until the ruler's death:
+********** -50% chance of getting an heir
+********** -1 diplomatic relations limit
+********** Legitimacy is at least -1
+********** Follows the yes religion
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is hindu_events.45
+*********** Base mean time to happen of 1826 days
+******** Option: hindu_events.44.b:
+********* Changes prestige by -2
+******* Gets the country event:
+******** ID is hindu_events.45
+******** title = hindu_events.45.t
+******** desc = hindu_events.45.d
+******** picture = ADVISOR_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_surya
+********* Does not have the ruler modifier hindu_withdrawn_contemplation
+********* Does not have the ruler modifier jnana
+******** is_triggered_only = yes
+******** Option: hindu_events.45.a:
+********* If:
+********** Limited to:
+*********** Ruler's administrative skill is less than 5
+********** Changes ruler's administrative skill by 2
+********** else:
+*********** If:
+************ Limited to:
+************* Ruler's administrative skill is less than 6
+************ Changes ruler's administrative skill by 1
+************ Changes administrative power stored by 50
+************ else:
+************* Changes administrative power stored by 100
+********* Adds the ruler modifier "jnana" until the ruler's death:
+********** +0.5 prestige
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is hindu_events.46
+******** title = hindu_events.46.t
+******** desc = hindu_events.46.d
+******** picture = CULTURE_eventPicture
+******** Trigger:
+********* Has the ruler modifier hindu_surya
+********* Has the ruler modifier jnana
+********* It is the 1. month of the year or later
+********* It is before the 2. month of the year
+******** Mean time to happen
+********* Base mean time to happen of 36 months
+******** Option: hindu_events.46.a:
+********* Modifies treasury by -0.3 years worth of income
+********* Gets the country event:
+********** ID is hindu_events.47
+********** Base mean time to happen of 30 days
+********** Tooltip:
+******** Option: hindu_events.46.b:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is hindu_events.47
+******** title = hindu_events.47.t
+******** desc = hindu_events.47.d
+******** picture = ADVISOR_eventPicture
+******** is_triggered_only = yes
+******** Option: hindu_events.47.a:
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is hindu_events.48
+******** title = hindu_events.48.t
+******** desc = hindu_events.48.d
+******** picture = NEW_HEIR_eventPicture
+******** Trigger:
+********* has_personal_deity = surya
+********* Is not in regency
+********* Has the monarchy government type
+********* Has no heir
+********* has_government_attribute = heir
+********* Any of the following:
+********** Does not have the country flag has_had_suryavansha_flag
+********** Has had the country flag "has_had_suryavansha_flag" for at least 36500 days
+******** Mean time to happen
+********* Base mean time to happen of 180 months
+******** Immediate effects:
+********* Sets the country flag has_had_suryavansha_flag
+******** Option: hindu_events.48.a:
+********* Spawns an heir:
+********** Ruler's dynasty is Suryavansha
+********** Changes ruler's administrative skill by 4
+********** Changes ruler's diplomatic skill by 4
+********** Changes ruler's military skill by 4
+********** Legitimacy of 20
+********* Changes prestige by 10
+******** Option: hindu_events.48.b:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is hindu_events.49
+******** title = hindu_events.49.t
+******** desc = hindu_events.49.d
+******** picture = BATTLE_eventPicture
+******** Trigger:
+********* has_personal_deity = shakti
+********* Is at war
+********* Heir is leading an army
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+********* Multiplies value by 0.7:
+********** Has the ruler modifier hindu_shakta_2
+********** Has the ruler modifier jnana
+******** Option: hindu_events.49.a:
+********* Creates a general at  extra army tradition
+********** tradition = 0
+********* Changes prestige by 10
+******** Option: hindu_events.49.b:
+********* Changes diplomatic power stored by 20
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is hindu_events.50
+******** title = hindu_events.50.t
+******** desc = hindu_events.50.d
+******** picture = ADVISOR_eventPicture
+******** Trigger:
+********* Is in the 0 "Dharmic religion group
+********* Does not have the ruler modifier jnana
+******** Mean time to happen
+********* Base mean time to happen of 4800 months
+******** Option: hindu_events.50.a:
+********* Changes stability by -1

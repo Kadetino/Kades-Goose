@@ -1,0 +1,652 @@
+
+=== title = marathas_estate_events.1.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: marathas_estate_events.1.a:'''
+
+
+=== title = marathas_estate_events.2.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* has_estate = estate_maratha
+* estate_influence:
+** estate = estate_maratha
+** influence = 10
+* estate_influence:
+** estate = estate_brahmins
+** influence = 10
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_MARATHI_POET_APOLOGY
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_MARATHI_POET
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: marathas_estate_events.2.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 40
+** Multiplies value by 1.2:
+*** estate_loyalty:
+**** estate = estate_maratha
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 60
+** Multiplies value by 0.2:
+*** has_estate = estate_brahmins
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 30
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 80
+* add_estate_loyalty:
+** estate = estate_maratha
+** loyalty = 15
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = -10
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_MARATHI_POET
+** influence = -10
+** Lasting 9125 days
+* Creates an advisor of the 0 "Philosopher type:
+** Culture is 0 "Marathi
+** Follows the 0 "Hindu religion
+** With a skill level of 2
+** female_false = no
+** discount = yes
+
+'''Option: marathas_estate_events.2.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 40
+** Multiplies value by 1.2:
+*** estate_loyalty:
+**** estate = estate_brahmins
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 60
+** Multiplies value by 0.2:
+*** has_estate = estate_maratha
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 30
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 80
+* add_estate_loyalty:
+** estate = estate_maratha
+** loyalty = -10
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_MARATHI_POET_APOLOGY
+** influence = 10
+** Lasting 9125 days
+
+=== title = marathas_estate_events.3.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_maratha
+* estate_loyalty:
+** estate = estate_maratha
+** loyalty = 60
+* cavalry_fraction = 0.1
+* Does not have the country modifier "0 "Bargi-giri"
+* Any of the following:
+** Any rival country:
+*** num_of_artillery = our country
+*** num_of_artillery = 10
+*** Military technology is at least 10
+** Any enemy country:
+*** num_of_artillery = our country
+*** num_of_artillery = 10
+*** Military technology is at least 10
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: marathas_estate_events.3.a:'''
+
+* Adds the modifier "0 "Bargi-giri" for 20 years:
+** +15% cavalry power
+** movement_speed = 0.15
+* If:
+** Limited to:
+*** has_estate = estate_maratha
+** add_estate_influence_modifier:
+*** estate = estate_maratha
+*** influence = 10
+*** desc = EST_VAL_BARGIRS
+*** Lasting 7300 days
+
+=== title = marathas_estate_events.4.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_maratha
+* cavalry_fraction = 0.1
+* Does not have the country modifier "0 "Horse Shortage"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: marathas_estate_events.4.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0:
+*** Has less than 0.3 years worth of income
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 40
+* Modifies treasury by -0.25 years worth of income
+* Adds the modifier "0 "Horse Shortage" for 20 years:
+** +25% cavalry cost
+* add_estate_loyalty:
+** estate = estate_maratha
+** loyalty = 10
+
+'''Option: marathas_estate_events.4.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.1:
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 55
+* add_estate_loyalty:
+** estate = estate_maratha
+** loyalty = -15
+
+=== title = marathas_estate_events.5.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_maratha
+* estate_influence:
+** estate = estate_maratha
+** influence = 30
+* estate_loyalty:
+** estate = estate_maratha
+** loyalty = 60
+* estate_territory:
+** estate = estate_maratha
+** territory = 1
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_MARATHA_MILITARIZATION
+* Any owned province:
+** Follows the 0 "Hindu religion
+** The province is not the capital of the country
+** yes is a city
+** Does not have the province flag marathi_militarized_province
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: marathas_estate_events.5.a:'''
+
+* Sets the country flag marathi_militarization_flag
+* Changes national manpower by 0.25 years worth of men
+* add_estate_influence_modifier:
+** estate = estate_maratha
+** desc = EST_VAL_MARATHA_MILITARIZATION
+** influence = 15
+** Lasting 7300 days
+* Random owned province:
+** Limited to:
+*** Follows the 0 "Hindu religion
+*** The province is not the capital of the country
+*** yes is a city
+*** Does not have the province flag marathi_militarized_province
+** add_base_manpower = 1
+** Sets the province flag marathi_militarized_province
+
+=== title = marathas_estate_events.6.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_maratha
+* estate_influence:
+** estate = estate_maratha
+** influence = 10
+* Any owned province:
+** Any of the following:
+*** Follows the 0 "Hindu religion
+*** Culture is 0 "Marathi
+** yes is a city
+** Has the province flag marathi_militarized_province
+** Has a base tax of at least 2
+** base_production = 2
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_STOPPED_MILITARIZING_MARATHA
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_MARATHA_MILITARIZATION
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** Follows the 0 "Hindu religion
+***** Culture is 0 "Marathi
+**** yes is a city
+**** base_production = 2
+**** Has a base tax of at least 2
+**** Has the province flag marathi_militarized_province
+*** save_event_target_as = maratha_farming_province
+
+'''Option: marathas_estate_events.6.a:'''
+
+* AI chance:
+** Base chance of 50
+* Changes army tradition by 10
+* event_target:maratha_farming_province:
+** add_base_production = -1
+** If:
+*** Limited to:
+**** Any of the following:
+***** Produces 0 "Grain
+***** Produces 0 "Cotton
+*** Changes trade goods produced to 0 "Livestock
+
+'''Option: marathas_estate_events.6.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.1:
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_maratha
+**** influence = 80
+* add_estate_loyalty:
+** estate = estate_maratha
+** loyalty = -10
+* add_estate_influence_modifier:
+** estate = estate_maratha
+** desc = EST_VAL_STOPPED_MILITARIZING_MARATHA
+** influence = -10
+** Lasting 9125 days
+* event_target:maratha_farming_province:
+** Adds the modifier "0 "Back to the Fields" until the end of the campaign:
+*** -33% manpower modifier
+*** local_unrest = 5
+
+'''Option: marathas_estate_events.6.c:'''
+
+* AI chance:
+** Base chance of 100
+* Trigger:
+** Ruler's administrative skill is at least 4
+* highlight = yes
+* Changes army tradition by 5
+
+=== title = marathas_estate_events.7.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_maratha
+* estate_influence:
+** estate = estate_maratha
+** influence = 70
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_MARATHA_LUXURIES
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_MARATHAS_DENIED_LUXURIES
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: marathas_estate_events.7.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0:
+*** Has less than 0.6 years worth of income
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 40
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_maratha
+**** influence = 80
+* Modifies treasury by -0.5 years worth of income
+* add_estate_loyalty:
+** estate = estate_maratha
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_maratha
+** desc = EST_VAL_MARATHA_LUXURIES
+** influence = 10
+** Lasting 7300 days
+
+'''Option: marathas_estate_events.7.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_maratha
+**** influence = 70
+** Multiplies value by 0.1:
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 40
+* Changes prestige by -5
+* add_estate_loyalty:
+** estate = estate_maratha
+** loyalty = -20
+* add_estate_influence_modifier:
+** estate = estate_maratha
+** desc = EST_VAL_MARATHAS_DENIED_LUXURIES
+** influence = -15
+** Lasting 7300 days
+
+=== title = marathas_estate_events.8.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_maratha
+* has_estate = estate_brahmins
+* Any owned province:
+** Follows the 0 "Hindu religion
+** Culture is 0 "Marathi
+** yes is a city
+** No owned province:
+*** Has the province modifier "0 "Popular Palkhis"
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_BRAHMIN_PALKHIS
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** Any owned province:
+***** Culture is 0 "Marathi
+***** yes is a city
+*** Every owned province:
+**** Limited to:
+***** Culture is 0 "Marathi
+***** yes is a city
+**** Sets the province flag palkhis_flag
+** If:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag palkhis_flag
+***** value_false = estate
+***** estate_false = estate_maratha
+**** Any owned province:
+***** Follows the 0 "Hindu religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag palkhis_flag
+*** Sets the country flag not_enough_marathi_for_this_event
+*** while:
+**** Limited to:
+***** development_in_provinces:
+****** Does not have the province flag palkhis_flag
+****** value_false = estate
+****** estate_false = estate_maratha
+***** Any owned province:
+****** Follows the 0 "Hindu religion
+****** The province is not the capital of the country
+****** yes is a city
+****** Does not have the province flag palkhis_flag
+**** Random owned province:
+***** Limited to:
+****** Follows the 0 "Hindu religion
+****** The province is not the capital of the country
+****** yes is a city
+****** Does not have the province flag palkhis_flag
+***** Sets the province flag palkhis_flag
+
+'''Option: marathas_estate_events.8.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 40
+* add_estate_loyalty:
+** estate = estate_maratha
+** loyalty = 15
+* If:
+** Limited to:
+*** Has the country flag not_enough_marathi_for_this_event
+* else:
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Has the province flag palkhis_flag
+*** Adds the modifier "0 "Popular Palkhis" until the end of the campaign:
+**** local_unrest = -3
+**** local_monthly_devastation = -0.03
+**** local_development_cost = -0.05
+
+'''Option: marathas_estate_events.8.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 40
+** Multiplies value by 0.2:
+*** estate_influence:
+**** influence = 80
+**** estate = estate_brahmins
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** influence = 10
+** desc = EST_VAL_BRAHMIN_PALKHIS
+** Lasting 7300 days
+* If:
+** Limited to:
+*** Follows the 0 "Hindu religion
+** Adds the modifier "0 "Organized Palkhis" for 20 years:
+*** +1 tolerance of the true faith
+* else:
+** Adds the modifier "0 "Organized Palkhis" for 20 years:
+*** +1 tolerance of heathens
+*** +1 tolerance of heretics
+
+=== title = marathas_estate_events.9.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_maratha
+* estate_influence:
+** estate = estate_maratha
+** influence = 10
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_MARATHA_ADVANCE
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_MARATHA_DECLINE
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: marathas_estate_events.9.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_maratha
+** desc = EST_VAL_MARATHA_DECLINE
+** influence = -10
+** Lasting 5475 days
+
+=== title = marathas_estate_events.10.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_maratha
+* estate_influence:
+** estate_false = estate_maratha
+** influence_false = 100
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_MARATHA_ADVANCE
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_MARATHA_DECLINE
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: marathas_estate_events.10.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_maratha
+** desc = EST_VAL_MARATHA_ADVANCE
+** influence = 10
+** Lasting 5475 days
+
+=== title = marathas_estate_events.11.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_maratha
+* estate_loyalty:
+** estate_false = estate_maratha
+** loyalty_false = 30
+* estate_influence:
+** estate = estate_maratha
+** influence = 10
+* estate_territory:
+** estate = estate_maratha
+** territory = 10
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_MARATHAS_EXTORTED_RIGHTS
+* has_estate_influence_modifier:
+** estate_false = estate_maratha
+** modifier_false = EST_VAL_MARATHAS_DENIED_RIGHTS
+* Any owned province:
+** Follows the 0 "Hindu religion
+** The province is not the capital of the country
+** yes is a city
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag maratha_estate_revolt
+***** value_false = estate
+***** estate_false = estate_maratha
+**** Any owned province:
+***** Follows the 0 "Hindu religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag maratha_estate_revolt
+**** check_reducing_estate_revolt_size_trigger:
+***** FLAG = maratha_estate_revolt
+*** Random owned province:
+**** Limited to:
+***** Follows the 0 "Hindu religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag maratha_estate_revolt
+**** Sets the province flag maratha_estate_revolt
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: marathas_estate_events.11.a:'''
+
+* AI chance:
+** Base chance of 1
+* add_estate_influence_modifier:
+** estate = estate_maratha
+** desc = EST_VAL_MARATHAS_EXTORTED_RIGHTS
+** influence = 10
+** Lasting 5475 days
+* Every owned province:
+** Limited to:
+*** Has the province flag maratha_estate_revolt
+** add_local_autonomy = 33
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Has the province flag maratha_estate_revolt
+*** Removes the province flag maratha_estate_revolt
+
+'''Option: marathas_estate_events.11.b:'''
+
+* AI chance:
+** Base chance of 0
+* add_estate_influence_modifier:
+** estate = estate_maratha
+** desc = EST_VAL_MARATHAS_DENIED_RIGHTS
+** influence = -10
+** Lasting 5475 days
+* Every owned province:
+** Limited to:
+*** Has the province flag maratha_estate_revolt
+** Removes the province flag maratha_estate_revolt
+** Spawns revolt of size 1 of 0 "Noble rebels

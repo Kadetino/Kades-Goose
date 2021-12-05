@@ -1,0 +1,829 @@
+******** Trigger:
+********* Has the DLC Art of War
+********* Has the tribal government type
+********* has_reform_false = 0 "Steppe Nomads
+********* Does not have the country flag sultanate_request_choice
+********* Legitimacy is at least 90
+********* Stability is at least 3
+********* Any of the following:
+********** Has completed the 0 "Economic Ideas idea group
+********** Has completed the 0 "Innovative Ideas idea group
+********** Has completed the 0 "Administrative Ideas idea group
+********* Is in the 0 "Muslim religion group
+********* 0 "Constantinople:
+********** The province is owned by 0 "Ottomans
+********* 0 "Ottomans:
+********** Is in the 0 "Muslim religion group
+********** Has the ruler modifier 0 "Khalifa
+********** Not at war with our country
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Immediate effects:
+********* Sets the country flag sultanate_request_choice
+******** Option: west_african.1.a:
+********* 0 "Ottomans:
+********** Gets the country event:
+*********** ID is west_african.2
+*********** Base mean time to happen of 30 days
+******** Option: west_african.1.b:
+********* Changes prestige by 15
+******* Gets the country event:
+******** ID is west_african.2
+******** title = west_african.2.t
+******** desc = west_african.2.d
+******** picture = TUAREG_OTTOMAN_eventPicture
+******** is_triggered_only = yes
+******** Option: west_african.2.a:
+********* Our country:
+********** Gets the country event:
+*********** ID is west_african.3
+*********** Base mean time to happen of 30 days
+********** Adds the opinion modifier "approved_sultanate" towards our country
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** Has an opinion of less than 0 with our country
+******** Option: west_african.2.b:
+********* Our country:
+********** Gets the country event:
+*********** ID is west_african.4
+*********** Base mean time to happen of 30 days
+********** Adds the opinion modifier "did_not_approve_sultanate" towards our country
+******* Gets the country event:
+******** ID is west_african.3
+******** title = west_african.3.t
+******** desc = west_african.3.d
+******** picture = TUAREG_OTTOMAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform_false = 0 "Celestial Empire
+******** Option: west_african.3.a:
+********* If:
+********** Limited to:
+*********** Has the tribal government type
+********** change_government_to_monarchy = yes
+********* If:
+********** Limited to:
+*********** 75% religious unity
+*********** Less than 100% religious unity
+********** Changes stability by -1
+********* If:
+********** Limited to:
+*********** 50% religious unity
+*********** Less than 75% religious unity
+********** Changes stability by -2
+********* If:
+********** Limited to:
+*********** 25% religious unity
+*********** Less than 50% religious unity
+********** Changes stability by -3
+********* If:
+********** Limited to:
+*********** 10% religious unity
+*********** Less than 25% religious unity
+********** Changes stability by -4
+********* If:
+********** Limited to:
+*********** Less than 10% religious unity
+********** Changes stability by -5
+******* Gets the country event:
+******** ID is west_african.4
+******** title = west_african.4.t
+******** desc = west_african.4.d
+******** picture = TUAREG_OTTOMAN_eventPicture
+******** is_triggered_only = yes
+******** Option: west_african.4.a:
+********* Changes prestige by -15
+******* Gets the province event:
+******** ID is west_african.5
+******** title = west_african.5.t
+******** desc = west_african.5.d
+******** picture = CAMEL_PATROL_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* The province is not the capital of the country
+********* The owner of the province:
+********** Capital:
+*********** has_climate = 0 "Arid
+********** Culture group is sahelian
+********** Primary culture is the same as in our country
+********** Is a tribal nation
+********* Any bordering province:
+********** Culture is the same as our country
+********** The owner of the province:
+*********** Does not accept the PREV culture
+********** has_climate = 0 "Arid
+********** The province is not owned by our country
+********** Does not have the province flag desert_border_patrols
+******** Mean time to happen
+********* Base mean time to happen of 2400 months
+******** Option: west_african.5.a:
+********* The owner of the province:
+********** Changes treasury by 50 ducats
+********* Random bordering province:
+********** Limited to:
+*********** Culture is the same as our country
+*********** has_climate = 0 "Arid
+*********** The province is not owned by our country
+********** Sets the province flag raided_in_desert
+********** The owner of the province:
+*********** Gets the country event:
+************ ID is west_african.6
+************ Base mean time to happen of 7 days
+*********** Tooltip:
+************ Gives the 0 "Diplomatic Insult casus belli against our country
+******** Option: west_african.5.b:
+********* The owner of the province:
+********** Changes administrative power stored by 20
+******* Gets the country event:
+******** ID is west_african.6
+******** title = west_african.6.t
+******** desc = west_african.6.d
+******** picture = CAMEL_PATROL_eventPicture
+******** is_triggered_only = yes
+******** Option: west_african.6.a:
+********* Changes treasury by -50 ducats
+********* Gives the 0 "Diplomatic Insult casus belli against our country
+******* Gets the province event:
+******** ID is west_african.7
+******** title = west_african.7.t
+******** desc = west_african.7.d
+******** picture = CAMEL_PATROL_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Has the province flag raided_in_desert
+********* The province is not the capital of the country
+********* Any bordering province:
+********** The owner of the province:
+*********** Is a tribal nation
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+******** Option: west_african.7.a:
+********* The owner of the province:
+********** Changes national manpower reserves by -1 years worth
+********** Changes treasury by -25 ducats
+********* Sets the province flag desert_border_patrols
+********* Removes the province flag raided_in_desert
+******** Option: west_african.7.b:
+********* Trigger:
+********** The owner of the province:
+*********** Is not in regency
+********* The owner of the province:
+********** Changes prestige by 15
+********** Changes administrative power stored by -25
+********* Sets the province flag desert_border_patrols
+********* Removes the province flag raided_in_desert
+******** Option: west_african.7.c:
+********* add_local_autonomy = 20
+******* Gets the country event:
+******** ID is west_african.8
+******** title = west_african.8.t
+******** desc = west_african.8.d
+******** picture = DESERT_CARAVAN_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Culture group is sahelian
+********* Any active trade node:
+********** has_merchant = PREV
+********** }
+********** Any province owned by a trade node member:
+*********** is_wasteland = yes
+******** Mean time to happen
+********* Base mean time to happen of 480 months
+******** Option: west_african.8.a:
+********* Random active trade node:
+********** Limited to:
+*********** has_merchant = PREV
+*********** }
+*********** Any province owned by a trade node member:
+************ is_wasteland = yes
+********** Adds trade modifier:
+*********** Affecting our country
+*********** Lasting 3650 days
+*********** Changing trade power by 20
+*********** Named "desert_traders"
+******** Option: west_african.8.b:
+********* Changes treasury by 50 ducats
+********* Random active trade node:
+********** Limited to:
+*********** has_merchant = PREV
+*********** }
+*********** Any province owned by a trade node member:
+************ is_wasteland = yes
+********** Every member of the trade node:
+*********** Limited to:
+************ Country is not our country
+*********** Adds the opinion modifier "raided_in_wastelands" towards our country
+******* Gets the province event:
+******** ID is west_african.9
+******** title = west_african.9.t
+******** desc = west_african.9.d
+******** picture = CHRISTIAN_ANIMIST_ALTAR_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* The province is currently being converted
+********* Follows the 0 "Fetishist religion
+********* The owner of the province:
+********** Is in the 0 "Christian religion group
+********* The owner of the province:
+********** Does not have the country modifier "animist_syncretism"
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+******** Option: west_african.9.a:
+********* The owner of the province:
+********** Adds the modifier "animist_syncretism" for 20 years:
+*********** -1.5 tolerance of the true faith
+*********** +1.5 tolerance of heathens
+*********** +1% global missionary strength
+******** Option: west_african.9.b:
+********* Adds the modifier "dogmatic_preacher" until the end of the campaign:
+********** -5% missionary strength
+******* Gets the country event:
+******** ID is west_african.10
+******** title = west_african.10.t
+******** desc = west_african.10.d
+******** picture = CHRISTIAN_ANIMIST_ALTAR_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Follows the 0 "Fetishist religion
+********* Any neighbor country:
+********** Follows the 0 "Catholic religion
+********* Does not have the country modifier "animist_syncretism"
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+******** Option: west_african.10.a:
+********* Random neighbor country:
+********** Limited to:
+*********** Follows the 0 "Catholic religion
+********** Adds the opinion modifier "renounced_our_faith" towards our country
+******** Option: west_african.10.b:
+********* Adds the modifier "animist_syncretism" for 20 years:
+********** -1.5 tolerance of the true faith
+********** +1.5 tolerance of heathens
+********** +1% global missionary strength
+********* Random owned province:
+********** Limited to:
+*********** Any bordering province:
+************ The owner of the province:
+************* Follows the 0 "Catholic religion
+*********** Follows the 0 "Fetishist religion
+*********** is_religious_center_province_false = yes
+*********** Does not have the province modifier "0 "Religious Center"
+********** Changes religion to 0 "Catholic
+******* Gets the province event:
+******** ID is west_african.11
+******** title = west_african.11.t
+******** desc = west_african.11.d
+******** picture = MUSLIM_ANIMIST_ALTAR_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* The province is currently being converted
+********* Follows the 0 "Fetishist religion
+********* The owner of the province:
+********** Is in the 0 "Muslim religion group
+********* The owner of the province:
+********** Does not have the country modifier "animist_syncretism"
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+******** Option: west_african.11.a:
+********* The owner of the province:
+********** Adds the modifier "animist_syncretism" for 20 years:
+*********** -1.5 tolerance of the true faith
+*********** +1.5 tolerance of heathens
+*********** +1% global missionary strength
+******** Option: west_african.11.b:
+********* Adds the modifier "dogmatic_preacher" until the end of the campaign:
+********** -5% missionary strength
+******* Gets the country event:
+******** ID is west_african.12
+******** title = west_african.12.t
+******** desc = west_african.12.d
+******** picture = MUSLIM_ANIMIST_ALTAR_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Follows the 0 "Fetishist religion
+********* Any neighbor country:
+********** Follows the 0 "Sunni religion
+********* Does not have the country modifier "animist_syncretism"
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: west_african.12.a:
+********* Random neighbor country:
+********** Limited to:
+*********** Follows the 0 "Sunni religion
+********** Adds the opinion modifier "renounced_our_faith" towards our country
+******** Option: west_african.12.b:
+********* Adds the modifier "animist_syncretism" for 20 years:
+********** -1.5 tolerance of the true faith
+********** +1.5 tolerance of heathens
+********** +1% global missionary strength
+********* Random owned province:
+********** Limited to:
+*********** Any bordering province:
+************ The owner of the province:
+************* Follows the 0 "Sunni religion
+*********** Follows the 0 "Fetishist religion
+*********** is_religious_center_province_false = yes
+*********** Does not have the province modifier "0 "Religious Center"
+********** Changes religion to 0 "Sunni
+******* Gets the country event:
+******** ID is west_african.13
+******** title = west_african.13.t
+******** desc = west_african.13.d
+******** picture = MUSLIM_ANIMIST_DISPUTE_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Is in the 0 "Muslim religion group
+********* Does not have the country modifier "animist_syncretism"
+********* At least 0.3 provinces follow the 0 "Fetishist religion
+********* Any owned province:
+********** Follows our country's religion
+********* Does not have the idea group 0 "Humanist Ideas
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: west_african.13.a:
+********* Random owned province:
+********** Limited to:
+*********** Follows the 0 "Fetishist religion
+********** Spawns revolt of size 2 of 0 "Religious rebels
+******** Option: west_african.13.b:
+********* Random owned province:
+********** Limited to:
+*********** Follows our country's religion
+********** Spawns revolt of size 2 of 0 "Religious rebels
+******** Option: west_african.13.c:
+********* Changes stability by -1
+******** Option: west_african.13.e:
+********* Changes diplomatic power stored by -25
+********* Adds the modifier "animist_syncretism" for 20 years:
+********** -1.5 tolerance of the true faith
+********** +1.5 tolerance of heathens
+********** +1% global missionary strength
+******* Gets the country event:
+******** ID is west_african.14
+******** title = west_african.14.t
+******** desc = west_african.14.d
+******** picture = SONGHAIR_SCHOLAR_WRITING_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Any of the following:
+********** Culture group is sahelian
+********** Culture group is mande
+********** Culture group is west_african
+********* Is in the 0 "Muslim religion group
+********* Has the idea group 0 "Religious Ideas
+********* Has the 0 "Theologian advisor
+******** Mean time to happen
+********* Base mean time to happen of 480 months
+******** Option: west_african.14.a:
+********* Changes administrative power stored by 40
+********* Changes prestige by 15
+******* Gets the country event:
+******** ID is west_african.15
+******** title = west_african.15.t
+******** desc = west_african.15.d
+******** picture = SONGHAIR_SCHOLAR_WRITING_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Capital:
+********** Any of the following:
+*********** Region is guinea_region
+*********** Region is niger_region
+*********** Region is south_africa_region
+*********** Region is central_africa_region
+*********** Region is kongo_region
+********* Has the idea group 0 "Innovative Ideas
+********* Any owned province:
+********** has_climate = 0 "Tropical
+******** Mean time to happen
+********* Base mean time to happen of 480 months
+******** Option: west_african.15.a:
+********* Changes administrative power stored by 40
+********* Changes prestige by 15
+********* Sets the country flag tropical_botany
+******* Gets the country event:
+******** ID is west_african.16
+******** title = west_african.16.t
+******** desc = west_african.16.d
+******** picture = BENIN_TRADING_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Technology group is 0 "West African
+********* Military technology is lower than 12
+********* Any neighbor country:
+********** Technology group is 0 "Western
+********** Military technology is at least 12
+******** Mean time to happen
+********* Base mean time to happen of 480 months
+******** Option: west_african.16.a:
+********* Changes military power stored by 75
+********* Adds the modifier "buying_firearms_from_neighbor" for 10 years:
+********** -15% domestic trade power
+******** Option: west_african.16.b:
+********* Changes army tradition by 5
+******* Gets the country event:
+******** ID is west_african.17
+******** title = west_african.17.t
+******** desc = west_african.17.d
+******** picture = BENIN_TRADING_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Any of the following:
+********** Culture group is sahelian
+********** Culture group is mande
+********** Culture group is west_african
+********** Culture group is 0 "East Bantu
+********* Does not have the country modifier "refused_slave_trade_with_europeans"
+********* Any owned province:
+********** Produces 0 "Slaves
+********** Does not have the province modifier "slave_trade_with_europeans"
+********** Any member of the trade node:
+*********** Capital:
+************ In the continent 0 "Europe
+*********** Does not have the country modifier "the_abolish_slavery_act"
+********* Any neighbor country:
+********** Capital:
+*********** In the continent 0 "Europe
+********** Does not have the country modifier "the_abolish_slavery_act"
+********** Any owned province:
+*********** Any of the following:
+************ In the continent 0 "South America
+************ In the continent 0 "North America
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+******** Option: west_african.17.a:
+********* Adds the modifier "refused_slave_trade_with_europeans" for 20 years:
+********** +15% domestic trade power
+********* Random neighbor country:
+********** Limited to:
+*********** Capital:
+************ In the continent 0 "Europe
+*********** Does not have the country modifier "the_abolish_slavery_act"
+********** Adds the opinion modifier "impeded_slave_trade" towards our country
+******** Option: west_african.17.b:
+********* Changes prestige by -10
+********* Every owned province:
+********** Limited to:
+*********** Produces 0 "Slaves
+********** Adds the modifier "slave_trade_with_europeans" until the end of the campaign:
+*********** +15% domestic trade power
+******** Option: west_african.17.c:
+********* Trigger:
+********** Has the idea group 0 "Innovative Ideas
+********** Ruler's diplomatic skill is at least 3
+********* Changes stability by -1
+********* Adds the modifier "the_abolish_slavery_act" for the rest of the campaign:
+********** -5% global tax modifier
+********** -5% stability cost modifier
+********* Adds the modifier "0 "Increased Innovative" for 10 years:
+********** -5% technology cost
+********** -1% global missionary strength
+******* Gets the province event:
+******** ID is west_african.18
+******** title = west_african.18.t
+******** desc = west_african.18.d
+******** picture = NOMAD_AFRICANS_TRAVELLING_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Culture group is sahelian
+********* local_autonomy = 10
+********* Has a base tax of at least 2
+********* Any bordering province:
+********** The province is owned by our country
+********** Culture group is sahelian
+********* The owner of the province:
+********** Is not at war
+********** Has at least one advisor
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: west_african.18.a:
+********* Changes base tax by -1
+********* Random bordering province:
+********** Limited to:
+*********** The province is owned by our country
+*********** Culture group is sahelian
+********** Changes base tax by 1
+********** add_local_autonomy = 15
+******** Option: west_african.18.b:
+********* add_local_autonomy = -5
+********* The owner of the province:
+********** Changes army tradition by -10
+********** Changes administrative power stored by -10
+******* Gets the country event:
+******** ID is west_african.19
+******** title = west_african.19.t
+******** desc = west_african.19.d
+******** picture = GOLDEN_STOOL_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Year is at least 1500
+********* 0 "Ashanti does not exist
+********* Any owned province:
+********** Any uncolonized bordering province:
+*********** Any of the following:
+************ Province is 0 "Kumasi
+************ Province is 0 "Denkyira
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+******** Option: west_african.19.a:
+********* If:
+********** Limited to:
+*********** 0 "Kumasi:
+************ Is uncolonized
+********** 0 "Kumasi:
+*********** Gives 0 "Ashanti core on the province
+*********** Cedes province to 0 "Ashanti
+********* If:
+********** Limited to:
+*********** 0 "Denkyira:
+************ Is uncolonized
+********** 0 "Denkyira:
+*********** Gives 0 "Ashanti core on the province
+*********** Cedes province to 0 "Ashanti
+********* Sets the country flag met_ashanti
+********* 0 "Ashanti:
+********** Every neighbor country:
+*********** Limited to:
+************ Does not have the country flag met_ashanti
+*********** Gets the country event:
+************ ID is west_african.19
+************ Base mean time to happen of 1 days
+********** adopt_reform_progress = our country
+******** Option: west_african.19.b:
+********* Trigger:
+********** Is not AI controlled
+********* If:
+********** Limited to:
+*********** 0 "Kumasi:
+************ Is uncolonized
+********** 0 "Kumasi:
+*********** Gives 0 "Ashanti core on the province
+*********** Cedes province to 0 "Ashanti
+********* If:
+********** Limited to:
+*********** 0 "Denkyira:
+************ Is uncolonized
+********** 0 "Denkyira:
+*********** Gives 0 "Ashanti core on the province
+*********** Cedes province to 0 "Ashanti
+********* Sets the country flag met_ashanti
+********* 0 "Ashanti:
+********** Every neighbor country:
+*********** Limited to:
+************ Does not have the country flag met_ashanti
+*********** Gets the country event:
+************ ID is west_african.19
+************ Base mean time to happen of 1 days
+********** adopt_reform_progress = our country
+********* switch_tag = 0 "Ashanti
+******* Gets the country event:
+******** ID is west_african.20
+******** title = west_african.20.t
+******** desc = west_african.20.d
+******** picture = GOLDEN_STOOL_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Art of War
+********* Any neighbor country:
+********** Country is 0 "Ashanti
+********* Year is at least 1670
+********* Capital:
+********** In the continent 0 "Europe
+********* Has the 0 "Colonial Governor advisor
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: west_african.20.a:
+********* Hidden effect:
+********** 0 "Ashanti:
+*********** Gets the country event:
+************ ID is west_african.21
+************ Base mean time to happen of 7 days
+******** Option: west_african.20.b:
+********* Removes the 0 "Colonial Governor advisor
+******* Gets the country event:
+******** ID is west_african.21
+******** title = west_african.21.t
+******** desc = west_african.21.d
+******** picture = GOLDEN_STOOL_eventPicture
+******** is_triggered_only = yes
+******** Option: west_african.21.a:
+********* AI chance:
+********** Base chance of 75
+********* Gives the 0 "Diplomatic Insult casus belli against our country
+******** Option: west_african.21.b:
+********* AI chance:
+********** Base chance of 25
+********* Changes prestige by -10
+******* Gets the province event:
+******** ID is west_african.22
+******** title = west_african.22.t
+******** desc = west_african.22.d
+******** picture = AFRICAN_KING_MEDIATING_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* The province is not the capital of the country
+********* The owner of the province:
+********** Is a tribal nation
+********** Does not accept the primary culture of our country
+********** Capital:
+*********** Any of the following:
+************ Region is guinea_region
+************ Region is niger_region
+************ Region is south_africa_region
+************ Region is central_africa_region
+************ Region is kongo_region
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: west_african.22.a:
+********* The owner of the province:
+********** add_stability_or_adm_power = yes
+********** Every owned province:
+*********** Limited to:
+************ Culture is the same as our country
+*********** add_local_autonomy = 15
+******** Option: west_african.22.b:
+********* Spawns revolt of size 3
+******* Gets the country event:
+******** ID is west_african.23
+******** title = west_african.23.t
+******** desc = west_african.23.d
+******** picture = MOSSI_CAVALRY_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Capital:
+********** has_climate = 0 "Tropical
+********* Is at war
+********* num_of_cavalry = 1
+********* Has a base manpower of at least 1
+********* Any neighbor country:
+********** At war with our country
+********** Any owned province:
+*********** Controlled by owner
+*********** has_terrain = 0 "Jungle
+*********** fort_level = 1
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: west_african.23.a:
+********* Random province in the world:
+********** Limited to:
+*********** The owner of the province:
+************ At war with our country
+*********** The owner of the province:
+************ Is a neighbor of our country
+*********** Controlled by owner
+*********** has_terrain = 0 "Jungle
+*********** fort_level = 1
+********** Adds the modifier "raided_by_cavalry" until the end of the campaign:
+*********** -40% local defensiveness
+********* Changes treasury by 10 ducats
+********* Changes national manpower reserves by -1 years worth
+******** Option: west_african.23.b:
+********* Changes military power stored by 15
+******* Gets the country event:
+******** ID is west_african.24
+******** title = west_african.24.t
+******** desc = west_african.24.d
+******** picture = AFRICAN_EXPLORING_JUNGLE_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Capital:
+********** has_climate = 0 "Tropical
+********* Is a tribal nation
+********* Has less than 1 colonies
+********* Any owned province:
+********** Any uncolonized bordering province:
+*********** has_climate = 0 "Tropical
+********* Has a base manpower of at least 3
+********* Monthly income is at least 5 ducats
+********* Has less than 5 active loans
+********* Any of the following:
+********** Has at least 1 years worth of income
+********** is_in_deficit_false = no
+******** Mean time to happen
+********* Base mean time to happen of 1200 months
+******** Option: west_african.24.a:
+********* Changes national manpower reserves by -3 years worth
+********* Random owned province:
+********** Limited to:
+*********** Any uncolonized bordering province:
+************ has_climate = 0 "Tropical
+********** Random uncolonized bordering province:
+*********** Limited to:
+************ has_climate = 0 "Tropical
+*********** Founds a colony
+*********** Adds the modifier "used_to_tropical" until the end of the campaign:
+************ +25 colonial growth
+********* AI chance:
+********** Base chance of 2
+********** Multiplies value by 0:
+*********** Any of the following:
+************ is_in_deficit = yes
+************ Has at least 1 active loans
+************ Monthly income is less than 10 ducats
+******** Option: west_african.24.b:
+********* Changes prestige by -10
+********* Changes administrative power stored by 20
+******* Gets the country event:
+******** ID is west_african.25
+******** title = west_african.25.t
+******** desc = west_african.25.d
+******** picture = AFRICAN_EXPLORING_JUNGLE_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Has the country flag tropical_botany
+********* Any owned province:
+********** Produces 0 "Dyes
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: west_african.25.a:
+********* Every owned province:
+********** Limited to:
+*********** Produces 0 "Dyes
+********** Adds the modifier "new_dyeing_methods" until the end of the campaign:
+*********** +20% production efficiency
+********* Removes the country flag tropical_botany
+******* Gets the country event:
+******** ID is west_african.26
+******** title = west_african.26.t
+******** desc = west_african.26.d
+******** picture = ANIMIST_RELIGIOUS_CEREMONY_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Follows the 0 "Fetishist religion
+********* Year is at least 1650
+********* Any owned province:
+********** Is not in 0 "Pagan's religion group
+********* Any neighbor country:
+********** Is not in 0 "Pagan's religion group
+******** Mean time to happen
+********* Base mean time to happen of 960 months
+******** Option: west_african.26.a:
+********* Changes prestige by 10
+********* Adds 10 legitimacy
+********* Every neighbor country:
+********** Limited to:
+*********** Is not in 0 "Pagan's religion group
+********** Adds the opinion modifier "practiced_animist_rituals" towards our country
+******** Option: west_african.26.b:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is west_african.27
+******** title = west_african.27.t
+******** desc = west_african.27.d
+******** picture = AFRICAN_ARTWORK_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Is not in regency
+********* Any of the following:
+********** Culture group is sahelian
+********** Culture group is mande
+********** Culture group is west_african
+********* Has the monarchy government type
+********* Is not the lesser partner in a union
+********* Stability is at least 1
+******** Mean time to happen
+********* Base mean time to happen of 960 months
+******** Option: west_african.27.a:
+********* Modifies treasury by -0.1 years worth of income
+********* Changes prestige by 5
+********* Adds 5 legitimacy
+******** Option: west_african.27.b:
+********* Modifies treasury by -0.2 years worth of income
+********* Changes prestige by 10
+********* Adds 5 legitimacy
+******** Option: west_african.27.c:
+********* Trigger:
+********** Any owned province:
+*********** Produces 0 "Ivory
+********* Modifies treasury by -0.3 years worth of income
+********* Changes prestige by 15
+********* Adds 10 legitimacy
+******** Option: west_african.27.e:
+********* Trigger:
+********** Any owned province:
+*********** Produces 0 "Gold
+********* Modifies treasury by -0.4 years worth of income
+********* Changes prestige by 20
+********* Adds 10 legitimacy
+******** Option: west_african.27.f:
+********* Changes prestige by -10
+********* Adds -10 legitimacy
+******* Gets the country event:
+******** ID is west_african.28
+******** title = west_african.28.t
+******** desc = west_african.28.d
+******** picture = ANSHANTI_FIREARMS_eventPicture
+******** Trigger:
+********* Has the DLC Art of War
+********* Is at war
+********* Any of the following:
+********** Culture group is sahelian
+********** Culture group is mande
+********** Culture group is west_african
+********* Military technology is lower than 12
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: west_african.28.a:
+********* Changes military power stored by 40

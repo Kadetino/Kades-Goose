@@ -1,0 +1,295 @@
+******** Trigger:
+********* Follows the 0 "Reformed religion
+********* The owner of the province:
+********** Follows the 0 "Reformed religion
+********** The dominant religion is 0 "Reformed
+********** Capital:
+*********** In the continent 0 "Europe
+********* Any bordering province:
+********** The province is not owned by our country
+********** Follows the 0 "Reformed religion
+********** Does not have the province flag reformed_refugees
+********** The owner of the province:
+*********** Does not follow the 0 "Reformed religion
+*********** The dominant religion is not 0 "Reformed
+*********** Is not a vassal of our country
+*********** Is not allied with our country
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random bordering province:
+*********** Limited to:
+************ The province is not owned by our country
+************ Follows the 0 "Reformed religion
+************ Does not have the province flag reformed_refugees
+************ The owner of the province:
+************* Does not follow the 0 "Reformed religion
+************* The dominant religion is not 0 "Reformed
+************* Is not a vassal of our country
+************* Is not allied with our country
+*********** Sets the province flag prospective_reformed_refugees
+******** Option: 0 "Let them across:
+********* AI chance:
+********** Base chance of 50
+********* Changes base tax by 1
+********* Random bordering province:
+********** Limited to:
+*********** Has the province flag prospective_reformed_refugees
+********** Tooltip:
+*********** Adds the modifier "0 "Religious Persecution" until the end of the campaign:
+************ -75% provincial tax income
+************ -75% manpower modifier
+************ +3% missionary strength
+*********** The owner of the province:
+************ Adds the opinion modifier "0 "Accepted Reformed Refugees" towards our country
+********** Hidden effect:
+*********** Removes the province flag prospective_reformed_refugees
+*********** Sets the province flag reformed_refugees
+*********** Gets the province event:
+************ ID is reformed_events.2
+************ Base mean time to happen of 1 days
+******** Option: 0 "We better not:
+********* AI chance:
+********** Base chance of 50
+********* The owner of the province:
+********** add_fervor = -10
+********** Changes prestige by -10
+********* Hidden effect:
+********** Random bordering province:
+*********** Limited to:
+************ Has the province flag prospective_reformed_refugees
+*********** Removes the province flag prospective_reformed_refugees
+******* Gets the province event:
+******** ID is reformed_events.2
+******** title = 0 "Reformed Followers Flee
+******** desc = 0 "Many Reformed heretics in [Root.GetName] have fled across the border hoping to find a safe haven in [From.GetName]. Allegedly, this was carried out with the tacit sanction of the government of [From.Owner.GetName].
+******** picture = RELIGIOUS_TURMOIL_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "How dare they!:
+********* Adds the modifier "0 "Religious Persecution" until the end of the campaign:
+********** -75% provincial tax income
+********** -75% manpower modifier
+********** +3% missionary strength
+********* The owner of the province:
+********** Adds the opinion modifier "0 "Accepted Reformed Refugees" towards our country
+******* Gets the country event:
+******** ID is reformed_events.3
+******** title = 0 "Sending Ministers Abroad
+******** desc = 0 "Many within the church are of the opinion that we, as a leading Reformed nation, should send our ministers abroad to ensure that the true reformation continues to spread.
+******** picture = STREET_SPEECH_eventPicture
+******** Trigger:
+********* Follows the 0 "Reformed religion
+********* The dominant religion is 0 "Reformed
+********* Capital:
+********** In the continent 0 "Europe
+********* Any neighbor country:
+********** Does not follow the 0 "Reformed religion
+********** Is not a vassal of our country
+********** Is not allied with our country
+********** Any owned province:
+*********** Follows the 0 "Reformed religion
+*********** Does not have the province modifier "0 "Foreign Reformed Ministers"
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random neighbor country:
+*********** Limited to:
+************ Does not follow the 0 "Reformed religion
+************ Is not a vassal of our country
+************ Is not allied with our country
+************ Any owned province:
+************* Follows the 0 "Reformed religion
+************* Does not have the province modifier "0 "Foreign Reformed Ministers"
+************* Any bordering province:
+************** The province is owned by our country
+*********** Random owned province:
+************ Limited to:
+************* Follows the 0 "Reformed religion
+************* Does not have the province modifier "0 "Foreign Reformed Ministers"
+************* Any bordering province:
+************** The province is owned by our country
+************ Sets the province flag prospective_foreign_reformed_ministers
+*********** ROOT:
+************ Sets the country flag prospective_country_found
+********** If:
+*********** Limited to:
+************ Does not have the country flag prospective_country_found
+*********** Random neighbor country:
+************ Limited to:
+************* Does not follow the 0 "Reformed religion
+************* Is not a vassal of our country
+************* Is not allied with our country
+************* Any owned province:
+************** Follows the 0 "Reformed religion
+************** Does not have the province modifier "0 "Foreign Reformed Ministers"
+************ Random owned province:
+************* Limited to:
+************** Follows the 0 "Reformed religion
+************** Does not have the province modifier "0 "Foreign Reformed Ministers"
+************* Sets the province flag prospective_foreign_reformed_ministers
+********** Removes the country flag prospective_country_found
+******** Option: 0 "For the glory of God!:
+********* AI chance:
+********** Base chance of 50
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+********* Random province in the world:
+********** Limited to:
+*********** Has the province flag prospective_foreign_reformed_ministers
+********** Tooltip:
+*********** Adds the modifier "0 "Foreign Reformed Ministers" until the end of the campaign:
+************ -2% missionary strength
+*********** The owner of the province:
+************ Adds the opinion modifier "0 "Sent Reformed Ministers" towards our country
+********** Hidden effect:
+*********** Removes the province flag prospective_foreign_reformed_ministers
+*********** Gets the province event:
+************ ID is reformed_events.4
+************ Base mean time to happen of 1 days
+******** Option: 0 "Keep it within our borders:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** has_estate = estate_church
+*********** estate_loyalty:
+************ estate_false = estate_church
+************ loyalty_false = 40
+********* add_fervor = -10
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = -10
+********* Hidden effect:
+********** Random province in the world:
+*********** Limited to:
+************ Has the province flag prospective_foreign_reformed_ministers
+*********** Removes the province flag prospective_foreign_reformed_ministers
+******* Gets the province event:
+******** ID is reformed_events.4
+******** title = 0 "Foreign Ministers in [Root.GetName]
+******** desc = 0 "There are reports of ministers preaching the Reformed faith have turned up in [Root.GetName]. They appear to come from [From.GetName] in order to encourage the local population to resist and fight back against our attempts to root out this heresy.
+******** picture = STREET_SPEECH_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Outrages!:
+********* Adds the modifier "0 "Foreign Reformed Ministers" until the end of the campaign:
+********** -2% missionary strength
+********* The owner of the province:
+********** Adds the opinion modifier "0 "Sent Reformed Ministers" towards our country
+******* Gets the country event:
+******** ID is reformed_events.5
+******** title = 0 "Predestination
+******** desc = 0 "Reformed theologians believe that only those who are predestined to be saved can be saved. But since it is impossible to know who is predestined, a notion has developed that it might be possible to discern that a person is predestined by observing their way of life. As hard work, frugality, social success and wealth are thought to be important consequences of being predestined, it seems to inspire followers of the Reformed faith to strive for reaching them, as well as attracting those who already possess them - like burghers and merchants.
+******** picture = HARBOUR_eventPicture
+******** Trigger:
+********* Follows the 0 "Reformed religion
+********* uses_fervor = yes
+********* Does not have the country flag 0 "Reformed Work Ethic
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+******** Option: 0 "Encourage these believes:
+********* AI chance:
+********** Base chance of 75
+********* Sets the country flag 0 "Reformed Work Ethic
+********* Changes diplomatic power stored by -100
+********* Adds the modifier "0 "Reformed Work Ethic" for 25 years:
+********** +10% production efficiency
+******** Option: 0 "Leave it be:
+********* AI chance:
+********** Base chance of 25
+********* Sets the country flag 0 "Reformed Work Ethic
+********* add_fervor = -10
+******* Gets the country event:
+******** ID is reformed_events.6
+******** title = 0 "Instruments in Church
+******** desc = 0 "Leading theologists are of the opinion that music shouldn't be used in religious sermons. They believe that it distracts people from the matter of importance - worship and seeking knowledge of God - and thus favor the ban of musical instruments in churches.
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* Follows the 0 "Reformed religion
+********* uses_fervor = yes
+********* Does not have the country flag 0 "Banned Musical Instruments in Church
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+******** Option: 0 "Issue a ban:
+********* AI chance:
+********** Base chance of 75
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+********* Sets the country flag 0 "Banned Musical Instruments in Church
+********* Adds the modifier "0 "Banned Musical Instruments in Church" for 25 years:
+********** +10% stability cost modifier
+********** monthly_fervor_increase = 0.1
+********** Follows the yes religion
+******** Option: 0 "Ignore their opinions:
+********* AI chance:
+********** Base chance of 25
+********** Multiplies value by 0:
+*********** has_estate = estate_church
+*********** estate_loyalty:
+************ estate_false = estate_church
+************ loyalty_false = 40
+********* Sets the country flag 0 "Banned Musical Instruments in Church
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = -10
+********* add_fervor = -10
+******* Gets the province event:
+******** ID is reformed_events.7
+******** title = 0 "Iconoclastic Fury
+******** desc = 0 "[Root.GetName] has seen outbreaks of religious violence as mobs of Reformed followers vandalize churches and destroy Catholic religious art. The Catholic majority in [Root.GetName] demand that the government immediately take action.
+******** picture = RELIGIOUS_TURMOIL_eventPicture
+******** Trigger:
+********* The owner of the province:
+********** Follows the 0 "Reformed religion
+********** current_age = 0 "Age of Reformation
+********** Capital:
+*********** In the continent 0 "Europe
+********* Follows the 0 "Catholic religion
+********* In the continent 0 "Europe
+********* Does not have the province flag 0 "Iconoclastic Fury
+********* Does not have the province flag 0 "Stopped Iconoclastic Fury
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 0.85:
+********** Any bordering province:
+*********** The province is owned by our country
+*********** Has the province flag 0 "Iconoclastic Fury
+********* Multiplies value by 1.1:
+********** Any bordering province:
+*********** The province is owned by our country
+*********** Has the province flag 0 "Stopped Iconoclastic Fury
+******** Option: 0 "Send troops to stop it!:
+********* AI chance:
+********** Base chance of 50
+********* Sets the province flag 0 "Stopped Iconoclastic Fury
+********* The owner of the province:
+********** add_fervor = -10
+********** Random owned province:
+*********** Limited to:
+************ In the continent 0 "Europe
+************ Follows the 0 "Reformed religion
+*********** add_unrest = 1
+******** Option: 0 "Encourage it!:
+********* AI chance:
+********** Base chance of 50
+********* Sets the province flag 0 "Iconoclastic Fury
+********* The owner of the province:
+********** add_fervor = 10
+********* Spawns revolt of size 2 of 0 "Religious rebels
+********* Adds the modifier "0 "Religious Violence" until the end of the campaign:
+********** -15% manpower modifier
+********** -15% provincial tax income

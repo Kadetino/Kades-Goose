@@ -1,0 +1,187 @@
+** is_triggered_only = yes
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** 0 "Portugal exists
+***** 0 "Portugal:
+****** save_event_target_as = jol_trade_deal_partner
+**** else_if:
+***** Limited to:
+****** Any country:
+******* Capital:
+******** Region is iberia_region
+***** Random country:
+****** Limited to:
+******* Capital:
+******** Region is iberia_region
+****** save_event_target_as = jol_trade_deal_partner
+**** else_if:
+***** Limited to:
+****** Any country:
+******* Capital:
+******** Region is france_region
+***** Random country:
+****** Limited to:
+******* Capital:
+******** Region is france_region
+****** save_event_target_as = jol_trade_deal_partner
+**** else_if:
+***** Limited to:
+****** Any country:
+******* Capital:
+******** Region is british_isles_region
+***** Random country:
+****** Limited to:
+******* Capital:
+******** Region is british_isles_region
+****** save_event_target_as = jol_trade_deal_partner
+**** else:
+***** Random country:
+****** Limited to:
+******* Capital:
+******** In the continent 0 "Europe
+****** save_event_target_as = jol_trade_deal_partner
+** Option: flavor_jol.1.a:
+*** Trigger:
+**** has_saved_event_target = jol_trade_deal_partner
+*** Changes diplomatic power stored by 50
+*** event_target:jol_trade_deal_partner:
+**** Gets the country event:
+***** ID is flavor_jol.2
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_jol.1.b:
+*** Adds 300% mercantilism
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_jol.2
+** title = flavor_jol.2.t
+** desc = flavor_jol.2.d
+** picture = AFRICAN_EUROPEAN_TRADE_eventPicture
+** is_triggered_only = yes
+** Option: flavor_jol.2.a:
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_jol.3
+*** Tooltip:
+**** home_trade_node_effect_scope:
+***** Adds trade modifier:
+****** Affecting our country
+****** Lasting 9125 days
+****** Changing trade power by 10
+****** Named "JOL_TRADE_DEAL_AGREEMENT"
+**** Our country:
+***** home_trade_node_effect_scope:
+****** Adds trade modifier:
+******* Affecting our country
+******* Lasting 9125 days
+******* Changing trade power by 10
+******* Named "JOL_TRADE_DEAL_AGREEMENT"
+*** Hidden effect:
+**** Sets the country flag jol_increased_demand_for_ivory
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_jol.2.b:
+*** Adds 300% mercantilism
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_jol.4
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_jol.3
+** title = flavor_jol.3.t
+** desc = flavor_jol.3.d
+** picture = AFRICAN_EUROPEAN_TRADE_eventPicture
+** is_triggered_only = yes
+** Option: flavor_jol.3.a:
+*** home_trade_node_effect_scope:
+**** Adds trade modifier:
+***** Affecting our country
+***** Lasting 9125 days
+***** Changing trade power by 10
+***** Named "JOL_TRADE_DEAL_AGREEMENT"
+*** Our country:
+**** home_trade_node_effect_scope:
+***** Adds trade modifier:
+****** Affecting our country
+****** Lasting 9125 days
+****** Changing trade power by 10
+****** Named "JOL_TRADE_DEAL_AGREEMENT"
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_jol.4
+** title = flavor_jol.4.t
+** desc = flavor_jol.4.d
+** picture = AFRICAN_EUROPEAN_DEBATE_eventPicture
+** is_triggered_only = yes
+** Option: flavor_jol.4.a:
+*** Adds 300% mercantilism
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_jol.5
+** title = flavor_jol.5.t
+** desc = flavor_jol.5.d
+** picture = AFRICAN_EUROPEAN_PURCHASE_eventPicture
+** major = yes
+** Trigger:
+*** Has had the country flag "jol_increased_demand_for_ivory" for at least 1825 days
+** Mean time to happen
+*** Base mean time to happen of 6 months
+** Immediate effects:
+*** Hidden effect:
+**** Removes the country flag jol_increased_demand_for_ivory
+** Option: flavor_jol.5.a:
+*** If:
+**** Limited to:
+***** has_estate = estate_nobles
+**** add_estate_loyalty:
+***** estate = estate_nobles
+***** loyalty = 5
+*** If:
+**** Limited to:
+***** has_estate = estate_burghers
+**** add_estate_loyalty:
+***** estate = estate_burghers
+***** loyalty = 5
+*** change_price:
+**** Produces 0 "Ivory
+**** Named "JOL_INCREASED_IVORY_DEMAND"
+**** value = 0.25
+**** Lasting 9125 days
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_jol.100
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** hidden = yes
+** is_triggered_only = yes
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = -40
+*** Changes stability by -1
+*** remove_estate_privilege = estate_nobles_decentralized_tribe
+*** set_estate_privilege = estate_nobles_tribe_unification
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_jol.101
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** hidden = yes
+** is_triggered_only = yes
+*** Changes stability by -2
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = -50
+*** Changes government type to monarchy
+*** change_government_reform_progress = 100
+*** remove_estate_privilege = estate_nobles_tribe_unification
+*** remove_estate_privilege = estate_nobles_tribe_centralization

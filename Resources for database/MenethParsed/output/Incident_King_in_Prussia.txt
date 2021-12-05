@@ -1,0 +1,123 @@
+******** Trigger:
+********* Country is 0 "Prussia
+********* Has the monarchy government type
+********* government_rank_false = 2
+********* Is not a vassal
+********* total_development = 200
+********* Is not in regency
+********* Ruler is male
+********* active_imperial_incident_false = any
+********* Is an elector in the Holy Roman Empire
+******** Mean time to happen
+********* Base mean time to happen of 6 months
+******** Option: king_in_prussia.1.a:
+********* If:
+********** Limited to:
+*********** Is part of the Holy Roman Empire
+*********** Isn't the Holy Roman Emperor
+*********** Has the DLC Emperor
+********** set_imperial_incident = incident_king_in_prussia
+********* else:
+********** set_government_rank = 2
+********** Changes prestige by 20
+********** Adds 20 legitimacy
+******* Gets the country event:
+******** ID is king_in_prussia.2
+******** title = king_in_prussia.2.t
+******** desc = king_in_prussia.2.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** is_triggered_only = yes
+******** major = yes
+******** Option: king_in_prussia.2.a:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 1000:
+*********** Is allied with 0 "Prussia
+********* Changes Imperial influence by -10
+********* Adds the opinion modifier "elevated_prussia" from 0 "Prussia
+********* Tooltip:
+********** 0 "Prussia:
+*********** set_government_rank = 2
+*********** Changes prestige by 25
+*********** Adds 25 legitimacy
+*********** Adds the opinion modifier "elevated_prussia" from 0 "Emperor
+********* Hidden effect:
+********** 0 "Prussia:
+*********** Sets the country flag king_in_prussia_elevated
+*********** Gets the country event:
+************ ID is king_in_prussia.3
+************ Base mean time to happen of 3 days
+******** Option: king_in_prussia.2.b:
+********* AI chance:
+********** Base chance of 2
+********* Adds the opinion modifier "opinion_king_in_prussia" from 0 "Prussia
+********* Hidden effect:
+********** 0 "Prussia:
+*********** Sets the country flag king_in_prussia_compromise
+*********** Gets the country event:
+************ ID is king_in_prussia.3
+************ Base mean time to happen of 3 days
+******** Option: king_in_prussia.2.c:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 1000:
+*********** Considers 0 "Prussia a rival
+********* Adds the opinion modifier "opinion_prussia_not_recognized" from 0 "Prussia
+********* Hidden effect:
+********** 0 "Prussia:
+*********** Sets the country flag king_in_prussia_rejection
+*********** Gets the country event:
+************ ID is king_in_prussia.3
+************ Base mean time to happen of 3 days
+******* Gets the country event:
+******** ID is king_in_prussia.3
+******** title = king_in_prussia.3.t
+******** desc:
+********* Trigger:
+********** Has the country flag king_in_prussia_elevated
+********* desc = king_in_prussia.3.d
+******** desc:
+********* Trigger:
+********** Has the country flag king_in_prussia_compromise
+********* desc = king_in_prussia.3.d2
+******** desc:
+********* Trigger:
+********** Has the country flag king_in_prussia_rejection
+********* desc = king_in_prussia.3.d3
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** is_triggered_only = yes
+******** major = yes
+********* Trigger:
+********** Has the country flag king_in_prussia_elevated
+******** Option: king_in_prussia.3.a:
+********* set_government_rank = 2
+********* Changes prestige by 25
+********* Adds 25 legitimacy
+********* Adds the opinion modifier "elevated_prussia" from 0 "Emperor
+********* Trigger:
+********** Has the country flag king_in_prussia_compromise
+******** Option: king_in_prussia.3.b:
+********* set_government_rank = 2
+********* Changes prestige by 10
+********* Adds 10 legitimacy
+********* Adds the opinion modifier "opinion_king_in_prussia" from 0 "Emperor
+********* Trigger:
+********** Has the country flag king_in_prussia_rejection
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 100:
+*********** total_development = 500
+******** Option: king_in_prussia.3.c:
+********* set_government_rank = 2
+********* Removes the province from the Holy Roman Empire
+********* Adds the opinion modifier "opinion_prussia_not_recognized" from 0 "Emperor
+********* Trigger:
+********** Has the country flag king_in_prussia_rejection
+********* AI chance:
+********** Base chance of 100
+********** Multiplies value by 0:
+*********** total_development = 500
+******** Option: king_in_prussia.3.optd:
+********* Changes prestige by -10
+********* Adds -10 legitimacy
+********* Gives the 0 "Diplomatic Insult casus belli against 0 "Emperor

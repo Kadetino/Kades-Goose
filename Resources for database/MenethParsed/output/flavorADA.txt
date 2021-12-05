@@ -1,0 +1,186 @@
+
+=== title = none ===
+* Cannot fire randomly
+* If:
+** Limited to:
+*** 0 "Ottomans exists
+** 0 "Ottomans:
+*** Gets the country event:
+**** ID is flavor_ada.2
+* else:
+** select_biggest_country_of_region:
+*** Region is anatolia_region
+** If:
+*** Limited to:
+**** event_target:selected_biggest_country_of_region:
+***** Primary culture is 0 "Turkish
+***** Follows the 0 "Sunni religion
+*** event_target:selected_biggest_country_of_region:
+**** Gets the country event:
+***** ID is flavor_ada.2
+** else:
+*** Gets the country event:
+**** ID is flavor_ada.5
+
+=== title = flavor_ada.2.t ===
+* Cannot fire randomly
+
+'''Option: flavor_ada.2.a:'''
+
+* add_historical_friend = our country
+* Our country:
+** Tooltip:
+*** add_historical_friend = our country
+** Gets the country event:
+*** ID is flavor_ada.3
+* Changes military power stored by -50
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0.5:
+*** Country is not 0 "Ottomans
+** Multiplies value by 0:
+*** Any of the following:
+**** Our country:
+***** Is not in our country's religion group
+**** Our country:
+***** Considers our country a rival
+**** Considers our country a rival
+
+'''Option: flavor_ada.2.b:'''
+
+* Our country:
+** Gets the country event:
+*** ID is flavor_ada.4
+* Changes military power stored by 50
+* Changes prestige by -10
+* AI chance:
+** Base chance of 0.5
+** Multiplies value by 0:
+*** Country is 0 "Ottomans
+
+=== title = flavor_ada.3.t ===
+* Cannot fire randomly
+
+'''Option: flavor_ada.3.a:'''
+
+* Hidden effect:
+** anatolia_region:
+*** Discovers the country our country
+** Sets the country flag ada_has_turkish_help
+* add_historical_friend = our country
+* Our country:
+** add_historical_friend = our country
+* AI chance:
+** Base chance of 1
+
+=== title = flavor_ada.4.t ===
+* Cannot fire randomly
+
+'''Option: flavor_ada.4.a:'''
+
+* Hidden effect:
+** anatolia_region:
+*** Discovers the country our country
+* AI chance:
+** Base chance of 1
+
+=== title = flavor_ada.5.t ===
+* Cannot fire randomly
+
+'''Option: flavor_ada.5.a:'''
+
+* Trigger:
+** 0 "Mamluks exists
+* Hidden effect:
+** anatolia_region:
+*** Discovers the country our country
+* 0 "Mamluks:
+** Gets the country event:
+*** ID is flavor_ada.6
+* AI chance:
+** Base chance of 1
+
+'''Option: flavor_ada.5.b:'''
+
+* Trigger:
+** 0 "Mamluks does not exist
+* Hidden effect:
+** anatolia_region:
+*** Discovers the country our country
+* AI chance:
+** Base chance of 1
+
+=== title = flavor_ada.2.t ===
+* Cannot fire randomly
+
+'''Option: flavor_ada.2.a:'''
+
+* Our country:
+** Gets the country event:
+*** ID is flavor_ada.7
+* AI chance:
+** Base chance of 1
+
+'''Option: flavor_ada.2.b:'''
+
+* Our country:
+** Gets the country event:
+*** ID is flavor_ada.8
+* AI chance:
+** Base chance of 0
+
+=== title = flavor_ada.7.t ===
+* Cannot fire randomly
+
+'''Option: flavor_ada.7.a:'''
+
+* Hidden effect:
+** Sets the country flag ada_mamluk_mercs
+* AI chance:
+** Base chance of 1
+
+=== title = flavor_ada.8.t ===
+* Cannot fire randomly
+
+'''Option: flavor_ada.8.a:'''
+
+* Changes diplomatic power stored by 25
+* AI chance:
+** Base chance of 1
+
+=== title = none ===
+
+'''Trigger:'''
+
+* Has the country modifier "ada_preperation_for_war"
+* Does not have the country modifier "ada_war_against_ethiopia"
+* At war with 0 "Ethiopia
+* 0 "Ethiopia:
+** total_own_and_non_tributary_subject_development = our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Option: ada_war_against_ethiopia:
+* Adds the modifier "" for the rest of the campaign:
+* AI chance:
+** Base chance of 1
+
+=== title = none ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Does not have the country modifier "ada_preperation_for_war"
+** 0 "Ethiopia does not exist
+** Not at war with 0 "Ethiopia
+** 0 "Ethiopia:
+*** total_own_and_non_tributary_subject_development_false = our country
+* Has the country modifier "ada_war_against_ethiopia"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Removes the country modifier "ada_war_against_ethiopia"
+* AI chance:
+** Base chance of 1

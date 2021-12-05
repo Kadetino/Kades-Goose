@@ -1,0 +1,104 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = revolutionary_empire_reform
+********* Any of the following:
+********** has_leader_with:
+*********** Ruler is leading an army
+*********** 5 skill in siege
+********** has_leader_with:
+*********** Ruler is leading an army
+*********** 5 skill in manuever
+********** has_leader_with:
+*********** Ruler is leading an army
+*********** 5 skill in shock
+********** has_leader_with:
+*********** Ruler is leading an army
+*********** 5 skill in fire
+********* Does not have the country modifier "napoleon_siege"
+********* Does not have the country modifier "napoleon_manuever"
+********* Does not have the country modifier "napoleon_shock"
+********* Does not have the country modifier "napoleon_fire"
+******** Option: napoleon.1.a:
+********* highlight = yes
+********* Trigger:
+********** has_leader_with:
+*********** Ruler is leading an army
+*********** 5 skill in siege
+********* add_revolutionary_zeal = 5
+********* Adds the ruler modifier "napoleon_siege" until the ruler's death:
+********** +20% siege ability
+******** Option: napoleon.1.b:
+********* highlight = yes
+********* Trigger:
+********** has_leader_with:
+*********** Ruler is leading an army
+*********** 5 skill in manuever
+********* add_revolutionary_zeal = 5
+********* Adds the ruler modifier "napoleon_manuever" until the ruler's death:
+********** movement_speed = 0.1
+********** -15% land attrition
+******** Option: napoleon.1.c:
+********* highlight = yes
+********* Trigger:
+********** has_leader_with:
+*********** Ruler is leading an army
+*********** 5 skill in shock
+********* add_revolutionary_zeal = 5
+********* Adds the ruler modifier "napoleon_shock" until the ruler's death:
+********** shock_damage = 0.15
+******** Option: napoleon.1.da:
+********* highlight = yes
+********* Trigger:
+********** has_leader_with:
+*********** Ruler is leading an army
+*********** 5 skill in fire
+********* add_revolutionary_zeal = 5
+********* Adds the ruler modifier "napoleon_fire" until the ruler's death:
+********** fire_damage = 0.15
+******* Gets the country event:
+******** ID is napoleon.2
+******** title = napoleon.2.t
+******** desc = napoleon.2.d
+******** picture = BATTLE_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* has_reform = revolutionary_empire_reform
+******** Option: napoleon.2.a:
+********* highlight = yes
+********* Trigger:
+********** Ruler's administrative skill is at least 5
+********* add_revolutionary_zeal = 5
+********* Adds the ruler modifier "napoleon_lawbringer" until the ruler's death:
+********** administrative_efficiency = 0.05
+******** Option: napoleon.2.b:
+********* highlight = yes
+********* Trigger:
+********** Ruler's diplomatic skill is at least 5
+********* add_revolutionary_zeal = 5
+********* Adds the ruler modifier "napoleon_peacebringer" until the ruler's death:
+********** +2 diplomatic reputation
+******** Option: napoleon.2.c:
+********* highlight = yes
+********* Trigger:
+********** Ruler's military skill is at least 5
+********* add_revolutionary_zeal = 5
+********* Adds the ruler modifier "napoleon_inspirational_general" until the ruler's death:
+********** +10% land morale
+******** Option: napoleon.2.da:
+********* Trigger:
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 4
+********* highlight = yes
+********* add_revolutionary_zeal = 5
+********* Adds the ruler modifier "napoleon_prophet" until the ruler's death:
+********** +2 tolerance of the true faith
+******** Option: napoleon.2.e:
+********* highlight = yes
+********* Trigger:
+********** Any of the following:
+*********** Ruler's administrative skill is less than 5
+*********** Ruler's diplomatic skill is less than 5
+*********** Ruler's military skill is less than 5
+********* add_revolutionary_zeal = -5
+********* Changes prestige by -10

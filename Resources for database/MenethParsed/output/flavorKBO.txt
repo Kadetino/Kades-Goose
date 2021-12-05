@@ -1,0 +1,281 @@
+** is_triggered_only = yes
+** Trigger:
+*** Country is 0 "Kanem Bornu
+*** Has the monarchy government type
+*** Has at least 5 provinces
+*** Does not have the country flag kbo_two_branches
+*** Does not have the country flag kbo_calipha
+*** Year is less than 1500
+** Option: flavor_kbo.1.a:
+*** Sets the country flag kbo_two_branches
+*** If:
+**** Limited to:
+***** Does not have the country flag kbo_gazargamu
+***** Does not have the country modifier "kbo_religious_orthodoxy"
+***** Does not have the country modifier "kbo_death_to_kingmakers"
+**** Random owned province:
+***** Spawns revolt of size 3 of 0 "Pretender rebels
+*** If:
+**** Limited to:
+***** Any of the following:
+****** All of the following:
+******* Has the country flag kbo_gazargamu
+******* Does not have the country modifier "kbo_religious_orthodoxy"
+******* Does not have the country modifier "kbo_death_to_kingmakers"
+****** All of the following:
+******* Has the country modifier "kbo_religious_orthodoxy"
+******* Does not have the country flag kbo_gazargamu
+******* Does not have the country modifier "kbo_death_to_kingmakers"
+****** All of the following:
+******* Has the country modifier "kbo_death_to_kingmakers"
+******* Does not have the country flag kbo_gazargamu
+******* Does not have the country modifier "kbo_religious_orthodoxy"
+**** Random owned province:
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+*** If:
+**** Limited to:
+***** Any of the following:
+****** All of the following:
+******* Has the country flag kbo_gazargamu
+******* Has the country modifier "kbo_religious_orthodoxy"
+******* Does not have the country modifier "kbo_death_to_kingmakers"
+****** All of the following:
+******* Has the country modifier "kbo_religious_orthodoxy"
+******* Has the country modifier "kbo_death_to_kingmakers"
+******* Does not have the country flag kbo_gazargamu
+****** All of the following:
+******* Has the country modifier "kbo_death_to_kingmakers"
+******* Has the country modifier "kbo_religious_orthodoxy"
+******* Does not have the country modifier "kbo_religious_orthodoxy"
+**** Random owned province:
+***** Spawns revolt of size 1 of 0 "Pretender rebels
+* Gets the country event:
+** ID is flavor_kbo.2
+** title = flavor_kbo.2.t
+** desc = flavor_kbo.2.d
+** picture = CITY_VIEW_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kanem Bornu
+*** Has the country flag kbo_two_branches
+*** Year is less than 1550
+*** Owns 0 "Borno
+** Mean time to happen
+*** Base mean time to happen of 318 months
+*** Multiplies value by 0.8:
+**** Stability is at least 2
+*** Multiplies value by 0.8:
+**** Stability is at least 3
+*** Multiplies value by 0.8:
+**** Has at least 0.4 years worth of income
+** Option: flavor_kbo.2.a:
+*** AI chance:
+**** Base chance of 1
+*** If:
+**** Limited to:
+***** Capital is not 0 "Borno
+**** Sets capital to 0 "Borno
+*** Modifies treasury by -0.3 years worth of income
+*** Changes administrative power stored by -25
+*** Sets the country flag kbo_gazargamu
+*** 0 "Borno:
+**** Adds the modifier "kbo_gazargamu" until the end of the campaign:
+***** Legitimacy is at least 0.5
+***** +15% local defensiveness
+** Option: flavor_kbo.2.b:
+*** AI chance:
+**** Base chance of 0
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_kbo.3
+** title = flavor_kbo.3.t
+** desc = flavor_kbo.3.d
+** picture = RELIGIOUS_CONVERSION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kanem Bornu
+*** Has the country flag kbo_two_branches
+*** Year is less than 1550
+*** Follows the 0 "Sunni religion
+*** Has the monarchy government type
+** Mean time to happen
+*** Base mean time to happen of 318 months
+*** Multiplies value by 0.8:
+**** Stability is at least 2
+*** Multiplies value by 0.8:
+**** Stability is at least 3
+*** Multiplies value by 0.6:
+**** 100% religious unity
+** Option: flavor_kbo.3.a:
+*** AI chance:
+**** Base chance of 1
+*** Changes stability by -1
+*** Adds the modifier "kbo_religious_orthodoxy" for the rest of the campaign:
+**** +1 tolerance of the true faith
+**** -2 tolerance of heathens
+**** Follows the yes religion
+** Option: flavor_kbo.3.b:
+*** AI chance:
+**** Base chance of 0
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_kbo.4
+** title = flavor_kbo.4.t
+** desc = flavor_kbo.4.d
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kanem Bornu
+*** Has the country flag kbo_two_branches
+*** Year is less than 1550
+*** Stability is at least 1
+** Mean time to happen
+*** Base mean time to happen of 318 months
+*** Multiplies value by 0.8:
+**** Stability is at least 2
+*** Multiplies value by 0.8:
+**** Stability is at least 3
+** Option: flavor_kbo.4.a:
+*** AI chance:
+**** Base chance of 1
+*** Random owned province:
+**** Limited to:
+***** The province is not the capital of the country
+**** Spawns revolt of size 3 of 0 "Noble rebels
+*** Adds the modifier "kbo_death_to_kingmakers" for the rest of the campaign:
+**** +10% global tax modifier
+** Option: flavor_kbo.4.b:
+*** AI chance:
+**** Base chance of 1
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_kbo.5
+** title = flavor_kbo.5.t
+** desc = flavor_kbo.5.d
+** picture = GOOD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kanem Bornu
+*** Year is at least 1490
+*** Year is less than 1530
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: flavor_kbo.5.a:
+*** AI chance:
+**** Base chance of 1
+*** Sets the country flag kbo_calipha
+*** Changes prestige by 15
+*** Adds 15 legitimacy
+* Gets the country event:
+** ID is flavor_kbo.6
+** title = flavor_kbo.6.t
+** desc = flavor_kbo.6.d
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kanem Bornu
+*** Year is at least 1565
+*** Year is less than 1610
+*** Any of the following:
+**** Ruler's administrative skill is at least 4
+**** Ruler's diplomatic skill is at least 4
+**** Ruler's military skill is at least 4
+** Mean time to happen
+*** Base mean time to happen of 135 months
+** Option: flavor_kbo.6.a:
+*** AI chance:
+**** Base chance of 1
+*** Changes military power stored by 50
+*** Changes diplomatic power stored by 50
+** Option: flavor_kbo.6.b:
+*** AI chance:
+**** Base chance of 1
+*** Changes army tradition by 25
+*** Changes military power stored by 75
+*** Changes diplomatic power stored by 25
+** Option: flavor_kbo.6.c:
+*** AI chance:
+**** Base chance of 1
+*** Modifies treasury by 0.15 years worth of income
+*** Changes military power stored by 25
+*** Changes diplomatic power stored by 75
+* Gets the country event:
+** ID is flavor_kbo.7
+** title = flavor_kbo.7.t
+** desc = flavor_kbo.7.d
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kanem Bornu
+*** Has an heir
+*** Is in regency
+*** Any of the following:
+**** has_consort_regency = yes
+**** Does not have the DLC Rights of Man
+** Mean time to happen
+*** Base mean time to happen of 210 months
+** Option: flavor_kbo.7.a:
+*** AI chance:
+**** Base chance of 1
+*** Changes administrative power stored by 25
+*** Changes diplomatic power stored by 25
+*** Changes military power stored by 25
+* Gets the country event:
+** ID is flavor_kbo.8
+** title = flavor_kbo.8.t
+** desc = flavor_kbo.8.d
+** picture = ACCUSATION_eventPicture
+** is_triggered_only = yes
+** Trigger:
+*** Country is 0 "Kanem Bornu
+*** Has the monarchy government type
+*** Has at least 5 provinces
+*** Has the country flag kbo_two_branches
+*** Does not have the country flag kbo_calipha
+*** Year is less than 1550
+*** Any of the following:
+**** Does not have the country flag kbo_gazargamu
+**** Does not have the country modifier "kbo_religious_orthodoxy"
+**** Does not have the country modifier "kbo_death_to_kingmakers"
+** Option: flavor_kbo.8.a:
+*** If:
+**** Limited to:
+***** Does not have the country flag kbo_gazargamu
+***** Does not have the country modifier "kbo_religious_orthodoxy"
+***** Does not have the country modifier "kbo_death_to_kingmakers"
+**** Random owned province:
+***** Spawns revolt of size 3 of 0 "Pretender rebels
+*** If:
+**** Limited to:
+***** Any of the following:
+****** All of the following:
+******* Has the country flag kbo_gazargamu
+******* Does not have the country modifier "kbo_religious_orthodoxy"
+******* Does not have the country modifier "kbo_death_to_kingmakers"
+****** All of the following:
+******* Has the country modifier "kbo_religious_orthodoxy"
+******* Does not have the country flag kbo_gazargamu
+******* Does not have the country modifier "kbo_death_to_kingmakers"
+****** All of the following:
+******* Has the country modifier "kbo_death_to_kingmakers"
+******* Does not have the country flag kbo_gazargamu
+******* Does not have the country modifier "kbo_religious_orthodoxy"
+**** Random owned province:
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+*** If:
+**** Limited to:
+***** Any of the following:
+****** All of the following:
+******* Has the country flag kbo_gazargamu
+******* Has the country modifier "kbo_religious_orthodoxy"
+******* Does not have the country modifier "kbo_death_to_kingmakers"
+****** All of the following:
+******* Has the country modifier "kbo_religious_orthodoxy"
+******* Has the country modifier "kbo_death_to_kingmakers"
+******* Does not have the country flag kbo_gazargamu
+****** All of the following:
+******* Has the country modifier "kbo_death_to_kingmakers"
+******* Has the country modifier "kbo_religious_orthodoxy"
+******* Does not have the country modifier "kbo_religious_orthodoxy"
+**** Random owned province:
+***** Spawns revolt of size 1 of 0 "Pretender rebels

@@ -1,0 +1,99 @@
+********* Trigger:
+********** Has the DLC Emperor
+********* picture = LUTHER_eventPicture
+******** picture:
+********* Trigger:
+********** Does not have the DLC Emperor
+********* picture = RELIGION_eventPicture
+******** major = yes
+******** Trigger:
+********* The 0 "Protestant religion is not enabled
+********* Follows the 0 "Catholic religion
+********* Isn't the defender of the faith
+********* has_reform_false = papacy_reform
+********* Reform desire is at least 100%
+********* Capital:
+********** In the continent 0 "Europe
+********* Any owned province:
+********** can_have_center_of_reformation_trigger:
+*********** RELIGION = 0 "Protestant
+******** Mean time to happen
+********* Base mean time to happen of 4000 months
+********* Multiplies value by 2:
+********** 0 "The Papal State:
+*********** Is part of the Holy Roman Empire
+********** Any of the following:
+*********** Culture group is 0 "Germanic
+*********** Culture group is 0 "Nordic
+*********** Culture group is 0 "British
+*********** Culture group is 0 "West Slavic
+********* Multiplies value by 0.9:
+********** Reform desire is at least 105%
+********* Multiplies value by 0.9:
+********** Reform desire is at least 110%
+********* Multiplies value by 0.9:
+********** Reform desire is at least 115%
+********* Multiplies value by 0.9:
+********** Reform desire is at least 120%
+********* Multiplies value by 0.9:
+********** Reform desire is at least 125%
+********* Multiplies value by 0.75:
+********** Has less than 10 provinces
+********* Multiplies value by 0.75:
+********** Has less than 2 provinces
+********* Multiplies value by 0.75:
+********** Has the idea group 0 "Innovative Ideas
+********* Multiplies value by 1.25:
+********** Has the idea group 0 "Religious Ideas
+********* Multiplies value by 0.95:
+********** Has an opinion of less than -50 with 0 "The Papal State
+********* Multiplies value by 0.85:
+********** Has an opinion of less than -100 with 0 "The Papal State
+********* Multiplies value by 0.75:
+********** Has an opinion of less than -150 with 0 "The Papal State
+********* Multiplies value by 2.0:
+********** Has the theocracy government type
+********* Multiplies value by 8.0:
+********** Any of the following:
+*********** 0 "The Papal State does not exist
+*********** 0 "The Papal State:
+************ Is not part of the Holy Roman Empire
+********** Any of the following:
+*********** Culture group is 0 "Latin
+*********** Culture group is 0 "Iberian
+********* Multiplies value by 0.75:
+********** 0 "The Papal State:
+*********** Is part of the Holy Roman Empire
+********** Is not part of the Holy Roman Empire
+********** Any of the following:
+*********** Culture group is 0 "Latin
+*********** Culture group is 0 "Iberian
+******** Option: 0 "Only time will tell what this might bring:
+********* Enables the 0 "Protestant religion
+********* Random owned province:
+********** Limited to:
+*********** can_have_center_of_reformation_trigger:
+************ RELIGION = 0 "Protestant
+********** Changes religion to 0 "Protestant
+********** add_reform_center = 0 "Protestant
+********** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+*********** -100% missionary strength
+********** If:
+*********** Limited to:
+************ The province is not the capital of the country
+*********** root:
+************ Capital:
+************* Changes religion to 0 "Protestant
+************* Adds the modifier "0 "Religious Zeal" for 24.66 years:
+************** -100% missionary strength
+********* Sets the country flag protestant_reformation
+********* Hidden effect:
+********** Sets the global flag reformation_started
+********** If:
+*********** Limited to:
+************ 0 "Bohemia:
+************* Follows the hussite religion
+*********** 0 "Bohemia:
+************ Gets the country event:
+************* ID is flavor_boh.7
+************* Base mean time to happen of 10 days

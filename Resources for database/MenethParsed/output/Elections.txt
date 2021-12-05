@@ -1,0 +1,840 @@
+
+=== 0 "Election! ===
+* Trigger:
+** has_ruler_flag_false = leader_has_been_pushed_out
+** Does not have the country flag caretaker_revolutionary_government
+* desc = 1 "The term is up for $MONARCH$. With enough support [Root.Monarch.GetSheHe] can stay in office, but then [Root.Monarch.GetSheHe] must defeat [Root.Monarch.GetHerHis] three primary competitors...
+* Trigger:
+** has_ruler_flag = leader_has_been_pushed_out
+* desc = 0 "With $MONARCH$ being forced out of office by the revolting factions, a new [Root.Monarch.GetTitle] will have to be elected. As the votes are tallied there is an unusual excitement in the air. The three primary candidates are all acutely aware of the events that have transpired these last few days...
+* Trigger:
+** Has the country flag caretaker_revolutionary_government
+* desc = elections.700.caretaker
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_states_general_mechanic_false = yes
+* has_government_attribute_false = lottery_election
+* has_reform_false = pirate_republic_reform
+* has_reform_false = military_dictatorship_reform
+* has_reform_false = admiralty_reform
+* has_reform_false = prussian_republic_reform
+* has_disaster_false = bonfire_of_the_vanities_disaster
+* If:
+** Limited to:
+*** Has the country flag caretaker_revolutionary_government
+** Republican tradition is at least 50
+
+'''Option: 0 "Keep $MONARCH$:'''
+
+* Trigger:
+** Is not in regency
+** has_ruler_flag_false = leader_has_been_pushed_out
+* AI chance:
+** Base chance of 60
+** Multiplies value by 0:
+*** Republican tradition is less than 25
+** Multiplies value by 0.5:
+*** Republican tradition is less than 50
+** Multiplies value by 0.5:
+*** Republican tradition is less than 75
+** Multiplies value by 2.0:
+*** Republican tradition is at least 90
+* Changes ruler's administrative skill by 1
+* Changes ruler's diplomatic skill by 1
+* Changes ruler's military skill by 1
+* If:
+** Limited to:
+*** Is not a tribal nation
+*** Has the republic government type
+*** Republican tradition is less than 20
+*** is_revolutionary_republic_trigger_false = yes
+*** Has the DLC Res Publica
+** add_government_reform = presidential_despot_reform
+* else_if:
+** Limited to:
+*** Has the republic government type
+*** Republican tradition is less than 20
+*** is_revolutionary_republic_trigger = yes
+** change_government_to_monarchy = yes
+** add_government_reform = revolutionary_empire_reform
+* If:
+** Limited to:
+*** Is not a tribal nation
+*** Has the republic government type
+*** Republican tradition is less than 20
+*** Does not have the DLC Res Publica
+** change_government_to_monarchy = yes
+* If:
+** Limited to:
+*** Has the country flag strengthened_signoria_flag
+** Removes the country flag strengthened_signoria_flag
+* else:
+** add_scaled_republican_tradition = -10
+* One of the following will happen:
+** 10 relative chance:
+*** Changes administrative power stored by 50
+** 10 relative chance:
+*** Changes diplomatic power stored by 50
+** 10 relative chance:
+*** Changes military power stored by 50
+* add_karma = -5
+
+'''Option: 0 "Bureaucrat Candidate:'''
+
+* AI chance:
+** Base chance of 20
+* If:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+** Spawns a ruler:
+*** Ruler's military skill is at least 1
+*** Ruler's administrative skill is at least 4
+*** Ruler's diplomatic skill is at least 1
+*** random_gender = yes
+* else:
+** Spawns a ruler:
+*** Ruler's military skill is at least 1
+*** Ruler's administrative skill is at least 4
+*** Ruler's diplomatic skill is at least 1
+* If:
+** Limited to:
+*** has_faction = 0 "The Guilds
+** Changes the influence of 0 "The Guilds by 20
+* add_karma = 10
+
+'''Option: 0 "Diplomat Candidate:'''
+
+* AI chance:
+** Base chance of 20
+* If:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+** Spawns a ruler:
+*** Ruler's diplomatic skill is at least 4
+*** Ruler's administrative skill is at least 1
+*** Ruler's military skill is at least 1
+*** random_gender = yes
+* else:
+** Spawns a ruler:
+*** Ruler's diplomatic skill is at least 4
+*** Ruler's administrative skill is at least 1
+*** Ruler's military skill is at least 1
+* If:
+** Limited to:
+*** has_faction = 0 "The Traders
+** Changes the influence of 0 "The Traders by 20
+* add_karma = 10
+
+'''Option: 0 "Military Candidate:'''
+
+* AI chance:
+** Base chance of 20
+* If:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+** Spawns a ruler:
+*** Ruler's military skill is at least 4
+*** Ruler's administrative skill is at least 1
+*** Ruler's diplomatic skill is at least 1
+*** random_gender = yes
+* else:
+** Spawns a ruler:
+*** Ruler's military skill is at least 4
+*** Ruler's administrative skill is at least 1
+*** Ruler's diplomatic skill is at least 1
+* If:
+** Limited to:
+*** has_faction = 0 "The Aristocrats
+** Changes the influence of 0 "The Aristocrats by 20
+* add_karma = 10
+
+'''Option: EVTOPTE700:'''
+
+* Trigger:
+** has_government_attribute = enables_nepotism
+* AI chance:
+** Base chance of 10
+* If:
+** Limited to:
+*** Has the country flag strengthened_signoria_flag
+** Removes the country flag strengthened_signoria_flag
+* else:
+** add_scaled_republican_tradition = -4
+* If:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+*** has_reform_false = signoria_reform
+** Spawns a ruler:
+*** Changes ruler's military skill by -2
+*** Changes ruler's administrative skill by -2
+*** Changes ruler's diplomatic skill by -2
+*** min_age = 30
+*** max_age = 50
+*** Named "lastname"
+*** random_gender = yes
+* else_if:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+*** has_reform = signoria_reform
+** Spawns a ruler:
+*** min_age = 30
+*** max_age = 50
+*** Named "lastname"
+*** random_gender = yes
+* else_if:
+** Limited to:
+*** has_reform = signoria_reform
+** Spawns a ruler:
+*** min_age = 30
+*** max_age = 50
+*** Named "lastname"
+* else:
+** Spawns a ruler:
+*** Changes ruler's military skill by -2
+*** Changes ruler's administrative skill by -2
+*** Changes ruler's diplomatic skill by -2
+*** min_age = 30
+*** max_age = 50
+*** Named "lastname"
+* If:
+** Limited to:
+*** has_faction = 0 "The Aristocrats
+** Changes the influence of 0 "The Aristocrats by 10
+
+=== 0 "Election! ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_states_general_mechanic_false = yes
+* has_government_attribute_false = lottery_election
+* has_reform_false = pirate_republic_reform
+* has_reform_false = military_dictatorship_reform
+* has_reform_false = admiralty_reform
+* has_reform_false = prussian_republic_reform
+* has_disaster_false = bonfire_of_the_vanities_disaster
+* Does not have the country modifier "just_had_revolution_bringing_someone_to_power_timer"
+* If:
+** Limited to:
+*** has_reform = junior_revolutionary_republic_reform
+*** Has the country flag caretaker_revolutionary_government
+** Republican tradition is at least 50
+
+'''Option: 0 "Bureaucrat Candidate:'''
+
+* AI chance:
+** Base chance of 40
+* If:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+** Spawns a ruler:
+*** Ruler's military skill is at least 1
+*** Ruler's administrative skill is at least 4
+*** Ruler's diplomatic skill is at least 1
+*** random_gender = yes
+* else:
+** Spawns a ruler:
+*** Ruler's military skill is at least 1
+*** Ruler's administrative skill is at least 4
+*** Ruler's diplomatic skill is at least 1
+* If:
+** Limited to:
+*** has_faction = 0 "The Guilds
+** Changes the influence of 0 "The Guilds by 20
+
+'''Option: 0 "Diplomat Candidate:'''
+
+* AI chance:
+** Base chance of 30
+* If:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+** Spawns a ruler:
+*** Ruler's diplomatic skill is at least 4
+*** Ruler's administrative skill is at least 1
+*** Ruler's military skill is at least 1
+*** random_gender = yes
+* else:
+** Spawns a ruler:
+*** Ruler's diplomatic skill is at least 4
+*** Ruler's administrative skill is at least 1
+*** Ruler's military skill is at least 1
+* If:
+** Limited to:
+*** has_faction = 0 "The Traders
+** Changes the influence of 0 "The Traders by 20
+
+'''Option: 0 "Military Candidate:'''
+
+* AI chance:
+** Base chance of 30
+* If:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+** Spawns a ruler:
+*** Ruler's military skill is at least 4
+*** Ruler's administrative skill is at least 1
+*** Ruler's diplomatic skill is at least 1
+*** random_gender = yes
+* else:
+** Spawns a ruler:
+*** Ruler's military skill is at least 4
+*** Ruler's administrative skill is at least 1
+*** Ruler's diplomatic skill is at least 1
+* If:
+** Limited to:
+*** has_faction = 0 "The Aristocrats
+** Changes the influence of 0 "The Aristocrats by 20
+
+'''Option: EVTOPTE700:'''
+
+* Trigger:
+** has_government_attribute = enables_nepotism
+* AI chance:
+** Base chance of 10
+* If:
+** Limited to:
+*** Has the country flag strengthened_signoria_flag
+** Removes the country flag strengthened_signoria_flag
+* else:
+** add_scaled_republican_tradition = -4
+* If:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+*** has_reform_false = signoria_reform
+** Spawns a ruler:
+*** Changes ruler's military skill by -2
+*** Changes ruler's administrative skill by -2
+*** Changes ruler's diplomatic skill by -2
+*** min_age = 30
+*** max_age = 50
+*** Named "lastname"
+*** random_gender = yes
+* else_if:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+*** has_reform = signoria_reform
+** Spawns a ruler:
+*** min_age = 30
+*** max_age = 50
+*** Named "lastname"
+*** random_gender = yes
+* else_if:
+** Limited to:
+*** has_reform = signoria_reform
+** Spawns a ruler:
+*** min_age = 30
+*** max_age = 50
+*** Named "lastname"
+*** random_gender = yes
+* else:
+** Spawns a ruler:
+*** Changes ruler's military skill by -2
+*** Changes ruler's administrative skill by -2
+*** Changes ruler's diplomatic skill by -2
+*** min_age = 30
+*** max_age = 50
+*** Named "lastname"
+* If:
+** Limited to:
+*** has_faction = 0 "The Aristocrats
+** Changes the influence of 0 "The Aristocrats by 10
+
+=== 0 "New [From.Monarch.GetTitle] in [From.GetName] ===
+* Cannot fire randomly
+
+'''Option: 0 "Bureaucrat Candidate:'''
+
+* AI chance:
+** Base chance of 20
+* Our country:
+** Spawns a ruler:
+*** Ruler's administrative skill is at least 4
+*** Ruler's military skill is at least 2
+*** Ruler's diplomatic skill is at least 2
+** set_ruler_flag = appointed_by_overlord
+
+'''Option: 0 "Diplomat Candidate:'''
+
+* AI chance:
+** Base chance of 20
+* Our country:
+** Spawns a ruler:
+*** Ruler's administrative skill is at least 2
+*** Ruler's diplomatic skill is at least 4
+*** Ruler's military skill is at least 2
+** set_ruler_flag = appointed_by_overlord
+
+'''Option: 0 "Military Candidate:'''
+
+* AI chance:
+** Base chance of 20
+* Our country:
+** Spawns a ruler:
+*** Ruler's administrative skill is at least 2
+*** Ruler's diplomatic skill is at least 2
+*** Ruler's military skill is at least 4
+** set_ruler_flag = appointed_by_overlord
+
+=== 0 "Colonial Assembly ===
+* Cannot fire randomly
+
+'''Option: 0 "Suspicious indeed...:'''
+
+* Tooltip:
+** Our country:
+*** Adds 10 liberty desire
+
+=== 1 "Election in the [Root.GovernmentName] ===
+* Trigger:
+** has_reform = 0 "Dutch Republic
+* desc = 0 "The strengthening of the Statists has forced $MONARCH$ to accept the election of a new [Root.Monarch.GetTitle]. Both the Statists and the Orangists have put forward a new candidate.
+* Trigger:
+** has_reform = monastic_elections_reform
+* desc = elections.720.dc
+* Trigger:
+** has_reform = feuillant_reform
+* desc = elections.720.de
+* Trigger:
+** has_reform_false = 0 "Dutch Republic
+* desc = 0 "The strengthening of the Statists has forced $MONARCH$ to accept the election of a new [Root.Monarch.GetTitle]. Both the Statists and the Monarchists have put forward a new candidate.
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_states_general_mechanic = yes
+* Any of the following:
+** Is not the lesser partner in a union
+** is_statists_in_power = yes
+
+'''Option: 0 "A Statist Candidate:'''
+
+* Trigger:
+** has_reform_false = monastic_elections_reform
+** has_reform_false = feuillant_reform
+* Spawns a ruler:
+* change_statists_vs_orangists = -0.33
+* Trigger:
+** has_reform = feuillant_reform
+
+'''Option: elections.720.g:'''
+
+* Spawns a ruler:
+* Changes the influence of rr_jacobins by 20
+* change_statists_vs_orangists = -0.33
+* Trigger:
+** has_reform = feuillant_reform
+
+'''Option: elections.720.h:'''
+
+* Spawns a ruler:
+* Changes the influence of rr_girondists by 20
+* change_statists_vs_orangists = -0.33
+* Trigger:
+** has_reform = 0 "Dutch Republic
+
+'''Option: 0 "An Orangist Candidate:'''
+
+* Spawns a ruler:
+** Ruler's dynasty is van Oranje
+* change_statists_vs_orangists = 0.33
+* Trigger:
+** Any of the following:
+*** has_reform_false = 0 "Dutch Republic
+*** has_reform_false = monastic_elections_reform
+
+'''Option: 0 "A Monarchist Candidate:'''
+
+* If:
+** Limited to:
+*** has_reform = feuillant_reform
+*** Country is 0 "France
+** Spawns a ruler:
+*** Ruler's dynasty is Bonaparte
+* else_if:
+** Limited to:
+*** has_reform = feuillant_reform
+*** Country is not 0 "France
+** Spawns a ruler:
+* else:
+** Spawns a ruler:
+*** Ruler's dynasty is historic_dynasty
+* If:
+** Limited to:
+*** has_reform = feuillant_reform
+** Changes the influence of rr_royalists by 20
+* change_statists_vs_orangists = 0.33
+
+'''Option: elections.720.e:'''
+
+* Trigger:
+** has_reform = monastic_elections_reform
+* Spawns a ruler:
+* change_statists_vs_orangists = -0.33
+* Trigger:
+** has_reform = monastic_elections_reform
+
+'''Option: elections.720.f:'''
+
+* Spawns a ruler:
+* change_statists_vs_orangists = 0.33
+
+=== 1 "Election in the [Root.GovernmentName] ===
+* Trigger:
+** has_reform = 0 "Dutch Republic
+* desc = 0 "The unfortunate passing of $MONARCH$ forces us to hold a premature election. Both the Statists and the Orangists have put forward a new candidate.
+* Trigger:
+** has_reform = monastic_elections_reform
+* desc = elections.721.dc
+* Trigger:
+** has_reform = feuillant_reform
+* desc = elections.721.de
+* Trigger:
+** has_reform_false = 0 "Dutch Republic
+* desc = 0 "The unfortunate passing of $MONARCH$ forces us to hold a premature election. Both the Statists and the Monarchists have put forward a new candidate.
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_states_general_mechanic = yes
+* Any of the following:
+** Is not the lesser partner in a union
+** is_statists_in_power = yes
+
+'''Option: 0 "A Statist Candidate:'''
+
+* Trigger:
+** has_reform_false = monastic_elections_reform
+** has_reform_false = feuillant_reform
+* Spawns a ruler:
+* change_statists_vs_orangists = -0.33
+* Trigger:
+** has_reform = feuillant_reform
+
+'''Option: elections.720.g:'''
+
+* Spawns a ruler:
+* Changes the influence of rr_jacobins by 20
+* change_statists_vs_orangists = -0.33
+* Trigger:
+** has_reform = feuillant_reform
+
+'''Option: elections.720.h:'''
+
+* Spawns a ruler:
+* Changes the influence of rr_girondists by 20
+* change_statists_vs_orangists = -0.33
+* Trigger:
+** has_reform = 0 "Dutch Republic
+
+'''Option: 0 "An Orangist Candidate:'''
+
+* Spawns a ruler:
+** Ruler's dynasty is van Oranje
+* change_statists_vs_orangists = 0.33
+* Trigger:
+** Any of the following:
+*** has_reform_false = 0 "Dutch Republic
+*** has_reform_false = monastic_elections_reform
+
+'''Option: 0 "A Monarchist Candidate:'''
+
+* If:
+** Limited to:
+*** has_reform = feuillant_reform
+*** Country is 0 "France
+** Spawns a ruler:
+*** Ruler's dynasty is Bonaparte
+* else_if:
+** Limited to:
+*** has_reform = feuillant_reform
+*** Country is not 0 "France
+** Spawns a ruler:
+* else:
+** Spawns a ruler:
+*** Ruler's dynasty is historic_dynasty
+* If:
+** Limited to:
+*** has_reform = feuillant_reform
+** Changes the influence of rr_royalists by 20
+* change_statists_vs_orangists = 0.33
+
+'''Option: elections.720.e:'''
+
+* Trigger:
+** has_reform = monastic_elections_reform
+* Spawns a ruler:
+* change_statists_vs_orangists = -0.33
+* Trigger:
+** has_reform = monastic_elections_reform
+
+'''Option: elections.720.f:'''
+
+* Spawns a ruler:
+* change_statists_vs_orangists = 0.33
+
+=== 0 "Election in the [Root.GovernmentName] ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_government_attribute = lottery_election
+* has_disaster_false = bonfire_of_the_vanities_disaster
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** republic_with_female_rulers_trigger = yes
+**** Does not have the country flag ven_new_promissione_ducale
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_a_@ROOT
+**** random_gender = yes
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by 2
+**** Changes ruler's diplomatic skill by -1
+**** Changes ruler's military skill by -1
+** else_if:
+*** Limited to:
+**** republic_with_female_rulers_trigger = yes
+**** Has the country flag ven_new_promissione_ducale
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_a_@ROOT
+**** random_gender = yes
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by 3
+**** Changes ruler's diplomatic skill by -1
+**** Changes ruler's military skill by -1
+** else_if:
+*** Limited to:
+**** republic_with_female_rulers_trigger_false = yes
+**** Has the country flag ven_new_promissione_ducale
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_a_@ROOT
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by 3
+**** Changes ruler's diplomatic skill by -1
+**** Changes ruler's military skill by -1
+** else:
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_a_@ROOT
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by 2
+**** Changes ruler's diplomatic skill by -1
+**** Changes ruler's military skill by -1
+** If:
+*** Limited to:
+**** republic_with_female_rulers_trigger = yes
+**** Does not have the country flag ven_new_promissione_ducale
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_b_@ROOT
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by -1
+**** Changes ruler's diplomatic skill by 2
+**** Changes ruler's military skill by -1
+**** random_gender = yes
+** else_if:
+*** Limited to:
+**** republic_with_female_rulers_trigger = yes
+**** Has the country flag ven_new_promissione_ducale
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_b_@ROOT
+**** random_gender = yes
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by -1
+**** Changes ruler's diplomatic skill by 3
+**** Changes ruler's military skill by -1
+** else_if:
+*** Limited to:
+**** republic_with_female_rulers_trigger_false = yes
+**** Has the country flag ven_new_promissione_ducale
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_b_@ROOT
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by -1
+**** Changes ruler's diplomatic skill by 3
+**** Changes ruler's military skill by -1
+** else:
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_b_@ROOT
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by -1
+**** Changes ruler's diplomatic skill by 2
+**** Changes ruler's military skill by -1
+** If:
+*** Limited to:
+**** republic_with_female_rulers_trigger = yes
+**** Does not have the country flag ven_new_promissione_ducale
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_c_@ROOT
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by -1
+**** Changes ruler's diplomatic skill by -1
+**** Changes ruler's military skill by 2
+**** random_gender = yes
+** else_if:
+*** Limited to:
+**** republic_with_female_rulers_trigger = yes
+**** Has the country flag ven_new_promissione_ducale
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_c_@ROOT
+**** random_gender = yes
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by -1
+**** Changes ruler's diplomatic skill by -1
+**** Changes ruler's military skill by 3
+** else_if:
+*** Limited to:
+**** republic_with_female_rulers_trigger_false = yes
+**** Has the country flag ven_new_promissione_ducale
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_c_@ROOT
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by -1
+**** Changes ruler's diplomatic skill by -1
+**** Changes ruler's military skill by 3
+** else:
+*** define_exiled_ruler:
+**** exiled_as = lottery_candidate_c_@ROOT
+**** min_age = 50
+**** max_age = 75
+**** Changes ruler's administrative skill by -1
+**** Changes ruler's diplomatic skill by -1
+**** Changes ruler's military skill by 2
+
+'''Option: 0 "Have [lottery_candidate_a_@ROOT.GetName] elected.:'''
+
+* AI chance:
+** Base chance of 0
+* set_ruler = lottery_candidate_a_@ROOT
+* Changes republican tradition by -2500%
+* If:
+** Limited to:
+*** has_faction = 0 "The Guilds
+** Changes the influence of 0 "The Guilds by 20
+
+'''Option: 0 "Have [lottery_candidate_b_@ROOT.GetName] elected.:'''
+
+* AI chance:
+** Base chance of 0
+* set_ruler = lottery_candidate_b_@ROOT
+* Changes republican tradition by -2500%
+* If:
+** Limited to:
+*** has_faction = 0 "The Traders
+** Changes the influence of 0 "The Traders by 20
+
+'''Option: 0 "Have [lottery_candidate_c_@ROOT.GetName] elected.:'''
+
+* AI chance:
+** Base chance of 0
+* set_ruler = lottery_candidate_c_@ROOT
+* Changes republican tradition by -2500%
+* If:
+** Limited to:
+*** has_faction = 0 "The Aristocrats
+** Changes the influence of 0 "The Aristocrats by 20
+
+'''Option: 0 "Let the Lottery decide.:'''
+
+* AI chance:
+** Base chance of 90
+* One of the following will happen:
+** 33 relative chance:
+*** set_ruler = lottery_candidate_a_@ROOT
+*** If:
+**** Limited to:
+***** has_faction = 0 "The Guilds
+**** Changes the influence of 0 "The Guilds by 20
+*** If:
+**** Limited to:
+***** has_faction = rr_jacobins
+**** Changes the influence of rr_jacobins by 20
+** 33 relative chance:
+*** set_ruler = lottery_candidate_b_@ROOT
+*** If:
+**** Limited to:
+***** has_faction = 0 "The Traders
+**** Changes the influence of 0 "The Traders by 20
+*** If:
+**** Limited to:
+***** has_faction = rr_royalists
+**** Changes the influence of rr_royalists by 20
+** 33 relative chance:
+*** set_ruler = lottery_candidate_c_@ROOT
+*** If:
+**** Limited to:
+***** has_faction = 0 "The Aristocrats
+**** Changes the influence of 0 "The Aristocrats by 20
+*** If:
+**** Limited to:
+***** has_faction = rr_girondists
+**** Changes the influence of rr_girondists by 20
+
+'''Option: 1 "Elect the beloved relative of [Root.Monarch.GetName].:'''
+
+* Trigger:
+** has_government_attribute = enables_nepotism
+* AI chance:
+** Base chance of 10
+* If:
+** Limited to:
+*** Has the country flag strengthened_signoria_flag
+** Removes the country flag strengthened_signoria_flag
+* else:
+** Changes republican tradition by -1500%
+* If:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+*** has_reform_false = signoria_reform
+** Spawns a ruler:
+*** min_age = 30
+*** max_age = 50
+*** Changes ruler's military skill by -1
+*** Changes ruler's administrative skill by -1
+*** Changes ruler's diplomatic skill by -1
+*** Named "lastname"
+*** random_gender = yes
+* else_if:
+** Limited to:
+*** republic_with_female_rulers_trigger = yes
+*** has_reform = signoria_reform
+** Spawns a ruler:
+*** min_age = 30
+*** max_age = 50
+*** Named "lastname"
+*** random_gender = yes
+* else_if:
+** Limited to:
+*** republic_with_female_rulers_trigger_false = yes
+*** has_reform = signoria_reform
+** Spawns a ruler:
+*** min_age = 30
+*** max_age = 50
+*** Named "lastname"
+* else:
+** Spawns a ruler:
+*** min_age = 30
+*** max_age = 50
+*** Changes ruler's military skill by -1
+*** Changes ruler's administrative skill by -1
+*** Changes ruler's diplomatic skill by -1
+*** Named "lastname"
+* If:
+** Limited to:
+*** has_faction = 0 "The Aristocrats
+** Changes the influence of 0 "The Aristocrats by 10

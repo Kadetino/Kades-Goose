@@ -1,0 +1,404 @@
+
+=== title = dotf.1.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Is the defender of the faith
+* is_defender_of_faith_of_tier_false = 3
+* Any of the following:
+** Does not have the country modifier "evangelism_in_one_country"
+** Does not have the country modifier "international_evangelism"
+** Has less than 50 provinces where all of the following is true:
+*** Follows our country's religion
+
+'''Option: dotf.1.a:'''
+
+* AI chance:
+** Base chance of 10
+** Multiplies value by 0:
+**** No owned province:
+***** Does not follow our country's religion
+* Adds the modifier "evangelism_in_one_country" for 20 years:
+** +2% global missionary strength
+** missionary_maintenance_cost = -0.2
+
+'''Option: dotf.1.b:'''
+
+* AI chance:
+** Base chance of 10
+* Adds the modifier "international_evangelism" for 20 years:
+** warscore_cost_vs_other_religion = -0.25
+
+=== title = dotf.2.t ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Is in the 0 "Muslim religion group
+* Is the defender of the faith
+* is_defender_of_faith_of_tier = 3
+* Any of the following:
+** 0 "Jerusalem:
+*** Has been discovered by our country
+*** The owner of the province:
+**** Is not in 0 "Muslim's religion group
+**** Any neighbor country:
+***** Follows our country's religion
+** 0 "Medina:
+*** Has been discovered by our country
+*** The owner of the province:
+**** Is not in 0 "Muslim's religion group
+**** Any neighbor country:
+***** Follows our country's religion
+** 0 "Mecca:
+*** Has been discovered by our country
+*** The owner of the province:
+**** Is not in 0 "Muslim's religion group
+**** Any neighbor country:
+***** Follows our country's religion
+* Does not have the global flag active_jihad
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 120 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag jihad_caller
+** Sets the global flag active_jihad
+** If:
+*** Limited to:
+**** 0 "Jerusalem:
+***** Has been discovered by our country
+***** The owner of the province:
+****** Is not in 0 "Muslim's religion group
+****** Any neighbor country:
+******* Follows our country's religion
+*** 0 "Jerusalem:
+**** save_event_target_as = jihad_target_province
+**** Sets the province flag jihad_target_province_flag
+**** The owner of the province:
+***** save_event_target_as = jihad_target_country
+***** Sets the country flag jihad_target_country_flag
+** else_if:
+*** Limited to:
+**** 0 "Medina:
+***** Has been discovered by our country
+***** The owner of the province:
+****** Is not in 0 "Muslim's religion group
+****** Any neighbor country:
+******* Follows our country's religion
+*** 0 "Medina:
+**** save_event_target_as = jihad_target_province
+**** Sets the province flag jihad_target_province_flag
+**** The owner of the province:
+***** save_event_target_as = jihad_target_country
+***** Sets the country flag jihad_target_country_flag
+** else_if:
+*** Limited to:
+**** 0 "Mecca:
+***** Has been discovered by our country
+***** The owner of the province:
+****** Is not in 0 "Muslim's religion group
+****** Any neighbor country:
+******* Follows our country's religion
+*** 0 "Mecca:
+**** save_event_target_as = jihad_target_province
+**** Sets the province flag jihad_target_province_flag
+**** The owner of the province:
+***** save_event_target_as = jihad_target_country
+***** Sets the country flag jihad_target_country_flag
+
+'''Option: dotf.2.a:'''
+
+
+=== title = dotf.3.t ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Has the global flag active_jihad
+* Is in the 0 "Muslim religion group
+* Any owned province:
+** Has the province flag jihad_target_province_flag
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 3 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Has the province flag jihad_target_province_flag
+*** save_event_target_as = successful_jihad_province
+
+'''Option: dotf.3.a:'''
+
+* Changes prestige by 50
+* Every neighbor country:
+** Limited to:
+*** Follows our country's religion
+** Adds the opinion modifier "opinion_reconquered_holy_city" towards our country
+* Hidden effect:
+** Every country:
+*** Removes the country flag jihad_caller
+** Every owned province:
+*** Removes the province flag jihad_target_province_flag
+** Removes the global flag active_jihad
+
+=== title = dotf.4.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Is the defender of the faith
+* is_defender_of_faith_of_tier = 4
+* Follows the 0 "Catholic religion
+* Any rival country:
+** Follows the 0 "Catholic religion
+** Not at war with our country
+** No country:
+*** Has the opinion modifier opinion_benevolent_dotf with our country
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random rival country:
+*** Limited to:
+**** Follows the 0 "Catholic religion
+**** Not at war with our country
+*** save_event_target_as = catholic_rival
+** set_saved_name:
+*** Named "humanist_thinker_name"
+*** scope = our country
+
+'''Option: dotf.4.a:'''
+
+* AI chance:
+** Base chance of 60
+* remove_rival = event_target:catholic_rival
+* event_target:catholic_rival:
+** Gets the country event:
+*** ID is dotf.5
+*** Base mean time to happen of 3 days
+* Every country:
+** Limited to:
+*** Capital:
+**** Has been discovered by our country
+*** Follows the 0 "Catholic religion
+*** total_development = 200
+*** Country is not event_target:catholic_rival
+** Adds the opinion modifier "opinion_benevolent_dotf" towards our country
+
+'''Option: dotf.4.b:'''
+
+* AI chance:
+** Base chance of 40
+* Changes prestige by 15
+* event_target:catholic_rival:
+** Adds the opinion modifier "0 "Insulted" towards our country
+
+=== title = dotf.5.t ===
+* Cannot fire randomly
+
+'''Option: dotf.5.a:'''
+
+* AI chance:
+** Base chance of 25
+* remove_rival = our country
+* Adds the opinion modifier "opinion_benevolent_dotf" towards our country
+* Our country:
+** Adds the opinion modifier "opinion_repaired_relations" towards our country
+
+'''Option: dotf.5.b:'''
+
+* AI chance:
+** Base chance of 75
+* Changes prestige by 5
+* Our country:
+** Adds the opinion modifier "opinion_not_recripocated" towards our country
+
+=== title = dotf.6.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Any of the following:
+** Follows the 0 "Protestant religion
+** Follows the 0 "Reformed religion
+* current_age = 0 "Age of Reformation
+* Is the defender of the faith
+* is_defender_of_faith_of_tier = 2
+* Does not have the country modifier "held_protestant_council"
+* Capital:
+** In the continent 0 "Europe
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** In the continent 0 "Europe
+*** save_event_target_as = protestant_council_province
+** Random country:
+*** Limited to:
+**** Follows our country's religion
+*** save_event_target_as = first_council_member
+*** Sets the country flag attending_protestant_council
+** Random country:
+*** Limited to:
+**** Follows our country's religion
+**** Does not have the country flag attending_protestant_council
+*** save_event_target_as = second_council_member
+*** Sets the country flag attending_protestant_council
+** Random country:
+*** Limited to:
+**** Follows our country's religion
+**** Does not have the country flag attending_protestant_council
+*** save_event_target_as = third_council_member
+*** Sets the country flag attending_protestant_council
+** Random country:
+*** Limited to:
+**** Follows our country's religion
+**** Does not have the country flag attending_protestant_council
+*** Sets the country flag attending_protestant_council
+** Random country:
+*** Limited to:
+**** Follows our country's religion
+**** Does not have the country flag attending_protestant_council
+*** Sets the country flag attending_protestant_council
+
+'''Option: dotf.6.a:'''
+
+* Adds the modifier "held_protestant_council" for 20 years:
+** +1 tolerance of the true faith
+** +1 diplomatic reputation
+* Every country:
+** Limited to:
+*** Has the country flag attending_protestant_council
+** Adds the opinion modifier "opinion_held_protestant_council" towards our country
+
+=== title = dotf.7.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Is the defender of the faith
+* is_defender_of_faith_of_tier = 4
+* Follows the 0 "Catholic religion
+* current_age = 0 "Age of Reformation
+* Capital:
+** In the continent 0 "Europe
+** No owned province:
+*** Has the province modifier "bastion_of_the_church"
+* Does not have the idea group 0 "Humanist Ideas
+
+'''Option: dotf.7.a:'''
+
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Follows the 0 "Catholic religion
+**** In the continent 0 "Europe
+**** Culture is the same as our country
+*** Adds the modifier "bastion_of_the_church" until the end of the campaign:
+**** local_religious_conversion_resistance = 0.75
+
+=== title = dotf.8.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Is the defender of the faith
+* Any of the following:
+** is_defender_of_faith_of_tier = 5
+** All of the following:
+*** is_defender_of_faith_of_tier = 4
+**** No country:
+***** Follows the 0 "Catholic religion
+***** is_defender_of_faith_of_tier = 4
+* Any of the following:
+** Follows the 0 "Protestant religion
+** Follows the 0 "Reformed religion
+** Follows the anglican religion
+** Follows the hussite religion
+* Does not have the country modifier "victory_for_the_reformation"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 120 months
+
+'''Option: dotf.8.a:'''
+
+* Changes prestige by 20
+* Adds the modifier "victory_for_the_reformation" for 50 years:
+** church_power_modifier = 1
+** monthly_fervor_increase = 1
+** missionary_maintenance_cost = -0.4
+
+=== title = dotf.9.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Is the defender of the faith
+* is_defender_of_faith_of_tier = 4
+** No country:
+*** Follows the 0 "Sunni religion
+*** is_defender_of_faith_of_tier = 5
+* Any of the following:
+** Follows the 0 "Ibadi religion
+** Follows the 0 "Shia religion
+* Does not have the country modifier "new_era_for_islam"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 120 months
+
+'''Option: dotf.9.a:'''
+
+* Adds the modifier "new_era_for_islam" for the rest of the campaign:
+** +1 diplomatic reputation
+** +1 tolerance of the true faith
+* Every country:
+** Limited to:
+*** same_continent = our country
+*** Is in our country's religion group
+*** Does not follow our country's religion
+*** total_development_false = 150
+** Gets the country event:
+*** ID is dotf.10
+*** Base mean time to happen of 3 days
+
+=== title = dotf.10.t ===
+* Cannot fire randomly
+
+'''Option: dotf.10.a:'''
+
+* AI chance:
+** Base chance of 10
+* Changes religion to our country
+* Capital:
+** Changes religion to our country
+** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+*** -100% missionary strength
+* Adds the modifier "convert_to_new_sect_muslim" for 20 years:
+** missionary_maintenance_cost = -0.75
+** +3% global missionary strength
+
+'''Option: dotf.10.b:'''
+
+* AI chance:
+** Base chance of 0
+* Our country:
+** Adds the opinion modifier "opinion_muslim_will_not_convert" towards our country

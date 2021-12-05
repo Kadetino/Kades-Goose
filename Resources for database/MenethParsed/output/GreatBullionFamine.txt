@@ -1,0 +1,46 @@
+******** Trigger:
+********* Capital:
+********** In the continent 0 "Europe
+********* Follows the 0 "Catholic religion
+********* Any owned province:
+********** In the continent 0 "Europe
+********** Produces 0 "Gold
+********* Year is less than 1490
+******** Mean time to happen
+********* Base mean time to happen of 120 months
+******** Option: bullion_famine.1.a:
+******* Gets the country event:
+******** ID is bullion_famine.2
+******** title = bullion_famine.2.t
+******** desc = bullion_famine.2.d
+******** picture = ECONOMY_eventPicture
+******** major = yes
+******** fire_only_once = yes
+******** goto = noneuropean_gold_province
+******** Trigger:
+********* Capital:
+********** In the continent 0 "Europe
+********* Is in the 0 "Christian religion group
+********* Any owned province:
+********** Not in the continent 0 "Europe
+********** Produces 0 "Gold
+******** Mean time to happen
+********* Base mean time to happen of 3 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Not in the continent 0 "Europe
+************ Produces 0 "Gold
+*********** save_event_target_as = noneuropean_gold_province
+******** Option: bullion_famine.2.a:
+********* goto = noneuropean_gold_province
+********* Trigger:
+********** Capital:
+*********** In the continent 0 "Europe
+********** Any owned province:
+*********** Not in the continent 0 "Europe
+*********** Produces 0 "Gold
+********* event_target:noneuropean_gold_province:
+********** Adds the modifier "bullion_gold_mining" until the end of the campaign:
+*********** trade_goods_size_modifier = 0.5

@@ -1,0 +1,177 @@
+******** Trigger:
+********* Any owned province:
+********** expelling_minorities = yes
+********** Does not follow the religion of its owner
+********** Is in the owner religion group
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ expelling_minorities = yes
+************ Does not follow the religion of its owner
+************ Is in the owner religion group
+*********** save_event_target_as = expelling_province
+********** Random owned province:
+*********** Limited to:
+************ The province is a colony
+************ expelling_minorities_from = event_target:expelling_province
+*********** save_event_target_as = expelling_colony
+******** Option: expel_minority_events.1.a:
+********* event_target:expelling_colony:
+********** Changes population of colony by 200
+******* Gets the country event:
+******** ID is expel_minority_events.2
+******** title = expel_minority_events.2.t
+******** desc = expel_minority_events.2.d
+******** picture = EUROPEAN_REFUGEES_eventPicture
+******** Trigger:
+********* Any owned province:
+********** expelling_minorities = yes
+********** Does not follow the religion of its owner
+********** Is not in owner's religion group
+********** Any bordering province:
+*********** The province is owned by our country
+*********** Does not follow the religion of its owner
+*********** Is not in owner's religion group
+*********** Has a base tax of at least 2
+*********** expelling_minorities_false = no
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ expelling_minorities = yes
+************ Does not follow the religion of its owner
+************ Is not in owner's religion group
+************ Any bordering province:
+************* The province is owned by our country
+************* Does not follow the religion of its owner
+************* Is not in owner's religion group
+************* Has a base tax of at least 2
+************* expelling_minorities_false = no
+*********** save_event_target_as = expelling_province
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* Does not follow the religion of its owner
+************* Is not in owner's religion group
+************* Has a base tax of at least 2
+************* expelling_minorities_false = no
+************ save_event_target_as = heathen_neighbors_moving
+********** Random owned province:
+*********** Limited to:
+************ The province is a colony
+************ expelling_minorities_from = event_target:expelling_province
+*********** save_event_target_as = expelling_colony
+******** Option: expel_minority_events.2.a:
+********* event_target:heathen_neighbors_moving:
+********** Changes base tax by -1
+********* event_target:expelling_colony:
+********** Changes population of colony by 200
+******** Option: expel_minority_events.2.b:
+********* event_target:heathen_neighbors_moving:
+********** add_unrest = 3
+******* Gets the country event:
+******** ID is expel_minority_events.3
+******** title = expel_minority_events.3.t
+******** desc = expel_minority_events.3.d
+******** picture = EUROPEAN_REFUGEES_eventPicture
+******** Trigger:
+********* Any owned province:
+********** expelling_minorities = yes
+********** The province has a different culture than its owner
+********** Is not in our country's religion group
+********** Has a base tax of at least 2
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ expelling_minorities = yes
+************ The province has a different culture than its owner
+************ Is not in our country's religion group
+************ Has a base tax of at least 2
+*********** save_event_target_as = expelling_province
+********** Random owned province:
+*********** Limited to:
+************ The province is a colony
+************ expelling_minorities_from = event_target:expelling_province
+*********** save_event_target_as = expelling_colony
+******** Option: expel_minority_events.3.a:
+********* event_target:expelling_province:
+********** Changes base tax by -1
+********** add_unrest = 4
+********* event_target:expelling_colony:
+********** Changes population of colony by 300
+******* Gets the country event:
+******** ID is expel_minority_events.4
+******** title = expel_minority_events.4.t
+******** desc = expel_minority_events.4.d
+******** picture = EUROPEAN_REFUGEES_eventPicture
+******** Trigger:
+********* Any owned province:
+********** expelling_minorities = yes
+********** The province has a different culture than its owner
+********** Has a base tax of at least 2
+********** Any bordering province:
+*********** The province is owned by our country
+*********** The province has the same culture as its owner
+*********** expelling_minorities_false = no
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ expelling_minorities = yes
+************ The province has a different culture than its owner
+************ Has a base tax of at least 2
+************ Any bordering province:
+************* The province has the same culture as its owner
+************* expelling_minorities_false = no
+*********** Random bordering province:
+************ Limited to:
+************* The province is owned by our country
+************* The province has the same culture as its owner
+************* expelling_minorities_false = no
+************ save_event_target_as = nearby_refugee_province
+*********** save_event_target_as = expelling_province
+********** Random owned province:
+*********** Limited to:
+************ The province is a colony
+************ expelling_minorities_from = event_target:expelling_province
+*********** save_event_target_as = expelling_colony
+******** Option: expel_minority_events.4.a:
+********* event_target:nearby_refugee_province:
+********** Changes base tax by 1
+********** add_unrest = 10
+******** Option: expel_minority_events.4.b:
+********* event_target:expelling_province:
+********** Changes base tax by -1
+******* Gets the country event:
+******** ID is expel_minority_events.5
+******** title = expel_minority_events.5.t
+******** desc = expel_minority_events.5.d
+******** picture = EUROPEAN_REFUGEES_eventPicture
+******** Trigger:
+********* Any owned province:
+********** expelling_minorities = yes
+********** Has a base tax of at least 2
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Random owned province:
+********** Limited to:
+*********** expelling_minorities = yes
+*********** Has a base tax of at least 2
+********** save_event_target_as = expelling_province
+********* Random owned province:
+********** Limited to:
+*********** The province is a colony
+*********** expelling_minorities_from = event_target:expelling_province
+********** save_event_target_as = expelling_colony
+******** Option: expel_minority_events.5.a:
+********* event_target:expelling_province:
+********** add_local_autonomy = 25
+******** Option: expel_minority_events.5.b:
+********* event_target:expelling_province:
+********** Changes base tax by -1

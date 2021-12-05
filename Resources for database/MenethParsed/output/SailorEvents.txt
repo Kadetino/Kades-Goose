@@ -1,0 +1,82 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* sailors_percentage_false = 0.9
+********* Has at least 1 ports
+********* 10 navy tradition
+********* Navy is at least as large as 1's
+******** Option: sailor_event.1.a:
+********* add_yearly_sailors = 1.5
+******* Gets the country event:
+******** ID is sailor_event.2
+******** title = sailor_event.2.t
+******** desc = sailor_event.2.d
+******** picture = SHIP_SAILING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* sailors_percentage = 0.75
+********* Has at least 1 ports
+********* max_sailors = 200
+********* Navy is at least as large as 1's
+******** Option: sailor_event.2.a:
+********* add_yearly_sailors = -1.5
+******* Gets the country event:
+******** ID is sailor_event.3
+******** title = sailor_event.3.t
+******** desc = sailor_event.3.d
+******** picture = SHIP_SAILING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Is not at war
+********* Has a truce with at least one country
+********* Has at least 1 ports
+********* Manpower are less than 50% of maximum
+********* sailors_percentage = 0.9
+********* sailors = 4000
+********* Navy is at least as large as 1's
+******** Option: sailor_event.3.a:
+********* add_sailors = -2000
+********* Changes national manpower reserves by 2 years worth
+******* Gets the country event:
+******** ID is sailor_event.4
+******** title = sailor_event.4.t
+******** desc = sailor_event.4.d
+******** picture = SHIP_SAILING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Is not at war
+********* Has a truce with at least one country
+********* Has at least 1 ports
+********* sailors_percentage_false = 0.5
+********* Manpower are at least 90% of maximum
+********* Has a base manpower of at least 2
+********* Navy is at least as large as 1's
+******** Option: sailor_event.3.a:
+********* add_sailors = 2000
+********* Changes national manpower reserves by -2 years worth
+******* Gets the country event:
+******** ID is sailor_event.5
+******** title = sailor_event.5.t
+******** desc = sailor_event.5.d
+******** picture = SHIP_SAILING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has at least 3 provinces
+********* Has at least 1 ports
+********* Has less than 2 ports
+********* Any owned province:
+********** Is not coastal
+********** base_manpower = 2
+********* Navy is at least as large as 1's
+******** Option: sailor_event.5.a:
+********* Random owned province:
+********** Limited to:
+*********** Is coastal
+********** add_base_manpower = 2
+********* Random owned province:
+********** Limited to:
+*********** Is not coastal
+*********** base_manpower = 2
+********** add_base_manpower = -1
+********* Modifies treasury by -0.2 years worth of income
+******** Option: sailor_event.5.b:
+********* Changes diplomatic power stored by 10

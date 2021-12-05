@@ -1,0 +1,1148 @@
+
+=== title = nobles_estate_events.1.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* estate_influence:
+** estate = estate_nobles
+** influence = 70
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_EXCLUSIVE_RIGHT_TO_BE_OFFICERS_NOBLES
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NO_EXCLUSIVE_RIGHT_TO_BE_OFFICERS_NOBLES
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: nobles_estate_events.1.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 1.2:
+*** estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 60
+** Multiplies value by 0.2:
+*** has_estate = estate_burghers
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 30
+** Multiplies value by 0.2:
+*** has_estate = estate_vaisyas
+*** estate_loyalty:
+**** estate_false = estate_vaisyas
+**** loyalty_false = 30
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = 15
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = -20
+* If:
+** Limited to:
+*** has_estate = estate_vaisyas
+** add_estate_loyalty:
+*** estate = estate_vaisyas
+*** loyalty = -20
+* Adds the modifier "only_noble_officers" for 20 years:
+** -1 army tradition
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_EXCLUSIVE_RIGHT_TO_BE_OFFICERS_NOBLES
+** influence = 10
+** Lasting 7300 days
+
+'''Option: nobles_estate_events.1.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.1:
+*** has_estate = estate_burghers
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+** Multiplies value by 0.1:
+*** has_estate = estate_vaisyas
+*** estate_loyalty:
+**** estate_false = estate_vaisyas
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 30
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -20
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = 15
+* If:
+** Limited to:
+*** has_estate = estate_vaisyas
+** add_estate_loyalty:
+*** estate = estate_vaisyas
+*** loyalty = 15
+* add_army_professionalism = 0.02
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NO_EXCLUSIVE_RIGHT_TO_BE_OFFICERS_NOBLES
+** influence = -10
+** Lasting 7300 days
+
+=== title = nobles_estate_events.2.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBILITY_DECLINES
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBILITY_ADVANCES
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBILITY_ADVANCES_20
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: nobles_estate_events.2.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NOBILITY_ADVANCES
+** influence = 10
+** Lasting 5475 days
+
+=== title = nobles_estate_events.3.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* Has at least 15 provinces
+* Any owned province:
+** The province is not overseas
+** The province is not the capital of the country
+** The province is not a colony
+** has_seat_in_parliament_false = no
+** is_territory_false = no
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** The province is not overseas
+**** The province is not a colony
+**** has_seat_in_parliament_false = no
+**** is_territory_false = no
+*** save_event_target_as = noble_encroachment
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 2.0:
+** estate_influence:
+*** estate = estate_nobles
+*** influence = 80
+** estate_loyalty:
+*** estate_false = estate_nobles
+*** loyalty_false = 80
+
+'''Option: nobles_estate_events.3.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.25:
+*** estate_territory:
+**** estate = estate_nobles
+**** territory = 12
+** Multiplies value by 0.25:
+*** estate_influence:
+**** estate = estate_nobles
+**** influence = 60
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 30
+* event_target:noble_encroachment:
+** add_local_autonomy = 25
+* give_estate_land_share_small:
+** estate = estate_nobles
+
+'''Option: nobles_estate_events.3.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.1:
+*** estate_territory:
+**** estate_false = estate_nobles
+**** territory_false = 15
+** Multiplies value by 0.25:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+* event_target:noble_encroachment:
+** One of the following will happen:
+*** 50 relative chance:
+**** Spawns revolt of size 1 of 0 "Noble rebels
+*** 50 relative chance:
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+
+=== title = nobles_estate_events.4.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* estate_territory:
+** estate = estate_nobles
+** territory = 1
+* Any owned province:
+** is_territory_false = no
+** Has a base tax of at least 2
+** yes is a city
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.1:
+** estate_influence:
+*** estate = estate_nobles
+*** influence = 80
+
+'''Option: nobles_estate_events.4.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+* Random owned province:
+** Limited to:
+*** is_territory_false = no
+*** Has a base tax of at least 2
+*** yes is a city
+** Changes base tax by -1
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = 15
+
+'''Option: nobles_estate_events.4.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.0:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 70
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+
+=== title = nobles_estate_events.5.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* estate_influence:
+** estate = estate_nobles
+** influence = 15
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBILITY_DECLINES
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBILITY_ADVANCES
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBILITY_ADVANCES_20
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: nobles_estate_events.5.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NOBILITY_DECLINES
+** influence = -10
+** Lasting 5475 days
+
+=== title = nobles_estate_events.6.t ===
+* Trigger:
+** has_estate = estate_burghers
+* desc = nobles_estate_events.6.d
+* Trigger:
+** has_estate = estate_vaisyas
+* desc = nobles_estate_events.6.d.1
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* Any of the following:
+** has_estate = estate_burghers
+** has_estate = estate_vaisyas
+* estate_influence:
+** estate = estate_nobles
+** influence = 70
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBILITY_SUMPTUARY_RESTRICTIONS
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBILITY_NO_SUMPTUARY_RESTRICTIONS
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: nobles_estate_events.6.a:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 2.0:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 45
+* Adds the modifier "nobility_sumptuary_restrictions" for 15 years:
+** Trade efficiency is at least -10%
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NOBILITY_SUMPTUARY_RESTRICTIONS
+** influence = 10
+** Lasting 5475 days
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_influence_modifier:
+*** estate = estate_burghers
+*** desc = EST_VAL_BURGHERS_SUMPTUARY_RESTRICTIONS
+*** influence = -10
+*** Lasting 5475 days
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = -20
+* If:
+** Limited to:
+*** has_estate = estate_vaisyas
+** add_estate_influence_modifier:
+*** estate = estate_vaisyas
+*** desc = EST_VAL_BURGHERS_SUMPTUARY_RESTRICTIONS
+*** influence = -10
+*** Lasting 5475 days
+** add_estate_loyalty:
+*** estate = estate_vaisyas
+*** loyalty = -20
+
+'''Option: nobles_estate_events.6.b:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.3:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+** Multiplies value by 1.25:
+*** estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 45
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -20
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_BURGHERS_NO_SUMPTUARY_RESTRICTIONS
+** influence = -10
+** Lasting 5475 days
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_influence_modifier:
+*** estate = estate_burghers
+*** desc = EST_VAL_NOBILITY_NO_SUMPTUARY_RESTRICTIONS
+*** influence = 10
+*** Lasting 5475 days
+* If:
+** Limited to:
+*** has_estate = estate_vaisyas
+** add_estate_influence_modifier:
+*** estate = estate_vaisyas
+*** desc = EST_VAL_NOBILITY_NO_SUMPTUARY_RESTRICTIONS
+*** influence = 10
+*** Lasting 5475 days
+
+=== title = nobles_estate_events.7.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* Is not in regency
+* Any of the following:
+** Does not have the country flag normal_court_life
+** Has had the country flag "normal_court_life" for at least 9125 days
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBLES_DENIED_ACCESS_TO_ROYAL_BEDROOM
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBLES_ELABORATE_COURT_CEREMONIES
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: nobles_estate_events.7.a:'''
+
+* AI chance:
+** Base chance of 33
+** Multiplies value by 0.3:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 60
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -10
+* Sets the country flag normal_court_life
+
+'''Option: nobles_estate_events.7.b:'''
+
+* AI chance:
+** Base chance of 33
+** Multiplies value by 0.0:
+*** Has less than 0.5 years worth of income
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+* Modifies treasury by -0.4 years worth of income
+* Adds the modifier "elaborate_court_ceremonies" for 25 years:
+** +100% available advisors
+** +0.5 prestige
+** -10% global tax modifier
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = 20
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NOBLES_ELABORATE_COURT_CEREMONIES
+** influence = -15
+** Lasting 9125 days
+
+'''Option: nobles_estate_events.7.c:'''
+
+* AI chance:
+** Base chance of 33
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+* Changes prestige by -5
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NOBLES_DENIED_ACCESS_TO_ROYAL_BEDROOM
+** influence = -10
+** Lasting 9125 days
+
+=== title = nobles_estate_events.8.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* estate_loyalty:
+** estate_false = estate_nobles
+** loyalty_false = 30
+* estate_territory:
+** estate = estate_nobles
+** territory = 10
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBLES_EXTORTED_RIGHTS
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBLES_DENIED_RIGHTS
+* Any owned province:
+** is_territory_false = no
+** The province is not the capital of the country
+** yes is a city
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag noble_estate_revolt
+***** value_false = estate
+***** estate_false = estate_nobles
+**** Any owned province:
+***** is_territory_false = no
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag noble_estate_revolt
+**** check_reducing_estate_revolt_size_trigger:
+***** FLAG = noble_estate_revolt
+*** Random owned province:
+**** Limited to:
+***** is_territory_false = no
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag noble_estate_revolt
+**** Sets the province flag noble_estate_revolt
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: nobles_estate_events.8.a:'''
+
+* AI chance:
+** Base chance of 1
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NOBLES_EXTORTED_RIGHTS
+** influence = 10
+** Lasting 5475 days
+* Every owned province:
+** Limited to:
+*** Has the province flag noble_estate_revolt
+** add_local_autonomy = 33
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Has the province flag noble_estate_revolt
+*** Removes the province flag noble_estate_revolt
+
+'''Option: nobles_estate_events.8.b:'''
+
+* AI chance:
+** Base chance of 0
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NOBLES_DENIED_RIGHTS
+** influence = -10
+** Lasting 5475 days
+* Every owned province:
+** Limited to:
+*** Has the province flag noble_estate_revolt
+** Removes the province flag noble_estate_revolt
+** Spawns revolt of size 1 of 0 "Noble rebels
+
+=== title = nobles_estate_events.9.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* Is at war
+* estate_loyalty:
+** estate_false = estate_nobles
+** loyalty_false = 30
+* Does not have the country modifier "disloyal_noble_officers"
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_BURGHER_OFFICERS
+* has_estate_influence_modifier:
+** estate_false = estate_vaisyas
+** modifier_false = EST_VAL_BURGHER_OFFICERS
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_DHIMMI_OFFICERS
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_CHURCH_OFFICERS
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: nobles_estate_events.9.a:'''
+
+* AI chance:
+** Base chance of 1
+* Adds the modifier "disloyal_noble_officers" for 10 years:
+** -1 army tradition
+
+'''Option: nobles_estate_events.9.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+* Trigger:
+** Any of the following:
+*** All of the following:
+**** has_estate = estate_burghers
+**** estate_loyalty:
+***** estate = estate_burghers
+***** loyalty = 60
+*** All of the following:
+**** has_estate = estate_vaisyas
+**** estate_loyalty:
+***** estate = estate_vaisyas
+***** loyalty = 60
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_influence_modifier:
+*** estate = estate_burghers
+*** desc = EST_VAL_BURGHER_OFFICERS
+*** influence = 10
+*** Lasting 3650 days
+* If:
+** Limited to:
+*** has_estate = estate_vaisyas
+** add_estate_influence_modifier:
+*** estate = estate_vaisyas
+*** desc = EST_VAL_BURGHER_OFFICERS
+*** influence = 10
+*** Lasting 3650 days
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_BURGHER_OFFICERS
+** influence = -10
+** Lasting 3650 days
+
+'''Option: nobles_estate_events.9.c:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+* Trigger:
+** Any of the following:
+*** All of the following:
+**** Is in the 0 "Muslim religion group
+**** has_estate = estate_brahmins
+**** estate_loyalty:
+***** estate = estate_brahmins
+***** loyalty = 60
+*** All of the following:
+**** has_estate = estate_dhimmi
+**** estate_loyalty:
+***** estate = estate_dhimmi
+***** loyalty = 60
+* If:
+** Limited to:
+*** has_estate = estate_dhimmi
+** add_estate_influence_modifier:
+*** estate = estate_dhimmi
+*** desc = EST_VAL_DHIMMI_OFFICERS
+*** influence = 10
+*** Lasting 3650 days
+* If:
+** Limited to:
+*** has_estate = estate_brahmins
+** add_estate_influence_modifier:
+*** estate = estate_brahmins
+*** desc = EST_VAL_DHIMMI_OFFICERS
+*** influence = 10
+*** Lasting 3650 days
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_DHIMMI_OFFICERS
+** influence = -10
+** Lasting 3650 days
+
+'''Option: nobles_estate_events.9.dd:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 35
+* Trigger:
+** Any of the following:
+*** All of the following:
+**** has_estate = estate_church
+**** Follows the 0 "Hindu religion
+**** estate_loyalty:
+***** estate = estate_church
+***** loyalty = 60
+*** All of the following:
+**** has_estate = estate_brahmins
+**** Follows the 0 "Hindu religion
+**** estate_loyalty:
+***** estate = estate_brahmins
+***** loyalty = 60
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_influence_modifier:
+*** estate = estate_church
+*** desc = EST_VAL_CHURCH_OFFICERS
+*** influence = 10
+*** Lasting 3650 days
+* If:
+** Limited to:
+*** has_estate = estate_brahmins
+** add_estate_influence_modifier:
+*** estate = estate_brahmins
+*** desc = EST_VAL_CHURCH_OFFICERS
+*** influence = 10
+*** Lasting 3650 days
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_CHURCH_OFFICERS
+** influence = -10
+** Lasting 3650 days
+
+=== title = nobles_estate_events.10.t ===
+* Trigger:
+** has_estate = estate_burghers
+* desc = nobles_estate_events.10.d
+* Trigger:
+** has_estate = estate_vaisyas
+* desc = nobles_estate_events.10.d.1
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_MINISTER_NOBLES
+* has_estate_influence_modifier:
+** estate_false = estate_burghers
+** modifier_false = EST_VAL_MINISTER_BURGHERS
+* has_estate_influence_modifier:
+** estate_false = estate_vaisyas
+** modifier_false = EST_VAL_MINISTER_BURGHERS
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_MINISTER_CHURCH
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_MINISTER_CHURCH
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_MINISTER_DHIMMI
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_MINISTER_DHIMMI
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: nobles_estate_events.10.a:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** has_estate = estate_burghers
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** has_estate = estate_vaisyas
+*** estate_loyalty:
+**** estate_false = estate_vaisyas
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 60
+*** estate_influence:
+**** estate_false = estate_nobles
+**** influence_false = 60
+* Adds the modifier "noble_minister" for 10 years:
+** +1 diplomatic relations limit
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = 15
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = -20
+* If:
+** Limited to:
+*** has_estate = estate_vaisyas
+** add_estate_loyalty:
+*** estate = estate_vaisyas
+*** loyalty = -20
+* If:
+** Limited to:
+*** has_estate_false = estate_vaisyas
+*** has_estate_false = estate_burghers
+** Adds -100% mercantilism
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_MINISTER_NOBLES
+** influence = 15
+** Lasting 3650 days
+
+'''Option: nobles_estate_events.10.b:'''
+
+* Trigger:
+** Any of the following:
+*** has_estate = estate_burghers
+*** has_estate = estate_vaisyas
+* AI chance:
+** Base chance of 25
+** Multiplies value by 1.5:
+*** has_estate = estate_burghers
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** has_estate = estate_vaisyas
+*** estate_loyalty:
+**** estate_false = estate_vaisyas
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** has_estate = estate_burghers
+*** estate_loyalty:
+**** estate = estate_burghers
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 60
+*** estate_influence:
+**** estate_false = estate_burghers
+**** influence_false = 60
+** Multiplies value by 1.5:
+*** has_estate = estate_vaisyas
+*** estate_loyalty:
+**** estate = estate_vaisyas
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_vaisyas
+**** loyalty_false = 60
+*** estate_influence:
+**** estate_false = estate_vaisyas
+**** influence_false = 60
+* Adds the modifier "burgher_minister" for 10 years:
+** +10% trade power
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -20
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = 15
+** add_estate_influence_modifier:
+*** estate = estate_burghers
+*** desc = EST_VAL_MINISTER_BURGHERS
+*** influence = 15
+*** Lasting 3650 days
+* If:
+** Limited to:
+*** has_estate = estate_vaisyas
+** add_estate_loyalty:
+*** estate = estate_vaisyas
+*** loyalty = 15
+** add_estate_influence_modifier:
+*** estate = estate_vaisyas
+*** desc = EST_VAL_MINISTER_BURGHERS
+*** influence = 15
+*** Lasting 3650 days
+
+'''Option: nobles_estate_events.10.c:'''
+
+* Trigger:
+** has_estate = estate_church
+** All of the following:
+*** Does not follow the 0 "Hindu religion
+*** has_estate_false = estate_brahmins
+* AI chance:
+** Base chance of 25
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate = estate_church
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 60
+*** estate_influence:
+**** estate_false = estate_church
+**** influence_false = 60
+* Adds the modifier "church_minister" for 10 years:
+** global_autonomy = -0.03
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -20
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_MINISTER_CHURCH
+** influence = 15
+** Lasting 3650 days
+
+'''Option: nobles_estate_events.10.c.2:'''
+
+* Trigger:
+** has_estate = estate_brahmins
+** Follows the 0 "Hindu religion
+* AI chance:
+** Base chance of 25
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate = estate_brahmins
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 60
+*** estate_influence:
+**** estate_false = estate_brahmins
+**** influence_false = 60
+* Adds the modifier "church_minister" for 10 years:
+** global_autonomy = -0.03
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -20
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_MINISTER_CHURCH
+** influence = 15
+** Lasting 3650 days
+
+'''Option: nobles_estate_events.10.c.2:'''
+
+* Trigger:
+** has_estate = estate_brahmins
+** Is in the 0 "Muslim religion group
+* AI chance:
+** Base chance of 25
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate = estate_brahmins
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 60
+*** estate_influence:
+**** estate_false = estate_brahmins
+**** influence_false = 60
+* Adds the modifier "dhimmi_minister" for 10 years:
+** +1 tolerance of heathens
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_MINISTER_DHIMMI
+** influence = 15
+** Lasting 3650 days
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -20
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -20
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = 15
+
+=== title = nobles_estate_events.11.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_nobles
+* estate_loyalty:
+** estate = estate_nobles
+** loyalty = 80
+* estate_influence:
+** estate = estate_nobles
+** influence = 60
+* estate_territory:
+** estate = estate_nobles
+** territory = 1
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has at least 1 ports
+*** One of the following will happen:
+**** 25 relative chance:
+***** Sets the country flag noble_general
+**** 25 relative chance:
+***** Sets the country flag noble_admiral
+**** 25 relative chance:
+***** Sets the country flag noble_statesman
+**** 25 relative chance:
+***** Sets the country flag noble_army_reformer
+** If:
+*** Limited to:
+**** Has less than 1 ports
+*** One of the following will happen:
+**** 33 relative chance:
+***** Sets the country flag noble_general
+**** 33 relative chance:
+***** Sets the country flag noble_statesman
+**** 33 relative chance:
+***** Sets the country flag noble_army_reformer
+** Random owned province:
+*** Limited to:
+**** is_territory_false = no
+**** yes is a city
+*** save_event_target_as = noble_province
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: nobles_estate_events.11.a:'''
+
+* add_meritocracy_effect = yes
+* trigger_switch:
+** on_trigger = has_country_flag
+** noble_general:
+*** Creates a general at  extra army tradition
+**** tradition = 50
+*** Removes the country flag noble_general
+** noble_admiral:
+*** Creates an admiral at  extra naval tradition
+**** tradition = 50
+*** Removes the country flag noble_admiral
+** noble_statesman:
+*** If:
+**** Limited to:
+***** Monthly income is at least 25 ducats
+**** Creates an advisor of the 0 "Statesman type:
+***** Culture is event_target:noble_province
+***** Follows the event_target:noble_province religion
+***** With a skill level of 3
+***** discount = yes
+*** If:
+**** Limited to:
+***** Monthly income is less than 25 ducats
+**** Creates an advisor of the 0 "Statesman type:
+***** Culture is event_target:noble_province
+***** Follows the event_target:noble_province religion
+***** With a skill level of 2
+***** discount = yes
+*** Removes the country flag noble_statesman
+** noble_army_reformer:
+*** If:
+**** Limited to:
+***** Monthly income is at least 25 ducats
+**** Creates an advisor of the 0 "Army Reformer type:
+***** Culture is event_target:noble_province
+***** Follows the event_target:noble_province religion
+***** With a skill level of 3
+***** discount = yes
+*** If:
+**** Limited to:
+***** Monthly income is less than 25 ducats
+**** Creates an advisor of the 0 "Army Reformer type:
+***** Culture is event_target:noble_province
+***** Follows the event_target:noble_province religion
+***** With a skill level of 2
+***** discount = yes
+*** Removes the country flag noble_army_reformer
+
+=== title = nobles_estate_events.12.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: nobles_estate_events.12.a:'''
+

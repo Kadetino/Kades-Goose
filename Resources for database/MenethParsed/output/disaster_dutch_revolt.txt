@@ -1,0 +1,121 @@
+
+=== title = "dutch_revolt.1.t" ===
+* Trigger:
+** 0 "Netherlands does not exist
+* desc = dutch_revolt.1.d
+* Trigger:
+** 0 "Netherlands exists
+* desc = dutch_revolt.1.d2
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag had_dutch_revolt
+** Every owned province:
+*** Limited to:
+**** Has the province modifier "dutch_revolt_modifier"
+*** Removes the country modifier "dutch_revolt_modifier"
+
+'''Option: dutch_revolt.1.a:'''
+
+* Trigger:
+** 0 "Netherlands exists
+
+'''Option: dutch_revolt.1.b:'''
+
+* Trigger:
+** 0 "Netherlands does not exist
+* low_countries_region:
+** Limited to:
+*** The province is owned by our country
+** add_local_autonomy = -25
+
+=== title = "dutch_revolt.2.t" ===
+* Cannot fire randomly
+* Can only fire once
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random country:
+*** Limited to:
+**** Has the country flag dutch_revolt_target
+*** save_event_target_as = dutch_revolt_country
+
+'''Option: dutch_revolt.2.a:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 1000:
+*** event_target:dutch_revolt_country:
+**** Considers our country a rival
+** Multiplies value by 1000:
+*** Is allied with 0 "Netherlands
+* If:
+** Limited to:
+*** Is not allied with 0 "Netherlands
+** create_alliance = 0 "Netherlands
+* If:
+** Limited to:
+*** 0 "Netherlands:
+**** At war with event_target:dutch_revolt_country
+** join_all_offensive_wars_of = 0 "Netherlands
+* 0 "Netherlands:
+** Adds the opinion modifier "emperor_helped_dutch" towards our country
+
+'''Option: dutch_revolt.2.b:'''
+
+* AI chance:
+** Base chance of 75
+* Changes prestige by -10
+* Sets the global flag emperor_did_not_support_dutch
+
+'''Option: dutch_revolt.2.c:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 1000:
+*** Has an opinion of at least 100 with event_target:dutch_revolt_country
+* If:
+** Limited to:
+*** Is not allied with event_target:dutch_revolt_country
+** create_alliance = event_target:dutch_revolt_country
+* If:
+** Limited to:
+*** 0 "Netherlands:
+**** At war with event_target:dutch_revolt_country
+** join_all_defensive_wars_of = event_target:dutch_revolt_country
+* Sets the global flag emperor_did_not_support_dutch
+* 0 "Netherlands:
+** Adds the opinion modifier "emperor_sided_against_dutch" towards our country
+
+=== title = "dutch_revolt.3.t" ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Netherlands
+* Has the global flag emperor_did_not_support_dutch
+* Is part of the Holy Roman Empire
+* Is not at war
+* Has at least 7 provinces
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 6 months
+* AI chance:
+** Base chance of 100
+
+'''Option: dutch_revolt.3.a:'''
+
+* Removes the province from the Holy Roman Empire
+* Changes prestige by 20
+* Sets the country flag permanently_left_hre_flag
+* Holy Roman Emperor:
+** Adds the opinion modifier "0 "Left the Empire" towards our country
+
+'''Option: dutch_revolt.3.b:'''
+
+* AI chance:
+** Base chance of 0

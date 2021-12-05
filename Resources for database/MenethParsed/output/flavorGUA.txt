@@ -1,0 +1,218 @@
+** Trigger:
+*** Country is 0 "Guarani
+*** Any neighbor country:
+**** Any of the following:
+***** Capital:
+****** In the continent 0 "Europe
+***** Colonial parent:
+****** Capital:
+******* In the continent 0 "Europe
+**** Has discovered our country
+**** ROOT:
+***** Has discovered PREV
+** Mean time to happen
+*** Base mean time to happen of 32 months
+** Option: 0 "We will approach them to make a deal.:
+*** Changes stability by -1
+*** Random neighbor country:
+**** Limited to:
+***** Capital:
+****** In the continent 0 "Europe
+**** Gets the country event:
+***** ID is flavor_gua.2
+***** Base mean time to happen of 7 days
+***** Tooltip:
+** Option: 0 "This is despicable, we will fight it!:
+*** add_stability_or_adm_power = yes
+*** Random neighbor country:
+**** Limited to:
+***** Capital:
+****** In the continent 0 "Europe
+***** Has discovered our country
+***** ROOT:
+****** Has discovered PREV
+**** Adds the opinion modifier "0 "Opposing Bandeirantes" towards our country
+* Gets the country event:
+** ID is flavor_gua.2
+** title = 0 "Bandeirantes
+** desc = 0 "A messenger from $FROMCOUNTRY$ tells us that their ruler is prepared to make a deal with the Bandeirantes who capture and force the people of $FROMCOUNTRY$ into slavery. Their methods are questionable, the Bandeirantes have been known to disguise themselves as Jesuits, singing mass to lure the natives out or using surprise attacks to capture them. It is a very profitable operation though, and $FROMCOUNTRY$'s ruler suggests a way to make it easier to profit from this.
+** picture = BATTLE_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Accept the deal.:
+*** Random owned province:
+**** Limited to:
+***** Any bordering province:
+****** The province is owned by our country
+**** Changes base tax by 1
+*** Tooltip:
+**** Adds the opinion modifier "0 "Accepting Bandeirantes" towards our country
+*** Tooltip:
+**** Our country:
+***** Gets the country event:
+****** ID is flavor_gua.3
+****** Base mean time to happen of 7 days
+****** Tooltip:
+***** Gets the country event:
+****** ID is flavor_gua.3
+****** Base mean time to happen of 7 days
+****** Tooltip:
+*** Hidden effect:
+**** Our country:
+***** Gets the country event:
+****** ID is flavor_gua.3
+****** Base mean time to happen of 7 days
+* Gets the country event:
+** ID is flavor_gua.3
+** title = 0 "The Deal with Bandeirantes
+** desc = 0 "We have received a reply from $FROMCOUNTRY$ and they are prepared to order their Bandeirantes to co-operate with us. The freedom of our people versus a rather large new way of income is at stake.
+** picture = BATTLE_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Go through with it!:
+*** Adds the opinion modifier "0 "Accepting Bandeirantes" from our country
+*** Adds the ruler modifier "0 "Bandeirantes" until the ruler's death:
+**** -5% global manpower modifier
+**** +5% global tax modifier
+** Option: 0 "We have reconsidered - fight the Bandeirantes!:
+*** add_stability_or_adm_power = yes
+*** Adds the opinion modifier "0 "Opposing Bandeirantes" from our country
+* Gets the country event:
+** ID is flavor_gua.4
+** title = 0 "Yerba Mate
+** desc = 0 "We have known about the plant Yerba Mate for a long time, and drink the beverage mate made from it every day. We have survived periods of drought and famine by drinking it and we call it the 'Drink of the Gods'. Our legend says that the Goddesses of the Moon and the Cloud visited Earth one day when they were attacked by a Yaguarete - a jaguar. The Goddesses were saved by an old man, who told them that he had stayed behind when his tribe moved on to protect his young daughter and wife. He invited them to his hut and the next day when the Goddesses left, they discussed what they would give the old man and his family as compensation. They decided on a new kind of plant which they sowed and grew while the family slept. When the family woke up the Goddess of the Moon told them who she was and that they were given this plant as a gift for their goodness. The plant was to be the symbol of friendship and she taught them how to toast the yerba and to drink the mate. This is how the 'Drink of Friendship' came to be.
+** picture = TRADEGOODS_eventPicture
+** Trigger:
+*** Country is 0 "Guarani
+*** Is not at war
+*** Is not in regency
+*** Does not have the ruler modifier 0 "Yerba Mate
+*** Any owned province:
+**** Produces 0 "Tea
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "The Yerba Mate and its legend shall never be forgotten under my rulership!:
+*** Changes administrative power stored by -10
+*** Adds the ruler modifier "0 "Yerba Mate" until the ruler's death:
+**** +5% production efficiency
+** Option: 0 "Increase production and export it!:
+*** Changes prestige by -5
+*** Random owned province:
+**** Limited to:
+***** Produces 0 "Tea
+**** Adds the modifier "0 "Export of Yerba Mate" until the end of the campaign:
+***** +20% trade goods output
+* Gets the country event:
+** ID is flavor_gua.5
+** title = 0 "Nheçu
+** desc = 0 "Nheçu, one of our leaders, have commanded the slaughter of three Jesuits missionaries by the names of Roque Gonzales, João de Castilho and Afonso Rodrigues. They have been trying to convert people of his tribe and others to Catholicism!
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Guarani
+*** Does not follow the 0 "Catholic religion
+*** Any neighbor country:
+**** Any of the following:
+***** Capital:
+****** In the continent 0 "Europe
+***** Colonial parent:
+****** Capital:
+******* In the continent 0 "Europe
+**** Follows the 0 "Catholic religion
+** Mean time to happen
+*** Base mean time to happen of 32 months
+** Option: 0 "Off with their heads!:
+*** add_stability_or_adm_power = yes
+*** Random neighbor country:
+**** Limited to:
+***** Any of the following:
+****** Capital:
+******* In the continent 0 "Europe
+****** Colonial parent:
+******* Capital:
+******** In the continent 0 "Europe
+***** Follows the 0 "Catholic religion
+**** Adds the opinion modifier "0 "Killed Jesuits" towards our country
+** Option: 0 "Stop him and release the Jesuits!:
+*** Random neighbor country:
+**** Limited to:
+***** Any of the following:
+****** Capital:
+******* In the continent 0 "Europe
+****** Colonial parent:
+******* Capital:
+******** In the continent 0 "Europe
+***** Follows the 0 "Catholic religion
+**** Adds the opinion modifier "0 "Saved Jesuits" towards our country
+*** Every owned province:
+**** Limited to:
+***** Any bordering province:
+****** The owner of the province:
+******* Capital:
+******** In the continent 0 "Europe
+******* Follows the 0 "Catholic religion
+**** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+***** local_unrest = 5
+* Gets the country event:
+** ID is flavor_gua.6
+** title = 0 "Sepé Tiaraju
+** desc = 0 "The people in one of our core provinces are being forced to relocate! A treaty between the European country and another forces the Guaranis inhabiting the Jesuit missions in the province to be evacuated. The people are protesting and many rebels have taken refuge in our country, still eager to fight back and reclaim the province for us. One of these, Sepé Tiaraju, is an excellent general and has offered his services to us.
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Guarani
+*** Does not follow the 0 "Catholic religion
+*** Any neighbor country:
+**** Any of the following:
+***** Capital:
+****** In the continent 0 "Europe
+***** Colonial parent:
+****** Capital:
+******* In the continent 0 "Europe
+**** Follows the 0 "Catholic religion
+**** Has discovered our country
+**** ROOT:
+***** Has discovered PREV
+**** Any owned province:
+***** Has core on our country
+** Mean time to happen
+*** Base mean time to happen of 32 months
+** Option: 0 "Good.:
+*** Creates a general:
+**** Named "Sepé Tiaraju"
+**** 3 skill in shock
+**** 2 skill in fire
+**** 2 skill in manuever
+**** 2 skill in siege
+* Gets the country event:
+** ID is flavor_gua.7
+** title = 0 "Karai Pyhare
+** desc = 0 "The farmers in one of our provinces have complained about the troubles Karai Pyhare - The Man of the Night - has made lately. Cattle has been set loose, eggs, chicken and honey stolen, horses frightened and corn scattered, all because of a short, ugly and hairy man known from the legends and myths of our people. He is blamed for the hairy and ugly children born and he is impossible to detect due to his hairy feet silencing his movements and his ability to turn invisible. The only way to stop him is by giving him gifts, honey and liquor usually work to appease him, and if it is done often enough he will become friendly and guard over one's home, animals, and possessions. Karai Pyhare will sometimes even leave gifts in return!
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Guarani
+*** Is not at war
+*** Any neighbor country:
+**** Any of the following:
+***** Capital:
+****** In the continent 0 "Europe
+***** Colonial parent:
+****** Capital:
+******* In the continent 0 "Europe
+**** Follows the 0 "Catholic religion
+**** Has discovered our country
+** Mean time to happen
+*** Base mean time to happen of 50 months
+*** Multiplies value by 0.5:
+**** Does not follow the 0 "Catholic religion
+*** Multiplies value by 2:
+**** Follows the 0 "Catholic religion
+** Option: 0 "Leave out some honey and liquor for him.:
+*** Modifies treasury by -0.1 years worth of income
+*** Random owned province:
+**** Adds the modifier "0 "Happy People" until the end of the campaign:
+***** local_unrest = -5
+** Option: 0 "That is just silly superstition!:
+*** Changes prestige by 5
+*** Random owned province:
+**** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+***** local_unrest = 5

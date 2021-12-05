@@ -1,0 +1,459 @@
+** Trigger:
+*** Country is 0 "Lithuania
+*** Year is at least 1550
+*** Year is less than 1600
+*** Not a vassal of 0 "Poland
+*** Any owned province:
+**** Has core on our country
+**** Follows the 0 "Protestant religion
+*** Any owned province:
+**** Has core on our country
+**** Does not follow the 0 "Protestant religion
+**** is_reformation_center_false = no
+**** Can spawn the 0 "Religious rebel type
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Has core on our country
+****** is_reformation_center_false = no
+****** Does not follow the 0 "Protestant religion
+****** Can spawn the 0 "Religious rebel type
+***** Sets the province flag lit_wave_of_protestanitsm_flag
+**** Random owned province:
+***** Limited to:
+****** Has core on our country
+****** is_reformation_center_false = no
+****** Does not follow the 0 "Protestant religion
+****** Can spawn the 0 "Religious rebel type
+****** Does not have the province flag lit_wave_of_protestanitsm_flag
+***** Sets the province flag lit_wave_of_protestanitsm_flag
+** Option: 0 "Accept the Movement:
+*** Every owned province:
+**** Limited to:
+***** Has the province flag lit_wave_of_protestanitsm_flag
+**** Changes religion to 0 "Protestant
+**** Removes the province flag lit_wave_of_protestanitsm_flag
+** Option: 0 "Crush the Movement:
+*** Every owned province:
+**** Limited to:
+***** Any of the following:
+****** All of the following:
+******* Follows the 0 "Protestant religion
+******* Can spawn the 0 "Religious rebel type
+****** Has the province flag lit_wave_of_protestanitsm_flag
+**** Spawns revolt of size 2 of 0 "Religious rebels
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** Has the province flag lit_wave_of_protestanitsm_flag
+***** Removes the province flag lit_wave_of_protestanitsm_flag
+* Gets the country event:
+** ID is flavor_lit.2
+** title = 0 "Wave of Calvinism
+** desc = 0 "In the 1590s, when the Wave of Protestantism had started to change the fabric of Lithuanian society, numerous refugees of the Reformed Faith arrived in a second wave. These were the Dutch, English, French and Spanish fleeing from the narrow-minded Catholic governments of their former countries. The refugees were a mix of farmers and city-dwellers and they influenced the Lithuanians in a similar way as the earlier Protestants. However, the Lithuanian Magnates in opposition of the king viewed fellow Poland as the perfect societal form. When the king converted to the Lutheran form of Protestantism, many of them became reformed. Both to underline their difference with the king and because the Reformed ideals place God before king. The Reformed faith was also a perfect ideology for them to imprint upon the serfs. They were serfs because God wanted them to be and thus they became more manageable. In the 1630's a growing dissent between the Protestant state on one hand and the Reformed and Orthodox magnates on the other could be felt.
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Not a vassal of 0 "Poland
+*** Country is 0 "Lithuania
+*** Year is at least 1590
+*** Year is less than 1610
+*** Any owned province:
+**** Has core on our country
+**** Follows the 0 "Reformed religion
+**** Can spawn the 0 "Religious rebel type
+*** Any owned province:
+**** Has core on our country
+**** is_reformation_center_false = no
+**** Does not follow the 0 "Reformed religion
+**** Can spawn the 0 "Religious rebel type
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Has core on our country
+****** is_reformation_center_false = no
+****** Does not follow the 0 "Reformed religion
+****** Can spawn the 0 "Religious rebel type
+***** Sets the province flag lit_wave_of_calvinism_flag
+**** Random owned province:
+***** Limited to:
+****** Has core on our country
+****** is_reformation_center_false = no
+****** Does not follow the 0 "Reformed religion
+****** Can spawn the 0 "Religious rebel type
+****** Does not have the province flag lit_wave_of_calvinism_flag
+***** Sets the province flag lit_wave_of_calvinism_flag
+** Option: 0 "Accept the Movement:
+*** Every owned province:
+**** Limited to:
+***** Has the province flag lit_wave_of_calvinism_flag
+**** Changes religion to 0 "Reformed
+**** Removes the province flag lit_wave_of_calvinism_flag
+** Option: 0 "Crush the Movement:
+*** Every owned province:
+**** Limited to:
+***** Any of the following:
+****** All of the following:
+******* Follows the 0 "Reformed religion
+******* Can spawn the 0 "Religious rebel type
+****** Has the province flag lit_wave_of_calvinism_flag
+**** Spawns revolt of size 2 of 0 "Religious rebels
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Has the province flag lit_wave_of_calvinism_flag
+***** Removes the province flag lit_wave_of_calvinism_flag
+* Gets the country event:
+** ID is flavor_lit.3
+** title = 0 "Strategic Axis with Sweden
+** desc = 0 "In the first decades of the 17th century Lithuania's king had converted to Protestantism and started to support the two branches of the Reformation. All in all his ideal was an effective and modern monarchy much inspired by the Swedish kings. Building up a Protestant Church of Lithuania and getting inspiration for governmental and societal reforms, the king turned to Sweden. The cooperation was of mutual benefits as Sweden soon got a Protestant friend in otherwise heretic Eastern Europe. Slowly the friendship brought a strong alliance about and King Ladislovas I eagerly encouraged Gustav II Adolphus to promote Protestantism in Germany. He himself would hold the Catholics and Orthodox of the East in check.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** is_free_or_tributary_trigger = yes
+*** 0 "Sweden:
+**** is_free_or_tributary_trigger = yes
+*** 0 "Sweden:
+**** Has at least 8 provinces where all of the following is true:
+***** Has core on 0 "Sweden
+*** Not junior union partner under 0 "Poland
+*** Not senior union partner over 0 "Poland
+*** Not junior union partner under 0 "Sweden
+*** Not senior union partner over 0 "Sweden
+*** Not a vassal of 0 "Poland
+*** Does not follow the 0 "Catholic religion
+*** Does not have the country modifier "0 "Counter-Reformation"
+*** Country is 0 "Lithuania
+*** Year is at least 1600
+*** Year is less than 1620
+*** Any neighbor country:
+**** Any of the following:
+***** Country is 0 "Poland
+***** Country is 0 "Sweden
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Offer Friendliness:
+*** 0 "Sweden:
+**** Adds the opinion modifier "0 "Offered Friendliness" towards our country
+*** 0 "Poland:
+**** Adds the opinion modifier "0 "Displeased" towards our country
+** Option: 0 "Decline Cooperation:
+*** 0 "Poland:
+**** Adds the opinion modifier "0 "Offered Friendliness" towards our country
+*** 0 "Sweden:
+**** Adds the opinion modifier "0 "Displeased" towards our country
+* Gets the country event:
+** ID is flavor_lit.4
+** title = 0 "Strategic Axis with Prussia
+** desc = 0 "In the second decade of the 17th century Brandenburg inherited the Duchy of Prussia. Brandenburg-Prussia was a Protestant state with high tolerance towards Reformed and she approached Jerzy I with an offer. Lithuania and Brandenburg should sign a Holy Protestant Alliance and wage war on Poland. Brandenburg would be freed from her Prussian vassalage by Poland and Lithuania would be whatever she wanted and could demand from Poland. A faction of young governmental official cherished it, but the king was a very careful man. He and his closest advisors hesitated. Their conclusion was very plain. First it was an impossibility to support Germans against Poland in a war of aggression. Secondly, the worst possible thing was total victory. If Lithuania took a mile of Polish land it would be a mile too much. Any conquests would include more Catholics and Orthodox and worse, more unruly magnates brought up in the Polish Anarchy of a country. So the king politely declined the honor, but instead he proposed a tract of trade and cultural exchange. However as most politically well-informed Lithuanians could have guessed, not much came out of it. The Society of Brandenburg-Prussia had far more in common with Poland than with Lithuania.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** is_free_or_tributary_trigger = yes
+*** Not junior union partner under 0 "Poland
+*** Not senior union partner over 0 "Poland
+*** Not junior union partner under 0 "Prussia
+*** Not senior union partner over 0 "Prussia
+*** Not a vassal of 0 "Poland
+*** Does not follow the 0 "Catholic religion
+*** Does not have the country modifier "0 "Counter-Reformation"
+*** Country is 0 "Lithuania
+*** Year is at least 1618
+*** Any neighbor country:
+**** Any of the following:
+***** Country is 0 "Poland
+***** Country is 0 "Prussia
+*** Year is less than 1626
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Offer Friendliness:
+*** 0 "Prussia:
+**** Adds the opinion modifier "0 "Offered Friendliness" towards our country
+*** 0 "Poland:
+**** Adds the opinion modifier "0 "Displeased" towards our country
+** Option: 0 "Decline Cooperation:
+*** 0 "Poland:
+**** Adds the opinion modifier "0 "Offered Friendliness" towards our country
+*** 0 "Prussia:
+**** Adds the opinion modifier "0 "Displeased" towards our country
+* Gets the country event:
+** ID is flavor_lit.5
+** title = 0 "Strategic Axis with Austria
+** desc = 0 "Before the Independence in 1569 Mikolaj the Black, named king as Mikolaj I, had become Prince of the Holy Roman Empire and befriended the Habsburg ruler of Austria, the Emperor Maximilian II. Maximilian was as sharp a politician as Mikolaj and profited on weakening Poland. Now Mikolaj's position was very bad in the 1570s he had to fight broad factions of Magnates in what could be described as a Civil War and defend his borders from Polish acts of revenge or even a re-conquest. He had to do what served independence best and that was to strike a deal with Maximilian. A Military Alliance was signed on 3rd February 1570 and Mikolaj's eldest son married Elizabeth of Steiermark. This alliance actually kept Poland from attacking even if local border incursions were regular. With the ascending of Rudolf to the Habsburg Monarchy the relations became wary and the alliance fell, but at that time the relations with Poland were at least acceptable.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** is_free_or_tributary_trigger = yes
+*** Not junior union partner under 0 "Poland
+*** Not senior union partner over 0 "Poland
+*** Not junior union partner under 0 "Austria
+*** Not senior union partner over 0 "Austria
+*** Not a vassal of 0 "Poland
+*** Does not follow the 0 "Catholic religion
+*** Does not have the country modifier "0 "Counter-Reformation"
+*** Country is 0 "Lithuania
+*** Any neighbor country:
+**** Any of the following:
+***** Country is 0 "Poland
+***** Country is 0 "Austria
+*** Year is at least 1570
+*** Year is less than 1576
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Offer Friendliness:
+*** 0 "Austria:
+**** Adds the opinion modifier "0 "Offered Friendliness" towards our country
+*** 0 "Poland:
+**** Adds the opinion modifier "0 "Displeased" towards our country
+** Option: 0 "Decline Cooperation:
+*** 0 "Poland:
+**** Adds the opinion modifier "0 "Offered Friendliness" towards our country
+*** 0 "Austria:
+**** Adds the opinion modifier "0 "Displeased" towards our country
+* Gets the country event:
+** ID is flavor_lit.6
+** title = 0 "Strategic Axis with Austria
+** desc = 0 "The Austro-Lithuanian Pact of 1570 had ended in 1576 when the obscure Rudolf came into power in Austria. King Mikolaj II Krzysztof, also called 'the Little Orphan', was a well versed man and a pious Catholic whom had visited Jerusalem. When he had married Elizabeth of Steiermark he had met Rudolf whom had brought his favorite crowd of astrologists infuriating the Pious Crown-prince. From that day he could not stand the man. However, with the ascending of Ferdinand II, a distant relative of Elizabeth of Steiermark, the elderly Mikolaj II again found a man of his values. Ferdinand also wanted a strong monarchy and to strengthen Catholicism in Europe. He immediately signed an alliance and bought the consent of Poland. During the Thirty Years War Lithuanian Hussars would fight side by side with Imperial troops giving Lithuania endless amounts of glory.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** is_free_or_tributary_trigger = yes
+*** Not junior union partner under 0 "Poland
+*** Not senior union partner over 0 "Poland
+*** Not junior union partner under 0 "Austria
+*** Not senior union partner over 0 "Austria
+*** Not a vassal of 0 "Poland
+*** Does not follow the 0 "Catholic religion
+*** Does not have the country modifier "0 "Counter-Reformation"
+*** Country is 0 "Lithuania
+*** Any neighbor country:
+**** Any of the following:
+***** Country is 0 "Poland
+***** Country is 0 "Austria
+*** Year is at least 1618
+*** Year is less than 1631
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Offer Friendliness:
+*** 0 "Austria:
+**** Adds the opinion modifier "0 "Offered Friendliness" towards our country
+*** 0 "Poland:
+**** Adds the opinion modifier "0 "Displeased" towards our country
+** Option: 0 "Decline Cooperation:
+*** 0 "Poland:
+**** Adds the opinion modifier "0 "Offered Friendliness" towards our country
+*** 0 "Austria:
+**** Adds the opinion modifier "0 "Displeased" towards our country
+* Gets the country event:
+** ID is flavor_lit.7
+** title = 0 "Magnates crave 'Polish Rights'
+** desc = 0 "As a reaction to of the introduction of the Henrykian Articles and the Pacta Conventa in Poland in 1573, the Magnates approached the king and urged him to constitutionalize the rights of the Szlachta and to share power with them. If not, they said, he would have to face the consequences. At this point Mikolaj II Krzysztof had newly been crowned. He was young and not as averse to noble power as his father had been. In an effort to keep societal peace he accepted a compromise. There were no Henrykian articles, but the constitution was modified, implying that the Szlachta was the life-nerve of society with inalienable rights to hold office and legislative power. The Principle of Religious Tolerance was also confirmed.
+** picture = DEBATE_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** is_free_or_tributary_trigger = yes
+*** Not a vassal of 0 "Poland
+*** Country is 0 "Lithuania
+*** Year is at least 1570
+*** Year is less than 1601
+*** 0 "Poland:
+**** Any of the following:
+***** Has the country modifier "0 "The Nieszawa Privileges"
+***** Has the country modifier "0 "The Statute of Piotrkow"
+***** Has the country modifier "0 "Pacta Conventa"
+*** Does not have the country modifier "0 "Increased Aristocracy"
+*** Does not have the country modifier "0 "Increased Serfdom"
+*** Does not have the country modifier "0 "Increased Centralization"
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "More Rights than Duties:
+*** Adds the modifier "0 "Increased Aristocracy" for 10 years:
+**** -10% cavalry cost
+**** Trade efficiency is at least -5%
+** Option: 0 "Balance Rights and Duties:
+*** Adds the modifier "0 "Increased Serfdom" for 10 years:
+**** -15% stability cost modifier
+**** -10% land morale
+**** yearly_corruption = 0.1
+** Option: 0 "More Duties than Rights:
+*** Adds the modifier "0 "Increased Centralization" for 10 years:
+**** global_autonomy = -0.05
+**** +1 global unrest
+* Gets the country event:
+** ID is flavor_lit.8
+** title = 0 "Magnates crave 'Polish Rights'
+** desc = 0 "After the two waves of refugees had arrived, the Szlachta again craved compensation for accepting that religious status quo has been broken. His Majesty Mikolaj II Krzysztof, now an elder and a more experienced man, refused to comply with their threats. Instead he used his right to push a proposal on to the floor of the Sejm, which was a compromise, but one which suited the king. The rights to hold office were expanded, but were now also made a duty and only the king had the right to appoint. The Szlachta was given a say in the making of Foreign Policy as a second house for non-Szlachta members was instituted in the Sejm which held legislative power of taxation. In many ways these reforms would decrease noble power even further as the fabric of society slowly tilted to the advantage of the bourgeois and free farmers.
+** picture = DEBATE_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Not a vassal of 0 "Poland
+*** Country is 0 "Lithuania
+*** Year is at least 1601
+*** Year is less than 1631
+*** 0 "Poland:
+**** Any of the following:
+***** Has the country modifier "0 "The Nieszawa Privileges"
+***** Has the country modifier "0 "The Statute of Piotrkow"
+***** Has the country modifier "0 "Pacta Conventa"
+*** Any of the following:
+**** Does not have the country modifier "0 "Increased Aristocracy"
+**** Does not have the country modifier "0 "Increased Serfdom"
+**** Does not have the country modifier "0 "Increased Centralization"
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "More Rights than Duties:
+*** Adds the modifier "0 "Increased Aristocracy" for 10 years:
+**** -10% cavalry cost
+**** Trade efficiency is at least -5%
+** Option: 0 "Balance Rights and Duties:
+*** Adds the modifier "0 "Increased Serfdom" for 10 years:
+**** -15% stability cost modifier
+**** -10% land morale
+**** yearly_corruption = 0.1
+** Option: 0 "More Duties than Rights:
+*** Adds the modifier "0 "Increased Centralization" for 10 years:
+**** global_autonomy = -0.05
+**** +1 global unrest
+* Gets the country event:
+** ID is flavor_lit.9
+** title = 0 "Magnates crave 'Polish Rights'
+** desc = 0 "During the 1630s and 1640s the Magnates found life in the Kingdom unbearable. To escape the egalitarian notions of the government and the king many of the mstarted to interfere in local Polish politics. Many of them owned as much lands on one as the other side of the border. They freely swapped lands with their Polish brothers and thus managed to strengthen the Cause in both Poland and Lithuania. During the Deluge the Magnates of the Ukraine and the Wild Fields fought all and everyone. Poland was in havoc and the Lithuanian king had to accept the fact that he only could control the Northern part of his lands. At these point King Aleksandras II mounted a huge campaign against the Tatars, Russians and Crimeans swapping up rebellious Magnates at the same time. He though stopped from interfering with the Polish government, 'that last sane mind on that side of the border' as he called King Wladyslaw IV of Poland. The subjugated Magnates had two options. They either had to accept a tough reform or get all their lands confiscated and pushed over the border to Poland. The choice was easy. They stayed, but the reform was harsh. Only the state could now own land. The user only owned the right to use it. But to keep that right the user had to pay a user's fee decided by the king. With this vehicle the king started to break the large estate holdings of the Magnates and again changing the structure of society. His son continued the reform policy after the King was murdered by a Ukrainian Magnate on 30th March 1654.
+** picture = DEBATE_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Not a vassal of 0 "Poland
+*** Country is 0 "Lithuania
+*** Year is at least 1631
+*** Year is less than 1651
+*** 0 "Poland:
+**** Any of the following:
+***** Has the country modifier "0 "The Nieszawa Privileges"
+***** Has the country modifier "0 "The Statute of Piotrkow"
+***** Has the country modifier "0 "Pacta Conventa"
+*** Any of the following:
+**** Does not have the country modifier "0 "Increased Aristocracy"
+**** Does not have the country modifier "0 "Increased Serfdom"
+**** Does not have the country modifier "0 "Increased Centralization"
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "More Rights than Duties:
+*** Adds the modifier "0 "Increased Aristocracy" for 10 years:
+**** -10% cavalry cost
+**** Trade efficiency is at least -5%
+** Option: 0 "Balance Rights and Duties:
+*** Adds the modifier "0 "Increased Serfdom" for 10 years:
+**** -15% stability cost modifier
+**** -10% land morale
+**** yearly_corruption = 0.1
+** Option: 0 "More Duties than Rights:
+*** Adds the modifier "0 "Increased Centralization" for 10 years:
+**** global_autonomy = -0.05
+**** +1 global unrest
+* Gets the country event:
+** ID is flavor_lit.10
+** title = 0 "Royal Reaction on the Polish Liberum Veto
+** desc = 0 "King Aleksandras II was clearing up things in the Ukraine in 1652 when he was brought the news of the introduction of the Liberum Veto in Poland. A week later he got the news that 'his' Sejm had voted for the same rights. By carefully reading of reports he found that certain Lithuanian Magnates had nearly doubled the size of the Lithuanian Szlachta by swapping lands with Poles. Frustrated the king declared the law illegitimate. The king had the support of those who were not nobles, but his troubles would live on as long as the Liberum Veto existed in Poland. In a famous address he declared himself allied with the Polish people and at war with the Polish Szlachta.
+** picture = LIBERUM_VETO_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Lithuania
+*** Year is at least 1652
+*** Year is less than 1653
+*** 0 "Commonwealth does not exist
+*** Any of the following:
+**** Junior union partner under 0 "Poland
+**** Senior union partner over 0 "Poland
+*** 0 "Poland:
+**** Has the country flag 0 "Liberum Veto
+*** Does not have the country flag 0 "Liberum Veto
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Move against the 'Magnate-Republic':
+*** Gets the country event:
+**** ID is flavor_lit.11
+**** Base mean time to happen of 14 random days
+** Option: 0 "Give Concessions to the Lithuanian Magnates:
+*** Sets the country flag 0 "Liberum Veto
+*** Adds the modifier "0 "The Nieszawa Privileges" for the rest of the campaign:
+**** -20% stability cost modifier
+**** +5% technology cost
+* Gets the country event:
+** ID is flavor_lit.11
+** title = 0 "Civil War in Lithuania
+** desc = 0 "In a drive towards Warszawa he was bogged down by excellent Polish command while his own Szlachta rebelled. Isolated with his army in Czersk, he struck a deal with the Polish king to leave Poland immediately if the Polish king would refuse to accept the Lithuanian throne from the rebels in the north. It was a not too glorious retreat and he considered himself defeated. The Szlachta had dethroned Aleksandras, but was sidetracked by the fact that the Polish king refused to have anything to do with the traitors. Not all of the Szlachta were against Aleksandras and upon his return another army joined him. Together they smashed the rebel forces and executed the traitors. These events resulted in a deep-set foreign policy in Lithuania to always support the Polish kings against their internal foes, but never to meddle without being asked.
+** picture = CIVIL_WAR_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Try to buy the Magnates off:
+*** add_stability_or_adm_power = yes
+*** Modifies treasury by -0.5 years worth of income
+*** Every owned province:
+**** Limited to:
+***** Has core on our country
+***** unrest = 1
+**** Spawns revolt of size 1
+** Option: 0 "Let war come to their homes:
+*** Every owned province:
+**** Limited to:
+***** unrest = 1
+***** Has core on our country
+**** Spawns revolt of size 1
+* Gets the country event:
+** ID is flavor_lit.12
+** title = 0 "The Horrible Plague in Lithuania
+** desc = 0 "During 1709-10 Lithuania endured the harshest winter of the century. But as that was not enough, a plague spread through the lands, killing many thousands. There is talking of the Scourge of God and people pray... pray... pray...
+** picture = PLAGUE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Lithuania
+*** Year is at least 1700
+*** Year is less than 1750
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "There is nothing we can do:
+*** AI chance:
+**** Base chance of 25
+*** Adds the modifier "0 "Severe Plague" for 5 years:
+**** -25% manpower modifier
+**** -25% provincial tax income
+**** trade_goods_size_modifier = -0.25
+**** local_unrest = -3
+**** local_autonomy = 0.05
+** Option: 0 "Try to contain it:
+*** AI chance:
+**** Base chance of 75
+*** Changes administrative power stored by -25
+*** Adds the modifier "0 "Contained Plague" for 5 years:
+**** -10% manpower modifier
+**** -10% provincial tax income
+**** trade_goods_size_modifier = -0.1
+**** local_unrest = -1
+**** local_autonomy = 0.01
+* Gets the country event:
+** ID is flavor_lit.13
+** title = 0 "Pietism
+** desc = 0 "Pietism was a religious movement that started in Germany during the latter part of the 17th century. Traditionally, the Pietist movement has been viewed as a backlash against intellectualism prevalent in and among the Protestant ranks, especially in the Lutheran Church during that period. However, Pietism was common also within the other Christian forms. It was with the return of prisoners of war that the movement really took off in Lithuania. However, the Lithuanian Church disapproved most strongly of unauthorized preaching, which led to the Conventicle Edict of 1729, forbidding any religious gatherings outside the framework of the Church.
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Not a vassal of 0 "Poland
+*** Country is 0 "Lithuania
+*** Year is at least 1700
+*** Year is less than 1800
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the 0 "Reformed religion
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Encourage it:
+*** Changes stability by -2
+*** Adds the modifier "0 "Pietism" for 50 years:
+**** +1 tolerance of heretics
+** Option: 0 "Stop it:
+*** Adds the modifier "0 "The Conventicle Edict" for 50 years:
+**** +1 tolerance of the true faith

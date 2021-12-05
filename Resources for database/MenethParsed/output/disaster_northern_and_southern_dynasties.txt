@@ -1,0 +1,236 @@
+
+=== title = dai_disaster.1.t ===
+* Cannot fire randomly
+* Can only fire once
+
+'''Option: dai_disaster.1.a:'''
+
+* Trigger:
+** Has at least 1 provinces where all of the following is true:
+*** Any of the following:
+**** area = vietnam_area
+**** area = cambodia_area
+**** area = mekong_area
+**** area = angkor_area
+**** area = champa_area
+**** area = tay_nguyen_area
+**** Region is malaya_region
+**** Region is indonesia_region
+* Sets the country flag dai_southern_dynasty
+* If:
+** Limited to:
+*** current_age = 0 "Age of Reformation
+*** Ruler's dynasty is not Le
+** Spawns a ruler:
+*** Ruler's dynasty is Le
+* else_if:
+** Limited to:
+*** current_age_false = 0 "Age of Reformation
+*** Ruler's dynasty is not Nguyen
+** Spawns a ruler:
+*** Ruler's dynasty is Nguyen
+* Gets the country event:
+** ID is dai_disaster.2
+
+'''Option: dai_disaster.1.b:'''
+
+* Trigger:
+** Has at least 1 provinces where all of the following is true:
+*** Any of the following:
+**** area = north_laos_area
+**** area = central_thai_area
+**** area = northern_thai_area
+**** area = red_river_delta_area
+**** area = sukhothai_area
+**** area = champasak_area
+**** area = khorat_area
+**** area = vientiane_area
+**** superregion = china_superregion
+**** Region is burma_region
+* Sets the country flag dai_northern_dynasty
+* If:
+** Limited to:
+*** current_age = 0 "Age of Reformation
+*** Ruler's dynasty is not Mac
+** Spawns a ruler:
+*** Ruler's dynasty is Mac
+* else_if:
+** Limited to:
+*** current_age_false = 0 "Age of Reformation
+*** Ruler's dynasty is not Trinh
+** Spawns a ruler:
+*** Ruler's dynasty is Trinh
+* Gets the country event:
+** ID is dai_disaster.2
+
+=== title = dai_disaster.2.t ===
+* Cannot fire randomly
+* Can only fire once
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the country flag dai_southern_dynasty
+*** Every owned province:
+**** Limited to:
+***** Has core on our country
+***** Any of the following:
+****** area = north_laos_area
+****** area = central_thai_area
+****** area = northern_thai_area
+****** area = red_river_delta_area
+****** area = sukhothai_area
+****** area = champasak_area
+****** area = khorat_area
+****** area = vientiane_area
+****** superregion = china_superregion
+****** Region is burma_region
+**** Gives 0 "Tonkin core on the province
+*** Release 0 "Tonkin as a vassal
+*** 0 "Tonkin:
+**** Changes government type to monarchy
+**** add_government_reform = confucian_bureaucracy
+**** If:
+***** Limited to:
+****** current_age = 0 "Age of Reformation
+***** Spawns a ruler:
+****** Ruler's dynasty is Mac
+**** else:
+***** Spawns a ruler:
+****** Ruler's dynasty is Trinh
+*** Every subject country:
+**** Limited to:
+***** Capital:
+****** Any of the following:
+******* area = north_laos_area
+******* area = central_thai_area
+******* area = northern_thai_area
+******* area = red_river_delta_area
+******* area = sukhothai_area
+******* area = champasak_area
+******* area = vientiane_area
+******* superregion = china_superregion
+******* Region is burma_region
+**** 0 "Tonkin:
+***** Vassalizes PREV
+*** Every owned province:
+**** Gives 0 "Tonkin core on the province
+*** 0 "Tonkin:
+**** save_event_target_as = vietnam_rival_dynasty
+** else:
+*** Every owned province:
+**** Limited to:
+***** Has core on our country
+***** Any of the following:
+****** area = vietnam_area
+****** area = cambodia_area
+****** area = mekong_area
+****** area = angkor_area
+****** area = champa_area
+****** area = tay_nguyen_area
+****** Region is malaya_region
+****** Region is indonesia_region
+**** Gives 0 "Annam core on the province
+*** Release 0 "Annam as a vassal
+*** 0 "Annam:
+**** Changes government type to monarchy
+**** add_government_reform = confucian_bureaucracy
+**** If:
+***** Limited to:
+****** current_age = 0 "Age of Reformation
+***** Spawns a ruler:
+****** Ruler's dynasty is Le
+**** else:
+***** Spawns a ruler:
+****** Ruler's dynasty is Nguyen
+*** Every subject country:
+**** Limited to:
+***** Capital:
+****** Any of the following:
+******* area = vietnam_area
+******* area = cambodia_area
+******* area = mekong_area
+******* area = angkor_area
+******* area = champa_area
+******* area = tay_nguyen_area
+******* Region is malaya_region
+******* Region is indonesia_region
+**** 0 "Annam:
+***** Vassalizes PREV
+*** Every owned province:
+**** Gives 0 "Annam core on the province
+*** 0 "Annam:
+**** save_event_target_as = vietnam_rival_dynasty
+
+'''Option: dai_disaster.2.a:'''
+
+* Trigger:
+** Has the country flag dai_southern_dynasty
+* Changes country to 0 "Annam
+* end_disaster = northern_and_southern_dynasties
+* Hidden effect:
+** 0 "Tonkin:
+*** Capital:
+**** build_to_forcelimit:
+***** Spawns an infantry unit in 0.6
+***** Spawns a cavalry unit in 0.3
+***** artillery = 0.1
+** If:
+*** Limited to:
+**** 0 "Tonkin:
+***** Any owned province:
+****** Is coastal
+*** 0 "Tonkin:
+**** Random owned province:
+***** Limited to:
+****** Is coastal
+***** build_to_forcelimit:
+****** Spawns a galley in 0.6
+****** transport = 0.3
+****** Spawns a light ship in 0.1
+
+'''Option: dai_disaster.2.a:'''
+
+* Trigger:
+** Has the country flag dai_northern_dynasty
+* Changes country to 0 "Tonkin
+* end_disaster = northern_and_southern_dynasties
+* Hidden effect:
+** 0 "Annam:
+*** Capital:
+**** build_to_forcelimit:
+***** Spawns an infantry unit in 0.6
+***** Spawns a cavalry unit in 0.3
+***** artillery = 0.1
+** If:
+*** Limited to:
+**** 0 "Annam:
+***** Any owned province:
+****** Is coastal
+*** 0 "Annam:
+**** Random owned province:
+***** Limited to:
+****** Is coastal
+***** build_to_forcelimit:
+****** Spawns a galley in 0.6
+****** transport = 0.3
+****** Spawns a light ship in 0.1
+
+=== title = dai_disaster.3.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Has the DLC Leviathan
+* Country is 0 "Dai Viet
+* mission_completed_false = mnd_dai_prevent_division
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 months
+
+'''Option: dai_disaster.3.a:'''
+
+* Changes stability by -1

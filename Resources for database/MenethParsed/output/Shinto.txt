@@ -1,0 +1,1933 @@
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random neighbor country:
+*********** save_event_target_as = saved_neighbor
+********** Random known country:
+*********** Limited to:
+************ Has at least 1 ports
+************ Does not follow the 0 "Shinto religion
+*********** save_event_target_as = save_wokou_target
+********** Random known country:
+*********** Limited to:
+************ Has at least 2 ports
+************ Does not follow the 0 "Shinto religion
+*********** save_event_target_as = save_wokou_target
+********** Random known country:
+*********** Limited to:
+************ Has at least 5 ports
+************ Does not follow the 0 "Shinto religion
+*********** save_event_target_as = save_wokou_target
+********** Random known country:
+*********** Limited to:
+************ Has at least 10 ports
+************ Does not follow the 0 "Shinto religion
+*********** save_event_target_as = save_wokou_target
+********** Random known country:
+*********** Limited to:
+************ Has at least 15 ports
+************ Does not follow the 0 "Shinto religion
+*********** save_event_target_as = save_wokou_target
+******** Option: shinto_events.1.a:
+********* Changes administrative power stored by -25
+********* add_incident_variable_value:
+********** incident = incident_wokou
+********** value = 2
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.2
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.1.b:
+********* Changes military power stored by -25
+********* Changes diplomatic power stored by -25
+********* add_incident_variable_value:
+********** incident = incident_wokou
+********** value = 3
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.2
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.2
+******** title = shinto_events.2.t
+******** desc = shinto_events.2.d
+******** picture = WOKOU_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Is coastal
+*********** save_event_target_as = pirate_coast_province
+********** Random owned province:
+*********** Limited to:
+************ Is coastal
+************ The province is not the capital of the country
+*********** save_event_target_as = pirate_coast_province
+******** Option: shinto_events.2.a:
+********* Modifies treasury by 0.35 years worth of income
+********* Hidden effect:
+********** Every known country:
+*********** Limited to:
+************ Any owned province:
+************* our country% colonial range
+*********** Adds the opinion modifier "pirate_haven" towards our country
+********* add_incident_variable_value:
+********** incident = incident_wokou
+********** value = 2
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.3
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.2.b:
+********* Changes diplomatic power stored by 75
+********* Hidden effect:
+********** Every known country:
+*********** Limited to:
+************ Any owned province:
+************* our country% colonial range
+*********** Adds the opinion modifier "pirate_haven" towards our country
+********* add_incident_variable_value:
+********** incident = incident_wokou
+********** value = -1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.3
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.2.c:
+********* Hidden effect:
+********** Every known country:
+*********** Limited to:
+************ Any owned province:
+************* our country% colonial range
+*********** Adds the opinion modifier "pirate_fighting" towards our country
+********* add_incident_variable_value:
+********** incident = incident_wokou
+********** value = 3
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.3
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.3
+******** title = shinto_events.3.t
+******** desc = shinto_events.3.d
+******** picture = WOKOU_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** save_event_target_as = save_wokou_target
+********** Random owned province:
+*********** Limited to:
+************ Is coastal
+*********** save_event_target_as = save_wokou_target
+********** Random owned province:
+*********** Limited to:
+************ Is coastal
+************ is_in_capital_area = yes
+*********** save_event_target_as = save_wokou_target
+********** Random owned province:
+*********** Limited to:
+************ Is coastal
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** save_event_target_as = save_wokou_target
+******** Option: shinto_events.3.a:
+********* event_target:save_wokou_target:
+********** Adds the modifier "wokou_pirate_stronghold_indifferent" until the end of the campaign:
+*********** local_autonomy = 0.2
+********* add_incident_variable_value:
+********** incident = incident_wokou
+********** value = 1
+********* Sets the country flag end_of_wokou_chain
+******** Option: shinto_events.3.b:
+********* Modifies treasury by -0.5 years worth of income
+********* Creates an admiral at  extra naval tradition
+********** tradition = 50
+********* event_target:save_wokou_target:
+********** Adds the modifier "wokou_pirate_stronghold_friendly" until the end of the campaign:
+*********** local_autonomy = 0.1
+*********** -10% ship recruitment speed
+********* add_incident_variable_value:
+********** incident = incident_wokou
+********** value = 2
+********* Sets the country flag end_of_wokou_chain
+******** Option: shinto_events.3.c:
+********* Changes stability by -1
+********* event_target:save_wokou_target:
+********** Adds the modifier "wokou_pirate_stronghold_hostile" until the end of the campaign:
+*********** local_unrest = 8
+********* add_incident_variable_value:
+********** incident = incident_wokou
+********** value = 3
+********* Sets the country flag end_of_wokou_chain
+******* Gets the country event:
+******** ID is shinto_events.4
+******** title = shinto_events.4.t
+******** desc = shinto_events.4.d
+******** picture = WOKOU_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_wokou
+********* Has the country flag end_of_wokou_chain
+********* incident_variable_value:
+********** incident_false = incident_wokou
+********** value_false = 3
+******** Immediate effects:
+********* Hidden effect:
+********** Random neighbor country:
+*********** save_event_target_as = saved_neighbor
+********** Random known country:
+*********** Limited to:
+************ Has at least 1 ports
+************ Does not follow the 0 "Shinto religion
+*********** save_event_target_as = save_wokou_target
+********** Random known country:
+*********** Limited to:
+************ Has at least 2 ports
+************ Does not follow the 0 "Shinto religion
+*********** save_event_target_as = save_wokou_target
+********** Random known country:
+*********** Limited to:
+************ Has at least 5 ports
+************ Does not follow the 0 "Shinto religion
+*********** save_event_target_as = save_wokou_target
+********** Random known country:
+*********** Limited to:
+************ Has at least 10 ports
+************ Does not follow the 0 "Shinto religion
+*********** save_event_target_as = save_wokou_target
+********** Random known country:
+*********** Limited to:
+************ Has at least 15 ports
+************ Does not follow the 0 "Shinto religion
+*********** save_event_target_as = save_wokou_target
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.4.a:
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = -1
+*********** end_incident = incident_wokou
+********** else:
+*********** add_isolationism = -1
+*********** end_incident = incident_wokou
+********* Adds the modifier "wokou_turned_to_navy" for 50 years:
+********** +20% ship durability
+******* Gets the country event:
+******** ID is shinto_events.5
+******** title = shinto_events.5.t
+******** desc = shinto_events.5.d
+******** picture = WOKOU_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_wokou
+********* Has the country flag end_of_wokou_chain
+********* incident_variable_value:
+********** incident_false = incident_wokou
+********** value_false = 8
+********* incident_variable_value:
+********** incident = incident_wokou
+********** value = 3
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.5.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** end_incident = incident_wokou
+********** else:
+*********** end_incident = incident_wokou
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "wokou_no_effort_ending" for 50 years:
+********** Trade efficiency is at least 20%
+******* Gets the country event:
+******** ID is shinto_events.6
+******** title = shinto_events.6.t
+******** desc = shinto_events.6.d
+******** picture = WOKOU_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_wokou
+********* Has the country flag end_of_wokou_chain
+********* incident_variable_value:
+********** incident = incident_wokou
+********** value = 8
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ The variable isolationism_achievement_counter is lower than 1
+*********** Sets the variable isolationism_achievement_counter to 1
+*********** else:
+************ Changes the variable isolationism_achievement_counter by 1
+******** Option: shinto_events.6.a:
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = 1
+*********** end_incident = incident_wokou
+********** else:
+*********** add_isolationism = 1
+*********** end_incident = incident_wokou
+********* Adds the modifier "wokou_closed_ending" for 50 years:
+********** +20% provincial trade power
+******* Gets the country event:
+******** ID is shinto_events.7
+******** title = shinto_events.7.t
+******** desc = shinto_events.7.d
+******** picture = URBANISATION_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.7.a:
+********* Modifies treasury by -1 years worth of income
+********* Capital:
+********** Changes base tax by 1
+********** add_base_production = 1
+********* add_incident_variable_value:
+********** incident = incident_urbanization
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.8
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.7.b:
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+********** add_base_manpower = 1
+********* add_incident_variable_value:
+********** incident = incident_urbanization
+********** value = 3
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.8
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.8
+******** title = shinto_events.8.t
+******** desc = shinto_events.8.d
+******** picture = URBANISATION_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.8.a:
+********* Adds the modifier "movement_restrictions" for 10 years:
+********** -10% global tax modifier
+********** -10% stability cost modifier
+********* add_incident_variable_value:
+********** incident = incident_urbanization
+********** value = 2
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.9
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.8.b:
+********* Capital:
+********** add_base_production = 1
+********** Changes base tax by 1
+********** Adds the modifier "urban_growing_pains" until the end of the campaign:
+*********** -75% provincial tax income
+*********** local_unrest = 3
+********* add_incident_variable_value:
+********** incident = incident_urbanization
+********** value = -1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.9
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.9
+******** title = shinto_events.9.t
+******** desc = shinto_events.9.d
+******** picture = URBANISATION_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.9.a:
+********* Adds -100% mercantilism
+********* Modifies treasury by 1 years worth of income
+********* add_incident_variable_value:
+********** incident = incident_urbanization
+********** value = 1
+********* Sets the country flag end_of_urbanisation_chain
+******** Option: shinto_events.9.b:
+********* Adds 100% mercantilism
+********* Modifies treasury by 0.5 years worth of income
+********* add_incident_variable_value:
+********** incident = incident_urbanization
+********** value = 2
+********* Sets the country flag end_of_urbanisation_chain
+******** Option: shinto_events.9.c:
+********* Adds 200% mercantilism
+********* Modifies treasury by -0.25 years worth of income
+********* add_incident_variable_value:
+********** incident = incident_urbanization
+********** value = 3
+********* Sets the country flag end_of_urbanisation_chain
+******* Gets the country event:
+******** ID is shinto_events.10
+******** title = shinto_events.10.t
+******** desc = shinto_events.10.d
+******** picture = URBANISATION_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_urbanization
+********* Has the country flag end_of_urbanisation_chain
+********* incident_variable_value:
+********** incident = incident_urbanization
+********** value = 8
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ The variable isolationism_achievement_counter is lower than 1
+*********** Sets the variable isolationism_achievement_counter to 1
+*********** else:
+************ Changes the variable isolationism_achievement_counter by 1
+******** Option: shinto_events.10.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = 1
+*********** end_incident = incident_urbanization
+********** else:
+*********** add_isolationism = 1
+*********** end_incident = incident_urbanization
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "urbanization_in_order" for 50 years:
+********** global_trade_goods_size_modifier = 0.15
+******* Gets the country event:
+******** ID is shinto_events.11
+******** title = shinto_events.11.t
+******** desc = shinto_events.11.d
+******** picture = URBANISATION_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_urbanization
+********* Has the country flag end_of_urbanisation_chain
+********* incident_variable_value:
+********** incident_false = incident_urbanization
+********** value_false = 8
+********* incident_variable_value:
+********** incident = incident_urbanization
+********** value = 3
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.11.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** end_incident = incident_urbanization
+********** else:
+*********** end_incident = incident_urbanization
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "urbanization_middle_road" for 50 years:
+********** development_cost = -0.10
+******* Gets the country event:
+******** ID is shinto_events.12
+******** title = shinto_events.12.t
+******** desc = shinto_events.12.d
+******** picture = URBANISATION_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_urbanization
+********* Has the country flag end_of_urbanisation_chain
+********* incident_variable_value:
+********** incident_false = incident_urbanization
+********** value_false = 3
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.12.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = -1
+*********** end_incident = incident_urbanization
+********** else:
+*********** add_isolationism = -1
+*********** end_incident = incident_urbanization
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "urbanization_social_mobility" for 50 years:
+********** -10% technology cost
+******* Gets the country event:
+******** ID is shinto_events.13
+******** title = shinto_events.13.t
+******** desc = shinto_events.13.d
+******** picture = IKKO_IKKI_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** save_event_target_as = ikko_province
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+*********** save_event_target_as = ikko_province
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+*********** save_event_target_as = ikko_province
+******** Option: shinto_events.13.a:
+********* event_target:ikko_province:
+********** add_local_autonomy = 75
+********** add_base_manpower = 2
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.14
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.13.b:
+********* event_target:ikko_province:
+********** add_local_autonomy = 30
+********* add_incident_variable_value:
+********** incident = incident_ikko_shu
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.14
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.13.c:
+********* add_stability_or_adm_power = yes
+********* event_target:ikko_province:
+********** Adds the modifier "0 "Enraged Ikko - Ikki" until the end of the campaign:
+*********** local_unrest = 8
+********** add_local_autonomy = -15
+********* add_incident_variable_value:
+********** incident = incident_ikko_shu
+********** value = 3
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.14
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.14
+******** title = shinto_events.14.t
+******** desc = shinto_events.14.d
+******** picture = IKKO_IKKI_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.14.a:
+********* event_target:ikko_province:
+********** Adds the modifier "0 "Enraged Ikko - Ikki" until the end of the campaign:
+*********** local_unrest = 8
+********** add_local_autonomy = -15
+********* add_incident_variable_value:
+********** incident = incident_ikko_shu
+********** value = 3
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.15
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.14.b:
+********* event_target:ikko_province:
+********** add_local_autonomy = 10
+********** add_base_manpower = 1
+********* add_incident_variable_value:
+********** incident = incident_ikko_shu
+********** value = 2
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.15
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.14.c:
+********* event_target:ikko_province:
+********** add_local_autonomy = 45
+********** add_base_manpower = 2
+********* add_incident_variable_value:
+********** incident = incident_ikko_shu
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.15
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.15
+******** title = shinto_events.15.t
+******** desc = shinto_events.15.d
+******** picture = IKKO_IKKI_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.15.c:
+********* Sets the country flag end_of_ikko_chain
+********* event_target:ikko_province:
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+*********** add_local_autonomy = 50
+*********** add_base_manpower = 1
+********* add_incident_variable_value:
+********** incident = incident_ikko_shu
+********** value = 1
+******** Option: shinto_events.15.b:
+********* Sets the country flag end_of_ikko_chain
+********* Changes stability by -1
+********* add_incident_variable_value:
+********** incident = incident_ikko_shu
+********** value = 2
+******** Option: shinto_events.15.a:
+********* Sets the country flag end_of_ikko_chain
+********* event_target:ikko_province:
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+*********** Spawns revolt of size 1 of 0 "Ikko-ikkis rebels
+*********** add_local_autonomy = -40
+********* add_incident_variable_value:
+********** incident = incident_ikko_shu
+********** value = 3
+******* Gets the country event:
+******** ID is shinto_events.16
+******** title = shinto_events.16.t
+******** desc = shinto_events.16.d
+******** picture = IKKO_IKKI_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_ikko_shu
+********* Has the country flag end_of_ikko_chain
+********* incident_variable_value:
+********** incident = incident_ikko_shu
+********** value = 9
+********** No owned province:
+*********** Controlled by 0 "Rebels
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ The variable isolationism_achievement_counter is lower than 1
+*********** Sets the variable isolationism_achievement_counter to 1
+*********** else:
+************ Changes the variable isolationism_achievement_counter by 1
+******** Option: shinto_events.16.a:
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = 1
+*********** end_incident = incident_ikko_shu
+********** else:
+*********** add_isolationism = 1
+*********** end_incident = incident_ikko_shu
+********* event_target:ikko_province:
+********** add_local_autonomy = -100
+********* Adds the modifier "ikkos_crushed" for 50 years:
+********** -2 global unrest
+********** global_autonomy = -0.05
+******* Gets the country event:
+******** ID is shinto_events.17
+******** title = shinto_events.17.t
+******** desc = shinto_events.17.d
+******** picture = IKKO_IKKI_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_ikko_shu
+********* Has the country flag end_of_ikko_chain
+********* incident_variable_value:
+********** incident_false = incident_ikko_shu
+********** value_false = 9
+********** No owned province:
+*********** Controlled by 0 "Rebels
+********* incident_variable_value:
+********** incident = incident_ikko_shu
+********** value = 3
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.17.a:
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** end_incident = incident_ikko_shu
+********** else:
+*********** end_incident = incident_ikko_shu
+********* Adds the modifier "ikkos_empowered" for 50 years:
+********** +15% global manpower modifier
+******* Gets the country event:
+******** ID is shinto_events.18
+******** title = shinto_events.18.t
+******** desc = shinto_events.18.d
+******** picture = IKKO_IKKI_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_ikko_shu
+********* Has the country flag end_of_ikko_chain
+********** No owned province:
+*********** Controlled by 0 "Rebels
+********* incident_variable_value:
+********** incident_false = incident_ikko_shu
+********** value_false = 3
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.18.a:
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = -1
+*********** end_incident = incident_ikko_shu
+********** else:
+*********** add_isolationism = -1
+*********** end_incident = incident_ikko_shu
+********* Sets the country flag supporters_in_the_ikko_iki
+********* Adds the modifier "support_of_ikkos" for 50 years:
+********** +5% land morale
+******* Gets the country event:
+******** ID is shinto_events.19
+******** title = shinto_events.19.t
+******** desc = shinto_events.19.d
+******** picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.19.b:
+********* Creates an advisor of the 0 "Philosopher type:
+********** Follows the 0 "Confucian religion
+********** With a skill level of 2
+********** discount = yes
+********* Adds -10 legitimacy
+********* add_incident_variable_value:
+********** incident = incident_neo_confucianism
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.20
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.19.a:
+********* Adds the modifier "shinto_support_for_court" for 10 years:
+********** Legitimacy is at least 1
+********* add_incident_variable_value:
+********** incident = incident_neo_confucianism
+********** value = 3
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.20
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.20
+******** title = shinto_events.20.t
+******** desc = shinto_events.20.d
+******** picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.20.a:
+********* Adds the modifier "shinto_self_made_men" for 10 years:
+********** -10% advisor cost
+********* add_incident_variable_value:
+********** incident = incident_neo_confucianism
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.21
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.20.b:
+********* Adds 10 legitimacy
+********* add_incident_variable_value:
+********** incident = incident_neo_confucianism
+********** value = 3
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.21
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.21
+******** title = shinto_events.21.t
+******** desc = shinto_events.21.d
+******** picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.21.a:
+********* Sets the country flag end_of_neo_confucianism_chain
+********* Adds the modifier "shinto_rational_administration" for 10 years:
+********** global_autonomy = -0.05
+********** +1 global unrest
+********* add_incident_variable_value:
+********** incident = incident_neo_confucianism
+********** value = 2
+******** Option: shinto_events.21.b:
+********* Sets the country flag end_of_neo_confucianism_chain
+********* Adds the modifier "supported_loyal_retainers" for 10 years:
+********** -1 global unrest
+********* add_incident_variable_value:
+********** incident = incident_neo_confucianism
+********** value = 3
+******* Gets the country event:
+******** ID is shinto_events.22
+******** title = shinto_events.22.t
+******** desc = shinto_events.22.d
+******** picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_neo_confucianism
+********* Has the country flag end_of_neo_confucianism_chain
+********* incident_variable_value:
+********** incident_false = incident_neo_confucianism
+********** value_false = 5
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.22.a:
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = -1
+*********** end_incident = incident_neo_confucianism
+********** else:
+*********** add_isolationism = -1
+*********** end_incident = incident_neo_confucianism
+********* Adds the modifier "neo_confucian_administration" for 50 years:
+********** global_autonomy = -0.1
+******* Gets the country event:
+******** ID is shinto_events.23
+******** title = shinto_events.23.t
+******** desc = shinto_events.23.d
+******** picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_neo_confucianism
+********* Has the country flag end_of_neo_confucianism_chain
+********* incident_variable_value:
+********** incident_false = incident_neo_confucianism
+********** value_false = 7
+********* incident_variable_value:
+********** incident = incident_neo_confucianism
+********** value = 5
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.23.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** end_incident = incident_neo_confucianism
+********** else:
+*********** end_incident = incident_neo_confucianism
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "neo_confucianism_middle_road" for 50 years:
+********** -5% technology cost
+******* Gets the country event:
+******** ID is shinto_events.24
+******** title = shinto_events.24.t
+******** desc = shinto_events.24.d
+******** picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_neo_confucianism
+********* Has the country flag end_of_neo_confucianism_chain
+********* incident_variable_value:
+********** incident = incident_neo_confucianism
+********** value = 7
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ The variable isolationism_achievement_counter is lower than 1
+*********** Sets the variable isolationism_achievement_counter to 1
+*********** else:
+************ Changes the variable isolationism_achievement_counter by 1
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.24.a:
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = 1
+*********** end_incident = incident_neo_confucianism
+********** else:
+*********** add_isolationism = 1
+*********** end_incident = incident_neo_confucianism
+********* Adds the modifier "traditionalist_administration" for 50 years:
+********** Legitimacy is at least 1
+********** +1 prestige
+******* Gets the country event:
+******** ID is shinto_events.25
+******** title = shinto_events.25.t
+******** desc = shinto_events.25.d
+******** picture = NANBAN_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Is coastal
+*********** save_event_target_as = nanban_traders_here
+******** Option: shinto_events.25.a:
+********* add_incident_variable_value:
+********** incident = incident_nanban
+********** value = -1
+********* event_target:nanban_traders_here:
+********** Adds the modifier "nanban_port" until the end of the campaign:
+*********** +1000% provincial trade power
+*********** +30% trade goods output
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.26
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.25.c:
+********* Modifies treasury by 0.5 years worth of income
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.26
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.25.b:
+********* Adds the modifier "nanban_trade_restrictions" for 10 years:
+********** +5% domestic trade power
+********* add_incident_variable_value:
+********** incident = incident_nanban
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.26
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.26
+******** title = shinto_events.26.t
+******** desc = shinto_events.26.d
+******** picture = NANBAN_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.26.a:
+********* Changes prestige by -20
+********* event_target:nanban_traders_here:
+********** add_base_production = 2
+********** add_local_autonomy = 50
+********* add_incident_variable_value:
+********** incident = incident_nanban
+********** value = -1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.27
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.26.b:
+********* Changes prestige by -10
+********* event_target:nanban_traders_here:
+********** add_base_production = 1
+********** add_local_autonomy = 25
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.27
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.26.c:
+********* Changes prestige by 5
+********* Adds 10 legitimacy
+********* add_incident_variable_value:
+********** incident = incident_nanban
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.27
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.27
+******** title = shinto_events.27.t
+******** desc = shinto_events.27.d
+******** picture = NANBAN_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.27.a:
+********* add_incident_variable_value:
+********** incident = incident_nanban
+********** value = -1
+********* Adds the modifier "rangaku_incident_modifier" for 10 years:
+********** global_institution_spread = 0.1
+********** -2 tolerance of the true faith
+********** -25% global spy defence
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.28
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.27.b:
+********* Changes prestige by 15
+********* add_incident_variable_value:
+********** incident = incident_nanban
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.28
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.28
+******** title = shinto_events.28.t
+******** desc = shinto_events.28.d
+******** picture = NANBAN_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.28.b:
+********* Sets the country flag end_of_nanban_chain
+********* Modifies treasury by 1 years worth of income
+********* Adds the modifier "nanban_dependent_on_imports" for 10 years:
+********** Trade efficiency is at least -5%
+********* add_incident_variable_value:
+********** incident = incident_nanban
+********** value = -1
+******** Option: shinto_events.28.a:
+********* Modifies treasury by -1 years worth of income
+********* Sets the country flag end_of_nanban_chain
+********* Adds the modifier "nanban_production_investments" for 10 years:
+********** global_trade_goods_size_modifier = 0.05
+********** -10% diplomatic technology cost
+********* add_incident_variable_value:
+********** incident = incident_nanban
+********** value = 2
+******* Gets the country event:
+******** ID is shinto_events.29
+******** title = shinto_events.29.t
+******** desc = shinto_events.29.d
+******** picture = NANBAN_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_nanban
+********* Has the country flag end_of_nanban_chain
+********* incident_variable_value:
+********** incident_false = incident_nanban
+********** value_false = 2
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.29.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = -1
+*********** end_incident = incident_nanban
+********** else:
+*********** add_isolationism = -1
+*********** end_incident = incident_nanban
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "incident_end_open_ports" for 50 years:
+********** global_institution_spread = 0.1
+********** -5% idea cost
+******* Gets the country event:
+******** ID is shinto_events.30
+******** title = shinto_events.30.t
+******** desc = shinto_events.30.d
+******** picture = NANBAN_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_nanban
+********* Has the country flag end_of_nanban_chain
+********* incident_variable_value:
+********** incident_false = incident_nanban
+********** value_false = 6
+********* incident_variable_value:
+********** incident = incident_nanban
+********** value = 2
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.30.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** end_incident = incident_nanban
+********** else:
+*********** end_incident = incident_nanban
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "incident_end_trade_with_west" for 50 years:
+********** Trade efficiency is at least 15%
+******* Gets the country event:
+******** ID is shinto_events.31
+******** title = shinto_events.31.t
+******** desc = shinto_events.31.d
+******** picture = NANBAN_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_nanban
+********* Has the country flag end_of_nanban_chain
+********* incident_variable_value:
+********** incident = incident_nanban
+********** value = 6
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ The variable isolationism_achievement_counter is lower than 1
+*********** Sets the variable isolationism_achievement_counter to 1
+*********** else:
+************ Changes the variable isolationism_achievement_counter by 1
+******** Option: shinto_events.31.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = 1
+*********** end_incident = incident_nanban
+********** else:
+*********** add_isolationism = 1
+*********** end_incident = incident_nanban
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "incident_end_dejima" for 50 years:
+********** Trade efficiency is at least 10%
+********** +2 tolerance of the true faith
+******* Gets the country event:
+******** ID is shinto_events.32
+******** title = shinto_events.32.t
+******** desc = shinto_events.32.d
+******** picture = FIREARMS_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.32.a:
+********* Changes military power stored by 50
+********* add_incident_variable_value:
+********** incident = incident_firearms
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.33
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.32.b:
+********* Changes army tradition by 10
+********* add_incident_variable_value:
+********** incident = incident_firearms
+********** value = 3
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.33
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.33
+******** title = shinto_events.33.t
+******** desc = shinto_events.33.d
+******** picture = FIREARMS_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.33.a:
+********* Changes national manpower by 1 years worth of men
+********* add_incident_variable_value:
+********** incident = incident_firearms
+********** value = -1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.34
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.33.b:
+********* Adds the modifier "firearm_restrictions" for 10 years:
+********** -15% global manpower modifier
+********** +10% land morale
+********* add_incident_variable_value:
+********** incident = incident_firearms
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.34
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.34
+******** title = shinto_events.34.t
+******** desc = shinto_events.34.d
+******** picture = FIREARMS_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.34.a:
+********* Sets the country flag end_of_incident_firearms_chain
+********* Modifies treasury by -1 years worth of income
+********* Changes military power stored by 75
+********* add_incident_variable_value:
+********** incident = incident_firearms
+********** value = -1
+******** Option: shinto_events.34.b:
+********* Sets the country flag end_of_incident_firearms_chain
+********* Changes prestige by 10
+********* add_incident_variable_value:
+********** incident = incident_firearms
+********** value = 1
+******* Gets the country event:
+******** ID is shinto_events.35
+******** title = shinto_events.35.t
+******** desc = shinto_events.35.d
+******** picture = FIREARMS_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_firearms
+********* Has the country flag end_of_incident_firearms_chain
+********* incident_variable_value:
+********** incident_false = incident_firearms
+********** value_false = 3
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.35.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = -1
+*********** end_incident = incident_firearms
+********** else:
+*********** add_isolationism = -1
+*********** end_incident = incident_firearms
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "perfecting_the_musket" for 50 years:
+********** fire_damage = 0.1
+******* Gets the country event:
+******** ID is shinto_events.36
+******** title = shinto_events.36.t
+******** desc = shinto_events.36.d
+******** picture = FIREARMS_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_firearms
+********* Has the country flag end_of_incident_firearms_chain
+********* incident_variable_value:
+********** incident_false = incident_firearms
+********** value_false = 5
+********* incident_variable_value:
+********** incident = incident_firearms
+********** value = 3
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.36.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** end_incident = incident_firearms
+********** else:
+*********** end_incident = incident_firearms
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "guns_commonplace" for 50 years:
+********** +10% infantry power
+******* Gets the country event:
+******** ID is shinto_events.37
+******** title = shinto_events.37.t
+******** desc = shinto_events.37.d
+******** picture = FIREARMS_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_firearms
+********* Has the country flag end_of_incident_firearms_chain
+********* incident_variable_value:
+********** incident = incident_firearms
+********** value = 5
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ The variable isolationism_achievement_counter is lower than 1
+*********** Sets the variable isolationism_achievement_counter to 1
+*********** else:
+************ Changes the variable isolationism_achievement_counter by 1
+******** Option: shinto_events.37.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = 1
+*********** end_incident = incident_firearms
+********** else:
+*********** add_isolationism = 1
+*********** end_incident = incident_firearms
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "traditional_warfare" for 50 years:
+********** +15% land morale
+******* Gets the country event:
+******** ID is shinto_events.38
+******** title = shinto_events.38.t
+******** desc = shinto_events.38.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.38.a:
+********* Adds 10 legitimacy
+********* Adds the modifier "shinto_harsh_initial_stance_on_christianity" for 10 years:
+********** +1 tolerance of the true faith
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.39
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.38.b:
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 2
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.39
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.38.c:
+********* Adds the modifier "shinto_religious_tensions" for 10 years:
+********** -1 tolerance of the true faith
+********** Trade efficiency is at least 10%
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 3
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.39
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.39
+******** title = shinto_events.39.t
+******** picture = NANBAN_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** desc:
+********* Trigger:
+********** Has an heir
+********* desc = shinto_events.39.da
+******** desc:
+********* Trigger:
+********** Has no heir
+********* desc = shinto_events.39.db
+******** Option: shinto_events.39.a:
+********* Trigger:
+********** Has an heir
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 3
+********* set_heir_flag = christian_tutors
+********* Capital:
+********** Adds the modifier "shinto_local_christian_mission" until the end of the campaign:
+*********** local_unrest = 3
+*********** local_development_cost = -0.15
+********* Changes the heir's legitimacy by -25
+********* One of the following will happen:
+********** 33 relative chance:
+*********** increase_heir_dip_effect = yes
+********** 33 relative chance:
+*********** increase_heir_adm_effect = yes
+********** 33 relative chance:
+*********** increase_heir_mil_effect = yes
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.40
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.39.b:
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 2
+********* Capital:
+********** Adds the modifier "shinto_local_christian_mission" until the end of the campaign:
+*********** local_unrest = 3
+*********** local_development_cost = -0.15
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.40
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.39.c:
+********* add_stability_or_adm_power = yes
+********* Adds the modifier "in_defence_of_shintoism" for 10 years:
+********** +1 tolerance of the true faith
+********** +10% land morale
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = -1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.40
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.40
+******** title = shinto_events.40.t
+******** desc = shinto_events.40.d
+******** picture = NANBAN_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.40.a:
+********* Random owned province:
+********** Limited to:
+*********** Does not have the province modifier "shinto_local_christian_mission"
+********** Adds the modifier "shinto_local_christian_mission" until the end of the campaign:
+*********** local_unrest = 3
+*********** local_development_cost = -0.15
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.41
+*********** Base mean time to happen of 1095 days
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 2
+******** Option: shinto_events.40.b:
+********* Adds the modifier "shinto_strenghtened_local_traders" for 10 years:
+********** Trade efficiency is at least 10%
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.41
+*********** Base mean time to happen of 1095 days
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = -1
+******* Gets the country event:
+******** ID is shinto_events.41
+******** title = shinto_events.41.t
+******** desc = shinto_events.41.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.41.a:
+********* Changes prestige by -10
+********* Creates an advisor of the 0 "Theologian type:
+********** Follows the 0 "Catholic religion
+********** With a skill level of 2
+********** discount = yes
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.42
+*********** Base mean time to happen of 1095 days
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 3
+******** Option: shinto_events.41.b:
+********* Creates an advisor of the 0 "Army Reformer type:
+********** With a skill level of 2
+********** discount = yes
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.42
+*********** Base mean time to happen of 1095 days
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 1
+******* Gets the country event:
+******** ID is shinto_events.42
+******** title = shinto_events.42.t
+******** desc = shinto_events.42.d
+******** picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.42.a:
+********* Hidden effect:
+********** One of the following will happen:
+*********** 50 relative chance:
+************ Gets the country event:
+************* ID is shinto_events.43
+*********** 50 relative chance:
+************ Gets the country event:
+************* ID is shinto_events.44
+******** Option: shinto_events.42.b:
+********* Changes prestige by 10
+********* Adds -5 legitimacy
+********* Sets the country flag end_of_incident_spread_of_christianity_chain
+******* Gets the country event:
+******** ID is shinto_events.43
+******** title = shinto_events.43.t
+******** desc = shinto_events.43.d
+******** picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.43.a:
+********* add_stability_or_adm_power = yes
+********* Sets the country flag end_of_incident_spread_of_christianity_chain
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 2
+******** Option: shinto_events.43.b:
+********* Changes stability by -1
+********* Sets the country flag end_of_incident_spread_of_christianity_chain
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = -5
+******* Gets the country event:
+******** ID is shinto_events.44
+******** title = shinto_events.44.t
+******** desc = shinto_events.44.d
+******** picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.44.a:
+********* Sets the country flag end_of_incident_spread_of_christianity_chain
+********* add_stability_or_adm_power = yes
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = -5
+******** Option: shinto_events.44.b:
+********* Changes stability by -1
+********* Sets the country flag end_of_incident_spread_of_christianity_chain
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 2
+******* Gets the country event:
+******** ID is shinto_events.45
+******** title = shinto_events.45.t
+******** desc = shinto_events.45.d
+******** picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+******** Trigger:
+********* is_incident_active = incident_spread_of_christianity
+********* Any owned province:
+********** Has the province modifier "shinto_local_christian_mission"
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** save_event_target_as = christian_port_event_target
+******** Mean time to happen
+********* Base mean time to happen of 120 months
+******** Option: shinto_events.45.a:
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 1
+********* Changes administrative power stored by -15
+******** Option: shinto_events.45.b:
+********* event_target:christian_port_event_target:
+********** Removes the country modifier "shinto_local_christian_mission"
+********** add_devastation = 25
+********* add_incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = -2
+******* Gets the country event:
+******** ID is shinto_events.46
+******** title = shinto_events.46.t
+******** desc = shinto_events.46.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag decided_on_christianity_flag
+******** Option: shinto_events.46.a:
+********* AI chance:
+********** Base chance of 20
+********** Multiplies value by 3.5:
+*********** Country is not 0 "Japan
+*********** Country is not 0 "Otomo
+*********** Any known country:
+************ Capital:
+************* Region is japan_region
+************ Follows the 0 "Catholic religion
+********* Changes prestige by 10
+******** Option: shinto_events.46.b:
+********* AI chance:
+********** Base chance of 20
+********** Multiplies value by 0.5:
+*********** Country is not 0 "Japan
+*********** Country is not 0 "Otomo
+*********** Any known country:
+************ Capital:
+************* Region is japan_region
+************ Follows the 0 "Catholic religion
+********** Multiplies value by 4:
+*********** Country is 0 "Otomo
+********* Changes religion to 0 "Catholic
+********* Capital:
+********** Changes religion to 0 "Catholic
+********* Adds the modifier "shinto_converted_to_christianity" for 10 years:
+********** +3% global missionary strength
+******* Gets the country event:
+******** ID is shinto_events.47
+******** title = shinto_events.47.t
+******** desc = shinto_events.47.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_spread_of_christianity
+********* Has the country flag end_of_incident_spread_of_christianity_chain
+********* incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 11
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.47.a:
+********* Sets the country flag a_kirishitan_realm
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = -1
+*********** end_incident = incident_spread_of_christianity
+********** else:
+*********** add_isolationism = -1
+*********** end_incident = incident_spread_of_christianity
+********* Adds the modifier "shinto_kirishitan_realm" for 50 years:
+********** -25% advisor cost
+******* Gets the country event:
+******** ID is shinto_events.48
+******** title = shinto_events.48.t
+******** desc = shinto_events.48.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_spread_of_christianity
+********* Has the country flag end_of_incident_spread_of_christianity_chain
+********* incident_variable_value:
+********** incident_false = incident_spread_of_christianity
+********** value_false = 11
+********* incident_variable_value:
+********** incident = incident_spread_of_christianity
+********** value = 6
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.48.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** end_incident = incident_spread_of_christianity
+********** else:
+*********** end_incident = incident_spread_of_christianity
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "significant_christian_presence" for 50 years:
+********** -10% idea cost
+******* Gets the country event:
+******** ID is shinto_events.49
+******** title = shinto_events.49.t
+******** desc = shinto_events.49.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** Trigger:
+********* is_incident_active = incident_spread_of_christianity
+********* Has the country flag end_of_incident_spread_of_christianity_chain
+********* incident_variable_value:
+********** incident_false = incident_spread_of_christianity
+********** value_false = 6
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ The variable isolationism_achievement_counter is lower than 1
+*********** Sets the variable isolationism_achievement_counter to 1
+*********** else:
+************ Changes the variable isolationism_achievement_counter by 1
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.49.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = 1
+*********** end_incident = incident_spread_of_christianity
+********** else:
+*********** add_isolationism = 1
+*********** end_incident = incident_spread_of_christianity
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "christianity_defeated" for 50 years:
+********** +3 tolerance of the true faith
+******* Gets the country event:
+******** ID is shinto_events.50
+******** title = shinto_events.50.t
+******** desc = shinto_events.50.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.50.a:
+********* overlord:
+********** add_trust:
+*********** Affecting our country
+*********** value = -15
+********* add_incident_variable_value:
+********** incident = incident_shogunate_authority
+********** value = 1
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.51
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.50.b:
+********* overlord:
+********** add_trust:
+*********** Affecting our country
+*********** value = -5
+********* Adds the modifier "sashidashi_modifier" for 10 years:
+********** global_autonomy = -0.1
+********** -15% global tax modifier
+********* add_incident_variable_value:
+********** incident = incident_shogunate_authority
+********** value = 2
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.51
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.50.c:
+********* add_incident_variable_value:
+********** incident = incident_shogunate_authority
+********** value = 3
+********* Adds the modifier "cadastral_survey_modifier" for 10 years:
+********** global_autonomy = -0.05
+********** -15% global tax modifier
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.51
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.51
+******** title = shinto_events.51.t
+******** desc = shinto_events.51.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.51.a:
+********* Adds -10 legitimacy
+********* If:
+********** Limited to:
+*********** Has an heir
+********** Changes the heir's legitimacy by -30
+********* add_incident_variable_value:
+********** incident = incident_shogunate_authority
+********** value = 3
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.52
+*********** Base mean time to happen of 1095 days
+******** Option: shinto_events.51.b:
+********* add_incident_variable_value:
+********** incident = incident_shogunate_authority
+********** value = 1
+********* overlord:
+********** add_trust:
+*********** Affecting our country
+*********** value = -10
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is shinto_events.52
+*********** Base mean time to happen of 1095 days
+******* Gets the country event:
+******** ID is shinto_events.52
+******** title = shinto_events.52.t
+******** desc = shinto_events.52.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.52.a:
+********* Sets the country flag end_of_incident_shogunate_authority_chain
+********* Changes diplomatic power stored by -50
+********* Changes military power stored by -50
+********* Changes administrative power stored by -50
+********* Changes prestige by 10
+********* Adds 10 legitimacy
+********* add_incident_variable_value:
+********** incident = incident_shogunate_authority
+********** value = 3
+******** Option: shinto_events.52.b:
+********* Sets the country flag end_of_incident_shogunate_authority_chain
+********* add_incident_variable_value:
+********** incident = incident_shogunate_authority
+********** value = -1
+********* overlord:
+********** Gets the country event:
+*********** ID is shinto_events.53
+******* Gets the country event:
+******** ID is shinto_events.53
+******** title = shinto_events.53.t
+******** desc = shinto_events.53.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.53.a:
+********* Adds -10 legitimacy
+********* Our country:
+********** Gets the country event:
+*********** ID is shinto_events.54
+******** Option: shinto_events.53.b:
+********* Adds 10 legitimacy
+********* Our country:
+********** Declares war on 0 "Diplomatic Insult using the our country casus belli
+******* Gets the country event:
+******** ID is shinto_events.54
+******** title = shinto_events.54.t
+******** desc = shinto_events.54.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Option: shinto_events.54.a:
+********* add_incident_variable_value:
+********** incident = incident_shogunate_authority
+********** value = -3
+********* Adds 10 legitimacy
+******* Gets the country event:
+******** ID is shinto_events.55
+******** title = shinto_events.55.t
+******** desc = shinto_events.55.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** Trigger:
+********* Is not at war
+********* is_incident_active = incident_shogunate_authority
+********* Has the country flag end_of_incident_shogunate_authority_chain
+********* incident_variable_value:
+********** incident = incident_shogunate_authority
+********** value = 7
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.55.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = -1
+*********** end_incident = incident_shogunate_authority
+********** else:
+*********** add_isolationism = -1
+*********** end_incident = incident_shogunate_authority
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "adherence_to_shogunate" for 50 years:
+********** Legitimacy is at least 1
+********** +1 diplomatic reputation
+******* Gets the country event:
+******** ID is shinto_events.56
+******** title = shinto_events.56.t
+******** desc = shinto_events.56.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** Trigger:
+********* Is not at war
+********* is_incident_active = incident_shogunate_authority
+********* Has the country flag end_of_incident_shogunate_authority_chain
+********* incident_variable_value:
+********** incident_false = incident_shogunate_authority
+********** value_false = 7
+********* incident_variable_value:
+********** incident = incident_shogunate_authority
+********** value = 4
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.56.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** end_incident = incident_shogunate_authority
+********** else:
+*********** end_incident = incident_shogunate_authority
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "growing_power_of_the_shogunate" for 50 years:
+********** +2 diplomatic reputation
+******* Gets the country event:
+******** ID is shinto_events.57
+******** title = shinto_events.57.t
+******** desc = shinto_events.57.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** Trigger:
+********* Is not at war
+********* is_incident_active = incident_shogunate_authority
+********* Has the country flag end_of_incident_shogunate_authority_chain
+********* incident_variable_value:
+********** incident_false = incident_shogunate_authority
+********** value_false = 4
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ The variable isolationism_achievement_counter is lower than 1
+*********** Sets the variable isolationism_achievement_counter to 1
+*********** else:
+************ Changes the variable isolationism_achievement_counter by 1
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: shinto_events.57.a:
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Shinto religion
+********** Hidden effect:
+*********** add_isolationism = 1
+*********** end_incident = incident_shogunate_authority
+********** else:
+*********** add_isolationism = 1
+*********** end_incident = incident_shogunate_authority
+********* Sets the country flag shinto_incident_recent
+********* Removes the country flag active_incident_flag
+********* Adds the modifier "rise_of_the_daimyo" for 50 years:
+********** Legitimacy is at least 1
+********** global_autonomy = -0.1
+******* Gets the country event:
+******** ID is shinto_events.58
+******** title = shinto_events.58.t
+******** desc = shinto_events.58.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag decided_on_mahayana_flag
+******** Option: shinto_events.58.a:
+********* Changes prestige by 10
+********* AI chance:
+********** Base chance of 20
+********** Multiplies value by 2:
+*********** Country is not 0 "Japan
+*********** Country is not 0 "Takeda
+*********** Any known country:
+************ Capital:
+************* Region is japan_region
+************ Follows the 0 "Mahayana religion
+******** Option: shinto_events.58.b:
+********* AI chance:
+********** Base chance of 20
+********** Multiplies value by 0.5:
+*********** Country is not 0 "Japan
+*********** Country is not 0 "Takeda
+*********** Any known country:
+************ Capital:
+************* Region is japan_region
+************ Follows the 0 "Mahayana religion
+********* Hidden effect:
+********** Sets the country flag ikko_ikki_peasants_flag
+********* change_government_to_theocracy = yes
+********* add_government_reform = leading_clergy_reform
+********* Changes stability by -2
+********* Changes religion to 0 "Mahayana
+********* Capital:
+********** Changes religion to 0 "Mahayana
+********** Random bordering province:
+*********** Limited to:
+************ The province is owned by our country
+*********** Spawns revolt of size 1 of 0 "Religious rebels
+********* Adds the modifier "shinto_converted_to_mahayana" for 10 years:
+********** +3% global missionary strength
+******** Option: shinto_events.58.c:
+********* AI chance:
+********** Base chance of 20
+********** Multiplies value by 0.5:
+*********** Country is not 0 "Japan
+*********** Country is not 0 "Takeda
+*********** Any known country:
+************ Capital:
+************* Region is japan_region
+************ Follows the 0 "Mahayana religion
+********* Hidden effect:
+********** Sets the country flag ikko_ikki_peasants_flag
+********* change_government_to_republic = yes
+********* add_government_reform = 0 "Peasants Republic
+********* Changes stability by -2
+********* Changes religion to 0 "Mahayana
+********* Capital:
+********** Changes religion to 0 "Mahayana
+********** Random bordering province:
+*********** Limited to:
+************ The province is owned by our country
+*********** Spawns revolt of size 1 of 0 "Religious rebels
+********* Adds the modifier "shinto_converted_to_mahayana" for 10 years:
+********** +3% global missionary strength
+******** Option: shinto_events.58.e:
+********* AI chance:
+********** Base chance of 20
+********** Multiplies value by 0.5:
+*********** Country is not 0 "Japan
+*********** Country is not 0 "Takeda
+*********** Any known country:
+************ Capital:
+************* Region is japan_region
+************ Follows the 0 "Mahayana religion
+********* Changes religion to 0 "Mahayana
+********* Capital:
+********** Changes religion to 0 "Mahayana
+********** Spawns revolt of size 2 of 0 "Ikko-ikkis rebels
+********** Random bordering province:
+*********** Limited to:
+************ The province is owned by our country
+*********** Spawns revolt of size 1 of 0 "Religious rebels
+********* Adds the modifier "shinto_converted_to_mahayana" for 10 years:
+********** +3% global missionary strength
+******* Gets the country event:
+******** ID is shinto_events.59
+******** title = shinto_events.59.t
+******** desc = shinto_events.59.d
+******** picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag decided_on_confucian_flag
+******** Option: shinto_events.46.a:
+********* AI chance:
+********** Base chance of 20
+********** Multiplies value by 2:
+*********** Country is not 0 "Japan
+*********** Any known country:
+************ Capital:
+************* Region is japan_region
+************ Follows the 0 "Confucian religion
+********* Changes prestige by 10
+******** Option: shinto_events.46.b:
+********* AI chance:
+********** Base chance of 20
+********** Multiplies value by 0.1:
+*********** Country is not 0 "Japan
+*********** Any known country:
+************ Capital:
+************* Region is japan_region
+************ Follows the 0 "Confucian religion
+********* Changes religion to 0 "Confucian
+********* add_harmonized_religion = 0 "Shinto

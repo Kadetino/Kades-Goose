@@ -1,0 +1,1220 @@
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+********* doom = 5
+********* doom_false = 90
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.7:
+********** doom = 50
+********* Multiplies value by 0.7:
+********** doom = 80
+******** Option: nahuatl_events.1.a:
+********* Trigger:
+********** Is not in regency
+********* add_doom = -10
+********* Changes administrative power stored by -50
+********* Hidden effect:
+********** Randomized by 
+*********** Acquisition chance:
+*********** Gets the country event:
+************ ID is nahuatl_events.17
+************ Base mean time to happen of 14 days
+******** Option: nahuatl_events.1.b:
+********* add_doom = 10
+******* Gets the country event:
+******** ID is nahuatl_events.2
+******** title = nahuatl_events.2.t
+******** desc = nahuatl_events.2.d
+******** picture = NEW_HEIR_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* Does not have the country flag nahuatl_warrior_born
+******** Immediate effects:
+********* Sets the country flag nahuatl_warrior_born
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: nahuatl_events.2.a:
+********* Sets the country flag nahuatl_warrior_telpochcalli
+********* Gets the country event:
+********** ID is nahuatl_events.3
+********** Base mean time to happen of 5475 days
+******** Option: nahuatl_events.2.b:
+********* Sets the country flag nahuatl_warrior_calmecac
+********* Adds -10 legitimacy
+********* If:
+********** Limited to:
+*********** Has the republic government type
+********** Changes republican tradition by -500%
+********* Gets the country event:
+********** ID is nahuatl_events.3
+********** Base mean time to happen of 5475 days
+******* Gets the country event:
+******** ID is nahuatl_events.3
+******** title = nahuatl_events.3.t
+******** desc = nahuatl_events.3.d
+******** picture = MILITARY_CAMP_eventPicture
+******** is_triggered_only = yes
+******** Option: nahuatl_events.3.a:
+********* Sets the country flag nahuatl_warrior_to_war
+******** Option: nahuatl_events.3.b:
+********* Trigger:
+********** Is not in regency
+********* Sets the country flag nahuatl_warrior_to_war
+********* Sets the country flag nahuatl_warrior_auto_sacrifice
+********* Hidden effect:
+********** Randomized by 
+*********** Acquisition chance:
+*********** Gets the country event:
+************ ID is nahuatl_events.17
+************ Base mean time to happen of 14 days
+******* Gets the country event:
+******** ID is nahuatl_events.4
+******** title = nahuatl_events.4.t
+******** desc = nahuatl_events.4.d
+******** picture = FEAST_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the country flag nahuatl_warrior_to_war
+********* Does not have the country flag nahuatl_warrior_tested
+********* Is at war
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+********* Multiplies value by 0.6:
+********** Has the country flag nahuatl_warrior_auto_sacrifice
+******** Immediate effects:
+********* Sets the country flag nahuatl_warrior_tested
+******** Option: nahuatl_events.4.a:
+********* Trigger:
+********** Does not have the country flag nahuatl_warrior_calmecac
+********* Creates a general at  extra army tradition
+********** tradition = 75
+********* Changes military power stored by 50
+********* add_doom = -10
+******** Option: nahuatl_events.4.a:
+********* Trigger:
+********** Has the country flag nahuatl_warrior_calmecac
+********* Creates a general at  extra army tradition
+********** tradition = 100
+********* Changes military power stored by 75
+********* add_doom = -10
+******* Gets the country event:
+******** ID is nahuatl_events.5
+******** title = nahuatl_events.5.t
+******** desc = nahuatl_events.5.d
+******** picture = HUMAN_SACRIFICE_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the country flag nahuatl_warrior_to_war
+********* Is at war
+********* Does not have the country flag nahuatl_warrior_tested
+******** Immediate effects:
+********* Sets the country flag nahuatl_warrior_tested
+******** Mean time to happen
+********* Base mean time to happen of 16 months
+******** Option: nahuatl_events.5.a:
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is nahuatl_events.6
+******** title = nahuatl_events.6.t
+******** desc = nahuatl_events.6.d
+******** picture = BATTLE_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the country flag nahuatl_warrior_to_war
+********* Is at war
+********* Does not have the country flag nahuatl_warrior_tested
+******** Mean time to happen
+********* Base mean time to happen of 16 months
+******** Immediate effects:
+********* Sets the country flag nahuatl_warrior_tested
+******** Option: nahuatl_events.6.a:
+********* Trigger:
+********** Does not have the country flag nahuatl_warrior_auto_sacrifice
+********* Changes prestige by -5
+******** Option: nahuatl_events.6.a:
+********* Trigger:
+********** Has the country flag nahuatl_warrior_auto_sacrifice
+********* Changes prestige by -5
+********* Adds -10 legitimacy
+******* Gets the country event:
+******** ID is nahuatl_events.7
+******** title = nahuatl_events.7.t
+******** desc = nahuatl_events.7.d
+******** picture = DIPLOMACY_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the country flag nahuatl_warrior_to_war
+********* Is at war
+********* Does not have the country flag nahuatl_warrior_tested
+******** Immediate effects:
+********* Sets the country flag nahuatl_warrior_tested
+******** Mean time to happen
+********* Base mean time to happen of 24 months
+******** Option: nahuatl_events.7.a:
+********* Trigger:
+********** Does not have the country flag nahuatl_warrior_auto_sacrifice
+********* Changes prestige by -10
+********* add_doom = 5
+******** Option: nahuatl_events.7.b:
+********* Trigger:
+********** Has the country flag nahuatl_warrior_auto_sacrifice
+********* Changes prestige by -10
+********* Adds -5 legitimacy
+********* add_doom = 5
+******* Gets the country event:
+******** ID is nahuatl_events.8
+******** title = nahuatl_events.8.t
+******** desc = nahuatl_events.8.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: nahuatl_events.8.a:
+********* add_doom = -5
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is nahuatl_events.9
+******** title = nahuatl_events.9.t
+******** desc = nahuatl_events.9.d
+******** picture = NEW_HEIR_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: nahuatl_events.9.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** has_estate = estate_church
+*********** estate_loyalty:
+************ estate_false = estate_church
+************ loyalty_false = 40
+********* If:
+********** Limited to:
+*********** has_estate = estate_burghers
+********** add_estate_loyalty:
+*********** estate = estate_burghers
+*********** loyalty = -10
+********* add_doom = -10
+********* Changes administrative power stored by -50
+******** Option: nahuatl_events.9.b:
+********* AI chance:
+********** Base chance of 50
+********* If:
+********** Limited to:
+*********** has_estate = estate_burghers
+********** add_estate_loyalty:
+*********** estate = estate_burghers
+*********** loyalty = 10
+********* add_doom = 10
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is nahuatl_events.10
+******** title = nahuatl_events.10.t
+******** desc = nahuatl_events.10.d
+******** picture = LAND_MILITARY_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* Has at least 1 generals
+********* Is not at war
+********* uses_doom = yes
+********* It is the 0. month of the year or later
+********* It is before the 3. month of the year
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: nahuatl_events.10.a:
+********* Kills military leader: 
+********* Changes military power stored by -25
+******** Option: nahuatl_events.10.b:
+********* add_doom = 10
+********* Changes military power stored by 25
+******* Gets the country event:
+******** ID is nahuatl_events.11
+******** title = nahuatl_events.11.t
+******** desc = nahuatl_events.11.d
+******** picture = END_OF_TIME_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+********* Any owned province:
+********** The province is not the capital of the country
+********** Any bordering province:
+*********** The province is not the capital of the country
+********* Does not have the country flag nahuatl_sorceror_gone
+********** No owned province:
+*********** Has the province modifier "nahuatl_sorcerer"
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: nahuatl_events.11.a:
+********* Changes administrative power stored by -25
+********* Sets the country flag sent_emissary_to_catch_sorcerer
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Any bordering province:
+************ The province is not the capital of the country
+********** Adds the modifier "nahuatl_sorcerer" until the end of the campaign:
+*********** local_unrest = 5
+*********** -10% provincial tax income
+******** Option: nahuatl_events.11.b:
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Any bordering province:
+************ The province is not the capital of the country
+********** add_local_autonomy = 10
+********** Adds the modifier "nahuatl_sorcerer" until the end of the campaign:
+*********** local_unrest = 5
+*********** -10% provincial tax income
+******* Gets the country event:
+******** ID is nahuatl_events.12
+******** title = nahuatl_events.12.t
+******** desc = nahuatl_events.12.d
+******** picture = END_OF_TIME_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* Any owned province:
+********** Has the province modifier "nahuatl_sorcerer"
+******** Mean time to happen
+********* Base mean time to happen of 20 months
+********* Multiplies value by 3.5:
+********** Has the country flag sent_emissary_to_catch_sorcerer
+******** Immediate effects:
+********* Removes the country flag sent_emissary_to_catch_sorcerer
+******** Option: nahuatl_events.12.a:
+********* Changes prestige by 5
+********* Sets the country flag nahuatl_sorceror_gone
+********* Random owned province:
+********** Limited to:
+*********** Has the province modifier "nahuatl_sorcerer"
+********** Removes the country modifier "nahuatl_sorcerer"
+******* Gets the country event:
+******** ID is nahuatl_events.13
+******** title = nahuatl_events.13.t
+******** desc = nahuatl_events.13.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* Any owned province:
+********** Has the province modifier "nahuatl_sorcerer"
+******** Mean time to happen
+********* Base mean time to happen of 20 months
+********* Multiplies value by 0.5:
+********** Has the country flag sent_emissary_to_catch_sorcerer
+******** Immediate effects:
+********* Removes the country flag sent_emissary_to_catch_sorcerer
+******** Option: nahuatl_events.13.a:
+********* Random owned province:
+********** Limited to:
+*********** Has the province modifier "nahuatl_sorcerer"
+********** Removes the country modifier "nahuatl_sorcerer"
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ Does not have the country flag nahuatl_sorceror_gone
+************ Does not have the country flag tlacatecolotl
+*********** One of the following will happen:
+************ 98 relative chance:
+************ 2 relative chance:
+************* Gets the country event:
+************** ID is nahuatl_events.14
+************** Base mean time to happen of 5 days
+********** If:
+*********** Limited to:
+************ Has the country flag nahuatl_sorceror_gone
+************ Does not have the country flag tlacatecolotl
+*********** One of the following will happen:
+************ 80 relative chance:
+************ 20 relative chance:
+************* Gets the country event:
+************** ID is nahuatl_events.14
+************** Base mean time to happen of 5 days
+********** Removes the country flag nahuatl_sorceror_gone
+******** Option: nahuatl_events.13.b:
+********* add_doom = -10
+********* Random owned province:
+********** Limited to:
+*********** Has the province modifier "nahuatl_sorcerer"
+********** Removes the country modifier "nahuatl_sorcerer"
+********** add_unrest = 10
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ Does not have the country flag nahuatl_sorceror_gone
+************ Does not have the country flag tlacatecolotl
+*********** One of the following will happen:
+************ 98 relative chance:
+************ 2 relative chance:
+************* Gets the country event:
+************** ID is nahuatl_events.14
+************** Base mean time to happen of 5 days
+********** If:
+*********** Limited to:
+************ Has the country flag nahuatl_sorceror_gone
+*********** One of the following will happen:
+************ 80 relative chance:
+************ 20 relative chance:
+************* Gets the country event:
+************** ID is nahuatl_events.14
+************** Base mean time to happen of 5 days
+********** Removes the country flag nahuatl_sorceror_gone
+******* Gets the country event:
+******** ID is nahuatl_events.14
+******** title = nahuatl_events.14.t
+******** desc = nahuatl_events.14.d
+******** picture = END_OF_TIME_eventPicture
+******** is_triggered_only = yes
+******** Option: nahuatl_events.14.a:
+********* Changes stability by -1
+********* add_doom = 10
+********* Sets the country flag tlacatecolotl
+******* Gets the country event:
+******** ID is nahuatl_events.15
+******** title = nahuatl_events.15.t
+******** desc = nahuatl_events.15.d
+******** picture = END_OF_TIME_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+********* Any owned province:
+********** The province is not the capital of the country
+********** Any bordering province:
+*********** The province is not the capital of the country
+********* Has the country flag nahuatl_sorceror_gone
+********** No owned province:
+*********** Has the province modifier "nahuatl_sorcerer"
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: nahuatl_events.15.a:
+********* Changes administrative power stored by -25
+********* Sets the country flag sent_emissary_to_catch_sorcerer
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Any bordering province:
+************ The province is not the capital of the country
+********** Adds the modifier "nahuatl_sorcerer" until the end of the campaign:
+*********** local_unrest = 5
+*********** -10% provincial tax income
+******** Option: nahuatl_events.15.b:
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Any bordering province:
+************ The province is not the capital of the country
+********** add_local_autonomy = 10
+********** Adds the modifier "nahuatl_sorcerer" until the end of the campaign:
+*********** local_unrest = 5
+*********** -10% provincial tax income
+******* Gets the country event:
+******** ID is nahuatl_events.16
+******** title = nahuatl_events.16.t
+******** desc = nahuatl_events.16.d
+******** picture = END_OF_TIME_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+********* doom = 35
+********* Has an heir
+********* Heir is at least 2 years old
+********* Heir is less than 14 years old
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: nahuatl_events.16.a:
+********* Changes administrative power stored by -50
+********* Kills the heir of the country
+******** Option: nahuatl_events.16.b:
+********* add_doom = 10
+********* Kills the heir of the country
+******* Gets the country event:
+******** ID is nahuatl_events.17
+******** title = nahuatl_events.17.t
+******** desc = nahuatl_events.17.d
+******** picture = PLAGUE_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+********* Is not in regency
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: nahuatl_events.17.a:
+********* One of the following will happen:
+********** 75 relative chance:
+*********** add_doom = -5
+********** 25 relative chance:
+*********** Kills the ruler of the country
+******** Option: nahuatl_events.17.b:
+********* Trigger:
+********** vassal = 1
+********* Changes stability by -1
+********* Random subject country:
+********** Adds the opinion modifier "nahuatl_extra_sacrifice" towards our country
+********* One of the following will happen:
+********** 90 relative chance:
+*********** add_doom = -5
+********** 10 relative chance:
+*********** Kills the ruler of the country
+******* Gets the country event:
+******** ID is nahuatl_events.18
+******** title = nahuatl_events.18.t
+******** desc = nahuatl_events.18.d
+******** picture = MILITARY_CAMP_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+********* Has an heir
+********* Heir is at least 15 years old
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: nahuatl_events.18.a:
+********* Modifies treasury by -0.05 years worth of income
+******** Option: nahuatl_events.18.b:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is nahuatl_events.19
+******** title = nahuatl_events.19.t
+******** desc = nahuatl_events.19.d
+******** picture = MILITARY_CAMP_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+********* Any of the following:
+********** Is at war
+********** had_recent_war = 2
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: nahuatl_events.19.a:
+********* Changes army tradition by -5
+******** Option: nahuatl_events.19.b:
+********* add_doom = -5
+********* Changes army tradition by -15
+******** Option: nahuatl_events.19.c:
+********* add_doom = 5
+******* Gets the country event:
+******** ID is nahuatl_events.20
+******** title = nahuatl_events.20.t
+******** desc = nahuatl_events.20.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+********* doom = 5
+********* It is before the 5. month of the year
+********* had_recent_war = 2
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: nahuatl_events.20.a:
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+********* add_doom = -5
+******** Option: nahuatl_events.20.b:
+********* Trigger:
+********** vassal = 2
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 15
+********* If:
+********** Limited to:
+*********** vassal = 2
+*********** vassal_false = 3
+********** add_doom = -5
+********** Changes prestige by 5
+********* If:
+********** Limited to:
+*********** vassal = 3
+*********** vassal_false = 4
+********** add_doom = -5
+********** Changes prestige by 8
+********* If:
+********** Limited to:
+*********** vassal = 4
+*********** vassal_false = 5
+********** add_doom = -10
+********** Changes prestige by 10
+********* If:
+********** Limited to:
+*********** vassal = 5
+********** add_doom = -10
+********** Changes prestige by 10
+********** add_stability_or_adm_power = yes
+********* Every subject country:
+********** Adds the opinion modifier "nahuatl_extra_sacrifice" towards our country
+********* Gets the country event:
+********** ID is nahuatl_events.21
+********** Base mean time to happen of 1 days
+******* Gets the country event:
+******** ID is nahuatl_events.21
+******** title = nahuatl_events.21.t
+******** desc = nahuatl_events.21.d
+******** picture = HUMAN_SACRIFICE_eventPicture
+******** is_triggered_only = yes
+******** Option: nahuatl_events.21.a:
+********* AI chance:
+********** Base chance of 1
+********* One of the following will happen:
+********** 80 relative chance:
+*********** Gets the country event:
+************ ID is nahuatl_events.24
+********** 10 relative chance:
+*********** Gets the country event:
+************ ID is nahuatl_events.22
+********** 10 relative chance:
+*********** Gets the country event:
+************ ID is nahuatl_events.23
+******** Option: nahuatl_events.21.b:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** Country is 0 "Aztec
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is nahuatl_events.22
+******** title = nahuatl_events.22.t
+******** desc = nahuatl_events.22.d
+******** picture = HUMAN_SACRIFICE_eventPicture
+******** is_triggered_only = yes
+******** Option: nahuatl_events.22.a:
+********* add_doom = 5
+******* Gets the country event:
+******** ID is nahuatl_events.23
+******** title = nahuatl_events.23.t
+******** desc = nahuatl_events.23.d
+******** picture = HUMAN_SACRIFICE_eventPicture
+******** is_triggered_only = yes
+******** Option: nahuatl_events.23.a:
+********* Changes military power stored by 25
+********* add_doom = -5
+******* Gets the country event:
+******** ID is nahuatl_events.24
+******** title = nahuatl_events.24.t
+******** desc = nahuatl_events.24.d
+******** picture = HUMAN_SACRIFICE_eventPicture
+******** is_triggered_only = yes
+******** Option: nahuatl_events.24.a:
+******* Gets the country event:
+******** ID is nahuatl_events.25
+******** title = nahuatl_events.25.t
+******** desc = nahuatl_events.25.d
+******** picture = HUMAN_SACRIFICE_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+********* doom = 5
+********* Year is at least 1448
+********* It is before the 5. month of the year
+********* had_recent_war_false = 2
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: nahuatl_events.25.a:
+********* Trigger:
+********** vassal_false = 2
+********* add_doom = 5
+******** Option: nahuatl_events.25.b:
+********* Trigger:
+********** vassal = 2
+********* If:
+********** Limited to:
+*********** vassal = 2
+*********** vassal_false = 3
+********** add_doom = -4
+********** Changes prestige by 5
+********* If:
+********** Limited to:
+*********** vassal = 3
+*********** vassal_false = 4
+********** add_doom = -5
+********** Changes prestige by 5
+********* If:
+********** Limited to:
+*********** vassal = 4
+*********** vassal_false = 5
+********** add_doom = -6
+********** Changes prestige by 10
+********* If:
+********** Limited to:
+*********** vassal = 5
+********** add_doom = -8
+********** Changes prestige by 10
+********* Every subject country:
+********** Adds the opinion modifier "nahuatl_extra_sacrifice" towards our country
+******* Gets the country event:
+******** ID is nahuatl_events.26
+******** title = nahuatl_events.26.t
+******** desc = nahuatl_events.26.d
+******** picture = MERCHANTS_TALKING_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* Does not have the country modifier "nahuatl_allowed_spying_pochtecas"
+********* Does not have the country modifier "nahuatl_angered_pochtecas"
+********* Any rival country:
+********** Follows the 0 "Nahuatl religion
+********** Does not have the country modifier "nahuatl_angered_pochtecas"
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: nahuatl_events.26.a:
+********* AI chance:
+********** Base chance of 45
+********** Multiplies value by 0:
+*********** has_estate = estate_burghers
+*********** estate_loyalty:
+************ estate_false = estate_burghers
+************ loyalty_false = 40
+********* If:
+********** Limited to:
+*********** has_estate = estate_burghers
+********** add_estate_loyalty:
+*********** estate = estate_burghers
+*********** loyalty = -10
+********* Modifies treasury by 0.1 years worth of income
+********* Adds the modifier "nahuatl_angered_pochtecas" for 5 years:
+********** Trade efficiency is at least -5%
+********** +20% global spy defence
+******** Option: nahuatl_events.26.b:
+********* AI chance:
+********** Base chance of 45
+********** Multiplies value by 0:
+*********** has_estate = estate_burghers
+*********** estate_loyalty:
+************ estate_false = estate_burghers
+************ loyalty_false = 40
+********* Modifies treasury by 0.1 years worth of income
+********* If:
+********** Limited to:
+*********** has_estate = estate_burghers
+********** add_estate_loyalty:
+*********** estate = estate_burghers
+*********** loyalty = -15
+********* Adds the modifier "nahuatl_angered_pochtecas" for 10 years:
+********** Trade efficiency is at least -5%
+********** +20% global spy defence
+********* Random rival country:
+********** Gets the country event:
+*********** ID is nahuatl_events.27
+********** Adds the opinion modifier "nahuatl_imprisoned_pochtecas" towards our country
+********** Tooltip:
+*********** Gives the 0 "Trade War casus belli against our country
+******** Option: nahuatl_events.26.c:
+********* AI chance:
+********** Base chance of 10
+********* If:
+********** Limited to:
+*********** has_estate = estate_burghers
+********** add_estate_loyalty:
+*********** estate = estate_burghers
+*********** loyalty = 10
+********* Adds the modifier "nahuatl_allowed_spying_pochtecas" for 5 years:
+********** -20% global spy defence
+******* Gets the country event:
+******** ID is nahuatl_events.27
+******** title = nahuatl_events.27.t
+******** desc = nahuatl_events.27.d
+******** picture = MERCHANTS_TALKING_eventPicture
+******** is_triggered_only = yes
+******** Option: nahuatl_events.27.a:
+********* Gives the 0 "Trade War casus belli against our country
+******* Gets the country event:
+******** ID is nahuatl_events.28
+******** title = nahuatl_events.28.t
+******** desc = nahuatl_events.28.d
+******** picture = ADVISOR_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: nahuatl_events.28.a:
+********* AI chance:
+********** Base chance of 1
+********* add_doom = -5
+********* Adds -10 legitimacy
+******** Option: nahuatl_events.28.b:
+********* AI chance:
+********** Base chance of 0
+********* Adds 5 legitimacy
+******* Gets the country event:
+******** ID is nahuatl_events.29
+******** title = nahuatl_events.29.t
+******** desc = nahuatl_events.29.d
+******** picture = GREAT_BUILDING_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+********* has_ruler_flag_false = temple_expansion
+********* Year is at least 1455
+********* Any of the following:
+********** Country is not 0 "Aztec
+********** 0 "Mexico:
+*********** Has the province modifier "0 "Great Temple of Tenochtitlan"
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: nahuatl_events.29.a:
+********* AI chance:
+********** Base chance of 0
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+********* set_ruler_flag = temple_expansion
+********* Modifies treasury by -0.75 years worth of income
+********* add_doom = -15
+********* Changes administrative power stored by 50
+******** Option: nahuatl_events.29.b:
+********* AI chance:
+********** Base chance of 0
+********* set_ruler_flag = temple_expansion
+********* Modifies treasury by -0.5 years worth of income
+********* Changes administrative power stored by 25
+********* add_doom = -10
+******** Option: nahuatl_events.29.c:
+********* AI chance:
+********** Base chance of 1
+********* set_ruler_flag = temple_expansion
+********* Modifies treasury by -0.05 years worth of income
+******** Option: nahuatl_events.29.dd:
+********* AI chance:
+********** Base chance of 0
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = -10
+********* set_ruler_flag = temple_expansion
+********* add_doom = 10
+******* Gets the country event:
+******** ID is nahuatl_events.30
+******** title = nahuatl_events.30.t
+******** desc = nahuatl_events.30.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* uses_doom = yes
+******** Mean time to happen
+********* Base mean time to happen of 260 months
+******** Option: nahuatl_events.30.a:
+********* AI chance:
+********** Base chance of 1
+********* Modifies treasury by -0.1 years worth of income
+********* Changes diplomatic power stored by 25
+********* add_doom = -5
+******** Option: nahuatl_events.30.b:
+********* AI chance:
+********** Base chance of 0
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is nahuatl_events.31
+******** title = nahuatl_events.31.t
+******** desc = nahuatl_events.31.d
+******** picture = END_OF_TIME_eventPicture
+******** Trigger:
+********* Follows the 0 "Nahuatl religion
+********* Has the DLC El Dorado
+********* Year is at least 1450
+********* uses_doom = yes
+********* Does not have the country modifier "nahuatl_grace_of_tezcatlipoca"
+********* Does not have the country modifier "nahuatl_grace_of_quetzalcoatl"
+********* Does not have the country modifier "nahuatl_grace_of_huitzilopochtli"
+********* Does not have the country modifier "nahuatl_grace_of_xipe_totec"
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: nahuatl_events.31.a:
+********* AI chance:
+********** Base chance of 0
+********* Changes national manpower by -1 years worth of men
+********* Changes administrative power stored by -50
+********* add_doom = -10
+********* Adds the modifier "nahuatl_grace_of_tezcatlipoca" for 5 years:
+********** Legitimacy is at least 1
+********** -2 global unrest
+********** Follows the yes religion
+********* Capital:
+********** Adds the modifier "nahuatl_earth_quake_devestation" until the end of the campaign:
+*********** -25% provincial tax income
+*********** -10% trade goods output
+******** Option: nahuatl_events.31.b:
+********* AI chance:
+********** Base chance of 0
+********* Modifies treasury by -0.2 years worth of income
+********* Changes diplomatic power stored by -50
+********* add_doom = -10
+********* Adds the modifier "nahuatl_grace_of_quetzalcoatl" for 5 years:
+********** -10% stability cost modifier
+********** -10% advisor cost
+********** +0.5 prestige
+********** Follows the yes religion
+********* Capital:
+********** Adds the modifier "nahuatl_earth_quake_devestation" until the end of the campaign:
+*********** -25% provincial tax income
+*********** -10% trade goods output
+******** Option: nahuatl_events.31.c:
+********* AI chance:
+********** Base chance of 1
+********* Changes national manpower by -1 years worth of men
+********* Changes military power stored by -50
+********* add_doom = -10
+********* Adds the modifier "nahuatl_grace_of_huitzilopochtli" for 5 years:
+********** +10% land morale
+********** +0.5 prestige
+********** Follows the yes religion
+********* Capital:
+********** Adds the modifier "nahuatl_earth_quake_devestation" until the end of the campaign:
+*********** -25% provincial tax income
+*********** -10% trade goods output
+******** Option: nahuatl_events.31.dd:
+********* AI chance:
+********** Base chance of 0
+********* Changes national manpower by -2 years worth of men
+********* Changes military power stored by -25
+********* add_doom = -10
+********* Adds the modifier "nahuatl_grace_of_xipe_totec" for 5 years:
+********** +5% discipline
+********** +0.5 prestige
+********** Follows the yes religion
+********* Capital:
+********** Adds the modifier "nahuatl_earth_quake_devestation" until the end of the campaign:
+*********** -25% provincial tax income
+*********** -10% trade goods output
+******* Gets the country event:
+******** ID is nahuatl_events.32
+******** title = nahuatl_events.32.t
+******** desc = nahuatl_events.32.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Does not have the country flag muxe_advisor_flag
+********* Any of the following:
+********** Primary culture is 0 "Zapotek
+********** Accepts the 0 "Zapotek culture
+********* Any of the following:
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has a Treasurer with a skill of at least 2
+*********** Does not have a Treasurer with a skill of at least 3
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has a Philosopher with a skill of at least 2
+*********** Does not have a Natural Scientist with a skill of at least 3
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has a Artist with a skill of at least 2
+*********** Does not have a Artist with a skill of at least 3
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has a Master of Mint with a skill of at least 2
+*********** Does not have a Master of Mint with a skill of at least 3
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has a Natural Scientist with a skill of at least 2
+*********** Does not have a Philosopher with a skill of at least 3
+******** Mean time to happen
+********* Base mean time to happen of 750 months
+******** Immediate effects:
+********* set_saved_name:
+********** Named "muxe_advisor_name"
+********** Ruler is female
+********** scope = our country
+******** Option: nahuatl_events.32.a:
+********* AI chance:
+********** Base chance of 100
+********** Multiplies value by 0:
+*********** Country is 0 "Zapotec
+********* Hidden effect:
+********** Sets the country flag muxe_advisor_flag
+********** If:
+*********** Limited to:
+************ Has the 0 "Treasurer advisor
+*********** Removes the 0 "Treasurer advisor
+********** If:
+*********** Limited to:
+************ Has the 0 "Philosopher advisor
+*********** Removes the 0 "Philosopher advisor
+********** If:
+*********** Limited to:
+************ Has the 0 "Artist advisor
+*********** Removes the 0 "Artist advisor
+********** If:
+*********** Limited to:
+************ Has the 0 "Master of Mint advisor
+*********** Removes the 0 "Master of Mint advisor
+********** If:
+*********** Limited to:
+************ Has the 0 "Natural Scientist advisor
+*********** Removes the 0 "Natural Scientist advisor
+******** Option: nahuatl_events.32.b:
+********* AI chance:
+********** Base chance of 100
+********** Multiplies value by 0:
+*********** Country is not 0 "Zapotec
+********* Hidden effect:
+********** Sets the country flag muxe_advisor_flag
+********** If:
+*********** Limited to:
+************ Has the 0 "Treasurer advisor
+*********** Removes the 0 "Treasurer advisor
+*********** Creates an advisor of the 0 "Treasurer type:
+************ Named "muxe_advisor_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********** If:
+*********** Limited to:
+************ Has the 0 "Philosopher advisor
+*********** Removes the 0 "Philosopher advisor
+*********** Creates an advisor of the 0 "Philosopher type:
+************ Named "muxe_advisor_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********** If:
+*********** Limited to:
+************ Has the 0 "Artist advisor
+*********** Removes the 0 "Artist advisor
+*********** Creates an advisor of the 0 "Artist type:
+************ Named "muxe_advisor_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********** If:
+*********** Limited to:
+************ Has the 0 "Master of Mint advisor
+*********** Removes the 0 "Master of Mint advisor
+*********** Creates an advisor of the 0 "Master of Mint type:
+************ Named "muxe_advisor_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********** If:
+*********** Limited to:
+************ Has the 0 "Natural Scientist advisor
+*********** Removes the 0 "Natural Scientist advisor
+*********** Creates an advisor of the 0 "Natural Scientist type:
+************ Named "muxe_advisor_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********* Adds the modifier "muxe_at_court" for the rest of the campaign:
+********** female_advisor_chance = 0.1
+********** +100% available advisors
+******* Gets the country event:
+******** ID is nahuatl_events.321
+******** title = nahuatl_events.321.t
+******** desc = nahuatl_events.321.d
+******** picture = wihgfx_FEMALE_GENERAL_eventPicture
+******** Trigger:
+********* Has the country modifier "muxe_at_court"
+********* Does not have the country flag muxe_military_flag
+********* Any of the following:
+********** Primary culture is 0 "Zapotek
+********** Accepts the 0 "Zapotek culture
+********* Any of the following:
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has an Army Reformer with a skill of at least 2
+*********** Does not have an Army Reformer with a skill of at least 3
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has an Army Organizer with a skill of at least 2
+*********** Does not have an Army Organizer with a skill of at least 3
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has a Commandant with a skill of at least 2
+*********** Does not have a Commandant with a skill of at least 3
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has a Quartermaster with a skill of at least 2
+*********** Does not have a Quartermaster with a skill of at least 3
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has a Master Recruiter with a skill of at least 2
+*********** Does not have a Master Recruiter with a skill of at least 3
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has a Military Engineer with a skill of at least 2
+*********** Does not have a Military Engineer with a skill of at least 3
+********** All of the following:
+*********** employed_advisor:
+************ is_male = yes
+************ Culture is 0 "Zapotek
+*********** Has a Grand Captain with a skill of at least 2
+*********** Does not have a Grand Captain with a skill of at least 3
+******** Mean time to happen
+********* Base mean time to happen of 120 months
+******** Immediate effects:
+********* set_saved_name:
+********** Named "muxe_military_name"
+********** Ruler is female
+********** scope = our country
+******** Option: nahuatl_events.321.a:
+********* AI chance:
+********** Base chance of 100
+********** Multiplies value by 0:
+*********** Country is 0 "Zapotec
+********* Hidden effect:
+********** Sets the country flag muxe_military_flag
+********** If:
+*********** Limited to:
+************ Has the 0 "Army Reformer advisor
+*********** Removes the 0 "Army Reformer advisor
+********** If:
+*********** Limited to:
+************ Has the 0 "Army Organizer advisor
+*********** Removes the 0 "Army Organizer advisor
+********** If:
+*********** Limited to:
+************ Has the 0 "Commandant advisor
+*********** Removes the 0 "Commandant advisor
+********** If:
+*********** Limited to:
+************ Has the 0 "Quartermaster advisor
+*********** Removes the 0 "Quartermaster advisor
+********** If:
+*********** Limited to:
+************ Has the 0 "Master Recruiter advisor
+*********** Removes the 0 "Master Recruiter advisor
+********** If:
+*********** Limited to:
+************ Has the 0 "Military Engineer advisor
+*********** Removes the 0 "Military Engineer advisor
+********** If:
+*********** Limited to:
+************ Has the 0 "Grand Captain advisor
+*********** Removes the 0 "Grand Captain advisor
+******** Option: nahuatl_events.321.b:
+********* AI chance:
+********** Base chance of 100
+********** Multiplies value by 0:
+*********** Country is not 0 "Zapotec
+********* Hidden effect:
+********** Sets the country flag muxe_military_flag
+********** If:
+*********** Limited to:
+************ Has the 0 "Army Reformer advisor
+*********** Removes the 0 "Army Reformer advisor
+*********** Creates an advisor of the 0 "Army Reformer type:
+************ Named "muxe_military_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********** If:
+*********** Limited to:
+************ Has the 0 "Army Organizer advisor
+*********** Removes the 0 "Army Organizer advisor
+*********** Creates an advisor of the 0 "Army Organizer type:
+************ Named "muxe_military_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********** If:
+*********** Limited to:
+************ Has the 0 "Commandant advisor
+*********** Removes the 0 "Commandant advisor
+*********** Creates an advisor of the 0 "Commandant type:
+************ Named "muxe_military_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********** If:
+*********** Limited to:
+************ Has the 0 "Quartermaster advisor
+*********** Removes the 0 "Quartermaster advisor
+*********** Creates an advisor of the 0 "Quartermaster type:
+************ Named "muxe_military_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********** If:
+*********** Limited to:
+************ Has the 0 "Master Recruiter advisor
+*********** Removes the 0 "Master Recruiter advisor
+*********** Creates an advisor of the 0 "Master Recruiter type:
+************ Named "muxe_military_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********** If:
+*********** Limited to:
+************ Has the 0 "Military Engineer advisor
+*********** Removes the 0 "Military Engineer advisor
+*********** Creates an advisor of the 0 "Military Engineer type:
+************ Named "muxe_military_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********** If:
+*********** Limited to:
+************ Has the 0 "Grand Captain advisor
+*********** Removes the 0 "Grand Captain advisor
+*********** Creates an advisor of the 0 "Grand Captain type:
+************ Named "muxe_military_name"
+************ With a skill level of 2
+************ Culture is 0 "Zapotek
+************ Ruler is female
+************ cost_multiplier = 0.5
+********* Adds the modifier "muxe_at_military" for the rest of the campaign:
+********** may_recruit_female_generals = yes
+********** +10% manpower recovery speed

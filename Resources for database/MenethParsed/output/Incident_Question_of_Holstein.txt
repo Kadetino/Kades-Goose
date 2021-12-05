@@ -1,0 +1,124 @@
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** 0 "Holstein:
+*********** The owner of the province:
+************ save_event_target_as = holstein_owner
+******** Option: holstein.1.a:
+********* event_target:holstein_owner:
+********** Adds the opinion modifier "opinion_holstein_bad" towards our country
+********* Hidden effect:
+********** 0 "Holstein:
+*********** The owner of the province:
+************ Gets the country event:
+************* ID is holstein.2
+************* Base mean time to happen of 3 days
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 100:
+*********** 0 "Holstein:
+************ The owner of the province:
+************* Any of the following:
+************** ai_attitude:
+*************** Affecting our country
+*************** attitude = 0 "Rivalry
+************** ai_attitude:
+*************** Affecting our country
+*************** attitude = 0 "Hostile
+************** ai_attitude:
+*************** Affecting our country
+*************** attitude = 0 "Threatened
+************** ai_attitude:
+*************** Affecting our country
+*************** attitude = 0 "Outraged
+************** ai_attitude:
+*************** Affecting our country
+*************** attitude = 0 "Disloyal
+************** ai_attitude:
+*************** Affecting our country
+*************** attitude = 0 "Rebellious
+******** Option: holstein.1.b:
+********* event_target:holstein_owner:
+********** Adds the opinion modifier "opinion_holstein_good" towards our country
+********* Changes Imperial influence by -10
+********* 0 "Holstein:
+********** Removes the province from the Holy Roman Empire
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 100:
+*********** 0 "Holstein:
+************ The owner of the province:
+************* Any of the following:
+************** ai_attitude:
+*************** Affecting our country
+*************** attitude = 0 "Friendly
+************** ai_attitude:
+*************** Affecting our country
+*************** attitude = 0 "Loyal
+************** ai_attitude:
+*************** Affecting our country
+*************** attitude = 0 "Ally
+******* Gets the country event:
+******** ID is holstein.2
+******** title = holstein.1.t
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** desc = holstein.2.d
+******** fire_only_once = yes
+******** is_triggered_only = yes
+******** major = yes
+******** Option: holstein.2.a:
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 1000:
+*********** Holy Roman Emperor:
+************ Is allied with our country
+********* Changes prestige by -10
+********* 0 "Holstein:
+********** If:
+*********** Limited to:
+************ Has no core on 0 "Holstein
+*********** Gives 0 "Holstein core on the province
+********** Cedes province to 0 "Holstein
+********** Removes core on our country
+********* Holy Roman Emperor:
+********** Changes Imperial influence by 15
+********** create_guarantee = 0 "Holstein
+********** Adds the opinion modifier "ceded_holstein" towards our country
+******** Option: holstein.2.b:
+********* AI chance:
+********** Base chance of 90
+********* Changes prestige by 10
+********* Holy Roman Emperor:
+********** Changes Imperial influence by -15
+********** Adds the opinion modifier "refused_to_cede_holstein" towards our country
+******* Gets the country event:
+******** ID is holstein.3
+******** title = holstein.3.t
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** desc = holstein.3.d
+******** fire_only_once = yes
+******** goto = 1775
+******** Trigger:
+********* Has the DLC Emperor
+********* Is the Holy Roman Emperor
+********* Any of the following:
+********** current_age = 0 "Age of Absolutism
+********** current_age = 0 "Age of Revolutions
+********* Any country:
+********** Owns 0 "Holstein
+********** Culture group is 0 "Nordic
+********** Is not part of the Holy Roman Empire
+********** Has at least 2 provinces
+********* 0 "Holstein:
+********** Is part of the Holy Roman Empire
+********* 0 "Holstein does not exist
+********* active_imperial_incident_false = any
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+******** Immediate effects:
+********* Hidden effect:
+********** 0 "Holstein:
+*********** The owner of the province:
+************ save_event_target_as = holstein_owner
+******** Option: holstein.3.a:
+********* set_imperial_incident = incident_holstein

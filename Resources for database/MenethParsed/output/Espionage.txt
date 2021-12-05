@@ -1,0 +1,402 @@
+
+=== title = "espionage_events.1.t" ===
+
+'''Trigger:'''
+
+* Has the DLC Mare Nostrum
+* Any known country:
+** has_spy_network_in:
+*** Affecting our country
+*** value = 25
+** has_spy_network_from:
+*** Affecting our country
+*** value = 25
+** corruption = 10
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Capital:
+*** save_event_target_as = espionage_event_country_2_capital
+** Random known country:
+*** Limited to:
+**** has_spy_network_in:
+***** Affecting our country
+***** value = 25
+**** has_spy_network_from:
+***** Affecting our country
+***** value = 25
+**** corruption = 10
+*** save_event_target_as = espionage_event_country
+*** Capital:
+**** save_event_target_as = espionage_event_country_capital
+
+'''Option: espionage_events.1.a:'''
+
+* Changes treasury by -15 ducats
+* event_target:espionage_event_country:
+** add_spy_network_from:
+*** Affecting our country
+*** value = 30
+** Randomized by 
+*** Acquisition chance:
+*** Gets the country event:
+**** ID is espionage_events.2
+**** Base mean time to happen of 120 days
+
+'''Option: espionage_events.1.b:'''
+
+* event_target:espionage_event_country:
+** add_spy_network_in:
+*** Affecting our country
+*** value = -25
+
+=== title = "espionage_events.2.t" ===
+* Cannot fire randomly
+
+'''Option: espionage_events.2.a:'''
+
+* One of the following will happen:
+** 50 relative chance:
+*** add_spy_network_in:
+**** Affecting our country
+**** value = 25
+*** Our country:
+**** Sets the country flag re_doubled_agent
+** 50 relative chance:
+*** add_spy_network_from:
+**** Affecting our country
+**** value = 15
+* Our country:
+** Gets the country event:
+*** ID is espionage_events.3
+*** Base mean time to happen of 30 days
+
+'''Option: espionage_events.2.b:'''
+
+* add_spy_network_from:
+** Affecting our country
+** value = -20
+
+=== title = "espionage_events.3.t" ===
+* Cannot fire randomly
+
+'''Option: espionage_events.3.a:'''
+
+* Tooltip:
+** add_spy_network_from:
+*** Affecting our country
+*** value = -25
+* Tooltip:
+** add_spy_network_in:
+*** Affecting our country
+*** value = -25
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the country flag re_doubled_agent
+*** add_spy_network_from:
+**** Affecting our country
+**** value = -25
+** If:
+*** Limited to:
+**** Does not have the country flag re_doubled_agent
+*** add_spy_network_in:
+**** Affecting our country
+**** value = -25
+** Removes the country flag re_doubled_agent
+
+'''Option: espionage_events.3.b:'''
+
+* Tooltip:
+** add_spy_network_from:
+*** Affecting our country
+*** value = 15
+* Tooltip:
+** add_spy_network_in:
+*** Affecting our country
+*** value = 15
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the country flag re_doubled_agent
+*** add_spy_network_from:
+**** Affecting our country
+**** value = 15
+** If:
+*** Limited to:
+**** Does not have the country flag re_doubled_agent
+*** add_spy_network_in:
+**** Affecting our country
+**** value = 15
+** Removes the country flag re_doubled_agent
+
+=== title = "espionage_events.4.t" ===
+
+'''Trigger:'''
+
+* Has the DLC Mare Nostrum
+* Follows the 0 "Catholic religion
+* Any known country:
+** has_spy_network_from:
+*** Affecting our country
+*** value = 10
+** Follows the 0 "Catholic religion
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random known country:
+*** Limited to:
+**** has_spy_network_from:
+***** Affecting our country
+***** value = 10
+**** Follows the 0 "Catholic religion
+*** save_event_target_as = victim_country
+*** Capital:
+**** save_event_target_as = victim_country_capital
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: espionage_events.4.a:'''
+
+* add_spy_network_in:
+** Affecting event_target:victim_country
+** value = 25
+* If:
+** Limited to:
+*** TAG_false = 0 "The Papal State
+** Randomized by 
+*** Acquisition chance:
+*** Gets the country event:
+**** ID is espionage_events.5
+**** Base mean time to happen of 60 days
+
+'''Option: espionage_events.4.b:'''
+
+* Changes diplomatic power stored by 10
+
+=== title = "espionage_events.5.t" ===
+* Cannot fire randomly
+
+'''Option: espionage_events.5.a:'''
+
+* Changes Papal Influence by -15
+
+=== title = "espionage_events.6.t" ===
+
+'''Trigger:'''
+
+* Has the DLC Mare Nostrum
+* Always false
+* Any known country:
+** has_spy_network_from:
+*** Affecting our country
+*** value = 100
+* Cannot fire randomly
+
+'''Option: espionage_events.6.a:'''
+
+* Random known country:
+** Limited to:
+*** has_spy_network_from:
+**** Affecting our country
+**** value = 100
+** Tooltip:
+*** Kills the ruler of the country
+*** Gives the 0 "Diplomatic Insult casus belli against our country
+** Hidden effect:
+*** Gets the country event:
+**** ID is espionage_events.7
+**** Base mean time to happen of 7 days
+
+'''Option: espionage_events.6.b:'''
+
+* Changes diplomatic power stored by 20
+
+=== title = "espionage_events.7.t" ===
+* Cannot fire randomly
+
+'''Option: espionage_events.7.a:'''
+
+* Gives the 0 "Diplomatic Insult casus belli against our country
+
+=== title = "espionage_events.8.t" ===
+
+'''Trigger:'''
+
+* Has the DLC Mare Nostrum
+* Has the 0 "Spymaster advisor
+* Any known country:
+** Is a neighbor of our country
+** has_spy_network_in:
+*** Affecting our country
+*** value = 25
+* Any known country:
+** Is a neighbor of our country
+** has_spy_network_in:
+*** who_false = our country
+*** value_false = 1
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** One of the following will happen:
+*** 50 relative chance:
+**** Random known country:
+***** Limited to:
+****** Is a neighbor of our country
+****** has_spy_network_in:
+******* Affecting our country
+******* value = 25
+***** save_event_target_as = neighbor_1
+***** Capital:
+****** save_event_target_as = neighbor_1_capital
+**** Random known country:
+***** Limited to:
+****** Is a neighbor of our country
+****** has_spy_network_in:
+******* who_false = our country
+******* value_false = 1
+***** save_event_target_as = neighbor_2
+***** Capital:
+****** save_event_target_as = neighbor_2_capital
+*** 50 relative chance:
+**** Random known country:
+***** Limited to:
+****** Is a neighbor of our country
+****** has_spy_network_in:
+******* Affecting our country
+******* value = 25
+***** save_event_target_as = neighbor_2
+***** Capital:
+****** save_event_target_as = neighbor_2_capital
+**** Random known country:
+***** Limited to:
+****** Is a neighbor of our country
+****** has_spy_network_in:
+******* who_false = our country
+******* value_false = 1
+***** save_event_target_as = neighbor_1
+***** Capital:
+****** save_event_target_as = neighbor_1_capital
+
+'''Option: espionage_events.8.a:'''
+
+* goto = neighbor_1_capital
+* event_target:neighbor_1:
+** Adds the opinion modifier "counterintelligence_operation" towards our country
+** Hidden effect:
+*** If:
+**** Limited to:
+***** has_spy_network_in:
+****** Affecting our country
+****** value = 25
+**** add_spy_network_in:
+***** Affecting our country
+***** value = -25
+
+'''Option: espionage_events.8.b:'''
+
+* goto = neighbor_2_capital
+* event_target:neighbor_2:
+** Adds the opinion modifier "counterintelligence_operation" towards our country
+** Hidden effect:
+*** If:
+**** Limited to:
+***** has_spy_network_in:
+****** Affecting our country
+****** value = 25
+**** add_spy_network_in:
+***** Affecting our country
+***** value = -25
+
+=== title = "espionage_events.9.t" ===
+
+'''Trigger:'''
+
+* Has the DLC Mare Nostrum
+* Has at least 1 allies
+* Any ally:
+** has_spy_network_in:
+*** Affecting our country
+*** value = 30
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random ally:
+*** Limited to:
+**** has_spy_network_in:
+***** Affecting our country
+***** value = 30
+*** save_event_target_as = spying_ambassador
+*** Capital:
+**** save_event_target_as = spying_ambassador_capital
+
+'''Option: espionage_events.9.a:'''
+
+* event_target:spying_ambassador:
+** Adds the opinion modifier "counterintelligence_operation" towards our country
+** add_spy_network_in:
+*** Affecting our country
+*** value = -10
+** Hidden effect:
+*** If:
+**** Limited to:
+***** has_spy_network_in:
+****** Affecting our country
+****** value = 50
+**** ROOT:
+***** Gets the country event:
+****** ID is espionage_events.10
+****** Base mean time to happen of 30 days
+
+'''Option: espionage_events.9.b:'''
+
+* Changes diplomatic power stored by -20
+
+'''Option: espionage_events.9.c:'''
+
+* Hidden effect:
+** event_target:spying_ambassador:
+*** Randomized by 
+**** Acquisition chance:
+**** add_spy_network_in:
+***** Affecting our country
+***** value = 10
+
+=== title = "espionage_events.10.t" ===
+* Cannot fire randomly
+
+'''Option: espionage_events.10.a:'''
+
+* event_target:spying_ambassador:
+** Adds the opinion modifier "imprisoned_ambassador" towards our country
+** add_spy_network_in:
+*** Affecting our country
+*** value = -30
+
+'''Option: espionage_events.10.b:'''
+
+* event_target:spying_ambassador:
+** remove_opinion:
+*** Affecting our country

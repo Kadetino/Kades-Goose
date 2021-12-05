@@ -1,0 +1,58 @@
+** Trigger:
+*** Year is at least 1600
+*** Any country:
+**** Culture group is 0 "Altaic
+**** total_development = 200
+**** Owns core province 0 "Qaraqorum
+*** Is not a vassal
+*** Is not at war
+*** 0 "Kalmyk does not exist
+*** Owns core province 0 "Kuma
+** Mean time to happen
+*** Base mean time to happen of 600 months
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** Capital:
+******* area_false = astrakhan_area
+***** Every owned province:
+****** Limited to:
+******* area = astrakhan_area
+****** Gives 0 "Kalmyk core on the province
+***** Release 0 "Kalmyk as a vassal
+***** 0 "Kalmyk:
+****** Changes government type to tribal
+****** add_government_reform = 0 "Steppe Nomads
+****** Spawns a ruler:
+******* Ruler's dynasty is Torghut
+****** adopt_reform_progress = our country
+****** Capital:
+******* build_to_forcelimit:
+******** Spawns an infantry unit in 0.6
+******** Spawns a cavalry unit in 0.3
+***** 0 "Kuma:
+****** Changes religion to 0 "Vajrayana
+****** Changes culture to oirats
+** Option: 0 "Allow them to settle in exchange for military service.:
+*** Trigger:
+**** Capital:
+***** area_false = astrakhan_area
+*** create_march = 0 "Kalmyk
+*** 0 "Kalmyk:
+**** Adds the opinion modifier "0 "Allowed Kalmyk Settlement" towards our country
+*** astrakhan_area:
+**** Limited to:
+***** Has core on our country
+**** Removes core on our country
+** Option: 0 "Drive them out of our lands!:
+*** Trigger:
+**** Capital:
+***** area_false = astrakhan_area
+*** Declares war on 0 "Reconquest using the 0 "Kalmyk casus belli
+** Option: 0 "Drive them out of our lands!:
+*** Trigger:
+**** Capital:
+***** area = astrakhan_area
+*** 0 "Kuma:
+**** Spawns revolt of size 2 of 0 "Peasant rebels

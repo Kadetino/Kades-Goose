@@ -1,0 +1,1675 @@
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Does not have the country flag atmospheric_engine_flag
+********* innovativeness = 15
+********* Any owned province:
+********** is_state = yes
+********** is_in_capital_area = yes
+********** enlightenment = 100
+********** Any of the following:
+*********** Produces 0 "Iron
+*********** Produces 0 "Coal
+*********** Produces 0 "Copper
+*********** has_latent_trade_goods = 0 "Coal
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag atmospheric_engine_flag
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ is_in_capital_area = yes
+************ enlightenment = 100
+************ Any of the following:
+************* Produces 0 "Iron
+************* Produces 0 "Coal
+************* Produces 0 "Copper
+************* has_latent_trade_goods = 0 "Coal
+*********** save_event_target_as = invention_province
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: industrialization_events.1.a:
+********* event_target:invention_province:
+********** add_base_production = 2
+********** Adds the modifier "introduction_of_newcommen_engine" until the end of the campaign:
+*********** local_development_cost = -0.1
+*********** local_build_cost = -0.1
+*********** +10% production efficiency
+********** add_half_industrialization_effect = yes
+******* Gets the country event:
+******** ID is industrialization_events.2
+******** title = industrialization_events.2.t
+******** picture = URBANIZATION_eventPicture
+******** desc:
+********* Trigger:
+********** Country is not 0 "Great Britain
+********** Country is not 0 "England
+********* desc = industrialization_events.2.d
+******** desc:
+********* Trigger:
+********** Any of the following:
+*********** Country is 0 "Great Britain
+*********** Country is 0 "England
+********* desc = industrialization_events.2.d.england
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Does not have the country flag coke_blast_furnaces_flag
+********* innovativeness = 20
+********* Any owned province:
+********** is_state = yes
+********** is_in_capital_area = yes
+********** enlightenment = 100
+********** Any of the following:
+*********** Produces 0 "Iron
+*********** Produces 0 "Coal
+*********** Produces 0 "Copper
+*********** has_latent_trade_goods = 0 "Coal
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag coke_blast_furnaces_flag
+********** set_saved_name:
+*********** Named "inventor_name"
+*********** scope = our country
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ is_in_capital_area = yes
+************ enlightenment = 100
+************ Any of the following:
+************* Produces 0 "Iron
+************* Produces 0 "Coal
+************* Produces 0 "Copper
+************* has_latent_trade_goods = 0 "Coal
+*********** save_event_target_as = invention_province
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: industrialization_events.2.a:
+********* If:
+********** Limited to:
+*********** Any of the following:
+************ Country is 0 "England
+************ Country is 0 "Great Britain
+*********** Owns 1 "Shrewsbury
+********** 1 "Shrewsbury:
+*********** add_base_production = 2
+*********** Adds the modifier "introduction_of_coke_blast_furnaces" until the end of the campaign:
+************ local_development_cost = -0.1
+************ local_build_cost = -0.1
+************ +10% production efficiency
+*********** add_half_industrialization_effect = yes
+********* else:
+********** event_target:invention_province:
+*********** add_base_production = 2
+*********** Adds the modifier "introduction_of_coke_blast_furnaces" until the end of the campaign:
+************ local_development_cost = -0.1
+************ local_build_cost = -0.1
+************ +10% production efficiency
+*********** add_half_industrialization_effect = yes
+******** after:
+********* clear_saved_name = inventor_name
+******* Gets the country event:
+******** ID is industrialization_events.3
+******** title = industrialization_events.3.t
+******** picture = ATMOSPHERIC_ENGINE_eventPicture
+******** desc:
+********* Trigger:
+********** Country is not 0 "Great Britain
+********** Country is not 0 "England
+********* desc = industrialization_events.3.d
+******** desc:
+********* Trigger:
+********** Any of the following:
+*********** Country is 0 "Great Britain
+*********** Country is 0 "England
+********* desc = industrialization_events.3.d.england
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Has the country flag atmospheric_engine_flag
+********* Does not have the country flag watt_steam_engine_flag
+********* innovativeness = 20
+********* Any owned province:
+********** is_state = yes
+********** is_in_capital_area = yes
+********** enlightenment = 100
+********** Any of the following:
+*********** Produces 0 "Iron
+*********** Produces 0 "Coal
+*********** Produces 0 "Copper
+*********** has_latent_trade_goods = 0 "Coal
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag watt_steam_engine_flag
+********** set_saved_name:
+*********** Named "inventor_name"
+*********** scope = our country
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ is_in_capital_area = yes
+************ enlightenment = 100
+************ Any of the following:
+************* Produces 0 "Iron
+************* Produces 0 "Coal
+************* Produces 0 "Copper
+************* has_latent_trade_goods = 0 "Coal
+*********** save_event_target_as = invention_province
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: industrialization_events.3.a:
+********* event_target:invention_province:
+********** add_base_production = 2
+********** Adds the modifier "introduction_of_watt_engine" until the end of the campaign:
+*********** local_development_cost = -0.1
+*********** +10% production efficiency
+*********** trade_goods_size_modifier = 0.15
+********** add_half_industrialization_effect = yes
+******** after:
+********* clear_saved_name = inventor_name
+******* Gets the country event:
+******** ID is industrialization_events.4
+******** title = industrialization_events.4.t
+******** desc = industrialization_events.4.d
+******** picture = INDUSTRIALIZATION_eventPicture
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Does not have the country flag rotherham_plough_flag
+********* innovativeness = 15
+********* Any owned province:
+********** is_state = yes
+********** is_in_capital_area = yes
+********** enlightenment = 100
+********** Any of the following:
+*********** Produces 0 "Grain
+*********** Produces 0 "Livestock
+*********** has_terrain = 0 "Farmlands
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag rotherham_plough_flag
+********** set_saved_name:
+*********** Named "inventor_name"
+*********** scope = our country
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ is_in_capital_area = yes
+************ enlightenment = 100
+************ Any of the following:
+************* Produces 0 "Grain
+************* Produces 0 "Livestock
+************* has_terrain = 0 "Farmlands
+*********** save_event_target_as = invention_province
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: industrialization_events.4.a:
+********* event_target:invention_province:
+********** add_base_production = 2
+********** Adds the modifier "introduction_of_rotherham_plough" until the end of the campaign:
+*********** local_development_cost = -0.1
+*********** +10% production efficiency
+*********** trade_goods_size_modifier = 0.15
+********** add_half_industrialization_effect = yes
+******** after:
+********* clear_saved_name = inventor_name
+******* Gets the country event:
+******** ID is industrialization_events.5
+******** title = industrialization_events.5.t
+******** desc = industrialization_events.5.d
+******** picture = TEXTILE_INDUSTRY_eventPicture
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Does not have the country flag flying_shuttle_flag
+********* innovativeness = 20
+********* Any owned province:
+********** is_state = yes
+********** is_in_capital_area = yes
+********** enlightenment = 100
+********** Any of the following:
+*********** Produces 0 "Cloth
+*********** Produces 0 "Wool
+*********** Produces 0 "Cotton
+*********** Produces 0 "Silk
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag flying_shuttle_flag
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ is_in_capital_area = yes
+************ enlightenment = 100
+************ Any of the following:
+************* Produces 0 "Cloth
+************* Produces 0 "Wool
+************* Produces 0 "Cotton
+************* Produces 0 "Silk
+*********** save_event_target_as = invention_province
+********** set_saved_name:
+*********** Named "inventor_name"
+*********** scope = our country
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: industrialization_events.5.a:
+********* event_target:invention_province:
+********** add_base_production = 2
+********** Adds the modifier "introduction_of_flying_shuttle" until the end of the campaign:
+*********** local_development_cost = -0.1
+*********** +10% production efficiency
+*********** trade_goods_size_modifier = 0.1
+*********** local_unrest = 4
+********** add_half_industrialization_effect = yes
+******** after:
+********* clear_saved_name = inventor_name
+******* Gets the country event:
+******** ID is industrialization_events.6
+******** title = industrialization_events.6.t
+******** desc = industrialization_events.6.d
+******** picture = TEXTILE_INDUSTRY_eventPicture
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Has the country flag flying_shuttle_flag
+********* Does not have the country flag spinning_jenny_flag
+********* innovativeness = 20
+********* Any owned province:
+********** is_state = yes
+********** is_in_capital_area = yes
+********** enlightenment = 100
+********** Any of the following:
+*********** Produces 0 "Cloth
+*********** Produces 0 "Wool
+*********** Produces 0 "Cotton
+*********** Produces 0 "Silk
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag spinning_jenny_flag
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ is_in_capital_area = yes
+************ enlightenment = 100
+************ Any of the following:
+************* Produces 0 "Cloth
+************* Produces 0 "Wool
+************* Produces 0 "Cotton
+************* Produces 0 "Silk
+*********** save_event_target_as = invention_province
+********** set_saved_name:
+*********** Named "inventor_name"
+*********** scope = our country
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: industrialization_events.6.a:
+********* event_target:invention_province:
+********** add_base_production = 2
+********** Adds the modifier "introduction_of_spinning_jenny" until the end of the campaign:
+*********** local_development_cost = -0.1
+*********** +10% production efficiency
+*********** trade_goods_size_modifier = 0.1
+*********** local_unrest = 4
+********** add_half_industrialization_effect = yes
+******** after:
+********* clear_saved_name = inventor_name
+******* Gets the country event:
+******** ID is industrialization_events.7
+******** title = industrialization_events.7.t
+******** desc = industrialization_events.7.d
+******** picture = LARGE_SHIPYARD_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Any of the following:
+********** Has the country flag flying_shuttle_flag
+********** Has the country flag coke_blast_furnaces_flag
+********** Has the country flag atmospheric_engine_flag
+********** Has the country flag rotherham_plough_flag
+********* Any of the following:
+********** All of the following:
+*********** Has the country flag flying_shuttle_flag
+*********** Any owned province:
+************ Does not have the province flag canals_and_turnpikes_flag
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* Produces 0 "Cloth
+************* Produces 0 "Wool
+************* Produces 0 "Cotton
+************* Produces 0 "Silk
+********** All of the following:
+*********** Has the country flag atmospheric_engine_flag
+*********** Any owned province:
+************ Does not have the province flag canals_and_turnpikes_flag
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* has_latent_trade_goods = 0 "Coal
+************* Produces 0 "Iron
+************* Produces 0 "Coal
+************* Produces 0 "Copper
+********** All of the following:
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Any owned province:
+************ Does not have the province flag canals_and_turnpikes_flag
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* has_latent_trade_goods = 0 "Coal
+************* Produces 0 "Coal
+************* Produces 0 "Iron
+********** All of the following:
+*********** Has the country flag rotherham_plough_flag
+*********** Any owned province:
+************ Does not have the province flag canals_and_turnpikes_flag
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* Produces 0 "Grain
+************* Produces 0 "Livestock
+************* has_terrain = 0 "Farmlands
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Any of the following:
+************* All of the following:
+************** The owner of the province:
+*************** Has the country flag flying_shuttle_flag
+************** Does not have the province flag canals_and_turnpikes_flag
+************** province_viable_for_industrialization_events_trigger = yes
+************** Any of the following:
+*************** Produces 0 "Cloth
+*************** Produces 0 "Wool
+*************** Produces 0 "Cotton
+*************** Produces 0 "Silk
+************* All of the following:
+************** The owner of the province:
+*************** Has the country flag atmospheric_engine_flag
+************** Does not have the province flag canals_and_turnpikes_flag
+************** province_viable_for_industrialization_events_trigger = yes
+************** Any of the following:
+*************** has_latent_trade_goods = 0 "Coal
+*************** Produces 0 "Iron
+*************** Produces 0 "Coal
+*************** Produces 0 "Copper
+************* All of the following:
+************** The owner of the province:
+*************** Has the country flag coke_blast_furnaces_flag
+************** Does not have the province flag canals_and_turnpikes_flag
+************** province_viable_for_industrialization_events_trigger = yes
+************** Any of the following:
+*************** has_latent_trade_goods = 0 "Coal
+*************** Produces 0 "Coal
+*************** Produces 0 "Iron
+************* All of the following:
+************** The owner of the province:
+*************** Has the country flag rotherham_plough_flag
+************** Does not have the province flag canals_and_turnpikes_flag
+************** province_viable_for_industrialization_events_trigger = yes
+************** Any of the following:
+*************** Produces 0 "Grain
+*************** Produces 0 "Livestock
+*************** has_terrain = 0 "Farmlands
+*********** save_event_target_as = industrial_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 3 will be built
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 6 will be built
+********* Multiplies value by 1.25:
+********** Any owned province:
+*********** has_latent_trade_goods = 0 "Coal
+********* Multiplies value by 1.5:
+*********** No owned province:
+************ Has the province flag canals_and_turnpikes_flag
+********* Multiplies value by 0.5:
+********** Has at least 15 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 20 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 25 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 30 provinces where all of the following is true:
+******** Option: industrialization_events.7.a:
+********* Modifies treasury by -0.35 years worth of income
+********* event_target:industrial_province:
+********** add_base_production = 1
+********** Changes base tax by 1
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+*********** Adds the modifier "canals_and_turnpikes" until the end of the campaign:
+************ local_development_cost = -0.1
+************ local_friendly_movement_speed = 0.1
+*********** Sets the province flag canals_and_turnpikes_flag
+******** Option: industrialization_events.7.b:
+********* event_target:industrial_province:
+********** add_base_production = 1
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+*********** Adds the modifier "canals_and_turnpikes" until the end of the campaign:
+************ local_development_cost = -0.1
+************ local_friendly_movement_speed = 0.1
+*********** Sets the province flag canals_and_turnpikes_flag
+******* Gets the country event:
+******** ID is industrialization_events.8
+******** title = industrialization_events.8.t
+******** desc = industrialization_events.8.d
+******** picture = INDUSTRIALIZATION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* innovativeness = 25
+********* Any owned province:
+********** Does not have the province flag agricultural_revolution_province
+********** Does not have the province modifier "agricultural_revolution"
+********** province_viable_for_industrialization_events_trigger = yes
+********** Any of the following:
+*********** Produces 0 "Grain
+*********** Produces 0 "Livestock
+*********** has_terrain = 0 "Farmlands
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Does not have the province flag agricultural_revolution_province
+************ Does not have the province modifier "agricultural_revolution"
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* Produces 0 "Grain
+************* Produces 0 "Livestock
+************* has_terrain = 0 "Farmlands
+*********** save_event_target_as = agricultural_province
+********** Random owned province:
+*********** Limited to:
+************ Does not have the province flag agricultural_revolution_province
+************ Does not have the province modifier "agricultural_revolution"
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* Produces 0 "Grain
+************* Produces 0 "Livestock
+************* has_terrain = 0 "Farmlands
+************ has_latent_trade_goods = 0 "Coal
+*********** save_event_target_as = agricultural_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** Has the country flag rotherham_plough_flag
+********* Multiplies value by 1.25:
+********** Any owned province:
+*********** has_latent_trade_goods = 0 "Coal
+*********** Does not produce 0 "Coal
+********* Multiplies value by 1.5:
+*********** No owned province:
+************ Has the province flag agricultural_revolution_province
+********* Multiplies value by 0.5:
+********** Has at least 15 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 20 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 25 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 30 provinces where all of the following is true:
+******** Option: industrialization_events.8.a:
+********* event_target:agricultural_province:
+********** add_base_production = 1
+********** Changes base tax by 1
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+************ Does not have the province flag agricultural_revolution_province
+*********** Adds the modifier "agricultural_revolution" until the end of the campaign:
+************ +10% production efficiency
+************ trade_goods_size_modifier = 0.1
+*********** Sets the province flag agricultural_revolution_province
+******* Gets the country event:
+******** ID is industrialization_events.9
+******** title = industrialization_events.9.t
+******** desc = industrialization_events.9.d
+******** picture = URBANIZATION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* is_institution_enabled = industrialization
+********* Any of the following:
+********** Has the country flag flying_shuttle_flag
+********** Has the country flag coke_blast_furnaces_flag
+********** Has the country flag atmospheric_engine_flag
+********** Has the country flag rotherham_plough_flag
+********* Any of the following:
+********** All of the following:
+*********** Has the country flag flying_shuttle_flag
+*********** Any owned province:
+************ Does not have the province modifier "economic_urbanization_modifier"
+************ Does not have the province flag had_economic_urbanization
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* Produces 0 "Cloth
+************* Produces 0 "Wool
+************* Produces 0 "Cotton
+************* Produces 0 "Silk
+********** All of the following:
+*********** Has the country flag atmospheric_engine_flag
+*********** Any owned province:
+************ Does not have the province modifier "economic_urbanization_modifier"
+************ Does not have the province flag had_economic_urbanization
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* has_latent_trade_goods = 0 "Coal
+************* Produces 0 "Iron
+************* Produces 0 "Coal
+************* Produces 0 "Copper
+********** All of the following:
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Any owned province:
+************ Does not have the province modifier "economic_urbanization_modifier"
+************ Does not have the province flag had_economic_urbanization
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* has_latent_trade_goods = 0 "Coal
+************* Produces 0 "Coal
+************* Produces 0 "Iron
+************* Produces 0 "Naval Supplies
+********** All of the following:
+*********** Has the country flag rotherham_plough_flag
+*********** Any owned province:
+************ Does not have the province modifier "economic_urbanization_modifier"
+************ Does not have the province flag had_economic_urbanization
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* Produces 0 "Grain
+************* Produces 0 "Livestock
+************* has_terrain = 0 "Farmlands
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Any of the following:
+************* All of the following:
+************** The owner of the province:
+*************** Has the country flag flying_shuttle_flag
+************** Does not have the province modifier "economic_urbanization_modifier"
+************** Does not have the province flag had_economic_urbanization
+************** province_viable_for_industrialization_events_trigger = yes
+************** Any of the following:
+*************** Produces 0 "Cloth
+*************** Produces 0 "Wool
+*************** Produces 0 "Cotton
+*************** Produces 0 "Silk
+************* All of the following:
+************** The owner of the province:
+*************** Has the country flag atmospheric_engine_flag
+************** Does not have the province modifier "economic_urbanization_modifier"
+************** Does not have the province flag had_economic_urbanization
+************** province_viable_for_industrialization_events_trigger = yes
+************** Any of the following:
+*************** has_latent_trade_goods = 0 "Coal
+*************** Produces 0 "Iron
+*************** Produces 0 "Coal
+*************** Produces 0 "Copper
+************* All of the following:
+************** The owner of the province:
+*************** Has the country flag coke_blast_furnaces_flag
+************** Does not have the province modifier "economic_urbanization_modifier"
+************** Does not have the province flag had_economic_urbanization
+************** province_viable_for_industrialization_events_trigger = yes
+************** Any of the following:
+*************** has_latent_trade_goods = 0 "Coal
+*************** Produces 0 "Coal
+*************** Produces 0 "Iron
+*************** Produces 0 "Naval Supplies
+************* All of the following:
+************** The owner of the province:
+*************** Has the country flag rotherham_plough_flag
+************** Does not have the province modifier "economic_urbanization_modifier"
+************** Does not have the province flag had_economic_urbanization
+************** province_viable_for_industrialization_events_trigger = yes
+************** Any of the following:
+*************** Produces 0 "Grain
+*************** Produces 0 "Livestock
+*************** has_terrain = 0 "Farmlands
+************* All of the following:
+************** The owner of the province:
+*************** Has the country flag rotherham_plough_flag
+************** Does not have the province modifier "economic_urbanization_modifier"
+************** Does not have the province flag had_economic_urbanization
+************** province_viable_for_industrialization_events_trigger = yes
+************** Any of the following:
+*************** is_in_capital_area = yes
+*************** In the continent CAPITAL
+*********** save_event_target_as = industrialization_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 3 will be built
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 6 will be built
+********* Multiplies value by 1.25:
+********** Any owned province:
+*********** has_latent_trade_goods = 0 "Coal
+********* Multiplies value by 1.5:
+*********** No owned province:
+************ Has the province flag had_economic_urbanization
+********* Multiplies value by 0.5:
+********** Has at least 15 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 20 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 25 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 30 provinces where all of the following is true:
+******** Option: industrialization_events.9.a:
+********* event_target:industrialization_province:
+********** add_base_production = 1
+********** Changes base tax by 1
+********** add_quarter_industrialization_effect = yes
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+************ Does not have the province flag had_economic_urbanization
+*********** Adds the modifier "economic_urbanization_modifier" until the end of the campaign:
+************ local_build_cost = -0.15
+************ +10% provincial tax income
+*********** Sets the province flag had_economic_urbanization
+********* Random owned province:
+********** Limited to:
+*********** unindustrialized_province_trigger = yes
+*********** base_manpower = 3
+********** add_base_manpower = -2
+******* Gets the country event:
+******** ID is industrialization_events.10
+******** title = industrialization_events.10.t
+******** desc = industrialization_events.10.d
+******** picture = TEXTILE_INDUSTRY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* is_institution_enabled = industrialization
+********* Any of the following:
+********** Has the country flag flying_shuttle_flag
+********** Has the country flag spinning_jenny_flag
+********* Any owned province:
+********** province_viable_for_industrialization_events_trigger = yes
+********** Any of the following:
+*********** Produces 0 "Wool
+*********** Produces 0 "Cotton
+********** has_latent_trade_goods_false = 0 "Coal
+********** province_without_special_goods_produced_trigger = yes
+********** Has the 0 "Textile Manufactory building
+********** base_manpower = 2
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* Produces 0 "Wool
+************* Produces 0 "Cotton
+************ has_latent_trade_goods_false = 0 "Coal
+************ Has the 0 "Textile Manufactory building
+************ base_manpower = 2
+*********** save_event_target_as = industrialization_province
+********** Random province in the world:
+*********** Limited to:
+************ Produces 0 "Cloth
+************ Has been discovered by our country
+*********** save_event_target_as = old_cloth_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** Has the country flag spinning_jenny_flag
+********* Multiplies value by 2:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** 2 will be built
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** 4 will be built
+********* Multiplies value by 1.5:
+*********** No owned province:
+************ Has the province flag swapped_to_cloth
+********* Multiplies value by 0.5:
+********** Has at least 3 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 5 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 8 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 10 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 12 provinces where all of the following is true:
+******** Option: industrialization_events.10.a:
+********* event_target:industrialization_province:
+********** Changes trade goods produced to 0 "Cloth
+********** add_base_manpower = -1
+********** Sets the province flag swapped_to_cloth
+********** add_quarter_industrialization_effect = yes
+******* Gets the country event:
+******** ID is industrialization_events.11
+******** title = industrialization_events.11.t
+******** desc = industrialization_events.11.d
+******** picture = PRINTING_PRESS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* is_institution_enabled = industrialization
+********* Has the country flag atmospheric_engine_flag
+********* Any owned province:
+********** province_viable_for_industrialization_events_trigger = yes
+********** Any of the following:
+*********** Produces 0 "Cotton
+*********** Produces 0 "Naval Supplies
+*********** Produces 0 "Wool
+********** Any of the following:
+*********** Has the 0 "Workshop building
+*********** Has the 0 "Counting House building
+********** province_without_special_goods_produced_trigger = yes
+********** base_manpower = 2
+********** has_latent_trade_goods_false = 0 "Coal
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ enlightenment = 100
+************ is_state = yes
+************ Any of the following:
+************* Produces 0 "Cotton
+************* Produces 0 "Naval Supplies
+************* Produces 0 "Wool
+************ Any of the following:
+************* Has the 0 "Workshop building
+************* Has the 0 "Counting House building
+************ province_without_special_goods_produced_trigger = yes
+************ base_manpower = 2
+************ has_latent_trade_goods_false = 0 "Coal
+*********** save_event_target_as = industrialization_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** 2 will be built
+********* Multiplies value by 1.25:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** 3 will be built
+********* Multiplies value by 0.5:
+********** Has at least 3 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 1 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 2 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 3 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 5 provinces where all of the following is true:
+******** Option: industrialization_events.11.a:
+********* event_target:industrialization_province:
+********** Changes trade goods produced to 0 "Paper
+********** add_base_manpower = -1
+********** Sets the province flag swapped_to_paper
+********** add_quarter_industrialization_effect = yes
+******* Gets the country event:
+******** ID is industrialization_events.12
+******** title = industrialization_events.12.t
+******** desc = industrialization_events.12.d
+******** picture = URBANIZATION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* is_institution_enabled = industrialization
+********* Has the country flag atmospheric_engine_flag
+********* Has the global flag lead_crystal_happened
+********* Any owned province:
+********** province_viable_for_industrialization_events_trigger = yes
+********** base_manpower = 2
+********** Any of the following:
+*********** Has the 0 "Workshop building
+*********** Has the 0 "Counting House building
+********** Any of the following:
+*********** Produces 0 "Cotton
+*********** Produces 0 "Naval Supplies
+*********** Produces 0 "Wool
+********** has_latent_trade_goods_false = 0 "Coal
+********** province_without_special_goods_produced_trigger = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ province_viable_for_industrialization_events_trigger = yes
+************ base_manpower = 2
+************ Any of the following:
+************* Produces 0 "Cotton
+************* Produces 0 "Naval Supplies
+************* Produces 0 "Wool
+************ Any of the following:
+************* Has the 0 "Workshop building
+************* Has the 0 "Counting House building
+************ has_latent_trade_goods_false = 0 "Coal
+************ province_without_special_goods_produced_trigger = yes
+*********** save_event_target_as = glass_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** 2 will be built
+********* Multiplies value by 1.25:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** 3 will be built
+********* Multiplies value by 0.5:
+********** Has at least 3 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 1 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 2 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 3 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 4 provinces where all of the following is true:
+******** Option: industrialization_events.12.a:
+********* event_target:glass_province:
+********** Changes trade goods produced to 0 "Glass
+********** add_base_manpower = -1
+********** Sets the province flag swapped_to_glass
+********** add_quarter_industrialization_effect = yes
+******* Gets the country event:
+******** ID is industrialization_events.13
+******** title = industrialization_events.13.t
+******** desc = industrialization_events.13.d
+******** picture = URBANIZATION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* is_institution_enabled = industrialization
+********* Any of the following:
+********** coal = 1
+********** Controls at least 6% of the 0 "Coal market
+********* Any owned province:
+********** province_viable_for_industrialization_events_trigger = yes
+********** Any of the following:
+*********** Has the 0 "Naval Equipment Manufactory building
+*********** Has the 0 "Weapons Manufactory building
+*********** Has the 0 "Textile Manufactory building
+*********** Has the 0 "Mill building
+*********** Has the 0 "Workshop building
+*********** Has the 0 "Counting House building
+*********** Has the 0 "Grand Shipyard building
+*********** Produces 0 "Coal
+*********** Any bordering province:
+************ The province is owned by our country
+************ Produces 0 "Coal
+********** Does not have the province flag industrial_urbanization
+********* Any owned province:
+********** unindustrialized_province_trigger = yes
+********** Has a base tax of at least 2
+********** base_manpower = 2
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ province_viable_for_industrialization_events_trigger = yes
+************ Any of the following:
+************* Has the 0 "Naval Equipment Manufactory building
+************* Has the 0 "Weapons Manufactory building
+************* Has the 0 "Textile Manufactory building
+************* Has the 0 "Mill building
+************* Has the 0 "Furnace building
+************* Has the 0 "Workshop building
+************* Has the 0 "Counting House building
+************* Has the 0 "Grand Shipyard building
+************ Does not have the province flag industrial_urbanization
+*********** Sets the province flag industrial_urbanization
+*********** save_event_target_as = urbanization_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 3 will be built
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 6 will be built
+********* Multiplies value by 1.25:
+********** coal = 3
+********** Has less than 3 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 3 of the 0 "Furnace building
+********* Multiplies value by 1.25:
+********** coal = 5
+********** Has less than 5 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 5 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+*********** No owned province:
+************ Has the province flag industrial_urbanization
+********* Multiplies value by 0.5:
+********** Has at least 8 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 12 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 13 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 15 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 18 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 20 provinces where all of the following is true:
+******** Option: industrialization_events.13.a:
+********* event_target:urbanization_province:
+********** add_base_production = 1
+********** Changes base tax by 1
+********** Adds the modifier "industrial_urbanization_modifier" until the end of the campaign:
+*********** local_build_cost = -0.15
+*********** local_development_cost = -0.1
+*********** local_unrest = 4
+********** add_quarter_industrialization_effect = yes
+********* Random owned province:
+********** Limited to:
+*********** unindustrialized_province_trigger = yes
+*********** Has a base tax of at least 2
+*********** base_manpower = 2
+********** add_base_manpower = -1
+********** Changes base tax by -1
+******* Gets the country event:
+******** ID is industrialization_events.14
+******** title = industrialization_events.14.t
+******** desc = industrialization_events.14.d
+******** picture = URBANIZATION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* is_institution_enabled = industrialization
+********* Any of the following:
+********** coal = 1
+********** Controls at least 6% of the 0 "Coal market
+********* Has at least 1 provinces producing iron
+********* Any owned province:
+********** province_viable_for_industrialization_events_trigger = yes
+********** industrialized_province_trigger = yes
+********** Any of the following:
+*********** Produces 0 "Iron
+*********** Produces 0 "Copper
+********** Any of the following:
+*********** Has the 0 "Weapons Manufactory building
+*********** Has the 0 "Counting House building
+*********** Any bordering province:
+************ The province is owned by our country
+************ Produces 0 "Coal
+********** Does not have the province flag metalwork_center
+********* Any owned province:
+********** unindustrialized_province_trigger = yes
+********** Has a base tax of at least 2
+********** base_manpower = 2
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ province_viable_for_industrialization_events_trigger = yes
+************ industrialized_province_trigger = yes
+************ Any of the following:
+************* Produces 0 "Iron
+************* Produces 0 "Copper
+************ Any of the following:
+************* Has the 0 "Weapons Manufactory building
+************* Has the 0 "Counting House building
+************* Any bordering province:
+************** The province is owned by our country
+************** Produces 0 "Coal
+************ Does not have the province flag metalwork_center
+*********** Sets the province flag metalwork_center
+*********** save_event_target_as = iron_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** 2 will be built
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** 3 will be built
+********* Multiplies value by 1.25:
+********** coal = 3
+********** Has less than 3 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 3 of the 0 "Furnace building
+********* Multiplies value by 1.25:
+********** coal = 5
+********** Has less than 5 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 5 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+*********** No owned province:
+************ Has the province flag metalwork_center
+********* Multiplies value by 0.5:
+********** Has at least 4 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 6 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 8 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 10 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 12 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 14 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 15 provinces where all of the following is true:
+******** Option: industrialization_events.14.a:
+********* event_target:iron_province:
+********** add_base_production = 4
+********** Adds the modifier "metalworks_modifier" until the end of the campaign:
+*********** trade_goods_size_modifier = 0.15
+*********** +50% trade goods output
+********** add_quarter_industrialization_effect = yes
+********* Random owned province:
+********** Limited to:
+*********** unindustrialized_province_trigger = yes
+*********** Has a base tax of at least 2
+*********** base_manpower = 2
+********** add_base_manpower = -1
+********** Changes base tax by -1
+******* Gets the country event:
+******** ID is industrialization_events.15
+******** title = industrialization_events.15.t
+******** desc = industrialization_events.15.d
+******** picture = TEXTILE_INDUSTRY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* is_institution_enabled = industrialization
+********* Any of the following:
+********** coal = 1
+********** Controls at least 6% of the 0 "Coal market
+********* Any of the following:
+********** Has at least 1 provinces producing cloth
+********** silk = 1
+********* Any owned province:
+********** province_viable_for_industrialization_events_trigger = yes
+********** industrialized_province_trigger = yes
+********** Any of the following:
+*********** Produces 0 "Cloth
+*********** Produces 0 "Silk
+********** Any of the following:
+*********** Has the 0 "Textile Manufactory building
+*********** Has the 0 "Counting House building
+*********** Any bordering province:
+************ The province is owned by our country
+************ Produces 0 "Coal
+********** Does not have the province flag textile_center
+********* Any owned province:
+********** unindustrialized_province_trigger = yes
+********** Has a base tax of at least 2
+********** base_manpower = 2
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ province_viable_for_industrialization_events_trigger = yes
+************ industrialized_province_trigger = yes
+************ Any of the following:
+************* Produces 0 "Cloth
+************* Produces 0 "Silk
+************ Any of the following:
+************* Has the 0 "Textile Manufactory building
+************* Has the 0 "Counting House building
+************* Any bordering province:
+************** The province is owned by our country
+************** Produces 0 "Coal
+************ Does not have the province flag textile_center
+*********** Sets the province flag textile_center
+*********** save_event_target_as = textile_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 2 will be built
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 4 will be built
+********* Multiplies value by 1.25:
+********** coal = 3
+********** Has less than 3 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 3 of the 0 "Furnace building
+********* Multiplies value by 1.25:
+********** coal = 5
+********** Has less than 5 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 5 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+*********** No owned province:
+************ Has the province flag textile_center
+********* Multiplies value by 0.5:
+********** Has at least 4 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 5 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 7 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 9 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 11 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 13 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 15 provinces where all of the following is true:
+******** Option: industrialization_events.15.a:
+********* event_target:textile_province:
+********** add_base_production = 4
+********** Adds the modifier "textile_mills_modifier" until the end of the campaign:
+*********** trade_goods_size_modifier = 0.15
+*********** +50% trade goods output
+********** add_quarter_industrialization_effect = yes
+********* Random owned province:
+********** Limited to:
+*********** unindustrialized_province_trigger = yes
+*********** Has a base tax of at least 2
+*********** base_manpower = 2
+********** add_base_manpower = -1
+********** Changes base tax by -1
+******* Gets the country event:
+******** ID is industrialization_events.16
+******** title = industrialization_events.16.t
+******** desc = industrialization_events.16.d
+******** picture = LARGE_SHIPYARD_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* is_institution_enabled = industrialization
+********* Any of the following:
+********** coal = 1
+********** Controls at least 6% of the 0 "Coal market
+********* Any owned province:
+********** province_viable_for_industrialization_events_trigger = yes
+********** industrialized_province_trigger = yes
+********** Produces 0 "Naval Supplies
+********** Any of the following:
+*********** Has the 0 "Naval Equipment Manufactory building
+*********** Has the 0 "Counting House building
+*********** Any bordering province:
+************ The province is owned by our country
+************ Produces 0 "Coal
+********** Does not have the province flag shipyards_of_x
+********* Any owned province:
+********** unindustrialized_province_trigger = yes
+********** Has a base tax of at least 2
+********** base_manpower = 2
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ province_viable_for_industrialization_events_trigger = yes
+************ industrialized_province_trigger = yes
+************ Produces 0 "Naval Supplies
+************ Any of the following:
+************* Has the 0 "Naval Equipment Manufactory building
+************* Has the 0 "Counting House building
+************* Any bordering province:
+************** The province is owned by our country
+************** Produces 0 "Coal
+************ Does not have the province flag shipyards_of_x
+*********** Sets the province flag shipyards_of_x
+*********** save_event_target_as = ship_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 1.5:
+********** Has the country flag atmospheric_engine_flag
+********* Multiplies value by 1.5:
+********** Has the country flag watt_steam_engine_flag
+********* Multiplies value by 1.25:
+********** coal = 3
+********** Has less than 3 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 3 of the 0 "Furnace building
+********* Multiplies value by 1.25:
+********** coal = 5
+********** Has less than 5 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 5 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+*********** No owned province:
+************ Has the province flag shipyards_of_x
+********* Multiplies value by 0.5:
+********** Has at least 4 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 5 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 7 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 9 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 11 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 13 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 15 provinces where all of the following is true:
+******** Option: industrialization_events.16.a:
+********* event_target:ship_province:
+********** add_base_production = 4
+********** Adds the modifier "shipyards_of_x_modifier" until the end of the campaign:
+*********** trade_goods_size_modifier = 0.15
+*********** local_ship_cost = -0.15
+*********** local_ship_repair = 0.15
+********** add_quarter_industrialization_effect = yes
+********* Random owned province:
+********** Limited to:
+*********** unindustrialized_province_trigger = yes
+*********** Has a base tax of at least 2
+*********** base_manpower = 2
+********** add_base_manpower = -1
+********** Changes base tax by -1
+******* Gets the country event:
+******** ID is industrialization_events.17
+******** title = industrialization_events.17.t
+******** desc = industrialization_events.17.d
+******** picture = RIOTING_workers_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* is_institution_enabled = industrialization
+********* Any owned province:
+********** industrialized_province_trigger = yes
+********** Does not have the province flag luddite_protests
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ industrialized_province_trigger = yes
+************ Does not have the province flag luddite_protests
+*********** Sets the province flag luddite_protests
+*********** save_event_target_as = luddite_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 3 will be built
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 6 will be built
+********* Multiplies value by 1.25:
+********** coal = 3
+********** Has less than 3 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 3 of the 0 "Furnace building
+********* Multiplies value by 1.25:
+********** coal = 5
+********** Has less than 5 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 5 of the 0 "Furnace building
+********* Multiplies value by 0.5:
+********** Has at least 10 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 12 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 14 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 16 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 18 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 20 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 22 provinces where all of the following is true:
+******** Option: industrialization_events.17.a:
+********* AI chance:
+********** Base chance of 100
+********* event_target:luddite_province:
+********** add_devastation = 25
+********** Spawns revolt of size 2 of 0 "Peasant rebels
+******** Option: industrialization_events.17.b:
+********* AI chance:
+********** Base chance of 0
+********* event_target:luddite_province:
+********** add_devastation = 10
+********** Adds the modifier "gave_in_to_luddite_protests" until the end of the campaign:
+*********** trade_goods_size_modifier = -0.25
+*********** local_unrest = -4
+******* Gets the country event:
+******** ID is industrialization_events.18
+******** title = industrialization_events.18.t
+******** desc = industrialization_events.18.d
+******** picture = RIOTING_workers_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Any owned province:
+********** industrialized_province_trigger = yes
+********* Any owned province:
+********** unindustrialized_province_trigger = yes
+********** province_viable_for_industrialization_events_trigger = yes
+********** Does not have the province flag impoverished_artisans
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ unindustrialized_province_trigger = yes
+************ province_viable_for_industrialization_events_trigger = yes
+************ Does not have the province flag impoverished_artisans
+*********** Sets the province flag impoverished_artisans
+*********** save_event_target_as = poor_artisans_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 3 will be built
+********* Multiplies value by 1.5:
+********** calc_true_if:
+*********** Has the country flag atmospheric_engine_flag
+*********** Has the country flag coke_blast_furnaces_flag
+*********** Has the country flag watt_steam_engine_flag
+*********** Has the country flag rotherham_plough_flag
+*********** Has the country flag flying_shuttle_flag
+*********** Has the country flag spinning_jenny_flag
+*********** 6 will be built
+********* Multiplies value by 1.25:
+********** coal = 3
+********** Has less than 3 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 3 of the 0 "Furnace building
+********* Multiplies value by 1.25:
+********** coal = 5
+********** Has less than 5 of the 0 "Furnace building
+********* Multiplies value by 1.5:
+********** Has at least 5 of the 0 "Furnace building
+********* Multiplies value by 0.5:
+********** Has at least 8 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 10 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 12 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 14 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 16 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 18 provinces where all of the following is true:
+********* Multiplies value by 0.25:
+********** Has at least 20 provinces where all of the following is true:
+******** Option: industrialization_events.18.a:
+********* AI chance:
+********** Base chance of 100
+********* event_target:poor_artisans_province:
+********** Adds the modifier "impoverished_artisans" until the end of the campaign:
+*********** local_unrest = 4
+*********** -25% provincial tax income
+*********** trade_goods_size_modifier = -0.15
+******** Option: industrialization_events.18.b:
+********* AI chance:
+********** Base chance of 0
+********* Modifies treasury by -0.05 years worth of income
+******* Gets the country event:
+******** ID is industrialization_events.19
+******** title = industrialization_events.19.t
+******** desc = industrialization_events.19.d
+******** picture = PLAGUE_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Any owned province:
+********** industrialized_province_trigger = yes
+********** development = 20
+********** Does not have the province flag spread_of_disease
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ industrialized_province_trigger = yes
+************ development = 20
+************ Does not have the province flag spread_of_disease
+*********** Sets the province flag spread_of_disease
+*********** save_event_target_as = disease_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 0.5:
+********** Has at least 20 provinces where all of the following is true:
+******** Option: industrialization_events.19.a:
+********* AI chance:
+********** Base chance of 0
+********* Modifies treasury by -0.15 years worth of income
+******** Option: industrialization_events.19.b:
+********* AI chance:
+********** Base chance of 100
+********* event_target:disease_province:
+********** add_devastation = 50
+******* Gets the country event:
+******** ID is industrialization_events.20
+******** title = industrialization_events.20.t
+******** desc = industrialization_events.20.d
+******** picture = RIOTING_workers_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Any owned province:
+********** industrialized_province_trigger = yes
+********** Does not have the province flag mining_accident
+********** Any of the following:
+*********** Produces 0 "Coal
+*********** Produces 0 "Iron
+*********** Produces 0 "Copper
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ industrialized_province_trigger = yes
+************ Any of the following:
+************* Produces 0 "Coal
+************* Produces 0 "Iron
+************* Produces 0 "Copper
+************ Does not have the province flag mining_accident
+*********** Sets the province flag mining_accident
+*********** save_event_target_as = mining_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 0.5:
+********** Has at least 20 provinces where all of the following is true:
+******** Option: industrialization_events.20.a:
+********* event_target:mining_province:
+********** add_devastation = 25
+******* Gets the country event:
+******** ID is industrialization_events.21
+******** title = industrialization_events.21.t
+******** desc = industrialization_events.21.d
+******** picture = PLAGUE_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* Any owned province:
+********** industrialized_province_trigger = yes
+********** Does not have the province flag 0 "The Great Fire of New York
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ industrialized_province_trigger = yes
+************ Does not have the province flag 0 "The Great Fire of New York
+*********** Sets the province flag 0 "The Great Fire of New York
+*********** save_event_target_as = fire_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 0.5:
+********** Has at least 20 provinces where all of the following is true:
+******** Option: industrialization_events.21.a:
+********* event_target:fire_province:
+********** add_devastation = 50
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+************ Does not have the province modifier "fire_compensation"
+*********** Adds the modifier "fire_compensation" until the end of the campaign:
+************ local_unrest = -2
+************ -25% provincial tax income
+************ trade_goods_size_modifier = -0.2
+******** Option: industrialization_events.21.b:
+********* Modifies treasury by -0.15 years worth of income
+********* event_target:fire_province:
+********** add_devastation = 50
+******* Gets the country event:
+******** ID is industrialization_events.22
+******** title = industrialization_events.22.t
+******** desc = industrialization_events.22.d
+******** picture = TEXTILE_INDUSTRY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rule Britannia
+********* has_institution = enlightenment
+********* calc_true_if:
+********** Every owned province:
+*********** industrialized_province_trigger = yes
+*********** Produces 0 "Cloth
+********** 3 will be built
+********* Any owned province:
+********** unindustrialized_province_trigger = yes
+********** Does not have the province flag overseas_production_province_flag
+********** Not in the continent CAPITAL
+********** is_in_capital_area_false = no
+********** Produces 0 "Cloth
+********** base_production = 2
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ unindustrialized_province_trigger = yes
+************ Does not have the province flag overseas_production_province_flag
+************ Not in the continent CAPITAL
+************ is_in_capital_area_false = no
+************ Produces 0 "Cloth
+************ base_production = 2
+*********** Sets the province flag overseas_production_province_flag
+*********** save_event_target_as = overseas_production_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 0.5:
+********** Has at least 2 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 4 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 6 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 8 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 10 provinces where all of the following is true:
+********* Multiplies value by 0.5:
+********** Has at least 12 provinces where all of the following is true:
+******** Option: industrialization_events.22.a:
+********* Changes diplomatic power stored by -25
+******** Option: industrialization_events.22.b:
+********* event_target:overseas_production_province:
+********** If:
+*********** Limited to:
+************ In the continent 0 "Europe
+*********** Changes trade goods produced to 0 "Wool
+********** else_if:
+*********** Limited to:
+************ Any of the following:
+************* Region is west_siberia_region
+************* Region is east_siberia_region
+*********** Changes trade goods produced to 0 "Wool
+********** else:
+*********** Changes trade goods produced to 0 "Cotton
+********** add_base_production = -1
+********* Random owned province:
+********** Limited to:
+*********** industrialized_province_trigger = yes
+*********** Produces 0 "Cloth
+********** add_base_production = 1

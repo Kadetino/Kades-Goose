@@ -1,0 +1,229 @@
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Jianzhou
+***** 0 "Manchu does not exist
+**** Country is 0 "Manchu
+*** Year is at least 1584
+*** Year is less than 1626
+** Mean time to happen
+*** Base mean time to happen of 126 months
+** Option: 1 "A Great Day for the Manchu Peoples:
+*** add_army_professionalism = 0.05
+*** Changes administrative power stored by 100
+*** Changes diplomatic power stored by 100
+*** Changes military power stored by 100
+* Gets the country event:
+** ID is flavor_mch.2
+** title = 0 "The Eastern Mongols Assimilated
+** desc = 0 "Several large Eastern Mongol tribes unite under Nurhaci and his number of 'flags' (armies) increases from four to eight. It is now that he sets his goal to conquer China. In 1616 he takes the title 'Kin-Khan' to show that his people descend from the Kin-Tungus. He also takes the name 'Aisin Giorin (Golden tribe). In 1625 he attacked China, a development that ultimately ended in a total Manchurian victory.
+** picture = HORDE_ON_HORSEBACK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Manchu
+*** 0 "Ming exists
+*** Not a vassal of 0 "Ming
+*** Year is at least 1600
+*** Year is less than 1700
+*** Is not at war
+*** Any owned province:
+**** Any bordering province:
+***** The province is owned by 0 "Ming
+***** The province is not claimed by 0 "Manchu
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "We are ready to attack:
+*** Every owned province:
+**** Every bordering province:
+***** Limited to:
+****** The province is owned by 0 "Ming
+****** The province is not claimed by 0 "Manchu
+***** Adds claim to our country
+* Gets the country event:
+** ID is flavor_mch.3
+** title = 0 "The Manchu Army Reforms
+** desc = 0 " Now that the Manchu are firmly in control of northern China, it may now be time to use Manchu military expertise to reform the old Chinese army. However, this will likely be expensive and many in the military will resent such an attempt. What shall we do?
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Manchu
+**** All of the following:
+***** Country is 0 "Qing
+***** 0 "Manchu does not exist
+*** Year is at least 1600
+*** Year is less than 1700
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Yes, reform the military, as the old Chinese ways are inferior:
+*** Changes military power stored by 50
+*** Changes army tradition by 20
+** Option: 0 "Bah! What could barbarians teach the nation of Sun Tzu?:
+*** Changes administrative power stored by 50
+* Gets the country event:
+** ID is flavor_mch.4
+** title = 0 "The Manchu Advance
+** desc = 0 "Although we are now at peace with China, it is obvious that they are a nation in the process of disintegration. Surely it would be wise to attack them while they are so weak and make even more spectacular advances!
+** picture = LAND_MILITARY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Is not at war
+*** 0 "Ming exists
+*** Not a vassal of 0 "Ming
+*** Country is 0 "Manchu
+*** Year is at least 1600
+*** Year is less than 1650
+*** Not at war with 0 "Ming
+*** Any owned province:
+**** Any bordering province:
+***** The province is owned by 0 "Ming
+***** The province is not claimed by our country
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Attack them now while they are weak!:
+*** Gives the 0 "Border Friction casus belli against 0 "Ming
+** Option: 0 "No, we will leave them be:
+*** 0 "Ming:
+**** Adds the opinion modifier "0 "Pleased" towards our country
+* Gets the country event:
+** ID is flavor_mch.5
+** title = 0 "The Revolt of the Three Feudatories
+** desc = 1 "Three feudal lords in the south, once Ming generals who have since thrown in their lot with the Manchu, have risen up in rebellion! Ordered to give up their offices and return to Beijing, they have instead conspired against us and raised an army. They declare their cause to be to 'oppose the Qing and restore the Ming', though several lords have proclaimed themselves the true Emperor despite their lack of relation to the Zhu family. A great civil war has begun; we must defend the Qing realm from these traitors!
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Qing
+*** Any of the following:
+**** 0 "Yue:
+***** Is a vassal of our country
+***** Liberty desire is at least 25
+**** 0 "Wu:
+***** Is a vassal of our country
+***** Liberty desire is at least 25
+**** 0 "Dali:
+***** Is a vassal of our country
+***** Liberty desire is at least 25
+**** 0 "Zhou:
+***** Is a vassal of our country
+***** Liberty desire is at least 25
+** Mean time to happen
+*** Base mean time to happen of 20 years
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** 0 "Zhou:
+******* Is a vassal of our country
+***** If:
+****** Limited to:
+******* 0 "Wu:
+******** Is a vassal of our country
+****** 0 "Wu:
+******* create_alliance = 0 "Zhou
+***** If:
+****** Limited to:
+******* 0 "Yue:
+******** Is a vassal of our country
+****** 0 "Yue:
+******* create_alliance = 0 "Zhou
+***** If:
+****** Limited to:
+******* 0 "Dali:
+******** Is a vassal of our country
+****** 0 "Dali:
+******* create_alliance = 0 "Zhou
+**** else:
+***** Random country:
+****** Limited to:
+******* Is a vassal of our country
+******* Any of the following:
+******** Country is 0 "Zhou
+******** Country is 0 "Wu
+******** Country is 0 "Yue
+******** Country is 0 "Dali
+****** save_event_target_as = three_feudatories_leader
+****** Sets the country flag three_feudatories_leader_flag
+***** If:
+****** Limited to:
+******* 0 "Wu:
+******** Does not have the country flag three_feudatories_leader_flag
+******** Is a vassal of our country
+****** 0 "Wu:
+******* create_alliance = event_target:three_feudatories_leader
+***** If:
+****** Limited to:
+******* 0 "Yue:
+******** Does not have the country flag three_feudatories_leader_flag
+******** Is a vassal of our country
+****** 0 "Yue:
+******* create_alliance = event_target:three_feudatories_leader
+***** If:
+****** Limited to:
+******* 0 "Dali:
+******** Does not have the country flag three_feudatories_leader_flag
+******** Is a vassal of our country
+****** 0 "Dali:
+******* create_alliance = event_target:three_feudatories_leader
+** Option: 0 "Let them revolt:
+*** If:
+**** Limited to:
+***** 0 "Zhou:
+****** Is a vassal of our country
+**** 0 "Zhou:
+***** Declares war on 0 "Independence using the our country casus belli
+*** else:
+**** event_target:three_feudatories_leader:
+***** Declares war on 0 "Independence using the our country casus belli
+* Gets the country event:
+** ID is flavor_mch.6
+** title = 0 "The Expulsion of the Jesuits
+** desc = 0 "Due to recent events, it now seems that the Jesuits may have outlived their usefulness. Although their knowledge is great, it is foreign to us and sometimes causes much commotion among our scholars and the common folk, disrupting the stability of our realm. They have been for decades interfering in the internal affairs of our nation - the final straw was their meddling in the recent succession. Perhaps it is time for them to go.
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Qing
+*** Year is at least 1700
+*** Year is less than 1800
+*** Is not in 0 "Christian's religion group
+*** Any of the following:
+**** 0 "Portugal:
+***** Has the country modifier "0 "The Societas Jesu"
+**** 0 "Spain:
+***** Has the country modifier "0 "The Societas Jesu"
+*** Any owned province:
+**** Any bordering province:
+***** Any of the following:
+****** The province is owned by 0 "Portugal
+****** The province is owned by 0 "Spain
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Expel them!:
+*** add_stability_or_adm_power = yes
+** Option: 0 "No, they are too valuable!:
+*** Adds the modifier "0 "Jesuits" for the rest of the campaign:
+**** -5% technology cost
+* Gets the country event:
+** ID is flavor_mch.7
+** title = 0 "The Appointment of Heshen
+** desc = 0 "An up-and-coming minister has recently come to our attention. His name is Heshen, and he is certainly wise in the ways of diplomacy and administration. However, rumor has it that he is also grossly corrupt, mixing his political excellence with greed and favoritism. Should we make him our chief minister?
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Qing
+*** Year is at least 1770
+*** Year is less than 1800
+*** Does not employ the advisor with the id 380
+*** The advisor with the id 380 does not exist
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Appoint him despite his faults!:
+*** add_meritocracy_effect = yes
+*** Creates an advisor of the 0 "Statesman type:
+**** discount = yes
+**** Culture is 1 "Jurchen
+**** Follows the 0 "Confucian religion
+**** With a skill level of 2
+**** Named "Heshen"
+*** add_corruption = 0.5
+** Option: 0 "No, such corruption could ruin the state!:
+*** Changes administrative power stored by 25

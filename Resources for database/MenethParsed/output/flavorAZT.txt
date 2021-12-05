@@ -1,0 +1,604 @@
+
+=== 0 "The Great Pyramid of Tenochtitlan ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aztec
+* Owns 0 "Mexico
+* Has at least 3 provinces
+* Year is less than 1450
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 12 months
+
+'''Option: 0 "All our subjects must contribute to the Pyramid!:'''
+
+* set_ruler_flag = temple_expansion
+* Every owned province:
+** Limited to:
+*** not:
+**** The province is the capital of the country
+** One of the following will happen:
+*** 80 relative chance:
+**** Adds the modifier "0 "Contributing to the Great Temple" until the end of the campaign:
+***** local_autonomy = -0.02
+*** 20 relative chance:
+**** Spawns revolt of size 1 of 0 "Noble rebels
+* Gets the country event:
+** ID is flavor_azt.2
+** Base mean time to happen of 120 days
+
+'''Option: 0 "Let us use our own resources for this project.:'''
+
+* Changes administrative power stored by -75
+* Changes diplomatic power stored by -75
+* set_ruler_flag = temple_expansion
+* If:
+** Limited to:
+*** Has the DLC Leviathan
+** 0 "Mexico:
+*** add_great_project_tier:
+**** tier = 1
+* else:
+** 0 "Mexico:
+*** Adds the modifier "0 "Great Temple of Tenochtitlan" until the end of the campaign:
+**** +1 prestige
+
+=== 0 "Reactions to Pyramid Project ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Option: 0 "Ok.:'''
+
+* Trigger:
+** Has at least 2 provinces where all of the following is true:
+*** Has the province modifier "0 "Contributing to the Great Temple"
+* Every owned province:
+** Limited to:
+*** Has the province modifier "0 "Contributing to the Great Temple"
+** Removes the country modifier "0 "Contributing to the Great Temple"
+* Changes administrative power stored by -25
+* Changes diplomatic power stored by -25
+* Changes prestige by 10
+* Adds 5 legitimacy
+* 0 "Mexico:
+** Adds the modifier "0 "Great Temple of Tenochtitlan" until the end of the campaign:
+*** +1 prestige
+
+'''Option: 0 "Ok.:'''
+
+* Trigger:
+*** Has less than 2 provinces where all of the following is true:
+**** Has the province modifier "0 "Contributing to the Great Temple"
+** Any owned province:
+*** Has the province modifier "0 "Contributing to the Great Temple"
+* Every owned province:
+** Limited to:
+*** Has the province modifier "0 "Contributing to the Great Temple"
+** Removes the country modifier "0 "Contributing to the Great Temple"
+* Changes administrative power stored by -35
+* Changes diplomatic power stored by -35
+* Changes prestige by 5
+* Adds 5 legitimacy
+* 0 "Mexico:
+** Adds the modifier "0 "Great Temple of Tenochtitlan" until the end of the campaign:
+*** +1 prestige
+
+'''Option: 0 "Ok.:'''
+
+* Trigger:
+*** No owned province:
+**** Has the province modifier "0 "Contributing to the Great Temple"
+* Changes administrative power stored by -75
+* Changes diplomatic power stored by -75
+* 0 "Mexico:
+** Adds the modifier "0 "Great Temple of Tenochtitlan" until the end of the campaign:
+*** +1 prestige
+
+=== 0 "Tlacaelel ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aztec
+* Is not at war
+* Year is less than 1487
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 90 months
+
+'''Option: 0 "Great!:'''
+
+* Changes prestige by 10
+* Changes administrative power stored by 75
+* Changes military power stored by 75
+
+=== 0 "Sumptuary Laws & Warrior Culture ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aztec
+* Year is less than 1460
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 48 months
+
+'''Option: 0 "Implement the Sumptuary Laws.:'''
+
+* Changes administrative power stored by -100
+* add_army_professionalism = 0.02
+* Adds the modifier "0 "Sumptuary Laws" for the rest of the campaign:
+** +2.5% discipline
+** -0.05 war exhaustion
+
+'''Option: 0 "We do not need such laws, tradition will remain our guideline.:'''
+
+* add_stability_or_adm_power = yes
+* Adds 15 legitimacy
+
+=== 0 "The Famine Year of the One Rabbit ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aztec
+* Year is at least 1450
+* Year is less than 1460
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 30 months
+
+'''Option: 0 "Allow People to Resettle:'''
+
+* Changes stability by -1
+* Capital:
+** Changes base tax by -1
+* Adds the modifier "0 "Year of One Rabbit" for 12 months:
+** +15% stability cost modifier
+** global_trade_goods_size_modifier = -0.25
+** +1 global unrest
+* Sets the country flag azt_had_year_of_famine
+
+'''Option: 0 "Hold them against their will:'''
+
+* Changes stability by -1
+* Capital:
+** add_unrest = 10
+* Adds the modifier "0 "Year of One Rabbit" for 12 months:
+** +15% stability cost modifier
+** global_trade_goods_size_modifier = -0.25
+** +1 global unrest
+* Sets the country flag azt_had_year_of_famine
+
+=== 0 "Beginning of a New Cycle ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aztec
+* Has the country flag azt_had_year_of_famine
+* Does not have the country modifier "0 "Year of One Rabbit"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 months
+
+'''Option: 0 "For thus it is ended; thus sickness and famine have left us:'''
+
+* add_stability_or_adm_power = yes
+* If:
+** Limited to:
+*** Has the DLC El Dorado
+** add_doom = -5
+* Adds the modifier "0 "Recovering after Famine" for 12 months:
+** -15% stability cost modifier
+** -1 global unrest
+
+=== 0 "The Power Balance of the Triple Alliance ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aztec
+* Has at least 10 provinces
+* Year is at least 1470
+* Year is less than 1500
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 90 months
+
+'''Option: 0 "Continue to centralize power in Tenochtitlan.:'''
+
+* add_stability_or_adm_power = yes
+* Changes prestige by 5
+
+'''Option: 0 "Attempt to empower Texcoco to a greater degree.:'''
+
+* Changes stability by -1
+* Adds the modifier "0 "Influence of Texcoco" for the rest of the campaign:
+** -5% administrative technology cost
+** global_autonomy = 0.02
+
+=== 0 "Legal Reform of Nezahualcoyotl ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aztec
+* Has at least 10 provinces
+* Year is at least 1470
+* Year is less than 1500
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 90 months
+
+'''Option: 0 "Let us implement these laws immediately!:'''
+
+* Changes administrative power stored by -100
+* Adds the modifier "0 "Laws of Nezahualcoyotl" for the rest of the campaign:
+** global_autonomy = -0.03
+
+'''Option: 0 "Why meddle with that which has worked for generations?:'''
+
+* add_stability_or_adm_power = yes
+* Adds 15 legitimacy
+
+=== 0 "Altepetl Revolt ===
+
+'''Trigger:'''
+
+* Country is 0 "Aztec
+* Has at least 8 provinces
+* Administrative technology is lower than 5
+* Any of the following:
+** Stability is lower than 1
+** 5 war exhaustion
+** Legitimacy is less than 50
+* Any owned province:
+** Can spawn the 0 "Separatists rebel type
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 120 months
+
+'''Option: 0 "Attempt to conspire with the elders of the city to stop this.:'''
+
+* One of the following will happen:
+** 50 relative chance:
+*** Gets the country event:
+**** ID is flavor_azt.10
+**** Base mean time to happen of 60 days
+** 50 relative chance:
+*** Gets the country event:
+**** ID is flavor_azt.11
+**** Base mean time to happen of 60 days
+
+'''Option: 0 "Prepare a military expedition to depose the leader of the city.:'''
+
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+*** Controlled by our country
+*** Can spawn the 0 "Separatists rebel type
+** Spawns revolt of size 1 of 0 "Separatists rebels
+
+=== 0 "Rebellion Averted ===
+* Cannot fire randomly
+
+'''Option: 0 "Ok.:'''
+
+* Changes prestige by 5
+
+=== 0 "Rebellion Grows ===
+* Cannot fire randomly
+
+'''Option: 0 "Ok.:'''
+
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+*** Controlled by our country
+** Spawns revolt of size 1 of 0 "Separatists rebels
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+*** Controlled by our country
+*** Can spawn the 0 "Separatists rebel type
+** Spawns revolt of size 1 of 0 "Separatists rebels
+
+=== 0 "Aztec Merchants Harassed ===
+
+'''Trigger:'''
+
+* Country is 0 "Aztec
+* Is a neighbor of 0 "Totonac
+* Is not allied with 0 "Totonac
+* Is not a vassal of 0 "Totonac
+* 0 "Totonac:
+** Is not a vassal of 0 "Aztec
+* Year is at least 1450
+* Year is less than 1470
+* Does not have the 0 "Trade War casus belli against 0 "Totonac
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 60 months
+
+'''Option: 0 "They will regret this.:'''
+
+* Gives the 0 "Trade War casus belli against 0 "Totonac
+
+=== 0 "European Diseases ===
+
+'''Trigger:'''
+
+* Does not have the country flag european_diseases_struck
+* Capital:
+** In the continent 0 "North America
+* has_institution_false = feudalism
+* Any known country:
+** Any of the following:
+*** Capital:
+**** In the continent 0 "Europe
+*** Colonial parent:
+**** Capital:
+***** In the continent 0 "Europe
+** Any of the following:
+*** Any owned province:
+**** In the continent 0 "North America
+*** At war with our country
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** The province is not the capital of the country
+***** The owner of the province:
+****** Has less than 2 provinces
+*** Sets the province flag NA_smallpox_here
+*** Every bordering province:
+**** Limited to:
+***** The province is owned by our country
+**** Sets the province flag NA_smallpox_here
+** Sets the country flag european_diseases_struck
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 120 months
+* Multiplies value by 0.1:
+** Any known country:
+*** Capital:
+**** In the continent 0 "Europe
+*** At war with our country
+
+'''Option: 0 "Have the gods forsaken us?:'''
+
+* Every province in the world:
+** Limited to:
+*** Has the province flag NA_smallpox_here
+** Adds the modifier "0 "Outbreak of Smallpox" until the end of the campaign:
+*** -25% manpower modifier
+*** -25% provincial tax income
+*** -25% trade goods output
+*** local_unrest = -3
+*** local_autonomy = 0.05
+** Removes the province flag NA_smallpox_here
+
+=== 0 "Cocoliztli ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Culture group is 0 "Central American
+* Has the country flag european_diseases_struck
+* Year is at least 1545
+* Year is less than 1576
+** No owned province:
+*** Has the province modifier "0 "Outbreak of Smallpox"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 93 months
+
+'''Option: 0 "Ok.:'''
+
+* Changes stability by -2
+* Adds the modifier "0 "Cocoliztli" for 2 years:
+** +15% stability cost modifier
+** -25% global tax modifier
+** global_trade_goods_size_modifier = -0.25
+** -3 global unrest
+** global_autonomy = 0.05
+
+=== 0 "Smallpox Epidemic ===
+
+'''Trigger:'''
+
+* Capital:
+** In the continent 0 "North America
+* Has the country flag european_diseases_struck
+* }
+** No owned province:
+*** Has the province modifier "0 "Outbreak of Smallpox"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+*** Sets the province flag NA_smallpox_here
+*** Every bordering province:
+**** Sets the province flag NA_smallpox_here
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 60 months
+
+'''Option: 0 "Horrible:'''
+
+* Every province in the world:
+** Limited to:
+*** Has the province flag NA_smallpox_here
+** Adds the modifier "0 "Outbreak of Smallpox" until the end of the campaign:
+*** -25% manpower modifier
+*** -25% provincial tax income
+*** -25% trade goods output
+*** local_unrest = -3
+*** local_autonomy = 0.05
+** Removes the province flag NA_smallpox_here
+
+=== 0 "Disloyal Altepetls ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Aztec
+* Any of the following:
+** All of the following:
+*** Follows the 0 "Nahuatl religion
+*** Has the DLC El Dorado
+*** is_religion_reformed_false = no
+** has_institution_false = feudalism
+* Any known country:
+** Capital:
+*** In the continent 0 "Europe
+** At war with 0 "Aztec
+** Any of the following:
+*** war_score_against:
+**** Affecting 0 "Aztec
+**** value = 50
+*** 0 "Aztec:
+**** Capital:
+***** Controlled by PREV
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Controlled by our country
+**** Can spawn the 0 "Separatists rebel type
+*** Sets the province flag altepl_joins_invader
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Does not have the province flag altepl_joins_invader
+**** Can spawn the 0 "Separatists rebel type
+**** Controlled by our country
+*** Sets the province flag altepl_joins_invader
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Does not have the province flag altepl_joins_invader
+**** Can spawn the 0 "Separatists rebel type
+**** Controlled by our country
+*** Sets the province flag altepl_joins_invader
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Does not have the province flag altepl_joins_invader
+**** Can spawn the 0 "Separatists rebel type
+**** Controlled by our country
+*** Sets the province flag altepl_joins_invader
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 2 months
+
+'''Option: 0 "Ok.:'''
+
+* Random known country:
+** Limited to:
+*** Capital:
+**** In the continent 0 "Europe
+*** At war with 0 "Aztec
+*** Any of the following:
+**** war_score_against:
+***** Affecting 0 "Aztec
+***** value = 50
+**** 0 "Aztec:
+***** Capital:
+****** Controlled by PREV
+** Gets the country event:
+*** ID is flavor_azt.17
+* Tooltip:
+** Every owned province:
+*** Limited to:
+**** Has the province flag altepl_joins_invader
+*** Spawns revolt of size 1
+
+=== 0 "Disloyal Altepetls ===
+* Cannot fire randomly
+
+'''Option: 0 "Ok.:'''
+
+* Every province in the world:
+** Limited to:
+*** Has the province flag altepl_joins_invader
+*** Can spawn the 0 "Separatists rebel type
+** Spawns revolt of size 1 of 0 "Separatists rebels
+* Every province in the world:
+** Limited to:
+*** Has the province flag altepl_joins_invader
+*** Cannot spawn the 0 "Separatists rebel type
+** Spawns revolt of size 1 of 0 "Separatists rebels
+
+=== 0 "The Temple City of Cholula ===
+
+'''Trigger:'''
+
+* Does not follow the 0 "Nahuatl religion
+* Owns 0 "Cholula
+* 0 "Cholula:
+** Has the province modifier "cholula_temples"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 12 months
+
+'''Option: 0 "Destroy the Temples.:'''
+
+* AI chance:
+** Base chance of 1
+* Modifies treasury by 0.01 years worth of income
+* 0 "Cholula:
+** Removes the country modifier "cholula_temples"
+** add_unrest = 5
+* AI chance:
+** Base chance of 1
+
+'''Option: 0 "This is a fascinating religion, let us embrace it.:'''
+
+* Trigger:
+** Is in the 0 "Pagan religion group
+** Is not a colonial nation
+** Does not follow the 0 "Inti religion
+** Does not follow the 0 "Mayan religion
+* Changes religion to 0 "Nahuatl
+* If:
+** Limited to:
+*** Has the native government type
+** Changes government type to tribal
+
+'''Option: 0 "Let them continue to worship their gods here.:'''
+
+* Trigger:
+** Has completed the 0 "Humanist Ideas idea group
+* AI chance:
+** Base chance of 0
+* Changes stability by -1
+* 0 "Cholula:
+** Removes the country modifier "cholula_temples"
+** Changes base tax by 1

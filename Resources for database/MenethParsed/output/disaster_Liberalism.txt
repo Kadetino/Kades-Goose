@@ -1,0 +1,100 @@
+
+=== 0 "Aspiration for Liberty ===
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Sets the country flag had_liberalism
+* Changes stability by -6
+* Capital:
+** Spawns 3 revolt size of revolutionary rebels
+* Random owned province:
+** Spawns 2 revolt size of revolutionary rebels
+
+'''Option: 0 "Dire times are ahead of us:'''
+
+* Changes prestige by -5
+
+=== 0 "Governmental Incompetence ===
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "It is nothing to be concerned about:'''
+
+* AI chance:
+** Base chance of 50
+* Every owned province:
+** Limited to:
+*** Most likely rebel type is 0 "Revolutionary
+*** The province is not overseas
+** add_unrest = 1
+
+'''Option: 0 "Prevent them from advancing further:'''
+
+* AI chance:
+** Base chance of 10
+* Modifies treasury by -1.0 years worth of income
+* add_absolutism = -5
+* Every owned province:
+** Limited to:
+*** The province is not the capital of the country
+*** Most likely rebel type is 0 "Revolutionary
+*** The province is not overseas
+** add_local_autonomy = 15
+
+=== 0 "Battles on Foreign Ground ===
+
+'''Trigger:'''
+
+* Is at war
+* Has at least 1 allies
+* Any of the following:
+** Has at least 5 active loans
+** Inflation is less than 5
+** 5 war exhaustion
+* Does not have the country modifier "0 "Decreased Morale"
+* Does not have the country modifier "0 "Reduced War Expenditures"
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "The treasury isn't even close to empty:'''
+
+* Random ally:
+** Adds the opinion modifier "0 "Munificent Ally" towards our country
+* If:
+** Limited to:
+*** has_disaster = 0 "Aspiration for Liberty
+** Adds the modifier "0 "Decreased Morale" for the rest of the campaign:
+*** -10% land morale
+*** -10% naval morale
+
+'''Option: 0 "Cut down on war expenditures:'''
+
+* If:
+** Limited to:
+*** has_disaster = 0 "Aspiration for Liberty
+** Adds the modifier "0 "Reduced War Expenditures" for the rest of the campaign:
+*** +0.1 war exhaustion
+* Random ally:
+** Adds the opinion modifier "0 "Reduced War Expenditures" towards our country
+
+=== 0 "Order is Restored ===
+* Cannot fire randomly
+
+'''Option: 0 "OK:'''
+
+* add_stability_or_adm_power = yes
+* add_absolutism = -10
+* Removes the country flag liberalism
+* Removes the country modifier "0 "Reduced War Expenditures"
+* Removes the country modifier "0 "Decreased Morale"

@@ -1,0 +1,39 @@
+********* Trigger:
+********** Any of the following:
+*********** Region is not moluccas_region
+*********** Region is not indonesia_region
+*********** Region is not malaya_region
+********* desc = volcano_events.1.d
+******** desc:
+********* Trigger:
+********** Any of the following:
+*********** Region is moluccas_region
+*********** Region is indonesia_region
+*********** Region is malaya_region
+********* desc = volcano_events.1.d2
+******** picture = EP_ISLAND_eventPicture
+******** goto = our country
+******** is_triggered_only = yes
+******** Option: volcano_events.1.a:
+********* add_devastation = 75
+********* add_base_production = -2
+********* Sets the province flag volcanic_eruption
+******* Gets the country event:
+******** ID is volcano_events.2
+******** title = volcano_events.2.t
+******** desc = volcano_events.2.d
+******** picture = EP_ISLAND_eventPicture
+******** is_triggered_only = yes
+******** hidden = yes
+******** Trigger:
+********* Any owned province:
+********** is_volcanic_area = yes
+********** Does not have the province flag volcanic_eruption
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: volcano_events.2.a:
+********* Random owned province:
+********** Limited to:
+*********** is_volcanic_area = yes
+********** Gets the province event:
+*********** ID is volcano_events.1

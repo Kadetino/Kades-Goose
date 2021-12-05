@@ -1,0 +1,116 @@
+******** is_triggered_only = yes
+******** Option: flavor_tun.EVTOPTA1:
+********* Trigger:
+********** 0 "Algiers does not exist
+********* 0 "Mitidja:
+********** Cedes province to 0 "Algiers
+********* 0 "Algiers:
+********** Changes government type to republic
+********** add_government_reform = pirate_republic_reform
+********** adopt_reform_progress = our country
+********** Spawns a ruler:
+*********** Named "Hayreddin Barbarossa"
+*********** Ruler's administrative skill is at least 3
+*********** Ruler's diplomatic skill is at least 4
+*********** Ruler's military skill is at least 5
+*********** Legitimacy of 95
+********* create_march = 0 "Algiers
+******** Option: flavor_tun.EVTOPTB1:
+********* Creates an admiral:
+********** Named "Hayreddin Barbarossa"
+********** 4 skill in shock
+********** 4 skill in fire
+********** 4 skill in manuever
+********** 2 skill in siege
+******* Gets the country event:
+******** ID is more_flavor_por.1
+******** title = more_flavor_por.EVTNAME1
+******** desc = more_flavor_por.EVTDESC1
+******** picture = PORTUGUESE_MERCHANTS_eventPicture
+******** fire_only_once = yes
+******** is_triggered_only = yes
+******** Option: more_flavor_por.EVTOPTA1:
+********* AI chance:
+********** Base chance of 1
+********* Trigger:
+********** 0 "Macau:
+*********** The province is not the capital of the country
+********* Modifies treasury by 1 years worth of income
+********* Tooltip:
+********** 0 "Macau:
+*********** Cedes province to our country
+*********** Gives our country core on the province
+********* Hidden effect:
+********** Our country:
+*********** Gets the country event:
+************ ID is more_flavor_por.2
+******** Option: more_flavor_por.EVTOPTB1:
+********* AI chance:
+********** Base chance of 0
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is more_flavor_por.2
+******** title = more_flavor_por.EVTNAME2
+******** desc = more_flavor_por.EVTDESC2
+******** picture = PORTUGUESE_MERCHANTS_eventPicture
+******** fire_only_once = yes
+******** is_triggered_only = yes
+******** Option: more_flavor_por.EVTOPTA2:
+********* 0 "Macau:
+********** Cedes province to our country
+********** Gives our country core on the province
+******* Gets the country event:
+******** ID is more_flavor_por.3
+******** title = more_flavor_por.EVTNAME3
+******** desc = more_flavor_por.EVTDESC3
+******** picture = PORTUGUESE_MERCHANTS_eventPicture
+******** fire_only_once = yes
+******** is_triggered_only = yes
+******** Option: more_flavor_por.EVTOPTA3:
+********* Trigger:
+********** All of the following:
+*********** Does not have the DLC Mandate of Heaven
+*********** Does not follow the 0 "Shinto religion
+*********** isolationism_false = 4
+********** 0 "Hizen:
+*********** The province is not the capital of the country
+********* AI chance:
+********** Base chance of 1
+********* Tooltip:
+********** 0 "Hizen:
+*********** Cedes province to our country
+*********** Gives our country core on the province
+********* Hidden effect:
+********** Our country:
+*********** Gets the country event:
+************ ID is more_flavor_por.4
+******** Option: more_flavor_por.EVTOPTB3:
+********* AI chance:
+********** Base chance of 0
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is more_flavor_por.4
+******** title = more_flavor_por.EVTNAME4
+******** desc = more_flavor_por.EVTDESC4
+******** picture = PORTUGUESE_MERCHANTS_eventPicture
+******** fire_only_once = yes
+******** is_triggered_only = yes
+******** Option: more_flavor_por.EVTOPTA4:
+********* 0 "Hizen:
+********** Cedes province to our country
+********** Gives our country core on the province
+******* Gets the country event:
+******** ID is more_flavor_por.5
+******** title = more_flavor_por.EVTNAME5
+******** desc = more_flavor_por.EVTDESC5
+******** picture = PORTUGUESE_MERCHANTS_eventPicture
+******** fire_only_once = yes
+******** is_triggered_only = yes
+******** Option: more_flavor_por.EVTOPTA5:
+********* Changes prestige by 5
+********* Changes Papal Influence by 10
+********* One of the following will happen:
+********** 70 relative chance:
+********** 30 relative chance:
+*********** 596 relative chance:
+************ Changes religion to 0 "Catholic

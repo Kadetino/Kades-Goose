@@ -1,0 +1,192 @@
+******** Trigger:
+********* Country is 0 "Mainz
+********* Country exists
+********* Is an elector in the Holy Roman Empire
+********* Does not have the country flag happened_759
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Sets the country flag happened_759
+******** Option: 0 "I see...:
+********* Adds the modifier "0 "Primas Germaniae" for the rest of the campaign:
+********** +0.5 prestige
+********** +1 diplomatic reputation
+******* Gets the country event:
+******** ID is 760
+******** title = 1 "Title of Primas Germaniae Questioned
+******** desc = 0 "My $MONARCHTITLE$, much of the Catholic community seem to have lost their faith in us! There are even rumors that another Archbishopric plans to claim our title as Primas Germaniae!
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* The Papacy is enabled
+********* Has the country modifier "0 "Primas Germaniae"
+********* -10 prestige
+********* Any country:
+********** Isn't the Holy Roman Emperor
+********** Is an elector in the Holy Roman Empire
+********** has_reform = leading_clergy_reform
+********** government_rank = 2
+********** Follows the 0 "Catholic religion
+********** Has an opinion of less than 0 with our country
+******** Mean time to happen
+********* Base mean time to happen of 6 months
+********* Multiplies value by 1.5:
+********** 20 Papal influence per year
+********* Multiplies value by 2:
+********** 35 Papal influence per year
+********* Multiplies value by 0.75:
+********** Has an opinion lower than 100 of 0 "The Papal State
+********* Multiplies value by 0.5:
+********** Has an opinion lower than 0 of 0 "The Papal State
+********* Multiplies value by 10:
+********** Has the global flag primas_germaniae_no_candidate
+******** Option: 0 "Probably just rumors.:
+********* Hidden effect:
+********** Random elector:
+*********** Limited to:
+************ Isn't the Holy Roman Emperor
+************ has_reform = leading_clergy_reform
+************ government_rank = 2
+************ Follows the 0 "Catholic religion
+************ Has an opinion of less than 100 with our country
+************ 10 prestige
+************ Does not have the country flag primas_germaniae_declined
+*********** Sets the global flag primas_germaniae_candidate_found
+*********** Gets the country event:
+************ ID is 761
+************ Base mean time to happen of 3 days
+********** If:
+*********** Limited to:
+************ Does not have the global flag primas_germaniae_candidate_found
+*********** Sets the global flag primas_germaniae_no_candidate
+******* Gets the country event:
+******** ID is 761
+******** title = 0 "Primas Germaniae
+******** desc = 1 "The title of §WPrimas Germaniae§! - the most important Catholic Archbishop throughout the Holy Roman Empire - was created in the tenth century when the Archbishopric of Mainz became the first Archbishopric to receive it.\n\nFor the second-rate power of $FROM$ to hold such a prestigious title seems an affront to the Catholic Church. Perhaps a more worthy candidate can be found?
+******** picture = POPE_PREACHING_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Perhaps... me?:
+********* Every country:
+********** Limited to:
+*********** Has the country modifier "0 "Primas Germaniae"
+********** Removes the country modifier "0 "Primas Germaniae"
+********** Sets the country flag primas_germaniae_lost
+********** Adds the opinion modifier "0 "Accepted title Primas Germaniae" towards our country
+********* Adds the modifier "0 "Primas Germaniae" for the rest of the campaign:
+********** +0.5 prestige
+********** +1 diplomatic reputation
+******** Option: 0 "Leave it be. For now...:
+******** Option: 0 "A better one could not be found.:
+********* Adds the opinion modifier "0 "Supported the one chosen as new Primas Germaniae" towards our country
+********* Sets the country flag primas_germaniae_declined
+******* Gets the country event:
+******** ID is 762
+******** title = 0 "Primas Germaniae Lost
+******** desc = 2 "My $MONARCHTITLE$, we have lost the prestigious title of §WPrimas Germaniae§!. Due to our low standing in the empire of late, another Archbishop has gone ahead and claimed the title!
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* The Papacy is enabled
+********* Has the country flag primas_germaniae_lost
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: 0 "Very well, congratulate him...:
+********* Every country:
+********** Limited to:
+*********** Has the country modifier "0 "Primas Germaniae"
+********** Adds the opinion modifier "0 "Congratulated the new Primas Germaniae" towards our country
+********* Removes the country flag primas_germaniae_lost
+********* Changes prestige by 1
+******** Option: 0 "We will not forget this!:
+********* Every country:
+********** Limited to:
+*********** Has the country modifier "0 "Primas Germaniae"
+********** Adds the opinion modifier "0 "Did not support the one chosen as new Primas Germaniae" towards our country
+********* Removes the country flag primas_germaniae_lost
+******* Gets the country event:
+******** ID is 962
+******** title = 0 "Title of Primas Germaniae Lost
+******** desc:
+********* desc = 0 "The prestigious title §WPrimas Germaniae§! can only be held by a Catholic spiritual elector. As we no longer meet these requirements, the Pope has revoked the privilege.
+********* Trigger:
+********** Any of the following:
+*********** Is not an elector in the Holy Roman Empire
+*********** has_reform_false = leading_clergy_reform
+*********** Does not follow the 0 "Catholic religion
+*********** The Papacy is not enabled
+******** desc:
+********* desc = EVTDESC962.PopeHatesYou
+********* Trigger:
+********** Is an elector in the Holy Roman Empire
+********** has_reform = leading_clergy_reform
+********** Follows the 0 "Catholic religion
+********** The Papacy is enabled
+********** Has an opinion lower than 0 of 0 "The Papal State
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* Has the country modifier "0 "Primas Germaniae"
+********* Any of the following:
+********** Is not an elector in the Holy Roman Empire
+********** has_reform_false = leading_clergy_reform
+********** Does not follow the 0 "Catholic religion
+********** Has an opinion lower than 0 of 0 "The Papal State
+********** The Papacy is not enabled
+********** Country does not exist
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+********* Multiplies value by 24:
+********** Is an elector in the Holy Roman Empire
+********** has_reform = leading_clergy_reform
+********** Follows the 0 "Catholic religion
+********** The Papacy is enabled
+********** Has an opinion lower than 0 of 0 "The Papal State
+******** Option: 0 "Most unfortunate.:
+********* Removes the country modifier "0 "Primas Germaniae"
+********* Sets the global flag no_primas_germaniae
+******* Gets the country event:
+******** ID is 96200
+******** title = 0 "Envoy from the Pope
+******** desc = 0 "Good news! We have been selected by the Pope to hold the prestigious title of §WPrimas Germaniae§! - the most important Catholic Archbishop throughout the Holy Roman Empire - after the former holder fell from grace.
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* The Papacy is enabled
+********* Has the global flag no_primas_germaniae
+********* Capital:
+********** Is part of the Holy Roman Empire
+********* Isn't the Holy Roman Emperor
+********* Is an elector in the Holy Roman Empire
+********* has_reform = leading_clergy_reform
+********* Follows the 0 "Catholic religion
+********* 10 prestige
+********* Has an opinion of at least 100 of 0 "The Papal State
+********* Does not have the country flag primas_germaniae_declined
+******** Mean time to happen
+********* Base mean time to happen of 48 months
+********* Multiplies value by 0.8:
+********** 20 Papal influence per year
+********* Multiplies value by 0.7:
+********** 35 Papal influence per year
+********* Multiplies value by 0.8:
+********** Has an opinion of at least 150 of 0 "The Papal State
+********* Multiplies value by 0.7:
+********** Has an opinion of at least 200 of 0 "The Papal State
+******** Immediate effects:
+********* Removes the global flag no_primas_germaniae
+******** Option: 0 "We will gladly accept this title.:
+********* Adds the modifier "0 "Primas Germaniae" for the rest of the campaign:
+********** +0.5 prestige
+********** +1 diplomatic reputation
+********* Every country:
+********** Limited to:
+*********** Has the country flag primas_germaniae_declined
+********** Removes the country flag primas_germaniae_declined
+********* Every country:
+********** Limited to:
+*********** Has the country flag primas_germaniae_lost
+********** Removes the country flag primas_germaniae_lost
+********* AI chance:
+********** Base chance of 100
+******** Option: 0 "We must graciously decline.:
+********* Adds the opinion modifier "0 "Declined Primas Germaniae" from 0 "The Papal State
+********* Sets the country flag primas_germaniae_declined
+********* Sets the global flag no_primas_germaniae
+********* AI chance:
+********** Base chance of 0

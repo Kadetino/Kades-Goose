@@ -1,0 +1,74 @@
+** is_triggered_only = yes
+** Option: flavor_ser.EVTOPTA1:
+*** Trigger:
+**** Has at least 2 provinces where all of the following is true:
+***** Has core on our country
+*** AI chance:
+**** Base chance of 1
+*** Tooltip:
+**** 0 "Belgrade:
+***** Cedes province to our country
+***** Gives our country core on the province
+***** Removes core on our country
+*** Hidden effect:
+**** Our country:
+***** Gets the country event:
+****** ID is flavor_ser.2
+** Option: flavor_ser.EVTOPTB1:
+*** AI chance:
+**** Base chance of 0
+*** Changes prestige by 5
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_ser.3
+* Gets the country event:
+** ID is flavor_ser.2
+** title = flavor_ser.EVTNAME2
+** desc = flavor_ser.EVTDESC2
+** picture = CONQUEST_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: flavor_ser.EVTOPTA2:
+*** 0 "Belgrade:
+**** Cedes province to our country
+**** Gives our country core on the province
+**** Removes core on our country
+* Gets the country event:
+** ID is flavor_ser.3
+** title = flavor_ser.EVTNAME3
+** desc = flavor_ser.EVTDESC3
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: flavor_ser.EVTOPTA3:
+*** Changes prestige by -5
+*** 0 "Belgrade:
+**** If:
+***** Limited to:
+****** is_permanent_claim_false = our country
+****** Has no core on our country
+***** add_permanent_claim = our country
+* Gets the country event:
+** ID is flavor_ser.4
+** title = flavor_ser.EVTNAME4
+** desc = flavor_ser.EVTDESC4
+** picture = COURT_eventPicture
+** is_triggered_only = yes
+** fire_only_once = yes
+** Trigger:
+*** Has the DLC Emperor
+** Mean time to happen
+*** Base mean time to happen of 1 days
+** Option: flavor_ser.EVTOPTA4:
+*** Trigger:
+**** 0 "Constantinople:
+***** The province is not the capital of the country
+*** 0 "Constantinople:
+**** move_capital_effect = yes
+**** Changes religion to our country
+**** Changes culture to our country
+**** Changes province capital name to Carigrad
+**** Adds the modifier "0 "The Third Rome" until the end of the campaign:
+** Option: flavor_ser.EVTOPTB4:
+*** Capital:
+**** Adds the modifier "0 "The Third Rome" until the end of the campaign:

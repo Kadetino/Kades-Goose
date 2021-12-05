@@ -1,0 +1,674 @@
+** Trigger:
+*** Country is 0 "Portugal
+*** colony = 1
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Every man makes his own fortune:
+*** AI chance:
+**** Base chance of 75
+*** add_corruption = 1
+*** Adds the modifier "0 "Colonial Policy" for the rest of the campaign:
+**** +10 global settler increase
+** Option: 0 "Demand less corruption:
+*** AI chance:
+**** Base chance of 25
+*** If:
+**** Limited to:
+***** corruption = 0.01
+**** add_corruption = -1
+*** If:
+**** Limited to:
+***** corruption_false = 1
+**** Adds the modifier "0 "Less Colonial Corruption" for the rest of the campaign:
+***** +10% global tariffs
+* Gets the country event:
+** ID is flavor_por.3267
+** title = 0 "The Duke of Coimbra
+** desc = 0 "King Afonso was only 6 years old when he became king of Portugal. For the first 6 years of his reign the country has been ruled by the Duke of Coimbra. Don Afonso has had no reason for complaint and by most accounts this regency has been a just and efficient one.\nHowever, with the young king reaching majority there are now many in our court who would try to influence their monarch. Jealous of the Duke’s influence a group of noblemen has been trying to sow discord between him and the king, trying to frame him as a would-be rebel.\nIn a last attempt to mend relations the Duke of Coimbra has arrived with a number of retainers to seek an audience with Don Afonso.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Is not in regency
+*** Year is less than 1460
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "So it was true! Death to him and his men!:
+*** AI chance:
+**** Base chance of 75
+*** add_stability_or_adm_power = yes
+** Option: 0 "We must place trust in our dear friend and mentor.:
+*** AI chance:
+**** Base chance of 25
+*** Adds the ruler modifier "0 "The Duke of Coimbra" until the ruler's death:
+**** +10% global tax modifier
+**** Trade efficiency is at least 10%
+* Gets the country event:
+** ID is flavor_por.3268
+** title = 0 "Commercial Conflict in the Indian Ocean
+** desc = 0 "With the arrival of Portuguese ships in the Indian and Arabian Oceans we finally have the opportunity to attempt to disrupt Arab shipping in that region. We are in a position to significantly cut the supply of spices and silk to Alexandria, hurting our trading competition in the Near East and Italy alike.
+** picture = MERCHANTS_TALKING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Any active trade node:
+**** Province is 0 "Qamr Bay
+**** has_merchant = prev
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Forcefully control the spice trade:
+*** AI chance:
+**** Base chance of 10
+*** Random active trade node:
+**** Limited to:
+***** Province is 0 "Qamr Bay
+**** Adds trade modifier:
+***** Affecting our country
+***** Lasting -1 days
+***** Changing trade power by 25
+***** Named "0 "Portuguese Privateers"
+** Option: 0 "Seek better relations in the region:
+*** AI chance:
+**** Base chance of 0
+*** Hidden effect:
+**** Random active trade node:
+***** Limited to:
+****** Province is 0 "Qamr Bay
+***** Every member of the trade node:
+****** Adds the opinion modifier "0 "Careful Trade Expansion" towards our country
+* Gets the country event:
+** ID is flavor_por.3269
+** title = 0 "The Holy Inquisition
+** desc = 0 "The Holy Inquisition came from Spain also to Portugal in 1536 and stayed until 1668, however, it had more influence with the Spanish monarchs than the Portuguese ones.
+** picture = POPE_PREACHING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Follows the 0 "Catholic religion
+*** 0 "The Papal State exists
+*** Year is at least 1500
+*** Year is less than 1600
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Institute them!:
+*** AI chance:
+**** Base chance of 75
+*** Changes Papal Influence by 20
+*** Adds the modifier "0 "Increased Narrow-minded" for 10 years:
+**** +5% technology cost
+**** +1% global missionary strength
+** Option: 0 "Do not institute them!:
+*** AI chance:
+**** Base chance of 25
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "No Holy Inquisition" towards our country
+* Gets the country event:
+** ID is flavor_por.3271
+** title = 0 "Governor Martim Afonso de Sousa in Brazil
+** desc = 0 "Leading colonists were given strips of land that extended from the Brazilian coast reaching into the interior. The land owners, often captains, settled colonists in their respective captaincies and were required to provide them with protection and justice. As the captaincies were independent, they were unable to defend themselves from foreign pirates. João III appointed a governor general with authority over the captaincies. De Sousa established his capital at São Salvador da Baia. He defeated French pirates in a naval engagement in the bay of Rio de Janeiro. De Sousa also intensified colonization and created stability in Brazil.
+** picture = COLONIZATION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Year is at least 1530
+*** Year is less than 1580
+*** brazil_region:
+**** country_or_vassal_holds = 0 "Portugal
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Appoint de Sousa:
+*** Adds the modifier "0 "Governor de Sousa" for 10 years:
+**** +30 global settler increase
+* Gets the country event:
+** ID is flavor_por.3272
+** title = 0 "King Sebastião's Expedition to North Africa
+** desc = 0 "In the year 1578, King Sebastião of Portugal embarked on an expedition to conquer Morocco, where Portugal already held the regions of Tangiers and Ceuta. Shortly after his landing, at the battle of Al-Khazar Kebir, the Moroccan Berbers of Moulay Ismaïl so soundly defeated the Portuguese army that the King was killed, along with most of the Portuguese nobility fighting with him. This disaster led the way to Spanish control of Portugal and was the starting point of Portugal's decline.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Year is at least 1500
+*** Follows the 0 "Catholic religion
+*** is_free_or_tributary_trigger = yes
+*** 0 "Morocco:
+**** Country exists
+**** Has at least 1 ports
+**** Is in the 0 "Muslim religion group
+**** is_free_or_tributary_trigger = yes
+**** Not at war with 0 "Portugal
+**** Has no truce with 0 "Portugal
+**** Is not allied with 0 "Portugal
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Crusade against the Heretics in Africa:
+*** AI chance:
+**** Base chance of 90
+*** Changes Papal Influence by 10
+*** 0 "Morocco:
+**** Every owned province:
+***** Limited to:
+****** is_in_capital_area = yes
+****** Is coastal
+***** Adds claim to 0 "Portugal
+*** 0 "Morocco:
+**** Adds the opinion modifier "0 "Prepares Crusade" towards our country
+** Option: 0 "We should focus elsewhere:
+*** AI chance:
+**** Base chance of 0
+*** Changes prestige by -1
+* Gets the country event:
+** ID is flavor_por.3273
+** title = 0 "Epidemic Plague
+** desc = 0 "The plague comes sweeping in over the country from Spain with devastating effects and horrible losses.
+** picture = PLAGUE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Has at least 4 provinces
+*** iberia_region:
+**** The province is owned by our country
+*** Year is at least 1550
+*** Year is less than 1700
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "We will recover:
+*** Adds the modifier "0 "Severe Plague" for 5 years:
+**** -25% manpower modifier
+**** -25% provincial tax income
+**** trade_goods_size_modifier = -0.25
+**** local_unrest = -3
+**** local_autonomy = 0.05
+* Gets the country event:
+** ID is flavor_por.3275
+** title = 0 "The Methuen Agreement
+** desc = 0 "John Methuen was born in 1650. An accomplished diplomat, he is well remembered for the treaty signed in 1703 between England and Portugal. The main purpose of the treaty was to allow free introduction of English wool and cloths to Portugal in exchange of free entry of Portuguese wine into England (Port wine). The treaty made in effect Portugal an economic and political satellite of England, was effectively in place all the way to 1750, when King D Jose I choose to ignore it, even while it was still formally in effect until 1836. John Methuen died in 1706 shortly after his greatest success.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Year is at least 1650
+*** Is not at war
+*** Any of the following:
+**** 0 "Great Britain exists
+**** 0 "England exists
+*** iberia_region:
+**** The province is owned by our country
+**** Is coastal
+*** Not at war with 0 "England
+*** Does not consider 0 "England a rival
+*** Not at war with 0 "Great Britain
+*** Does not consider 0 "Great Britain a rival
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Accept the Agreement:
+*** AI chance:
+**** Base chance of 75
+*** If:
+**** Limited to:
+***** 0 "Great Britain exists
+**** 0 "Great Britain:
+***** Adds the opinion modifier "0 "Accepted Methuen Agreement" towards our country
+**** Sets the country flag meuthen_agreement
+*** If:
+**** Limited to:
+***** 0 "England exists
+***** Does not have the country flag meuthen_agreement
+**** 0 "England:
+***** Adds the opinion modifier "0 "Accepted Methuen Agreement" towards our country
+*** Random owned province:
+**** Limited to:
+***** Region is iberia_region
+***** Is coastal
+**** Changes base tax by 1
+*** Removes the country flag meuthen_agreement
+** Option: 0 "Denounce the Agreement:
+*** AI chance:
+**** Base chance of 25
+*** add_stability_or_adm_power = yes
+*** If:
+**** Limited to:
+***** 0 "Great Britain exists
+**** 0 "Great Britain:
+***** Adds the opinion modifier "0 "Denounced Methuen Agreement" towards our country
+**** Sets the country flag meuthen_agreement
+*** If:
+**** Limited to:
+***** 0 "England exists
+***** Does not have the country flag meuthen_agreement
+**** 0 "England:
+***** Adds the opinion modifier "0 "Denounced Methuen Agreement" towards our country
+*** Removes the country flag meuthen_agreement
+* Gets the country event:
+** ID is flavor_por.3276
+** title = 0 "Count da Ericeira
+** desc = 0 "Dom Luis de Meneses, the Count da Ericeira was a strong believer of Mercantilism and helped reform the Portuguese state towards a higher control of the Portuguese trade.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Year is at least 1662
+*** Year is less than 1690
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "An Excellent Minister!:
+*** Changes diplomatic power stored by 100
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "Dom Luís de Meneses"
+**** Culture is 0 "Portuguese
+**** discount = yes
+**** With a skill level of 2
+* Gets the country event:
+** ID is flavor_por.3278
+** title = 0 "Earthquake destroys Lisboa
+** desc = 0 "The Earthquake that destroyed Lisboa was a catastrophe of huge proportions that resounded all across Europe and even into the new world. 1 November 1755, a beautiful day, when next to everyone was in the churches celebrating a holiday the ground suddenly started to shake and the churches started caving in, crushing the visitors. For those that escaped it was far from over as a heavy breeze of wind suddenly started to come in over the area beating the small fires into a virtual inferno incinerating thousands. But yet thousands of people would fall victim for the grand tidal wave reaching land just a few minutes later. The death count was estimated to 20.000-40.000 people at the time and given all four elements (wind, fire, earth & water) the explanation 'punishment by god' was a view widely spread both in Portugal and elsewhere.
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Owns 0 "Lisboa
+*** Year is at least 1700
+** Mean time to happen
+*** Base mean time to happen of 2000 months
+** Option: 0 "We will recover:
+*** 0 "Lisboa:
+**** Adds the modifier "0 "Earthquake" until the end of the campaign:
+***** -66% trade goods output
+***** -66% manpower modifier
+* Gets the country event:
+** ID is flavor_por.3279
+** title = 0 "Marquês de Pombal
+** desc = 0 "Literally from the ashes of Lisboa, a new leader rose to the power and managed to shake entire Portugal out of the trauma caused by the earthquake. He forced through many far reaching reforms. During his rule Lisboa was rebuilt and Portugal entered into the pre-industrial era. In many ways his excellent governing would, for a time, bring back Portugal almost to its former level of glory a few hundred years back.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Year is at least 1729
+*** Year is less than 1777
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Immediate effects:
+*** Sets the country flag POR_de_pombal
+** Option: 0 "An Excellent Minister!:
+*** Changes administrative power stored by 100
+*** Changes diplomatic power stored by 100
+*** Changes military power stored by 100
+* Gets the country event:
+** ID is flavor_por.3280
+** title = 0 "The Tavoras Conspiracy
+** desc = 0 "A conspiracy to kill King Don Jose I (1750-1777) was revealed and prevented, by Marquês de Pombal. Pombal used this event to forge his power into a virtual dictatorship. Pombal was a radical reformer, but he was also very power-hungry and without remorse he hunted down anyone that could threaten him in the name of the King.
+** picture = ASSASSINATION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** iberia_region:
+**** The province is owned by 0 "Portugal
+*** Has had the country flag "POR_de_pombal" for at least 1000 days
+** Mean time to happen
+*** Base mean time to happen of 64 months
+** Option: 0 "Crush the Opposition:
+*** AI chance:
+**** Base chance of 75
+*** Random owned province:
+**** Limited to:
+***** Region is iberia_region
+***** The province is not the capital of the country
+**** Spawns revolt of size 2 of 0 "Noble rebels
+** Option: 0 "Be Lenient:
+*** AI chance:
+**** Base chance of 25
+*** Adds -25 legitimacy
+*** Changes republican tradition by -2500%
+* Gets the country event:
+** ID is flavor_por.3281
+** title = 0 "The Expulsion of Marquês de Pombal
+** desc = 0 "After the death of the king the forces that had been conspiring to end his life earlier now turned their attention towards the person that had been the real ruler of the Portuguese kingdom, Marquês de Pombal. With no support from a king, Pombal's position was hazardous at best and he was forced to flee. Consequently the reforms he had started that had gotten Portugal back on the path to prosperity were not to last. Instead, grossly reactionary policies implemented by the 'Old Nobility and the Men of the Church' again moved Portugal backwards, threatening to let her end up in the backwater of most of the other European powers in the centuries to come.
+** picture = CIVIL_WAR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** iberia_region:
+**** The province is owned by 0 "Portugal
+*** Has had the country flag "POR_de_pombal" for at least 3000 days
+** Mean time to happen
+*** Base mean time to happen of 32 months
+** Immediate effects:
+*** Removes the country flag POR_de_pombal
+** Option: 0 "Expel him:
+*** AI chance:
+**** Base chance of 75
+*** Adds the ruler modifier "0 "Reactionary Policies" until the ruler's death:
+**** -10% global tax modifier
+**** +25% technology cost
+** Option: 0 "Let the 'Great Marquês' rule:
+*** AI chance:
+**** Base chance of 25
+*** Every owned province:
+**** Limited to:
+***** Region is iberia_region
+***** The province is not the capital of the country
+**** add_local_autonomy = 10
+* Gets the country event:
+** ID is flavor_por.1
+** title = 0 "Christopher Columbus
+** desc = 0 "In 1492 Christopher Columbus undertook his famous journey for Castile and sailed west across the Atlantic in search of a western route to the Orient. Seven years earlier in 1485, Christopher Columbus had presented the same plan to the King of Portugal, John II, who after submitting the proposal to his experts had rejected it. Columbus had made yet another attempt to convince the King in 1488 but as the Portuguese explorer Bartholomeu Dias around this time had successfully rounded the Cape of Good Hope, an eastern sea route to Asia seemed more likely and the King once again rejected Columbus's proposal.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Has at least 2 Exploration ideas
+*** Does not have the global flag columbus_happened
+*** Year is at least 1470
+*** Any of the following:
+**** 0 "North America:
+***** Has not been discovered by our country
+**** 0 "South America:
+***** Has not been discovered by our country
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Option: 0 "Reject his proposal:
+*** AI chance:
+**** Base chance of 75
+*** Sets the country flag turned_down_columbus
+*** If:
+**** Limited to:
+***** 0 "Spain exists
+***** 0 "Spain:
+****** Has the idea 0 "Quest for the New World
+**** 0 "Spain:
+***** Gets the country event:
+****** ID is flavor_spa.1
+****** Base mean time to happen of 10 days
+*** If:
+**** Limited to:
+***** 0 "Spain does not exist
+***** 0 "Castile exists
+***** 0 "Castile:
+****** Has the idea 0 "Quest for the New World
+**** 0 "Castile:
+***** Gets the country event:
+****** ID is flavor_spa.1
+****** Base mean time to happen of 10 days
+*** If:
+**** Limited to:
+***** Any of the following:
+****** All of the following:
+******* 0 "Spain does not exist
+******* 0 "Castile does not exist
+****** All of the following:
+******* 0 "Castile:
+******** Does not have the idea 0 "Quest for the New World
+******* 0 "Spain:
+******** Does not have the idea 0 "Quest for the New World
+***** Any known country:
+****** Has the idea 0 "Quest for the New World
+****** Follows the 0 "Catholic religion
+**** Random known country:
+***** Limited to:
+****** Does not have the country flag turned_down_columbus
+****** Follows the 0 "Catholic religion
+****** Has the idea 0 "Quest for the New World
+***** Gets the country event:
+****** ID is flavor_spa.1
+** Option: 0 "Hire Columbus:
+*** AI chance:
+**** Base chance of 25
+*** Sets the global flag columbus_happened
+*** Modifies treasury by -0.10 years worth of income
+*** Creates an explorer:
+**** Named "Cristóvão Colombo"
+**** 2 skill in fire
+**** 2 skill in shock
+**** 6 skill in manuever
+**** 0 skill in siege
+* Gets the country event:
+** ID is flavor_por.2
+** title = 0 "Atlantic Slave Trade
+** desc = 0 "The exploitation of land and resources in the New World colonies led to an extensive use of slave labor. As a large part of the indigenous population died from overwork and diseases spread from Europe, the labor shortage soon became problematic. Indentured servitude lessened this somewhat but failed to provide the workforce needed. The solution became the Atlantic slave trade, where slaves captured or bought along the West Africa coast were transported to Brazil. Over 3 million African slaves were sent to Brazil, mainly to work on the vast sugar plantations.
+** picture = NATIVES_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** colony = 1
+*** 0 "South America:
+**** country_or_vassal_holds = our country
+*** Any of the following:
+**** guinea_region:
+***** The province is owned by our country
+**** south_africa_region:
+***** The province is owned by our country
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Encourage slave trade from Africa:
+*** AI chance:
+**** Base chance of 90
+*** Adds the modifier "0 "African Slaves" for 50 years:
+**** +10% global tariffs
+** Option: 0 "The Crown should not get involved:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by 10
+* Gets the country event:
+** ID is flavor_por.3
+** title = 0 "Missionaries in the Spice Islands
+** desc = 0 "The archipelago of Moluccas was historically known as the 'Spice Islands' and became an important part of the Portuguese trade network in Southeast Asia during the 16th century. After their expulsion from Ternete, the Portuguese established their new center of trade on the island of Ambon, which had been discovered in 1513. Though the Portuguese were regularly attacked by native Muslims in the region, missionaries managed to convert a large number of natives. By the end of the 16th century there were more than 50.000 Christians in the Moluccas, most of them living on Ambon.
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Year is at least 1500
+*** Has discovered 0 "Ambon
+*** Follows the 0 "Catholic religion
+*** Has at least 2 provinces where all of the following is true:
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Spread the Catholic faith:
+*** Random owned province:
+**** Limited to:
+***** Region is moluccas_region
+***** Does not follow the 0 "Catholic religion
+**** Changes religion to 0 "Catholic
+*** Random owned province:
+**** Limited to:
+***** Region is moluccas_region
+***** Does not follow the 0 "Catholic religion
+**** Changes religion to 0 "Catholic
+* Gets the country event:
+** ID is flavor_por.4
+** title = 0 "Casa da Índia
+** desc = 0 "We need to efficiently oversee and administer Portuguese interests and possessions in India and Africa. It has been suggested that the best way to achieve this is to create an institution directly under the Royal Treasurer with monopoly rights to all related trade connections and goods.
+** picture = MERCHANTS_TALKING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Does not have the DLC Golden Century
+***** Country is 0 "Portugal
+***** Has the country modifier "0 "East India Trading Company"
+**** Has the country flag por_india_mission_flag
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Sounds like a good plan.:
+*** Adds 1000% mercantilism
+*** Adds the modifier "0 "Casa da Índia" for the rest of the campaign:
+**** #merchants = 1
+**** #global_trade_power = 0.05
+**** Trade efficiency is at least 10%
+* Gets the country event:
+** ID is flavor_por.5
+** title = 0 "Capture of Santa Catarina
+** desc = 0 "The Portuguese carrack Santa Catarina was captured in February 1603 off the coast of Singapore by three ships of the Dutch East India Company (V.O.C.). The cargo, worth 2.2 million guilders, doubled the capital of the V.O.C., but legality of keeping the prize was questionable under Dutch statute and led to protests from Portugal. The incident was a contributing reason for the Dutch-Portuguese War that lasted between 1602 and 1663.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Has at least 1 ports
+*** 0 "Netherlands exists
+*** Year is less than 1650
+*** Any active trade node:
+**** Any province owned by a trade node member:
+***** Any of the following:
+****** Region is bengal_region
+****** Region is deccan_region
+****** Region is coromandel_region
+****** Region is west_india_region
+****** Region is malaya_region
+****** Region is moluccas_region
+****** Region is indonesia_region
+****** Region is oceanea_region
+*** 0 "Netherlands:
+**** Any active trade node:
+***** Any province owned by a trade node member:
+****** Any of the following:
+******* Region is bengal_region
+******* Region is deccan_region
+******* Region is coromandel_region
+******* Region is west_india_region
+******* Region is malaya_region
+******* Region is moluccas_region
+******* Region is indonesia_region
+******* Region is oceanea_region
+*** 0 "Netherlands:
+**** is_free_or_tributary_trigger = yes
+*** Is not allied with 0 "Netherlands
+*** Not at war with 0 "Netherlands
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Request the return of the cargo!:
+*** AI chance:
+**** Base chance of 90
+*** Changes prestige by 10
+*** Hidden effect:
+**** 0 "Netherlands:
+***** Gets the country event:
+****** ID is flavor_por.6
+****** Base mean time to happen of 10 days
+** Option: 0 "Recognize their right:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by -10
+* Gets the country event:
+** ID is flavor_por.6
+** title = 0 "Capture of Santa Catarina
+** desc = 0 "The Portuguese carrack Santa Catarina was captured in February 1603 off the coast of Singapore by three ships of the Dutch East India Company (V.O.C.). The cargo, worth 2.2 million guilders, doubled the capital of the V.O.C., but legality of keeping the prize was questionable under Dutch statute and led to protests from Portugal. The incident was a contributing reason for the Dutch-Portuguese War that lasted between 1602 and 1663.
+** picture = SHIP_SAILING_eventPicture
+** is_triggered_only = yes
+** Option: 0 "The cargo is rightfully ours!:
+*** AI chance:
+**** Base chance of 90
+*** Modifies treasury by 0.5 years worth of income
+*** Hidden effect:
+**** 0 "Portugal:
+***** Gets the country event:
+****** ID is flavor_por.8
+****** Base mean time to happen of 10 days
+** Option: 0 "Return the cargo:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by -10
+*** Hidden effect:
+**** 0 "Portugal:
+***** Gets the country event:
+****** ID is flavor_por.7
+****** Base mean time to happen of 10 days
+* Gets the country event:
+** ID is flavor_por.7
+** title = 0 "The Dutch Return Cargo
+** desc = 0 "The Dutch have recognized the validity of our protest and agreed to return the cargo.
+** picture = SHIP_SAILING_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Very well:
+*** Modifies treasury by 0.5 years worth of income
+* Gets the country event:
+** ID is flavor_por.8
+** title = 0 "The Dutch Keep Cargo
+** desc = 0 "The Dutch refuse to return the seized cargo from Santa Catarina!
+** picture = SHIP_SAILING_eventPicture
+** is_triggered_only = yes
+** Option: 0 "They ask for war...:
+*** Gives the 0 "Diplomatic Insult casus belli against 0 "Netherlands
+* Gets the country event:
+** ID is flavor_por.9
+** title = 0 "The Tower of Belem
+** desc = 0 "Commissioned by Manuel I, the Tower of Belem was built in the early 16th century in order to defend the mouth of the Tagus River. It was built in the Manueline, or Portuguese late Gothic, style. The tower was improved in 1571, but fell after only a few hours siege in 1580 to the forces of the Spanish Duke of Alba. The dungeons of the Tower later served as a prison.
+** picture = FORT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Owns 0 "Lisboa
+*** Year is at least 1490
+*** Year is less than 1520
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "It must be built:
+*** AI chance:
+**** Base chance of 90
+**** Multiplies value by 0:
+***** All of the following:
+****** Has less than 500 ducats in the treasury
+****** Has the DLC Leviathan
+*** If:
+**** Limited to:
+***** Has the DLC Leviathan
+**** Changes treasury by -500 ducats
+**** 0 "Lisboa:
+***** set_great_project_tier_1:
+***** Adds the modifier "0 "The Tower of Belém" for the rest of the campaign:
+****** +25% local defensiveness
+*** else:
+**** Changes treasury by -50 ducats
+**** 0 "Lisboa:
+***** Adds the modifier "0 "The Tower of Belém" for the rest of the campaign:
+****** +25% local defensiveness
+** Option: 0 "We have other priorities:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by -1
+* Gets the country event:
+** ID is flavor_por.10
+** title = 0 "Jerónimos Monastery
+** desc = 0 "Construction of the Jerónimos Monastery began in 1501 and was originally funded by Manuel I using the income from the 'Vintena da Pimenta' tax on goods from Africa and the Far East. Work stopped in 1580 when Portugal after the death of Sebastian I of Portugal and a succession crisis entered into a union with Spain. When Portugal became independent again in 1640, the monastery saw further construction with the addition of a gold tiled ceiling in 1669 and large frescos completed at the end of the 18th century. The monastery also became the burial place for the royal family.
+** picture = ST_PETERS_CHURCH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Portugal
+*** Year is at least 1490
+*** Year is less than 1520
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: 0 "It will display our Glory:
+*** AI chance:
+**** Base chance of 90
+*** Modifies treasury by -0.25 years worth of income
+*** Changes Papal Influence by 20
+** Option: 0 "It's too expensive:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by -1
+* Gets the country event:
+** ID is flavor_por.11
+** title = 0 "Vasco da Gama in India
+** desc = 0 "Vasco da Gama became the first Portuguese to reach India when he landed near Calicut on May 20, 1498. Despite protests from Arab merchants, da Gama managed to secure trading rights with the Zamorin ruler, but later failed to produce the gold required to pay for custom fees. On the whole, da Gama's expedition turned out to be very profitable as the value of the cargo brought back was sixty times the cost of the expedition.
+** picture = SHIP_SAILING_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Glorious!:
+*** Trigger:
+**** 0 "Goa:
+***** The owner of the province:
+****** Is AI controlled
+*** AI chance:
+**** Base chance of 90
+**** Multiplies value by 0:
+***** Overextension is at least 150%
+*** 0 "Goa:
+**** Cedes province to 0 "Portugal
+*** Adds claim to 0 "Goa
+*** Changes prestige by 10
+** Option: 0 "Let's not strain ourselves too much.:
+*** Trigger:
+**** 0 "Goa:
+***** The owner of the province:
+****** Is not AI controlled
+*** AI chance:
+**** Base chance of 10
+*** Adds claim to 0 "Goa
+*** Changes prestige by 10

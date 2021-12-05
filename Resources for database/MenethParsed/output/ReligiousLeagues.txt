@@ -1,0 +1,261 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Art of War
+********* hre_religion = 0 "Catholic
+******** Immediate effects:
+********* Hidden effect:
+********** set_hre_religion_locked = yes
+******** Option: religious_leagues.1.a:
+********* Tooltip:
+********** set_hre_religion_locked = yes
+******* Gets the country event:
+******** ID is religious_leagues.2
+******** title = religious_leagues.2.t
+******** desc = religious_leagues.2.d
+******** picture = RELIGIOUS_WARS_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Art of War
+********* hre_religion = 0 "Catholic
+********* Any of the following:
+********** Does not have the country flag hre_religion_changed
+********** Has had the country flag "hre_religion_changed" for at least 30 days
+******** Immediate effects:
+********* Sets the country flag hre_religion_changed
+********* Hidden effect:
+********** set_hre_religion_treaty = yes
+********** set_hre_heretic_religion = 0 "Catholic
+********** set_hre_religion = 0 "Protestant
+********** set_hre_religion_locked = yes
+********** while:
+*********** Limited to:
+************ Any province in the world:
+************* Is part of the Holy Roman Empire
+************* The owner of the province:
+************** Is part of the Holy Roman Empire
+************** Follows the 0 "Reformed religion
+************* Does not have the province flag hre_post_leaguewar_reformed_owned
+*********** 0 "Stockholm:
+************ Changes the variable reformed_hre_member_provinces by 1
+*********** Random province in the world:
+************ Limited to:
+************* Is part of the Holy Roman Empire
+************* The owner of the province:
+************** Is part of the Holy Roman Empire
+************** Follows the 0 "Reformed religion
+************* Does not have the province flag hre_post_leaguewar_reformed_owned
+************ Sets the province flag hre_post_leaguewar_reformed_owned
+********** while:
+*********** Limited to:
+************ Any province in the world:
+************* Is part of the Holy Roman Empire
+************* The owner of the province:
+************** Is part of the Holy Roman Empire
+************** Does not follow the 0 "Reformed religion
+************* Does not have the province flag hre_post_leaguewar_non_reformed_owned
+*********** 0 "Stockholm:
+************ Changes the variable non_reformed_hre_member_provinces by 1
+*********** Random province in the world:
+************ Limited to:
+************* Is part of the Holy Roman Empire
+************* The owner of the province:
+************** Is part of the Holy Roman Empire
+************** Does not follow the 0 "Reformed religion
+************* Does not have the province flag hre_post_leaguewar_non_reformed_owned
+************ Sets the province flag hre_post_leaguewar_non_reformed_owned
+********** Every province in the world:
+*********** Limited to:
+************ Is part of the Holy Roman Empire
+*********** Removes the province flag hre_post_leaguewar_non_reformed_owned
+*********** Removes the province flag hre_post_leaguewar_reformed_owned
+********** 0 "Stockholm:
+*********** Sets the variable reformed_hre_member_provinces to 
+*********** divide_variable:
+************ which = reformed_others_member_provinces_ratio
+************ which = non_reformed_hre_member_provinces
+*********** If:
+************ Limited to:
+************* The variable reformed_others_member_provinces_ratio is equal or higher than 1.1
+************ Sets the global flag incident_reformer_dissension_can_happen
+*********** If:
+************ Limited to:
+************* The variable reformed_others_member_provinces_ratio is equal or higher than 2
+************ Sets the global flag incident_reformer_dissension_high_chance
+******** Option: religious_leagues.2.a:
+********* Tooltip:
+********** set_hre_heretic_religion = 0 "Catholic
+********** set_hre_religion = 0 "Protestant
+********** set_hre_religion_locked = yes
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+*********** Has the global flag incident_reformer_dissension_can_happen
+********** set_imperial_incident = incident_reformer_dissension
+********* set_hre_religion = 0 "Protestant
+******** after:
+********* 0 "Stockholm:
+********** Sets the variable non_reformed_hre_member_provinces to 0
+********** Sets the variable reformed_hre_member_provinces to 0
+********** Sets the variable reformed_others_member_provinces_ratio to 0
+******* Gets the country event:
+******** ID is religious_leagues.3
+******** title = religious_leagues.3.t
+******** desc = religious_leagues.3.d
+******** picture = RELIGIOUS_WARS_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Art of War
+********* hre_religion = 0 "Protestant
+********* Any of the following:
+********** Does not have the country flag hre_religion_changed
+********** Has had the country flag "hre_religion_changed" for at least 30 days
+******** Immediate effects:
+********* Sets the country flag hre_religion_changed
+********* Hidden effect:
+********** set_hre_heretic_religion = 0 "Protestant
+********** set_hre_religion = 0 "Catholic
+********** set_hre_religion_locked = yes
+******** Option: religious_leagues.3.a:
+********* Tooltip:
+********** set_hre_heretic_religion = 0 "Protestant
+********** set_hre_religion = 0 "Catholic
+********** set_hre_religion_locked = yes
+******* Gets the country event:
+******** ID is religious_leagues.4
+******** title = religious_leagues.4.t
+******** desc = religious_leagues.4.d
+******** picture = RELIGIOUS_WARS_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Art of War
+******** Immediate effects:
+********* Hidden effect:
+********** set_hre_religion_treaty = yes
+******** Option: religious_leagues.4.a:
+********* Tooltip:
+********** set_hre_religion_treaty = yes
+******* Gets the country event:
+******** ID is religious_leagues.5
+******** title = religious_leagues.5.t
+******** desc = religious_leagues.5.d
+******** picture = RELIGIOUS_WARS_eventPicture
+******** major = yes
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Art of War
+********* Does not have the global flag evangelical_union_happened
+********* hre_leagues_enabled_false = no
+********* hre_religion_locked_false = no
+********* hre_religion_treaty_false = no
+********* Is the Holy Roman Emperor
+********* Year is at least 1550
+********* Follows the 0 "Catholic religion
+********* Has the global flag 0 "Counter-Reformation
+********* Any known country:
+********** Is an elector in the Holy Roman Empire
+********** Any of the following:
+*********** Follows the 0 "Protestant religion
+*********** Follows the 0 "Reformed religion
+*********** Follows the anglican religion
+*********** Follows the hussite religion
+********** is_free_or_tributary_trigger = yes
+********* hre_reform_passed_false = 0 "Proclaim Erbkaisertum
+********* Does not have the global flag great_peasants_war_flag
+******** Mean time to happen
+********* Base mean time to happen of 120 months
+********* Multiplies value by 0.5:
+********** Year is at least 1575
+********* Multiplies value by 0.1:
+********** Year is at least 1600
+******** Option: religious_leagues.5.a:
+********* enable_hre_leagues = yes
+********* Sets the global flag evangelical_union_happened
+******* Gets the country event:
+******** ID is religious_leagues.6
+******** title = religious_leagues.6.t
+******** desc = religious_leagues.6.d
+******** picture = RELIGIOUS_WARS_eventPicture
+******** major = yes
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Art of War
+********* Is the Holy Roman Emperor
+********* Is not at war
+********** No known country:
+*********** is_in_league_war = yes
+********* Is not in regency
+********* hre_religion_locked_false = no
+********* hre_religion_treaty_false = no
+********* Follows the 0 "Catholic religion
+********* Any of the following:
+********** All of the following:
+*********** hre_leagues_enabled = yes
+*********** Has had the global flag "evangelical_union_happened" for at least 10950 days
+************ No known country:
+************* Is an elector in the Holy Roman Empire
+************* Any of the following:
+************** Follows the 0 "Protestant religion
+************** Follows the 0 "Reformed religion
+************** Follows the anglican religion
+************** Follows the hussite religion
+************* is_league_enemy = our country
+************* Has a truce with our country
+********** All of the following:
+*********** Does not have the global flag evangelical_union_happened
+*********** Year is at least 1625
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: religious_leagues.6.a:
+********* set_hre_religion_locked = yes
+******* Gets the country event:
+******** ID is religious_leagues.7
+******** title = religious_leagues.7.t
+******** desc = religious_leagues.7.d
+******** picture = RELIGIOUS_WARS_eventPicture
+******** major = yes
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Art of War
+********* Is the Holy Roman Emperor
+********* Is not at war
+********** No known country:
+*********** is_in_league_war = yes
+********* Is not in regency
+********* hre_religion_locked_false = no
+********* hre_religion_treaty_false = no
+********* Follows the 0 "Protestant religion
+********* Any of the following:
+********** All of the following:
+*********** hre_leagues_enabled = yes
+*********** Has had the global flag "evangelical_union_happened" for at least 10950 days
+************ No known country:
+************* Is an elector in the Holy Roman Empire
+************* Follows the 0 "Catholic religion
+************* is_league_enemy = our country
+************* Has a truce with our country
+********** All of the following:
+*********** Does not have the global flag evangelical_union_happened
+*********** Year is at least 1625
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Option: religious_leagues.7.a:
+********* set_hre_religion_locked = yes
+******* Gets the country event:
+******** ID is religious_leagues.8
+******** title = religious_leagues.8.t
+******** desc = religious_leagues.8.d
+******** picture = RELIGIOUS_WARS_eventPicture
+******** major = yes
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Art of War
+********* hre_religion = 0 "Protestant
+******** Immediate effects:
+********* Hidden effect:
+********** set_hre_religion_locked = yes
+******** Option: religious_leagues.8.a:
+********* Tooltip:
+********** set_hre_religion_locked = yes

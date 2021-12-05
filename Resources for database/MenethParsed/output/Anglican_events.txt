@@ -1,0 +1,734 @@
+
+=== title = anglican_events.1.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* Has the monarchy government type
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.1.a:'''
+
+* add_church_power = 25
+
+=== title = anglican_events.2.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* Does not have the country modifier "political_recusancy"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.2.a:'''
+
+* add_church_power = 50
+* Changes administrative power stored by -25
+
+'''Option: anglican_events.2.b:'''
+
+* add_church_power = 25
+
+'''Option: anglican_events.2.c:'''
+
+* Adds the modifier "political_recusancy" for 10 years:
+** +20% spy offense
+
+=== title = anglican_events.3.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* The 0 "Reformed religion is enabled
+* Follows the anglican religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.3.a:'''
+
+* add_church_power = 33
+
+'''Option: anglican_events.3.b:'''
+
+* add_innovativeness_small_effect = yes
+* One of the following will happen:
+** 50 relative chance:
+** 50 relative chance:
+*** Random owned province:
+**** Limited to:
+***** Follows the anglican religion
+***** The province is not the capital of the country
+***** is_reformation_center_false = no
+**** Changes religion to 0 "Reformed
+
+=== title = anglican_events.4.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* has_parliament = yes
+* Does not have the country modifier "commons_decide_doctrine"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.4.a:'''
+
+* add_church_power = 10
+* If:
+** Limited to:
+*** Has the DLC Common Sense
+*** Any owned province:
+**** has_seat_in_parliament = yes
+**** is_backing_current_issue = yes
+** Random owned province:
+*** Limited to:
+**** has_seat_in_parliament = yes
+**** is_backing_current_issue = yes
+*** back_current_issue_false = no
+* else:
+** reduce_legitimacy_medium_effect = yes
+
+'''Option: anglican_events.4.b:'''
+
+* add_church_power = -33
+
+'''Option: anglican_events.4.c:'''
+
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_influence_modifier:
+*** estate = estate_burghers
+*** desc = COMMONS_REFORM_CHURCH
+*** influence = 10
+*** Lasting 3650 days
+* else:
+** Adds the modifier "commons_decide_doctrine" for 10 years:
+*** -1 prestige
+
+=== title = anglican_events.5.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* has_institution = printing_press
+* Does not have the country modifier "ignore_marprelate"
+* Does not have the country modifier "respond_marprelate"
+* Does not have the country modifier "imprison_marprelate"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.5.a:'''
+
+* add_church_power = -25
+* Adds the modifier "ignore_marprelate" for 10 years:
+** -1% global missionary strength
+
+'''Option: anglican_events.5.b:'''
+
+* Changes administrative power stored by -25
+* Adds the modifier "respond_marprelate" for 10 years:
+** -0.5 prestige
+
+'''Option: anglican_events.5.c:'''
+
+* Changes military power stored by -25
+* Adds the modifier "imprison_marprelate" for 10 years:
+** +1 global unrest
+
+=== title = anglican_events.6.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* Any owned province:
+** The province is not the capital of the country
+** Any of the following:
+*** Follows the 0 "Reformed religion
+*** Follows the 0 "Protestant religion
+*** Follows the 0 "Catholic religion
+** No owned province:
+*** Has the province modifier "prayer_book_rebels_appeased"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Any of the following:
+***** Follows the 0 "Protestant religion
+***** Follows the 0 "Catholic religion
+***** Follows the 0 "Reformed religion
+*** save_event_target_as = prayer_book_province
+
+'''Option: anglican_events.6.a:'''
+
+* AI chance:
+** Base chance of 1
+* add_church_power = -25
+* event_target:prayer_book_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+**** The province is not the capital of the country
+**** Any of the following:
+***** Follows the 0 "Protestant religion
+***** Follows the 0 "Catholic religion
+***** Follows the 0 "Reformed religion
+*** Adds the modifier "prayer_book_rebels_appeased" until the end of the campaign:
+**** -5% missionary strength
+
+'''Option: anglican_events.6.b:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Any of the following:
+**** Stability is lower than 1
+**** 4 war exhaustion
+**** num_of_rebel_armies = 3
+* event_target:prayer_book_province:
+** Spawns revolt of size 2 of 0 "Religious rebels
+
+=== title = anglican_events.7.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* employed_advisor:
+** Follows the anglican religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.7.a:'''
+
+* If:
+** Limited to:
+*** Has the country modifier "0 "Test Act"
+** add_church_power = -25
+* If:
+** Limited to:
+*** Does not have the country modifier "0 "Test Act"
+** add_church_power = -10
+
+'''Option: anglican_events.7.b:'''
+
+* add_church_power = 10
+* Removes the 0 "Statesman advisor
+
+'''Option: anglican_events.7.c:'''
+
+* Trigger:
+** Any of the following:
+*** ruler_has_personality = cruel_personality
+*** ruler_has_personality = zealot_personality
+* highlight = yes
+* AI chance:
+** Base chance of 100
+* add_church_power = 20
+* If:
+** Limited to:
+*** Has the 0 "Statesman advisor
+** Kills the 0 "Statesman advisor
+
+=== title = anglican_events.8.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* Any owned province:
+** Any of the following:
+*** Follows the anglican religion
+*** Follows the 0 "Catholic religion
+*** Follows the 0 "Reformed religion
+*** Follows the 0 "Protestant religion
+** Does not have the province modifier "0 "Religious Zeal"
+** Does not have the province modifier "prayers_to_saints_allowed"
+** Does not have the province modifier "prayers_to_saints_banned"
+** In the continent 0 "Europe
+** The province is not the capital of the country
+** No owned province:
+*** Has the province modifier "prayers_to_saints_allowed"
+*** Has the province modifier "prayers_to_saints_banned"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** Follows the anglican religion
+***** Follows the 0 "Catholic religion
+***** Follows the 0 "Reformed religion
+***** Follows the 0 "Protestant religion
+**** Does not have the province modifier "0 "Religious Zeal"
+**** Does not have the province modifier "prayers_to_saints_allowed"
+**** Does not have the province modifier "prayers_to_saints_banned"
+**** In the continent 0 "Europe
+**** The province is not the capital of the country
+*** save_event_target_as = prayers_to_saints_province
+
+'''Option: anglican_events.8.a:'''
+
+* event_target:prayers_to_saints_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+**** Any of the following:
+***** Follows the anglican religion
+***** Follows the 0 "Catholic religion
+***** Follows the 0 "Reformed religion
+***** Follows the 0 "Protestant religion
+*** Adds the modifier "prayers_to_saints_allowed" until the end of the campaign:
+**** local_unrest = -5
+
+'''Option: anglican_events.8.b:'''
+
+* add_church_power = 15
+* event_target:prayers_to_saints_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+**** Any of the following:
+***** Follows the anglican religion
+***** Follows the 0 "Catholic religion
+***** Follows the 0 "Reformed religion
+***** Follows the 0 "Protestant religion
+*** Adds the modifier "prayers_to_saints_banned" until the end of the campaign:
+**** +2% missionary strength
+
+=== title = anglican_events.9.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* Does not have the country modifier "feast_days_abolished"
+* Does not have the country modifier "anglican_feast_days"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.9.a:'''
+
+* add_church_power = 15
+* Adds the modifier "feast_days_abolished" for 10 years:
+** +3 global unrest
+
+'''Option: anglican_events.9.b:'''
+
+* add_church_power = -10
+* Adds the modifier "anglican_feast_days" for 10 years:
+** church_power_modifier = -0.5
+
+=== title = anglican_events.10.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* current_age = 0 "Age of Absolutism
+* Does not have the country modifier "puritan_colonists"
+* Any owned province:
+** The province is a colony
+** The province is overseas
+** Is in the 0 "Christian religion group
+** Any of the following:
+*** In the continent 0 "North America
+*** In the continent 0 "South America
+*** In the continent 1 "The New World
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.10.a:'''
+
+* Random province in the world:
+** Limited to:
+*** Has been discovered by our country
+*** Is uncolonized
+*** our country% colonial range
+*** Any bordering province:
+**** The owner of the province:
+***** Is a vassal of our country
+*** Any of the following:
+**** In the continent 0 "North America
+**** In the continent 0 "South America
+**** In the continent 1 "The New World
+** Founds a colony
+** Changes religion to 0 "Reformed
+** Changes culture to our country
+** Adds the modifier "puritan_settlement" until the end of the campaign:
+*** -100% missionary strength
+*** +20 colonial growth
+
+'''Option: anglican_events.10.b:'''
+
+* Random subject country:
+** Limited to:
+*** Is a colonial nation
+*** Capital:
+**** Any of the following:
+***** In the continent 0 "North America
+***** In the continent 0 "South America
+***** In the continent 1 "The New World
+** Random owned province:
+*** Changes religion to 0 "Reformed
+* Adds the modifier "puritan_colonists" for 10 years:
+** +10 global settler increase
+
+=== title = anglican_events.11.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_VESTMENTS_BANNED
+* Does not have the country modifier "fancy_vestments"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.11.a:'''
+
+* Adds the modifier "fancy_vestments" for 10 years:
+** +1 prestige
+
+'''Option: anglican_events.11.b:'''
+
+* add_church_power = 25
+
+'''Option: anglican_events.11.c:'''
+
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_influence_modifier:
+*** estate = estate_church
+*** desc = EST_VAL_VESTMENTS_BANNED
+*** influence = -10
+*** Lasting 3650 days
+* else:
+** increase_legitimacy_small_effect = yes
+
+=== title = anglican_events.12.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* The anglican religion has existed for less than 50 years
+* Any owned province:
+** In the continent 0 "Europe
+** Any of the following:
+*** Follows the 0 "Catholic religion
+*** Follows the 0 "Reformed religion
+** No owned province:
+*** Has the province modifier "anglican_iconoclasm"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.12.a:'''
+
+* Trigger:
+** Any owned province:
+*** Follows the 0 "Catholic religion
+*** In the continent 0 "Europe
+* Random owned province:
+** Limited to:
+*** In the continent 0 "Europe
+*** Follows the 0 "Catholic religion
+*** The province is not the capital of the country
+** Changes religion to anglican
+** Adds the modifier "anglican_iconoclasm" until the end of the campaign:
+*** local_unrest = 10
+
+'''Option: anglican_events.12.b:'''
+
+* add_church_power = 20
+* Random owned province:
+** Limited to:
+*** In the continent the capital
+*** Any of the following:
+**** Follows the 0 "Catholic religion
+**** Follows the 0 "Reformed religion
+** Adds the modifier "anglican_iconoclasm" until the end of the campaign:
+*** local_unrest = 10
+
+'''Option: anglican_events.12.c:'''
+
+* Trigger:
+** The 0 "Reformed religion is enabled
+** Any owned province:
+*** Follows the 0 "Reformed religion
+* Random owned province:
+** Limited to:
+*** Follows the 0 "Reformed religion
+*** In the continent the capital
+** Changes religion to anglican
+** Adds the modifier "anglican_iconoclasm" until the end of the campaign:
+*** local_unrest = 10
+
+=== title = anglican_events.13.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* Does not have the idea group 0 "Humanist Ideas
+* Does not have the country modifier "priest_hunters"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.13.a:'''
+
+* Adds the modifier "priest_hunters" for 10 years:
+** +25% global spy defence
+* 0 "The Papal State:
+** Adds the opinion modifier "0 "Angry" towards our country
+* Random neighbor country:
+** Limited to:
+*** Follows the 0 "Catholic religion
+** Adds the opinion modifier "0 "Irritated" towards our country
+
+'''Option: anglican_events.13.b:'''
+
+* Trigger:
+** Any neighbor country:
+*** Follows the 0 "Catholic religion
+* Random neighbor country:
+** Limited to:
+*** Follows the 0 "Catholic religion
+** ROOT:
+*** Gives the 0 "Diplomatic Insult casus belli against PREV
+
+=== title = anglican_events.14.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* The 0 "Protestant religion is enabled
+* Is not the lesser partner in a union
+* Does not have the country flag had_anglican_question
+* Is not a vassal
+* The 0 "Protestant religion has existed for at least 15 years
+* The anglican religion is not enabled
+* Is in the 0 "Christian religion group
+* Isn't the defender of the faith
+* Capital:
+** Region is british_isles_region
+* Culture group is 0 "British
+* Any owned province:
+** Region is british_isles_region
+** can_have_center_of_reformation_trigger:
+*** RELIGION = anglican
+* Has at least 10 provinces
+* Country is not 0 "The Papal State
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 120 months
+* Multiplies value by 0.5:
+** Has the country modifier "the_statue_in_restraint_of_appeals"
+* Multiplies value by 0.8:
+** Country is 0 "England
+** 0 "Great Britain does not exist
+* Multiplies value by 1.5:
+** Country is 0 "England
+** 0 "Great Britain exists
+* Multiplies value by 0.8:
+** Country is 0 "Great Britain
+* Multiplies value by 2:
+** Does not own core province 0 "London
+
+'''Immediate effects:'''
+
+* Sets the country flag had_anglican_question
+
+'''Option: anglican_events.14.a:'''
+
+* Trigger:
+** Has the DLC Rule Britannia
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.01:
+*** Country is not 0 "England
+*** Country is not 0 "Great Britain
+** Multiplies value by 10000:
+*** 0 "The Papal State:
+**** Is part of the Holy Roman Empire
+* Enables the anglican religion
+* If:
+** Limited to:
+*** Follows the 0 "Catholic religion
+** Adds the opinion modifier "0 "Upset the Pope" from 0 "The Papal State
+* Changes religion to anglican
+* If:
+** Limited to:
+*** Does not have the country flag reformation_money
+** Modifies treasury by 1.0 years worth of income
+* If:
+** Limited to:
+*** Capital:
+**** is_reformation_center_false = no
+** Capital:
+*** Changes religion to anglican
+*** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+**** -100% missionary strength
+* Random owned province:
+** Limited to:
+*** Follows the 0 "Catholic religion
+** Changes religion to anglican
+** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+*** -100% missionary strength
+* Adds the modifier "0 "Religious Zeal" for 10 years:
+** +10% global heretic missionary strength
+** missionary_maintenance_cost = -0.33
+
+'''Option: anglican_events.14.b:'''
+
+* Trigger:
+** Has the DLC Rule Britannia
+** current_age = 0 "Age of Reformation
+*** No province in the world:
+**** is_reformation_center = yes
+**** Follows the anglican religion
+* AI chance:
+** Base chance of 0
+* Enables the anglican religion
+* Changes religion to anglican
+* If:
+** Limited to:
+*** Capital:
+**** can_have_center_of_reformation_trigger:
+***** RELIGION = anglican
+** Capital:
+*** Changes religion to anglican
+*** add_reform_center = anglican
+*** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+**** -100% missionary strength
+* else:
+** Random owned province:
+*** Limited to:
+**** can_have_center_of_reformation_trigger:
+***** RELIGION = anglican
+*** Changes religion to anglican
+*** add_reform_center = anglican
+*** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+**** -100% missionary strength
+* Random owned province:
+** Limited to:
+*** Follows the 0 "Catholic religion
+** Changes religion to anglican
+** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+*** -100% missionary strength
+* Adds the modifier "0 "Religious Zeal" for 10 years:
+** +10% global heretic missionary strength
+** missionary_maintenance_cost = -0.33
+* Modifies treasury by -1 years worth of income
+* If:
+** Limited to:
+*** Follows the 0 "Catholic religion
+** Adds the opinion modifier "0 "Upset the Pope" from 0 "The Papal State
+* Every country:
+** Limited to:
+*** Capital:
+**** Any of the following:
+***** Region is france_region
+***** Region is low_countries_region
+***** Region is british_isles_region
+*** Follows the 0 "Catholic religion
+** Adds the opinion modifier "anglican_evangelism_opinion" towards our country
+* Adds the modifier "anglican_evangelism" for 10 years:
+** -3 diplomatic reputation
+
+'''Option: anglican_events.14.c:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 0:
+*** Any of the following:
+**** is_excommunicated = yes
+**** Has the country modifier "the_statue_in_restraint_of_appeals"
+**** 0 "The Papal State does not exist
+
+=== title = anglican_events.15.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rule Britannia
+* Follows the anglican religion
+* Has the monarchy government type
+* ruler_religion_false = our country
+* Does not have the country modifier "nonconformist_anglican_monarch"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: anglican_events.15.a:'''
+
+* add_church_power = -50
+* Adds the modifier "nonconformist_anglican_monarch" for 10 years:
+** church_power_modifier = -1
+** -2 tolerance of the true faith
+
+'''Option: anglican_events.15.b:'''
+
+* set_ruler_religion = anglican
+* Changes prestige by -25
+* Adds the modifier "angry_nonconformists" for 10 years:
+** -2 tolerance of heretics

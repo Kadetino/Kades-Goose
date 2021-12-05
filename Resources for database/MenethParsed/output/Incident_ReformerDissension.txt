@@ -1,0 +1,156 @@
+******** is_triggered_only = yes
+******** major = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random country:
+*********** Limited to:
+************ Is part of the Holy Roman Empire
+************ Follows the 0 "Reformed religion
+************ is_free_or_tributary_trigger = yes
+************* No country:
+************** Is part of the Holy Roman Empire
+************** Follows the 0 "Reformed religion
+************** is_free_or_tributary_trigger = yes
+************** Has at least prev provinces
+************** prev:
+*************** Has less than prev provinces
+*********** save_event_target_as = reformed_leader_country
+******** Option: reformer_dissension.1.A:
+********* Hidden effect:
+********** Every country:
+*********** Limited to:
+************ Is part of the Holy Roman Empire
+************ Follows the 0 "Reformed religion
+************ is_free_or_tributary_trigger = yes
+*********** Adds the opinion modifier "opinion_annoyed_at_hre_protestant" towards our country
+*********** Gets the country event:
+************ ID is reformer_dissension.2
+********* AI chance:
+********** Base chance of 1000
+********** Multiplies value by 0.5:
+*********** Has the global flag incident_reformer_dissension_high_chance
+********** Multiplies value by 0.5:
+*********** Any country:
+************ Any of the following:
+************* Is part of the Holy Roman Empire
+************* Follows the 0 "Reformed religion
+************ Any of the following:
+************* total_own_and_non_tributary_subject_development = our country
+************* Army is at least as large as our country's
+********** Multiplies value by 0.01:
+*********** calc_true_if:
+************ 3 will be built
+************ Every country:
+************* Any of the following:
+************** Is part of the Holy Roman Empire
+************** Follows the 0 "Reformed religion
+************* Any of the following:
+************** total_own_and_non_tributary_subject_development = our country
+************** Army is at least as large as our country's
+********** Multiplies value by 0:
+*********** Any of the following:
+************ Has less than 2 provinces
+************ Any country:
+************* Is part of the Holy Roman Empire
+************* Follows the 0 "Reformed religion
+************* Any of the following:
+************** is_in_war:
+*************** attacker_leader = this
+*************** defenders = our country
+*************** War score is at least 50
+************** is_in_war:
+*************** defender_leader = this
+*************** attackers = our country
+*************** War score is at least 50
+******** Option: reformer_dissension.1.B:
+********* set_hre_religion_treaty = yes
+********* Changes Imperial influence by -20
+********* AI chance:
+********** Base chance of 1000
+********** Multiplies value by 0.01:
+************ No country:
+************* Any of the following:
+************** Is part of the Holy Roman Empire
+************** Follows the 0 "Reformed religion
+************* Any of the following:
+************** total_own_and_non_tributary_subject_development = our country
+************** Army is at least as large as our country's
+********** Multiplies value by 0:
+*********** Any of the following:
+************ Has less than 2 provinces
+************ Any country:
+************* Is part of the Holy Roman Empire
+************* Follows the 0 "Reformed religion
+************* Any of the following:
+************** is_in_war:
+*************** attacker_leader = this
+*************** defenders = our country
+*************** War score is at least 50
+************** is_in_war:
+*************** defender_leader = this
+*************** attackers = our country
+*************** War score is at least 50
+******** Option: reformer_dissension.1.C:
+********* set_hre_religion = 0 "Reformed
+********* AI chance:
+********** Base chance of 1000
+********** Multiplies value by 0.01:
+*********** Any of the following:
+************ Has at least 2 provinces
+************* No country:
+************** Is part of the Holy Roman Empire
+************** Follows the 0 "Reformed religion
+************** Any of the following:
+*************** is_in_war:
+**************** attacker_leader = this
+**************** defenders = our country
+**************** War score is at least 50
+*************** is_in_war:
+**************** defender_leader = this
+**************** attackers = our country
+**************** War score is at least 50
+******* Gets the country event:
+******** ID is reformer_dissension.2
+******** title = reformer_dissension.2.name
+******** desc = reformer_dissension.2.desc
+******** picture = RELIGIOUS_WARS_eventPicture
+******** is_triggered_only = yes
+******** Option: reformer_dissension.2.A:
+********* Changes stability by -1
+********* Changes Imperial influence by 10
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0.5:
+*********** Has the global flag incident_reformer_dissension_high_chance
+******** Option: reformer_dissension.2.B:
+********* event_target:Emperor:
+********** Adds the opinion modifier "0 "Abandoned the Holy Roman Empire" towards our country
+********* Removes the province from the Holy Roman Empire
+********* Every subject country:
+********** Limited to:
+*********** Is part of the Holy Roman Empire
+*********** is_free_or_tributary_trigger_false = no
+********** Removes the province from the Holy Roman Empire
+********* AI chance:
+********** Base chance of 2
+********** Multiplies value by 0:
+*********** has_reform = free_city
+********** Multiplies value by 0.75:
+*********** Has less than 10 provinces
+********** Multiplies value by 0.5:
+*********** Has less than 4 provinces
+********** Multiplies value by 0.5:
+*********** Has less than 2 provinces
+********** Multiplies value by 0.5:
+*********** Has less than 2 provinces
+********** Multiplies value by 0.25:
+*********** Is allied with event_target:Emperor
+********** Multiplies value by 2:
+*********** Any of the following:
+************ Considers event_target:Emperor a rival
+************ event_target:Emperor:
+************* Considers our country a rival
+********** Multiplies value by 10:
+*********** Any of the following:
+************ total_own_and_non_tributary_subject_development = event_target:Emperor
+************ Army is at least as large as event_target:Emperor's

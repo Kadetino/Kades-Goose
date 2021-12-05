@@ -1,0 +1,1816 @@
+
+=== title = center_of_revolution.1000.name ===
+* Province event
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* current_age = 0 "Age of Revolutions
+* development = 30
+* enlightenment = 100
+* The owner of the province:
+** is_great_power = yes
+** has_institution = enlightenment
+** is_free_or_tributary_trigger = yes
+** Country is not 0 "The Papal State
+* Does not have the province modifier "0 "Religious Center"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 600 years
+* Multiplies value by 20:
+** Not in the continent 0 "Europe
+* Multiplies value by 0.75:
+** The province is the capital of the country
+* Multiplies value by 1.5:
+** The owner of the province:
+*** Capital:
+**** Region is not our country
+* Multiplies value by 0.8:
+** 0 "Europe:
+**** Province is not our country
+**** higher_development_than = our country
+* Multiplies value by 2:
+** is_in_capital_area_false = no
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Has the monarchy government type
+* Multiplies value by 0.9:
+** is_institution_enabled = industrialization
+* Multiplies value by 0.9:
+** industrialization = 100
+* Multiplies value by 1.2:
+** The owner of the province:
+*** has_estate_false = estate_burghers
+* Multiplies value by 10:
+** The owner of the province:
+*** absolutism_false = 10
+* Multiplies value by 2:
+** The owner of the province:
+*** absolutism_false = 20
+* Multiplies value by 1.2:
+** The owner of the province:
+*** absolutism_false = 30
+* Multiplies value by 1.2:
+** The owner of the province:
+*** absolutism_false = 40
+* Multiplies value by 1.2:
+** The owner of the province:
+*** absolutism_false = 50
+* Multiplies value by 1.2:
+** The owner of the province:
+*** absolutism_false = 60
+* Multiplies value by 0.95:
+** The owner of the province:
+*** absolutism = 70
+* Multiplies value by 0.9:
+** The owner of the province:
+*** absolutism = 80
+* Multiplies value by 0.9:
+** The owner of the province:
+*** absolutism = 90
+* Multiplies value by 0.9:
+** The owner of the province:
+*** absolutism = 100
+* Multiplies value by 0.95:
+** development = 35
+* Multiplies value by 0.95:
+** development = 40
+* Multiplies value by 0.9:
+** development = 45
+* Multiplies value by 0.9:
+** development = 50
+* Multiplies value by 0.8:
+** Any of the following:
+*** base_production = 20
+*** province_trade_power = 30
+** The owner of the province:
+*** Any of the following:
+**** has_estate = estate_burghers
+**** has_estate = estate_jains
+**** has_estate = estate_vaisyas
+*** Any of the following:
+**** All of the following:
+***** estate_influence:
+****** estate_false = estate_burghers
+****** influence_false = 20
+***** estate_influence:
+****** estate_false = estate_jains
+****** influence_false = 20
+***** estate_influence:
+****** estate_false = estate_vaisyas
+****** influence_false = 20
+**** All of the following:
+***** estate_loyalty:
+****** estate_false = estate_burghers
+****** loyalty_false = 25
+***** estate_loyalty:
+****** estate_false = estate_jains
+****** loyalty_false = 25
+***** estate_loyalty:
+****** estate_false = estate_vaisyas
+****** loyalty_false = 25
+* Multiplies value by 0.8:
+** The owner of the province:
+*** variable_arithmetic_trigger:
+**** export_to_variable:
+***** value = trigger_value:production_income_percentage
+***** which = burgher_income_proportion
+**** export_to_variable:
+***** value = trigger_value:trade_income_percentage
+***** which = trade_income_proportion
+**** Changes the variable trade_income_proportion by 
+**** The variable burgher_income_proportion is equal or higher than 0.75
+*** Any of the following:
+**** has_estate = estate_burghers
+**** has_estate = estate_jains
+**** has_estate = estate_vaisyas
+*** Any of the following:
+**** All of the following:
+***** estate_influence:
+****** estate_false = estate_burghers
+****** influence_false = 20
+***** estate_influence:
+****** estate_false = estate_jains
+****** influence_false = 20
+***** estate_influence:
+****** estate_false = estate_vaisyas
+****** influence_false = 20
+**** All of the following:
+***** estate_loyalty:
+****** estate_false = estate_burghers
+****** loyalty_false = 25
+***** estate_loyalty:
+****** estate_false = estate_jains
+****** loyalty_false = 25
+***** estate_loyalty:
+****** estate_false = estate_vaisyas
+****** loyalty_false = 25
+* Multiplies value by 0.8:
+** The owner of the province:
+*** revanchism = 50
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Has at least 20 active loans
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Has at least 30 active loans
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Stability is lower than 1
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Stability is lower than -1
+* Multiplies value by 1.2:
+** The owner of the province:
+*** Stability is at least 3
+* Multiplies value by 0.9:
+** The owner of the province:
+*** -10 prestige
+* Multiplies value by 0.9:
+** The owner of the province:
+*** -50 prestige
+* Multiplies value by 0.75:
+** The owner of the province:
+*** Has the country flag revolutionary_sentiment_flour_wars
+* Multiplies value by 0.75:
+** The owner of the province:
+*** Has the country flag revolutionary_sentiment_many_loans
+* Multiplies value by 0.75:
+** The owner of the province:
+*** Has the country flag revolutionary_sentiment_necker_reforms
+* Multiplies value by 0.75:
+** The owner of the province:
+*** Has the country flag revolutionary_sentiment_3rd_estate_demands
+* Multiplies value by 0.8:
+** Year is at least 1750
+* Multiplies value by 0.8:
+** Year is at least 1765
+* Multiplies value by 0.8:
+** Year is at least 1780
+* Multiplies value by 0.5:
+** Year is at least 1800
+* Can only fire once
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** set_saved_name:
+*** Named "first_center_revolutionary_philosopher"
+** save_global_event_target_as = revolution_center
+** save_global_event_target_as = first_revolution_center
+
+'''Option: center_of_revolution.1000.A:'''
+
+* spawn_center_of_revolution = our country
+* Sets the province flag first_revolution_center
+* Sets the global flag first_revolution_center_spawned
+* log = Center of Revolution spawned in [Root.GetName] (owner: [Root.Owner.GetName]) in [GetYear]
+
+=== title = center_of_revolution.1001.name ===
+* Province event
+* Can only fire once
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* has_revolution_in_province = yes
+* Has the global flag first_revolutionary_center_snuffed_out
+* Any of the following:
+** }
+** All of the following:
+*** The owner of the province:
+**** Is the target of the revolution
+*** }
+* Does not have the global flag no_more_revolutions_ever
+* development = 30
+* enlightenment = 100
+* The owner of the province:
+** is_great_power = yes
+** has_institution = enlightenment
+** is_free_or_tributary_trigger = yes
+** Country is not 0 "The Papal State
+* Does not have the province modifier "0 "Religious Center"
+* Does not have the province flag first_revolution_center
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 15 years
+* Multiplies value by 0.75:
+** The province is the capital of the country
+** The owner of the province:
+*** is_revolutionary = yes
+* Multiplies value by 10:
+** event_target:revolution_center:
+*** same_continent_false = our country
+* Multiplies value by 0.75:
+** The owner of the province:
+*** Is the target of the revolution
+* Multiplies value by 0.75:
+** The owner of the province:
+*** is_revolutionary = yes
+* Multiplies value by 0.75:
+** The owner of the province:
+*** is_revolutionary = yes
+*** revolutionary_zeal = 80
+* Multiplies value by 0.75:
+** The province is the capital of the country
+* Multiplies value by 1.5:
+** The owner of the province:
+*** Capital:
+**** Region is not our country
+* Multiplies value by 0.8:
+** 0 "Europe:
+**** Province is not our country
+**** higher_development_than = our country
+* Multiplies value by 2:
+** is_in_capital_area_false = no
+* Multiplies value by 1.2:
+** The owner of the province:
+*** has_estate_false = estate_burghers
+* Multiplies value by 1.5:
+** The owner of the province:
+*** absolutism_false = 35
+* Multiplies value by 1.2:
+** The owner of the province:
+*** absolutism_false = 50
+* Multiplies value by 0.9:
+** The owner of the province:
+*** absolutism = 75
+* Multiplies value by 0.8:
+** The owner of the province:
+*** absolutism = 90
+* Multiplies value by 0.8:
+** The owner of the province:
+*** absolutism = 100
+* Multiplies value by 0.9:
+** development = 40
+* Multiplies value by 0.8:
+** development = 50
+* Multiplies value by 0.8:
+** Any of the following:
+*** base_production = 20
+*** province_trade_power = 30
+** The owner of the province:
+*** Any of the following:
+**** has_estate = estate_burghers
+**** has_estate = estate_jains
+**** has_estate = estate_vaisyas
+*** Any of the following:
+**** All of the following:
+***** estate_influence:
+****** estate_false = estate_burghers
+****** influence_false = 20
+***** estate_influence:
+****** estate_false = estate_jains
+****** influence_false = 20
+***** estate_influence:
+****** estate_false = estate_vaisyas
+****** influence_false = 20
+**** All of the following:
+***** estate_loyalty:
+****** estate_false = estate_burghers
+****** loyalty_false = 25
+***** estate_loyalty:
+****** estate_false = estate_jains
+****** loyalty_false = 25
+***** estate_loyalty:
+****** estate_false = estate_vaisyas
+****** loyalty_false = 25
+* Multiplies value by 0.8:
+** The owner of the province:
+*** variable_arithmetic_trigger:
+**** export_to_variable:
+***** value = trigger_value:production_income_percentage
+***** which = burgher_income_proportion
+**** export_to_variable:
+***** value = trigger_value:trade_income_percentage
+***** which = trade_income_proportion
+**** Changes the variable trade_income_proportion by 
+**** The variable burgher_income_proportion is equal or higher than 0.75
+*** Any of the following:
+**** has_estate = estate_burghers
+**** has_estate = estate_jains
+**** has_estate = estate_vaisyas
+*** Any of the following:
+**** All of the following:
+***** estate_influence:
+****** estate_false = estate_burghers
+****** influence_false = 20
+***** estate_influence:
+****** estate_false = estate_jains
+****** influence_false = 20
+***** estate_influence:
+****** estate_false = estate_vaisyas
+****** influence_false = 20
+**** All of the following:
+***** estate_loyalty:
+****** estate_false = estate_burghers
+****** loyalty_false = 25
+***** estate_loyalty:
+****** estate_false = estate_jains
+****** loyalty_false = 25
+***** estate_loyalty:
+****** estate_false = estate_vaisyas
+****** loyalty_false = 25
+* Multiplies value by 0.8:
+** The owner of the province:
+*** revanchism = 50
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Has at least 20 active loans
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Stability is lower than 0
+* Multiplies value by 1.2:
+** The owner of the province:
+*** Stability is at least 2
+* Multiplies value by 0.9:
+** The owner of the province:
+*** -50 prestige
+* Multiplies value by 0.75:
+** The owner of the province:
+*** Has the country flag revolutionary_sentiment_flour_wars
+* Multiplies value by 0.75:
+** The owner of the province:
+*** Has the country flag revolutionary_sentiment_many_loans
+* Multiplies value by 0.75:
+** The owner of the province:
+*** Has the country flag revolutionary_sentiment_necker_reforms
+* Multiplies value by 0.75:
+** The owner of the province:
+*** Has the country flag revolutionary_sentiment_3rd_estate_demands
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** clear_global_event_target = revolution_center
+** save_global_event_target_as = revolution_center
+** log = 2nd Center of Revolution spawned in [Root.GetName] (owner: [Root.Owner.GetName]) in [GetYear]
+
+'''Option: center_of_revolution.1001.A:'''
+
+* Trigger:
+** The owner of the province:
+*** is_revolutionary_false = no
+* spawn_center_of_revolution = our country
+
+'''Option: center_of_revolution.1001.B:'''
+
+* Trigger:
+** The owner of the province:
+*** is_revolutionary = yes
+* spawn_center_of_revolution = our country
+
+=== title = center_of_revolution.1500.name ===
+* Cannot fire randomly
+
+'''Option: center_of_revolution.1500.A:'''
+
+* remove_government_reform = revolutionary_empire_reform
+* change_government_to_monarchy = yes
+* Kills the ruler of the country
+* If:
+** Limited to:
+*** Has an heir
+** Kills the heir of the country
+*** allow_new_heir_false = no
+* If:
+** Limited to:
+*** Is the target of the revolution
+** --- will become the main source of the revolution
+* If:
+** Limited to:
+*** Any province in the world:
+**** is_center_of_revolution = yes
+**** previous_owner = prev
+** remove_center_of_revolution = yes
+** If:
+*** Limited to:
+**** Does not have the global flag first_revolutionary_center_snuffed_out
+*** Sets the global flag first_revolutionary_center_snuffed_out
+* If:
+** Limited to:
+*** Has the country flag ruler_of_france_exiled
+*** }
+** set_ruler = ruler_of_france
+* If:
+** Limited to:
+*** Has the country flag heir_of_france_exiled
+*** }
+** set_heir = heir_of_france
+* If:
+** Limited to:
+*** Has the country flag habsburgs_exiled_flag
+** Spawns a ruler:
+*** Ruler's dynasty is von Habsburg
+* If:
+** Limited to:
+*** Has the country modifier "0 "The Reign of Terror"
+** Removes the country modifier "0 "The Reign of Terror"
+* Sets the country flag last_revolutionary_country
+
+=== title = center_of_revolution.1600.name ===
+* Cannot fire randomly
+
+'''Option: center_of_revolution.1600.A:'''
+
+* from:
+** Region is 
+*** Limited to:
+**** has_revolution_in_province = yes
+**** The province is owned by our country
+**** is_center_of_revolution_false = no
+*** remove_revolution_from_province_effect = yes
+
+=== title = center_of_revolution.2000.name ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* current_age = 0 "Age of Revolutions
+* has_institution = enlightenment
+* is_great_power = yes
+* is_free_or_tributary_trigger = yes
+* Has at least 2 provinces where all of the following is true:
+** Produces 0 "Grain
+** Culture group is the same as our country
+* Any owned province:
+** development = 30
+** enlightenment = 100
+* Does not have the country flag laissez_faire_flour_happened
+* Does not have the global flag flour_wars_happened
+* Does not have the global flag first_revolution_center_spawned
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.2:
+** Capital:
+*** Not in the continent 0 "Europe
+
+'''Immediate effects:'''
+
+* Sets the country flag laissez_faire_flour_happened
+
+'''Option: center_of_revolution.2000.A:'''
+
+* Hidden effect:
+** Adds the modifier "laissez_faire_grain_trade_timer" for 5 years:
+*** No effects
+** Every owned province:
+*** Limited to:
+**** Produces 0 "Grain
+**** Culture group is the same as our country
+*** Adds the modifier "laissez_faire_grain_trade" until the end of the campaign:
+**** No effects
+* AI chance:
+** Base chance of 1
+
+'''Option: center_of_revolution.2000.B:'''
+
+* Changes prestige by -10
+* AI chance:
+** Base chance of 0
+
+=== title = center_of_revolution.2001.name ===
+
+'''Trigger:'''
+
+* Has the country modifier "laissez_faire_grain_trade_timer"
+* It is the 3. month of the year or later
+* It is before the 6. month of the year
+* Does not have the global flag first_revolution_center_spawned
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 years
+
+'''Immediate effects:'''
+
+* Sets the global flag flour_wars_happened
+* Sets the country flag revolutionary_sentiment_flour_wars
+* Changes stability by -1
+
+'''Option: center_of_revolution.2001.A:'''
+
+* Hidden effect:
+** Removes the country modifier "laissez_faire_grain_trade_timer"
+** Every owned province:
+*** Limited to:
+**** Has the province modifier "laissez_faire_grain_trade"
+*** Removes the country modifier "laissez_faire_grain_trade"
+* Changes prestige by -15
+* AI chance:
+** Base chance of 2
+
+'''Option: center_of_revolution.2001.B:'''
+
+* Capital:
+** Spawns revolt of size 3 of 0 "Peasant rebels
+* Random owned province:
+** Limited to:
+*** is_in_capital_area = yes
+*** The province is not the capital of the country
+*** Culture group is the same as our country
+*** is_state_core = our country
+** Spawns revolt of size 2 of 0 "Peasant rebels
+* AI chance:
+** Base chance of 1
+
+=== title = center_of_revolution.2002.name ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* current_age = 0 "Age of Revolutions
+* has_institution = enlightenment
+* Has at least 20 active loans
+* is_great_power = yes
+* is_free_or_tributary_trigger = yes
+* Any owned province:
+** development = 30
+** enlightenment = 100
+* Does not have the country flag revolutionary_sentiment_many_loans_happened
+* Does not have the global flag first_revolution_center_spawned
+* 0 "Stockholm:
+** The variable revolutionary_sentiment_many_loans_happened is lower than 2
+* Does not have the country modifier "revolution_administrative_reforms"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.2:
+** Capital:
+*** Not in the continent 0 "Europe
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Sets the country flag revolutionary_sentiment_many_loans_happened
+* Hidden effect:
+** 0 "Stockholm:
+*** Changes the variable revolutionary_sentiment_many_loans_happened by 1
+
+'''Option: center_of_revolution.2002.A:'''
+
+* Sets the country flag revolutionary_sentiment_many_loans
+* Adds the modifier "revolution_higher_taxes_for_debts" for 10 years:
+** +15% global tax modifier
+** +2 global unrest
+* AI chance:
+** Base chance of 1
+
+'''Option: center_of_revolution.2002.B:'''
+
+* Adds the modifier "revolution_administrative_reforms" for 10 years:
+** -1 interest
+** Reduces inflation by 0.1 per year
+* Changes stability by -1
+* reduce_reform_progress_medium_effect = yes
+* AI chance:
+** Base chance of 1
+
+=== title = center_of_revolution.2003.name ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* current_age = 0 "Age of Revolutions
+* has_institution = enlightenment
+* Has a Master of Mint with a skill of at least 3
+* is_great_power = yes
+* is_free_or_tributary_trigger = yes
+* absolutism = 75
+* Any owned province:
+** development = 30
+** enlightenment = 100
+* Does not have the global flag necker_reforms_happened
+* Does not have the global flag first_revolution_center_spawned
+* Does not have the country modifier "revolution_administrative_reforms"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.2:
+** Capital:
+*** Not in the continent 0 "Europe
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Sets the global flag necker_reforms_happened
+
+'''Option: center_of_revolution.2003.A:'''
+
+* Changes administrative power stored by -100
+* Changes diplomatic power stored by -100
+* Changes stability by -1
+* Adds the modifier "revolution_administrative_reforms" for 10 years:
+** -1 interest
+** Reduces inflation by 0.1 per year
+* AI chance:
+** Base chance of 3
+** Multiplies value by 0.1:
+*** Stability is lower than 0
+
+'''Option: center_of_revolution.2003.B:'''
+
+* Sets the country flag revolutionary_sentiment_necker_reforms
+* remove_advisor_by_category = 0 "Administrative
+* AI chance:
+** Base chance of 1
+
+=== title = center_of_revolution.2010.name ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* current_age = 0 "Age of Revolutions
+* has_institution = enlightenment
+* absolutism = 75
+* is_great_power = yes
+* is_free_or_tributary_trigger = yes
+* Any owned province:
+** development = 30
+** enlightenment = 100
+* Does not have the country flag demands_of_the_3rd_estate_happened
+* Does not have the global flag first_revolution_center_spawned
+* 0 "Stockholm:
+** The variable demands_of_the_3rd_estate_happened is lower than 2
+* has_estate = estate_burghers
+* Any of the following:
+** estate_influence:
+*** estate_false = estate_burghers
+*** influence_false = 20
+** estate_loyalty:
+*** estate_false = estate_burghers
+*** loyalty_false = 25
+* variable_arithmetic_trigger:
+** export_to_variable:
+*** value = trigger_value:production_income_percentage
+*** which = burgher_income_proportion
+** export_to_variable:
+*** value = trigger_value:trade_income_percentage
+*** which = trade_income_proportion
+** Changes the variable trade_income_proportion by 
+** The variable burgher_income_proportion is equal or higher than 0.75
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.2:
+** Capital:
+*** Not in the continent 0 "Europe
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Sets the country flag demands_of_the_3rd_estate_happened
+* Hidden effect:
+** 0 "Stockholm:
+*** Changes the variable demands_of_the_3rd_estate_happened by 1
+
+'''Option: center_of_revolution.2010.A:'''
+
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = 20
+* reduce_estate_nobles_loyalty_effect = yes
+* reduce_estate_church_loyalty_effect = yes
+* give_estate_land_share_gigantic:
+** estate = estate_burghers
+* add_absolutism = -15
+* AI chance:
+** Base chance of 1
+
+'''Option: center_of_revolution.2010.B:'''
+
+* Sets the country flag revolutionary_sentiment_3rd_estate_demands
+* Changes stability by -1
+* add_estate_loyalty:
+** estate = estate_burghers
+** loyalty = -15
+* Random owned province:
+** Limited to:
+*** development = 30
+*** Any of the following:
+**** In the continent 0 "Europe
+**** root:
+****** No owned province:
+******* development = 30
+******* In the continent 0 "Europe
+******* enlightenment = 100
+*** enlightenment = 100
+** Spawns revolt of size 3 of 0 "Revolutionary rebels
+* AI chance:
+** Base chance of 2
+
+=== title = center_of_revolution.2950.name ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_revolutionary = yes
+* years_since_dismantle_revolution = 10
+* Does not have the country flag has_had_revolution_failure_warning
+
+'''Immediate effects:'''
+
+* Sets the country flag has_had_revolution_failure_warning
+
+'''Option: center_of_revolution.2950.A:'''
+
+
+=== title = center_of_revolution.3000.name ===
+* Trigger:
+** Any of the following:
+*** Has the country flag last_revolutionary_country
+*** Any country:
+**** Has the country flag last_revolutionary_country
+* Trigger:
+** Does not have the country flag last_revolutionary_country
+*** No country:
+**** Has the country flag last_revolutionary_country
+** All of the following:
+*** }
+*** A revolution target has been set
+**** years_since_dismantle_revolution_false = 0
+* Trigger:
+** Has had the global flag "first_revolution_center_spawned" for at least 10950 days
+** A revolution target has not been set
+** years_since_dismantle_revolution_false = 0
+* Cannot fire randomly
+* Can only fire once
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Has the global flag first_revolution_center_spawned
+* A revolution target has not been set
+* Any of the following:
+** years_since_dismantle_revolution = 20
+** All of the following:
+*** Has had the global flag "first_revolution_center_spawned" for at least 10950 days
+*** A revolution target has not been set
+*** years_since_dismantle_revolution_false = 0
+* Any of the following:
+** Has the country flag last_revolutionary_country
+** All of the following:
+**** No country:
+***** Has the country flag last_revolutionary_country
+*** Any owned province:
+**** is_center_of_revolution = yes
+** All of the following:
+**** No country:
+***** Has the country flag last_revolutionary_country
+**** No province in the world:
+***** is_center_of_revolution = yes
+*** Any owned province:
+**** Has the province flag first_revolution_center
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the global flag no_more_revolutions_ever
+** If:
+*** Limited to:
+**** Any country:
+***** Has the country flag last_revolutionary_country
+*** Random country:
+**** Limited to:
+***** Has the country flag last_revolutionary_country
+**** save_event_target_as = last_revolutionary_country
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** every_country_including_inactive:
+*** Limited to:
+**** Country is not our country
+*** Gets the country event:
+**** ID is center_of_revolution.3001
+
+'''Option: center_of_revolution.3000.A:'''
+
+* Every country:
+** Limited to:
+*** Any owned province:
+**** is_center_of_revolution = yes
+** remove_center_of_revolution = yes
+* Hidden effect:
+** Every province in the world:
+*** Limited to:
+**** has_revolution_in_province = yes
+*** remove_revolution_from_province_effect = yes
+* If:
+** Limited to:
+*** has_reform = junior_revolutionary_republic_reform
+** add_government_reform = noble_elite_reform
+** add_government_reform = parliamentary_reform
+** Changes republican tradition by -5000%
+* If:
+** Limited to:
+*** has_reform = revolutionary_empire_reform
+** add_government_reform = autocracy_reform
+* Hidden effect:
+** log = The Revolution has failed
+
+=== title = center_of_revolution.3000.name ===
+* Trigger:
+** Any of the following:
+*** Has the country flag last_revolutionary_country
+*** Any country:
+**** Has the country flag last_revolutionary_country
+* Trigger:
+** Does not have the country flag last_revolutionary_country
+*** No country:
+**** Has the country flag last_revolutionary_country
+** All of the following:
+*** }
+*** A revolution target has been set
+**** years_since_dismantle_revolution_false = 0
+* Trigger:
+** Has had the global flag "first_revolution_center_spawned" for at least 10950 days
+** A revolution target has not been set
+** years_since_dismantle_revolution_false = 0
+* Cannot fire randomly
+
+'''Option: center_of_revolution.3000.A:'''
+
+* Trigger:
+** is_revolutionary_false = no
+
+'''Option: center_of_revolution.3000.B:'''
+
+* Trigger:
+** is_revolutionary = yes
+* If:
+** Limited to:
+*** has_reform = junior_revolutionary_republic_reform
+** add_government_reform = noble_elite_reform
+** add_government_reform = parliamentary_reform
+** Changes republican tradition by -5000%
+* If:
+** Limited to:
+*** has_reform = revolutionary_empire_reform
+** add_government_reform = autocracy_reform
+
+=== title = revolution.30.name ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Does not have the country flag revolutionary_philosopher
+* Any of the following:
+** has_disaster = 0 "Revolution
+** has_disaster = 0 "French Revolution
+** Any owned province:
+*** has_revolution_in_province = yes
+* Any owned province:
+** Any of the following:
+*** same_continent = event_target:revolution_center
+*** region_for_scope_province:
+**** has_revolution_in_province = yes
+** Has the 0 "University building
+** has_revolution_in_province_false = no
+** Does not have the province modifier "no_revolution_here_dummy"
+* is_revolutionary_republic_trigger_false = yes
+* has_reform_false = revolutionary_empire_reform
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag revolutionary_philosopher
+** set_saved_name:
+*** Named "philosopher_dude"
+** If:
+*** Limited to:
+**** Any owned province:
+***** Any of the following:
+****** same_continent = event_target:revolution_center
+****** region_for_scope_province:
+******* has_revolution_in_province = yes
+***** Has the 0 "University building
+***** has_revolution_in_province_false = no
+***** highest_supply_limit_in_area = yes
+***** Does not have the province modifier "no_revolution_here_dummy"
+*** Random owned province:
+**** Limited to:
+***** Any of the following:
+****** same_continent = event_target:revolution_center
+****** region_for_scope_province:
+******* has_revolution_in_province = yes
+***** Has the 0 "University building
+***** has_revolution_in_province_false = no
+***** highest_supply_limit_in_area = yes
+***** Does not have the province modifier "no_revolution_here_dummy"
+**** save_event_target_as = university_town
+** else:
+*** Random owned province:
+**** Limited to:
+***** Any of the following:
+****** same_continent = event_target:revolution_center
+****** region_for_scope_province:
+******* has_revolution_in_province = yes
+***** Has the 0 "University building
+***** has_revolution_in_province_false = no
+***** Does not have the province modifier "no_revolution_here_dummy"
+**** save_event_target_as = university_town
+
+'''Option: revolution.30.A:'''
+
+* AI chance:
+** Base chance of 60
+* event_target:university_town:
+** If:
+*** Limited to:
+**** root:
+***** Has at least 12 provinces
+*** area:
+**** Limited to:
+***** The province is owned by our country
+***** Does not have the province modifier "no_revolution_here_dummy"
+**** If:
+***** Limited to:
+****** Has the DLC Emperor
+***** set_revolution_in_province = yes
+**** else:
+***** add_unrest = 6
+** else:
+*** If:
+**** Limited to:
+***** Has the DLC Emperor
+**** set_revolution_in_province = yes
+*** else:
+**** add_unrest = 6
+
+'''Option: revolution.30.B:'''
+
+* AI chance:
+** Base chance of 40
+* event_target:university_town:
+** Spawns revolt of size 1.5 of 0 "Revolutionary rebels
+
+=== title = center_of_revolution.2.name ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Does not have the country flag william_jones_event
+* A revolution target has been set
+* Any owned province:
+** has_revolution_in_province = yes
+* Any owned province:
+** Any of the following:
+*** same_continent = event_target:revolution_center
+*** region_for_scope_province:
+**** has_revolution_in_province = yes
+** Culture is not the same as our country
+** Has core on our country
+** The province is not the capital of the country
+** development = 10
+** Has a base tax of at least 2
+** base_production = 2
+** base_manpower = 2
+** Is coastal
+** Any of the following:
+*** unrest = 1
+*** local_autonomy = 15
+*** has_owner_accepted_culture_false = no
+** Does not have the province modifier "no_revolution_here_dummy"
+** has_revolution_in_province_false = no
+* Any country:
+** Any of the following:
+*** is_colonial_nation_of = our country
+*** Is a former colonial nation
+* is_revolutionary_republic_trigger_false = yes
+* has_reform_false = revolutionary_empire_reform
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag william_jones_event
+** One of the following will happen:
+*** 2 relative chance:
+**** Random owned province:
+***** Limited to:
+****** Any of the following:
+******* same_continent = event_target:revolution_center
+******* region_for_scope_province:
+******** has_revolution_in_province = yes
+****** Culture is not the same as our country
+****** Has core on our country
+****** The province is not the capital of the country
+****** development = 10
+****** Has a base tax of at least 2
+****** base_production = 2
+****** base_manpower = 2
+****** Is coastal
+****** Any of the following:
+******* unrest = 1
+******* local_autonomy = 15
+******* has_owner_accepted_culture_false = no
+****** has_revolution_in_province_false = no
+****** Does not have the province modifier "no_revolution_here_dummy"
+***** save_event_target_as = william_jones_province
+*** 3 relative chance:
+**** Trigger:
+***** Any owned province:
+****** Any of the following:
+******* same_continent = event_target:revolution_center
+******* region_for_scope_province:
+******** has_revolution_in_province = yes
+****** Culture is not the same as our country
+****** Has core on our country
+****** The province is not the capital of the country
+****** development = 15
+****** Has a base tax of at least 2
+****** base_production = 2
+****** base_manpower = 2
+****** Is coastal
+****** Any of the following:
+******* unrest = 1
+******* local_autonomy = 15
+******* has_owner_accepted_culture_false = no
+****** has_revolution_in_province_false = no
+****** Does not have the province modifier "no_revolution_here_dummy"
+**** Random owned province:
+***** Limited to:
+****** Any of the following:
+******* same_continent = event_target:revolution_center
+******* region_for_scope_province:
+******** has_revolution_in_province = yes
+****** Culture is not the same as our country
+****** Has core on our country
+****** The province is not the capital of the country
+****** development = 15
+****** Has a base tax of at least 2
+****** base_production = 2
+****** base_manpower = 2
+****** Is coastal
+****** Any of the following:
+******* unrest = 1
+******* local_autonomy = 15
+******* has_owner_accepted_culture_false = no
+****** has_revolution_in_province_false = no
+****** Does not have the province modifier "no_revolution_here_dummy"
+***** save_event_target_as = william_jones_province
+*** 4 relative chance:
+**** Trigger:
+***** Any owned province:
+****** Any of the following:
+******* same_continent = event_target:revolution_center
+******* region_for_scope_province:
+******** has_revolution_in_province = yes
+****** Culture is not the same as our country
+****** Has core on our country
+****** The province is not the capital of the country
+****** development = 20
+****** Has a base tax of at least 2
+****** base_production = 2
+****** base_manpower = 2
+****** Is coastal
+****** Any of the following:
+******* unrest = 1
+******* local_autonomy = 15
+******* has_owner_accepted_culture_false = no
+****** has_revolution_in_province_false = no
+****** Does not have the province modifier "no_revolution_here_dummy"
+**** Random owned province:
+***** Limited to:
+****** Any of the following:
+******* same_continent = event_target:revolution_center
+******* region_for_scope_province:
+******** has_revolution_in_province = yes
+****** Culture is not the same as our country
+****** Has core on our country
+****** The province is not the capital of the country
+****** development = 20
+****** Has a base tax of at least 2
+****** base_production = 2
+****** base_manpower = 2
+****** Is coastal
+****** Any of the following:
+******* unrest = 1
+******* local_autonomy = 15
+******* has_owner_accepted_culture_false = no
+****** has_revolution_in_province_false = no
+****** Does not have the province modifier "no_revolution_here_dummy"
+***** save_event_target_as = william_jones_province
+** event_target:william_jones_province:
+*** root:
+**** set_saved_name:
+***** Named "william_jones"
+***** scope = prev
+** Random country:
+*** Limited to:
+**** Any of the following:
+***** is_colonial_nation_of = our country
+***** Is a former colonial nation
+*** save_event_target_as = destination_country
+** The target of the revolution:
+*** save_event_target_as = revolution_target
+
+'''Option: center_of_revolution.2.A:'''
+
+* AI chance:
+** Base chance of 60
+* event_target:william_jones_province:
+** Changes base tax by -1
+** add_base_production = -1
+** add_base_manpower = -1
+* event_target:destination_country:
+** Capital:
+*** Changes base tax by 1
+*** add_base_production = 1
+*** add_base_manpower = 1
+** If:
+*** Limited to:
+**** is_colonial_nation_of = our country
+*** Adds 20 liberty desire
+** else:
+*** Adds the opinion modifier "opinion_hostile_expats" towards our country
+
+'''Option: center_of_revolution.2.B:'''
+
+* AI chance:
+** Base chance of 40
+* event_target:william_jones_province:
+** One of the following will happen:
+*** 1 relative chance:
+**** If:
+***** Limited to:
+****** root:
+******* Has at least 12 provinces
+***** area:
+****** Limited to:
+******* The province is owned by our country
+******* Does not have the province modifier "no_revolution_here_dummy"
+****** set_revolution_in_province = yes
+**** else:
+***** set_revolution_in_province = yes
+*** 1 relative chance:
+**** If:
+***** Limited to:
+****** root:
+******* Has at least 12 provinces
+***** area:
+****** Limited to:
+******* The province is owned by our country
+****** add_unrest = 6
+**** else:
+***** add_unrest = 6
+
+=== title = center_of_revolution.3.name ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Has the global flag colonies_inspired_by_revolution
+* A revolution target has been set
+* Any subject country:
+** Is a colonial nation
+** Does not have the country flag revolution_spreading_to_colony_event_flag
+** Liberty desire is at least 30
+* Any of the following:
+** Capital:
+*** has_revolution_in_province = yes
+** All of the following:
+*** Has less than 10 provinces
+*** Has at least 3 provinces where all of the following is true:
+**** has_revolution_in_province = yes
+** All of the following:
+*** Has less than 20 provinces
+*** Has at least 6 provinces where all of the following is true:
+**** has_revolution_in_province = yes
+** Has at least 10 provinces where all of the following is true:
+*** has_revolution_in_province = yes
+* is_revolutionary_republic_trigger_false = yes
+* has_reform_false = revolutionary_empire_reform
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random subject country:
+*** Limited to:
+**** Is a colonial nation
+**** Does not have the country flag revolution_spreading_to_colony_event_flag
+**** Liberty desire is at least 30
+*** save_event_target_as = colonial_country
+** Random subject country:
+*** Limited to:
+**** Is a colonial nation
+**** Does not have the country flag revolution_spreading_to_colony_event_flag
+**** Liberty desire is at least 40
+*** save_event_target_as = colonial_country
+** Random subject country:
+*** Limited to:
+**** Is a colonial nation
+**** Does not have the country flag revolution_spreading_to_colony_event_flag
+**** Liberty desire is at least 50
+*** save_event_target_as = colonial_country
+** event_target:colonial_country:
+*** Sets the country flag revolution_spreading_to_colony_event_flag
+** The target of the revolution:
+*** save_event_target_as = revolution_target
+
+'''Option: center_of_revolution.3.A:'''
+
+* event_target:colonial_country:
+** Adds 20 liberty desire
+
+=== title = center_of_revolution.4.name ===
+* Trigger:
+** is_supporting_independence_of = event_target:colonial_country
+* desc = center_of_revolution.4.desc.already_supporting
+* Trigger:
+** is_supporting_independence_of_false = event_target:colonial_country
+* desc = center_of_revolution.4.desc
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* is_revolutionary = yes
+* Any rival country:
+** is_revolutionary_false = no
+** Any subject country:
+*** Is a colonial nation
+*** Liberty desire is at least 30
+*** Does not have the country flag revolution_spreading_to_colony_from_rt_event_flag
+* Any owned province:
+** Is coastal
+* Is not bankrupt
+* Any of the following:
+** Has at least 500 ducats in the treasury
+** All of the following:
+*** Has at least 100 administrative power
+*** Has at least 100 diplomatic power
+*** Has at least 100 military power
+* Does not have the country modifier "recent_rt_spread_revolution_to_colonies_event_timer"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 3650 days
+* Multiplies value by 0.5:
+** Has at least 1000 ducats in the treasury
+** Has less than 1 active loans
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "recent_rt_spread_revolution_to_colonies_event_timer" for 10 years:
+*** No effects
+** Random rival country:
+*** Limited to:
+**** is_revolutionary_false = no
+**** Any subject country:
+***** Is a colonial nation
+***** Liberty desire is at least 30
+***** Does not have the country flag revolution_spreading_to_colony_from_rt_event_flag
+*** save_event_target_as = rival_country
+*** Random subject country:
+**** Limited to:
+***** Is a colonial nation
+***** Does not have the country flag revolution_spreading_to_colony_from_rt_event_flag
+***** Liberty desire is at least 30
+**** save_event_target_as = colonial_country
+*** Random subject country:
+**** Limited to:
+***** Is a colonial nation
+***** Does not have the country flag revolution_spreading_to_colony_from_rt_event_flag
+***** Liberty desire is at least 40
+**** save_event_target_as = colonial_country
+*** Random subject country:
+**** Limited to:
+***** Is a colonial nation
+***** Does not have the country flag revolution_spreading_to_colony_from_rt_event_flag
+***** Liberty desire is at least 50
+**** save_event_target_as = colonial_country
+** Random rival country:
+*** Limited to:
+**** Any subject country:
+***** Is a colonial nation
+***** ROOT:
+****** is_supporting_independence_of = prev
+***** Does not have the country flag revolution_spreading_to_colony_from_rt_event_flag
+*** save_event_target_as = rival_country
+*** Random subject country:
+**** Limited to:
+***** Is a colonial nation
+***** ROOT:
+****** is_supporting_independence_of = prev
+***** Does not have the country flag revolution_spreading_to_colony_from_rt_event_flag
+**** save_event_target_as = colonial_country
+** event_target:colonial_country:
+*** Sets the country flag revolution_spreading_to_colony_from_rt_event_flag
+
+'''Option: center_of_revolution.4.A:'''
+
+* Changes treasury by -500 ducats
+* event_target:colonial_country:
+** Sets the country flag financial_aid
+* event_target:rival_country:
+** Gets the country event:
+*** ID is center_of_revolution.6
+* event_target:colonial_country:
+** Tooltip:
+*** Changes treasury by 500 ducats
+*** Adds 50 liberty desire
+** Adds the opinion modifier "opinion_funded_independence_war" towards our country
+** Hidden effect:
+*** Gets the country event:
+**** ID is center_of_revolution.5
+**** Base mean time to happen of 1 days
+* add_revolutionary_zeal = 5
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Has less than 500 ducats in the treasury
+** Multiplies value by 0:
+*** Is at war
+*** Not at war with event_target:rival_country
+
+'''Option: center_of_revolution.4.B:'''
+
+* Changes administrative power stored by -100
+* Changes diplomatic power stored by -100
+* Changes military power stored by -100
+* event_target:colonial_country:
+** Sets the country flag mana_aid
+* event_target:rival_country:
+** Gets the country event:
+*** ID is center_of_revolution.6
+* event_target:colonial_country:
+** Tooltip:
+*** Changes administrative power stored by 100
+*** Changes diplomatic power stored by 100
+*** Changes military power stored by 100
+*** Adds 50 liberty desire
+** Adds the opinion modifier "opinion_funded_independence_war" towards our country
+** Hidden effect:
+*** Gets the country event:
+**** ID is center_of_revolution.5
+**** Base mean time to happen of 1 days
+* add_revolutionary_zeal = 5
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Any of the following:
+**** Has less than 100 administrative power
+**** Has less than 100 diplomatic power
+**** Has less than 100 military power
+** Multiplies value by 0:
+*** Is at war
+*** Not at war with event_target:rival_country
+
+'''Option: center_of_revolution.4.C:'''
+
+* Changes administrative power stored by 35
+* Changes diplomatic power stored by 35
+* Changes military power stored by 35
+* event_target:colonial_country:
+** Adds the opinion modifier "opinion_refused_to_fund_independence_war" towards our country
+* AI chance:
+** Base chance of 2
+
+=== title = center_of_revolution.5.name ===
+* Cannot fire randomly
+
+'''Option: center_of_revolution.5.A:'''
+
+* Adds 50 liberty desire
+* trigger_switch:
+** on_trigger = has_country_flag
+** financial_aid:
+*** Changes treasury by 500 ducats
+*** Removes the country flag financial_aid
+** mana_aid:
+*** Changes administrative power stored by 100
+*** Changes diplomatic power stored by 100
+*** Changes military power stored by 100
+*** Removes the country flag mana_aid
+
+=== title = center_of_revolution.6.name ===
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the opinion modifier "opinion_funding_our_colonies_for_independence" towards our country
+
+'''Option: center_of_revolution.6.A:'''
+
+* event_target:colonial_country:
+** Tooltip:
+*** Adds 50 liberty desire
+*** trigger_switch:
+**** on_trigger = has_country_flag
+**** financial_aid:
+***** Changes treasury by 500 ducats
+**** mana_aid:
+***** Changes administrative power stored by 100
+***** Changes diplomatic power stored by 100
+***** Changes military power stored by 100
+
+=== title = center_of_revolution.7.name ===
+* Trigger:
+** Has the country flag last_revolutionary_country
+* desc = center_of_revolution.7.desc.is_former_target
+* Trigger:
+** Does not have the country flag last_revolutionary_country
+** Any country:
+*** Has the country flag last_revolutionary_country
+* desc = center_of_revolution.7.desc.former_target_exists
+* Trigger:
+*** No country:
+**** Has the country flag last_revolutionary_country
+* desc = center_of_revolution.7.desc.no_former_target
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* Any owned province:
+** has_revolution_in_province = yes
+** is_center_of_revolution_false = no
+* A revolution target has not been set
+* }
+* is_revolutionary_false = no
+** No province in the world:
+*** is_center_of_revolution = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 4 years
+* Multiplies value by 0.5:
+*** No country:
+**** Has the country flag last_revolutionary_country
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** Does not have the country flag last_revolutionary_country
+**** Any country:
+***** Has the country flag last_revolutionary_country
+*** Random country:
+**** Limited to:
+***** Has the country flag last_revolutionary_country
+**** save_event_target_as = former_revolutionary_country
+** Random owned province:
+*** Limited to:
+**** has_revolution_in_province = yes
+**** is_center_of_revolution_false = no
+*** save_event_target_as = revolutionary_province
+
+'''Option: center_of_revolution.7.A:'''
+
+* event_target:revolutionary_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+**** is_center_of_revolution_false = no
+*** remove_revolution_from_province_effect = yes
+
+=== title = center_of_revolution.8.name ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* A revolution target has been set
+* Any owned province:
+** has_revolution_in_province = yes
+** is_center_of_revolution_false = no
+* is_revolutionary_false = no
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random country:
+*** Limited to:
+**** Is the target of the revolution
+*** save_event_target_as = revolution_target
+** Random owned province:
+*** Limited to:
+**** has_revolution_in_province = yes
+**** is_center_of_revolution_false = no
+*** save_event_target_as = revolutionary_province
+
+'''Option: center_of_revolution.8.A:'''
+
+* event_target:revolutionary_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+**** is_center_of_revolution_false = no
+*** remove_revolution_from_province_effect = yes
+*** add_named_unrest:
+**** Named "revolutionary_sentiment"
+**** value = 10
+** Randomized by 
+*** Acquisition chance:
+*** Spawns 1 revolt size of revolutionary rebels
+* AI chance:
+** Base chance of 3
+
+'''Option: center_of_revolution.8.B:'''
+
+* Changes stability by -1
+* AI chance:
+** Base chance of 1
+
+=== title = center_of_revolution.9.name ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* is_revolutionary = yes
+* Any owned province:
+** has_revolution_in_province = yes
+** The province is not the capital of the country
+** Controlled by our country
+** is_center_of_revolution_false = no
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 2:
+** Has the country modifier "0 "The Reign of Terror"
+* Multiplies value by 0.5:
+** Every owned province:
+*** has_revolution_in_province = yes
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** has_revolution_in_province = yes
+**** The province is not the capital of the country
+**** Controlled by our country
+**** is_center_of_revolution_false = no
+*** save_event_target_as = reactionary_province
+
+'''Option: center_of_revolution.9.A:'''
+
+* event_target:reactionary_province:
+** Spawns revolt of size 1.5 of 0 "Pretender rebels
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Any of the following:
+**** num_of_rebel_armies = 5
+**** num_of_rebel_controlled_provinces = 5
+
+'''Option: center_of_revolution.9.B:'''
+
+* event_target:reactionary_province:
+** remove_revolution_from_province_effect = yes
+* add_revolutionary_zeal = -5
+* AI chance:
+** Base chance of 1
+
+=== title = center_of_revolution.10.name ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* is_revolutionary = yes
+* Any neighbor country:
+** Not at war with our country
+** Any owned province:
+*** has_revolution_in_province_false = no
+*** Does not have the province modifier "no_revolution_here_dummy"
+*** Any bordering province:
+**** The province is owned by our country
+**** has_revolution_in_province = yes
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random neighbor country:
+*** Limited to:
+**** Not at war with our country
+**** Any owned province:
+***** has_revolution_in_province_false = no
+***** Does not have the province modifier "no_revolution_here_dummy"
+***** Any bordering province:
+****** The province is owned by our country
+****** has_revolution_in_province = yes
+*** save_event_target_as = neighbour_country
+*** Random owned province:
+**** Limited to:
+***** has_revolution_in_province_false = no
+***** Does not have the province modifier "no_revolution_here_dummy"
+***** Any bordering province:
+****** The province is owned by our country
+****** has_revolution_in_province = yes
+**** save_event_target_as = province_to_revolution
+**** Random bordering province:
+***** Limited to:
+****** The province is owned by our country
+****** has_revolution_in_province = yes
+***** save_event_target_as = own_revolutionary_province
+
+'''Option: center_of_revolution.10.A:'''
+
+* add_revolutionary_zeal = 5
+* Changes military power stored by -50
+* Tooltip:
+** event_target:province_to_revolution:
+*** set_revolution_in_province = yes
+* event_target:neighbour_country:
+** Tooltip:
+*** Adds the opinion modifier "opinion_revolutionary_coup_in_our_province" towards our country
+** Gets the country event:
+*** ID is center_of_revolution.11
+
+'''Option: center_of_revolution.10.B:'''
+
+* add_revolutionary_zeal = -5
+* event_target:neighbour_country:
+** Adds the opinion modifier "opinion_non_intervention" towards our country
+
+=== title = center_of_revolution.11.name ===
+* Cannot fire randomly
+
+'''Option: center_of_revolution.11.A:'''
+
+* event_target:province_to_revolution:
+** set_revolution_in_province = yes
+* Adds the opinion modifier "opinion_revolutionary_coup_in_our_province" towards our country
+
+=== title = center_of_revolution.12.name ===
+
+'''Trigger:'''
+
+* Has the DLC Emperor
+* is_revolutionary_false = no
+* A revolution target has been set
+* Any neighbor country:
+** is_revolutionary = yes
+** }
+** Not at war with our country
+** Is not allied with our country
+* Any owned province:
+** is_in_capital_area = yes
+** has_revolution_in_province_false = no
+* Any owned province:
+** has_revolution_in_province = yes
+** is_in_capital_area = yes
+** is_center_of_revolution_false = no
+* Is not a vassal
+* absolutism = 60
+* Has at least 15 provinces
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random neighbor country:
+*** Limited to:
+**** is_revolutionary = yes
+**** }
+**** Not at war with our country
+**** Is not allied with our country
+*** save_event_target_as = revolution_target
+** Random owned province:
+*** Limited to:
+**** has_revolution_in_province = yes
+**** is_in_capital_area = yes
+**** is_center_of_revolution_false = no
+*** save_event_target_as = revolutionary_province
+
+'''Option: center_of_revolution.12.A:'''
+
+* goto = revolutionary_province
+* add_spy_network_in:
+** Affecting event_target:revolution_target
+** value = 25
+* event_target:revolutionary_province:
+** remove_revolution_from_province_effect = yes
+* event_target:revolution_target:
+** Adds the opinion modifier "opinion_hosting_exiles" towards our country
+
+=== title = center_of_revolution.13.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* A revolution target has been set
+* is_revolutionary_false = no
+* Any subject country:
+** Is a colonial nation
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 60 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the global flag colonies_inspired_by_revolution
+** The target of the revolution:
+*** save_event_target_as = revolution_target
+
+'''Option: center_of_revolution.13.a:'''
+
+* Every country:
+** Limited to:
+*** Is a colonial nation
+*** overlord:
+**** is_revolutionary_false = no
+** Adds the modifier "colony_inspired_by_revolution" for the rest of the campaign:
+*** Liberty desire is at least 30
+
+=== title = center_of_revolution.14.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Has the global flag colonies_inspired_by_revolution
+* A revolution target has not been set
+* Any subject country:
+** Is a colonial nation
+** Capital:
+*** Any of the following:
+**** In the continent 1 "The New World
+**** In the continent 0 "North America
+**** In the continent 0 "South America
+**** In the continent 0 "Oceania
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 6 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Removes the global flag colonies_inspired_by_revolution
+
+'''Option: center_of_revolution.14.a:'''
+
+* Every country:
+** Limited to:
+*** Has the country modifier "colony_inspired_by_revolution"
+** Removes the country modifier "colony_inspired_by_revolution"

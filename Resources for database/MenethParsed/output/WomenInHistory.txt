@@ -1,0 +1,4040 @@
+******** Trigger:
+********* Year is at least 1533
+********* Year is less than 1603
+********* Any of the following:
+********** Country is 0 "England
+********** Country is 0 "Great Britain
+********* Ruler is male
+********* Is not in regency
+********* Has no heir
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any owned province:
+********** Any of the following:
+*********** Follows the 0 "Protestant religion
+*********** Follows the anglican religion
+********** is_in_capital_area = yes
+********* Does not have the global flag wih_elizabeth_eng_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_elizabeth_eng_flag
+******** Option: women_history_events.1.a:
+********* Spawns a ruler:
+********** Named "Elizabeth"
+********** Ruler's dynasty is Tudor
+********** Culture is 0 "English
+********** Ruler's administrative skill is at least 6
+********** Ruler's diplomatic skill is at least 6
+********** Ruler's military skill is at least 5
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "inspiring_leader"
+******** Option: women_history_events.1.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** discount = yes
+********** Named "Elizabeth Tudor"
+******* Gets the country event:
+******** ID is women_history_events.2
+******** title = women_history_events.2.t
+******** desc = women_history_events.2.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Russia
+********* Year is at least 1729
+********* Year is less than 1800
+********* Ruler is male
+********* Is not in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Any of the following:
+********** Has no heir
+********** Heir is male
+********* Does not have the global flag wih_catherine_rus_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_catherine_rus_flag
+******** Option: women_history_events.2.a:
+********* Spawns a ruler:
+********** Named "Yekaterina"
+********** Ruler's dynasty is Romanov
+********** Ruler's administrative skill is at least 6
+********** Ruler's diplomatic skill is at least 6
+********** Ruler's military skill is at least 5
+********** Culture is 0 "Muscovite
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "expansionist"
+******** Option: women_history_events.2.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** discount = yes
+********** With a skill level of 2
+********** Named "Yekaterina Romanov"
+******* Gets the country event:
+******** ID is women_history_events.3
+******** title = women_history_events.3.t
+******** desc = women_history_events.3.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Ottomans
+********* Year is at least 1590
+********* Year is less than 1655
+********* Ruler is male
+********* has_consort_false = no
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_kosem_tur_flag
+********* The advisor with the id 1600 does not exist
+********* Does not employ the advisor with the id 1600
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_kosem_tur_flag
+******** Option: women_history_events.3.a:
+********* If:
+********** Limited to:
+*********** Does not have the DLC Rights of Man
+********** Spawns a ruler:
+*********** Named "Kösem Sultan"
+*********** Ruler's dynasty is Osmanoglu
+*********** Culture is 0 "Ruthenian
+*********** Ruler's administrative skill is at least 5
+*********** Ruler's diplomatic skill is at least 4
+*********** Ruler's military skill is at least 5
+*********** Ruler is female
+********** If:
+*********** Limited to:
+************ has_states_general_mechanic = yes
+*********** change_statists_vs_orangists = 1
+********* else_if:
+********** Limited to:
+*********** Has the DLC Rights of Man
+*********** Is not in regency
+*********** has_government_attribute = queen
+********** define_consort:
+*********** Named "Kösem Sultan"
+*********** Culture is 0 "Ruthenian
+*********** Ruler's administrative skill is at least 5
+*********** Ruler's diplomatic skill is at least 4
+*********** Ruler's military skill is at least 5
+*********** Ruler is female
+********** Hidden effect:
+*********** add_queen_personality_ancestor:
+************ Named "incorruptible"
+********* else:
+********** Spawns a ruler:
+*********** Named "Kösem Sultan"
+*********** Ruler's dynasty is Osmanoglu
+*********** Culture is 0 "Ruthenian
+*********** Ruler's administrative skill is at least 5
+*********** Ruler's diplomatic skill is at least 4
+*********** Ruler's military skill is at least 5
+*********** Ruler is female
+********** If:
+*********** Limited to:
+************ has_states_general_mechanic = yes
+*********** change_statists_vs_orangists = 1
+******** Option: women_history_events.3.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Ruthenian
+********** discount = yes
+********** With a skill level of 2
+********** Named "Kosem Sultan"
+******* Gets the country event:
+******** ID is women_history_events.4
+******** title = women_history_events.4.t
+******** desc = women_history_events.4.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Austria
+********* Year is at least 1700
+********* Year is less than 1800
+********* Ruler is male
+********* Is not in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_maria_theresa_hab_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_maria_theresa_hab_flag
+******** Option: women_history_events.4.a:
+********* Spawns a ruler:
+********** Named "Maria Theresia"
+********** Ruler's dynasty is von Habsburg
+********** Culture is 0 "Austrian
+********** Ruler's administrative skill is at least 5
+********** Ruler's diplomatic skill is at least 5
+********** Ruler's military skill is at least 4
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality = well_advised_personality
+******** Option: women_history_events.4.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Austrian
+********** discount = yes
+********** With a skill level of 2
+********** Named "Maria Theresia von Habsburg"
+******* Gets the country event:
+******** ID is women_history_events.5
+******** title = women_history_events.5.t
+******** desc = women_history_events.5.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Country is 0 "Ottomans
+********* Year is at least 1500
+********* Year is less than 1600
+********* Is not in regency
+********* Ruler is male
+********* has_consort_false = no
+********* Does not have the global flag wih_roxelana_tur_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_roxelana_tur_flag
+******** Option: women_history_events.5.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** discount = yes
+********** Culture is 0 "Ruthenian
+********** With a skill level of 2
+********** Named "Hurrem Sultan"
+******** Option: women_history_events.5.b:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Spymaster type:
+********** Culture is 0 "Ruthenian
+********** With a skill level of 2
+********** discount = yes
+********** Named "Hurrem Sultan"
+******* Gets the country event:
+******** ID is women_history_events.6
+******** title = women_history_events.6.t
+******** desc = women_history_events.6.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Sweden
+********* Year is at least 1626
+********* Year is less than 1700
+********* Ruler is male
+********* Has no heir
+********* ruler_age = 50
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_christina_swe_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_christina_swe_flag
+******** Option: women_history_events.6.a:
+********* Spawns a ruler:
+********** Named "Christina"
+********** Ruler's dynasty is Vasa
+********** Ruler is female
+********** Culture is 0 "Swedish
+********** Ruler's administrative skill is at least 2
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 3
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "free_thinker"
+******** Option: women_history_events.6.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Swedish
+********** discount = yes
+********** With a skill level of 2
+********** Named "Kristina Vasa"
+******* Gets the country event:
+******** ID is women_history_events.7
+******** title = women_history_events.7.t
+******** desc = women_history_events.7.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Country is 0 "Sweden
+********* 0 "France exists
+********* Year is at least 1766
+********* Does not have the global flag wih_germainedestael_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_germainedestael_flag
+******** Option: women_history_events.7.a:
+********* Creates an advisor of the 0 "Spymaster type:
+********** Culture is 0 "Swiss
+********** discount = yes
+********** With a skill level of 2
+********** Named "Germaine de Staël"
+******** Option: women_history_events.7.b:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Swiss
+********** discount = yes
+********** With a skill level of 2
+********** Named "Germaine de Staël"
+******* Gets the country event:
+******** ID is women_history_events.8
+******** title = women_history_events.8.t
+******** desc = women_history_events.8.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Sweden
+********** Country is 0 "Norway
+********** Country is 0 "England
+********** Country is 0 "Great Britain
+********* Year is at least 1750
+********* Year is less than 1800
+********* Does not have the global flag wih_marywollstonecraft_flag
+********* The advisor with the id 1626 does not exist
+********* Does not employ the advisor with the id 1625
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_marywollstonecraft_flag
+******** Option: women_history_events.8.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** discount = yes
+********** Named "Mary Wollstonecraft"
+******** Option: women_history_events.8.b:
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is women_history_events.9
+******** title = women_history_events.9.t
+******** desc = women_history_events.9.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "England
+********** Country is 0 "Great Britain
+********* Year is at least 1640
+********* Year is less than 1700
+********* Does not have the global flag wih_aphrabehn_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_aphrabehn_flag
+******** Option: women_history_events.9.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Spymaster type:
+********** discount = yes
+********** Culture is 0 "English
+********** With a skill level of 2
+********** Named "Aphra Behn"
+******** Option: women_history_events.9.b:
+********* Adds the modifier "wih_aphra_behn" for 20 years:
+********** fabricate_claims_cost = -0.25
+******* Gets the country event:
+******** ID is women_history_events.10
+******** title = women_history_events.10.t
+******** desc = women_history_events.10.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Year is at least 1722
+********* Year is less than 1800
+********* Any of the following:
+********** Country is 1 "United States
+********** All of the following:
+*********** Culture group is 0 "British
+*********** Any owned province:
+************ In the continent 0 "North America
+*********** Technology group is not 0 "North American
+********* Does not have the global flag wih_elizalucas_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_elizalucas_flag
+******** Option: women_history_events.10.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Natural Scientist type:
+********** discount = yes
+********** With a skill level of 2
+********** Named "Eliza Lucas"
+******** Option: women_history_events.10.b:
+********* Changes prestige by 10
+********* Adds the modifier "wih_eliza_lucas" for 20 years:
+********** +10% global tax modifier
+******* Gets the country event:
+******** ID is women_history_events.11
+******** title = women_history_events.11.t
+******** desc = women_history_events.11.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Spain
+********** All of the following:
+*********** 0 "Spain does not exist
+*********** Country is 0 "Castile
+********* Year is at least 1450
+********* Year is less than 1504
+********* Is not in regency
+********* has_government_attribute = heir
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* has_disaster_false = 0 "Castilian Civil War
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: women_history_events.11.a:
+********* add_meritocracy_effect = yes
+********* Spawns an heir:
+********** Named "Isabel"
+********** Ruler's dynasty is de Trastámara
+********** Culture is 0 "Castilian
+********** Legitimacy of 95
+********** Ruler's administrative skill is at least 5
+********** Ruler's diplomatic skill is at least 6
+********** Ruler's military skill is at least 3
+********** age = 23
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_heir_personality_ancestor:
+************ Named "expansionist"
+******** Option: women_history_events.11.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** discount = yes
+********** With a skill level of 2
+********** Culture is 0 "Castilian
+********** Named "Isabel de Trastámara"
+******* Gets the country event:
+******** ID is women_history_events.12
+******** title = women_history_events.12.t
+******** desc = women_history_events.12.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Country is 0 "France
+********* Year is at least 1770
+********* Does not have the global flag wih_sophiegermain_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_sophiegermain_flag
+******** Option: women_history_events.12.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Philosopher type:
+********** Culture is 0 "Francien
+********** With a skill level of 2
+********** discount = yes
+********** Named "Sophie Germain"
+******** Option: women_history_events.12.b:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is women_history_events.13
+******** title = women_history_events.13.t
+******** desc = women_history_events.13.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "The Papal State
+********** Country is 0 "Milan
+********** Country is 0 "Tuscany
+********** Any owned province:
+*********** Culture group is 0 "Latin
+********* has_consort_false = no
+********* Year is at least 1463
+********* Year is less than 1510
+********* Does not have the global flag wih_caterina_sforza_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_caterina_sforza_flag
+******** Option: women_history_events.13.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Treasurer type:
+********** Culture is 0 "Umbrian
+********** discount = yes
+********** With a skill level of 2
+********** Named "Caterina Sforza"
+******** Option: women_history_events.13.b:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** discount = yes
+********** Culture is 0 "Umbrian
+********** With a skill level of 2
+********** Named "Caterina Sforza"
+******** Option: women_history_events.13.c:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is women_history_events.14
+******** title = women_history_events.14.t
+******** desc = women_history_events.14.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "France
+********* Year is at least 1519
+********* Year is less than 1589
+********* Is in regency
+********* Heir is male
+********* has_consort_false = no
+********* Is not the lesser partner in a union
+********* has_government_attribute = queen
+********* Has the monarchy government type
+********* Does not have the global flag wih_catherine_demedici_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_catherine_demedici_flag
+******** Option: women_history_events.14.a:
+********* add_meritocracy_effect = yes
+********* Spawns a ruler:
+********** Named "Catherine"
+********** Ruler's dynasty is de' Medici
+********** Culture is 0 "Tuscan
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 2
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "careful"
+******** Option: women_history_events.14.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Tuscan
+********** discount = yes
+********** With a skill level of 2
+********** Named "Catherine de' Medici"
+******* Gets the country event:
+******** ID is women_history_events.15
+******** title = women_history_events.15.t
+******** desc = women_history_events.15.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Does not have the DLC Rights of Man
+********* Country is 0 "Hesse
+********* Year is at least 1600
+********* Year is less than 1650
+********* Is in regency
+********* Heir is male
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_amalieelisabeth_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_amalieelisabeth_flag
+******** Option: women_history_events.15.a:
+********* Spawns a ruler:
+********** Named "Amalie Elisabeth"
+********** Culture is 0 "Rhenish
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 2
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "zealot"
+******** Option: women_history_events.15.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Rhenish
+********** discount = yes
+********** With a skill level of 2
+********** Named "Amalie Elisabeth"
+******* Gets the country event:
+******** ID is women_history_events.16
+******** title = women_history_events.16.t
+******** desc = women_history_events.16.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Year is at least 1500
+********* Year is less than 1600
+********* Any of the following:
+********** All of the following:
+*********** Country is 0 "Spain
+*********** Any of the following:
+************ central_america_region:
+************* Has been discovered by our country
+************ mexico_region:
+************* Has been discovered by our country
+*********** Capital:
+************ In the continent 0 "Europe
+********** Any owned province:
+*********** Any of the following:
+************ Region is central_america_region
+************ Region is mexico_region
+*********** ROOT:
+************ Capital:
+************* In the continent 0 "Europe
+********* Does not have the global flag wih_lamalince_flag
+********* The advisor with the id 1629 does not exist
+********* Does not employ the advisor with the id 1629
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_lamalince_flag
+******** Option: women_history_events.16.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** With a skill level of 2
+********** Culture is 0 "Aztec
+********** Named "La Malinche"
+******** Option: women_history_events.16.b:
+********* Creates a conquistador:
+********** Named "La Malinche"
+********** Ruler is female
+********** 1 skill in fire
+********** 2 skill in shock
+********** 2 skill in manuever
+********** 1 skill in siege
+******** Option: women_history_events.16.c:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is women_history_events.17
+******** title = women_history_events.17.t
+******** desc = women_history_events.17.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Year is at least 1650
+********* Year is less than 1700
+********* Any of the following:
+********** All of the following:
+*********** Capital:
+************ Region is mexico_region
+*********** Any owned province:
+************ Province is 0 "Mexico
+********** All of the following:
+*********** Country is 0 "Spain
+*********** 0 "Mexico is owned by the country or a vassal
+********* Does not have the global flag wih_juanainesdelacruz_flag
+********* The advisor with the id 1631 does not exist
+********* Does not employ the advisor with the id 1631
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_juanainesdelacruz_flag
+******** Option: women_history_events.17.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** discount = yes
+********** Culture is 0 "Castilian
+********** With a skill level of 2
+********** Named "Juana Ines de la Cruz"
+******** Option: women_history_events.17.b:
+********* Adds the modifier "wih_juanainesdelacruz" for 20 years:
+********** +1% global missionary strength
+******* Gets the country event:
+******** ID is women_history_events.18
+******** title = women_history_events.18.t
+******** desc = women_history_events.18.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Navarra
+********* Year is at least 1550
+********* Year is less than 1600
+********* has_consort_regency_false = no
+********* Is in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_jeannedalbret_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_jeannedalbret_flag
+******** Option: women_history_events.18.a:
+********* Spawns a ruler:
+********** Named "Jeanne"
+********** Ruler's dynasty is d'Albret
+********** Culture is 0 "Basque
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 1
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "entrepreneur"
+******** Option: women_history_events.18.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** discount = yes
+********** With a skill level of 2
+********** Named "Jeanne d'Albret"
+******* Gets the country event:
+******** ID is women_history_events.19
+******** title = women_history_events.19.t
+******** desc = women_history_events.19.d
+******** picture:
+********* Trigger:
+********** Has the DLC Origins
+********* picture = NZINGHA_eventPicture
+******** picture:
+********* Trigger:
+********** Does not have the DLC Origins
+********* picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Ndongo
+********* Year is at least 1580
+********* Year is less than 1665
+********* Ruler is male
+********* Heir is male
+********* has_consort_false = no
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 2
+********** Ruler's diplomatic skill is less than 2
+********** Ruler's military skill is less than 2
+********* Does not have the global flag wih_nzinga_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_nzinga_flag
+******** Option: women_history_events.19.a:
+********* Spawns a ruler:
+********** Named "Nzinga Mbandi"
+********** Ruler's dynasty is Ngola
+********** Culture is 0 "Kongolese
+********** Ruler's diplomatic skill is at least 5
+********** Ruler's administrative skill is at least 5
+********** Ruler's military skill is at least 5
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "tactical_genius"
+******** Option: women_history_events.19.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Kongolese
+********** discount = yes
+********** With a skill level of 2
+********** Named "Nzinga Mbandi Ngola"
+******* Gets the country event:
+******** ID is women_history_events.20
+******** title = women_history_events.20.t
+******** desc = women_history_events.20.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Marathas
+********* Year is at least 1675
+********* Year is less than 1762
+********* Ruler is male
+********* Heir is male
+********* Is not the lesser partner in a union
+********* has_consort_false = no
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 2
+********** Ruler's diplomatic skill is less than 2
+********** Ruler's military skill is less than 2
+********* Does not have the global flag wih_tarabai_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_tarabai_flag
+******** Option: women_history_events.20.a:
+********* Spawns a ruler:
+********** Named "Tarabai"
+********** Culture is 0 "Marathi
+********** Ruler's dynasty is Mohite
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's administrative skill is at least 3
+********** Ruler's military skill is at least 3
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "inspiring_leader"
+******** Option: women_history_events.20.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** Named "Tarabai Mohite"
+******* Gets the country event:
+******** ID is women_history_events.21
+******** title = women_history_events.21.t
+******** desc = women_history_events.21.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "England
+********** Country is 0 "Great Britain
+********* Year is at least 1775
+********* Does not have the global flag wih_jane_austen_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_jane_austen_flag
+******** Option: women_history_events.21.a:
+********* Adds the modifier "wih_jane_austen" for 20 years:
+********** -10% advisor cost
+******** Option: women_history_events.21.b:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Philosopher type:
+********** Culture is 0 "English
+********** discount = yes
+********** With a skill level of 2
+********** Named "Jane Austen"
+******* Gets the country event:
+******** ID is women_history_events.22
+******** title = women_history_events.22.t
+******** desc = women_history_events.22.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** All of the following:
+*********** has_reform = pirate_republic_reform
+*********** Has the global flag grace_omalley_flag
+********** All of the following:
+*********** Owns 0 "Limerick
+*********** Owns 0 "Connaught
+*********** Year is at least 1530
+*********** Year is less than 1605
+********* Does not have the global flag wih_grainnenimhaille_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_grainnenimhaille_flag
+******** Option: women_history_events.22.a:
+********* Trigger:
+********** Does not have the global flag grace_omalley_flag
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** Culture is 0 "Irish
+********** With a skill level of 2
+********** Named "Grainne Ni Mhaille"
+********** discount = yes
+******** Option: women_history_events.22.b:
+********* Trigger:
+********** Does not have the global flag grace_omalley_flag
+********* Creates an admiral:
+********** Named "Grainne Ni Mhaille"
+********** 4 skill in shock
+********** 4 skill in fire
+********** 3 skill in manuever
+********** Ruler is female
+******** Option: women_history_events.22.c:
+********* Trigger:
+********** Does not have the global flag grace_omalley_flag
+********* Changes prestige by 10
+******** Option: women_history_events.22.da:
+********* Trigger:
+********** Has the global flag grace_omalley_flag
+********* Spawns a ruler:
+********** Named "Grainne Ni Mhaille"
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 5
+********** Culture is 0 "Irish
+********* If:
+********** Limited to:
+*********** has_or_building_flagship_false = no
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_flagship:
+************ Named "White Seahorse"
+********* else_if:
+********** Limited to:
+*********** Capital:
+************ Is coastal
+********** Capital:
+*********** create_named_ship:
+************ Named "White Seahorse"
+******* Gets the country event:
+******** ID is women_history_events.23
+******** title = women_history_events.23.t
+******** desc = women_history_events.23.d
+******** picture = wihgfx_FEMALE_GENERAL_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Owns 0 "Paris
+********** Country is 0 "France
+********* Year is at least 1670
+********* Year is less than 1710
+********* Does not have the global flag wih_juliedaubigny_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_juliedaubigny_flag
+******** Option: women_history_events.23.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** Culture is 0 "Gascon
+********** With a skill level of 2
+********** Named "Julie d'Aubigny"
+********** discount = yes
+******** Option: women_history_events.23.b:
+********* Creates a general:
+********** Named "Julie d'Aubigny"
+********** 4 skill in shock
+********** 4 skill in fire
+********** 3 skill in manuever
+********** 4 skill in siege
+********** Ruler is female
+******** Option: women_history_events.23.c:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is women_history_events.24
+******** title = women_history_events.24.t
+******** desc = women_history_events.24.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* has_consort_false = no
+********* Any of the following:
+********** Country is 0 "England
+********** Country is 0 "Great Britain
+********* Year is at least 1500
+********* Year is less than 1550
+********* Does not have the global flag wih_anneboleyn_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_anneboleyn_flag
+******** Option: women_history_events.24.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** discount = yes
+********** With a skill level of 2
+********** Culture is 0 "English
+********** Named "Anne Boleyn"
+******** Option: women_history_events.24.b:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is women_history_events.25
+******** title = women_history_events.25.t
+******** desc = women_history_events.25.d
+******** picture = wihgfx_FEMALE_GENERAL_eventPicture
+******** Trigger:
+********* has_consort_false = no
+********* Owns 0 "Kelantan
+********* Year is at least 1585
+********* Year is less than 1630
+********* Does not have the global flag wih_sitiwankembang_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_sitiwankembang_flag
+******** Option: women_history_events.25.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** With a skill level of 2
+********** Named "Siti Wan Kembang"
+********** Culture is 0 "Malayan
+********** discount = yes
+******** Option: women_history_events.25.b:
+********* Creates a general:
+********** Named "Siti Wan Kembang"
+********** 5 skill in shock
+********** 2 skill in fire
+********** 5 skill in manuever
+********** 1 skill in siege
+********** Ruler is female
+******** Option: women_history_events.25.c:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is women_history_events.26
+******** title = women_history_events.26.t
+******** desc = women_history_events.26.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* has_consort_false = no
+********* Any of the following:
+********** Country is 0 "England
+********** Country is 0 "Great Britain
+********** Country is 0 "Castile
+********** Country is 0 "Aragon
+********* Year is at least 1485
+********* Year is less than 1536
+********* Does not have the global flag wih_catherineofaragon_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_catherineofaragon_flag
+******** Option: women_history_events.26.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** Culture is 0 "Castilian
+********** With a skill level of 2
+********** Named "Catherine of Aragon"
+********** discount = yes
+******** Option: women_history_events.26.b:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is women_history_events.27
+******** title = women_history_events.27.t
+******** desc = women_history_events.27.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "England
+********** Country is 0 "Great Britain
+********* Year is less than 1500
+********* Ruler is male
+********* Is not in regency
+********* Is not the lesser partner in a union
+********* has_consort_false = no
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_margaretofanjou_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_margaretofanjou_flag
+******** Option: women_history_events.27.c:
+********* Spawns a ruler:
+********** Named "Margaret"
+********** Ruler's dynasty is d'Anjou
+********** Culture is 0 "Francien
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "righteous"
+******** Option: women_history_events.27.a:
+********* Trigger:
+********** Has the DLC Rights of Man
+********** has_government_attribute = queen
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* define_consort:
+********** Named "Margaret"
+********** Ruler's dynasty is d'Anjou
+********** Culture is 0 "Francien
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* Hidden effect:
+********** add_queen_personality_ancestor:
+*********** Named "righteous"
+******** Option: women_history_events.27.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Francien
+********** discount = yes
+********** With a skill level of 2
+********** Named "Margaret d'Anjou"
+******* Gets the country event:
+******** ID is women_history_events.28
+******** title = women_history_events.28.t
+******** desc = women_history_events.28.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Prussia
+********* Year is at least 1770
+********* Ruler is male
+********* Is not in regency
+********* Legitimacy is at least 50
+********* Does not have the global flag wih_louise_pru_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_louise_pru_flag
+******** Option: women_history_events.28.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Pomeranian
+********** With a skill level of 2
+********** discount = yes
+********** Named "Louise of Mecklenburg-Strelitz"
+******** Option: women_history_events.28.b:
+********* Adds the modifier "wih_louise_pru" for 20 years:
+********** +1 diplomatic reputation
+******* Gets the country event:
+******** ID is women_history_events.29
+******** title = women_history_events.29.t
+******** desc = women_history_events.29.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Ottomans
+********* Year is at least 1479
+********* Year is less than 1550
+********* Ruler is male
+********* Is not in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_aysehafsasultan_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_aysehafsasultan_flag
+******** Option: women_history_events.29.a:
+********* Spawns a ruler:
+********** Named "Ayse Hafsa Sultan"
+********** Ruler's dynasty is Osmanoglu
+********** Culture is crimean
+********** Ruler's administrative skill is at least 2
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "silver_tongue"
+******** Option: women_history_events.29.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** Culture is crimean
+********** discount = yes
+********** Named "Ayse Hafsa Sultan"
+******* Gets the country event:
+******** ID is women_history_events.30
+******** title = women_history_events.30.t
+******** desc = women_history_events.30.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Mughals
+********* Year is at least 1617
+********* Year is less than 1671
+********* Ruler is male
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_roshanarabegum_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_roshanarabegum_flag
+******** Option: women_history_events.30.a:
+********* Spawns a ruler:
+********** Named "Roshanara Begum"
+********** Ruler's dynasty is Timurid
+********** Culture is 1 "Hindavi
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 2
+********** Ruler's military skill is at least 4
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* add_corruption = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "intricate_web_weaver"
+*********** add_ruler_personality = embezzler_personality
+******** Option: women_history_events.30.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 1 "Hindavi
+********** With a skill level of 2
+********** discount = yes
+********** Named "Roshanara Begum"
+********* add_corruption = 0.5
+******* Gets the country event:
+******** ID is women_history_events.31
+******** title = women_history_events.31.t
+******** desc = women_history_events.31.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Country is 1 "United States
+********* Year is at least 1744
+********* Does not have the global flag wih_abigailadams_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_abigailadams_flag
+******** Option: women_history_events.31.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** discount = yes
+********** Named "Abigail Adams"
+********** Culture is 0 "American
+******** Option: women_history_events.31.b:
+********* Adds the modifier "wih_abigail_adams" for 20 years:
+********** +1 diplomatic reputation
+******* Gets the country event:
+******** ID is women_history_events.32
+******** title = women_history_events.32.t
+******** desc = women_history_events.32.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Owns 0 "North Kanara
+********* Technology group is 0 "Indian
+********* Year is at least 1525
+********* Year is less than 1600
+********* 0 "Portugal:
+********** Any of the following:
+*********** Any owned province:
+************ Region is deccan_region
+************ Any bordering province:
+************* Any of the following:
+************** The province is owned by our country
+************** Controlled by our country
+*********** Has a truce with our country
+*********** At war with our country
+********* Ruler is male
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_raniabbakkachowta_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_raniabbakkachowta_flag
+******** Option: women_history_events.32.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** Culture is 0 "Kannada
+********** discount = yes
+********** With a skill level of 2
+********** Named "Abbakka Chowta"
+******** Option: women_history_events.32.b:
+********* Spawns a ruler:
+********** Named "Abbakka"
+********** Ruler's dynasty is Chowta
+********** Culture is 0 "Kannada
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 4
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "bold_fighter"
+******** Option: women_history_events.32.c:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* Creates a general:
+********** Named "Abbakka Chowta"
+********** 2 skill in shock
+********** 4 skill in fire
+********** 4 skill in manuever
+********** 1 skill in siege
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.33
+******** title = women_history_events.33.t
+******** desc = women_history_events.33.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 1 "United States
+********** All of the following:
+*********** Technology group is 0 "Western
+*********** Any owned province:
+************ In the continent 0 "North America
+********* Year is at least 1780
+********* Does not have the global flag wih_sacagawea_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_sacagawea_flag
+******** Option: women_history_events.33.a:
+********* Creates a conquistador:
+********** Named "Sacagawea"
+********** 1 skill in fire
+********** 2 skill in shock
+********** 3 skill in manuever
+********** 1 skill in siege
+******** Option: women_history_events.33.b:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** With a skill level of 2
+********** Culture is 0 "Shoshone
+********** discount = yes
+********** Named "Sacagawea"
+******* Gets the country event:
+******** ID is women_history_events.34
+******** title = women_history_events.34.t
+******** desc = women_history_events.34.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Persia
+********* Year is at least 1524
+********* Year is less than 1578
+********* Any of the following:
+********** Does not have the global flag wih_parikhankhanum_flag
+********** Does not have the global flag wih_khayralnisabegum_flag
+********* Legitimacy is less than 75
+********* Ruler is male
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_parikhankhanum_flag
+******** Option: women_history_events.34.a:
+********* Spawns a ruler:
+********** Named "Pari Khan Khanum"
+********** Ruler's dynasty is Safavid
+********** Culture is 0 "Persian
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 4
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "well_connected"
+******** Option: women_history_events.34.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** Culture is 0 "Persian
+********** discount = yes
+********** With a skill level of 2
+********** Named "Pari Khan Khanum"
+******* Gets the country event:
+******** ID is women_history_events.35
+******** title = women_history_events.35.t
+******** desc = women_history_events.35.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Follows the 0 "Hindu religion
+********* Primary culture is 1 "Rajasthani
+********* Capital:
+********** Region is west_india_region
+********* Year is less than 1500
+********* Does not have the global flag wih_meerabai_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_meerabai_flag
+******** Option: women_history_events.35.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Theologian type:
+********** Culture is 1 "Rajasthani
+********** discount = yes
+********** With a skill level of 2
+********** Named "Meera Bai"
+******** Option: women_history_events.35.b:
+********* Adds the modifier "wih_meera_bai" for 20 years:
+********** +1% global missionary strength
+******* Gets the country event:
+******** ID is women_history_events.36
+******** title = women_history_events.36.t
+******** desc = women_history_events.36.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Zazzau
+********** All of the following:
+*********** Owns 0 "Zazzau
+*********** Technology group is 0 "West African
+********* Year is at least 1550
+********* Year is less than 1610
+********* Ruler is male
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_amina_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_amina_flag
+******** Option: women_history_events.36.a:
+********* Spawns a ruler:
+********** Named "Amina"
+********** Ruler's dynasty is Zazzau
+********** Culture is hausa
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's administrative skill is at least 5
+********** Ruler's military skill is at least 6
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "martial_educator"
+******** Option: women_history_events.36.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** Culture is hausa
+********** discount = yes
+********** With a skill level of 2
+********** Named "Amina"
+******** Option: women_history_events.36.c:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* Creates a general:
+********** Named "Amina"
+********** 4 skill in fire
+********** 4 skill in shock
+********** 5 skill in manuever
+********** 3 skill in siege
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.37
+******** title = women_history_events.37.t
+******** desc = women_history_events.37.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 0 "Mongolia
+********* Year is less than 1510
+********* Ruler is male
+********* Is in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_mandukhaikhatun_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_mandukhaikhatun_flag
+******** Option: women_history_events.37.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* Creates a general:
+********** Named "Mandukhai Khatun"
+********** 4 skill in fire
+********** 4 skill in shock
+********** 5 skill in manuever
+********** 1 skill in siege
+********** Ruler is female
+******** Option: women_history_events.37.b:
+********* Spawns a ruler:
+********** Named "Mandukhai Khatun"
+********** Ruler's dynasty is Borjigin
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's administrative skill is at least 5
+********** Ruler's military skill is at least 6
+********** Culture is 0 "Mongol
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "intricate_web_weaver"
+******** Option: women_history_events.37.c:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** With a skill level of 2
+********** Culture is 0 "Mongol
+********** Named "Mandukhai Khatun"
+******* Gets the country event:
+******** ID is women_history_events.38
+******** title = women_history_events.38.t
+******** desc = women_history_events.38.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Dai Viet
+********** Owns 0 "Dong Kinh
+********* Year is at least 1770
+********* Does not have the global flag wih_hoxuanhuong_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_hoxuanhuong_flag
+******** Option: women_history_events.38.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Philosopher type:
+********** discount = yes
+********** Culture is 0 "Vietnamese
+********** With a skill level of 2
+********** Named "Ho Xuan Huong"
+******** Option: women_history_events.38.b:
+********* Adds the modifier "wih_hoxuanhuong" for 20 years:
+********** -5% technology cost
+******* Gets the country event:
+******** ID is women_history_events.39
+******** title = women_history_events.39.t
+******** desc = women_history_events.39.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Scotland
+********** Country is 0 "Ireland
+********** Country is 0 "Tyrone
+********* Year is at least 1570
+********* Year is less than 1610
+********* Ruler is male
+********* ruler_age = 50
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_iniondubh_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_iniondubh_flag
+******** Option: women_history_events.39.a:
+********* Spawns a ruler:
+********** Named "Inion Dubh"
+********** Ruler's dynasty is Dhomhnaill
+********** Culture is 0 "Irish
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's administrative skill is at least 5
+********** Ruler's military skill is at least 4
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "well_connected"
+******** Option: women_history_events.39.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** discount = yes
+********** Culture is 0 "Irish
+********** With a skill level of 2
+********** Named "Inion Dubh"
+******* Gets the country event:
+******** ID is women_history_events.40
+******** title = women_history_events.40.t
+******** desc = women_history_events.40.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 1 "Garha
+********* Year is at least 1524
+********* Year is less than 1564
+********* Is in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_ranidurgavati_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_ranidurgavati_flag
+******** Option: women_history_events.40.a:
+********* Spawns a ruler:
+********** Named "Durgavati"
+********** Ruler's dynasty is Garha-Mandli
+********** Culture is gondi
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 5
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "scholar"
+******** Option: women_history_events.40.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Grand Captain type:
+********** discount = yes
+********** With a skill level of 2
+********** Culture is gondi
+********** Named "Durgavati Maravi"
+******* Gets the country event:
+******** ID is women_history_events.41
+******** title = women_history_events.41.t
+******** desc = women_history_events.41.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Owns 1 "Manahahttan
+********** Owns 1 "Weskarini
+********* Follows the 0 "Catholic religion
+********* Year is at least 1656
+********* Year is less than 1700
+********* Does not have the global flag wih_kateritekakwitha_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_kateritekakwitha_flag
+******** Option: women_history_events.41.a:
+********* Adds the modifier "wih_kateritekakwitha" for 20 years:
+********** +1% global missionary strength
+******* Gets the country event:
+******** ID is women_history_events.42
+******** title = women_history_events.42.t
+******** desc = women_history_events.42.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Frankfurt
+********** Country is 0 "Germany
+********** Owns 0 "Frankfurt
+********** Owns 0 "Nürnberg
+********* Year is at least 1647
+********* Year is less than 1717
+********* Does not have the global flag wih_mariasibyllamerian_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_mariasibyllamerian_flag
+******** Option: women_history_events.42.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Natural Scientist type:
+********** discount = yes
+********** With a skill level of 2
+********** Culture is 0 "Rhenish
+********** Named "Maria Sibylla Merian"
+******** Option: women_history_events.42.b:
+********* Adds the modifier "wih_mariasibyllamerian" for 20 years:
+********** -5% technology cost
+******* Gets the country event:
+******** ID is women_history_events.43
+******** title = women_history_events.43.t
+******** desc = women_history_events.43.d
+******** picture = wihgfx_FEMALE_GENERAL_eventPicture
+******** Trigger:
+********* Country is 0 "Netherlands
+********* Owns 1 "Amsterdam
+********* Year is at least 1526
+********* Year is less than 1588
+********* Any of the following:
+********** At war with 0 "Spain
+********** Has a truce with 0 "Spain
+********* Does not have the global flag wih_kenausimonsdochterhasselaer_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_kenausimonsdochterhasselaer_flag
+******** Option: women_history_events.43.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Army Organizer type:
+********** Culture is 0 "Dutch
+********** discount = yes
+********** With a skill level of 2
+********** Named "Kenau Simonsdochter Hasselaer"
+******** Option: women_history_events.43.b:
+********* Adds the modifier "wih_kenausimonsdochterhasselaer" for 20 years:
+********** +10% fort defence
+******** Option: women_history_events.43.c:
+********* Creates a general:
+********** Named "Kenau Simonsdochter Hasselaer"
+********** 2 skill in shock
+********** 2 skill in fire
+********** 2 skill in manuever
+********** 4 skill in siege
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.44
+******** title = women_history_events.44.t
+******** desc = women_history_events.44.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Owns 0 "Venezia
+********** Country is 0 "Venice
+********* Year is at least 1646
+********* Year is less than 1684
+********* Does not have the global flag wih_elenacornaropiscopia_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_elenacornaropiscopia_flag
+******** Option: women_history_events.44.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Theologian type:
+********** discount = yes
+********** With a skill level of 2
+********** Named "Elena Cornaro Piscopia"
+******** Option: women_history_events.44.b:
+********* Adds the modifier "wih_elenacornaropiscopia" for 20 years:
+********** +0.25 prestige
+******* Gets the country event:
+******** ID is women_history_events.45
+******** title = women_history_events.45.t
+******** desc = women_history_events.45.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Country is 0 "Russia
+********* Year is at least 1743
+********* Has the global flag wih_catherine_rus_flag
+********* Does not have the global flag wih_yekaterinaromanovnavorontsovadashkova_flag
+********* The advisor with the id 1609 does not exist
+********* Does not employ the advisor with the id 1609
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_yekaterinaromanovnavorontsovadashkova_flag
+******** Option: women_history_events.45.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** Culture is 0 "Muscovite
+********** With a skill level of 2
+********** Named "Yekaterina Romanovna Vorontsova-Dashkova"
+******** Option: women_history_events.45.b:
+********* Adds the modifier "wih_yekaterinaromanovnavorontsovadashkova" for 20 years:
+********** -5% technology cost
+******* Gets the country event:
+******** ID is women_history_events.46
+******** title = women_history_events.46.t
+******** desc = women_history_events.46.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Country is 0 "France
+********* Year is at least 1600
+********* Year is less than 1700
+********* Does not have the global flag wih_mariecrous_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_mariecrous_flag
+******** Option: women_history_events.46.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Philosopher type:
+********** Culture is 0 "Francien
+********** With a skill level of 2
+********** Named "Marie Crous"
+********** discount = yes
+******** Option: women_history_events.46.b:
+********* Adds the modifier "wih_mariecrous" for 20 years:
+********** -5% technology cost
+******* Gets the country event:
+******** ID is women_history_events.47
+******** title = women_history_events.47.t
+******** desc = women_history_events.47.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Shogunate
+********** has_reform = 0 "Daimyo
+********* Year is at least 1570
+********* Year is less than 1633
+********* Does not have the global flag wih_ohatsu_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_ohatsu_flag
+******** Option: women_history_events.47.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** discount = yes
+********** With a skill level of 2
+********** Culture is 0 "Saigoku
+********** Named "Ohatsu"
+******** Option: women_history_events.47.b:
+********* Adds the modifier "wih_ohatsu" for 20 years:
+********** +1 diplomatic reputation
+******* Gets the country event:
+******** ID is women_history_events.48
+******** title = women_history_events.48.t
+******** desc = women_history_events.48.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Qing
+********** Country is 0 "Ming
+********* Year is at least 1613
+********* Year is less than 1688
+********* Is in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_xiaozhuan_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_xiaozhuan_flag
+******** Option: women_history_events.48.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** With a skill level of 2
+********** Named "Empress Dowager Xiaozhuang"
+******** Option: women_history_events.48.b:
+********* Spawns a ruler:
+********** Named "Xiaozhuang"
+********** Ruler's dynasty is Aisin Gioro
+********** Culture is 0 "Zhili
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 4
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "benevolent"
+******* Gets the country event:
+******** ID is women_history_events.49
+******** title = women_history_events.49.t
+******** desc = women_history_events.49.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 0 "Spain
+********* Year is at least 1507
+********* 0 "South America:
+********** Has been discovered by our country
+********* Any owned province:
+********** In the continent 0 "South America
+********* Year is less than 1580
+********* Does not have the global flag wih_inesdesuarez_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_inesdesuarez_flag
+******** Option: women_history_events.49.a:
+********* Creates an advisor of the 0 "Colonial Governor type:
+********** Culture is 0 "Castilian
+********** discount = yes
+********** With a skill level of 2
+********** Named "Ines de Suarez"
+******** Option: women_history_events.49.b:
+********* Creates a conquistador:
+********** Named "Ines de Suarez"
+********** Ruler is female
+********** 2 skill in fire
+********** 3 skill in shock
+********** 3 skill in manuever
+********** 2 skill in siege
+******** Option: women_history_events.49.c:
+********* Creates a general:
+********** Named "Ines de Suarez"
+********** Ruler is female
+********** 4 skill in fire
+********** 3 skill in shock
+********** 4 skill in manuever
+********** 2 skill in siege
+******* Gets the country event:
+******** ID is women_history_events.50
+******** title = women_history_events.50.t
+******** desc = women_history_events.50.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Shogunate
+********** has_reform = 0 "Daimyo
+********* Year is at least 1572
+********* Year is less than 1650
+********* Does not have the global flag wih_kaihime_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_kaihime_flag
+******** Option: women_history_events.50.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** Culture is 0 "Saigoku
+********** With a skill level of 2
+********** Named "Kaihime"
+******** Option: women_history_events.50.b:
+********* Creates a general:
+********** Named "Kaihime"
+********** Ruler is female
+********** 5 skill in fire
+********** 3 skill in shock
+********** 4 skill in manuever
+********** 2 skill in siege
+******* Gets the country event:
+******** ID is women_history_events.51
+******** title = women_history_events.51.t
+******** desc = women_history_events.51.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Afghanistan
+********** Owns 0 "Kandahar
+********* Year is at least 1650
+********* Year is less than 1717
+********* Does not have the global flag wih_nazotokhi_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_nazotokhi_flag
+******** Option: women_history_events.51.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** discount = yes
+********** With a skill level of 2
+********** Named "Nazo Tokhi"
+******** Option: women_history_events.51.b:
+********* Creates a general:
+********** Named "Nazo Tokhi"
+********** Ruler is female
+********** 4 skill in fire
+********** 4 skill in shock
+********** 3 skill in manuever
+********** 3 skill in siege
+******* Gets the country event:
+******** ID is women_history_events.52
+******** title = women_history_events.52.t
+******** desc = women_history_events.52.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 0 "Ming
+********* Any of the following:
+********** Has a truce with 0 "Manchu
+********** At war with 0 "Manchu
+********** 0 "Manchu:
+*********** Any owned province:
+************ Has core on our country
+********* Year is at least 1574
+********* Year is less than 1648
+********* Does not have the global flag wih_qinliangyu_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_qinliangyu_flag
+******** Option: women_history_events.52.a:
+********* Creates a general:
+********** Named "Qin Liangyu"
+********** Ruler is female
+********** 5 skill in fire
+********** 4 skill in shock
+********** 3 skill in manuever
+********** 3 skill in siege
+******** Option: women_history_events.52.b:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Army Reformer type:
+********** Culture is 0 "Zhili
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.53
+******** title = women_history_events.53.t
+******** desc = women_history_events.53.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Croatia
+********** Country is 0 "Hungary
+********* Has a truce with at least one country
+********* Year is at least 1643
+********* Year is less than 1703
+********* Ruler is male
+********* Is not in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Any of the following:
+********** Has no heir
+********** Heir is male
+********* Does not have the global flag wih_ilonazrinyi_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_ilonazrinyi_flag
+******** Option: women_history_events.53.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** Culture is 0 "Croatian
+********** Ruler is female
+******** Option: women_history_events.53.b:
+********* Spawns a ruler:
+********** Named "Ilona"
+********** Ruler's dynasty is Zrinyi
+********** Culture is 0 "Croatian
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "inspiring_leader"
+******** Option: women_history_events.53.c:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* Creates a general:
+********** Named "Ilona Zrinyi"
+********** 4 skill in shock
+********** 2 skill in fire
+********** 3 skill in manuever
+********** 2 skill in siege
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.54
+******** title = women_history_events.54.t
+******** desc = women_history_events.54.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Qing
+********** Country is 0 "Ming
+********* Year is at least 1768
+********* Does not have the global flag wih_wangzhenyi_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_wangzhenyi_flag
+******** Option: women_history_events.54.a:
+********* Adds the modifier "wih_wangzhenyi" for 20 years:
+********** -10% technology cost
+******** Option: women_history_events.54.b:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Philosopher type:
+********** With a skill level of 2
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.55
+******** title = women_history_events.55.t
+******** desc = women_history_events.55.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 0 "Ayutthaya
+********* Year is at least 1500
+********* Year is less than 1550
+********* Ruler is male
+********* Is not in regency
+********* Any of the following:
+********** Has a truce with at least one country
+********** Is at war
+********* Does not have the global flag wih_suriyothai_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_suriyothai_flag
+******** Option: women_history_events.55.a:
+********* Adds the modifier "wih_suriyothai" for 20 years:
+********** +0.5 prestige
+******* Gets the country event:
+******** ID is women_history_events.56
+******** title = women_history_events.56.t
+******** desc = women_history_events.56.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Does not have the DLC Golden Century
+********* Any of the following:
+********** Owns 0 "Ceuta
+********** Owns 0 "Tangiers
+********* Is in the 0 "Muslim religion group
+********* Year is at least 1485
+********* Year is less than 1543
+********* Does not have the global flag wih_sayyidaalhurra_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_sayyidaalhurra_flag
+******** Option: women_history_events.56.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Navigator type:
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.56.b:
+********* Creates an admiral:
+********** Named "Sayyida al Hurra"
+********** 4 skill in shock
+********** 4 skill in fire
+********** 4 skill in manuever
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.57
+******** title = women_history_events.57.t
+******** desc = women_history_events.57.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Country is 0 "France
+********* Year is at least 1748
+********* Does not have the global flag wih_olympedegouges_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_olympedegouges_flag
+******** Option: women_history_events.57.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.57.b:
+********* Adds the modifier "wih_olympedegouges" for 20 years:
+********** -1 global unrest
+******* Gets the country event:
+******** ID is women_history_events.58
+******** title = women_history_events.58.t
+******** desc = women_history_events.58.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** has_reform = 0 "Shogunate
+********** has_reform = 0 "Daimyo
+********* Year is at least 1571
+********* Year is less than 1800
+********* Does not have the global flag wih_izumonookuni_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_izumonookuni_flag
+******** Option: women_history_events.58.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Artist type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.58.b:
+********* Adds the modifier "wih_izumonookuni" for 20 years:
+********** +0.25 prestige
+******* Gets the country event:
+******** ID is women_history_events.59
+******** title = women_history_events.59.t
+******** desc = women_history_events.59.d
+******** picture = wihgfx_FEMALE_GENERAL_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Albania
+********** All of the following:
+*********** Owns 1 "Vlorë
+*********** Primary culture is 0 "Albanian
+********* Has a truce with 0 "Ottomans
+********* Year is at least 1630
+********* Year is less than 1700
+********* Does not have the global flag wih_noraofkelmendi_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_noraofkelmendi_flag
+******** Option: women_history_events.59.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Army Organizer type:
+********** Culture is 0 "Albanian
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.59.b:
+********* Creates a general:
+********** Named "Nora of Kelmendi"
+********** 2 skill in shock
+********** 3 skill in fire
+********** 4 skill in manuever
+********** 5 skill in siege
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.60
+******** title = women_history_events.60.t
+******** desc = women_history_events.60.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 1 "United States
+********* Year is at least 1730
+********* Does not have the global flag wih_marthawashington_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_marthawashington_flag
+******** Option: women_history_events.60.a:
+********* Adds the modifier "wih_marthawashington" for 20 years:
+********** +1 diplomatic reputation
+******** Option: women_history_events.60.b:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** Culture is 0 "American
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.61
+******** title = women_history_events.61.t
+******** desc = women_history_events.61.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "England
+********** Country is 0 "Great Britain
+********* Year is at least 1632
+********* Year is less than 1705
+********* Does not have the global flag wih_elizabethwilbraham_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_elizabethwilbraham_flag
+******** Option: women_history_events.61.a:
+********* Adds the modifier "wih_elizabethwilbraham" for 20 years:
+********** -10% build cost
+******** Option: women_history_events.61.b:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Artist type:
+********** With a skill level of 2
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.62
+******** title = women_history_events.62.t
+******** desc = women_history_events.62.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Country is 0 "Russia
+********* Year is at least 1774
+********* Does not have the global flag wih_annabunina_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_annabunina_flag
+******** Option: women_history_events.62.a:
+********* Adds the modifier "wih_annabunina" for 20 years:
+********** +0.25 prestige
+******** Option: women_history_events.62.b:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Artist type:
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.63
+******** title = women_history_events.63.t
+******** desc = women_history_events.63.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Country is 0 "Denmark
+********* Year is at least 1511
+********* Year is less than 1571
+********* Does not have the global flag wih_dorotheasaxelauenburg_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_dorotheasaxelauenburg_flag
+******** Option: women_history_events.63.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** Culture is 0 "Saxon
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.63.b:
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is women_history_events.64
+******** title = women_history_events.64.t
+******** desc = women_history_events.64.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Hungary
+********** Country is 0 "Bohemia
+********** Country is 0 "Netherlands
+********* Year is at least 1505
+********* Year is less than 1558
+********* Is in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_maryofhungary_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_maryofhungary_flag
+******** Option: women_history_events.64.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.64.b:
+********* Spawns a ruler:
+********** Named "Mary"
+********** Ruler's dynasty is von Habsburg
+********** Culture is 0 "Hungarian
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 5
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "silver_tongue"
+******* Gets the country event:
+******** ID is women_history_events.65
+******** title = women_history_events.65.t
+******** desc = women_history_events.65.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Netherlands
+********* Year is at least 1480
+********* Year is less than 1531
+********* Ruler is male
+********* Is in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_margaretofaustria_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_margaretofaustria_flag
+******** Option: women_history_events.65.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** Culture is 0 "Austrian
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.65.b:
+********* Spawns a ruler:
+********** Named "Margaret"
+********** Ruler's dynasty is von Habsburg
+********** Culture is 0 "Austrian
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "charismatic_negotiator"
+******* Gets the country event:
+******** ID is women_history_events.66
+******** title = women_history_events.66.t
+******** desc = women_history_events.66.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Netherlands
+********* Year is at least 1566
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Year is less than 1633
+********* Any of the following:
+********** Is in regency
+********** ruler_age = 50
+********* Does not have the global flag wih_isabellaclaraeugenia_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.5:
+********** A vassal of 0 "Spain
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_isabellaclaraeugenia_flag
+******** Option: women_history_events.66.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.66.b:
+********* Spawns a ruler:
+********** Named "Isabella Clara Eugenia"
+********** Ruler's dynasty is von Habsburg
+********** Culture is 0 "Castilian
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "midas_touched"
+******* Gets the country event:
+******** ID is women_history_events.67
+******** title = women_history_events.67.t
+******** desc = women_history_events.67.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Poland
+********** Country is 0 "Lithuania
+********** Country is 0 "Commonwealth
+********* Year is at least 1570
+********* Year is less than 1635
+********* Ruler is male
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* ruler_age = 50
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_urszulameyerin_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_urszulameyerin_flag
+******** Option: women_history_events.67.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* Creates an advisor of the 0 "Diplomat type:
+********** Culture is 0 "Bavarian
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.67.b:
+********* Spawns a ruler:
+********** Named "Urszula"
+********** Ruler's dynasty is Meyerin
+********** Culture is 0 "Bavarian
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 2
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "pious"
+******* Gets the country event:
+******** ID is women_history_events.68
+******** title = women_history_events.68.t
+******** desc = women_history_events.68.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Poland
+********** Country is 0 "Lithuania
+********** Country is 0 "Commonwealth
+********* Year is at least 1669
+********* Year is less than 1729
+********* Ruler is male
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_elzbietahelenasieniawska_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_elzbietahelenasieniawska_flag
+******** Option: women_history_events.68.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** discount = yes
+********** With a skill level of 3
+********** Ruler is female
+******** Option: women_history_events.68.b:
+********* Spawns a ruler:
+********** Named "Elzbieta Helena"
+********** Ruler's dynasty is Sieniawska
+********** Culture is 0 "Polish
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 2
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "incorruptible"
+******* Gets the country event:
+******** ID is women_history_events.69
+******** title = women_history_events.69.t
+******** desc = women_history_events.69.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Poland
+********** Country is 0 "Lithuania
+********** Country is 0 "Commonwealth
+********* Year is at least 1611
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* has_reform_false = 0 "Steppe Nomads
+********* Year is less than 1667
+********* Any of the following:
+********** All of the following:
+*********** Legitimacy is less than 50
+*********** Ruler is male
+********** Any of the following:
+*********** Ruler's administrative skill is less than 3
+*********** Ruler's diplomatic skill is less than 3
+*********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_marielouisegonzaga_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_marielouisegonzaga_flag
+******** Option: women_history_events.69.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Burgundian
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.69.b:
+********* Spawns a ruler:
+********** Named "Marie Louise"
+********** Ruler's dynasty is Gonzaga
+********** Culture is 0 "Burgundian
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 2
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "industrious"
+******* Gets the country event:
+******** ID is women_history_events.70
+******** title = women_history_events.70.t
+******** desc = women_history_events.70.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Sicily
+********** Country is 0 "Naples
+********* Year is at least 1752
+********* Is not in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_mariacarolinaaustria_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_mariacarolinaaustria_flag
+******** Option: women_history_events.70.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.70.b:
+********* Spawns a ruler:
+********** Named "Maria Carolina"
+********** Ruler's dynasty is von Habsburg
+********** Culture is 0 "Austrian
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "expansionist"
+******* Gets the country event:
+******** ID is women_history_events.71
+******** title = women_history_events.71.t
+******** desc = women_history_events.71.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "France
+********* Year is at least 1755
+********* Year is less than 1793
+********* Does not have the global flag wih_marieantoinette_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_marieantoinette_flag
+******** Option: women_history_events.71.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** discount = yes
+********** Ruler is female
+******** Option: women_history_events.71.b:
+********* Changes administrative power stored by 50
+********* Changes diplomatic power stored by 50
+********* Changes military power stored by 50
+******* Gets the country event:
+******** ID is women_history_events.72
+******** title = women_history_events.72.t
+******** desc = women_history_events.72.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Year is at least 1474
+********* Year is less than 1503
+********* Any owned province:
+********** Region is carribeans_region
+********* Capital:
+********** In the continent 0 "Europe
+********* Does not have the global flag wih_anacaona_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_anacaona_flag
+******** Option: women_history_events.72.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** discount = yes
+********** Culture is 0 "Taino
+********** Follows the 0 "Animist religion
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.72.b:
+********* Changes diplomatic power stored by 50
+******* Gets the country event:
+******** ID is women_history_events.73
+******** title = women_history_events.73.t
+******** desc = women_history_events.73.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 0 "Bohemia
+********* Is in the 0 "Christian religion group
+********* Isn't the Holy Roman Emperor
+********* Year is less than 1451
+********* Does not have the global flag wih_barbaracilli_flag
+******** Mean time to happen
+********* Base mean time to happen of 30 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_barbaracilli_flag
+******** Option: women_history_events.73.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** Culture is 0 "Austrian
+********** Ruler is female
+********* Holy Roman Emperor:
+********** Adds the opinion modifier "0 "Irritated" towards our country
+******** Option: women_history_events.73.b:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is women_history_events.74
+******** title = women_history_events.74.t
+******** desc = women_history_events.74.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Year is at least 1450
+********* Country is 0 "Ethiopia
+********* Year is less than 1522
+********* Has the monarchy government type
+********* has_reform_false = 0 "Steppe Nomads
+********* Any of the following:
+********** All of the following:
+*********** Legitimacy is less than 50
+*********** Ruler is male
+********** Any of the following:
+*********** Ruler's administrative skill is less than 3
+*********** Ruler's diplomatic skill is less than 3
+*********** Ruler's military skill is less than 3
+********* has_consort_false = yes
+********* Does not have the global flag wih_eleniethiopia_flag
+********* Is not the lesser partner in a union
+********* The advisor with the id 1611 does not exist
+********* Does not employ the advisor with the id 1611
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_eleniethiopia_flag
+******** Option: women_history_events.74.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is sidamo
+********** Follows the 0 "Sunni religion
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.74.b:
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+*********** has_government_attribute = queen
+********** define_consort:
+*********** Named "Eleni"
+*********** Ruler's dynasty is Hadiya
+*********** Culture is sidamo
+*********** Follows the 0 "Sunni religion
+*********** Ruler's administrative skill is at least 4
+*********** Ruler's diplomatic skill is at least 4
+*********** Ruler's military skill is at least 3
+*********** Ruler is female
+********** Hidden effect:
+*********** add_queen_personality_ancestor:
+************ Named "righteous"
+*********** add_queen_personality = intricate_web_weaver_personality
+********* If:
+********** Limited to:
+*********** Does not have the DLC Rights of Man
+********** Spawns a ruler:
+*********** Named "Eleni"
+*********** Ruler's dynasty is Hadiya
+*********** Culture is sidamo
+*********** Follows the 0 "Sunni religion
+*********** Ruler's administrative skill is at least 4
+*********** Ruler's diplomatic skill is at least 4
+*********** Ruler's military skill is at least 3
+*********** Ruler is female
+********** If:
+*********** Limited to:
+************ has_states_general_mechanic = yes
+*********** change_statists_vs_orangists = 1
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "righteous"
+*********** add_queen_personality = intricate_web_weaver_personality
+******* Gets the country event:
+******** ID is women_history_events.75
+******** title = women_history_events.75.t
+******** desc = women_history_events.75.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Malacca
+********* Owns 0 "Malacca
+********* Year is at least 1500
+********* Year is less than 1600
+********* Ruler is male
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's administrative skill is less than 3
+********** Ruler's diplomatic skill is less than 3
+********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_tunfatimah_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.5:
+********** 0 "Portugal:
+*********** Has discovered our country
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_tunfatimah_flag
+******** Option: women_history_events.75.a:
+********* add_meritocracy_effect = yes
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* Creates an advisor of the 0 "Army Organizer type:
+********** Culture is 0 "Malayan
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.75.b:
+********* Spawns a ruler:
+********** Named "Tun Fatimah"
+********** Ruler's dynasty is Srivijaya
+********** Culture is 0 "Malayan
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "careful"
+******* Gets the country event:
+******** ID is women_history_events.76
+******** title = women_history_events.76.t
+******** desc = women_history_events.76.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 0 "Persia
+********* Year is at least 1500
+********* Year is less than 1579
+********* Is in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Any of the following:
+********** Does not have the global flag wih_khayralnisabegum_flag
+********** Does not have the global flag wih_parikhankhanum_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_khayralnisabegum_flag
+******** Option: women_history_events.76.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is mazandarani
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.76.b:
+********* Spawns a ruler:
+********** Named "Khayr al-Nisa Begum"
+********** Ruler's dynasty is Safavid
+********** Culture is mazandarani
+********** Ruler's administrative skill is at least 5
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 2
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "secretive"
+*********** add_ruler_personality_ancestor:
+************ Named "well_connected"
+******* Gets the country event:
+******** ID is women_history_events.77
+******** title = women_history_events.77.t
+******** desc = women_history_events.77.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Russia
+********* Year is at least 1657
+********* Year is less than 1704
+********* Is in regency
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* Does not have the global flag wih_sophiaalekseyevna_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_sophiaalekseyevna_flag
+******** Option: women_history_events.77.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.77.b:
+********* Spawns a ruler:
+********** Named "Sophia"
+********** Ruler's dynasty is Romanov
+********** Culture is 0 "Muscovite
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "fierce_negotiator"
+******* Gets the country event:
+******** ID is women_history_events.78
+******** title = women_history_events.78.t
+******** desc = women_history_events.78.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "England
+********** Country is 0 "Great Britain
+********** Country is 0 "France
+********* Year is at least 1761
+********* Does not have the global flag wih_marietussaud_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_marietussaud_flag
+******** Option: women_history_events.78.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Artist type:
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.78.b:
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is women_history_events.79
+******** title = women_history_events.79.t
+******** desc = women_history_events.79.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Ashanti
+********* Year is at least 1730
+********* Year is less than 1800
+********* Does not have the global flag wih_pokou_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.5:
+********** Owns 0 "Ivory Coast
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_pokou_flag
+******** Option: women_history_events.79.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** discount = yes
+********** Culture is 1 "Akan
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.79.b:
+********* Adds the modifier "wih_pokou" for 20 years:
+********** +0.25 prestige
+******* Gets the country event:
+******** ID is women_history_events.80
+******** title = women_history_events.80.t
+******** desc = women_history_events.80.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Year is at least 1584
+********* Year is less than 1616
+********* Any of the following:
+********** Country is 0 "Pattani
+********** All of the following:
+*********** Owns 0 "Pattani
+*********** Technology group is 0 "Chinese
+********* Any of the following:
+********** All of the following:
+*********** Legitimacy is less than 50
+*********** Ruler is male
+********** Any of the following:
+*********** Ruler's administrative skill is less than 3
+*********** Ruler's diplomatic skill is less than 3
+*********** Ruler's military skill is less than 3
+********* Year is less than 1800
+********* Does not have the global flag wih_ratuhijau_flag
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_ratuhijau_flag
+******** Option: women_history_events.80.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.80.b:
+********* Spawns a ruler:
+********** Named "Ratu Hijau"
+********** Ruler's dynasty is Inland
+********** Culture is 0 "Malayan
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "industrious"
+******** Option: women_history_events.80.c:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* Creates an advisor of the 0 "Diplomat type:
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.80.e:
+********* Spawns a ruler:
+********** Named "Ratu Biru"
+********** Ruler's dynasty is Inland
+********** Culture is 0 "Malayan
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "entrepreneur"
+******** Option: women_history_events.80.f:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** Culture is 0 "Malayan
+********** With a skill level of 2
+********** discount = yes
+********** Ruler is female
+******** Option: women_history_events.80.g:
+********* Spawns a ruler:
+********** Named "Ratu Ingu"
+********** Ruler's dynasty is Inland
+********** Culture is 0 "Malayan
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 4
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "scholar"
+******* Gets the country event:
+******** ID is women_history_events.81
+******** title = women_history_events.81.t
+******** desc = women_history_events.81.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Year is at least 1689
+********* Year is less than 1704
+********* Any of the following:
+********** Country is 0 "Madurai
+********** All of the following:
+*********** Owns 0 "Madurai
+*********** Technology group is 0 "Indian
+********* Is in regency
+********* Does not have the global flag wih_ranimangammal_flag
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_ranimangammal_flag
+******** Option: women_history_events.81.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.81.b:
+********* Spawns a ruler:
+********** Named "Rani Mangammal"
+********** Ruler's dynasty is Nayak
+********** Culture is 0 "Tamil
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 2
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "tolerant"
+******* Gets the country event:
+******** ID is women_history_events.82
+******** title = women_history_events.82.t
+******** desc = women_history_events.82.d
+******** picture = wihgfx_FEMALE_GENERAL_eventPicture
+******** Trigger:
+********* Any owned province:
+********** Region is carribeans_region
+********* Capital:
+********** In the continent 0 "Europe
+********* Year is at least 1700
+********* Year is less than 1783
+********* Does not have the global flag wih_annebonny_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.5:
+********** Country is 0 "Ireland
+********* Multiplies value by 2:
+********** Has the global flag wih_maryread_flag
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_annebonny_flag
+******** Option: women_history_events.82.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Naval Reformer type:
+********** Culture is 0 "Irish
+********** discount = yes
+********** With a skill level of 3
+********** Ruler is female
+******** Option: women_history_events.82.b:
+********* Creates an admiral:
+********** Named "Anne Bonny"
+********** 2 skill in shock
+********** 5 skill in fire
+********** 3 skill in manuever
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.83
+******** title = women_history_events.83.t
+******** desc = women_history_events.83.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 0 "The Papal State
+********* Has the global flag borgia_pope_global
+********* Year is at least 1480
+********* Year is less than 1519
+********* Does not have the global flag wih_lucreziaborgia_flag
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_lucreziaborgia_flag
+******** Option: women_history_events.83.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.83.b:
+********* Changes diplomatic power stored by 50
+******* Gets the country event:
+******** ID is women_history_events.84
+******** title = women_history_events.84.t
+******** desc = women_history_events.84.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Mughals
+********* Year is at least 1577
+********* Year is less than 1645
+********* Any of the following:
+********** All of the following:
+*********** Legitimacy is less than 75
+*********** Ruler is male
+********** Any of the following:
+*********** Ruler's administrative skill is less than 3
+*********** Ruler's diplomatic skill is less than 3
+*********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_nurjahan_flag
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* has_reform_false = 0 "Steppe Nomads
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_nurjahan_flag
+******** Option: women_history_events.84.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is afghani
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.84.b:
+********* Spawns a ruler:
+********** Named "Nur Jahan"
+********** Ruler's dynasty is Timurid
+********** Culture is afghani
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 4
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "scholar"
+*********** add_ruler_personality_ancestor:
+************ Named "well_connected"
+******* Gets the country event:
+******** ID is women_history_events.85
+******** title = women_history_events.85.t
+******** desc = women_history_events.85.d
+******** picture = wihgfx_FEMALE_GENERAL_eventPicture
+******** Trigger:
+********* Any owned province:
+********** Region is carribeans_region
+********* Capital:
+********** In the continent 0 "Europe
+********* Year is at least 1690
+********* Year is less than 1783
+********* Does not have the global flag wih_maryread_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.5:
+********** Country is 0 "England
+********* Multiplies value by 2:
+********** Has the global flag wih_annebonny_flag
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_maryread_flag
+******** Option: women_history_events.85.a:
+********* Changes administrative power stored by 50
+******** Option: women_history_events.85.b:
+********* Creates an admiral:
+********** Named "Mary Read"
+********** 2 skill in shock
+********** 5 skill in fire
+********** 3 skill in manuever
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.86
+******** title = women_history_events.86.t
+******** desc = women_history_events.86.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Timurids
+********** Country is 0 "Mughals
+********* Year is at least 1593
+********* Year is less than 1631
+********* Does not have the global flag wih_mumtazmahal_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_mumtazmahal_flag
+******** Option: women_history_events.86.a:
+********* Adds the modifier "wih_mumtazmahal" for 20 years:
+********** +0.25 prestige
+******** Option: women_history_events.86.b:
+********* Trigger:
+********** Does not have the country flag taj_mahal_exists
+********* Changes prestige by 10
+********* Sets the country flag taj_mahal_exists
+********* If:
+********** Limited to:
+*********** Has the DLC Leviathan
+********** 0 "Central Doab:
+*********** add_great_project_tier:
+************ tier = 1
+******* Gets the country event:
+******** ID is women_history_events.87
+******** title = women_history_events.87.t
+******** desc = women_history_events.87.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Year is at least 1738
+********* Any of the following:
+********** All of the following:
+*********** Country is 1 "United States
+*********** 0 "Cherokee exists
+********** All of the following:
+*********** Country is 0 "Cherokee
+*********** Any neighbor country:
+************ Capital:
+************* In the continent 0 "Europe
+********* Does not have the global flag wih_nanyehi_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_nanyehi_flag
+******** Option: women_history_events.87.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** Culture is 0 "Cherokee
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.87.b:
+********* Adds the modifier "wih_nanyehi" for 20 years:
+********** +1 diplomatic reputation
+******* Gets the country event:
+******** ID is women_history_events.88
+******** title = women_history_events.88.t
+******** desc = women_history_events.88.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Sweden
+********** Country is 0 "Scandinavia
+********* Year is at least 1608
+********* Year is less than 1658
+********* Does not have the global flag wih_vendelaskytte_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_vendelaskytte_flag
+******** Option: women_history_events.88.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is 0 "Swedish
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.88.b:
+********* Adds the modifier "wih_vendelaskytte" for 20 years:
+********** +0.25 prestige
+********** -10% advisor cost
+******* Gets the country event:
+******** ID is women_history_events.89
+******** title = women_history_events.89.t
+******** desc = women_history_events.89.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Malwa
+********** Country is 0 "Marathas
+********* Year is at least 1725
+********* Year is less than 1800
+********* Any of the following:
+********** Is in regency
+********** Legitimacy is at least 70
+********* Does not have the global flag wih_ahilyabaiholkar_flag
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* has_reform_false = 0 "Steppe Nomads
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_ahilyabaiholkar_flag
+******** Option: women_history_events.89.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Commandant type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.89.b:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* Creates a general:
+********** Named "Ahilyabai Holkar"
+********** 3 skill in shock
+********** 4 skill in fire
+********** 1 skill in manuever
+********** 3 skill in siege
+********** Ruler is female
+******** Option: women_history_events.89.c:
+********* Spawns a ruler:
+********** Named "Ahilyabai"
+********** Ruler's dynasty is Holkar
+********** Culture is 0 "Marathi
+********** Ruler's administrative skill is at least 6
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 2
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "tactical_genius"
+*********** add_ruler_personality = entrepreneur_personality
+******* Gets the country event:
+******** ID is women_history_events.90
+******** title = women_history_events.90.t
+******** desc = women_history_events.90.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 0 "Mughals
+********* Year is at least 1649
+********* Year is less than 1706
+********* Does not have the global flag wih_jahanzebbanubegum_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_jahanzebbanubegum_flag
+******** Option: women_history_events.90.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.90.b:
+********* Creates a general:
+********** Named "Jahanzeb Banu Begum"
+********** 4 skill in shock
+********** 3 skill in fire
+********** 3 skill in manuever
+********** 4 skill in siege
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.91
+******** title = women_history_events.91.t
+******** desc = women_history_events.91.d
+******** picture = wihgfx_FEMALE_GENERAL_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Qing
+********** Any owned province:
+*********** Is coastal
+*********** Any bordering province:
+************ Any of the following:
+************* Region is south_china_region
+************* Region is north_china_region
+************ Is coastal
+********* Year is at least 1775
+********* Does not have the global flag wih_chingshih_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_chingshih_flag
+******** Option: women_history_events.91.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Naval Reformer type:
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.91.b:
+********* Creates an admiral:
+********** Named "Ching Shih"
+********** 3 skill in shock
+********** 4 skill in fire
+********** 3 skill in manuever
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.92
+******** title = women_history_events.92.t
+******** desc = women_history_events.92.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Ethiopia
+********* Year is at least 1706
+********* Is in the 0 "Christian religion group
+********* Year is less than 1773
+********* Is in regency
+********* Does not have the global flag wih_mentewab_flag
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_mentewab_flag
+******** Option: women_history_events.92.a:
+********* add_meritocracy_effect = yes
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* Creates an advisor of the 0 "Statesman type:
+********** Culture is amhara
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.92.b:
+********* Spawns a ruler:
+********** Named "Mentewab"
+********** Ruler's dynasty is Solomonid
+********** Culture is amhara
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "inspiring_leader"
+*********** add_ruler_personality = architectural_visionary_personality
+******* Gets the country event:
+******** ID is women_history_events.93
+******** title = women_history_events.93.t
+******** desc = women_history_events.93.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Ottomans
+********* Year is at least 1550
+********* Ruler is male
+********* Is not in regency
+********* Year is less than 1605
+********* Does not have the global flag wih_safiyesultan_flag
+********* The advisor with the id 1601 does not exist
+********* Does not employ the advisor with the id 1601
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_safiyesultan_flag
+******** Option: women_history_events.93.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Treasurer type:
+********** With a skill level of 2
+********** discount = yes
+********** Ruler is female
+******** Option: women_history_events.93.b:
+********* Creates an advisor of the 0 "Diplomat type:
+********** Culture is 0 "Albanian
+********** Follows the 0 "Sunni religion
+********** With a skill level of 2
+********** discount = yes
+********** Ruler is female
+******* Gets the country event:
+******** ID is women_history_events.94
+******** title = women_history_events.94.t
+******** desc = women_history_events.94.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Switzerland
+********** Country is 0 "Italy
+********** Country is 0 "Milan
+********** Country is 0 "The Papal State
+********** Country is 0 "Venice
+********** Country is 0 "England
+********** Country is 0 "Great Britain
+********* Year is at least 1741
+********* Does not have the global flag wih_angelicakauffman_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_angelicakauffman_flag
+******** Option: women_history_events.94.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Artist type:
+********** With a skill level of 2
+********** discount = yes
+********** Ruler is female
+******** Option: women_history_events.94.b:
+********* Changes diplomatic power stored by 50
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is women_history_events.95
+******** title = women_history_events.95.t
+******** desc = women_history_events.95.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Russia
+********* Year is at least 1709
+********* Year is less than 1762
+********* Is in regency
+********* Does not have the global flag wih_elizabethrussia_flag
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_elizabethrussia_flag
+******** Option: women_history_events.95.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** discount = yes
+********** Culture is 0 "Muscovite
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.95.b:
+********* Spawns a ruler:
+********** Named "Elizaveta"
+********** Ruler's dynasty is Romanov
+********** Culture is 0 "Muscovite
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "silver_tongue"
+*********** add_ruler_personality = scholar_personality
+******* Gets the country event:
+******** ID is women_history_events.96
+******** title = women_history_events.96.t
+******** desc = women_history_events.96.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Russia
+********* Year is at least 1693
+********* Year is less than 1740
+********* Any of the following:
+********** Is in regency
+********** All of the following:
+*********** Legitimacy is less than 50
+*********** Ruler is male
+********** Any of the following:
+*********** Ruler's administrative skill is less than 3
+*********** Ruler's diplomatic skill is less than 3
+*********** Ruler's military skill is less than 3
+********* Does not have the global flag wih_annarussia_flag
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* has_reform_false = 0 "Steppe Nomads
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_annarussia_flag
+******** Option: women_history_events.96.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** discount = yes
+********** Ruler is female
+******** Option: women_history_events.96.b:
+********* Spawns a ruler:
+********** Named "Anna"
+********** Ruler's dynasty is Romanov
+********** Culture is 0 "Muscovite
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 2
+********** Ruler is female
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "incorruptible"
+******* Gets the country event:
+******** ID is women_history_events.97
+******** title = women_history_events.97.t
+******** desc = women_history_events.97.d
+******** picture = wihgfx_FEMALE_RULER_eventPicture
+******** Trigger:
+********* Country is 0 "Ottomans
+********* Year is at least 1525
+********* Year is less than 1583
+********* Ruler is male
+********* Is not in regency
+********* Does not have the global flag wih_nurbanusultan_flag
+********* Is not the lesser partner in a union
+********* Has the monarchy government type
+********* The advisor with the id 1602 does not exist
+********* Does not employ the advisor with the id 1602
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_nurbanusultan_flag
+******** Option: women_history_events.97.a:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Statesman type:
+********** With a skill level of 2
+********** discount = yes
+********** Ruler is female
+******** Option: women_history_events.97.b:
+********* Trigger:
+********** Any of the following:
+*********** has_consort_false = no
+*********** Does not have the DLC Rights of Man
+********* If:
+********** Limited to:
+*********** Does not have the DLC Rights of Man
+********** Spawns a ruler:
+*********** Named "Nurbanu Sultan"
+*********** Ruler's dynasty is Osmanoglu
+*********** Culture is 0 "Greek
+*********** Follows the 0 "Sunni religion
+*********** Ruler's administrative skill is at least 4
+*********** Ruler's diplomatic skill is at least 4
+*********** Ruler's military skill is at least 3
+*********** Ruler is female
+********** If:
+*********** Limited to:
+************ has_states_general_mechanic = yes
+*********** change_statists_vs_orangists = 1
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+*********** has_government_attribute = queen
+********** define_consort:
+*********** Named "Nurbanu Sultan"
+*********** Ruler's administrative skill is at least 4
+*********** Culture is 0 "Greek
+*********** Follows the 0 "Sunni religion
+*********** Ruler's diplomatic skill is at least 4
+*********** Ruler's military skill is at least 3
+*********** Ruler is female
+********** Hidden effect:
+*********** add_queen_personality_ancestor:
+************ Named "secretive"
+*********** add_queen_personality = silver_tongue_personality
+******* Gets the country event:
+******** ID is women_history_events.98
+******** title = women_history_events.98.t
+******** desc = women_history_events.98.d
+******** picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+******** Trigger:
+********* Country is 0 "Korea
+********* Year is at least 1504
+********* Year is less than 1551
+********* Does not have the global flag wih_heonanseolheon_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_heonanseolheon_flag
+******** Option: women_history_events.98.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Artist type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.98.b:
+********* Adds the modifier "wih_heonanseolheon" for 20 years:
+********** +0.25 prestige
+******* Gets the country event:
+******** ID is women_history_events.99
+******** title = women_history_events.99.t
+******** desc = women_history_events.99.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Country is 0 "Mughals
+********* Year is at least 1542
+********* Year is less than 1623
+********* Does not have the global flag wih_mariamuzzamani_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_mariamuzzamani_flag
+******** Option: women_history_events.99.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Treasurer type:
+********** With a skill level of 3
+********** Ruler is female
+******** Option: women_history_events.99.b:
+********* Adds the modifier "wih_mariamuzzamani" for 20 years:
+********** Trade efficiency is at least 10%
+********** +10% provincial trade power
+******* Gets the country event:
+******** ID is women_history_events.100
+******** title = women_history_events.100.t
+******** desc = women_history_events.100.d
+******** picture = wihgfx_FEMALES_eventPicture
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Poland
+********** Country is 0 "Lithuania
+********** Country is 0 "Commonwealth
+********* Year is at least 1705
+********* Year is less than 1753
+********* Does not have the global flag wih_franciszkaurszularadziwillowa_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag wih_franciszkaurszularadziwillowa_flag
+******** Option: women_history_events.100.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Artist type:
+********** With a skill level of 2
+********** Ruler is female
+******** Option: women_history_events.100.b:
+********* Changes diplomatic power stored by 50
+********* Changes administrative power stored by 50

@@ -1,0 +1,100 @@
+******** Trigger:
+********* Has the DLC Emperor
+********* active_imperial_incident_false = any
+********* Is part of the Holy Roman Empire
+********* Isn't the Holy Roman Emperor
+********** No country:
+*********** Has the country flag current_pu_incident_target_flag
+********* Any subject country:
+********** years_in_union_under:
+*********** Affecting our country
+*********** Base mean time to happen of 20 years
+********** Is not part of the Holy Roman Empire
+********** Does not have the country flag pu_hre_rejected_flag
+********** Does not have the country flag current_pu_incident_target_flag
+********** Any owned province:
+*********** Any of the following:
+************ Is part of the Holy Roman Empire
+************ Any bordering province:
+************* Is part of the Holy Roman Empire
+********** Has less than our country provinces
+********** Country is not 0 "The Papal State
+******** Mean time to happen
+********* Base mean time to happen of 120 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random subject country:
+*********** Limited to:
+************ years_in_union_under:
+************* Affecting our country
+************* Base mean time to happen of 20 years
+************ Is not part of the Holy Roman Empire
+************ Does not have the country flag pu_hre_rejected_flag
+************ Does not have the country flag current_pu_incident_target_flag
+************ Any owned province:
+************* Any of the following:
+************** Is part of the Holy Roman Empire
+************** Any bordering province:
+*************** Is part of the Holy Roman Empire
+************ Has less than our country provinces
+************ Country is not 0 "The Papal State
+*********** Sets the country flag current_pu_incident_target_flag
+*********** save_event_target_as = pu_hre_country
+******** Option: incident_generic.1.a:
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 0:
+*********** event_target:pu_hre_country:
+************ Country is 0 "Hungary
+********* set_imperial_incident = incident_pu_subject_joins_empire
+********* event_target:pu_hre_country:
+********** Adds the opinion modifier "petitioned_for_hre_membership" towards our country
+******** Option: incident_generic.1.b:
+********* AI chance:
+********** Base chance of 1
+********* event_target:pu_hre_country:
+********** Sets the country flag pu_hre_rejected_flag
+********* Changes prestige by -5
+********* event_target:pu_hre_country:
+********** Removes the country flag current_pu_incident_target_flag
+********** Adds the opinion modifier "no_petition_for_hre_membership" towards our country
+******* Gets the country event:
+******** ID is incident_generic.2
+******** title = incident_generic.2.t
+******** desc = incident_generic.2.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** is_triggered_only = yes
+******** major = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random country:
+*********** Limited to:
+************ Has the country flag current_pu_incident_target_flag
+*********** save_event_target_as = current_pu_incident_target
+******** Option: incident_generic.2.a:
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 0:
+*********** Any of the following:
+************ Considers our country a rival
+************ Our country:
+************* Considers our country a rival
+********* event_target:current_pu_incident_target:
+********** Adds the province to the Holy Roman Empire
+********** overlord:
+*********** Adds the opinion modifier "opinion_added_pu_subject_hre" towards our country
+******** Option: incident_generic.2.b:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 1000:
+*********** Any of the following:
+************ Considers our country a rival
+************ Our country:
+************* Considers our country a rival
+********* event_target:current_pu_incident_target:
+********** Sets the country flag pu_hre_rejected_flag
+********** overlord:
+*********** Adds the opinion modifier "opinion_denied_pu_subject_hre" towards our country
+******** after:
+********* event_target:current_pu_incident_target:
+********** Removes the country flag current_pu_incident_target_flag

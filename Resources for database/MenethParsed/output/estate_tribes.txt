@@ -1,0 +1,638 @@
+
+=== title = tribal_estate_events.1.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* Has at least 5 provinces
+* estate_territory:
+** estate = estate_nomadic_tribes
+** territory = 1
+* Any owned province:
+** Can spawn the 0 "Separatists rebel type
+** is_territory_false = no
+** yes is a city
+** area_for_scope_province:
+*** The province is not the capital of the country
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Can spawn the 0 "Separatists rebel type
+**** is_territory_false = no
+**** yes is a city
+**** area_for_scope_province:
+***** The province is not the capital of the country
+*** area:
+**** Limited to:
+***** Can spawn the 0 "Separatists rebel type
+***** The province is owned by our country
+***** yes is a city
+**** Sets the province flag conflict_regarding_tax_collection
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.1.a:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_nomadic_tribes
+**** influence = 65
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_nomadic_tribes
+** desc = EST_VAL_TRIBES_REPRIMANDED
+** influence = -10
+** Lasting 5475 days
+
+'''Option: tribal_estate_events.1.b:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_nomadic_tribes
+**** influence = 65
+* Random owned province:
+** Limited to:
+*** Has the province flag conflict_regarding_tax_collection
+** Spawns revolt of size 1 of 0 "Separatists rebels
+** Removes the province flag conflict_regarding_tax_collection
+* Random owned province:
+** Limited to:
+*** Has the province flag conflict_regarding_tax_collection
+*** The owner of the province:
+**** Has at least 10 provinces
+** Spawns revolt of size 1 of 0 "Separatists rebels
+** Removes the province flag conflict_regarding_tax_collection
+* Random owned province:
+** Limited to:
+*** Has the province flag conflict_regarding_tax_collection
+*** The owner of the province:
+**** Has at least 15 provinces
+** Spawns revolt of size 1 of 0 "Separatists rebels
+** Removes the province flag conflict_regarding_tax_collection
+* Every owned province:
+** Removes the province flag conflict_regarding_tax_collection
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_nomadic_tribes
+** desc = EST_VAL_TRIBES_ALLOWED_FREE_REIGN
+** influence = 10
+** Lasting 5475 days
+
+=== title = tribal_estate_events.2.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* has_estate_influence_modifier:
+** estate_false = estate_nomadic_tribes
+** modifier_false = EST_VAL_TRIBES_DECLINES
+* has_estate_influence_modifier:
+** estate_false = estate_nomadic_tribes
+** modifier_false = EST_VAL_TRIBES_ADVANCES
+* has_estate_influence_modifier:
+** estate_false = estate_nomadic_tribes
+** modifier_false = EST_VAL_TRIBES_ADVANCES_20
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.2.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_nomadic_tribes
+** desc = EST_VAL_TRIBES_ADVANCES
+** influence = 10
+** Lasting 5475 days
+
+=== title = tribal_estate_events.3.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* estate_influence:
+** estate = estate_nomadic_tribes
+** influence = 15
+* has_estate_influence_modifier:
+** estate_false = estate_nomadic_tribes
+** modifier_false = EST_VAL_TRIBES_DECLINES
+* has_estate_influence_modifier:
+** estate_false = estate_nomadic_tribes
+** modifier_false = EST_VAL_TRIBES_ADVANCES
+* has_estate_influence_modifier:
+** estate_false = estate_nomadic_tribes
+** modifier_false = EST_VAL_TRIBES_ADVANCES_20
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.3.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_nomadic_tribes
+** desc = EST_VAL_TRIBES_DECLINES
+** influence = -10
+** Lasting 5475 days
+
+=== title = tribal_estate_events.4.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.4.a:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 2.0:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 40
+* Changes army tradition by -10
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = 15
+
+'''Option: tribal_estate_events.4.b:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.25:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 40
+* Changes army tradition by 10
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -15
+
+=== title = tribal_estate_events.5.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.5.a:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 2.0:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 40
+* Changes prestige by -10
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = 15
+
+'''Option: tribal_estate_events.5.b:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.25:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 40
+* Modifies treasury by 0.25 years worth of income
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -15
+
+=== title = tribal_estate_events.6.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* Stability is lower than 0
+* has_estate_influence_modifier:
+** estate_false = estate_nomadic_tribes
+** modifier_false = EST_VAL_TRIBES_STABILIY_BOOSTED
+* Any of the following:
+** Does not have the country flag refused_tribal_stability_aid
+** Has had the country flag "refused_tribal_stability_aid" for at least 7300 days
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.6.a:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.25:
+*** estate_influence:
+**** estate = estate_nomadic_tribes
+**** influence = 60
+* add_stability_or_adm_power = yes
+* add_estate_influence_modifier:
+** estate = estate_nomadic_tribes
+** desc = EST_VAL_TRIBES_STABILIY_BOOSTED
+** influence = 10
+** Lasting 7300 days
+
+'''Option: tribal_estate_events.6.b:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 2.0:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 35
+* Sets the country flag refused_tribal_stability_aid
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -10
+
+=== title = tribal_estate_events.7.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* Less than 30 army tradition
+* has_estate_influence_modifier:
+** estate_false = estate_nomadic_tribes
+** modifier_false = EST_VAL_TRIBES_ARMY
+* Any of the following:
+** Does not have the country flag refused_tribal_armies
+** Has had the country flag "refused_tribal_armies" for at least 7300 days
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.7.a:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.25:
+*** estate_influence:
+**** estate = estate_nomadic_tribes
+**** influence = 60
+* Changes army tradition by 10
+* add_estate_influence_modifier:
+** estate = estate_nomadic_tribes
+** desc = EST_VAL_TRIBES_ARMY
+** influence = 10
+** Lasting 7300 days
+
+'''Option: tribal_estate_events.7.b:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 2.0:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 35
+* Sets the country flag refused_tribal_armies
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -10
+
+=== title = tribal_estate_events.8.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* horde_unity_false = 70
+* has_estate_influence_modifier:
+** estate_false = estate_nomadic_tribes
+** modifier_false = EST_VAL_TRIBES_UNITY
+* Any of the following:
+** Does not have the country flag refused_tribal_unity_aid
+** Has had the country flag "refused_tribal_unity_aid" for at least 7300 days
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.8.a:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.25:
+*** estate_influence:
+**** estate = estate_nomadic_tribes
+**** influence = 60
+* add_horde_unity = 20
+* add_estate_influence_modifier:
+** estate = estate_nomadic_tribes
+** desc = EST_VAL_TRIBES_UNITY
+** influence = 10
+** Lasting 7300 days
+
+'''Option: tribal_estate_events.8.b:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 2.0:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 35
+* Sets the country flag refused_tribal_unity_aid
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -10
+
+=== title = tribal_estate_events.9.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* estate_influence:
+** estate = estate_nomadic_tribes
+** influence = 50
+* Does not have the country modifier "the_proper_old_ways"
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.9.a:'''
+
+* AI chance:
+** Base chance of 50
+* Adds the modifier "the_proper_old_ways" for 10 years:
+** raze_power_gain = 0.20
+** +10% land morale
+** global_trade_goods_size_modifier = -0.25
+
+'''Option: tribal_estate_events.9.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 40
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -15
+
+=== title = tribal_estate_events.10.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: tribal_estate_events.10.a:'''
+
+
+=== title = tribal_estate_events.11.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* Is not in regency
+* has_government_attribute = heir
+* estate_influence:
+** estate = estate_nomadic_tribes
+** influence = 70
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_KINGMAKERS
+** estate_false = estate_nomadic_tribes
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_REFUSED_TO_ALTER_SUCCESSION
+** estate_false = estate_nomadic_tribes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.11.a:'''
+
+* AI chance:
+** Base chance of 1
+* If:
+** Limited to:
+*** Has an heir
+** Kills the heir of the country
+*** allow_new_heir_false = no
+* Spawns an heir:
+** Ruler's dynasty is our country
+** Legitimacy of 15
+** age = 45
+* add_estate_influence_modifier:
+** desc = EST_VAL_KINGMAKERS
+** estate = estate_nomadic_tribes
+** influence = 10
+** Lasting 3650 days
+
+'''Option: tribal_estate_events.11.b:'''
+
+* AI chance:
+** Base chance of 99
+** Multiplies value by 0.01:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 45
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -20
+* add_estate_influence_modifier:
+** desc = EST_VAL_REFUSED_TO_ALTER_SUCCESSION
+** estate = estate_nomadic_tribes
+** influence = -10
+** Lasting 3650 days
+
+=== title = tribal_estate_events.12.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* estate_influence:
+** estate = estate_nomadic_tribes
+** influence = 70
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_TRIBES_USING_RULERS_MANPOWER
+** estate_false = estate_nomadic_tribes
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_REFUSED_TO_SUPPLY_MEN_TO_TRIBES
+** estate_false = estate_nomadic_tribes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.12.a:'''
+
+* AI chance:
+** Base chance of 1
+* Changes national manpower by -1 years worth of men
+* add_estate_influence_modifier:
+** desc = EST_VAL_TRIBES_USING_RULERS_MANPOWER
+** estate = estate_nomadic_tribes
+** influence = 10
+** Lasting 3650 days
+
+'''Option: tribal_estate_events.12.b:'''
+
+* AI chance:
+** Base chance of 99
+** Multiplies value by 0.01:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 45
+* add_estate_influence_modifier:
+** desc = EST_VAL_REFUSED_TO_SUPPLY_MEN_TO_TRIBES
+** estate = estate_nomadic_tribes
+** influence = -10
+** Lasting 3650 days
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -20
+
+=== title = tribal_estate_events.13.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* estate_influence:
+** estate = estate_nomadic_tribes
+** influence = 70
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_TRIBES_AUTONOMY
+** estate_false = estate_nomadic_tribes
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_REFUSED_TRIBES_AUTONOMY
+** estate_false = estate_nomadic_tribes
+* Any owned province:
+** The province is not the capital of the country
+** yes is a city
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.13.a:'''
+
+* AI chance:
+** Base chance of 1
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag add_autonomy_tmp_flag
+***** value_false = estate
+***** estate_false = estate_nomadic_tribes
+**** Any owned province:
+***** Does not have the province flag add_autonomy_tmp_flag
+***** The province is not the capital of the country
+***** yes is a city
+*** Random owned province:
+**** Limited to:
+***** Does not have the province flag add_autonomy_tmp_flag
+***** The province is not the capital of the country
+***** yes is a city
+**** add_local_autonomy = 35
+**** Sets the province flag add_autonomy_tmp_flag
+* add_estate_influence_modifier:
+** desc = EST_VAL_TRIBES_AUTONOMY
+** estate = estate_nomadic_tribes
+** influence = 10
+** Lasting 3650 days
+
+'''Option: tribal_estate_events.13.b:'''
+
+* AI chance:
+** Base chance of 99
+** Multiplies value by 0.01:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 45
+* add_estate_influence_modifier:
+** desc = EST_VAL_REFUSED_TRIBES_AUTONOMY
+** estate = estate_nomadic_tribes
+** influence = -10
+** Lasting 3650 days
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -20
+
+=== title = tribal_estate_events.14.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_nomadic_tribes
+* estate_influence:
+** estate = estate_nomadic_tribes
+** influence = 70
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_TRIBES_DEMANDING
+** estate_false = estate_nomadic_tribes
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_TRIBES_REFUSED_DEMANDING
+** estate_false = estate_nomadic_tribes
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: tribal_estate_events.14.a:'''
+
+* AI chance:
+** Base chance of 1
+* Adds the modifier "no_tribal_leaders" for 5 years:
+** free_leader_pool = -1
+* add_estate_influence_modifier:
+** desc = EST_VAL_TRIBES_DEMANDING
+** estate = estate_nomadic_tribes
+** influence = 10
+** Lasting 1825 days
+
+'''Option: tribal_estate_events.14.b:'''
+
+* AI chance:
+** Base chance of 99
+** Multiplies value by 0.01:
+*** estate_loyalty:
+**** estate_false = estate_nomadic_tribes
+**** loyalty_false = 45
+* add_estate_influence_modifier:
+** desc = EST_VAL_TRIBES_REFUSED_DEMANDING
+** estate = estate_nomadic_tribes
+** influence = -10
+** Lasting 1825 days
+* add_estate_loyalty:
+** estate = estate_nomadic_tribes
+** loyalty = -20

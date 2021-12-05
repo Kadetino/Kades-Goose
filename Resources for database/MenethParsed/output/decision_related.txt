@@ -1,0 +1,16 @@
+
+=== 0 "Popery Act ===
+
+'''Trigger:'''
+
+* Always false
+* Has the country modifier "0 "Popery Act"
+* Follows the 0 "Catholic religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 months
+
+'''Option: 0 "This is the way forward:'''
+
+* Removes the country modifier "0 "Popery Act"

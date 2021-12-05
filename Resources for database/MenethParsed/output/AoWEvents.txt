@@ -1,0 +1,1263 @@
+
+=== title = "aow_events.1.t" ===
+* Province event
+
+'''Trigger:'''
+
+* is_looted = yes
+* The owner of the province:
+** Is at war
+* Does not have the province modifier "famine_refused_aid"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+* Multiplies value by 1.5:
+** The owner of the province:
+*** Any owned province:
+**** Has the province modifier "famine_refused_aid"
+
+'''Option: aow_events.1.a:'''
+
+* The owner of the province:
+** Modifies treasury by -0.1 years worth of income
+
+'''Option: aow_events.1.b:'''
+
+* Adds the modifier "famine_refused_aid" until the end of the campaign:
+** -25% trade goods output
+
+=== title = "aow_events.11.t" ===
+* Province event
+
+'''Trigger:'''
+
+* Any bordering province:
+** Has the province modifier "lingering_plague"
+* The owner of the province:
+** Is at war
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 100 months
+
+'''Option: aow_events.11.a:'''
+
+* Adds the modifier "lingering_plague" until the end of the campaign:
+** supply_limit_modifier = -0.5
+** -50% manpower modifier
+** -50% provincial tax income
+** -50% trade goods output
+
+=== title = "aow_events.12.t" ===
+
+'''Trigger:'''
+
+* Is at war
+* num_of_hired_mercenary_companies = 1
+* Does not have the country modifier "curtailed_mercenaries"
+* any_hired_mercenary_company:
+** In the province 
+*** The province is not owned by our country
+*** The owner of the province:
+**** At war with our country
+*** area_for_scope_province:
+**** The province is owned by prev
+**** Controlled by our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** random_hired_mercenary_company:
+*** Limited to:
+**** In the province 
+***** The province is not owned by our country
+***** The owner of the province:
+****** At war with our country
+***** area_for_scope_province:
+****** The province is owned by prev
+****** Controlled by our country
+*** save_event_target_as = hired_mercenary_band
+*** In the province 
+**** save_event_target_as = war_province
+
+'''Option: aow_events.12.a:'''
+
+* add_army_professionalism = 0.02
+* Adds the modifier "curtailed_mercenaries" for 5 years:
+** +30% mercenary maintenance
+** +10% mercenary cost
+
+'''Option: aow_events.12.b:'''
+
+* Changes prestige by -10
+* event_target:war_province:
+** Hidden effect:
+*** Randomized by 
+**** Acquisition chance:
+**** Gets the province event:
+***** ID is aow_events.13
+***** Base mean time to happen of 30 days
+** area:
+*** Limited to:
+**** Controlled by our country
+**** The province is not owned by our country
+*** Adds the modifier "terrorized_by_mercenaries" until the end of the campaign:
+**** local_unrest = 8
+
+=== title = "aow_events.13.t" ===
+* Province event
+
+'''Trigger:'''
+
+* area_for_scope_province:
+** The province is owned by our country
+** Controlled by our country
+** Has the province modifier "terrorized_by_mercenaries"
+** Does not have the province modifier "plundered_in_war"
+* Cannot fire randomly
+
+'''Option: aow_events.13.a:'''
+
+* area:
+** Limited to:
+*** Not controlled by our country
+*** The province is owned by our country
+** Adds the modifier "plundered_in_war" until the end of the campaign:
+*** -50% provincial tax income
+*** -50% manpower modifier
+
+=== title = "aow_events.14.t" ===
+* Province event
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the province modifier "lingering_plague"
+** Has the province modifier "plundered_in_war"
+** Has the province modifier "famine_refused_aid"
+* Has a base tax of at least 2
+* The owner of the province:
+** Is not at war
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 480 months
+
+'''Option: aow_events.14.a:'''
+
+* Changes base tax by -1
+* Random bordering province:
+** Limited to:
+*** The province is owned by our country
+** Changes base tax by 1
+
+=== title = "aow_events.15.t" ===
+
+'''Trigger:'''
+
+* Manpower are less than 10% of maximum
+* had_recent_war = 3
+* Is not at war
+* Does not have the country modifier "post_war_tax_relief"
+* Does not have the country modifier "decreased_drafting"
+* Does not have the country modifier "suffering_bereaved"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+
+'''Option: aow_events.15.a:'''
+
+* Adds the modifier "post_war_tax_relief" for 5 years:
+** -15% global tax modifier
+
+'''Option: aow_events.15.b:'''
+
+* Adds the modifier "decreased_drafting" for 5 years:
+** -20% global manpower modifier
+
+'''Option: aow_events.15.c:'''
+
+* Adds the modifier "suffering_bereaved" for 5 years:
+** +2 global unrest
+
+=== title = "aow_events.16.t" ===
+* Province event
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the province modifier "lingering_plague"
+** Has the province modifier "plundered_in_war"
+** Has the province modifier "famine_refused_aid"
+* Does not have the province modifier "local_witch_hunts"
+* The owner of the province:
+** Is not at war
+** Is in the 0 "Christian religion group
+** Does not have the country modifier "forbade_witch_hunts"
+** Does not have the country modifier "nationwide_witch_hunts"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 480 months
+* Multiplies value by 0.75:
+** The owner of the province:
+*** Has the theocracy government type
+* Multiplies value by 0.75:
+** Any of the following:
+*** current_age = 0 "Age of Discovery
+*** current_age = 0 "Age of Reformation
+* Multiplies value by 2:
+** current_age = 0 "Age of Revolutions
+
+'''Option: aow_events.16.a:'''
+
+* Adds the modifier "local_witch_hunts" until the end of the campaign:
+** local_unrest = -3
+** local_autonomy = 0.1
+* Hidden effect:
+** Gets the province event:
+*** ID is aow_events.17
+*** Base mean time to happen of 1080 random days
+** Gets the province event:
+*** ID is aow_events.18
+*** Base mean time to happen of 1080 random days
+
+'''Option: aow_events.16.b:'''
+
+* Trigger:
+** The owner of the province:
+*** Has the 0 "Inquisitor advisor
+* The owner of the province:
+** Adds the modifier "nationwide_witch_hunts" for 10 years:
+*** +2% global missionary strength
+*** -1 global unrest
+*** -3 tolerance of heretics
+*** -3 tolerance of heathens
+
+'''Option: aow_events.16.c:'''
+
+* The owner of the province:
+** Adds the modifier "forbade_witch_hunts" for 10 years:
+*** +2 global unrest
+
+=== title = "aow_events.17.t" ===
+* Province event
+
+'''Trigger:'''
+
+* Has the province modifier "local_witch_hunts"
+* The owner of the province:
+** Is not at war
+* Cannot fire randomly
+
+'''Option: aow_events.17.a:'''
+
+* The owner of the province:
+** Changes administrative power stored by -80
+* Removes the country modifier "local_witch_hunts"
+
+'''Option: aow_events.17.b:'''
+
+* Spawns revolt of size 1 of 0 "Peasant rebels
+
+'''Option: aow_events.17.c:'''
+
+* Spawns revolt of size 1 of 0 "Noble rebels
+
+'''Option: aow_events.17.e:'''
+
+* Trigger:
+** The province is not the capital of the country
+** local_autonomy_false = 80
+* add_local_autonomy = 25
+
+=== title = "aow_events.18.t" ===
+* Province event
+
+'''Trigger:'''
+
+* Has the province modifier "local_witch_hunts"
+* The owner of the province:
+** Is not at war
+** Any neighbor country:
+*** Any owned province:
+**** province_distance:
+***** who_false = our country
+***** distance_false = 150
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** The owner of the province:
+*** Random neighbor country:
+**** Limited to:
+***** Any owned province:
+****** province_distance:
+******* who_false = our country
+******* distance_false = 120
+**** save_event_target_as = they_send_us_witches
+* Cannot fire randomly
+
+'''Option: aow_events.18.a:'''
+
+* The owner of the province:
+** Changes administrative power stored by -50
+
+'''Option: aow_events.18.b:'''
+
+* event_target:they_send_us_witches:
+** Adds the opinion modifier "accused_compatriot_of_witchcraft" towards PREV
+
+=== title = "aow_events.19.t" ===
+
+'''Trigger:'''
+
+* Has the country modifier "nationwide_witch_hunts"
+* Has the 0 "Inquisitor advisor
+* Any of the following:
+** Has the 0 "Statesman advisor
+** Has the 0 "Trader advisor
+** Has the 0 "Spymaster advisor
+** Has the 0 "Diplomat advisor
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+
+'''Option: aow_events.19.a:'''
+
+* Kills the 0 "Statesman advisor
+* Kills the 0 "Trader advisor
+* Kills the 0 "Spymaster advisor
+* Kills the 0 "Diplomat advisor
+
+'''Option: aow_events.19.b:'''
+
+* Kills the 0 "Inquisitor advisor
+* Removes the country modifier "nationwide_witch_hunts"
+
+=== title = "aow_events.20.t" ===
+
+'''Trigger:'''
+
+* Has the country modifier "nationwide_witch_hunts"
+* Has the 0 "Inquisitor advisor
+* Heir is at least 6 years old
+* Heir is less than 16 years old
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+
+'''Option: aow_events.20.a:'''
+
+* Removes the 0 "Inquisitor advisor
+* Removes the country modifier "nationwide_witch_hunts"
+* Changes diplomatic power stored by 100
+
+'''Option: aow_events.20.b:'''
+
+* Changes administrative power stored by 100
+* Changes the heir's legitimacy by -10
+
+=== title = "aow_events.21.t" ===
+
+'''Trigger:'''
+
+* 10 war exhaustion
+* War score is at least 10
+* Is not the lesser partner in a union
+* Ruler is leading an army
+* any_army:
+** is_ruler_commanding_unit = yes
+* Is at war
+* Any known country:
+** In a defensive war against our country
+* Military technology is at least 9
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+* Multiplies value by 0.75:
+** 15 war exhaustion
+
+'''Option: aow_events.21.a:'''
+
+* Kills the ruler of the country
+* Changes war exhaustion by -5
+
+=== title = "aow_events.22.t" ===
+
+'''Trigger:'''
+
+* 8 war exhaustion
+* Is not at war
+* Ruler's military skill is at least 2
+* Ruler's diplomatic skill is less than 6
+* Has the 0 "Diplomat advisor
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+* Multiplies value by 0.75:
+** 15 war exhaustion
+
+'''Option: aow_events.22.a:'''
+
+* Changes ruler's diplomatic skill by 1
+* Changes ruler's military skill by -1
+
+'''Option: aow_events.22.b:'''
+
+* Removes the 0 "Diplomat advisor
+* Changes diplomatic power stored by -50
+
+=== title = "aow_events.23.t" ===
+
+'''Trigger:'''
+
+* Is at war
+* Any known country:
+** At war with our country
+** Any owned province:
+*** sieged_by = our country
+*** Follows our country's religion
+*** Does not follow the owner religion
+*** Is in the owner religion group
+*** is_religious_center_province_false = yes
+*** Does not have the province modifier "0 "Religious Center"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random province in the world:
+*** Limited to:
+**** sieged_by = our country
+**** Follows our country's religion
+**** Does not follow the owner religion
+**** Is in the owner religion group
+**** is_religious_center_province_false = yes
+**** Does not have the province modifier "0 "Religious Center"
+*** save_event_target_as = war_province
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+
+'''Option: aow_events.23.a:'''
+
+* event_target:war_province:
+** Changes siege status by -2
+
+'''Option: aow_events.23.b:'''
+
+* event_target:war_province:
+** Tooltip:
+*** Changes religion to owner
+** Gets the province event:
+*** ID is aow_events.24
+*** Base mean time to happen of 1 days
+
+=== title = "aow_events.24.t" ===
+* Province event
+* Cannot fire randomly
+
+'''Option: aow_events.24.a:'''
+
+* Changes religion to owner
+
+=== title = "aow_events.25.t" ===
+* Province event
+
+'''Trigger:'''
+
+* The owner of the province:
+** Is at war
+* Not controlled by owner
+* Not controlled by 0 "Rebels
+* Does not follow the owner religion
+* Has no core on controller
+* Follows the controller religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 640 months
+* Multiplies value by 1.5:
+** tolerance_to_this = 0
+* Multiplies value by 2.0:
+** tolerance_to_this = 1
+
+'''Option: aow_events.25.a:'''
+
+* Trigger:
+** The province is not the capital of the country
+* add_local_autonomy = 30
+
+'''Option: aow_events.25.b:'''
+
+* Tooltip:
+** Adds core on controller
+* Province controller:
+** Gets the country event:
+*** ID is aow_events.26
+*** Base mean time to happen of 1 days
+
+=== title = "aow_events.26.t" ===
+* Cannot fire randomly
+
+'''Option: aow_events.26.a:'''
+
+* Our country:
+** Adds core on controller
+
+=== title = "aow_events.27.t" ===
+* Province event
+
+'''Trigger:'''
+
+* Does not follow the owner religion
+* Controlled by owner
+* tolerance_to_this_false = 0
+* The owner of the province:
+** Is at war
+** Any known country:
+*** At war with PREV
+*** Follows our country's religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 800 months
+
+'''Option: aow_events.27.a:'''
+
+* Spawns revolt of size 2 of 0 "Religious rebels
+
+=== title = "aow_events.28.t" ===
+* Province event
+
+'''Trigger:'''
+
+* Does not follow the owner religion
+* Controlled by owner
+* The owner of the province:
+** Is at war
+** Any known country:
+*** At war with PREV
+*** Follows our country's religion
+* is_religious_center_province_false = yes
+* Does not have the province modifier "0 "Religious Center"
+* Any bordering province:
+** The province is owned by our country
+** Follows the owner religion
+** is_reformation_center_false = no
+** is_religious_center_province_false = yes
+** Does not have the province modifier "0 "Religious Center"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 800 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random bordering province:
+*** Limited to:
+**** The province is owned by our country
+**** Follows the owner religion
+**** is_reformation_center_false = no
+**** is_religious_center_province_false = yes
+**** Does not have the province modifier "0 "Religious Center"
+*** save_event_target_as = neighbour_province
+
+'''Option: aow_events.28.a:'''
+
+* goto = neighbour_province
+* The owner of the province:
+** Changes national manpower reserves by -4 years worth
+* One of the following will happen:
+** 75 relative chance:
+*** Changes religion to owner
+** 25 relative chance:
+*** event_target:neighbour_province:
+**** Changes religion to our country
+
+'''Option: aow_events.28.b:'''
+
+* The owner of the province:
+** Changes diplomatic power stored by -50
+
+=== title = "aow_events.29.t" ===
+* Province event
+
+'''Trigger:'''
+
+* The owner of the province:
+** Any rival country:
+*** Follows our country's religion
+** Does not have the country modifier "loyal_unbelievers"
+** Does not have the country modifier "disloyal_unbelievers"
+* Does not follow the owner religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1600 months
+
+'''Option: aow_events.29.a:'''
+
+* One of the following will happen:
+** 75 relative chance:
+*** The owner of the province:
+**** Adds the modifier "loyal_unbelievers" for 5 years:
+***** +30% spy offense
+** 25 relative chance:
+*** The owner of the province:
+**** Adds the modifier "disloyal_unbelievers" for 5 years:
+***** -30% global spy defence
+
+'''Option: aow_events.29.b:'''
+
+* The owner of the province:
+** Changes prestige by 10
+
+=== title = "aow_events.30.t" ===
+* Province event
+
+'''Trigger:'''
+
+* Follows the owner religion
+* Does not follow the 0 "Confucian religion
+* Does not follow the 0 "Theravada religion
+* Does not follow the 0 "Mahayana religion
+* The province is nto under siege
+* Controlled by owner
+* Any bordering province:
+** The owner of the province:
+*** offensive_war_with = our country
+*** Does not follow our country's religion
+** Follows the owner religion
+** Controlled by owner
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1000 months
+
+'''Option: aow_events.30.a:'''
+
+* Spawns an infantry unit belonging to our country
+* Spawns an infantry unit belonging to our country
+* Spawns an infantry unit belonging to our country
+* Spawns an infantry unit belonging to our country
+
+=== title = "aow_events.31.t" ===
+
+'''Trigger:'''
+
+* Any owned province:
+** is_reformation_center = yes
+* Is in the 0 "Christian religion group
+* Any neighbor country:
+** }
+** Follows our country's religion
+** Any owned province:
+*** is_reformation_center = yes
+*** Follows our country's religion
+* The 0 "Protestant religion has existed for less than 50 years
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Option: aow_events.31.a:'''
+
+* Random neighbor country:
+** Limited to:
+*** }
+*** Follows our country's religion
+*** Any owned province:
+**** is_reformation_center = yes
+**** Follows our country's religion
+** Adds the opinion modifier "reformation_pioneers" towards our country
+
+'''Option: aow_events.31.b:'''
+
+* Changes prestige by 15
+
+=== title = "aow_events.32.t" ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Follows the 0 "Protestant religion
+** Follows the 0 "Reformed religion
+** Follows the anglican religion
+** Follows the hussite religion
+* Any owned province:
+** is_reformation_center = yes
+* Any neighbor country:
+** Any of the following:
+*** Follows the 0 "Protestant religion
+*** Follows the 0 "Reformed religion
+*** Follows the anglican religion
+*** Follows the hussite religion
+** Does not follow our country's religion
+** Any owned province:
+*** is_reformation_center = yes
+*** Does not follow our country's religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+
+'''Option: aow_events.32.a:'''
+
+* Random neighbor country:
+** Limited to:
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the 0 "Reformed religion
+**** Follows the anglican religion
+**** Follows the hussite religion
+*** Does not follow our country's religion
+*** Any owned province:
+**** is_reformation_center = yes
+**** Does not follow our country's religion
+** Gets the country event:
+*** ID is aow_events.33
+*** Base mean time to happen of 30 days
+
+'''Option: aow_events.32.b:'''
+
+* Random neighbor country:
+** Limited to:
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the 0 "Reformed religion
+**** Follows the anglican religion
+**** Follows the hussite religion
+*** Does not follow our country's religion
+*** Any owned province:
+**** is_reformation_center = yes
+**** Does not follow our country's religion
+** Adds the opinion modifier "renounced_as_heretics" towards our country
+
+=== title = "aow_events.33.t" ===
+* Cannot fire randomly
+
+'''Option: aow_events.33.a:'''
+
+* Changes prestige by 10
+* Adds the opinion modifier "reformation_pioneers" towards our country
+* Our country:
+** Gets the country event:
+*** ID is aow_events.34
+*** Base mean time to happen of 30 days
+
+'''Option: aow_events.33.b:'''
+
+* Changes administrative power stored by 20
+* Adds the opinion modifier "renounced_as_heretics" towards our country
+* Our country:
+** Gets the country event:
+*** ID is aow_events.35
+*** Base mean time to happen of 30 days
+
+=== title = "aow_events.34.t" ===
+* Cannot fire randomly
+
+'''Option: aow_events.34.a:'''
+
+* Changes prestige by 10
+* Adds the opinion modifier "reformation_pioneers" towards our country
+
+=== title = "aow_events.35.t" ===
+* Cannot fire randomly
+
+'''Option: aow_events.35.a:'''
+
+* Changes prestige by -15
+
+=== title = "aow_events.36.t" ===
+
+'''Trigger:'''
+
+* Has the country modifier "0 "Counter-Reformation"
+* Follows the 0 "Catholic religion
+* Any neighbor country:
+** Any of the following:
+*** Follows the 0 "Protestant religion
+*** Follows the 0 "Reformed religion
+*** Follows the anglican religion
+*** Follows the hussite religion
+** Any owned province:
+*** is_reformation_center = yes
+* Any owned province:
+** Any of the following:
+*** Follows the 0 "Protestant religion
+*** Follows the 0 "Reformed religion
+*** Follows the anglican religion
+*** Follows the hussite religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 480 months
+
+'''Option: aow_events.36.a:'''
+
+* Random neighbor country:
+** Limited to:
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the 0 "Reformed religion
+**** Follows the anglican religion
+*** Any owned province:
+**** is_reformation_center = yes
+** Gives the 0 "Border Friction casus belli against the country to our country
+
+'''Option: aow_events.36.b:'''
+
+* Changes prestige by -10
+* Changes diplomatic power stored by 50
+
+=== title = "aow_events.37.t" ===
+
+'''Trigger:'''
+
+* 0 "Religious rebels have are spawned in the country
+* Follows the 0 "Catholic religion
+* Any neighbor country:
+** Follows the 0 "Protestant religion
+** Any owned province:
+*** is_reformation_center = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+
+'''Option: aow_events.37.a:'''
+
+* Random neighbor country:
+** Limited to:
+*** Follows the 0 "Protestant religion
+*** Any owned province:
+**** is_reformation_center = yes
+** Gets the country event:
+*** ID is aow_events.39
+*** Base mean time to happen of 30 days
+
+'''Option: aow_events.37.b:'''
+
+* Changes prestige by -10
+
+=== title = "aow_events.38.t" ===
+
+'''Trigger:'''
+
+* 0 "Religious rebels have are spawned in the country
+* Follows the 0 "Catholic religion
+* Any neighbor country:
+** Follows the 0 "Reformed religion
+** Any owned province:
+*** is_reformation_center = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+
+'''Option: aow_events.38.a:'''
+
+* Random neighbor country:
+** Limited to:
+*** Follows the 0 "Reformed religion
+*** Any owned province:
+**** is_reformation_center = yes
+** Gets the country event:
+*** ID is aow_events.39
+*** Base mean time to happen of 30 days
+
+'''Option: aow_events.38.b:'''
+
+* Changes prestige by -10
+
+=== title = "aow_events.39.t" ===
+* Cannot fire randomly
+
+'''Option: aow_events.39.a:'''
+
+* Adds the opinion modifier "renounced_heretic_rebels" towards our country
+* Adds the modifier "abadoned_religious_rebels" for 5 years:
+** -2 tolerance of the true faith
+* Our country:
+** Gets the country event:
+*** ID is aow_events.40
+*** Base mean time to happen of 30 days
+
+'''Option: aow_events.39.b:'''
+
+* Changes prestige by 15
+* Adds the opinion modifier "defended_heretic_rebels" towards our country
+* Our country:
+** Gets the country event:
+*** ID is aow_events.41
+*** Base mean time to happen of 30 days
+
+'''Option: aow_events.39.c:'''
+
+* Modifies treasury by -0.2 years worth of income
+* Adds the opinion modifier "roused_heretic_rebels" towards our country
+* Our country:
+** Gets the country event:
+*** ID is aow_events.42
+*** Base mean time to happen of 30 days
+
+=== title = "aow_events.40.t" ===
+* Cannot fire randomly
+
+'''Option: aow_events.40.a:'''
+
+* Changes prestige by 15
+
+=== title = "aow_events.41.t" ===
+* Cannot fire randomly
+
+'''Option: aow_events.41.a:'''
+
+* Changes prestige by -10
+
+=== title = "aow_events.42.t" ===
+* Cannot fire randomly
+
+'''Option: aow_events.42.a:'''
+
+* If:
+** Limited to:
+*** Our country:
+**** Follows the 0 "Protestant religion
+** Random owned province:
+*** Limited to:
+**** Most likely rebel type is 0 "Religious
+*** Spawns revolt of size 2
+* If:
+** Limited to:
+*** Our country:
+**** Follows the 0 "Reformed religion
+** Random owned province:
+*** Limited to:
+**** Most likely rebel type is 0 "Religious
+*** Spawns revolt of size 2
+* Gives the 0 "Diplomatic Insult casus belli against our country
+
+=== title = "aow_events.43.t" ===
+
+'''Trigger:'''
+
+* The Papacy is enabled
+* Follows the 0 "Catholic religion
+* Country is not 0 "The Papal State
+* Has less than 7 cardinals
+* Any owned province:
+** development = 10
+** has_cardinal_false = no
+** Follows the 0 "Catholic religion
+** Any bordering province:
+*** has_cardinal = yes
+*** The province is not owned by our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 480 months
+* Multiplies value by 1.2:
+** Has at least 5 cardinals
+
+'''Immediate effects:'''
+
+* check_if_non_state_advisor_effect:
+** chance_of_primary = 75
+** chance_of_tertiary = 5
+** chance_of_secondary = 25
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** has_cardinal_false = no
+**** Follows the 0 "Catholic religion
+**** development = 10
+**** Any bordering province:
+***** has_cardinal = yes
+***** The province is not owned by our country
+*** save_event_target_as = receive_cardinal_province
+*** Random bordering province:
+**** Limited to:
+***** has_cardinal = yes
+***** The province is not owned by our country
+**** save_event_target_as = send_cardinal_province
+
+'''Option: aow_events.43.a:'''
+
+* Modifies treasury by -0.05 years worth of income
+* add_corruption = 0.5
+* event_target:receive_cardinal_province:
+** add_cardinal = yes
+* event_target:send_cardinal_province:
+** remove_cardinal = yes
+** Randomized by 
+*** Acquisition chance:
+*** Hidden effect:
+**** Gets the province event:
+***** ID is aow_events.44
+***** Base mean time to happen of 7 days
+*** The owner of the province:
+**** Tooltip:
+***** Gives the 0 "Diplomatic Insult casus belli against our country
+***** Adds the opinion modifier "bribed_cardinal" towards our country
+
+'''Option: aow_events.43.b:'''
+
+* generate_advisor_of_type_and_semi_random_religion_effect:
+** advisor_type = 0 "Spymaster
+** advisor_type_if_not_state = 0 "Spymaster
+** scaled_skill = yes
+** discount = yes
+
+=== title = "aow_events.44.t" ===
+* Province event
+* Cannot fire randomly
+
+'''Option: aow_events.44.a:'''
+
+* The owner of the province:
+** Gives the 0 "Diplomatic Insult casus belli against our country
+** add_corruption = 1
+** Adds the opinion modifier "bribed_cardinal" towards our country
+
+=== title = "aow_events.45.t" ===
+* Province event
+
+'''Trigger:'''
+
+* has_cardinal = yes
+* Any bordering province:
+** Does not follow the 0 "Catholic religion
+** Is in the 0 "Christian religion group
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 480 months
+
+'''Option: aow_events.45.a:'''
+
+* The owner of the province:
+** Modifies treasury by -0.1 years worth of income
+* Randomized by 
+** Acquisition chance:
+** Gets the province event:
+*** ID is aow_events.46
+*** Base mean time to happen of 180 days
+*** Tooltip:
+
+'''Option: aow_events.45.b:'''
+
+* remove_cardinal = yes
+
+=== title = "aow_events.46.t" ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* 0 "The Papal State exists
+
+'''Option: aow_events.46.a:'''
+
+* 0 "The Papal State:
+** Adds the opinion modifier "bribed_cardinal" towards our country
+
+=== title = "aow_events.47.t" ===
+* Province event
+
+'''Trigger:'''
+
+* has_cardinal = yes
+* Any bordering province:
+** Is not in 0 "Christian's religion group
+** The province is owned by our country
+* The owner of the province:
+** Does not have the country modifier "distrusts_heathens"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 480 months
+
+'''Option: aow_events.47.a:'''
+
+* The owner of the province:
+** Adds the modifier "distrusts_heathens" for 5 years:
+*** -2 tolerance of heathens
+
+'''Option: aow_events.47.b:'''
+
+* remove_cardinal = yes
+
+=== title = "aow_events.48.t" ===
+
+'''Trigger:'''
+
+* The Papacy is enabled
+* Follows the 0 "Catholic religion
+* Country is not 0 "The Papal State
+* Any of the following:
+** employed_advisor:
+*** Follows the 0 "Catholic religion
+** employed_advisor:
+*** Follows the 0 "Catholic religion
+* Has less than 7 cardinals
+* total_number_of_cardinals_false = 49
+* Any owned province:
+** development = 10
+** In the continent 0 "Europe
+** has_cardinal_false = no
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 480 months
+
+'''Option: aow_events.48.a:'''
+
+* Changes administrative power stored by -100
+* Random owned province:
+** Limited to:
+*** development = 10
+*** In the continent 0 "Europe
+*** Follows the 0 "Catholic religion
+*** has_cardinal_false = no
+** add_cardinal = yes
+
+'''Option: aow_events.48.b:'''
+
+* Changes administrative power stored by 100
+
+=== title = "aow_events.49.t" ===
+
+'''Trigger:'''
+
+* Does not have the country modifier "cardinal_in_administration"
+* Has at least 1 cardinals
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 480 months
+
+'''Option: aow_events.49.a:'''
+
+* If:
+** Limited to:
+*** has_estate = estate_church
+*** has_estate_influence_modifier:
+**** estate_false = estate_church
+**** modifier_false = EST_VAL_CARDINAL_IN_ADMINISTRATION
+** add_estate_influence_modifier:
+*** estate = estate_church
+*** desc = EST_VAL_CARDINAL_IN_ADMINISTRATION
+*** influence = 5
+*** Lasting 7300 days
+* Adds the modifier "cardinal_in_administration" for 20 years:
+** Follows the yes religion
+** +1% global missionary strength
+** +0.5 Papal influence per year
+** -5% stability cost modifier
+** +1 tolerance of the true faith
+** -2 tolerance of heretics
+
+'''Option: aow_events.49.b:'''
+
+* Changes prestige by 10
+
+=== title = "aow_events.50.t" ===
+
+'''Trigger:'''
+
+* Has the country modifier "cardinal_in_administration"
+* Does not have the country modifier "0 "Increased Centralization"
+* Has at least 1 cardinals
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1200 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Any bordering province:
+***** The province is the capital of the country
+***** The province is owned by our country
+*** save_event_target_as = rebel_province
+** Random owned province:
+*** Limited to:
+**** has_cardinal = yes
+*** save_event_target_as = cardinal_province
+
+'''Option: aow_events.50.a:'''
+
+* goto = rebel_province
+* Adds the modifier "0 "Increased Centralization" for 10 years:
+** global_autonomy = -0.05
+** +1 global unrest
+* event_target:rebel_province:
+** Spawns revolt of size 2 of 0 "Noble rebels
+
+'''Option: aow_events.50.b:'''
+
+* goto = cardinal_province
+* Removes the country modifier "cardinal_in_administration"
+* event_target:cardinal_province:
+** remove_cardinal = yes
+
+=== title = "aow_events.51.t" ===
+
+'''Trigger:'''
+
+* Has the idea group 0 "Espionage Ideas
+* Follows the 0 "Catholic religion
+* Any neighbor country:
+** Has at least 1 cardinals
+* Does not have the country modifier "blackmailing_cardinal"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1200 months
+
+'''Option: aow_events.51.a:'''
+
+* Random neighbor country:
+** Limited to:
+*** Has at least 1 cardinals
+** Random owned province:
+*** Limited to:
+**** has_cardinal = yes
+*** Hidden effect:
+**** Gets the province event:
+***** ID is aow_events.52
+***** Base mean time to happen of 1 days
+*** Tooltip:
+**** remove_cardinal = yes
+** Adds the opinion modifier "exposed_cardinal" towards our country
+
+'''Option: aow_events.51.b:'''
+
+* add_corruption = 0.5
+* Adds the modifier "blackmailing_cardinal" for 5 years:
+** +25% spy offense
+
+=== title = "aow_events.52.t" ===
+* Province event
+* Cannot fire randomly
+
+'''Option: aow_events.52.a:'''
+
+* remove_cardinal = yes

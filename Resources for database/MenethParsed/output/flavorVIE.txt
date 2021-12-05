@@ -1,0 +1,16 @@
+** Trigger:
+*** 0 "Luang Prabang does not exist
+*** Country is 0 "Vientiane
+*** Year is at least 1700
+*** Year is less than 1750
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Let them fight it out:
+*** Random owned province:
+**** Limited to:
+***** is_in_capital_area = yes
+**** Spawns revolt of size our country of 0 "Pretender rebels
+** Option: 0 "Support the rightful heir:
+*** Changes stability by -1
+*** Every owned province:
+**** add_unrest = 5

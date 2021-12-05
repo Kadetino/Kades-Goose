@@ -1,0 +1,1022 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+*********** save_event_target_as = spread_of_extreme_practices_province
+******** Option: 1 "Expel them from [spread_of_extreme_practices_province.GetAreaName].:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has at least 0.1 piety
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 65 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 80 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+******** Option: 1 "Leave them be.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than -0.1 piety
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -10%
+******* Gets the country event:
+******** ID is muslim_piety.2
+******** title = 1 "Returning Scholars
+******** desc = 1 "Particularly in the aftermath of the Mongol conquests of the thirteenth century, Egypt and Syria emerged as the foremost centers of scholarly learning in the Muslim world. Sunni scholars of every persuasion flocked to Damascus and Cairo to learn from the most renowned teachers of science, theology, and above all law, while Shi'ites traveled to Jabal Amil in Lebanon to meet with the scholars of orthodox Twelver Shi'ism. Many students from our lands, having completed their educational pilgrimage, are now returning home and hoping to implement legalistic Islam in our [Root.GovernmentName] just as they learned it in the heartlands of Islam.
+******** picture = BIG_BOOK_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Does not own 0 "Cairo
+********* Does not own 0 "Damascus
+********* Does not own 0 "Sidon
+********* If:
+********** Limited to:
+*********** Has the DLC Cradle of Civilization
+********** religious_school:
+*********** group_false = 0 "Muslim
+*********** school_false = ismaili_school
+********** religious_school:
+*********** group_false = 0 "Muslim
+*********** school_false = zaidi_school
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "They will make a welcome addition to our country.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has at least 0.1 piety
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+********* Changes administrative power stored by 10
+******** Option: 1 "Contact with the divine is not about studying books.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than -0.1 piety
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -10%
+********* Adds 10 legitimacy
+******* Gets the country event:
+******** ID is muslim_piety.3
+******** title = 1 "Sufi Organizations Rally Support
+******** desc = 1 "During the early modern period popular forms of Sufi worship became extremely widespread in the Muslim world. Seeing the weakened state of our armies, the sheikh of a major order has begun urging his followers to take up arms in support of us against our enemies.
+******** picture = STREET_SPEECH_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Manpower are less than 60% of maximum
+********* Has less than 0 piety
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "We cannot rely on mystics for support!:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Legitimacy is less than 70
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 15%
+********* Adds 10 legitimacy
+******** Option: 1 "Let us welcome these warriors of faith.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than -0.1 piety
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -10%
+********* Changes national manpower by 0.5 years worth of men
+******* Gets the country event:
+******** ID is muslim_piety.4
+******** title = 1 "Religious Harmony
+******** desc = 1 "Just as many members of the Ulema have developed Sufi leanings, many of our Sufi orders have likewise come to extol the virtue of a pious life lived in accordance with the Sharia. Despite disapproving voices on both extremes, we have managed to strike a balance between mysticism and legalism. Our realm is currently enjoying the fruits of moderation and tolerance of differing religious practices.
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Has at least -0.2 piety
+********* Has less than 0.2 piety
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "God is good.:
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is muslim_piety.5
+******** title = 1 "Debate over the Philosophy of Ibn Arabi
+******** desc = 1 "Ibn Arabi was an Andalusian scholar and mystic, regarded by many Sufis as the foremost spiritual master. His pantheistic philosophy of the 'unity of being' viewed all of creation as a manifestation of God, and invited worshippers to see divine beauty in all aspects of life, not merely in the traditional rituals of Islam. Ever since, debates have raged on over the compatibility of his philosophy with scholarly interpretations of Islam, with some going so far as to label him an unbeliever. For many Sufis, on the other hand, Ibn Arabi's philosophy became the foundational principle of their religious practice. Now we too are being asked to take sides.
+******** picture = REFORM_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "Deny the unity of being.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has at least 0.1 piety
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 15%
+******** Option: 1 "Support the unity of being.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than -0.1 piety
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -15%
+******* Gets the country event:
+******** ID is muslim_piety.6
+******** title = 1 "Dhimmi Building Restrictions
+******** desc = 1 "Under Islamic Law, non-Muslims faced a number of restrictions on the construction of new buildings in urban centers: their houses were not to be taller than those of the Muslims, and they were not permitted to construct new centers of worship, only to maintain those which already existed. In practice, these rules often went unenforced, but as our realm shifts further toward a legalistic interpretation of Islam, key members of the Ulema are beginning to call for their stricter implementation.
+******** picture = CITY_VIEW_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Does not have the country modifier "0 "Dhimmi Building Restrictions"
+********* Has at least 0.25 piety
+********* Any owned province:
+********** Is not in 0 "Muslim's religion group
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "Enforce the letter of the law.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+********* add_estate_church_loyalty_effect = yes
+********* reduce_estate_dhimmi_loyalty_effect = yes
+********* Adds the modifier "0 "Dhimmi Building Restrictions" for the rest of the campaign:
+********** Follows the yes religion
+********** +0.5 tolerance of the true faith
+********** -0.5 tolerance of heathens
+******** Option: 1 "Leave them to do as they please.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -10%
+********* reduce_estate_church_loyalty_effect = yes
+********* add_estate_dhimmi_loyalty_effect = yes
+******* Gets the country event:
+******** ID is muslim_piety.7
+******** title = 1 "Dhimmis Flout Building Restrictions
+******** desc = 1 "Despite being officially prohibited from constructing houses of worship and tall buildings, the Dhimmis in several provinces of our realm are openly disobeying the laws, and many of our qadis are too lax to respond, either because they see no harm in it or because of the hefty bribes they can earn for turning a blind eye.
+******** picture = CITY_VIEW_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Has the country modifier "0 "Dhimmi Building Restrictions"
+********* Has less than 0.5 piety
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "Increase enforcement efforts.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has at least 0.1 piety
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+********* add_estate_church_loyalty_effect = yes
+******** Option: 1 "Let the laws go unenforced.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than -0.1 piety
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -10%
+********* Removes the country modifier "0 "Dhimmi Building Restrictions"
+********* add_estate_dhimmi_loyalty_effect = yes
+******* Gets the country event:
+******** ID is muslim_piety.8
+******** title = 1 "Enjoining Right and Forbidding Wrong
+******** desc = 1 "Muslims are encouraged in the Qur'an to take an active role in their community in order to “enjoin right and forbid wrong.” While this command has been interpreted in many ways by Muslim scholars, it was sometimes used by reformist groups to justify the forceful spread of more extreme views. A group of charismatic mosque preachers in [Root.Capital.GetCapitalName] have begun calling for the end of unorthodox religious practices and are inciting the populace against the Sufis, leading to violence and street battles.
+******** picture = CITY_DEVELOPMENT_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "Stamp down on the movement.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has at least 0.1 piety
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+******** Option: 1 "Offer them our support.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than -0.1 piety
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -10%
+******* Gets the country event:
+******** ID is muslim_piety.9
+******** title = 1 "Debate over Sufi Practices
+******** desc = 1 "Muslim scholars were not united on the question of the permissibility of Sufism. While most appreciated the heightened levels of religious devotion it inspired among the general population, some disapproved of how certain Sufis expressed their faith. Poetry and song about wine and illicit love, as well as communal dancing and veneration for the tombs of those regarded as saints, could at times provoke opposition from more hardline elements of the Ulema.
+******** picture = REFORM_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "Support the hardliners.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has at least 0.1 piety
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+******** Option: 1 "Support the moderates.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than -0.1 piety
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -10%
+******* Gets the country event:
+******** ID is muslim_piety.10
+******** title = 1 "Purification of Tax Laws
+******** desc = 1 "Ensuring that the realm's laws operate in accordance with the sacred Sharia requires us to occasionally re-examine our tax-collection practices, and to strive to align them as closely as possible with the legal positions held by the great lawmakers of our [Root.GetReligiousSchool] school. This means eliminating the customary taxes which have accumulated over the years, and taking only what is permitted by the Sharia.
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Has at least 0.3 piety
+********* Does not have the country modifier "0 "Purification of Tax Laws"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "The peasantry must be free from unlawful exactions.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+********* Adds the modifier "0 "Purification of Tax Laws" for 10 years:
+********** -15% global tax modifier
+********** -1 global unrest
+******** Option: 1 "Reject the proposal.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -15%
+******* Gets the country event:
+******** ID is muslim_piety.11
+******** title = 1 "Mystics and Storytellers
+******** desc = 1 "Many among the Ulema would question the great influence that storytellers have over the life of common men. The traditional hero stories of our people are centuries old but they risk making a cult out of seriously distorted fates of historical figures. A prominent cleric in [storytellerprovince.GetAreaName] have taken a strong stand against the storytellers of the realm, and cautions that religious scholars of the past have warned that obsessive listening to stories could lead to false worship.
+******** picture = REFORM_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+*********** save_event_target_as = storytellerprovince
+******** Option: 1 "We must ban offensive stories from the realm.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has at least 0.1 piety
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+******** Option: 1 "There is nothing wrong in idealizing our ancestors.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than -0.1 piety
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -10%
+******* Gets the country event:
+******** ID is muslim_piety.12
+******** title = 1 "Trade Guilds and Fraternities
+******** desc = 1 "Guilds and fraternities are a constant factor in the public life of the [Root.GovernmentName], in many ways these are small communities within the community, with their own rules, customs and even laws. It is also very common for these associations to indulge in mystic traditions, sufism and often unorthodox adaption of the Sharia. Something that sometimes makes it hard for the laws of the Ulema to penetrate the urban milieu.\nAn artisan in [fraternity_province.GetName] has reached out to the state, warning us of a local guildsman with a great influence on local affairs. Anyone wishing to take up a craft in the city is currently required to be approved by this man and then swear an oath of allegiance.
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Has at least 2 provinces
+********* Any owned province:
+********** The province is not the capital of the country
+********** Does not have the province modifier "0 "Guilds Strengthened"
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+*********** save_event_target_as = fraternity_province
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ development = 5
+*********** save_event_target_as = fraternity_province
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ development = 10
+*********** save_event_target_as = fraternity_province
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ development = 15
+*********** save_event_target_as = fraternity_province
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ development = 20
+*********** save_event_target_as = fraternity_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "This is unacceptable.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has at least 0.1 piety
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+********* Changes prestige by 10
+******** Option: 1 "Let us not interfere with the guilds.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than -0.1 piety
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -10%
+********* event_target:fraternity_province:
+********** add_local_autonomy = 25
+********** Adds the modifier "0 "Guilds Strengthened" until the end of the campaign:
+*********** trade_goods_size_modifier = 0.25
+*********** local_autonomy = 0.03
+******* Gets the country event:
+******** ID is muslim_piety.13
+******** title = 1 "Social Dissent and Popular Sufism
+******** desc = 1 "The great stress that our government has placed on Legalism and the limiting of Mysticism in our society has had the effect of closely associating Sufism with resistance to central rule. In times of social distress many now look to the Mystical orders for spiritual guidance as an alternative to the highly legalistic Ulema and its [Root.GovernmentName] ally.\nAs tensions flare in [popular_sufism_province.GetName] an influential Sufi Master declared his support for [Root.Monarch.GetTitle], potentially calming the situation.
+******** picture = REFORM_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Has at least 0.75 piety
+********* Any owned province:
+********** is_state = yes
+********** The province is not the capital of the country
+********** Is in the 0 "Muslim religion group
+********** Does not have the province modifier "0 "Social Unrest"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ The province is not the capital of the country
+************ Is in the 0 "Muslim religion group
+************ Does not have the province modifier "0 "Social Unrest"
+*********** save_event_target_as = popular_sufism_province
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ The province is not the capital of the country
+************ Is in the 0 "Muslim religion group
+************ development = 10
+************ Does not have the province modifier "0 "Social Unrest"
+*********** save_event_target_as = popular_sufism_province
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ The province is not the capital of the country
+************ Is in the 0 "Muslim religion group
+************ development = 15
+************ Does not have the province modifier "0 "Social Unrest"
+*********** save_event_target_as = popular_sufism_province
+********** Random owned province:
+*********** Limited to:
+************ is_state = yes
+************ The province is not the capital of the country
+************ Is in the 0 "Muslim religion group
+************ development = 20
+************ Does not have the province modifier "0 "Social Unrest"
+*********** save_event_target_as = popular_sufism_province
+******** Option: 1 "We cannot accept the support of a Mystic.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+********* event_target:popular_sufism_province:
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+************ The province is not the capital of the country
+*********** Adds the modifier "0 "Social Unrest" until the end of the campaign:
+************ local_unrest = 6
+******** Option: 1 "God is good.:
+********* AI chance:
+********** Base chance of 100
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -35%
+******* Gets the country event:
+******** ID is muslim_piety.14
+******** title = 1 "Coffee and Tobacco
+******** desc = 1 "While they are quite new to our society the use of stimulants such as Coffee and Tobacco has spread quickly, with coffee houses now a common feature from [Root.Capital.GetCapitalName] to [coffee_province.GetAreaName]. The popularity is especially marked among the Sufi orders. The novelty of these substances means that the religious establishment is divided on their proper use.\nMany strict legalists wants us to limit their use while others argue for caution, as both Coffee and Tobacco are very popular in our state. The local governor of [coffee_province.GetName] have now turned to [Root.Capital.GetCapitalName] wanting to close down the local coffee houses that he believes have become meeting places for dissidents.
+******** picture = CORRUPTION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Has at least 0.5 piety
+********* Any of the following:
+********** Has the global flag triangle_happened
+********** Has at least 1 provinces producing tobacco
+********* Any owned province:
+********** Does not have the province modifier "0 "Coffee House Dissidents"
+********** The province is not the capital of the country
+********** is_state = yes
+*********** No bordering province:
+************ The province is the capital of the country
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Does not have the province modifier "0 "Coffee House Dissidents"
+************ The province is not the capital of the country
+************ is_state = yes
+************* No bordering province:
+************** The province is the capital of the country
+*********** save_event_target_as = coffee_province
+******** Option: 1 "Let us impose Restrictions.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+********* event_target:coffee_province:
+********** area:
+*********** Limited to:
+************ Does not have the province modifier "0 "Coffee House Dissidents"
+************ The province is not the capital of the country
+************ The province is owned by our country
+*********** Adds the modifier "0 "Coffee House Dissidents" until the end of the campaign:
+************ local_unrest = 6
+******** Option: 1 "Let them have their coffee.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -25%
+******* Gets the country event:
+******** ID is muslim_piety.15
+******** title = 1 "Sufi Orders growing in popularity in [new_province.GetName]
+******** desc = 1 "Some of the more prevalent Sufi orders in [Root.GetName] have quickly started to establish themselves in the newly acquired [new_province.GetName] province. While the locals seem somewhat hesitant about [Root.GetAdjective] rule they have embraced the orders and this has greatly eased the integration of the province into our [Root.GovernmentName].
+******** picture = REFORM_eventPicture
+******** goto = new_province
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Any owned province:
+********** Has no core on our country
+********** Does not have the province modifier "0 "Strengthened local Authority"
+********** Does not have the province modifier "0 "Integration under Sufi Leadership"
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has no core on our country
+************ Does not have the province modifier "0 "Strengthened local Authority"
+************ Does not have the province modifier "0 "Integration under Sufi Leadership"
+*********** save_event_target_as = new_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "Strengthen the legal establishment instead.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has at least 0.1 piety
+********** Multiplies value by 1.5:
+*********** Has the global flag neo_sufism
+********** Multiplies value by 1.5:
+*********** Culture group is turko_semitic
+*********** Primary culture is not 0 "Turkish
+********** Multiplies value by 1.5:
+*********** Has at least 35 provinces
+********** Multiplies value by 1.5:
+*********** Has at least 50 provinces
+********** Multiplies value by 2:
+*********** religious_school:
+************ group = 0 "Muslim
+************ school = hanbali_school
+********** Multiplies value by 1.25:
+*********** Year is at least 1650
+********* Changes piety by 10%
+********* event_target:new_province:
+********** Adds the modifier "0 "Strengthened local Authority" until the end of the campaign:
+*********** local_autonomy = -0.05
+******** Option: 1 "This is excellent.:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Has less than -0.1 piety
+********** Multiplies value by 0.75:
+*********** Year is at least 1650
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Capital:
+************ Any of the following:
+************* superregion = india_superregion
+************* superregion = persia_superregion
+********** Multiplies value by 1.5:
+*********** Year is less than 1650
+*********** Primary culture is 0 "Turkish
+********** Multiplies value by 1.5:
+*********** The dominant religion is not our country
+********* Changes piety by -10%
+********* event_target:new_province:
+********** Adds the modifier "0 "Integration under Sufi Leadership" until the end of the campaign:
+*********** local_unrest = -4
+******* Gets the country event:
+******** ID is muslim_piety.16
+******** title = 1 "Disregard of the Sharia?
+******** desc = 1 "The learned Ulema complain over the widespread flouting of Sharia rules in our [Root.GovernmentName]. They demand that we reduce the influence of Mystic orders and heterodoxy in the country. Failing to comply could see us risking losing their support and many of these valuable legal scholars might even leave for other courts.
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Has less than -0.75 piety
+********* Does not have the country modifier "0 "Loss of Legal Competence"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "Let us follow their recommendations.:
+********* AI chance:
+********** Base chance of 100
+********* Changes piety by 35%
+********* add_estate_church_loyalty_effect = yes
+******** Option: 1 "We cannot give in to such threats.:
+********* AI chance:
+********** Base chance of 0
+********* reduce_estate_church_loyalty_effect = yes
+********* Changes piety by -10%
+********* Adds the modifier "0 "Loss of Legal Competence" for 10 years:
+********** +10% advisor cost
+******* Gets the country event:
+******** ID is muslim_piety.17
+******** title = 1 "Building Restrictions Lapse
+******** desc = 1 "As our realm loses its zeal for legalistic Islam, it has become harder and harder for us to find and appoint qadis willing to fully implement our official restrictions on the construction of Dhimmi buildings. The law has, at this point, simply become unenforceable.
+******** picture = CITY_VIEW_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* uses_piety = yes
+********* Has the country modifier "0 "Dhimmi Building Restrictions"
+********* Has less than -0.1 piety
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 1 "Just as well.:
+********* Changes piety by -10%
+********* Removes the country modifier "0 "Dhimmi Building Restrictions"
+******* Gets the country event:
+******** ID is muslim_piety.20
+******** title = 1 "A New [Root.Monarch.GetTitle]
+******** desc = 1 "Our nation has sorely lacked a firm guiding hand under the rule of [Root.Heir.GetName], a timid child, ill-prepared to face the dangers of the world. Fortunately for us all, one of [Root.Heir.GetHerHis] uncles, and close advisors has decided to act. The child is now safely locked away where [Root.Heir.GetSheHe] can do no more harm. The advisor has been proclaimed our new [Root.Monarch.GetTitle], and has sworn to provide our nation with the strong leadership it so desperately needs.
+******** picture = DEATH_OF_HEIR_eventPicture
+******** Trigger:
+********* uses_piety = yes
+********* Any of the following:
+********** has_reform = 0 "Iqta
+********** has_reform = indian_sultanate_reform
+********* Is in regency
+********* has_consort_regency_false = no
+******** Mean time to happen
+********* Base mean time to happen of 180 months
+******** Option: 0 "May our new $MONARCHTITLE$'s rule be long and prosperous!:
+********* If:
+********** Limited to:
+*********** Has an heir
+********** Spawns a ruler:
+*********** Ruler's dynasty is our country
+********* else:
+********** Spawns a ruler:
+********* If:
+********** Limited to:
+*********** Has an heir
+********** remove_heir:
+********* Changes piety by -25%
+********* Adds -25 legitimacy
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is muslim_piety.21
+******** title = 0 "Convert Hagia Sophia into a Mosque
+******** desc = 0 "Byzantine Emperor Justinian I built Hagia Sophia in 532, choosing Isidore of Miletus and Anthemius of Tralles to be the architects. The church was built with Hellenistic columns from the Temple of Artemis at Ephesus, large stones from quarries in porphyry from Egypt, green marble from Thessaly, black stone from the Bosporus region, and yellow stone from Syria. That a Christian church is still in use does not please the people, who wish it to be transformed into a mosque. It is also in dire need of renovation, and should be repaired before it is made into a mosque.
+******** picture = MOSQUE_HAGA_SOPHIA_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Does not have the DLC Star and Crescent
+********* Is in the 0 "Muslim religion group
+********* Owns 0 "Constantinople
+********* Does not have the global flag hagia_sophia_now_mosque
+********* 0 "Constantinople:
+********** Is in the 0 "Muslim religion group
+******** Mean time to happen
+********* Base mean time to happen of 150 months
+******** Option: 0 "Repair it and transform it!:
+********* AI chance:
+********** Base chance of 100
+********* Sets the global flag hagia_sophia_now_mosque
+********* show_ambient_object = hagia_sophia_minarets
+********* hide_ambient_object = hagia_sophia
+********* Changes piety by 20%
+********* Changes prestige by 20
+********* If:
+********** Limited to:
+*********** has_estate = estate_church
+********** add_estate_loyalty:
+*********** estate = estate_church
+*********** loyalty = 10
+********* If:
+********** Limited to:
+*********** Has the DLC Leviathan
+********** 0 "Constantinople:
+*********** set_great_project_tier_2:
+********** Modifies treasury by -0.5 years worth of income
+********* else:
+********** Modifies treasury by -0.1 years worth of income
+******** Option: 0 "Leave it be:
+********* AI chance:
+********** Base chance of 0
+********* Changes piety by -20%
+********* If:
+********** Limited to:
+*********** has_estate = estate_dhimmi
+********** add_estate_loyalty:
+*********** estate = estate_dhimmi
+*********** loyalty = 15
+******* Gets the country event:
+******** ID is muslim_piety.22
+******** title = 0 "Friday Prayers?
+******** desc = 0 "The weekly congregational prayer has been a way for Islamic rulers to show their legitimacy for centuries. The long standing Sunni dominance where most Friday prayers have been in the name of the Sunni Caliphs and the worldly Sultans of the Sunni world, has however lead to the status of the prayers being very uncertain.\nMost among the Shia Ulema oppose the practice of the Friday prayers, but there are some who would see its role as a way to bind together society, Ulema and ruler, return to the Shia faithful of our country.
+******** picture = PRAYING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Follows the 0 "Shia religion
+********* Has at least 20 provinces
+********* Does not have the country flag shiite_friday_prayer
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag shiite_friday_prayer
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "[Root.Monarch.GetName] will lead the Friday prayers and our country will pray.:
+********* AI chance:
+********** Base chance of 100
+********* Changes piety by -25%
+********* Adds 10 legitimacy
+********* Adds the modifier "0 "Friday Prayers" for 10 years:
+********** +1 tolerance of the true faith
+********** monthly_piety = -0.001
+********** -1 diplomatic reputation
+******** Option: 0 "We must respect the traditions of our people.:
+********* AI chance:
+********** Base chance of 0
+********* add_stability_or_adm_power = yes
+********* Changes piety by 25%

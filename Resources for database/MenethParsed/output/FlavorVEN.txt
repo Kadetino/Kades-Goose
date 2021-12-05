@@ -1,0 +1,854 @@
+** Trigger:
+*** Year is at least 1450
+*** Year is less than 1550
+*** Country is 0 "Venice
+*** 0 "Constantinople:
+**** The province is owned by 0 "Ottomans
+*** 0 "Alexandria:
+**** The province is owned by 0 "Ottomans
+*** 0 "Ottomans:
+**** is_free_or_tributary_trigger = yes
+*** Is not allied with 0 "Ottomans
+*** Not at war with 0 "Ottomans
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Demand Alexandria as compensation!:
+*** AI chance:
+**** Base chance of 90
+*** 0 "Ottomans:
+**** Gets the country event:
+***** ID is flavor_tur.3359
+***** Base mean time to happen of 10 tooltip days
+** Option: 0 "Accept their expansion:
+*** Changes prestige by -10
+* Gets the country event:
+** ID is flavor_ven.2
+** title = 0 "Compensation Denied
+** desc = 0 "The Turks refuse even to discuss compensation for our losses in trade!
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "At least we now have a claim on it:
+* Gets the country event:
+** ID is flavor_ven.3
+** title = 0 "Alexandria Acquired
+** desc = 0 "The Turks have agreed to compensate our trade losses with the province of Alexandria.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Excellent:
+* Gets the country event:
+** ID is flavor_ven.4
+** title = 0 "We can trade in Famagusta!
+** desc = 0 "In 1464, the Cypriots evicted the Genoese from Famagusta, getting full control over the Island. However, it did not take long until the Venetians had taken control of it, in their attempt to secure control of the Mediterranean trade.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Good News!:
+*** Changes prestige by 5
+*** 0 "Crete:
+**** Adds trade modifier:
+***** Affecting our country
+***** Lasting 7300 days
+***** Changing trade power by 5
+***** Named "0 "Control of Famagusta"
+* Gets the country event:
+** ID is flavor_ven.5
+** title = 0 "Stratioti!
+** desc = 0 "After the fall of Constantinople, large amount of Greek and Albanian soldiers joined the cause of the Venetian Republic to fight against the Ottoman. They were called Stratioti, coming from the Greek word for Soldier, and were feared light cavalry. One of their most notable leaders was Graitzas Palaiologos who had held out as a Byzantine commander until 1461.
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** 0 "Byzantium does not exist
+*** Year is less than 1550
+*** 0 "Constantinople:
+**** The province is owned by 0 "Ottomans
+*** Any owned province:
+**** Culture is 0 "Greek
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "They will be feared by our enemies!:
+*** Changes army tradition by 10
+*** Changes national manpower reserves by 10 years worth
+*** Every owned province:
+**** Limited to:
+***** Culture is 0 "Greek
+**** add_base_manpower = 1
+* Gets the country event:
+** ID is flavor_ven.6
+** title = 0 "Ottoman control of Morea
+** desc = 0 "After the fall of Constantinople, the Turks turned south and in 1461 the last fortress in Morea fell to the Ottomans. This peninsula was simply too important for the Venetian trade lanes to be neglected, and it was the cause for many wars between Venice and the Ottomans, as Venice laid claims to Morea.\nHow shall we do?
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is less than 1500
+*** 0 "Morea:
+**** The province is owned by 0 "Ottomans
+*** 0 "Achaea:
+**** The province is owned by 0 "Ottomans
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Today is a good day for the Ottomans to die!:
+*** AI chance:
+**** Base chance of 90
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Morean Confrontation" towards our country
+*** Adds claim to 0 "Morea
+*** Adds claim to 0 "Achaea
+*** Hidden effect:
+**** 0 "Ottomans:
+***** Gets the country event:
+****** ID is flavor_ven.7
+** Option: 0 "We cannot risk a war:
+*** 0 "Achaea:
+**** Adds trade modifier:
+***** Affecting our country
+***** Lasting 7300 days
+***** Changing trade power by -25
+***** Named "0 "Morean Confrontation"
+*** Changes prestige by -5
+*** Changes republican tradition by -500%
+* Gets the country event:
+** ID is flavor_ven.7
+** title = 0 "Venetian claims on Morea
+** desc = 0 "An ambassador from Venice has just informed us that they have laid claim to the Morea Peninsula. This is clearly not acceptable, and they must be punished.
+** picture = REVOLUTION_eventPicture
+** is_triggered_only = yes
+** Option: 0 "This means war!:
+*** Gives the 0 "Diplomatic Insult casus belli against 0 "Venice
+* Gets the country event:
+** ID is flavor_ven.8
+** title = 0 "Monte Nuovo
+** desc = 0 "The original system of loaning in Italy was a joint stock fund where each citizen had to lend a certain amount of cash in exchange for interest, called Monte Vecchio. In the mid-15th century, Venetian bankers introduced a guaranteed minimum payment of interest to the lenders which increased the amount of money people were willing to lend. This 'Monte Nuovo' was extremely successful and funded many of Venice's wars.\nWhat shall we do?
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1460
+*** Year is less than 1550
+*** Has at least 1 active loans
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Introduce the loans:
+*** AI chance:
+**** Base chance of 90
+*** Adds the modifier "0 "Monte Nuovo" for 100 years:
+**** -0.5 interest
+** Option: 0 "Combat inflation instead:
+*** Changes inflation by -2
+* Gets the country event:
+** ID is flavor_ven.9
+** title = 0 "The Dominican Inquisition
+** desc = 0 "When the Pope, with a view to crushing the Albigensian and Patarinian heresies, endeavored to establish everywhere in Italy the Dominican Inquisition, the Republic resisted its introduction into Venice. The State charged itself to discover heretics, who when caught were examined by the Patriarch, the Bishop of Castello, or any other Venetian Ordinary. The examining Court was confined to a return of fact. It was called on to state whether the examinee was or was not guilty of heresy. Punishment was reserved to the secular authority. This arrangement did not satisfy the Court of Rome, an Inquisitor was appointed by the Pope, but he required the Doge's exequatur before he could act, and a board was created of three Venetian nobles, to sit as assessors to the Holy Office. Their duty was to guard the rights of Venetian citizens against ecclesiastical encroachment, including the non-interference in religious matters within the colonies, without their presence and their sanction no act of the Holy Office was valid in Venice. The Inquisition in Venice was certainly no sanguinary Office, thanks no doubt in a large degree to the independent attitude of the State, which insisted upon the presence of lay assessors at every trial.
+** picture = POPE_PREACHING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Follows the 0 "Catholic religion
+*** Is not at war
+*** Year is less than 1550
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Venetians First, Christians Second:
+*** AI chance:
+**** Base chance of 90
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Venetian First, Christian Second" towards our country
+*** Adds the modifier "0 "Venetian First, Christian Second" for the rest of the campaign:
+**** -2 Papal influence per year
+**** +2 tolerance of heretics
+**** +10% religious unity
+** Option: 0 "We are truly Catholic!:
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Christian First!" towards our country
+*** Adds the modifier "0 "Christian First!" for the rest of the campaign:
+**** +2 Papal influence per year
+**** -2 tolerance of heretics
+**** +1% global missionary strength
+* Gets the country event:
+** ID is flavor_ven.10
+** title = 0 "Arte dell'Abbaco
+** desc = 0 "'I have often been asked by certain youths in whom I have much interest, and who look forward to mercantile pursuits, to put into writing the fundamental principles of arithmetic, commonly called abacus.' Arte dell'Abbaco was the first known printed mathematics book in Europe, written in Venetian and printed in Treviso in 1478.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1475
+*** Year is less than 1500
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: 0 "This will be useful!:
+*** Changes administrative power stored by 25
+*** Changes diplomatic power stored by 25
+*** Changes military power stored by 25
+* Gets the country event:
+** ID is flavor_ven.11
+** title = 0 "Venetian Interdict
+** desc = 1 "Pope [PAP.Monarch.GetName] has placed Venice under interdict, ostensibly as a response to the freedom of religious fanaticism that exists in the city, which is apparently a constant affront to the Papacy. However, it is obvious to us that this is simply a ruse they are using to further their own ambitions.
+** picture = POPE_PREACHING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Has the country modifier "0 "Venetian First, Christian Second"
+*** 0 "The Papal State exists
+*** Any of the following:
+**** Owns 0 "Firenze
+**** Owns 0 "Perugia
+**** Owns 0 "Urbino
+**** Owns 0 "Arezzo
+**** Owns 4730
+**** Owns 0 "Ancona
+**** Owns 0 "Pisa
+**** Owns 0 "Siena
+** Mean time to happen
+*** Base mean time to happen of 36 months
+** Option: 0 "Venice is Venice!:
+*** AI chance:
+**** Base chance of 90
+*** Changes prestige by -20
+*** 0 "The Papal State:
+**** Gets the country event:
+***** ID is flavor_ven.12
+***** Base mean time to happen of 2 tooltip days
+** Option: 0 "Kneel before the Holy Father:
+*** Removes the country modifier "0 "Venetian First, Christian Second"
+* Gets the country event:
+** ID is flavor_ven.12
+** title = 0 "The Town of Sin
+** desc = 0 "The men of Venice are wicked and sinners before the Lord exceedingly. There is not a single righteous man living in that city of commerce, and it is filled with the kind of people that the Son of God drove out of the Temple. As God's representatives on earth, we must act!
+** picture = POPE_PREACHING_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Venice will fall like Sodom and Gomorrah!:
+*** 0 "Venice:
+**** Every owned province:
+***** Limited to:
+****** Region is italy_region
+***** Adds claim to our country
+* Gets the country event:
+** ID is flavor_ven.13
+** title = 0 "Spice Trade Threatened
+** desc = 0 "The Portuguese have taken control of the trade in the Indian Ocean, diverting trade around Africa instead of through Alexandria. This has severely affected our chances of controlling the Spice Trade. We can, however, attempt to send some help to the Mamluks.
+** picture = MERCHANTS_TALKING_eventPicture
+** Trigger:
+*** Country is 0 "Venice
+*** 0 "Mamluks exists
+*** 0 "Portugal exists
+*** 0 "Qamr Bay:
+**** The strongest trade power is 0 "Portugal
+*** 0 "Alexandria:
+**** The strongest trade power is 0 "Venice
+*** 0 "Alexandria:
+**** The province is owned by 0 "Mamluks
+*** Does not consider 0 "Mamluks a rival
+*** Not at war with 0 "Mamluks
+*** 0 "Mamluks:
+**** Has the country flag MAM_POR_conflict
+** Mean time to happen
+*** Base mean time to happen of 36 months
+** Option: 0 "Send help to Alexandria!:
+*** AI chance:
+**** Base chance of 90
+*** Changes diplomatic power stored by -25
+*** 0 "Mamluks:
+**** Gets the country event:
+***** ID is flavor_ven.14
+***** Base mean time to happen of 2 tooltip days
+*** 0 "Portugal:
+**** Adds the opinion modifier "0 "Helping the Mamluks" towards our country
+** Option: 0 "It is not our problem:
+*** Changes prestige by -10
+* Gets the country event:
+** ID is flavor_ven.14
+** title = 0 "Venice sends help
+** desc = 0 "With the Portuguese control of the trade in the Indian Ocean, the trade republic of Venice has grown extremely concerned. Since we have always had reasonably good relations, they have sent us help, with logs to build new ships and other resources for our merchants.
+** picture = MERCHANTS_TALKING_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Good News!:
+*** 0 "Qamr Bay:
+**** Adds trade modifier:
+***** Affecting our country
+***** Lasting 3650 days
+***** Changing trade power by 15
+***** Named "0 "Venetian Help"
+* Gets the country event:
+** ID is flavor_ven.15
+** title = 0 "The Ministers of the Waterways
+** desc = 0 "The safety and prosperity of Venice has always relied upon its location in its lagoon. In 1501, in an effort to reduce the silting up of the lagoon, the Great Council formed a committee to deflect the rivers flowing into the lagoon, a committee known as the 'Savi alle Acque'. Their success over the years saved the Serenissima from disaster and extended the prosperity of the city.\nWhat shall we do?
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Owns 0 "Venezia
+*** Has the republic government type
+*** Year is at least 1500
+*** Year is less than 1550
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "It is worth it!:
+*** 0 "Venezia:
+**** Adds the modifier "0 "Minister of the Waterways" until the end of the campaign:
+***** local_development_cost = -0.25
+*** Changes administrative power stored by -50
+** Option: 0 "Venice can survive without it!:
+*** AI chance:
+**** Base chance of 0
+*** Changes prestige by -5
+* Gets the country event:
+** ID is flavor_ven.16
+** title = 0 "The Gheto
+** desc = 0 "Beginning in 1516, the Republic obliged the Jews to live in an area of the city where the foundries, known in Venetian as 'geti', had been situated in ancient times, to wear a sign of identification and to manage the city's pawnshops at rates established by the Serenissima. Many other onerous regulations were also included, in exchange for which the Community was granted the freedom to practice its faith and protection in the case of war.\nWhat shall we do?
+** picture = CITY_DEVELOPMENT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Has the country modifier "0 "Venetian First, Christian Second"
+*** Year is at least 1500
+*** Year is less than 1600
+*** Owns 0 "Venezia
+** Mean time to happen
+*** Base mean time to happen of 300 months
+*** Multiplies value by 0.25:
+**** Any of the following:
+***** 0 "Spain:
+****** Has the country flag torquemada_expelled
+***** 0 "Castile:
+****** Has the country flag torquemada_expelled
+** Option: 0 "Grant them a place of their own!:
+*** AI chance:
+**** Base chance of 90
+*** Changes Papal Influence by -10
+*** 0 "Venezia:
+**** Adds the modifier "0 "The Ghetto" until the end of the campaign:
+***** +10% trade goods output
+** Option: 0 "Not in my Venice!:
+*** Changes Papal Influence by 10
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_ven.17
+** title = 0 "The explorer Antonio Pigafetta
+** desc = 0 "Antonio Pigafetta was an Italian explorer from Vicenza. He traveled in the grand expedition of Fernando Magellan in his voyage around the world. During the expedition he was Magellan's assistant, and wrote an accurate journal about it. Pigafetta was one of only 18 men who returned to Spain out of the 240 who set out three years earlier. This voyage was the first circumnavigation of the world, and his journal is the source for what we know today about this expedition.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Does not have the idea 0 "Quest for the New World
+*** 0 "Spain exists
+*** 0 "Spain:
+**** Any of the following:
+***** Has discovered 0 "Karimata Strait
+***** Has discovered 0 "Straits of Johor
+**** Any of the following:
+***** Has discovered 0 "Sulu Sea
+***** Has discovered 0 "Manila Bay
+**** Has discovered 1 "West of Magellans
+*** Year is less than 1650
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "The world truly is round!:
+*** Changes prestige by 10
+*** Changes diplomatic power stored by 25
+* Gets the country event:
+** ID is flavor_ven.18
+** title = 0 "Naval Conscription
+** desc = 0 "Difficulties in the rule of the sea brought further changes. Until 1545 the oarsmen in the galleys were free sailors enrolled on a wage. They were originally Venetians, but later Dalmatians, Cretans and Greeks joined in large numbers. Because of the difficulty in hiring sufficient crews, Venice had recourse to conscription, chaining the oarsmen to the benches as other navies had already done. Cristoforo da Canal was the first Venetian to command such a galley.\nWhat shall we do?
+** picture = NAVAL_MILITARY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1500
+*** Year is less than 1600
+** Mean time to happen
+*** Base mean time to happen of 120 months
+*** Multiplies value by 0.66:
+**** Has the idea group 0 "Maritime Ideas
+*** Multiplies value by 0.66:
+**** 0 "Ottomans:
+***** Considers 0 "Venice a rival
+** Option: 0 "Implement the Conscription:
+*** AI chance:
+**** Base chance of 90
+*** Adds the modifier "0 "Galley Conscription" for the rest of the campaign:
+**** +10% naval forcelimit
+**** +5% stability cost modifier
+** Option: 0 "It is against the Republic!:
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_ven.19
+** title = 0 "Fortezza di Sant'Andrea
+** desc = 0 "The fort of Sant'Andrea was constructed in 1545 to guard the main entrance to Venice from the Adriatic. The fort was designed by famous architect Michiel Sanmicheli. He was probably the only Italian architect in the century with the opportunity to see Greek architecture, as he traveled around the Greek possessions of the Venetian Republic. The fortress stood as protection for Venice for over three hundred years.\nWhat shall we do?
+** picture = FORT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Owns 0 "Venezia
+*** Military technology is at least 9
+*** Year is less than 1600
+** Mean time to happen
+*** Base mean time to happen of 240 months
+*** Multiplies value by 0.5:
+**** Ruler's military skill is at least 5
+** Option: 0 "Build it!:
+*** AI chance:
+**** Base chance of 90
+*** Modifies treasury by -0.2 years worth of income
+*** 0 "Venezia:
+**** Adds the modifier "0 "Fortezza di Sant'Andrea" until the end of the campaign:
+***** +25% local defensiveness
+** Option: 0 "It is too expensive:
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_ven.20
+** title = 0 "Plague in Venice
+** desc = 0 "Venice was hit by the plague several times in its history, with the largest disaster being in 1630. The city of Venice was severely hit, with recorded casualties of 46,000 people out of a population of 140,000. Some historians believe the drastic loss of life, and its impact on commerce, ultimately resulted in the downfall of Venice as a major commercial and political power.
+** picture = PLAGUE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1500
+*** Year is less than 1700
+** Mean time to happen
+*** Base mean time to happen of 2000 months
+*** Multiplies value by 0.5:
+**** Has the country modifier "0 "Venetian First, Christian Second"
+*** Multiplies value by 5:
+**** Has the country flag has_competent_doctors
+** Option: 0 "This is a punishment from God!:
+*** 0 "Venezia:
+**** Adds the modifier "0 "Recovering from the Plague" until the end of the campaign:
+***** -25% manpower modifier
+***** local_unrest = -3	#yes, its less likely with revolts.
+***** -25% provincial tax income
+***** -25% trade goods output
+** Option: 0 "Evacuate the City!:
+*** Changes administrative power stored by -20
+*** Changes diplomatic power stored by -20
+*** Changes military power stored by -20
+* Gets the country event:
+** ID is flavor_ven.21
+** title = 0 "Ponte di Rialto
+** desc = 0 "The Rialto bridge is one of the four bridges that cross the Grand Canal of Venice. It was originally a wooden bridge, but that first burned during a 1310 revolt, and collapsed both 1444 and 1524. The renewal of the Rialto bridge was first proposed in 1503, and the idea was to rebuild the bridge in stone. The authorities requested proposals in 1551, after several projects had been considered since 1503 and the following decades. Famous architects such as Jacopo Sansovino, Palladio and Vignola offered plans, but their proposals were deemed inappropriate to the situation as they all involved a Classical approach with several arches. The famous artist Michelangelo was also considered as designer of the Rialto bridge, but the submission by Antonio da Ponte eventually defeated others, thanks to its audacious single-span design.\nWhat shall we do?
+** picture = CITY_DEVELOPMENT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1585
+*** Year is less than 1595
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Option: 0 "Let's build it!:
+*** AI chance:
+**** Base chance of 95
+*** Changes administrative power stored by -25
+*** Changes prestige by 10
+** Option: 0 "The wooden bridge is good enough:
+*** AI chance:
+**** Base chance of 5
+*** Changes republican tradition by -500%
+* Gets the country event:
+** ID is flavor_ven.22
+** title = 0 "L'Orfeo - The First Opera
+** desc = 0 "Claudio Monteverdi's early Baroque opera L'Orfeo is based on the Greek legend of Orpheus, the musician, poet and prophet who descended to Hades to bring his dead bride Eurydice back. The opera was written in 1607 for a court performance during the annual Carnival at Mantua and its score was published in 1609 and 1615 by Monteverdi. Forty-one different instruments, with distinct groups of instruments used to depict particular scenes and characters, were listed in Monteverdi's published score.
+** picture = THEATRE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1605
+*** Year is less than 1610
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Losest thou me through too much love?:
+*** Changes prestige by 5
+* Gets the country event:
+** ID is flavor_ven.23
+** title = 0 "The Birth of Modern Science
+** desc = 0 "Galileo Galilei is by most people talked about as the father of modern science. In 1592, he was appointed as professor of mathematics at the university of Padua. When he learned about the spyglass, he constructed his own series of telescopes, much better than anything done before and started examining the skies, discovering mountains on the moon and four satellites orbiting Jupiter. Together with his work on motions and mechanics, he formed the basics of what would become the modern science.
+** picture = INVENTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1610
+*** Year is less than 1640
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Immediate effects:
+*** Sets the global flag ven_galileo_galilei_flag
+** Option: 0 "Focus on trade and naval research:
+*** Changes diplomatic power stored by 100
+*** Changes navy tradition by 25
+** Option: 0 "Focus on administrative development:
+*** Changes administrative power stored by 100
+*** Changes republican tradition by 1000%
+** Option: 0 "Focus on military matters!:
+*** Changes military power stored by 100
+*** Changes army tradition by 25
+* Gets the country event:
+** ID is flavor_ven.24
+** title = 0 "The growing power of the Council of Ten.
+** desc = 0 "With over a thousand hereditary memberships, the Great Council of Venice is perhaps not always the quickest and most efficient governing body. It is therefore not surprising that the much greater flexibility of the small Council of Ten, originally intended to safeguard the republic from plots and conspiracies, has led to them assuming more and more power.\nBy increasing its own power, however, the Council of Ten decreases the influence of the more representative Great Council. Many of the families on the Great Council feel things have gone too far as while new members of the Ten are elected each year the positions are often monopolized by a small clique of old Aristocrat families. Reforms have been proposed to curtail the power of the Ten by limiting their influence to emergencies as was originally intended.
+** picture = ELECTION_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1460
+*** Year is less than 1500
+*** has_government_attribute = is_merchant_republic
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Restrict the power of the Ten:
+*** AI chance:
+**** Base chance of 1
+*** Changes republican tradition by 2000%
+*** Adds the modifier "0 "Restrained Council of Ten" for the rest of the campaign:
+**** Republican tradition is at least 0.1 #By stopping a single institution from exercising too much power
+**** +0.1 #Inefficient Government% stability cost modifier
+**** mr_aristocrats_influence = -0.05
+** Option: 0 "Support the Ten:
+*** AI chance:
+**** Base chance of 0
+*** Changes republican tradition by -2000%
+*** Adds the modifier "0 "Strengthened Council of Ten" for the rest of the campaign:
+**** mr_aristocrats_influence = 0.05
+**** #global_tax_modifier = 0.1
+**** global_autonomy = -0.05
+**** Republican tradition is at least -1 #By giving a single institution much larger influence than any other.
+* Gets the country event:
+** ID is flavor_ven.25
+** title = 0 "Revoke the laws restraining the Ten.
+** desc = 0 "The reforms to rein in the Council of Ten has calmed many of the members of the Great Council but in effect the Ten still exert a great deal of authority that they formally should not have. Given how inefficient the Great Council with its countless members can be at times this is, however, not necessarily a bad thing...
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** has_government_attribute = is_merchant_republic
+*** Has the country modifier "0 "Restrained Council of Ten"
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: 0 "The Ten must be controlled.:
+*** AI chance:
+**** Base chance of 0
+*** Changes stability by -1
+*** Changes republican tradition by 2000%
+** Option: 0 "Let them continue to ignore their restrictions.:
+*** AI chance:
+**** Base chance of 1
+*** Changes republican tradition by -2000%
+*** Removes the country modifier "0 "Restrained Council of Ten"
+** Option: 0 "Revoke the laws restraining the ten.:
+*** AI chance:
+**** Base chance of 0
+*** Changes republican tradition by -3000%
+*** Changes administrative power stored by 50
+*** Removes the country modifier "0 "Restrained Council of Ten"
+* Gets the country event:
+** ID is flavor_ven.26
+** title = 0 "Expansion of the Great Council.
+** desc = 0 "The Great Council is the body from which the members of the various councils, the Doge and the Venetian Senate are elected. It is this council with over a thousand members that the Venetian system is built upon and by allowing all of these nobles their say our Republic is more representative than any other state we know of. A powerful council is the best safeguard against any other government institutions becoming too powerful, including the office of the Doge itself.\nSome feel we should expand the council even further to encompass all nobles over a certain age while others feel that many voices in one place might stifle the day-to-day government.
+** picture = DEBATE_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1520
+*** Year is less than 1560
+*** has_government_attribute = is_merchant_republic
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Enlarge the Council.:
+*** Changes the influence of 0 "The Traders by 20
+*** Adds the modifier "0 "Expansion of the Great Council of Venice" for the rest of the campaign:
+**** Republican tradition is at least 0.1 #Bigger council is more representative and has a bigger chance to act as a counterweight to powerful doges or other institutions.
+**** mr_traders_influence = 0.05
+** Option: 0 "Things are working fine as it is.:
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_ven.27
+** title = 0 "The Barnabotti
+** desc = 0 "As positions on the Great Council are hereditary there is always the possibility of a noble family retaining their vote after having lost their fortunes and all other influence. As we cannot expect such noble families to labor for their living the Venetian state traditionally affords them small pensions to live on.\nWith the chaotic political situation in the east, the fall of the Byzantine Empire and the loss of Venetian influence in parts of the Eastern Mediterranean, this group of poor nobles have been growing quickly. The great number of impoverished nobles are known to spend their pensions on gambling in or near the Campo San Barnaba and some will even sell their votes to anyone willing to pay. Sometimes referred to as Barnabotti, after the Campo in which they reside, this group is still not a great problem. If this development continues, however, it might well undermine the Great Council and unduly increase the power of those with the money to pay for votes.
+** picture = DEBATE_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** 0 "Constantinople:
+**** The province is not owned by 0 "Byzantium
+**** The province is not owned by 0 "Venice
+*** Year is at least 1550
+*** Any of the following:
+**** Has the country modifier "0 "Expansion of the Great Council of Venice"
+**** 0 "Crete:
+***** The province is owned by 0 "Ottomans
+*** has_government_attribute = is_merchant_republic
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "They surely won't be a problem for long with those habits.:
+*** Changes the influence of 0 "The Traders by 20
+*** Adds the modifier "0 "Barnabotti" for the rest of the campaign:
+**** Republican tradition is at least -0.1
+**** +10% stability cost modifier
+**** mr_traders_influence = 0.05 #Vote Buying
+* Gets the country event:
+** ID is flavor_ven.28
+** title = 0 "Accademia della Guidecca
+** desc = 0 "The impoverished Barnabotti remain a big problem for our political system. Part of the problem seems to be that once they have lost everything these nobles are unlikely to rise again. If we could provide means for them to restore the former glories of their families they might once again become productive members of our society. Doing that is, however, not popular among those who would rather rely on their bought votes or who would fear more competition.\nRecently a relatively harmless proposition was put forward however, a school could be created for the children of the nobles to ensure that they are given a proper education that their parents might not be able to afford. This would also allow at least a few select of them to rise above their original status and do useful things for the state again.
+** picture = GREAT_BUILDING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Has the country modifier "0 "Barnabotti"
+*** Year is at least 1650
+*** Year is less than 1670
+*** has_government_attribute = is_merchant_republic
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Create the Accademia della Guidecca:
+*** Changes the influence of 0 "The Aristocrats by 10
+*** Adds the modifier "0 "Accademia della Guidecca" for the rest of the campaign:
+**** Republican tradition is at least 0.2
+*** Modifies treasury by -0.1 years worth of income
+** Option: 0 "They should be content with their pensions.:
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_ven.29
+** title = 0 "Renier Zen
+** desc = 0 "A conflict has arisen between the Council of Ten and one of its members. Renier Zen is accusing the other members of the Council of Ten and the Doge of corruption. He claims that the Doge has been using his positions to enrich himself and to bestow important offices on his relatives.\nAfter a failed assassination attempt on Zen the conflict has spread outside of the Council of Ten and poor nobles have been gathering to support Zen while the higher aristocracy supports the Ten and the Doge.
+** picture = DEBATE_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1600
+*** Year is less than 1650
+*** has_government_attribute = is_merchant_republic
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "The Doge must be deposed!:
+*** Changes republican tradition by 3000%
+*** Changes stability by -2
+*** Kills the ruler of the country
+*** If:
+**** Limited to:
+***** corruption = 0.01
+**** add_corruption = -2
+*** Changes the influence of 0 "The Traders by 40
+*** If:
+**** Limited to:
+***** Has the country modifier "0 "Strengthened Council of Ten"
+**** Removes the country modifier "0 "Strengthened Council of Ten"
+** Option: 0 "Have Zen arrested but replace the members of the Ten as well.:
+*** Changes stability by -1
+*** Changes administrative power stored by -50
+*** Changes diplomatic power stored by -50
+*** add_corruption = 0.5
+*** If:
+**** Limited to:
+***** Has the country modifier "0 "Strengthened Council of Ten"
+**** Removes the country modifier "0 "Strengthened Council of Ten"
+** Option: 0 "Support the Doge and the Ten.:
+*** Changes stability by -2
+*** Changes administrative power stored by 50
+*** Changes diplomatic power stored by 50
+*** Changes republican tradition by -2500%
+*** add_corruption = 1
+*** Changes the influence of 0 "The Aristocrats by 40
+*** If:
+**** Limited to:
+***** Has the country modifier "0 "Restrained Council of Ten"
+**** Removes the country modifier "0 "Restrained Council of Ten"
+* Gets the country event:
+** ID is flavor_ven.30
+** title = 0 "The Great Plague of $YEAR$
+** desc = 0 "Our city has always been at danger of great epidemics and as another plague outbreak washes over northern Italy, Venice has been hit unusually hard. Almost one third of our population has been lost. The disease strikes at poor and rich alike and we have lost many men of quality. The number of nobles on the Great Council has also decreased sharply shaking the political foundation of our Republic.
+** picture = PLAGUE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1628
+*** Year is less than 1635
+*** Owns 0 "Venezia
+*** 0 "Venezia:
+**** Does not have the province modifier "0 "Recovering from the Plague"
+** Mean time to happen
+*** Base mean time to happen of 21 months
+** Option: 0 "Ok.:
+*** 0 "Venezia:
+**** Changes base tax by -1
+*** Changes stability by -1
+*** Sets the country flag ven_great_plague
+*** Changes the influence of 0 "The Traders by -10
+* Gets the country event:
+** ID is flavor_ven.31
+** title = 0 "Dwindling Nobility
+** desc = 0 "Ever since the Great Plague of the 1630s we have had problems filling the positions of the Venetian government. Conferring nobility on new people must be done with care, however, as any new member of the Great Council will have a vote a dramatic amount of newcomers might lead to entirely unpredictable results. It has been suggested that the best way to vet candidates for membership is to try their willingness to contribute to the state. A number of richer families might be ennobled if they contribute a good sum to the treasury. Those without wealth are simply not the kind of people we would want to decide the fate of our Republic.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1645
+*** Year is less than 1720
+*** Has the country flag ven_great_plague
+*** has_government_attribute = is_merchant_republic
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Let us create more nobles!:
+*** Changes republican tradition by 1000%
+*** Changes prestige by -15
+*** Adds the modifier "0 "Nobility for Sale" for the rest of the campaign:
+**** +0.05 #Income from sold titles% global tax modifier
+**** mr_traders_influence = 0.02
+** Option: 0 "This isn't that big a problem.:
+*** add_stability_or_adm_power = yes
+*** Changes prestige by 15
+* Gets the country event:
+** ID is flavor_ven.32
+** title = 0 "Aldus Manutius & the Aldine Press
+** desc = 0 "Commercial book printing is still a technique in its infancy but one of its foremost pioneers can be found in the city of Venice. Aldus Manutius and his printing office, the Aldine Press have gained a reputation for their consistent and clear typography and their well executed translations from Latin. Italics as well as a consistent way to use semicolons are among Manutius contributions to the field of typography. To the field of bookbinding Manutius has contributed the easily handled Octavo format, making sure that the classics leaving his printing press are portable rather than attempting to emulate the format of the medieval manuscript.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1498
+*** Year is less than 1515
+** Mean time to happen
+*** Base mean time to happen of 51 months
+** Option: 0 "Festina Lente!:
+*** Changes administrative power stored by 50
+*** Changes prestige by 10
+*** Sets the country flag ven_aldus_manutius
+* Gets the country event:
+** ID is flavor_ven.33
+** title = 0 "Growth of the Murano Glass Industry
+** desc = 0 "Since the late 13th century the Venetian glass-making industry has been confined to the island of Murano in order to lessen the risk of fire. The popularity of the Murano glass has only continued to increase since then and the glassblowers have become both rich and influential. The secrets of how to produce such exquisite products are known to few outside of our borders and in order to safeguard this knowledge the glassblowers are confined to the city.\nAs the popularity of Venetian glass continues to increase the world is changing. With the fall of Constantinople a great number of men possessing the rare skills needed in glass-making are requesting to be allowed to settle down on Murano.
+** picture = HARBOUR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** 0 "Constantinople:
+**** The province is not owned by 0 "Byzantium
+**** The province is not owned by 0 "Venice
+*** Owns 0 "Venezia
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Welcome the Byzantine Glassblowers.:
+*** Modifies treasury by 0.1 years worth of income
+*** Changes prestige by 5
+*** 0 "Venezia:
+**** Adds the modifier "0 "Murano Glass Industry" for the rest of the campaign:
+***** +200% trade goods output
+***** mr_guilds_influence = 0.02
+** Option: 0 "Support our own Glassblower families instead:
+*** Changes the influence of 0 "The Guilds by 30
+*** Adds 200% mercantilism
+*** 0 "Venezia:
+**** Adds the modifier "0 "Murano Glass Industry" for the rest of the campaign:
+***** +200% trade goods output
+***** mr_guilds_influence = 0.02
+* Gets the country event:
+** ID is flavor_ven.34
+** title = 0 "The Ciocca
+** desc = 0 "A particularly skilled Murano glassblower named Giuseppe Briati has managed to create glass objects unlike anything seen before in Venice. The Ciocca chandeliers in particular, named after the flower bouquets which they are shaped to resemble, have grown immensely popular among the well to do and the Venetian glass industry is booming once again
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1730
+*** Year is less than 1770
+*** Owns 0 "Venezia
+*** 0 "Venezia:
+**** Has the province modifier "0 "Murano Glass Industry"
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Ok.:
+*** Changes prestige by 15
+*** Changes diplomatic power stored by 25
+* Gets the country event:
+** ID is flavor_ven.35
+** title = 0 "The trial of Veronica Franco
+** desc = 0 "One of the most famous of Venice's 'honest courtesans' Veronica Franco now stands trial for witchcraft in the city. Famed for her intellect as well as her beauty Franco's influence over her clients and her outspoken participation in the artistic and literary life of Venice has earned her many enemies.\nHaving delivered a very eloquent defense before the inquisition it now remains to be seen if Franco's intellect is sharp enough to protect her against the guardians of morality.
+** picture = DEBATE_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1570
+*** Year is less than 1590
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Guilty!:
+*** add_stability_or_adm_power = yes
+*** Changes prestige by -10
+** Option: 0 "Innocent!:
+*** Changes prestige by 10
+*** Changes diplomatic power stored by 50
+* Gets the country event:
+** ID is flavor_ven.36
+** title = 0 "Gondola Extravagance
+** desc = 0 "The public morality must always be safeguarded by the Venetian government and so from time to time laws are created to make sure our people stay true to the Christian ideals on which our city is built. The Gondola is a simple enough vessel and thousands of them ferry people around on the canals of Venice every day. As so often the many rich and powerful families of our Republic have found the temptation to flaunt their wealth hard to resist. Gondolas come in all kinds of sizes and colors and some are so over-decorated that they are an affront to any true Christian mind.\nIt is now being debated if a law should forbid the decoration of these Gondolas as to some they are a symbol of all that is wrong in our great city.
+** picture = ARTWORK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1550
+*** Year is less than 1580
+** Mean time to happen
+*** Base mean time to happen of 90 months
+** Option: 0 "Paint them Black!:
+*** 0 "Venezia:
+**** Adds the modifier "0 "Black Gondolas" until the end of the campaign:
+***** local_unrest = -1
+** Option: 0 "Disregard the moralists, the Gondolas are impressive.:
+*** add_stability_or_adm_power = yes
+*** Changes prestige by 10
+* Gets the country event:
+** ID is flavor_ven.37
+** title = 0 "The Venetian School
+** desc = 0 "Venice, for centuries the foremost city of printing and glass-making in Italy, have begun to surpass or at least compete with Rome as the foremost city of art and music. Great painters such as Tintoretto, Titian, Veronese or musicians like Monteverdi, Gabrieli or Donati are but a few of the many artists that work and live in our city. In Italy and abroad Venice have begun to become synonymous art.
+** picture = ARTWORK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** Year is at least 1550
+*** Year is less than 1610
+** Mean time to happen
+*** Base mean time to happen of 180 months
+** Option: 0 "Ok.:
+*** Adds the modifier "0 "Venetian School" for the rest of the campaign:
+**** +1 prestige
+* Gets the country event:
+** ID is flavor_ven.38
+** title = 0 "Dissolution of the Great Council
+** desc = 0 "As Venice leaves republicanism behind her the great council is disbanded.
+** picture = ARTWORK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Venice
+*** not:
+**** Has the republic government type
+*** Any of the following:
+**** Has the country modifier "0 "Nobility for Sale"
+**** Has the country modifier "0 "Accademia della Guidecca"
+**** Has the country modifier "0 "Barnabotti"
+**** Has the country modifier "0 "Expansion of the Great Council of Venice"
+**** Has the country modifier "0 "Restrained Council of Ten"
+**** Has the country modifier "0 "Strengthened Council of Ten"
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Option: 0 "Ok.:
+*** If:
+**** Limited to:
+***** Has the country modifier "0 "Nobility for Sale"
+**** Removes the country modifier "0 "Nobility for Sale"
+*** If:
+**** Limited to:
+***** Has the country modifier "0 "Accademia della Guidecca"
+**** Removes the country modifier "0 "Accademia della Guidecca"
+*** If:
+**** Limited to:
+***** Has the country modifier "0 "Barnabotti"
+**** Removes the country modifier "0 "Barnabotti"
+*** If:
+**** Limited to:
+***** Has the country modifier "0 "Expansion of the Great Council of Venice"
+**** Removes the country modifier "0 "Restrained Council of Ten"
+*** If:
+**** Limited to:
+***** Has the country modifier "0 "Strengthened Council of Ten"
+**** Removes the country modifier "0 "Strengthened Council of Ten"
+*** If:
+**** Limited to:
+***** Has the country modifier "0 "Nobility for Sale"
+**** Removes the country modifier "0 "Nobility for Sale"

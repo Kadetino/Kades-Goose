@@ -1,0 +1,159 @@
+
+=== 0 "Religious Civil Disorder ===
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag active_religious_turmoil
+
+'''Option: 0 "Eradicate the heretics to bring peace:'''
+
+* Random owned province:
+** Limited to:
+*** Is in the 0 "Christian religion group
+*** Does not follow the religion of its owner
+** Spawns revolt of size 3 of 0 "Religious rebels
+* If:
+** Limited to:
+*** has_disaster = 0 "Religious Turmoil
+** Adds the modifier "0 "Intolerant Society" for the rest of the campaign:
+*** +2% global heretic missionary strength
+*** -2 tolerance of heretics
+
+'''Option: 0 "We should strive for a tolerant society:'''
+
+* If:
+** Limited to:
+*** has_disaster = 0 "Religious Turmoil
+** Adds the modifier "0 "Tolerant Society" for the rest of the campaign:
+*** +50% stability cost modifier
+*** +1 tolerance of heretics
+
+=== 0 "End of Religious Turmoil ===
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Removes the country flag active_religious_turmoil
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "One Faith!:'''
+
+* add_stability_or_adm_power = yes
+* Sets the country flag had_religious_turmoil
+* Removes the country modifier "0 "Intolerant Society"
+* Removes the country modifier "0 "Tolerant Society"
+
+=== 0 "Growing Number of Heretics ===
+
+'''Trigger:'''
+
+* Has the country modifier "0 "Intolerant Society"
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Banish the nonconformists:'''
+
+* AI chance:
+** Base chance of 10
+* Random heretic province:
+** Spawns revolt of size 2 of 0 "Religious rebels
+
+'''Option: 0 "Increase funding to convert the heretics:'''
+
+* AI chance:
+** Base chance of 90
+* Modifies treasury by -0.25 years worth of income
+
+=== 0 "Heretic Subjugation ===
+
+'''Trigger:'''
+
+* Has the country modifier "0 "Intolerant Society"
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Increase funding to suppress the heretics:'''
+
+* Modifies treasury by -0.33 years worth of income
+
+'''Option: 0 "Ignore them:'''
+
+* Every heretic province:
+** add_unrest = 3
+
+=== 0 "Rise of Religious Intolerance ===
+
+'''Trigger:'''
+
+* Has the country modifier "0 "Tolerant Society"
+* Any heretic province:
+** The province is not the capital of the country
+** The province is not currently being converted
+** Can spawn the 0 "Heretic rebel type
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "The heretics must be suppressed:'''
+
+* AI chance:
+** Base chance of 90
+* Random heretic province:
+** Limited to:
+*** The province is not currently being converted
+*** Can spawn the 0 "Heretic rebel type
+** Spawns 3 revolt size of heretic rebels
+
+'''Option: 0 "We have to convert them to the one true faith:'''
+
+* AI chance:
+** Base chance of 10
+* Random heretic province:
+** Limited to:
+*** The province is not the capital of the country
+*** The province is not currently being converted
+*** Can spawn the 0 "Heretic rebel type
+** Changes religion to our country
+** add_local_autonomy = 20
+
+=== 0 "Empty Words ===
+
+'''Trigger:'''
+
+* Has the country modifier "0 "Tolerant Society"
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Our time is better spent elsewhere:'''
+
+* Every heretic province:
+** add_unrest = 1
+* Random heretic province:
+** Spawns 2 revolt size of heretic rebels
+
+'''Option: 0 "Issue a new edict:'''
+
+* Changes administrative power stored by -25
+* Changes diplomatic power stored by -25
+* Changes military power stored by -25

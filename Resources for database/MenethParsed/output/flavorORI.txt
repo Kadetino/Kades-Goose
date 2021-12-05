@@ -1,0 +1,325 @@
+** Trigger:
+*** Any of the following:
+**** Has the country flag ori_jagannath_mission_flag
+**** All of the following:
+***** has_mission_false = ori_jagannath_mission
+***** Ruler's dynasty is Gajapati
+***** Owns 0 "Cuttack
+***** Year is less than 1560
+***** Country is 0 "Orissa
+** Mean time to happen
+*** Base mean time to happen of 348 months
+** Option: flavor_ori.1.a:
+*** Trigger:
+**** Does not have the country flag ori_jagannath_mission_flag
+*** AI chance:
+**** Base chance of 90
+*** Modifies treasury by -0.1 years worth of income
+*** Adds the modifier "ori_jagannath_cult" for the rest of the campaign:
+**** -5% global tax modifier
+**** +1 tolerance of the true faith
+**** Follows the yes religion
+** Option: flavor_ori.1.b:
+*** Trigger:
+**** Does not have the country flag ori_jagannath_mission_flag
+*** AI chance:
+**** Base chance of 10
+*** add_stability_or_adm_power = yes
+** Option: flavor_ori.1.a:
+*** Trigger:
+**** Has the country flag ori_jagannath_mission_flag
+*** Adds the modifier "0 "Jagannath" for the rest of the campaign:
+* Gets the country event:
+** ID is flavor_ori.2
+** title = flavor_ori.2.t
+** desc = flavor_ori.2.d
+** picture = FARMING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Orissa
+*** Ruler's name is Kapilendra
+*** not:
+**** Year is at least 1466
+** Mean time to happen
+*** Base mean time to happen of 66 months
+** Option: flavor_ori.2.a:
+*** AI chance:
+**** Base chance of 95
+*** Modifies treasury by -0.1 years worth of income
+*** Adds the modifier "ori_no_salt_tax" for 10 years:
+**** Trade efficiency is at least -5%
+**** -1 global unrest
+**** Legitimacy is at least 0.5
+** Option: flavor_ori.2.b:
+*** AI chance:
+**** Base chance of 5
+*** Modifies treasury by 0.1 years worth of income
+*** Adds the modifier "ori_popular_unrest" for 10 years:
+**** +2 global unrest
+* Gets the country event:
+** ID is flavor_ori.3
+** title = flavor_ori.3.t
+** desc = flavor_ori.3.d
+** picture = KING_SICK_IN_BED_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Orissa
+*** Year is at least 1460
+*** Year is less than 1470
+*** Ruler's name is Kapilendra
+*** Has at least 9 provinces
+*** Owns 0 "Velanadu
+*** Owns 0 "Konaseema
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Culture is 0 "Telugu
+***** Sets the province flag ori_center_of_hamviras_revolt
+**** Every owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Culture is 0 "Telugu
+****** Does not have the province flag ori_center_of_hamviras_revolt
+***** Sets the province flag ori_hamviras_revolt
+**** Random owned province:
+***** Limited to:
+****** The province is the capital of the country
+***** Sets the province flag ori_center_of_puroshottama_revolt
+**** Every owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Culture is 0 "Oriya
+****** Does not have the province flag ori_center_of_puroshottama_revolt
+***** Sets the province flag ori_puroshottama_revolt
+** Option: flavor_ori.3.a:
+*** AI chance:
+**** Base chance of 95
+*** Hidden effect:
+**** Kills the heir of the country
+***** allow_new_heir_false = no
+**** Every neighbor country:
+***** Limited to:
+****** Country is not 0 "Bahmanis
+***** Gets the country event:
+****** ID is flavor_ori.4
+**** If:
+***** Limited to:
+****** Any of the following:
+******* 0 "Mahur:
+******** The province is owned by 0 "Bahmanis
+******* 0 "Golconda:
+******** The province is owned by 0 "Bahmanis
+******* 0 "Warangal:
+******** The province is owned by 0 "Bahmanis
+***** 0 "Bahmanis:
+****** Gets the country event:
+******* ID is flavor_ori.5
+**** If:
+***** Limited to:
+****** 0 "Mahur:
+******* The province is not owned by 0 "Bahmanis
+****** 0 "Golconda:
+******* The province is not owned by 0 "Bahmanis
+****** 0 "Warangal:
+******* The province is not owned by 0 "Bahmanis
+***** 0 "Bahmanis:
+****** Gets the country event:
+******* ID is flavor_ori.4
+*** Spawns a ruler:
+**** Named "Purushottama"
+**** Ruler's dynasty is Gajapati
+**** Changes ruler's military skill by 5
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+*** Random owned province:
+**** Limited to:
+***** Has the province flag ori_center_of_hamviras_revolt
+**** Spawns revolt of size 0 "Hindu of 0 "Pretender rebels
+*** Every owned province:
+**** Limited to:
+***** Has the province flag ori_hamviras_revolt
+**** Adds the modifier "ori_support_for_pretender" until the end of the campaign:
+***** local_unrest = 3
+** Option: flavor_ori.3.b:
+*** AI chance:
+**** Base chance of 5
+*** Hidden effect:
+**** Kills the heir of the country
+**** Every neighbor country:
+***** Gets the country event:
+****** ID is flavor_ori.4
+*** Spawns a ruler:
+**** Named "Hamvira"
+**** Ruler's dynasty is Gajapati
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+*** Random owned province:
+**** Limited to:
+***** Has the province flag ori_center_of_puroshottama_revolt
+**** Spawns revolt of size 0 "Hindu of 0 "Pretender rebels
+*** Every owned province:
+**** Limited to:
+***** Has the province flag ori_puroshottama_revolt
+**** Adds the modifier "ori_support_for_pretender" until the end of the campaign:
+***** local_unrest = 3
+* Gets the country event:
+** ID is flavor_ori.4
+** title = flavor_ori.4.t
+** desc = flavor_ori.4.d
+** picture = KING_SICK_IN_BED_eventPicture
+** is_triggered_only = yes
+** Option: flavor_ori.4.a:
+* Gets the country event:
+** ID is flavor_ori.5
+** title = flavor_ori.5.t
+** desc = flavor_ori.5.d
+** picture = CIVIL_WAR_eventPicture
+** is_triggered_only = yes
+** Option: flavor_ori.5.a:
+*** AI chance:
+**** Base chance of 50
+**** Multiplies value by 0.25:
+***** Is at war
+*** Modifies treasury by -0.15 years worth of income
+*** 0 "Orissa:
+**** Gets the country event:
+***** ID is flavor_ori.6
+** Option: flavor_ori.5.b:
+*** AI chance:
+**** Base chance of 50
+**** Multiplies value by 0.25:
+***** Is not at war
+*** 0 "Orissa:
+**** Adds the opinion modifier "0 "Grateful" towards 0 "Bahmanis
+* Gets the country event:
+** ID is flavor_ori.6
+** title = flavor_ori.6.t
+** desc = flavor_ori.6.d
+** picture = LAND_MILITARY_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: flavor_ori.6.a:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag ori_center_of_hamviras_revolt
+**** Spawns revolt of size 0 "Hindu of 0 "Pretender rebels
+*** Every owned province:
+**** Limited to:
+***** Any of the following:
+****** Province is 0 "Velanadu
+****** Province is 0 "Warangal
+****** Province is 0 "Konaseema
+**** Adds claim to 0 "Bahmanis
+*** Sets the country flag ori_hamviras_offer_happened
+* Gets the country event:
+** ID is flavor_ori.7
+** title = flavor_ori.7.t
+** desc = flavor_ori.7.d
+** picture = LAND_MILITARY_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Trigger:
+*** Country is 0 "Orissa
+*** Has the country flag ori_hamviras_offer_happened
+*** } 
+*** Ruler's name is Hamvira
+*** Ruler's dynasty is Gajapati
+*** Any of the following:
+**** Owns 0 "Velanadu
+**** Owns 0 "Warangal
+**** Owns 0 "Konaseema
+** Option: flavor_ori.7.a:
+*** Tooltip:
+**** Every owned province:
+***** Limited to:
+****** Any of the following:
+******* Province is 0 "Velanadu
+******* Province is 0 "Warangal
+******* Province is 0 "Konaseema
+***** Cedes province to 0 "Bahmanis
+*** 0 "Bahmanis:
+**** Gets the country event:
+***** ID is flavor_ori.8
+* Gets the country event:
+** ID is flavor_ori.8
+** title = flavor_ori.8.t
+** desc = flavor_ori.8.d
+** picture = CITY_VIEW_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: flavor_ori.8.a:
+*** 0 "Orissa:
+**** Every owned province:
+***** Limited to:
+****** Any of the following:
+******* Province is 0 "Velanadu
+******* Province is 0 "Warangal
+******* Province is 0 "Konaseema
+***** Cedes province to 0 "Bahmanis
+* Gets the country event:
+** ID is flavor_ori.9
+** title = flavor_ori.9.t
+** desc = flavor_ori.9.d
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Orissa
+*** Ruler's dynasty is not Gajapati
+*** Has the country modifier "ori_jagannath_cult"
+*** Does not have the country flag ori_jagannath_mission_flag
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: flavor_ori.9.a:
+*** Removes the country modifier "ori_jagannath_cult"
+* Gets the country event:
+** ID is flavor_ori.10
+** title = flavor_ori.10.t
+** desc = flavor_ori.10.d
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Orissa
+*** Year is less than 1467
+** Mean time to happen
+*** Base mean time to happen of 69 months
+** Option: flavor_ori.10.a:
+*** Changes administrative power stored by 25
+*** Changes prestige by 15
+*** add_meritocracy_effect = yes
+*** Creates an advisor of the 0 "Theologian type:
+**** Named "Sarala Das"
+**** Culture is 0 "Oriya
+**** Follows the 0 "Hindu religion
+**** discount = yes
+**** With a skill level of 2
+* Gets the country event:
+** ID is flavor_ori.11
+** title = flavor_ori.11.t
+** desc = flavor_ori.11.d
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Orissa
+*** Owns 0 "Cuttack
+*** Year is at least 1475
+*** Year is less than 1540
+** Mean time to happen
+*** Base mean time to happen of 195 months
+** Option: flavor_ori.11.a:
+*** Changes prestige by 15
+*** Changes administrative power stored by 25
+*** add_meritocracy_effect = yes
+*** Creates an advisor of the 0 "Theologian type:
+**** Named "Achyutananda Das"
+**** Culture is 0 "Oriya
+**** Follows the 0 "Hindu religion
+**** discount = yes
+**** With a skill level of 3

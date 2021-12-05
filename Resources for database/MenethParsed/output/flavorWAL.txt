@@ -1,0 +1,154 @@
+** is_triggered_only = yes
+** Trigger:
+*** Country is 0 "Wallachia
+*** Year is less than 1477
+** Option: 0 "We owe the Turks nothing! Let them squirm on the stakes!:
+*** Spawns a ruler:
+**** Named "Vlad Tepes"
+**** Ruler's dynasty is Draculesti
+**** Ruler's administrative skill is at least 1
+**** Ruler's diplomatic skill is at least 0
+**** Ruler's military skill is at least 5
+**** age = 23
+*** define_ruler_to_general:
+**** 3 skill in fire
+**** 4 skill in shock
+**** 4 skill in manuever
+**** 0 skill in siege
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+**** Hidden effect:
+***** add_ruler_personality = cruel_personality
+*** Changes administrative power stored by 50
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Displeased" towards our country
+** Option: 0 "Apologize to the Sultan:
+*** AI chance:
+**** Base chance of 0
+*** Random owned province:
+**** Limited to:
+***** is_in_capital_area = yes
+**** Spawns revolt of size 1 of 0 "Pretender rebels
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Good relations" towards our country
+* Gets the country event:
+** ID is flavor_wal.2
+** title = 0 "The Impalement of the [TUR.Monarch.GetTitle]
+** desc:
+*** Trigger:
+**** Is not in regency
+**** 0 "Ottomans:
+***** Is not in regency
+***** Has an heir
+*** desc = 3 "[Root.Monarch.GetName] pauses [Root.Monarch.GetHerHis] survey of the battlefield to momentarily regard the burning city of [TUR.Capital.GetName] with an unsettling dispassion.\n[Root.Monarch.GetHerHisCap] assembled retinue ready their pikes and their stomachs for the coming judgment. The soldiers raise the beaten and broken body of [TUR.Monarch.GetTitle] [TUR.Monarch.GetName] from [TUR.Monarch.GetHerHis] slumped position on the ground and prop [TUR.Monarch.GetHerHim] upright. The once majestic [TUR.Monarch.GetTitle] lets out a final chilling scream as the stake impales [TUR.Monarch.GetHerHis] heart and emerges out of [TUR.Monarch.GetHerHis] back.\n[TUR.Heir.GetTitle] [TUR.Heir.GetName] grimaces as [TUR.Heir.GetSheHe] is forced to watch the horrific display; [TUR.Heir.GetHerHis] eyes fill with terror as the realization dawns that [TUR.Heir.GetSheHe] is next.
+** desc:
+*** Trigger:
+**** Is not in regency
+**** 0 "Ottomans:
+***** Is not in regency
+***** Has no heir
+*** desc = 4 "[Root.Monarch.GetName] pauses [Root.Monarch.GetHerHis] survey of the battlefield to momentarily regard the burning city of [TUR.Capital.GetName] with an unsettling dispassion. [Root.Monarch.GetHerHisCap] assembled retinue ready their pikes and their stomachs for the coming judgment. The soldiers raise the beaten and broken body of [TUR.Monarch.GetTitle] [TUR.Monarch.GetName] from [TUR.Monarch.GetHerHis] slumped position on the ground and prop [TUR.Monarch.GetHerHim] upright. The once majestic [TUR.Monarch.GetTitle] lets out a final chilling scream as the stake impales [TUR.Monarch.GetHerHis] heart and emerges out of [TUR.Monarch.GetHerHis] back.
+** desc:
+*** Trigger:
+**** Is in regency
+**** 0 "Ottomans:
+***** Is not in regency
+***** Has an heir
+*** desc = 1 "The assembled retinue ready their pikes and their stomachs for the coming judgment. The soldiers raise the beaten and broken body of [TUR.Monarch.GetTitle] [TUR.Monarch.GetName] from [TUR.Monarch.GetHerHis] slumped position on the ground and prop [TUR.Monarch.GetHerHim] upright. The once majestic [TUR.Monarch.GetTitle] lets out a final chilling scream as the stake impales [TUR.Monarch.GetHerHis] heart and emerges out of [TUR.Monarch.GetHerHis] back.\n[TUR.Heir.GetTitle] [TUR.Heir.GetName] grimaces as [TUR.Heir.GetSheHe] is forced to watch the horrific display; [TUR.Heir.GetHerHis] eyes fill with terror as the realization dawns that [TUR.Heir.GetSheHe] is next.
+** desc:
+*** Trigger:
+**** Is not in regency
+**** 0 "Ottomans:
+***** Is in regency
+***** Has no heir
+*** desc = 1 "[Root.Monarch.GetName] pauses [Root.Monarch.GetHerHis] survey of the battlefield to momentarily regard the burning city of [TUR.Capital.GetName] with an unsettling dispassion.\n [Root.Monarch.GetHerHisCap] assembled retinue ready their pikes and their stomachs for the coming judgment. The brutal impalement of the Ottoman court begins.
+** desc:
+*** Trigger:
+**** Is not in regency
+**** 0 "Ottomans:
+***** Is in regency
+***** Has an heir
+*** desc = 1 "[Root.Monarch.GetName] pauses [Root.Monarch.GetHerHis] survey of the battlefield to momentarily regard the burning city of [TUR.Capital.GetName] with an unsettling dispassion.\n [Root.Monarch.GetHerHisCap] assembled retinue ready their pikes and their stomachs for the coming judgment. The brutal impalement of the Ottoman court begins. \n[TUR.Heir.GetTitle] [TUR.Heir.GetName] grimaces as [TUR.Heir.GetSheHe] is forced to watch the horrific display; [TUR.Heir.GetHerHis] eyes fill with terror as the realization dawns that [TUR.Heir.GetSheHe] is next.
+** desc:
+*** Trigger:
+**** Is in regency
+**** 0 "Ottomans:
+***** Is in regency
+***** Has an heir
+*** desc = 0 "The assembled retinue ready their pikes and their stomachs for the coming judgment. The brutal impalement of the Ottoman court begins. \n[TUR.Heir.GetTitle] [TUR.Heir.GetName] grimaces as [TUR.Heir.GetSheHe] is forced to watch the horrific display; [TUR.Heir.GetHerHis] eyes fill with terror as the realization dawns that [TUR.Heir.GetSheHe] is next.
+** desc:
+*** Trigger:
+**** Is in regency
+**** 0 "Ottomans:
+***** Is not in regency
+***** Has no heir
+*** desc = 1 "The assembled retinue ready their pikes and their stomachs for the coming judgment. The brutal impalement of the Ottoman court begins. The soldiers raise the beaten and broken body of [TUR.Monarch.GetTitle] [TUR.Monarch.GetName] from [TUR.Monarch.GetHerHis] slumped position on the ground and prop [TUR.Monarch.GetHerHim] upright. The once majestic [TUR.Monarch.GetTitle] lets out a final chilling scream as the stake impales [TUR.Monarch.GetHerHis] heart and emerges out of [TUR.Monarch.GetHerHis] back.
+** desc:
+*** Trigger:
+**** Is in regency
+**** 0 "Ottomans:
+***** Is in regency
+***** Has no heir
+*** desc = 0 "The assembled retinue ready their pikes and their stomachs for the coming judgment. The brutal impalement of the Ottoman court begins.
+** picture = IMPALED_SOLDIERS_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "Their gruesome end was well deserved.:
+*** 0 "Ottomans:
+**** Tooltip:
+***** If:
+****** Limited to:
+******* Is not in regency
+****** Kills the ruler of the country
+***** If:
+****** Limited to:
+******* Has an heir
+****** Kills the heir of the country
+***** If:
+****** Limited to:
+******* has_consort = yes
+****** remove_consort = yes
+***** Capital:
+****** add_devastation = 20
+***** Adds the opinion modifier "0 "Impaled our Sultan" towards our country
+**** Every rival country:
+***** Limited to:
+****** Country is not 0 "The Papal State
+***** Adds the opinion modifier "0 "Impaled the Sultan" towards our country
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_wal.3
+****** Base mean time to happen of 1 days
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Impaled the Sultan" towards our country
+* Gets the country event:
+** ID is flavor_wal.3
+** title = 0 "The Sultan's Impalement
+** desc = 0 "The cruel barbarians of [From.Country.GetName] have murdered our noble [Root.Monarch.GetTitle] alongside [Root.Monarch.GetHerHis] children and harem in a most inhuman fashion. Their bodies stand impaled on a hill overlooking the burning city of [Root.Capital.GetName].
+** picture = IMPALED_SOLDIERS_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Mean time to happen
+*** Base mean time to happen of 1 days
+** Option: 0 "These monstrous savages will pay for this!:
+*** If:
+**** Limited to:
+***** has_consort = yes
+**** remove_consort = yes
+*** If:
+**** Limited to:
+***** Is not in regency
+**** Kills the ruler of the country
+*** If:
+**** Limited to:
+***** Has an heir
+**** Kills the heir of the country
+***** allow_new_heir_false = no
+*** Capital:
+**** add_devastation = 20
+*** Adds the opinion modifier "0 "Impaled our Sultan" towards our country

@@ -1,0 +1,43 @@
+******** Trigger:
+********* The owner of the province:
+********** Overextension is at least 101%
+********* Does not have the province modifier "0 "Rebel Sentiment"
+********* The province is not a colony
+********* Most likely rebel type is 0 "Separatists
+******** Mean time to happen
+********* Base mean time to happen of 780 months
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** Overextension is at least 150%
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** Overextension is at least 200%
+********* Multiplies value by 0.75:
+********** The owner of the province:
+*********** Stability is lower than 0
+********* Multiplies value by 0.75:
+********** The owner of the province:
+*********** Stability is lower than -1
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** legitimacy_or_horde_unity = 95
+********* Multiplies value by 1.1:
+********** The owner of the province:
+*********** Stability is at least 2
+********* Multiplies value by 1.4:
+********** The owner of the province:
+*********** Stability is at least 3
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Overextension is less than 110%
+******** Option: 0 "A minor inconvenience:
+********* Adds the modifier "0 "Rebel Sentiment" until the end of the campaign:
+********** local_unrest = 15
+********* Random bordering province:
+********** Limited to:
+*********** The province is owned by our country
+*********** Does not have the province modifier "0 "Rebel Sentiment"
+*********** The province is not a colony
+*********** Most likely rebel type is 0 "Separatists
+********** Adds the modifier "0 "Rebel Sentiment" until the end of the campaign:
+*********** local_unrest = 15

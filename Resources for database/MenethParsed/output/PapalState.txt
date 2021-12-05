@@ -1,0 +1,213 @@
+******** Trigger:
+********* The Papacy is enabled
+********* Owns 0 "Roma
+********* normal_or_historical_nations = yes
+********* Follows the 0 "Catholic religion
+********* Country is not 0 "Italy
+********* Country is not 0 "Roman Empire
+********* Country is not 0 "Holy Roman Empire
+********* 0 "The Papal State does not exist
+********* Does not have the country flag no_support
+******** Mean time to happen
+********* Base mean time to happen of 2 months
+********* Multiplies value by 0.95:
+********** Has at least 1 cardinals
+********* Multiplies value by 0.95:
+********** Has at least 2 cardinals
+********* Multiplies value by 0.75:
+********** Has the idea group 0 "Religious Ideas
+********* Multiplies value by 0.9:
+********** Is the defender of the faith
+********* Multiplies value by 1.1:
+********** Isn't the defender of the faith
+********* Multiplies value by 1.1:
+********** Does not have a 0 "Theologian advisor
+********* Multiplies value by 0.9:
+********** Has a Theologian with a skill of at least 2
+******** Option: 0 "We will never support such a state:
+********* AI chance:
+********** Base chance of 25
+********* Changes prestige by -10
+********* Changes stability by -1
+********* Every country:
+********** Limited to:
+*********** Follows the 0 "Catholic religion
+*********** Country is not our country
+********** Adds the opinion modifier "0 "Declined to make Rome an Independent State" towards our country
+********* Sets the country flag no_support
+******** Option: 0 "Rome is rightfully theirs:
+********* AI chance:
+********** Base chance of 75
+********** Multiplies value by 0:
+*********** Has core on 0 "Roma
+********* 0 "Roma:
+********** Gives 0 "The Papal State core on the province
+********** Cedes province to 0 "The Papal State
+********** If:
+*********** Limited to:
+************ Has core on our country
+*********** Removes core on our country
+********* Changes prestige by 25
+********* 0 "The Papal State:
+********** Changes religion to 0 "Catholic
+******* Gets the country event:
+******** ID is 1082
+******** title = 0 "The Papal State
+******** desc = 0 "It truly saddens us to see that the dominions of the Pope have all but disappeared. Our strong devotion makes us the ideal candidate responsible for establishing a new Papal State. Perhaps we should cede a province of ours?
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* The Papacy is enabled
+********* 0 "The Papal State does not exist
+********* 0 "Italy does not exist
+********* Follows the 0 "Catholic religion
+********* Has the theocracy government type
+********* has_ruler_flag_false = refused_papacy
+********* Is not at war
+********* Country is not 0 "Teutonic Order
+********* Country is not 0 "Livonian Order
+********* Has at least 2 provinces
+********* Has less than 5 provinces
+********* Any owned province:
+********** The province is not the capital of the country
+********** Follows the 0 "Catholic religion
+********** In the continent 0 "Europe
+********* 0 "Roma:
+********** The owner of the province:
+*********** Any of the following:
+************ Does not follow the 0 "Catholic religion
+************ Has the country flag no_support
+******** Mean time to happen
+********* Base mean time to happen of 6 months
+********* Multiplies value by 0.5:
+********** Country is 0 "Avignon
+********* Multiplies value by 2.0:
+********** Capital:
+*********** Does not follow the 0 "Catholic religion
+********* Multiplies value by 0.95:
+********** Has a Theologian with a skill of at least 3
+********* Multiplies value by 0.75:
+********** Has less than 3 provinces
+********* Multiplies value by 0.5:
+********** Has less than 2 provinces
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ Follows the 0 "Catholic religion
+************ In the continent 0 "Europe
+************ Any bordering province:
+************* The province is not owned by our country
+*********** Sets the province flag papal_province
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ Follows the 0 "Catholic religion
+************ In the continent 0 "Europe
+************ The owner of the province:
+************** No owned province:
+*************** Has the province flag papal_province
+*********** Sets the province flag papal_province
+******** Option: 0 "For the Glory of God!:
+********* AI chance:
+********** Base chance of 100
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag papal_province
+********** Removes core on our country
+********** Gives 0 "The Papal State core on the province
+********** Cedes province to 0 "The Papal State
+********** Removes the province flag papal_province
+********* Changes Papal Influence by 20
+********* Changes prestige by 25
+********* 0 "The Papal State:
+********** Changes religion to 0 "Catholic
+******** Option: 0 "Perhaps not.:
+********* AI chance:
+********** Base chance of 0
+********* set_ruler_flag = refused_papacy
+********* Changes prestige by -25
+******* Gets the country event:
+******** ID is 1083
+******** title = 0 "Lacking Support
+******** desc = 0 "For reasons unknown, some of the cardinals have begun to question your decisions more and more lately, it almost seems like they are beginning to lose faith in your ability to govern the Catholic Church.
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* Does not have the country flag unsupportive_cardinals
+********* has_reform = papacy_reform
+********* Overextension is at least 25%
+******** Mean time to happen
+********* Base mean time to happen of 180 months
+********* Multiplies value by 0.9:
+********** Ruler's diplomatic skill is less than 1
+********* Multiplies value by 0.9:
+********** Ruler's administrative skill is less than 1
+********* Multiplies value by 1.1:
+********** Ruler's administrative skill is at least 4
+********* Multiplies value by 1.1:
+********** Ruler's administrative skill is at least 5
+********* Multiplies value by 1.1:
+********** Ruler's administrative skill is at least 6
+********* Multiplies value by 1.1:
+********** Stability is at least 2
+********* Multiplies value by 1.1:
+********** Stability is at least 3
+********* Multiplies value by 0.9:
+********** Stability is lower than -1
+********* Multiplies value by 0.9:
+********** Stability is lower than -2
+******** Option: 0 "Hire someone to investigate the matter:
+********* AI chance:
+********** Base chance of 55
+********* Sets the country flag unsupportive_cardinals
+********* Adds the modifier "0 "Investigating Spies" for 5 years:
+********** +20% spy offense
+********* Changes treasury by -25 ducats
+******** Option: 0 "Just try to prove them wrong:
+********* AI chance:
+********** Base chance of 45
+********* Sets the country flag unsupportive_cardinals
+********* One of the following will happen:
+********** 50 relative chance:
+*********** Changes prestige by 5
+********** 50 relative chance:
+*********** Changes prestige by -5
+******* Gets the country event:
+******** ID is 1084
+******** title = 0 "Possible Infiltrator
+******** desc = 0 "According to one of your closest advisors, a spy has managed to infiltrate the Sacred College of Cardinals. Unless you think you can trust the advisor, perhaps you should ask them to provide you with some evidence?
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* Does not have the country flag cardinal_infiltrator
+********* has_reform = papacy_reform
+********* Ruler's administrative skill is less than 1
+******** Mean time to happen
+********* Base mean time to happen of 180 months
+********* Multiplies value by 1.1:
+********** Has the 0 "Spymaster advisor
+********* Multiplies value by 1.1:
+********** Has a Spymaster with a skill of at least 2
+********* Multiplies value by 1.1:
+********** Has a Spymaster with a skill of at least 3
+********* Multiplies value by 0.9:
+********** Stability is lower than -1
+********* Multiplies value by 0.9:
+********** Stability is lower than -2
+********* Multiplies value by 1.1:
+********** Stability is at least 3
+********* Multiplies value by 1.1:
+********** Stability is at least 2
+******** Option: 0 "Take their word for it:
+********* AI chance:
+********** Base chance of 55
+********* Sets the country flag cardinal_infiltrator
+********* Randomized by 
+********** Acquisition chance:
+********** Changes stability by -1
+******** Option: 0 "Ask for some proof:
+********* AI chance:
+********** Base chance of 45
+********* Sets the country flag cardinal_infiltrator
+********* Adds the modifier "0 "Infiltrator" for 2 years:
+********** -10% global spy defence
+********** -10% fort defence

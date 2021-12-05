@@ -1,0 +1,44 @@
+
+=== title = flavor_cha.1.t ===
+* Cannot fire randomly
+
+'''Option: flavor_cha.1.a:'''
+
+* AI chance:
+** Base chance of 1
+* Changes religion to 0 "Sunni
+* If:
+** Limited to:
+*** Capital:
+**** Does not follow the 0 "Sunni religion
+** Capital:
+*** Changes religion to 0 "Sunni
+* Random owned province:
+** Limited to:
+*** Does not follow the 0 "Sunni religion
+** Changes religion to 0 "Sunni
+* Random owned province:
+** Limited to:
+*** Does not follow the 0 "Sunni religion
+** Changes religion to 0 "Sunni
+* Every known country:
+** Limited to:
+*** Culture group is 0 "Malay
+*** Follows the 0 "Sunni religion
+** Adds the opinion modifier "opinion_champa_islam" towards our country
+
+'''Option: flavor_cha.1.b:'''
+
+* AI chance:
+** Base chance of 0
+* Trigger:
+** Does not follow the 0 "Sunni religion
+* add_stability_or_adm_power = yes
+* If:
+** Limited to:
+*** Follows the 0 "Hindu religion
+** Every known country:
+*** Limited to:
+**** Culture group is 0 "Malay
+**** Follows the 0 "Hindu religion
+*** Adds the opinion modifier "opinion_champa_hindu" towards our country

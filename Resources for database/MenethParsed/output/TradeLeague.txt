@@ -1,0 +1,370 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_trade_league_leader = yes
+********* Does not have the country modifier "0 "Friction Among Troops"
+******** Option: trade_league.1.a:
+********* Changes prestige by -10
+********* Random known country:
+********** Limited to:
+*********** is_in_trade_league_with = our country
+********** Adds the opinion modifier "punished_soldiers" towards our country
+******** Option: trade_league.1.b:
+********* Adds the modifier "0 "Friction Among Troops" for 10 years:
+********** -10% land morale
+******* Gets the country event:
+******** ID is trade_league.2
+******** title = trade_league.2.t
+******** desc = trade_league.2.d
+******** picture = CORRUPTION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_trade_league_leader = yes
+********* Does not have the country modifier "0 "Merchants Angered"
+********* Any active trade node:
+********** has_merchant = PREV
+********** }
+******** Option: trade_league.2.a:
+********* add_corruption = 0.5
+******** Option: trade_league.2.b:
+********* One of the following will happen:
+********** 50 relative chance:
+*********** Random active trade node:
+************ Limited to:
+************* has_merchant = PREV
+************* }
+************ Adds trade modifier:
+************* Affecting our country
+************* Lasting 1825 days
+************* Changing trade power by -10
+************* Named "0 "Absent Merchant"
+********** 50 relative chance:
+*********** Adds the modifier "0 "Merchants Angered" for 5 years:
+************ Trade efficiency is at least -10%
+******* Gets the country event:
+******** ID is trade_league.3
+******** title = trade_league.3.t
+******** desc = trade_league.3.d
+******** picture = SHIP_SAILING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_trade_league_leader = yes
+******** Option: trade_league.3.a:
+********* Modifies treasury by 0.5 years worth of income
+********* add_corruption = 0.5
+******** Option: trade_league.3.b:
+********* Every known country:
+********** Limited to:
+*********** is_in_trade_league_with = our country
+********** Adds the opinion modifier "shared_trade_secrets" towards our country
+******* Gets the country event:
+******** ID is trade_league.4
+******** title = trade_league.4.t
+******** desc = trade_league.4.d
+******** picture = SHIP_SAILING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_trade_league_leader = yes
+******** Option: trade_league.4.a:
+********* Changes treasury by -50 ducats
+********* Random owned province:
+********** Limited to:
+*********** Is coastal
+********** Adds unit construction of the 0 "Light Ship type:
+*********** 2 will be built
+*********** It will take 50% of normal time
+*********** It will cost 0% of the normal amount
+******** Option: trade_league.4.b:
+********* Modifies treasury by -0.2 years worth of income
+********* Randomized by 
+********** Acquisition chance:
+********** Gets the country event:
+*********** ID is trade_league.6
+*********** Base mean time to happen of 14 days
+******** Option: trade_league.4.c:
+********* Trigger:
+********** Has the 0 "Spymaster advisor
+********* Changes diplomatic power stored by -25
+********* Gets the country event:
+********** ID is trade_league.5
+********** Base mean time to happen of 14 days
+******* Gets the country event:
+******** ID is trade_league.5
+******** title = trade_league.5.t
+******** desc = trade_league.5.d
+******** picture = PIRATES_CAPTURED_eventPicture
+******** is_triggered_only = yes
+******** Option: trade_league.5.a:
+********* Modifies treasury by -0.2 years worth of income
+********* Gets the country event:
+********** ID is trade_league.6
+********** Base mean time to happen of 14 days
+******** Option: trade_league.5.b:
+********* add_corruption = -1
+********* Changes prestige by 15
+******* Gets the country event:
+******** ID is trade_league.6
+******** title = trade_league.6.t
+******** desc = trade_league.6.d
+******** picture = PIRATES_CAPTURED_eventPicture
+******** is_triggered_only = yes
+******** Option: trade_league.6.a:
+********* Random owned province:
+********** Limited to:
+*********** Is coastal
+********** Spawns a light ship belonging to our country
+********** Spawns a light ship belonging to our country
+********** Spawns a light ship belonging to our country
+********** Spawns a light ship belonging to our country
+********** Spawns a light ship belonging to our country
+********* Adds the modifier "0 "Recruited Pirates" for 10 years:
+********** +33% privateer efficiency
+******** Option: trade_league.6.b:
+********* add_corruption = -1
+********* Changes prestige by 15
+********* Adds the modifier "0 "Executed Pirates" for 10 years:
+********** -2 global unrest
+******* Gets the country event:
+******** ID is trade_league.7
+******** title = trade_league.7.t
+******** desc = trade_league.7.d
+******** picture = TRADEGOODS_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_in_trade_league = yes
+********* Does not have the country modifier "0 "Cheap Timber"
+******** Option: trade_league.7.a:
+********* Adds the modifier "0 "Cheap Timber" for 10 years:
+********** -10% ship cost
+********** -10% naval maintenance
+********** -10% ship durability
+******** Option: trade_league.7.b:
+********* Modifies treasury by 0.2 years worth of income
+******* Gets the country event:
+******** ID is trade_league.8
+******** title = trade_league.8.t
+******** desc = trade_league.8.d
+******** picture = DIPLOMACY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_trade_league_leader = yes
+********* Any known country:
+********** is_in_trade_league_with = our country
+********** Any rival country:
+*********** Considers our country an enemy
+*********** Any active trade node:
+************ has_merchant = PREV
+************ Any member of the trade node:
+************* Country is our country
+******** Option: trade_league.8.a:
+********* Random known country:
+********** Limited to:
+*********** Considers our country an enemy
+*********** Any enemy country:
+************ is_in_trade_league_with = our country
+*********** Any active trade node:
+************ has_merchant = PREV
+************ Any member of the trade node:
+************* Country is our country
+********** Gives the 0 "Trade War casus belli against the country to our country
+******** Option: trade_league.8.b:
+********* Random known country:
+********** Limited to:
+*********** Considers our country an enemy
+*********** Any enemy country:
+************ is_in_trade_league_with = our country
+*********** Any active trade node:
+************ has_merchant = PREV
+************ Any member of the trade node:
+************* Country is our country
+********** Random active trade node:
+*********** Limited to:
+************ has_merchant = PREV
+************ Any member of the trade node:
+************* Country is our country
+************ }
+*********** Adds trade modifier:
+************ Affecting our country
+************ Lasting 3650 days
+************ Changing trade power by 15
+************ Named "league_encouraged_embargo"
+******** Option: trade_league.8.c:
+********* Changes prestige by 15
+******* Gets the country event:
+******** ID is trade_league.9
+******** title = trade_league.9.t
+******** desc = trade_league.9.d
+******** picture = MERCHANTS_ARGUING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_trade_league_leader = yes
+********* Any known country:
+********** is_in_trade_league_with_false = our country
+********** Any active trade node:
+*********** has_merchant = PREV
+*********** Any member of the trade node:
+************ Country is our country
+******** Immediate effects:
+********* Hidden effect:
+********** Random known country:
+*********** Limited to:
+************ is_in_trade_league_with_false = our country
+************ Any active trade node:
+************* has_merchant = PREV
+************* Any member of the trade node:
+************** Country is our country
+*********** save_event_target_as = envious_country
+******** Option: trade_league.9.a:
+********* Modifies treasury by 0.1 years worth of income
+********* event_target:envious_country:
+********** Adds the opinion modifier "demanded_compensation" towards our country
+********* Changes diplomatic power stored by -10
+******** Option: trade_league.9.b:
+********* random_trade_node:
+********** Limited to:
+*********** has_merchant = PREV
+*********** Any member of the trade node:
+************ Country is event_target:envious_country
+*********** Any member of the trade node:
+************ Country is our country
+********** Adds trade modifier:
+*********** Affecting our country
+*********** Lasting 3650 days
+*********** Changing trade power by -10
+*********** Named "0 "Absent Merchant"
+******** Option: trade_league.9.c:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is trade_league.10
+******** title = trade_league.10.t
+******** desc = trade_league.10.d
+******** picture = MERCHANTS_ARGUING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_in_trade_league = yes
+********* Any known country:
+********** is_in_trade_league_with = our country
+********** Any rival country:
+*********** is_in_trade_league_with = our country
+*********** Considers PREV a rival
+******** Immediate effects:
+********* Hidden effect:
+********** Random known country:
+*********** Limited to:
+************ is_in_trade_league_with = our country
+************ Any rival country:
+************* is_in_trade_league_with = our country
+************* Considers PREV a rival
+*********** save_event_target_as = country1
+********** Random known country:
+*********** Limited to:
+************ is_in_trade_league_with = our country
+************ Any rival country:
+************* Country is event_target:country1
+*********** save_event_target_as = country2
+******** Option: trade_league.10.a:
+********* event_target:country1:
+********** Adds the opinion modifier "sided_with_us" towards our country
+********* event_target:country2:
+********** Adds the opinion modifier "sided_against_us" towards our country
+********* Changes republican tradition by -300%
+******** Option: trade_league.10.b:
+********* event_target:country1:
+********** Adds the opinion modifier "sided_against_us" towards our country
+********* event_target:country2:
+********** Adds the opinion modifier "sided_with_us" towards our country
+********* Changes republican tradition by -300%
+******** Option: trade_league.10.c:
+********* event_target:country1:
+********** Adds the opinion modifier "refused_to_take_sides" towards our country
+********* event_target:country2:
+********** Adds the opinion modifier "refused_to_take_sides" towards our country
+********* Changes prestige by 5
+********* Changes diplomatic power stored by -20
+******* Gets the country event:
+******** ID is trade_league.11
+******** title = trade_league.11.t
+******** desc = trade_league.11.d
+******** picture = ECONOMY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_in_trade_league = yes
+********* Administrative technology is at least 6
+********* Diplomatic technology is at least 6
+******** fire_only_once = yes
+******** Option: trade_league.11.a:
+********* Adds the modifier "0 "Double Entry Bookkeeping" for 10 years:
+********** Trade efficiency is at least 10%
+******** Option: trade_league.11.b:
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is trade_league.12
+******** title = trade_league.12.t
+******** desc = trade_league.12.d
+******** picture = OVEREXTENSION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* Has the country modifier "0 "Double Entry Bookkeeping"
+******** Option: trade_league.12.a:
+********* Removes the country modifier "0 "Double Entry Bookkeeping"
+********* Changes prestige by -10
+******** Option: trade_league.12.b:
+********* add_corruption = 1
+******* Gets the country event:
+******** ID is trade_league.13
+******** title = trade_league.13.t
+******** desc = trade_league.13.d
+******** picture = SHIP_SAILING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_trade_league_leader = yes
+********* Has at least 50 ducats in the treasury
+******** Option: trade_league.13.a:
+********* Changes treasury by -50 ducats
+********* Random owned province:
+********** Limited to:
+*********** Is coastal
+********** Adds unit construction of the 0 "Heavy Ship type:
+*********** 3 will be built
+*********** It will take 50% of normal time
+*********** It will cost 0% of the normal amount
+********* Changes prestige by 5
+******** Option: trade_league.13.b:
+********* Modifies treasury by 0.2 years worth of income
+******* Gets the country event:
+******** ID is trade_league.14
+******** title = trade_league.14.t
+******** desc = trade_league.14.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Mare Nostrum
+********* is_in_trade_league = yes
+********* Follows the 0 "Catholic religion
+********* The 0 "Protestant religion is enabled
+********* The 0 "Reformed religion is enabled
+********** No known country:
+*********** is_in_trade_league_with = our country
+*********** Has the opinion modifier allowed_papal_league_advisor with our country
+******** Option: trade_league.14.a:
+********* Changes Papal Influence by 10
+********* Every known country:
+********** Limited to:
+*********** is_in_trade_league_with = our country
+*********** Any of the following:
+************ Follows the 0 "Protestant religion
+************ Follows the 0 "Reformed religion
+********** Adds the opinion modifier "allowed_papal_league_advisor" towards our country
+******** Option: trade_league.14.b:
+********* Changes Papal Influence by -10
+********* Changes prestige by 5

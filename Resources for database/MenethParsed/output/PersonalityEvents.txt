@@ -1,0 +1,2433 @@
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "scholar"
+********* has_ruler_flag_false = scholar_cartograph
+********* has_ruler_flag_false = scholar_better_guns
+********* has_ruler_flag_false = scholar_better_boats
+********* has_ruler_flag_false = scholar_alchemy
+********* has_ruler_flag_false = scholar_mediocrity
+********* has_ruler_flag_false = scholar_new_law_collection
+********* has_ruler_flag_false = scholar_theology
+********* has_ruler_flag_false = scholar_international_law
+******** Mean time to happen
+********* Base mean time to happen of 1000 months
+******** Option: personality_events.1.a:
+********* Hidden effect:
+********** One of the following will happen:
+*********** 15 relative chance:
+************ set_ruler_flag = scholar_cartograph
+*********** 10 relative chance:
+************ set_ruler_flag = scholar_better_guns
+*********** 15 relative chance:
+************ set_ruler_flag = scholar_better_boats
+*********** 10 relative chance:
+************ set_ruler_flag = scholar_alchemy
+*********** 50 relative chance:
+************ set_ruler_flag = scholar_mediocrity
+******** Option: personality_events.1.b:
+********* Hidden effect:
+********** One of the following will happen:
+*********** 20 relative chance:
+************ set_ruler_flag = scholar_new_law_collection
+*********** 20 relative chance:
+************ set_ruler_flag = scholar_theology
+*********** 10 relative chance:
+************ set_ruler_flag = scholar_international_law
+*********** 50 relative chance:
+************ set_ruler_flag = scholar_mediocrity
+******** Option: personality_events.1.c:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is personality_events.2
+******** title = personality_events.2.t
+******** desc = personality_events.2.d
+******** picture = ENLIGHTENMENT_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "scholar"
+********* has_ruler_flag = scholar_cartograph
+******** Mean time to happen
+********* Base mean time to happen of 90 months
+******** Option: personality_events.2.a:
+********* clr_ruler_flag = scholar_cartograph
+********* Changes diplomatic power stored by 50
+********* Modifies treasury by -0.1 years worth of income
+********* Random province in the world:
+********** Limited to:
+*********** Region is not ural_region
+*********** Region is not west_siberia_region
+*********** Region is not east_siberia_region
+*********** Any bordering province:
+************ Is a land province
+************ Has been discovered by our country
+*********** Is a land province
+*********** Has not been discovered by our country
+********** area:
+*********** ROOT:
+************ Discovers the PREV province
+******* Gets the country event:
+******** ID is personality_events.3
+******** title = personality_events.3.t
+******** desc = personality_events.3.d
+******** picture = ENLIGHTENMENT_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "scholar"
+********* has_ruler_flag = scholar_better_guns
+******** Mean time to happen
+********* Base mean time to happen of 90 months
+******** Option: personality_events.3.a:
+********* clr_ruler_flag = scholar_better_guns
+********* Modifies treasury by -0.1 years worth of income
+********* Adds the ruler modifier "gun_designer_ruler" until the ruler's death:
+********** +5% infantry power
+******* Gets the country event:
+******** ID is personality_events.4
+******** title = personality_events.4.t
+******** desc = personality_events.4.d
+******** picture = ENLIGHTENMENT_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "scholar"
+********* has_ruler_flag = scholar_alchemy
+******** Mean time to happen
+********* Base mean time to happen of 90 months
+******** Option: personality_events.4.a:
+********* AI chance:
+********** Base chance of 100
+********* clr_ruler_flag = scholar_alchemy
+********* Modifies treasury by -0.1 years worth of income
+********* Changes diplomatic power stored by 75
+******** Option: personality_events.4.b:
+********* AI chance:
+********** Base chance of 0
+********* Trigger:
+********** Does not have the country flag tried_to_alchemy
+********* Modifies treasury by -0.5 years worth of income
+********* Hidden effect:
+********** One of the following will happen:
+*********** 15 relative chance:
+************ Gets the country event:
+************* ID is personality_events.9
+************* Base mean time to happen of 730 days
+************ Sets the country flag tried_to_alchemy
+*********** 75 relative chance:
+************ clr_ruler_flag = scholar_alchemy
+******* Gets the country event:
+******** ID is personality_events.5
+******** title = personality_events.5.t
+******** desc = personality_events.5.d
+******** picture = ENLIGHTENMENT_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "scholar"
+********* has_ruler_flag = scholar_mediocrity
+******** Mean time to happen
+********* Base mean time to happen of 90 months
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ ruler_has_personality_ancestor:
+************* key_false = well_connected
+*********** One of the following will happen:
+************ 50 relative chance:
+************ 50 relative chance:
+************* set_ruler_flag = getting_well_connected
+******** Option: personality_events.5.a:
+********* clr_ruler_flag = scholar_mediocrity
+********* Modifies treasury by -0.1 years worth of income
+********* Changes prestige by 10
+********* Changes diplomatic power stored by 20
+******** Option: personality_events.5.b:
+********* Trigger:
+********** has_ruler_flag = getting_well_connected
+********* clr_ruler_flag = scholar_mediocrity
+********* Modifies treasury by -0.1 years worth of income
+********* remove_ruler_personality_ancestor:
+********** Named "scholar"
+********* add_ruler_personality_ancestor:
+********** Named "well_connected"
+********* clr_ruler_flag = getting_well_connected
+******* Gets the country event:
+******** ID is personality_events.6
+******** title = personality_events.6.t
+******** desc = personality_events.6.d
+******** picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "scholar"
+********* has_ruler_flag = scholar_new_law_collection
+******** Mean time to happen
+********* Base mean time to happen of 90 months
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ ruler_has_personality_ancestor:
+************* key_false = lawgiver
+*********** One of the following will happen:
+************ 50 relative chance:
+************ 50 relative chance:
+************* set_ruler_flag = can_get_lawgiver_personality
+******** Option: personality_events.6.a:
+********* clr_ruler_flag = scholar_new_law_collection
+********* Modifies treasury by -0.1 years worth of income
+********* Changes prestige by 15
+********* Changes administrative power stored by 75
+******** Option: personality_events.6.b:
+********* Trigger:
+********** has_ruler_flag = can_get_lawgiver_personality
+********* clr_ruler_flag = scholar_new_law_collection
+********* Modifies treasury by -0.1 years worth of income
+********* add_ruler_personality_ancestor:
+********** Named "lawgiver"
+********* remove_ruler_personality_ancestor:
+********** Named "scholar"
+******* Gets the country event:
+******** ID is personality_events.7
+******** title = personality_events.7.t
+******** desc = personality_events.7.d
+******** picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "scholar"
+********* has_ruler_flag = scholar_theology
+******** Immediate effects:
+********* Hidden effect:
+********** If:
+*********** Limited to:
+************ ruler_has_personality_ancestor:
+************* key_false = tolerant
+*********** One of the following will happen:
+************ 75 relative chance:
+************ 25 relative chance:
+************* set_ruler_flag = gaining_tolerance
+******** Mean time to happen
+********* Base mean time to happen of 90 months
+******** Option: personality_events.7.a:
+********* clr_ruler_flag = scholar_theology
+********* Modifies treasury by -0.1 years worth of income
+********* Changes administrative power stored by 75
+********* Adds 15 legitimacy
+********* add_devotion = 7
+********* add_horde_unity = 15
+********* Changes republican tradition by 700%
+******** Option: personality_events.7.b:
+********* Trigger:
+********** has_ruler_flag = gaining_tolerance
+********* clr_ruler_flag = scholar_theology
+********* clr_ruler_flag = gaining_tolerance
+********* Modifies treasury by -0.1 years worth of income
+********* add_ruler_personality_ancestor:
+********** Named "tolerant"
+********* remove_ruler_personality_ancestor:
+********** Named "scholar"
+******* Gets the country event:
+******** ID is personality_events.8
+******** title = personality_events.8.t
+******** desc = personality_events.8.d
+******** picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "scholar"
+********* has_ruler_flag = scholar_international_law
+******** Mean time to happen
+********* Base mean time to happen of 90 months
+******** Option: personality_events.8.a:
+********* clr_ruler_flag = scholar_international_law
+********* Changes diplomatic power stored by 100
+********* Hidden effect:
+********** Every known country:
+*********** Limited to:
+************ Is in our country's religion group
+*********** Adds the opinion modifier "0 "International Reputation" towards our country
+******* Gets the country event:
+******** ID is personality_events.9
+******** title = personality_events.9.t
+******** desc = personality_events.9.d
+******** picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Rights of Man
+********* has_ruler_flag = scholar_alchemy
+******** Immediate effects:
+********* Hidden effect:
+********** clr_ruler_flag = scholar_alchemy
+********** One of the following will happen:
+*********** 33 relative chance:
+************ Sets the country flag adm_mana_potion
+*********** 33 relative chance:
+************ Sets the country flag dip_mana_potion
+*********** 33 relative chance:
+************ Sets the country flag mil_mana_potion
+******** Option: personality_events.9.a:
+********* If:
+********** Limited to:
+*********** Has the country flag adm_mana_potion
+********** Removes the country flag adm_mana_potion
+********** Changes administrative power stored by 100
+********* If:
+********** Limited to:
+*********** Has the country flag dip_mana_potion
+********** Removes the country flag dip_mana_potion
+********** Changes diplomatic power stored by 100
+********* If:
+********** Limited to:
+*********** Has the country flag mil_mana_potion
+********** Removes the country flag mil_mana_potion
+********** Changes military power stored by 100
+******* Gets the country event:
+******** ID is personality_events.10
+******** title = personality_events.10.t
+******** desc = personality_events.10.d
+******** picture = FEUDALISM_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "just"
+********* Does not have the country modifier "just_settlement_modifier"
+********* Any owned province:
+********** is_state = yes
+********** local_autonomy = 50
+********** Has core on our country
+********** Controlled by owner
+********** Does not have the province modifier "increasing_local_authority"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.10.a:
+********* AI chance:
+********** Base chance of 40
+********* add_estate_nobles_loyalty_effect = yes
+********* Changes prestige by 10
+********* Adds the ruler modifier "just_settlement_modifier" until the ruler's death:
+********** +0.5 prestige
+******** Option: personality_events.10.b:
+********* Trigger:
+********** ruler_has_personality_false = greedy_personality
+********* AI chance:
+********** Base chance of 40
+********* Random owned province:
+********** Limited to:
+*********** local_autonomy = 50
+*********** Has core on our country
+*********** is_state = yes
+*********** Controlled by owner
+*********** Does not have the province modifier "increasing_local_authority"
+********** area:
+*********** Limited to:
+************ The province is not the capital of the country
+************ The province is owned by our country
+*********** Hidden effect:
+************ add_local_autonomy = -15
+************ Adds the modifier "increasing_local_authority" until the end of the campaign:
+************* local_autonomy = -0.05
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Totemist religion
+********** One of the following will happen:
+*********** 20 relative chance:
+************ remove_ruler_personality = just_personality
+************ add_ruler_personality = greedy_personality
+*********** 80 relative chance:
+******* Gets the country event:
+******** ID is personality_events.11
+******** title = personality_events.11.t
+******** desc = personality_events.11.d
+******** picture = ENLIGHTENMENT_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "righteous"
+********* Has at least 2 provinces
+********* Has the monarchy government type
+********* Any owned province:
+********** Does not have the province modifier "chastised_governor"
+********** Does not have the province modifier "defended_governor"
+********** Has core on our country
+********** is_state = yes
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.11.a:
+********* AI chance:
+********** Base chance of 40
+********* Adds 10 legitimacy
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Does not have the province modifier "chastised_governor"
+*********** Does not have the province modifier "defended_governor"
+*********** Has core on our country
+*********** is_state = yes
+********** area:
+*********** Limited to:
+************ The province is not the capital of the country
+************ The province is owned by our country
+************ Does not have the province modifier "chastised_governor"
+************ Does not have the province modifier "defended_governor"
+*********** Hidden effect:
+************ Adds the modifier "chastised_governor" until the end of the campaign:
+************* local_unrest = -2
+************* -25% provincial tax income
+******** Option: personality_events.11.b:
+********* Trigger:
+********** ruler_has_personality_false = greedy_personality
+********* AI chance:
+********** Base chance of 40
+********** Multiplies value by 0:
+*********** Any of the following:
+************ ruler_has_personality = malevolent_personality
+************ ruler_has_personality = obsessive_perfectionist_personality
+************ ruler_has_personality = loose_lips_personality
+************ ruler_has_personality = craven_personality
+************ ruler_has_personality = naive_personality
+************ ruler_has_personality = cruel_personality
+************ ruler_has_personality = sinner_personality
+************ ruler_has_personality = drunkard_personality
+************ ruler_has_personality = infertile_personality
+************ ruler_has_personality = embezzler_personality
+************ ruler_has_personality = babbling_buffoon_personality
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Does not have the province modifier "chastised_governor"
+*********** Does not have the province modifier "defended_governor"
+*********** Has core on our country
+*********** is_state = yes
+********** area:
+*********** Limited to:
+************ The province is not the capital of the country
+************ The province is owned by our country
+************ Does not have the province modifier "chastised_governor"
+************ Does not have the province modifier "defended_governor"
+*********** Hidden effect:
+************ Adds the modifier "defended_governor" until the end of the campaign:
+************* local_unrest = 1
+************* +25% provincial tax income
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Totemist religion
+********** One of the following will happen:
+*********** 10 relative chance:
+************ remove_ruler_personality = righteous_personality
+************ add_ruler_personality = greedy_personality
+*********** 90 relative chance:
+************ Changes prestige by 10
+******** Option: personality_events.11.c:
+********* AI chance:
+********** Base chance of 20
+********* Adds -10 legitimacy
+******* Gets the country event:
+******** ID is personality_events.12
+******** title = personality_events.12.t
+******** desc = personality_events.12.d
+******** picture = ENLIGHTENMENT_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "righteous"
+********* Has the republic government type
+********* Mercantilism is at least 200%
+********* Does not have the country modifier "true_republican_virtues_modifier"
+********* Mercantilism is less than 9800%
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.12.a:
+********* Adds the modifier "true_republican_virtues_modifier" for 10 years:
+********** yearly_corruption = -0.1
+********* Adds -200% mercantilism
+******** Option: personality_events.12.b:
+********* Trigger:
+********** Any of the following:
+*********** has_government_attribute_false = is_merchant_republic
+*********** Has less than 2 provinces
+*********** All of the following:
+************ has_government_attribute = is_merchant_republic
+************* No owned province:
+************** The province is not the capital of the country
+************** province_trade_power = 10
+********* add_corruption = 2
+********* Adds 200% mercantilism
+******** Option: personality_events.12.c:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is personality_events.13
+******** title = personality_events.13.t
+******** desc = personality_events.13.d
+******** picture = KING_DOING_GREAT_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "tolerant"
+********* Any owned province:
+********** Does not follow the religion of its owner
+********* Does not have the ruler modifier intolerant_tolerance
+********* Does not have the ruler modifier tolerance_backlash
+********* Any of the following:
+********** employed_advisor:
+*********** Follows the heretic religion
+********** employed_advisor:
+*********** Follows the heretic religion
+********** employed_advisor:
+*********** Follows the heretic religion
+********** employed_advisor:
+*********** Follows the heretic religion
+********** employed_advisor:
+*********** Follows the heretic religion
+********** employed_advisor:
+*********** Follows the heretic religion
+********** employed_advisor:
+*********** Follows the heretic religion
+********** employed_advisor:
+*********** Follows the heathen religion
+********** employed_advisor:
+*********** Follows the heathen religion
+********** employed_advisor:
+*********** Follows the heathen religion
+********** employed_advisor:
+*********** Follows the heathen religion
+********** employed_advisor:
+*********** Follows the heathen religion
+********** employed_advisor:
+*********** Follows the heathen religion
+********** employed_advisor:
+*********** Follows the heathen religion
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.13.a:
+********* Changes prestige by 10
+********* add_meritocracy_effect = yes
+********* Adds the ruler modifier "tolerance_backlash" until the ruler's death:
+********** -1 tolerance of the true faith
+********** -10% global spy defence
+********* reduce_estate_church_loyalty_effect = yes
+********* reduce_estate_nobles_loyalty_effect = yes
+********* add_estate_dhimmi_loyalty_effect = yes
+******** Option: personality_events.13.b:
+********* Adds the ruler modifier "intolerant_tolerance" until the ruler's death:
+********** +10% global spy defence
+********** -1 #Nullifies personality bonus tolerance of heretics
+********** -1 #Nullifies personality bonus tolerance of heathens
+********* reduce_meritocracy_effect = yes
+********* If:
+********** Limited to:
+*********** Has the 0 "Inquisitor advisor
+********** Removes the 0 "Inquisitor advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Natural Scientist advisor
+********** Removes the 0 "Natural Scientist advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Master of Mint advisor
+********** Removes the 0 "Master of Mint advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Theologian advisor
+********** Removes the 0 "Theologian advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Artist advisor
+********** Removes the 0 "Artist advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Philosopher advisor
+********** Removes the 0 "Philosopher advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Treasurer advisor
+********** Removes the 0 "Treasurer advisor
+********* add_estate_church_loyalty_effect = yes
+********* add_estate_nobles_loyalty_effect = yes
+********* reduce_estate_dhimmi_loyalty_effect = yes
+******* Gets the country event:
+******** ID is personality_events.14
+******** title = personality_events.14.t
+******** desc = personality_events.14.d
+******** picture = KINGS_CHOICE_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "kind_hearted"
+********* had_recent_war = 10
+********* Any owned province:
+********** nationalism = 1
+********** is_state = yes
+********** Does not have the province modifier "kind_hearted_healing_ravages_of_war"
+********** Does not have the province modifier "not_so_kind_hearted"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.14.a:
+********* Random owned province:
+********** Limited to:
+*********** nationalism = 1
+*********** is_state = yes
+*********** Does not have the province modifier "kind_hearted_healing_ravages_of_war"
+*********** Does not have the province modifier "not_so_kind_hearted"
+********** area:
+*********** Limited to:
+************ nationalism = 1
+************ The province is owned by our country
+************ Does not have the province modifier "kind_hearted_healing_ravages_of_war"
+************ Does not have the province modifier "not_so_kind_hearted"
+*********** Hidden effect:
+************ Adds the modifier "kind_hearted_healing_ravages_of_war" until the end of the campaign:
+************* local_unrest = -5
+************* -15% provincial tax income
+******** Option: personality_events.14.b:
+********* Trigger:
+********** ruler_has_personality_false = cruel_personality
+********* Changes military power stored by -50
+********* Random owned province:
+********** Limited to:
+*********** nationalism = 1
+*********** is_state = yes
+*********** Does not have the province modifier "kind_hearted_healing_ravages_of_war"
+*********** Does not have the province modifier "not_so_kind_hearted"
+********** area:
+*********** Limited to:
+************ nationalism = 1
+************ The province is owned by our country
+************ Does not have the province modifier "kind_hearted_healing_ravages_of_war"
+************ Does not have the province modifier "not_so_kind_hearted"
+*********** Hidden effect:
+************ add_local_autonomy = -25
+************ Adds the modifier "not_so_kind_hearted" until the end of the campaign:
+************* local_autonomy = -0.02
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Totemist religion
+********** One of the following will happen:
+*********** 10 relative chance:
+************ remove_ruler_personality = kind_hearted_personality
+************ add_ruler_personality = cruel_personality
+*********** 90 relative chance:
+************ Changes prestige by -10
+******** Option: personality_events.14.c:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is personality_events.15
+******** title = personality_events.15.t
+******** desc = personality_events.15.d
+******** picture = ENLIGHTENMENT_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "free_thinker"
+********* ruler_has_personality_false = babbling_buffoon_personality
+********* ruler_has_personality_ancestor:
+********** key_false = zealot
+********* Does not have the ruler modifier inspiring_spiritual_guide
+********* Stability is lower than 3
+********* has_ruler_flag_false = free_thinker_swap_no
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.15.a:
+********* Changes prestige by -10
+********* reduce_estate_church_loyalty_effect = yes
+********* One of the following will happen:
+********** 15 relative chance:
+*********** Creates an advisor of the 0 "Philosopher type:
+************ discount = yes
+********** 15 relative chance:
+*********** Trigger:
+************ Does not follow the 0 "Totemist religion
+*********** remove_ruler_personality = free_thinker_personality
+*********** add_ruler_personality = babbling_buffoon_personality
+********** 70 relative chance:
+*********** Adds the ruler modifier "inspiring_spiritual_guide" until the ruler's death:
+************ -5% idea cost
+************ global_institution_spread = 0.05
+********* set_ruler_flag = free_thinker_swap_no
+******** Option: personality_events.15.b:
+********* Changes prestige by 10
+********* add_estate_church_loyalty_effect = yes
+********* If:
+********** Limited to:
+*********** Does not follow the 0 "Totemist religion
+********** One of the following will happen:
+*********** 30 relative chance:
+************ remove_ruler_personality = free_thinker_personality
+************ add_ruler_personality = zealot_personality
+*********** 70 relative chance:
+********* set_ruler_flag = free_thinker_swap_no
+******** Option: personality_events.15.c:
+********* Changes prestige by -10
+********* set_ruler_flag = free_thinker_swap_no
+******* Gets the country event:
+******** ID is personality_events.16
+******** title = personality_events.16.t
+******** desc = personality_events.16.d
+******** picture = KING_DOING_GREAT_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "well_connected"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** One of the following will happen:
+*********** 20 relative chance:
+************ Sets the country flag well_connected_statesman
+*********** 20 relative chance:
+************ Sets the country flag well_connected_commandant
+*********** 20 relative chance:
+************ Sets the country flag well_connected_theologian
+*********** 20 relative chance:
+************ Sets the country flag well_connected_trader
+*********** 20 relative chance:
+************ Sets the country flag well_connected_master_recruiter
+********** Random known country:
+*********** Limited to:
+************ Country is not our country
+*********** save_event_target_as = contacts_in_foreign_country
+******** Option: personality_events.16.a:
+********* add_meritocracy_effect = yes
+********* trigger_switch:
+********** on_trigger = has_country_flag
+********** well_connected_statesman:
+*********** If:
+************ Limited to:
+************* Monthly income is at least 25 ducats
+************ Creates an advisor of the 0 "Statesman type:
+************* With a skill level of 3
+************* discount = yes
+************* Culture is event_target:contacts_in_foreign_country
+************* Follows the event_target:contacts_in_foreign_country religion
+*********** If:
+************ Limited to:
+************* Monthly income is less than 25 ducats
+************ Creates an advisor of the 0 "Statesman type:
+************* With a skill level of 2
+************* discount = yes
+************* Culture is event_target:contacts_in_foreign_country
+************* Follows the event_target:contacts_in_foreign_country religion
+*********** Removes the country flag well_connected_statesman
+********** well_connected_commandant:
+*********** If:
+************ Limited to:
+************* Monthly income is at least 25 ducats
+************ Creates an advisor of the 0 "Commandant type:
+************* With a skill level of 3
+************* discount = yes
+************* Culture is event_target:contacts_in_foreign_country
+************* Follows the event_target:contacts_in_foreign_country religion
+*********** If:
+************ Limited to:
+************* Monthly income is less than 25 ducats
+************ Creates an advisor of the 0 "Commandant type:
+************* With a skill level of 2
+************* discount = yes
+************* Culture is event_target:contacts_in_foreign_country
+************* Follows the event_target:contacts_in_foreign_country religion
+*********** Removes the country flag well_connected_commandant
+********** well_connected_theologian:
+*********** If:
+************ Limited to:
+************* Monthly income is at least 25 ducats
+************ Creates an advisor of the 0 "Theologian type:
+************* With a skill level of 3
+************* discount = yes
+************* Culture is event_target:contacts_in_foreign_country
+************* Follows the event_target:contacts_in_foreign_country religion
+*********** If:
+************ Limited to:
+************* Monthly income is less than 25 ducats
+************ Creates an advisor of the 0 "Theologian type:
+************* With a skill level of 2
+************* discount = yes
+************* Culture is event_target:contacts_in_foreign_country
+************* Follows the event_target:contacts_in_foreign_country religion
+*********** Removes the country flag well_connected_theologian
+********** well_connected_trader:
+*********** If:
+************ Limited to:
+************* Monthly income is at least 25 ducats
+************ Creates an advisor of the 0 "Trader type:
+************* With a skill level of 3
+************* discount = yes
+************* Culture is event_target:contacts_in_foreign_country
+************* Follows the event_target:contacts_in_foreign_country religion
+*********** If:
+************ Limited to:
+************* Monthly income is less than 25 ducats
+************ Creates an advisor of the 0 "Trader type:
+************* With a skill level of 2
+************* discount = yes
+************* Culture is event_target:contacts_in_foreign_country
+************* Follows the event_target:contacts_in_foreign_country religion
+*********** Removes the country flag well_connected_trader
+********** well_connected_master_recruiter:
+*********** If:
+************ Limited to:
+************* Monthly income is at least 25 ducats
+************ Creates an advisor of the 0 "Master Recruiter type:
+************* With a skill level of 3
+************* discount = yes
+************* Culture is event_target:contacts_in_foreign_country
+************* Follows the event_target:contacts_in_foreign_country religion
+*********** If:
+************ Limited to:
+************* Monthly income is less than 25 ducats
+************ Creates an advisor of the 0 "Master Recruiter type:
+************* With a skill level of 2
+************* discount = yes
+************* Culture is event_target:contacts_in_foreign_country
+************* Follows the event_target:contacts_in_foreign_country religion
+*********** Removes the country flag well_connected_master_recruiter
+******** Option: personality_events.16.b:
+********* Changes prestige by 10
+********* trigger_switch:
+********** on_trigger = has_country_flag
+********** well_connected_statesman:
+*********** Changes diplomatic power stored by 40
+*********** Removes the country flag well_connected_statesman
+********** well_connected_commandant:
+*********** Changes military power stored by 40
+*********** Removes the country flag well_connected_commandant
+********** well_connected_theologian:
+*********** Changes administrative power stored by 40
+*********** Removes the country flag well_connected_theologian
+********** well_connected_trader:
+*********** Changes diplomatic power stored by 40
+*********** Removes the country flag well_connected_trader
+********** well_connected_master_recruiter:
+*********** Changes military power stored by 40
+*********** Removes the country flag well_connected_master_recruiter
+******* Gets the country event:
+******** ID is personality_events.17
+******** title = personality_events.17.t
+******** desc = personality_events.17.d
+******** picture = KINGS_CHOICE_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "calm"
+********* Stability is lower than 3
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.17.a:
+********* Changes stability by 1
+******* Gets the country event:
+******** ID is personality_events.18
+******** title = personality_events.18.t
+******** desc = personality_events.18.d
+******** picture = KING_DOING_GREAT_eventPicture
+******** Trigger:
+********* ruler_has_personality_ancestor:
+********** Named "careful"
+********* Any neighbor country:
+********** Not at war with our country
+********** Has an opinion of less than 0 with our country
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random neighbor country:
+*********** Limited to:
+************ Not at war with our country
+************ Has an opinion of less than 0 with our country
+*********** Sets the country flag careful_diplomacy_flag
+********** Random neighbor country:
+*********** Limited to:
+************ Not at war with our country
+************ Has an opinion of less than 0 with our country
+************ Does not have the country flag careful_diplomacy_flag
+*********** Sets the country flag careful_diplomacy_flag
+******** Option: personality_events.18.a:
+********* Every neighbor country:
+********** Limited to:
+*********** Has the country flag careful_diplomacy_flag
+********** Adds the opinion modifier "careful_diplomatic_manouvering" towards our country
+********** Removes the country flag careful_diplomacy_flag
+******* Gets the country event:
+******** ID is personality_events.19
+******** title = personality_events.19.t
+******** desc = personality_events.19.d
+******** picture = PRINTING_PRESS_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "secretive"
+********* Does not have the country modifier "secretive_new_cipher"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.19.a:
+********* Adds the modifier "secretive_new_cipher" for 10 years:
+********** yearly_corruption = -0.1
+******** Option: personality_events.19.b:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is personality_events.20
+******** title = personality_events.20.t
+******** desc = personality_events.20.d
+******** picture = SPY_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "intricate_web_weaver"
+********* Any known country:
+********** has_spy_network_from:
+*********** Affecting our country
+*********** value = 25
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.20.a:
+********* Modifies treasury by -0.15 years worth of income
+********* Random known country:
+********** Limited to:
+*********** has_spy_network_from:
+************ Affecting our country
+************ value = 25
+********** add_spy_network_from:
+*********** Affecting our country
+*********** value = 40
+********* If:
+********** Limited to:
+*********** Monthly income is at least 40 ducats
+********** Random known country:
+*********** Limited to:
+************ has_spy_network_from:
+************* Affecting our country
+************* value = 25
+*********** add_spy_network_from:
+************ Affecting our country
+************ value = 40
+********* If:
+********** Limited to:
+*********** Monthly income is at least 60 ducats
+********** Random known country:
+*********** Limited to:
+************ has_spy_network_from:
+************* Affecting our country
+************* value = 25
+*********** add_spy_network_from:
+************ Affecting our country
+************ value = 40
+******** Option: personality_events.20.b:
+********* Changes diplomatic power stored by 25
+******* Gets the country event:
+******** ID is personality_events.21
+******** title = personality_events.21.t
+******** desc = personality_events.21.d
+******** picture = NEW_HEIR_eventPicture
+******** Trigger:
+********* ruler_has_personality = fertile_personality
+********* Has the DLC Rights of Man
+********* Ruler is female
+********* Is not the lesser partner in a union
+********* ruler_age_false = 39
+********* Has no heir
+********* has_government_attribute = heir
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.21.a:
+********* Spawns an heir:
+********** Changes ruler's military skill by 4
+********** age = 0
+********** Ruler's dynasty is our country
+******** Option: personality_events.21.b:
+********* Spawns an heir:
+********** Changes ruler's administrative skill by 4
+********** age = 0
+********** Ruler's dynasty is our country
+******* Gets the country event:
+******** ID is personality_events.22
+******** title = personality_events.22.t
+******** desc = personality_events.22.d
+******** picture = NEW_HEIR_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality = fertile_personality
+********* Ruler is male
+********* Is not the lesser partner in a union
+********* Has no heir
+********* has_government_attribute = heir
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.22.a:
+********* Spawns an heir:
+********** Changes ruler's administrative skill by 4
+********** age = 0
+********** Ruler's dynasty is our country
+******** Option: personality_events.22.b:
+********* Spawns an heir:
+********** Changes ruler's military skill by 4
+********** age = 0
+********** Ruler's dynasty is our country
+******* Gets the country event:
+******** ID is personality_events.23
+******** title = personality_events.23.t
+******** desc = personality_events.23.d
+******** picture = KINGS_CHOICE_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality = well_advised_personality
+********* Has the monarchy government type
+********* Is not the lesser partner in a union
+********* Has an heir
+********* Heir is at least 5 years old
+********* has_ruler_flag_false = well_advised_tutored_heir
+********* Any of the following:
+********** All of the following:
+*********** Any of the following:
+************ Has the 0 "Philosopher advisor
+************ Has the 0 "Natural Scientist advisor
+************ Has the 0 "Artist advisor
+************ Has the 0 "Treasurer advisor
+************ Has the 0 "Theologian advisor
+************ Has the 0 "Master of Mint advisor
+************ Has the 0 "Inquisitor advisor
+*********** heir_adm_false = 5
+********** All of the following:
+*********** Any of the following:
+************ Has the 0 "Statesman advisor
+************ Has the 0 "Naval Reformer advisor
+************ Has the 0 "Trader advisor
+************ Has the 0 "Spymaster advisor
+************ Has the 0 "Colonial Governor advisor
+************ Has the 0 "Diplomat advisor
+************ Has the 0 "Navigator advisor
+*********** heir_dip_false = 5
+********** All of the following:
+*********** Any of the following:
+************ Has the 0 "Army Reformer advisor
+************ Has the 0 "Army Organizer advisor
+************ Has the 0 "Commandant advisor
+************ Has the 0 "Quartermaster advisor
+************ Has the 0 "Master Recruiter advisor
+************ Has the 0 "Military Engineer advisor
+************ Has the 0 "Grand Captain advisor
+*********** heir_mil_false = 5
+********* has_reform_false = 0 "Elective Monarchy
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Trigger:
+********** Any of the following:
+*********** Has the 0 "Philosopher advisor
+*********** Has the 0 "Natural Scientist advisor
+*********** Has the 0 "Artist advisor
+*********** Has the 0 "Treasurer advisor
+*********** Has the 0 "Theologian advisor
+*********** Has the 0 "Master of Mint advisor
+*********** Has the 0 "Inquisitor advisor
+********** heir_adm_false = 5
+******** Option: personality_events.23.a:
+********* change_heir_adm = 1
+********* Changes administrative power stored by -75
+********* set_ruler_flag = well_advised_tutored_heir
+********* Trigger:
+********** Any of the following:
+*********** Has the 0 "Statesman advisor
+*********** Has the 0 "Naval Reformer advisor
+*********** Has the 0 "Trader advisor
+*********** Has the 0 "Spymaster advisor
+*********** Has the 0 "Colonial Governor advisor
+*********** Has the 0 "Diplomat advisor
+*********** Has the 0 "Navigator advisor
+********** heir_dip_false = 5
+******** Option: personality_events.23.b:
+********* change_heir_dip = 1
+********* Changes diplomatic power stored by -75
+********* set_ruler_flag = well_advised_tutored_heir
+******** Option: personality_events.23.c:
+********* Trigger:
+********** Any of the following:
+*********** Has the 0 "Army Reformer advisor
+*********** Has the 0 "Army Organizer advisor
+*********** Has the 0 "Commandant advisor
+*********** Has the 0 "Quartermaster advisor
+*********** Has the 0 "Master Recruiter advisor
+*********** Has the 0 "Military Engineer advisor
+*********** Has the 0 "Grand Captain advisor
+********** heir_mil_false = 5
+********* change_heir_mil = 1
+********* Changes military power stored by -75
+********* set_ruler_flag = well_advised_tutored_heir
+******** Option: personality_events.23.dd:
+********* Changes prestige by -5
+********* set_ruler_flag = well_advised_tutored_heir
+******* Gets the country event:
+******** ID is personality_events.24
+******** title = personality_events.24.t
+******** desc = personality_events.24.d
+******** picture = KINGS_CHOICE_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality = well_advised_personality
+********* Does not have the monarchy government type
+********* has_ruler_flag_false = well_advised_tutored
+********* Any of the following:
+********** All of the following:
+*********** Any of the following:
+************ Has the 0 "Philosopher advisor
+************ Has the 0 "Natural Scientist advisor
+************ Has the 0 "Artist advisor
+************ Has the 0 "Treasurer advisor
+************ Has the 0 "Theologian advisor
+************ Has the 0 "Master of Mint advisor
+************ Has the 0 "Inquisitor advisor
+*********** Ruler's administrative skill is less than 5
+********** All of the following:
+*********** Any of the following:
+************ Has the 0 "Statesman advisor
+************ Has the 0 "Naval Reformer advisor
+************ Has the 0 "Trader advisor
+************ Has the 0 "Spymaster advisor
+************ Has the 0 "Colonial Governor advisor
+************ Has the 0 "Diplomat advisor
+************ Has the 0 "Navigator advisor
+*********** Ruler's diplomatic skill is less than 5
+********** All of the following:
+*********** Any of the following:
+************ Has the 0 "Army Reformer advisor
+************ Has the 0 "Army Organizer advisor
+************ Has the 0 "Commandant advisor
+************ Has the 0 "Quartermaster advisor
+************ Has the 0 "Master Recruiter advisor
+************ Has the 0 "Military Engineer advisor
+************ Has the 0 "Grand Captain advisor
+*********** Ruler's military skill is less than 5
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Trigger:
+********** Any of the following:
+*********** Has the 0 "Philosopher advisor
+*********** Has the 0 "Natural Scientist advisor
+*********** Has the 0 "Artist advisor
+*********** Has the 0 "Treasurer advisor
+*********** Has the 0 "Theologian advisor
+*********** Has the 0 "Master of Mint advisor
+*********** Has the 0 "Inquisitor advisor
+********** Ruler's administrative skill is less than 5
+******** Option: personality_events.24.a:
+********* Changes ruler's administrative skill by 1
+********* Changes diplomatic power stored by -30
+********* Changes military power stored by -30
+********* set_ruler_flag = well_advised_tutored
+********* Trigger:
+********** Any of the following:
+*********** Has the 0 "Statesman advisor
+*********** Has the 0 "Naval Reformer advisor
+*********** Has the 0 "Trader advisor
+*********** Has the 0 "Spymaster advisor
+*********** Has the 0 "Colonial Governor advisor
+*********** Has the 0 "Diplomat advisor
+*********** Has the 0 "Navigator advisor
+********** Ruler's diplomatic skill is less than 5
+******** Option: personality_events.24.b:
+********* Changes ruler's diplomatic skill by 1
+********* Changes administrative power stored by -30
+********* Changes military power stored by -30
+********* set_ruler_flag = well_advised_tutored
+******** Option: personality_events.24.c:
+********* Trigger:
+********** Any of the following:
+*********** Has the 0 "Army Reformer advisor
+*********** Has the 0 "Army Organizer advisor
+*********** Has the 0 "Commandant advisor
+*********** Has the 0 "Quartermaster advisor
+*********** Has the 0 "Master Recruiter advisor
+*********** Has the 0 "Military Engineer advisor
+*********** Has the 0 "Grand Captain advisor
+********** Ruler's military skill is less than 5
+********* Changes ruler's military skill by 1
+********* Changes diplomatic power stored by -30
+********* Changes administrative power stored by -30
+********* set_ruler_flag = well_advised_tutored
+******** Option: personality_events.24.dd:
+********* Changes prestige by -5
+********* set_ruler_flag = well_advised_tutored
+******* Gets the country event:
+******** ID is personality_events.25
+******** title = personality_events.25.t
+******** desc = personality_events.25.d
+******** picture = KINGS_CHOICE_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "silver_tongue"
+********* Is at war
+********* War score is at least 50
+********* Any known country:
+********** offensive_war_with = our country
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.25.a:
+********* Adds the ruler modifier "silver_tongued_leverage" until the ruler's death:
+********** province_warscore_cost = -0.1
+******** Option: personality_events.25.b:
+********* Changes war exhaustion by -2
+******* Gets the country event:
+******** ID is personality_events.26
+******** title = personality_events.26.t
+******** desc = personality_events.26.d
+******** picture = COPTIC_CITY_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "zealot"
+********* Any neighbor country:
+********** Considers our country an enemy
+********** Does not follow our country's religion
+********** Any owned province:
+*********** The province is not claimed by our country
+*********** Any bordering province:
+************ The province is owned by our country
+********* has_estate = estate_church
+********* estate_loyalty:
+********** estate = estate_church
+********** loyalty = 60
+********* estate_influence:
+********** estate = estate_church
+********** influence = 40
+******** Immediate effects:
+********* Hidden effect:
+********** Random province in the world:
+*********** Limited to:
+************ The owner of the province:
+************* Considers our country an enemy
+************* Does not follow our country's religion
+************ The province is not claimed by our country
+************ Any bordering province:
+************* The province is owned by our country
+*********** Every province in the world:
+************ Limited to:
+************* area = PREV
+************* The province is not claimed by our country
+************* The owner of the province:
+************** Considers our country an enemy
+************** Does not follow our country's religion
+************ Sets the province flag zealot_claim
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.26.a:
+********* Every province in the world:
+********** Limited to:
+*********** Has the province flag zealot_claim
+********** Adds claim to our country
+********** Removes the province flag zealot_claim
+********** The owner of the province:
+*********** Gives the 0 "Diplomatic Insult casus belli against our country
+********* Every neighbor country:
+********** Limited to:
+*********** Does not follow our country's religion
+********** Adds the opinion modifier "zealot_reputation_opinion" towards our country
+********* add_estate_church_loyalty_effect = yes
+********* reduce_estate_dhimmi_loyalty_effect = yes
+******** Option: personality_events.26.b:
+********* Changes prestige by 10
+********* add_estate_dhimmi_loyalty_effect = yes
+******* Gets the country event:
+******** ID is personality_events.27
+******** title = personality_events.27.t
+******** desc = personality_events.27.d
+******** picture = COPTIC_CITY_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "pious"
+********* Is at war with a religious enemy
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.27.a:
+********* Modifies treasury by 0.25 years worth of income
+******** Option: personality_events.28.b:
+********* Changes national manpower by 0.5 years worth of men
+******* Gets the country event:
+******** ID is personality_events.28
+******** title = personality_events.28.t
+******** desc = personality_events.28.d
+******** picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "benevolent"
+********* Any subject country:
+********** Is not a colonial nation
+********** Has an opinion of at least 150 with our country
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the variable happy_subjects to 0
+********** Every subject country:
+*********** Limited to:
+************ Is not a colonial nation
+************ Has an opinion of at least 150 with our country
+*********** ROOT:
+************ Changes the variable happy_subjects by 1
+********** Random subject country:
+*********** Limited to:
+************ Is not a colonial nation
+************ Has an opinion of at least 150 with our country
+*********** save_event_target_as = happy_subject
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.28.a:
+********* add_meritocracy_effect = yes
+********* If:
+********** Limited to:
+*********** The variable happy_subjects is lower than 3
+********** Changes prestige by 10
+********** Creates an advisor of the 0 "Statesman type:
+*********** With a skill level of 2
+*********** Culture is event_target:happy_subject
+*********** Follows the event_target:happy_subject religion
+*********** discount = yes
+********* If:
+********** Limited to:
+*********** The variable happy_subjects is equal or higher than 3
+*********** The variable happy_subjects is lower than 4
+********** Changes prestige by 10
+********** Creates an advisor of the 0 "Statesman type:
+*********** Culture is event_target:happy_subject
+*********** Follows the event_target:happy_subject religion
+*********** With a skill level of 3
+*********** discount = yes
+********* If:
+********** Limited to:
+*********** The variable happy_subjects is equal or higher than 4
+*********** The variable happy_subjects is lower than 5
+********** Changes prestige by 15
+********** Creates an advisor of the 0 "Statesman type:
+*********** Culture is event_target:happy_subject
+*********** Follows the event_target:happy_subject religion
+*********** With a skill level of 3
+*********** discount = yes
+********** Creates an advisor of the 0 "Natural Scientist type:
+*********** Culture is event_target:happy_subject
+*********** Follows the event_target:happy_subject religion
+*********** With a skill level of 2
+*********** discount = yes
+********* If:
+********** Limited to:
+*********** The variable happy_subjects is equal or higher than 5
+********** Changes prestige by 15
+********** Creates an advisor of the 0 "Statesman type:
+*********** Culture is event_target:happy_subject
+*********** Follows the event_target:happy_subject religion
+*********** With a skill level of 3
+*********** discount = yes
+********** Creates an advisor of the 0 "Natural Scientist type:
+*********** Culture is event_target:happy_subject
+*********** Follows the event_target:happy_subject religion
+*********** With a skill level of 3
+*********** discount = yes
+******** Option: personality_events.28.b:
+********* If:
+********** Limited to:
+*********** The variable happy_subjects is lower than 3
+********** Changes prestige by 10
+********** Creates a general at  extra army tradition
+*********** tradition = 50
+********* If:
+********** Limited to:
+*********** The variable happy_subjects is equal or higher than 3
+*********** The variable happy_subjects is lower than 4
+********** Changes prestige by 10
+********** Creates a general at  extra army tradition
+*********** tradition = 60
+********* If:
+********** Limited to:
+*********** The variable happy_subjects is equal or higher than 4
+*********** The variable happy_subjects is lower than 5
+********** Changes prestige by 15
+********** Creates a general at  extra army tradition
+*********** tradition = 80
+********* If:
+********** Limited to:
+*********** The variable happy_subjects is equal or higher than 5
+********** Changes prestige by 15
+********** Creates a general at  extra army tradition
+*********** tradition = 100
+******* Gets the country event:
+******** ID is personality_events.29
+******** title = personality_events.29.t
+******** desc = personality_events.29.d
+******** picture = PRINTING_PRESS_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "lawgiver"
+********* Has at least 2 provinces
+********* Any owned province:
+********** is_state = yes
+********** local_autonomy = 40
+********** Does not have the province modifier "local_legal_reform"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.29.a:
+********* Random owned province:
+********** Limited to:
+*********** is_state = yes
+*********** local_autonomy = 40
+*********** Does not have the province modifier "local_legal_reform"
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+************ The province is not the capital of the country
+************ Does not have the province modifier "local_legal_reform"
+*********** Adds the modifier "local_legal_reform" until the end of the campaign:
+************ local_autonomy = -0.05
+******** Option: personality_events.29.b:
+********* Random owned province:
+********** Limited to:
+*********** is_state = yes
+*********** local_autonomy = 40
+*********** Does not have the province modifier "local_legal_reform"
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+************ The province is not the capital of the country
+************ Does not have the province modifier "local_legal_reform"
+*********** add_local_autonomy = -15
+******* Gets the country event:
+******** ID is personality_events.30
+******** title = personality_events.30.t
+******** desc = personality_events.30.d
+******** picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "midas_touched"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.30.a:
+********* Random owned province:
+********** Limited to:
+*********** is_in_capital_area = yes
+********** Changes base tax by 1
+******* Gets the country event:
+******** ID is personality_events.31
+******** title = personality_events.31.t
+******** desc = personality_events.31.d
+******** picture = KINGS_CHOICE_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "incorruptible"
+********* Does not have the ruler modifier corrupted_incorruptible_ruler
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.31.a:
+********* Changes administrative power stored by -75
+******** Option: personality_events.31.b:
+********* Adds the ruler modifier "corrupted_incorruptible_ruler" until the ruler's death:
+********** yearly_corruption = 0.05 #Nullifies personality bonus
+******* Gets the country event:
+******** ID is personality_events.32
+******** title = personality_events.32.t
+******** desc = personality_events.32.d
+******** picture = ARTWORK_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "architectural_visionary"
+********* Any of the following:
+********** Is not AI controlled
+********** Has at least 1 years worth of income
+********* has_institution = feudalism
+********** No owned province:
+*********** Has the province modifier "monumental_architecture"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.32.a:
+********* Modifies treasury by -1 years worth of income
+********* Capital:
+********** Adds the modifier "monumental_architecture" for 10 years:
+*********** +0.5 prestige
+*********** local_development_cost = -0.1
+******** Option: personality_events.32.b:
+********* Changes prestige by 10
+********* Every known country:
+********** Limited to:
+*********** Is in our country's religion group
+*********** Not at war with our country
+*********** Culture group is the same as our country
+********** Adds the opinion modifier "opinion_school_of_capital" towards our country
+******* Gets the country event:
+******** ID is personality_events.33
+******** title = personality_events.33.t
+******** desc = personality_events.33.d
+******** picture = KINGS_CHOICE_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "entrepreneur"
+********* ruler_has_personality_false = greedy_personality
+********* Has at least 2 provinces
+********* Any owned province:
+********** is_in_capital_area = yes
+********** The province is not the capital of the country
+********** is_state = yes
+********** No owned province:
+*********** Has the province modifier "economic_development_entrepreneur"
+********** No owned province:
+*********** Has the province modifier "economic_downturn_modifier"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ The province is not the capital of the country
+************ is_state = yes
+*********** save_event_target_as = easy_money_province
+******** Option: personality_events.33.a:
+********* Modifies treasury by 0.5 years worth of income
+********* One of the following will happen:
+********** 20 relative chance:
+*********** If:
+************ Limited to:
+************* Does not follow the 0 "Totemist religion
+************ remove_ruler_personality = entrepreneur_personality
+************ add_ruler_personality = greedy_personality
+*********** event_target:easy_money_province:
+************ area:
+************* Limited to:
+************** The province is owned by our country
+************** The province is not the capital of the country
+************* Adds the modifier "economic_downturn_modifier" until the end of the campaign:
+************** -15% provincial tax income
+************** -15% trade goods output
+********** 80 relative chance:
+*********** event_target:easy_money_province:
+************ area:
+************* Limited to:
+************** The province is owned by our country
+************** The province is not the capital of the country
+************* Adds the modifier "economic_development_entrepreneur" until the end of the campaign:
+************** -5% provincial tax income
+************** +15% trade goods output
+******** Option: personality_events.33.b:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is personality_events.34
+******** title = personality_events.34.t
+******** desc = personality_events.34.d
+******** picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "industrious"
+********* Any of the following:
+********** Has less than 30 provinces
+*********** No owned province:
+************ Has the province modifier "industrious_boost"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ is_in_capital_area = yes
+************ Any of the following:
+************* The province is the capital of the country
+************* base_production = 4
+************* Has the 0 "Workshop building
+************* Has the 0 "Counting House building
+************* Has the 1 "Trade Station building
+************* Has the 0 "Plantation building
+************* Has the 0 "Textile Manufactory building
+************* Has the 0 "Weapons Manufactory building
+************* Has the 0 "Naval Equipment Manufactory building
+*********** save_event_target_as = industrious_province_boost
+******** Option: personality_events.34.a:
+********* Trigger:
+********** Has less than 30 provinces
+********* Modifies treasury by -0.15 years worth of income
+********* event_target:industrious_province_boost:
+********** add_base_production = 2
+******** Option: personality_events.34.b:
+********* Trigger:
+********** Has at least 30 provinces
+********* Modifies treasury by -0.2 years worth of income
+********* event_target:industrious_province_boost:
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+*********** Adds the modifier "industrious_boost" until the end of the campaign:
+************ local_development_cost = -0.1
+************ +10% production efficiency
+******** Option: personality_events.34.c:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is personality_events.35
+******** title = personality_events.35.t
+******** desc = personality_events.35.d
+******** picture = ENLIGHTENMENT_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "expansionist"
+********* Any owned province:
+********** The province is a colony
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.35.a:
+********* Trigger:
+********** has_institution = new_world_i
+********* Random owned province:
+********** Limited to:
+*********** The province is a colony
+********** Changes population of colony by 700
+******** Option: personality_events.35.b:
+********* Creates a conquistador at  extra army tradition
+********** tradition = 50
+******** Option: personality_events.35.c:
+********* Creates an explorer at  extra naval tradition
+********** tradition = 50
+******* Gets the country event:
+******** ID is personality_events.36
+******** title = personality_events.36.t
+******** desc = personality_events.36.d
+******** picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "charismatic_negotiator"
+********* Mercantilism is less than 10000%
+********* Any known country:
+********** Country exists
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.36.a:
+********* Adds 100% mercantilism
+********* Changes diplomatic power stored by -50
+******** Option: personality_events.36.b:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is personality_events.37
+******** title = personality_events.37.t
+******** desc = personality_events.37.d
+******** picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "conqueror"
+********* Is at war
+********* Does not have the ruler modifier 0 "The Conqueror's Presence
+********* Does not have the ruler modifier 0 "The Beating of the Drums
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.37.a:
+********* Adds the ruler modifier "0 "The Conqueror's Presence" until the ruler's death:
+********** +10% land morale
+******** Option: personality_events.37.b:
+********* Adds the ruler modifier "0 "The Beating of the Drums" until the ruler's death:
+********** +15% siege ability
+******* Gets the country event:
+******** ID is personality_events.38
+******** title = personality_events.38.t
+******** desc = personality_events.38.d
+******** picture = BIG_BOOK_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "tactical_genius"
+********* Any neighbor country:
+********** Country exists
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.38.a:
+********* Changes prestige by 5
+********* Changes military power stored by 100
+********* Every neighbor country:
+********** Changes army tradition by 10
+******** Option: personality_events.38.b:
+********* Changes military power stored by 25
+******* Gets the country event:
+******** ID is personality_events.39
+******** title = personality_events.39.t
+******** desc = personality_events.39.d
+******** picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "bold_fighter"
+********* Is not at war
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.39.a:
+********* add_army_professionalism = 0.01
+********* Adds the ruler modifier "hosting_tournament" until the ruler's death:
+********** +15% global manpower modifier
+********** +5% land morale
+******** Option: personality_events.39.b:
+********* add_army_professionalism = 0.01
+********* Adds the ruler modifier "drilling_troops" until the ruler's death:
+********** -10% military technology cost
+******* Gets the country event:
+******** ID is personality_events.40
+******** title = personality_events.40.t
+******** desc = personality_events.40.d
+******** picture = KINGS_CHOICE_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "strict"
+********* Has an heir
+********* Heir is at least 20 years old
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.40.a:
+********* highlight = yes
+********* remove_heir:
+********* Changes stability by -2
+********* Trigger:
+********** ruler_has_personality = cruel_personality
+******** Option: personality_events.40.b:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is personality_events.41
+******** title = personality_events.41.t
+******** desc = personality_events.41.d
+******** picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "inspiring_leader"
+********* Is at war
+********* 10 war exhaustion
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.41.a:
+********* Changes war exhaustion by -5
+******* Gets the country event:
+******** ID is personality_events.42
+******** title = personality_events.42.t
+******** desc = personality_events.42.d
+******** picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+******** Trigger:
+********* ruler_has_personality_ancestor:
+********** Named "martial_educator"
+********* Has the DLC Rights of Man
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Trigger:
+********** Monthly income is at least 25 ducats
+******** Option: personality_events.42.a:
+********* add_meritocracy_effect = yes
+********* Hidden effect:
+********** Creates an advisor of the 0 "Army Reformer type:
+*********** With a skill level of 3
+*********** discount = yes
+********* Trigger:
+********** Monthly income is at least 25 ducats
+******** Option: personality_events.42.b:
+********* add_meritocracy_effect = yes
+********* Hidden effect:
+********** Creates an advisor of the 0 "Commandant type:
+*********** With a skill level of 3
+*********** discount = yes
+********* Trigger:
+********** Monthly income is at least 25 ducats
+******** Option: personality_events.42.c:
+********* add_meritocracy_effect = yes
+********* Hidden effect:
+********** Creates an advisor of the 0 "Master Recruiter type:
+*********** With a skill level of 3
+*********** discount = yes
+********* Trigger:
+********** Monthly income is less than 25 ducats
+********* add_meritocracy_effect = yes
+******** Option: personality_events.42.a:
+********* Hidden effect:
+********** Creates an advisor of the 0 "Army Reformer type:
+*********** With a skill level of 2
+*********** discount = yes
+********* Trigger:
+********** Monthly income is less than 25 ducats
+******** Option: personality_events.42.b:
+********* add_meritocracy_effect = yes
+********* Hidden effect:
+********** Creates an advisor of the 0 "Commandant type:
+*********** With a skill level of 2
+*********** discount = yes
+********* Trigger:
+********** Monthly income is less than 25 ducats
+******** Option: personality_events.42.c:
+********* add_meritocracy_effect = yes
+********* Hidden effect:
+********** Creates an advisor of the 0 "Master Recruiter type:
+*********** With a skill level of 2
+*********** discount = yes
+******* Gets the country event:
+******** ID is personality_events.43
+******** title = personality_events.43.t
+******** desc = personality_events.43.d
+******** picture = GLOBAL_TRADE_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "0 "Navigator"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.43.a:
+********* Trigger:
+********** Does not have the idea 0 "Quest for the New World
+********* Creates an admiral:
+********** 2 skill in shock
+********** 2 skill in fire
+********** 3 skill in manuever
+******** Option: personality_events.43.b:
+********* Creates an explorer:
+********** 2 skill in shock
+********** 2 skill in fire
+********** 3 skill in manuever
+********* Trigger:
+********** Has the idea 0 "Quest for the New World
+******* Gets the country event:
+******** ID is personality_events.44
+******** title = personality_events.44.t
+******** desc = personality_events.44.d
+******** picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality_ancestor:
+********** Named "fierce_negotiator"
+********* Has at least 1 active loans
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.44.a:
+********* Adds the ruler modifier "renegotiated_loans" until the ruler's death:
+********** -0.25 interest
+******* Gets the country event:
+******** ID is personality_events.45
+******** title = personality_events.45.t
+******** desc = personality_events.45.d
+******** picture = ACCUSATION_eventPicture
+******** Trigger:
+********* ruler_has_personality = babbling_buffoon_personality
+********* Has the DLC Rights of Man
+********* Any known country:
+********** Has an opinion lower than 0 of our country
+********** ROOT:
+*********** Does not have the 0 "Diplomatic Insult casus belli against PREV
+********** Does not consider our country a rival
+********** Not at war with our country
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random neighbor country:
+*********** Limited to:
+************ Has an opinion lower than 0 of our country
+************ ROOT:
+************* Does not have the 0 "Diplomatic Insult casus belli against PREV
+************ Does not consider our country a rival
+************ Not at war with our country
+*********** save_event_target_as = angry_country
+********** If:
+*********** Limited to:
+************ has_saved_event_target_false = angry_country
+*********** Random known country:
+************ Limited to:
+************* Has an opinion lower than 0 of our country
+************* ROOT:
+************** Does not have the 0 "Diplomatic Insult casus belli against PREV
+************* Does not consider our country a rival
+************* Not at war with our country
+************ save_event_target_as = angry_country
+******** Option: personality_events.45.a:
+********* Gives the 0 "Diplomatic Insult casus belli against event_target:angry_country
+******* Gets the country event:
+******** ID is personality_events.46
+******** title = personality_events.46.t
+******** desc = personality_events.46.d
+******** picture = CORRUPTION_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality = embezzler_personality
+********* Any of the following:
+********** Has the 0 "Master of Mint advisor
+********** Has the 0 "Treasurer advisor
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.46.a:
+********* If:
+********** Limited to:
+*********** Monthly income is at least 30 ducats
+********** Modifies treasury by 0.25 years worth of income
+********* If:
+********** Limited to:
+*********** Monthly income is less than 30 ducats
+********** Changes treasury by 90 ducats
+********* add_corruption = 0.5
+******** Option: personality_events.46.b:
+********* If:
+********** Limited to:
+*********** Monthly income is at least 30 ducats
+********** Modifies treasury by -0.05 years worth of income
+********* If:
+********** Limited to:
+*********** Monthly income is less than 30 ducats
+********** Changes treasury by -20 ducats
+******* Gets the country event:
+******** ID is personality_events.47
+******** title = personality_events.47.t
+******** desc = personality_events.47.d
+******** picture = NEW_HEIR_eventPicture
+******** Trigger:
+********* ruler_has_personality = infertile_personality
+********* ruler_age = 50
+********* Has no heir
+********* has_government_attribute = heir
+********* Has the monarchy government type
+********* Is not the lesser partner in a union
+********* Is in the 0 "Christian religion group
+********* Has the DLC Rights of Man
+********* Any of the following:
+********** Any country:
+*********** Has a royal marriage with our country
+*********** Has an opinion of at least 15 of our country
+*********** Is in the 0 "Christian religion group
+********** Any neighbor country:
+*********** Has an opinion of at least 15 of our country
+*********** Is in the 0 "Christian religion group
+******** Immediate effects:
+********* Hidden effect:
+********** Random country:
+*********** Limited to:
+************ Has a royal marriage with our country
+************ Has an opinion of at least 15 of our country
+************ Is in the 0 "Christian religion group
+*********** save_event_target_as = adoptive_country_1
+********** If:
+*********** Limited to:
+************ has_saved_event_target_false = adoptive_country_1
+*********** Random neighbor country:
+************ Limited to:
+************* Has an opinion of at least 15 of our country
+************ save_event_target_as = adoptive_country_1
+********** Random country:
+*********** Limited to:
+************ Has a royal marriage with our country
+************ Has an opinion of at least 15 of our country
+************ Is in the 0 "Christian religion group
+************ event_target:adoptive_country_1:
+************* TAG_false = PREV
+*********** save_event_target_as = adoptive_country_2
+********** If:
+*********** Limited to:
+************ has_saved_event_target_false = adoptive_country_2
+*********** Random neighbor country:
+************ Limited to:
+************* Has an opinion of at least 15 of our country
+************* Is in the 0 "Christian religion group
+************* event_target:adoptive_country_1:
+************** TAG_false = PREV
+************* Has the monarchy government type
+************ save_event_target_as = adoptive_country_2
+********** Random country:
+*********** Limited to:
+************ Has a royal marriage with our country
+************ Has an opinion of at least 15 of our country
+************ Is in the 0 "Christian religion group
+************ event_target:adoptive_country_1:
+************* TAG_false = PREV
+************ event_target:adoptive_country_2:
+************* TAG_false = PREV
+*********** save_event_target_as = adoptive_country_3
+********** If:
+*********** Limited to:
+************ has_saved_event_target_false = adoptive_country_3
+*********** Random neighbor country:
+************ Limited to:
+************* Has an opinion of at least 15 of our country
+************* Is in the 0 "Christian religion group
+************* event_target:adoptive_country_1:
+************** TAG_false = PREV
+************* event_target:adoptive_country_2:
+************** TAG_false = PREV
+************ save_event_target_as = adoptive_country_3
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.47.a:
+********* Spawns an heir:
+********** Legitimacy of 25
+********** Ruler's dynasty is event_target:adoptive_country_1
+********** Culture is event_target:adoptive_country_1Â
+********** Follows the event_target:adoptive_country_1Â religion
+********** Named "Maria"
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 1
+********** Ruler's military skill is at least 2
+********** age = 22
+********** Ruler is female
+********* Trigger:
+********** has_saved_event_target = adoptive_country_2
+******** Option: personality_events.47.b:
+********* Spawns an heir:
+********** Legitimacy of 25
+********** Ruler's dynasty is event_target:adoptive_country_2
+********** Culture is event_target:adoptive_country_2Â
+********** Follows the event_target:adoptive_country_2Â religion
+********** Named "Alexander"
+********** Ruler's administrative skill is at least 1
+********** Ruler's diplomatic skill is at least 2
+********** Ruler's military skill is at least 4
+********** age = 30
+********** female_false = no
+********* Trigger:
+********** has_saved_event_target = adoptive_country_3
+******** Option: personality_events.47.c:
+********* Spawns an heir:
+********** Legitimacy of 25
+********** Ruler's dynasty is event_target:adoptive_country_3
+********** Culture is event_target:adoptive_country_3Â
+********** Follows the event_target:adoptive_country_3Â religion
+********** Named "Stefanos"
+********** Ruler's administrative skill is at least 2
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 1
+********** age = 27
+********** female_false = no
+******** Option: personality_events.47.e:
+******* Gets the country event:
+******** ID is personality_events.48
+******** title = personality_events.48.t
+******** desc = personality_events.48.d
+******** picture = KING_DOING_GREAT_eventPicture
+******** Trigger:
+********* ruler_has_personality = sinner_personality
+********* Has the DLC Rights of Man
+******** Immediate effects:
+********* Hidden effect:
+********** One of the following will happen:
+*********** 20 relative chance:
+************ Sets the country flag homosexual_ruler
+*********** 80 relative chance:
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Trigger:
+********** Any of the following:
+*********** All of the following:
+************ Ruler is male
+************ Does not have the country flag homosexual_ruler
+*********** All of the following:
+************ Ruler is female
+************ Has the country flag homosexual_ruler
+******** Option: personality_events.48.a:
+********* Changes prestige by -5
+********* add_meritocracy_effect = yes
+********* If:
+********** Limited to:
+*********** Monthly income is at least 25 ducats
+********** Creates an advisor of the 0 "Spymaster type:
+*********** With a skill level of 3
+*********** Ruler is female
+*********** discount = yes
+********* If:
+********** Limited to:
+*********** Monthly income is less than 25 ducats
+********** Creates an advisor of the 0 "Spymaster type:
+*********** With a skill level of 2
+*********** Ruler is female
+*********** discount = yes
+********* Removes the country flag homosexual_ruler
+********* Trigger:
+********** Any of the following:
+*********** All of the following:
+************ Ruler is female
+************ Does not have the country flag homosexual_ruler
+*********** All of the following:
+************ Ruler is male
+************ Has the country flag homosexual_ruler
+******** Option: personality_events.48.b:
+********* Changes prestige by -5
+********* add_meritocracy_effect = yes
+********* If:
+********** Limited to:
+*********** Monthly income is at least 25 ducats
+********** Creates an advisor of the 0 "Spymaster type:
+*********** With a skill level of 3
+*********** female_false = no
+*********** discount = yes
+********* If:
+********** Limited to:
+*********** Monthly income is less than 25 ducats
+********** Creates an advisor of the 0 "Spymaster type:
+*********** With a skill level of 2
+*********** female_false = no
+*********** discount = yes
+********* Removes the country flag homosexual_ruler
+******** Option: personality_events.48.c:
+********* Removes the country flag homosexual_ruler
+******* Gets the country event:
+******** ID is personality_events.49
+******** title = personality_events.49.t
+******** desc = personality_events.49.d
+******** picture = KING_DOING_GREAT_eventPicture
+******** Trigger:
+********* ruler_has_personality = drunkard_personality
+********* Has the DLC Rights of Man
+********* Any neighbor country:
+********** Is not a vassal
+********** Does not consider our country a rival
+********** Does not consider our country an enemy
+********** Not junior union partner under our country
+******** Immediate effects:
+********* Hidden effect:
+********** Random neighbor country:
+*********** Limited to:
+************ Is not a vassal
+************ Does not consider our country a rival
+************ Does not consider our country an enemy
+************ Not junior union partner under our country
+*********** save_event_target_as = invitee_1
+********** Random neighbor country:
+*********** Limited to:
+************ Is not a vassal
+************ Does not consider our country a rival
+************ Does not consider our country an enemy
+************ Not junior union partner under our country
+************ event_target:invitee_1:
+************* TAG_false = PREV
+*********** save_event_target_as = invitee_2
+********** Random neighbor country:
+*********** Limited to:
+************ Is not a vassal
+************ Does not consider our country a rival
+************ Does not consider our country an enemy
+************ Not junior union partner under our country
+************ event_target:invitee_1:
+************* TAG_false = PREV
+************ event_target:invitee_2:
+************* TAG_false = PREV
+*********** save_event_target_as = invitee_3
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.49.a:
+********* event_target:invitee_1:
+********** Adds the opinion modifier "0 "Grateful for Invitation" towards our country
+********* Trigger:
+********** has_saved_event_target = invitee_2
+******** Option: personality_events.49.b:
+********* event_target:invitee_2:
+********** Adds the opinion modifier "0 "Grateful for Invitation" towards our country
+********* Trigger:
+********** has_saved_event_target = invitee_3
+******** Option: personality_events.49.c:
+********* event_target:invitee_3:
+********** Adds the opinion modifier "0 "Grateful for Invitation" towards our country
+******** Option: personality_events.49.e:
+******* Gets the country event:
+******** ID is personality_events.50
+******** title = personality_events.50.t
+******** desc = personality_events.50.d
+******** picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+******** Trigger:
+********* ruler_has_personality = greedy_personality
+********* Has the DLC Rights of Man
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.50.a:
+********* If:
+********** Limited to:
+*********** Monthly income is at least 30 ducats
+********** Modifies treasury by 0.25 years worth of income
+********* If:
+********** Limited to:
+*********** Monthly income is less than 30 ducats
+********** Changes treasury by 90 ducats
+******* Gets the country event:
+******** ID is personality_events.51
+******** title = personality_events.51.t
+******** desc = personality_events.51.d
+******** picture = BORDER_TENSION_eventPicture
+******** Trigger:
+********* ruler_has_personality = cruel_personality
+********* Has the DLC Rights of Man
+********* Any owned province:
+********** Does not have the province modifier "cruel_overlord"
+********** is_state = yes
+********** The province is not the capital of the country
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Does not have the province modifier "cruel_overlord"
+************ is_state = yes
+************ The province is not the capital of the country
+*********** save_event_target_as = lazy_province
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.51.a:
+********* event_target:lazy_province:
+********** add_base_production = 2
+********** Adds the modifier "cruel_overlord" until the end of the campaign:
+*********** local_unrest = 10
+******** Option: personality_events.51.b:
+******* Gets the country event:
+******** ID is personality_events.52
+******** title = personality_events.52.t
+******** desc = personality_events.52.d
+******** picture = ADVISOR_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality = naive_personality
+********* Does not have the ruler modifier naive_employer
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.52.a:
+********* Adds the ruler modifier "naive_employer" until the ruler's death:
+********** -10% advisor cost
+******* Gets the country event:
+******** ID is personality_events.53
+******** title = personality_events.53.t
+******** desc = personality_events.53.d
+******** picture = ASSASSINATION_eventPicture
+******** Trigger:
+********* ruler_has_personality = craven_personality
+********* Has the DLC Rights of Man
+********* Any known country:
+********** Has an opinion lower than 0 of our country
+********** ROOT:
+*********** Does not have the 0 "Diplomatic Insult casus belli against PREV
+******** Immediate effects:
+********* Hidden effect:
+********** Random neighbor country:
+*********** Limited to:
+************ Has an opinion lower than 0 of our country
+************ ROOT:
+************* Does not have the 0 "Diplomatic Insult casus belli against PREV
+*********** save_event_target_as = assassination_nation
+********** If:
+*********** Limited to:
+************ has_saved_event_target_false = assassination_nation
+*********** Random known country:
+************ Limited to:
+************* Has an opinion lower than 0 of our country
+************* ROOT:
+************** Does not have the 0 "Diplomatic Insult casus belli against PREV
+************ save_event_target_as = assassination_nation
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.53.a:
+********* Gives the 0 "Diplomatic Insult casus belli against event_target:assassination_nation
+******* Gets the country event:
+******** ID is personality_events.54
+******** title = personality_events.54.t
+******** desc = personality_events.54.d
+******** picture = BABBLING_BAFFOON_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality = loose_lips_personality
+********* Any neighbor country:
+********** Not at war with our country
+********** Is not allied with our country
+********** Does not consider our country a rival
+********** Not junior union partner under our country
+********** Not senior union partner over our country
+********** Is in our country's religion group
+********** Is not in regency
+******** Immediate effects:
+********* Hidden effect:
+********** Random neighbor country:
+*********** Limited to:
+************ Not at war with our country
+************ Is not allied with our country
+************ Does not consider our country a rival
+************ Is in our country's religion group
+************ Is not in regency
+*********** save_event_target_as = cool_neighbor_country
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.54.a:
+********* event_target:cool_neighbor_country:
+********** Adds the opinion modifier "0 "Approves of Compliment" towards our country
+******* Gets the country event:
+******** ID is personality_events.55
+******** title = personality_events.55.t
+******** desc = personality_events.55.d
+******** picture = LAND_MILITARY_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality = obsessive_perfectionist_personality
+********* Does not have the ruler modifier military_perfectionism
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.55.a:
+********* Adds the ruler modifier "military_perfectionism" until the ruler's death:
+********** +2.5% discipline
+********** -15% global manpower modifier
+******** Option: personality_events.55.b:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is personality_events.56
+******** title = personality_events.56.t
+******** desc = personality_events.56.d
+******** picture = BABBLING_BAFFOON_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* ruler_has_personality = malevolent_personality
+********* has_adm_advisor = yes
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.56.a:
+********* Changes treasury by -50 ducats
+******** Option: personality_events.56.b:
+********* reduce_meritocracy_effect = yes
+********* Changes administrative power stored by -5
+********* remove_advisor_adm_effect = yes
+******* Gets the country event:
+******** ID is personality_events.57
+******** title = personality_events.57.t
+******** desc = personality_events.57.d
+******** picture = wihgfx_FEMALE_GENERAL_eventPicture
+******** Trigger:
+********* Is not in regency
+********* Ruler is female
+********* Ruler is not leading an army
+********* Has the DLC Rights of Man
+********* Any of the following:
+********** ruler_has_personality_ancestor:
+*********** Named "bold_fighter"
+********** ruler_has_personality_ancestor:
+*********** Named "tactical_genius"
+********** ruler_has_personality_ancestor:
+*********** Named "inspiring_leader"
+********** Ruler's military skill is at least 5
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.57.a:
+********* If:
+********** Limited to:
+*********** Ruler's military skill is at least 1
+*********** Ruler's military skill is less than 2
+********** convert_female_ruler_to_general = 10
+********* If:
+********** Limited to:
+*********** Ruler's military skill is at least 2
+*********** Ruler's military skill is less than 3
+********** convert_female_ruler_to_general = 20
+********* If:
+********** Limited to:
+*********** Ruler's military skill is at least 3
+*********** Ruler's military skill is less than 4
+********** convert_female_ruler_to_general = 30
+********* If:
+********** Limited to:
+*********** Ruler's military skill is at least 4
+*********** Ruler's military skill is less than 5
+********** convert_female_ruler_to_general = 40
+********* If:
+********** Limited to:
+*********** Ruler's military skill is at least 5
+*********** Ruler's military skill is less than 6
+********** convert_female_ruler_to_general = 50
+********* If:
+********** Limited to:
+*********** Ruler's military skill is at least 6
+********** convert_female_ruler_to_general = 70
+******** Option: personality_events.57.b:
+******* Gets the country event:
+******** ID is personality_events.58
+******** title = personality_events.58.t
+******** desc = personality_events.58.d
+******** picture = wihgfx_FEMALE_GENERAL_eventPicture
+******** Trigger:
+********* Has the DLC Rights of Man
+********* Heir is female
+********* Heir is at least 15 years old
+********* Heir is not leading an army
+********* Any of the following:
+********** heir_has_personality_ancestor:
+*********** Named "bold_fighter"
+********** heir_has_personality_ancestor:
+*********** Named "tactical_genius"
+********** heir_has_personality_ancestor:
+*********** Named "inspiring_leader"
+********** heir_mil = 5
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: personality_events.58.a:
+********* If:
+********** Limited to:
+*********** heir_mil = 1
+*********** heir_mil_false = 2
+********** convert_female_heir_to_general = 10
+********* If:
+********** Limited to:
+*********** heir_mil = 2
+*********** heir_mil_false = 3
+********** convert_female_heir_to_general = 20
+********* If:
+********** Limited to:
+*********** heir_mil = 3
+*********** heir_mil_false = 4
+********** convert_female_heir_to_general = 30
+********* If:
+********** Limited to:
+*********** heir_mil = 4
+*********** heir_mil_false = 5
+********** convert_female_heir_to_general = 40
+********* If:
+********** Limited to:
+*********** heir_mil = 5
+*********** heir_mil_false = 6
+********** convert_female_heir_to_general = 50
+********* If:
+********** Limited to:
+*********** heir_mil = 6
+********** convert_female_heir_to_general = 70
+******** Option: personality_events.58.b:

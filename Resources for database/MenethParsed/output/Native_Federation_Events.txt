@@ -1,0 +1,151 @@
+******** Trigger:
+********* has_reform = native_clan_council_reform
+********* is_federation_nation = yes
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: native_federations_event.1.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** is_federation_leader = yes
+********* add_government_reform = native_federation_reform
+******** Option: native_federations_event.1.b:
+********* AI chance:
+********** Base chance of 50
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is native_federations_event.2
+******** title = native_federations_event.2.t
+******** desc = native_federations_event.2.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** Trigger:
+********* is_federation_nation_false = no
+********* has_reform = native_federation_reform
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: native_federations_event.2.a:
+********* AI chance:
+********** Base chance of 50
+********* add_government_reform = native_clan_council_reform
+******** Option: native_federations_event.2.b:
+********* AI chance:
+********** Base chance of 50
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is native_federations_event.3
+******** title = native_federations_event.3.t
+******** desc = native_federations_event.3.d
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** Trigger:
+********* is_federation_leader = yes
+********* federation_size = 6
+********* all_federation_members:
+********** Has an opinion of at least 75 with our country
+********* Does not have the ruler modifier leadership_pays_off_mod
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+******** Option: native_federations_event.3.a:
+********* Adds the ruler modifier "leadership_pays_off_mod" until the ruler's death:
+********** monthly_federation_favor_growth = 0.05
+******* Gets the country event:
+******** ID is native_federations_event.4
+******** title = native_federations_event.4.t
+******** desc = native_federations_event.4.d
+******** picture = ADVISOR_eventPicture
+******** Trigger:
+********* is_federation_leader = yes
+********* num_federation_advancements = 4
+********* Any of the following:
+********** Does not have the country modifier "grow_in_harmony_mod"
+********** Does not have the ruler modifier primus_inter_pares_mod
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+******** Option: native_federations_event.4.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 1.5:
+*********** all_federation_members:
+************ Has an opinion of at least 75 with our country
+********* every_federation_member:
+********** Adds the modifier "grow_in_harmony_mod" for 10 years:
+*********** development_cost = -0.05
+******** Option: native_federations_event.4.b:
+********* AI chance:
+********** Base chance of 50
+********* Adds the ruler modifier "primus_inter_pares_mod" until the ruler's death:
+********** tribal_development_growth = 0.02
+******* Gets the country event:
+******** ID is native_federations_event.5
+******** title = native_federations_event.5.t
+******** desc = native_federations_event.5.d
+******** picture = ANGRY_MOB_eventPicture
+******** Trigger:
+********* is_federation_nation = yes
+********* is_federation_leader_false = no
+********* num_federation_advancements = 4
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+******** Option: native_federations_event.5.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0.5:
+*********** all_federation_members:
+************ Has an opinion of at least 75 with our country
+********* every_federation_member:
+********** Limited to:
+*********** is_federation_leader = yes
+********** Adds the ruler modifier "lost_respect_mod" until the ruler's death:
+*********** monthly_federation_favor_growth = -0.05
+******** Option: native_federations_event.5.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 1.5:
+*********** all_federation_members:
+************ Has an opinion of at least 75 with our country
+********* every_federation_member:
+********** Limited to:
+*********** is_federation_leader = yes
+********** Adds the ruler modifier "lost_respect_mod" until the ruler's death:
+*********** monthly_federation_favor_growth = -0.05
+******* Gets the country event:
+******** ID is native_federations_event.6
+******** title = native_federations_event.6.t
+******** desc = native_federations_event.6.d
+******** picture = REVOLUTION_eventPicture
+******** Trigger:
+********* is_federation_nation = yes
+********* num_federation_advancements = 2
+********* Any known country:
+********** Is a neighbor of our country
+********** tech_difference = 5
+********** Has an opinion of less than 75 with our country
+********* Does not have the country modifier "stand_the_ground_mod"
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: native_federations_event.6.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 2:
+*********** Any known country:
+************ Is a neighbor of our country
+************ tech_difference = 10
+********** Multiplies value by 1.5:
+*********** all_federation_members:
+************ Has an opinion of at least 75 with our country
+********* Hidden effect:
+********** every_federation_member:
+*********** ROOT:
+************ remove_historical_rival = PREV
+************ add_historical_friend = PREV
+******** Option: native_federations_event.6.b:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** Any known country:
+************ Is a neighbor of our country
+************ tech_difference = 10
+********** Multiplies value by 1.5:
+*********** any_federation_members:
+************ Has an opinion of less than 75 with our country
+********* Adds the modifier "stand_the_ground_mod" for the rest of the campaign:
+********** +10% fort defence

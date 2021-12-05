@@ -1,0 +1,128 @@
+******** Trigger:
+********* Has the DLC Emperor
+********* current_age = 0 "Age of Reformation
+********* hre_leagues_enabled_false = no
+********* hre_religion_locked_false = no
+********* hre_religion_treaty_false = no
+********* The Holy Roman Empire has at least 1 members
+********* Is part of the Holy Roman Empire
+********* The 0 "Reformed religion is enabled
+******** Mean time to happen
+********* Base mean time to happen of 7300 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag great_peasants_war_flag
+********** 0 "Stockholm:
+*********** Sets the variable GPW_counting_variable to 0
+******** Option: great_peasant_war.1.a:
+******* Gets the country event:
+******** ID is great_peasant_war.2
+******** title = great_peasant_war.2.t
+******** desc = great_peasant_war.2.d
+******** picture = ANGRY_MOB_eventPicture
+******** is_triggered_only = yes
+********* Trigger:
+********** total_development_false = 100
+********** Isn't the Holy Roman Emperor
+********** Is not the lesser partner in a union
+********** Country is not 0 "The Papal State
+******** Option: great_peasant_war.2.a:
+********* AI chance:
+********** Base chance of 100
+********* Sets the country flag great_peasants_war_peasant_republic
+********* If:
+********** Limited to:
+*********** Does not have the republic government type
+********** change_government_to_republic = yes
+********* add_government_reform = 0 "Peasants Republic
+********* If:
+********** Limited to:
+*********** Is an elector in the Holy Roman Empire
+********** elector_false = no
+******** Option: great_peasant_war.2.b:
+********* AI chance:
+********** Base chance of 1
+********* Changes prestige by -50
+******* Gets the country event:
+******** ID is great_peasant_war.3
+******** title = incident_great_peasants_war
+******** desc = great_peasant_war.3.d
+******** picture = ANGRY_MOB_eventPicture
+******** is_triggered_only = yes
+******** fire_only_once = yes
+******** Option: great_peasant_war.3.a:
+********* Trigger:
+********** 0 "Stockholm:
+*********** The variable GPW_counting_variable is lower than 15
+********* Removes the global flag great_peasants_war_flag
+********* Sets the global flag condemned_peasant_republics
+********* If:
+********** Limited to:
+*********** 0 "Stockholm:
+************ The variable GPW_counting_variable is equal or higher than 10
+********** Sets the global flag gpw_nobles_win_minor
+********* else:
+********** Sets the global flag gpw_nobles_win_major
+******** Option: great_peasant_war.3.b:
+********* Removes the global flag great_peasants_war_flag
+********* If:
+********** Limited to:
+*********** 0 "Stockholm:
+************ The variable GPW_counting_variable is equal or higher than 10
+********** Sets the global flag gpw_peasants_win_major
+********** Hidden effect:
+*********** Every country:
+************ Limited to:
+************* Is part of the Holy Roman Empire
+************ take_estate_land_share_massive:
+************* estate = estate_nobles
+********* else:
+********** Sets the global flag gpw_peasants_win_minor
+********** Hidden effect:
+*********** Every country:
+************ Limited to:
+************* Is part of the Holy Roman Empire
+************ take_estate_land_share_large:
+************* estate = estate_nobles
+******* Gets the country event:
+******** ID is great_peasant_war.4
+******** title = great_peasant_war.4.t
+******** desc = great_peasant_war.4.d
+******** picture = ANGRY_MOB_eventPicture
+******** major = yes
+******** fire_only_once = yes
+******** Trigger:
+********* If:
+********** Limited to:
+*********** The Holy Roman Empire has at least 1 members
+********** Is the Holy Roman Emperor
+********* else:
+********** Capital:
+*********** Any of the following:
+************ Region is north_german_region
+************ Region is south_german_region
+********* Has had the global flag "great_peasants_war_flag" for at least 7300 days
+******** Mean time to happen
+********* Base mean time to happen of 3 months
+******** Immediate effects:
+********* Hidden effect:
+********** Removes the global flag great_peasants_war_flag
+******** Option: great_peasant_war.4.a:
+******* Gets the country event:
+******** ID is great_peasant_war.5
+******** title = 0 "none
+******** desc = 0 "none
+******** picture = ANGRY_MOB_eventPicture
+******** fire_only_once = yes
+******** hidden = yes
+******** Trigger:
+********* Is AI controlled
+********* active_imperial_incident_false = any
+********* Any country:
+********** Is the Holy Roman Emperor
+********* Has had the global flag "great_peasants_war_flag" for at least 5475 days
+******** Mean time to happen
+********* Base mean time to happen of 3 months
+******** Immediate effects:
+********* Hidden effect:
+********** set_imperial_incident = incident_great_peasants_war

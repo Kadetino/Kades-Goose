@@ -1,0 +1,294 @@
+******** Trigger:
+********* Has the DLC Leviathan
+********* Any owned province:
+********** Has the  great project
+*********** tier = 3
+********** Does not have the province flag monument_triggered_highest_tier_event_flag
+********* Does not have the country modifier "monumental_pride"
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has the  great project
+************* tier = 3
+*********** save_event_target_as = monument_province
+*********** Sets the province flag monument_triggered_highest_tier_event_flag
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: monument_events.1.a:
+********* If:
+********** Limited to:
+*********** Stability is lower than 1
+********** Changes stability by 1
+********* else:
+********** Changes prestige by 20
+********* Adds the modifier "monumental_pride" for 10 years:
+********** -10% stability cost modifier
+******* Gets the country event:
+******** ID is monument_events.2
+******** title = monument_events.2.t
+******** desc = monument_events.2.d
+******** picture = ADVISOR_eventPicture
+******** goto = monument_province_2
+******** Trigger:
+********* Has the DLC Leviathan
+********* Any owned province:
+********** Has the  great project
+*********** tier = 0
+********** Any of the following:
+*********** Does not have the province flag monument_neglected_monument_flag
+*********** Has had the province flag "monument_triggered_highest_tier_event_flag" for at least 1825 days
+********* Does not have the country modifier "monument_boost"
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has the  great project
+************* tier = 0
+************ Any of the following:
+************* Does not have the province flag monument_neglected_monument_flag
+************* Has had the province flag "monument_neglected_monument_flag" for at least 1825 days
+*********** save_event_target_as = monument_province_2
+*********** If:
+************ Limited to:
+************* event_target:monument_province_2:
+************** Has the province flag monument_neglected_monument_flag
+************ event_target:monument_province_2:
+************* Removes the province flag monument_neglected_monument_flag
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: monument_events.2.a:
+********* Modifies treasury by -0.5 years worth of income
+********* Adds the modifier "monument_boost" for 5 years:
+********** great_project_upgrade_cost = -0.25
+******** Option: monument_events.2.b:
+********* event_target:monument_province_2:
+********** add_unrest = 2
+********** Hidden effect:
+*********** Sets the province flag monument_neglected_monument_flag
+******* Gets the country event:
+******** ID is monument_events.3
+******** title = monument_events.3.t
+******** desc = monument_events.3.d
+******** picture = ST_PETERS_CHURCH_eventPicture
+******** goto = basilica_province
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Leviathan
+********* Country is 0 "The Papal State
+********* Follows the 0 "Catholic religion
+********* Any owned province:
+********** Has the  great project
+*********** tier = 3
+********** Follows the 0 "Catholic religion
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has the  great project
+************* tier = 3
+************ Follows the 0 "Catholic religion
+*********** save_event_target_as = basilica_province
+******** Mean time to happen
+********* Base mean time to happen of 180 months
+******** Option: monument_events.3.a:
+********* Modifies treasury by -0.25 years worth of income
+********* Every ally:
+********** Limited to:
+*********** Follows the 0 "Catholic religion
+********** Adds the opinion modifier "opinion_st_peters" towards our country
+********* add_estate_loyalty:
+********** estate = estate_church
+********** loyalty = 10
+******** Option: monument_events.3.b:
+********* event_target:basilica_province:
+********** add_unrest = -3
+********* Random owned province:
+********** Limited to:
+*********** Follows the 0 "Catholic religion
+*********** Has the  great project
+************ type_false = stpeters_cathedral
+************ tier_false = 3
+********** add_unrest = -2
+********* Adds the modifier "monument_church_of_the_people" for 20 years:
+********** +1 tolerance of the true faith
+********** -1 global unrest
+******* Gets the country event:
+******** ID is monument_events.4
+******** title = monument_events.4.t
+******** desc = monument_events.4.d
+******** picture = SHWEDAGON_PAGON_eventPicture
+******** goto = pagoda_province
+******** fire_only_once = yes
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has the  great project
+************* tier = 3
+************ Follows the 0 "Theravada religion
+*********** save_event_target_as = pagoda_province
+******** Option: monument_events.4.a:
+********* Adds the modifier "shwedagon_pilgrimage" for 10 years:
+********** Trade efficiency is at least 15%
+********* event_target:pagoda_province:
+********** add_unrest = 3
+******** Option: monument_events.4.b:
+********* Modifies treasury by -0.1 years worth of income
+********* Changes stability by 1
+********* event_target:pagoda_province:
+********** add_unrest = -3
+********** If:
+*********** Limited to:
+************ Has no core on our country
+*********** Gives our country core on the province
+******* Gets the country event:
+******** ID is monument_events.5
+******** title = monument_events.5.t
+******** desc = monument_events.5.d
+******** picture = BUDDHA_eventPicture
+******** goto = borobudur_province
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Leviathan
+********* Any owned province:
+********** Has the  great project
+*********** tier = 3
+********* If:
+********** Limited to:
+*********** Country is 0 "Sunda
+********** has_mission = sun_borobudur
+********** mission_completed = sun_borobudur
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has the  great project
+************* tier = 3
+*********** save_event_target_as = borobudur_province
+******** Mean time to happen
+********* Base mean time to happen of 180 months
+********* Multiplies value by 0.1:
+********** Any of the following:
+*********** Country is 0 "Sunda
+*********** Country is 0 "Majapahit
+********* Multiplies value by 0.8:
+********** Any of the following:
+*********** has_adm_advisor = yes
+*********** has_dip_advisor = yes
+*********** has_mil_advisor = yes
+******** Option: monument_events.5.a:
+********* Trigger:
+********** Country is 0 "Sunda
+********** 0 "Majapahit exists
+********* event_target:borobudur_province:
+********** If:
+*********** Limited to:
+************ Has no core on our country
+*********** Gives our country core on the province
+********* Gives the 0 "Subjugation casus belli against 0 "Majapahit
+******** Option: monument_events.5.b:
+********* Trigger:
+********** Country is 0 "Majapahit
+********** 0 "Sunda exists
+********* event_target:borobudur_province:
+********** If:
+*********** Limited to:
+************ Has no core on our country
+*********** Gives our country core on the province
+********* Gives the 0 "Subjugation casus belli against 0 "Sunda
+******** Option: monument_events.5.c:
+********* Trigger:
+********** Any of the following:
+*********** Country is not 0 "Sunda
+*********** Country is not 0 "Majapahit
+********** Any of the following:
+*********** has_adm_advisor = yes
+*********** has_dip_advisor = yes
+*********** has_mil_advisor = yes
+********* event_target:borobudur_province:
+********** If:
+*********** Limited to:
+************ Has no core on our country
+*********** Gives our country core on the province
+********* add_estate_loyalty:
+********** estate = estate_church
+********** loyalty = 10
+********* If:
+********** Limited to:
+*********** has_adm_advisor = yes
+********** remove_advisor_by_category = 0 "Administrative
+********* else_if:
+********** Limited to:
+*********** has_dip_advisor = yes
+********** remove_advisor_by_category = 0 "Diplomatic
+********* else_if:
+********** Limited to:
+*********** has_mil_advisor = yes
+********** remove_advisor_by_category = 0 "Military
+******** Option: monument_events.5.e:
+********* If:
+********** Limited to:
+*********** event_target:borobudur_province:
+************ The province is not the capital of the country
+********** Sets capital to event_target:borobudur_province
+********* event_target:borobudur_province:
+********** add_unrest = -3
+********** If:
+*********** Limited to:
+************ Has no core on our country
+*********** Gives our country core on the province
+******* Gets the country event:
+******** ID is monument_events.6
+******** title = monument_events.6.t
+******** desc = monument_events.6.d
+******** picture = GREAT_BUILDING_eventPicture
+******** hidden = yes
+******** Trigger:
+********* If:
+********** Limited to:
+*********** Has the DLC Leviathan
+********** 0 "Athens:
+*********** Has the  great project
+************ tier = 1
+********* Does not have the global flag parthenon_now_mosque
+********* Owns 0 "Athens
+********* Any of the following:
+********** 0 "Athens:
+*********** Is in the 0 "Muslim religion group
+********** Is in the 0 "Muslim religion group
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: monument_events.6.a:
+********* Sets the global flag parthenon_now_mosque
+********* show_ambient_object = parthenon_minaret
+********* hide_ambient_object = parthenon
+********* AI chance:
+********** Base chance of 1
+******* Gets the country event:
+******** ID is monument_events.7
+******** title = monument_events.7.t
+******** desc = monument_events.7.d
+******** picture = GREAT_BUILDING_eventPicture
+******** hidden = yes
+******** Trigger:
+********* If:
+********** Limited to:
+*********** Has the DLC Leviathan
+********** 0 "Athens:
+*********** Has the  great project
+************ tier = 1
+********* Has the global flag parthenon_now_mosque
+********* Owns 0 "Athens
+********* Is not in 0 "Muslim's religion group
+********* 0 "Athens:
+********** Is not in 0 "Muslim's religion group
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: monument_events.7.a:
+********* Removes the global flag parthenon_now_mosque
+********* show_ambient_object = parthenon
+********* hide_ambient_object = parthenon_minaret
+********* AI chance:
+********** Base chance of 1

@@ -1,0 +1,541 @@
+** Trigger:
+*** Country is 0 "Mamluks
+*** Does not consider 0 "Ottomans a rival
+*** 0 "Ottomans:
+**** Owns 0 "Constantinople
+*** 0 "Constantinople:
+**** Province last switched owner less than 24 months ago
+** Mean time to happen
+*** Base mean time to happen of 7 months
+*** AI chance:
+**** Base chance of 90
+** Option: 0 "Write a poem to the Sultan!:
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Personal Praising Poem" towards our country
+** Option: 0 "Support the Festivities:
+*** Adds the modifier "0 "Large Festivities" for 10 years:
+**** -2 global unrest
+* Gets the country event:
+** ID is flavor_mam.2
+** title = 0 "Urban Planning of Cairo
+** desc = 0 "[Root.Monarch.GetTitle] [Root.Monarch.GetName] was known to be very concerned about urban planning, particularly in Cairo. In 1457, the [Root.Monarch.GetTitle] gave the order to construct two new public baths and a large communal residence in the Bayn al-Qasrayn District. During that time, he decided to widen the road that originated out of it, the main thoroughfare of Cairo, known as the Qasaba. This demolished several older structures, but in the end traffic was much quicker and according to important historians, this greatly benefited the general public.
+** picture = UNIVERSITY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mamluks
+*** Year is at least 1457
+*** Owns 0 "Cairo
+*** Year is less than 1459
+*** Is not in regency
+*** Ruler is male
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Allah is Great!:
+*** Changes piety by 10%
+*** 0 "Cairo:
+**** Adds the modifier "0 "Public Works of Cairo" until the end of the campaign:
+***** local_development_cost = -0.1
+* Gets the country event:
+** ID is flavor_mam.3
+** title = 0 "The King of Cyprus
+** desc = 0 "In 1458, the Sultan received an illegitimate son of the King of Cyprus, who attempted to wrest his father's crown away from his half-sister who became queen. The Sultan decorated him with a 'robe of honor', and promised to install him as King of Cyprus. When the Queen offered a large tribute to Cairo, the Sultan relented and recognized the Queen's authority over Cyprus. As Jaques had befriended several Mamluk guards, they protested and attacked the Cypriot embassy in protest.\nWhat shall we do?
+** picture = NEW_HEIR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mamluks
+*** Year is at least 1458
+*** Is not at war
+*** 0 "Cyprus exists
+*** 0 "Cyprus:
+**** Owns 0 "Cyprus
+**** Is not a vassal
+**** Is not at war
+**** Has the monarchy government type
+**** Any of the following:
+***** Ruler is female
+***** Is in regency
+**** Is in the 0 "Christian religion group
+** Mean time to happen
+*** Base mean time to happen of 5 months
+** Option: 0 "Send an embassy to Cyprus:
+*** AI chance:
+**** Base chance of 90
+*** 0 "Cyprus:
+**** Gets the country event:
+***** ID is flavor_mam.4
+***** Base mean time to happen of 5 days
+***** Randomized by 8
+***** Tooltip:
+*** Changes prestige by -10
+** Option: 0 "What the infidels do is not relevant to us:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by 10
+* Gets the country event:
+** ID is flavor_mam.4
+** title = 0 "Mamluk Embassy put demands on us!
+** desc = 0 "The embassy from Cairo has some severe demands upon us. They claim that Jaques, the illegitimate son of a former King of Cyprus is the legitimate ruler of our Island. What shall we do about it?
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Install Jaques as rightful King!:
+*** 0 "Mamluks:
+**** Gets the country event:
+***** ID is flavor_mam.5
+***** Base mean time to happen of 2 days
+***** Randomized by 7
+***** Tooltip:
+*** Changes prestige by -5
+*** If:
+**** Limited to:
+***** Has an heir
+**** Hidden effect:
+***** Kills the heir of the country
+****** allow_new_heir_false = no
+*** Spawns a ruler:
+**** Named "Jacques"
+**** Ruler's dynasty is de Lusignan
+** Option: 0 "Bribe them...:
+*** AI chance:
+**** Base chance of 0
+*** Modifies treasury by -1.0 years worth of income
+*** 0 "Mamluks:
+**** Gets the country event:
+***** ID is flavor_mam.6
+***** Base mean time to happen of 2 days
+***** Randomized by 7
+***** Tooltip:
+** Option: 0 "Ignore the Infidels!:
+*** AI chance:
+**** Base chance of 0
+*** Changes prestige by 5
+*** 0 "Mamluks:
+**** Gets the country event:
+***** ID is flavor_mam.7
+***** Base mean time to happen of 2 days
+***** Randomized by 7
+***** Tooltip:
+**** Adds the opinion modifier "0 "Refused King Jaques" towards our country
+* Gets the country event:
+** ID is flavor_mam.5
+** title = 0 "News from Cyprus!
+** desc = 0 "The embassy returns with news that our good friend [From.Monarch.GetName] is now King of Cyprus. He will be a trustworthy ally for a long time, and an obedient vassal to [Root.Monarch.GetTitle].
+** picture = NEW_HEIR_eventPicture
+** is_triggered_only = yes
+** Option: 0 "This is good news indeed...:
+*** 0 "Cyprus:
+**** Adds the opinion modifier "0 "Installed Jaques" towards our country
+*** Vassalizes 0 "Cyprus
+*** Changes prestige by 20
+* Gets the country event:
+** ID is flavor_mam.6
+** title = 0 "Ships filled with gold in the harbor!
+** desc = 0 "It seems that the rulers of Cyprus decided to empty their coffers to make us forget all about the claims of some infidel noble we had previously had as a guest.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "What was his name again??:
+*** Modifies treasury by 0.25 years worth of income
+*** Changes prestige by 5
+* Gets the country event:
+** ID is flavor_mam.7
+** title = 0 "Cyprus defiant!
+** desc = 0 "[From.Monarch.GetName] refuses our demands and claims that Jaques is the son of a whore, and that our [Root.Monarch.GetTitle] is nothing but a dirty infidel.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "This is a legitimate cause for War!:
+*** Adds claim to 0 "Cyprus
+* Gets the country event:
+** ID is flavor_mam.8
+** title = 0 "Ibn Taghribirdi
+** desc = 0 "Ibn Taghribirdi was a famous Egyptian historian, who belonged to the Mamluk elite of Cairo. He studied under leading historians and scholars like al-Ayni and al-Maqrizi. He is most famous for his multi-volume chronicle of Egypt and the Mamluk Sultanate, which was written in an annalistic style with precise dates for most events. He had privileged access to the Sultans and their records to create it.\nHow shall we do?
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mamluks
+*** Year is at least 1460
+*** Has at least 50 diplomatic power
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Support him fully!:
+*** AI chance:
+**** Base chance of 90
+*** Changes diplomatic power stored by -20
+*** Modifies treasury by -0.25 years worth of income
+*** Adds 10 legitimacy
+*** Changes prestige by 25
+** Option: 0 "Refuse him access to our records:
+*** Changes prestige by -5
+* Gets the country event:
+** ID is flavor_mam.9
+** title = 0 "The Mamluk Nobility
+** desc = 0 "Your Excellency, the numerous Mamluk nobles are demanding that more power be transferred from the central government into their hands. To do so will massively decentralize the government, but to deny them will likely cause them to rise up in rebellion.\nWhat shall we do?
+** picture = DEBATE_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mamluks
+*** Year is at least 1465
+*** Has at least 50 administrative power
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Grant them more power:
+*** AI chance:
+**** Base chance of 90
+*** Changes administrative power stored by -50
+** Option: 0 "Refuse their demands:
+*** 0 "Cairo:
+**** Spawns 1 revolt size of noble rebels
+* Gets the country event:
+** ID is flavor_mam.10
+** title = 0 "Fire in Medina
+** desc = 0 "In 1481, a serious fire stuck the Mosque of the Prophet in Medina. The Sultan spent a lot of effort to extensively renew it to full splendor.\nWhat shall we do?
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mamluks
+*** Year is at least 1481
+*** Has at least 20 administrative power
+*** Owns 0 "Medina
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "We will restore it!:
+*** AI chance:
+**** Base chance of 90
+*** Changes administrative power stored by -20
+*** Adds 5 legitimacy
+** Option: 0 "It is not our concern...:
+*** Adds -5 legitimacy
+* Gets the country event:
+** ID is flavor_mam.11
+** title = 0 "Common enemies in the Ottoman Empire
+** desc = 0 "The Ottomans have been our main rival for a while now, and their expansionism has been a threat to our state for even longer. Their expansionist ambitions in the Mediterranean have brought them into conflict with the Christian powers as well. In history, the Mamluks and Fernando of Spain made a temporary alliance between 1488 until 1491, targeted against the Ottomans, where the Spanish promised 50 caravels against the Ottoman Empire.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mamluks
+*** Year is at least 1480
+*** 0 "Ottomans:
+**** Is a neighbor of 0 "Mamluks
+*** Any of the following:
+**** 0 "Ottomans:
+***** Considers 0 "Mamluks a rival
+**** Considers 0 "Ottomans a rival
+*** Does not consider 0 "Spain a rival
+*** 0 "Spain:
+**** Does not consider 0 "Mamluks a rival
+*** Not at war with 0 "Spain
+*** Has no truce with 0 "Spain
+*** 0 "Ottomans:
+**** Owns 1 "Smederevo
+**** Owns 0 "Constantinople
+**** Owns 0 "Athens
+*** 0 "Spain exists
+*** 0 "Spain:
+**** Owns 1 "Majorca
+**** Owns 0 "Barcelona
+**** Owns 0 "Malta
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Even Christians can be allies:
+*** 0 "Spain:
+**** Adds the opinion modifier "0 "The Ottomans are a common enemy" towards our country
+**** Gets the country event:
+***** ID is flavor_mam.12
+***** Base mean time to happen of 1 days
+***** Tooltip:
+* Gets the country event:
+** ID is flavor_mam.12
+** title = 0 "Common enemies in the Ottoman Empire
+** desc = 0 "The large expansion of the Ottoman Empire in the Mediterranean has not just concerned our most Christian realm, but has also made the Mamluks really worried. In history, the Mamluks and Fernando of Spain made a temporary alliance between 1488 until 1491, targeted against the Ottomans, where the Spanish promised 50 caravels against the Ottoman Empire.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Even a Muslim country can be an ally...:
+*** 0 "Mamluks:
+**** Adds the opinion modifier "0 "The Ottomans are a common enemy" towards our country
+* Gets the country event:
+** ID is flavor_mam.13
+** title = 0 "Plague in Cairo
+** desc = 0 "Nature seems capricious and the gods inscrutable. The plague was a constant presence, especially in large cities. The plague in Cairo in 1492 reputedly killed 12,000 inhabitants in a single day. This was seen as a disaster and the proof that Allah was not with the Sultan.
+** picture = PLAGUE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mamluks
+*** Year is at least 1492
+*** Owns 0 "Cairo
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "We'll survive:
+*** 0 "Cairo:
+**** Adds the modifier "0 "Recovering from the Plague" until the end of the campaign:
+***** -25% manpower modifier
+***** local_unrest = -3	#yes, its less likely with revolts.
+***** -25% provincial tax income
+***** -25% trade goods output
+* Gets the country event:
+** ID is flavor_mam.14
+** title = 0 "Empty coffers
+** desc = 0 "With the danger of the plague averted, the [Root.Monarch.GetTitle] turned to revenue administration. The treasury was dangerously depleted, so he attempted to demand an extraordinary tax, with nobody escaping it. No one was exempt from this tax, as it was not only Jews and Christians that were taxed heavily, but even mosques and religious organizations. In Cairo the tax-gatherers were chased away, and in Damascus the governor was slain. The money wrung from the people was spent on the Mamluk elite, on buying new slaves from abroad, and finally on public improvements like fortification in Alexandria and a grand mosque in Cairo.\nWhat shall we do?
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mamluks
+*** Year is at least 1490
+*** Is not in regency
+*** Has ruled for less than 12 months
+*** Has less than 0.5 years worth of income
+*** Has at least 1 administrative power
+** Mean time to happen
+*** Base mean time to happen of 3 months
+*** AI chance:
+**** Base chance of 90
+** Option: 0 "Tax them all:
+*** Modifies treasury by 2.0 years worth of income
+*** Changes administrative power stored by -50
+*** Random owned province:
+**** Spawns 1 revolt size of peasant rebels
+*** Random owned province:
+**** Spawns 1 revolt size of peasant rebels
+*** Capital:
+**** Spawns 2 revolt size of peasant rebels
+** Option: 0 "Just tax the Dhimmi:
+*** Modifies treasury by 0.10 years worth of income
+* Gets the country event:
+** ID is flavor_mam.15
+** title = 0 "The Portuguese-Mamluk Trade Wars
+** desc = 0 "When the Portuguese traders discovered the way around Africa, and into India, they started to divert the lucrative eastern trade around Africa instead of up the Red Sea. When this happened, they got into a conflict with the Mamluk Sultanate in Egypt. In 1505, the Mamluk Sultan ordered the first expedition against the Portuguese. Fleets were constructed on the Red Sea and sent to fight the Portuguese in the Indian Ocean. In 1509, the Portuguese finally succeeded in eliminating the Mamluk Fleet at the Battle of Diu, winning the war.\nWhat shall we do?
+** picture = MERCHANTS_TALKING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mamluks
+*** Year is at least 1490
+*** 0 "Portugal exists
+*** Manpower are at least 50% of maximum
+*** Owns 0 "Suez
+*** 0 "Qamr Bay:
+**** The strongest trade power is 0 "Portugal
+*** Has less than 0 "Portugal light ships
+** Mean time to happen
+*** Base mean time to happen of 3 months
+*** AI chance:
+**** Base chance of 90
+** Option: 0 "The Christians must be stopped:
+*** Sets the country flag MAM_POR_conflict
+*** If:
+**** Limited to:
+***** Manpower are at least 50% of maximum
+**** Changes national manpower reserves by -40 years worth
+**** 0 "Suez:
+***** Adds unit construction of the 0 "Light Ship type:
+****** 20 will be built
+****** It will take 10% of normal time
+****** It will cost 0% of the normal amount
+*** 0 "Portugal:
+**** Adds the opinion modifier "0 "Confrontation over Trade" towards our country
+**** Gets the country event:
+***** ID is flavor_mam.16
+***** Base mean time to happen of 2 days
+***** Randomized by 4
+***** Tooltip:
+** Option: 0 "We have other sources of income:
+*** Changes prestige by -25
+*** 0 "Qamr Bay:
+**** Adds trade modifier:
+***** Affecting our country
+***** Lasting 3650 days
+***** Changing trade power by -5
+***** Named "0 "Surrendering the Trade"
+* Gets the country event:
+** ID is flavor_mam.16
+** title = 0 "The Portuguese-Mamluk Trade Wars
+** desc = 0 "When the Portuguese traders discovered the way around Africa, and into India, they started to divert the lucrative eastern trade around Africa instead of up the Red Sea. When this happened, they got into a conflict with the Mamluk Sultanate in Egypt. In 1505, the Mamluk Sultan ordered the first expedition against the Portuguese. Fleets were constructed on the Red Sea and sent to fight the Portuguese in the Indian Ocean. In 1509, the Portuguese finally succeeded in eliminating the Mamluk Fleet at the Battle of Diu, winning the war.
+** picture = MERCHANTS_TALKING_eventPicture
+** is_triggered_only = yes
+** Option: 0 "And we will win this war...:
+*** Changes navy tradition by 5
+*** Gives the 0 "Trade War casus belli against 0 "Mamluks
+* Gets the country event:
+** ID is flavor_mam.17
+** title = 0 "The Embassy to the West
+** desc = 0 "In 1501, the Shah of Persia sent an emissary to the Venetians through Mamluk lands to form an alliance against the Ottomans. The Ottomans accused the Mamluks of providing the envoys safe passage on their way to Venice, and the Sultan appeased the Ottomans. \nWhat shall we do? Try for a grand coalition?
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Persia
+*** Year is at least 1500
+*** Year is less than 1520
+*** 0 "Mamluks exists
+*** 0 "Venice exists
+*** 0 "Ottomans exists
+*** 0 "Mamluks:
+**** Is not in a coalition
+*** 0 "Persia:
+**** Is not in a coalition
+*** 0 "Venice:
+**** Is not in a coalition
+*** 0 "Persia:
+**** Is a neighbor of 0 "Ottomans
+*** 0 "Mamluks:
+**** Is a neighbor of 0 "Ottomans
+*** 0 "Persia:
+**** Is not allied with 0 "Ottomans
+*** 0 "Venice:
+**** Is not allied with 0 "Ottomans
+*** 0 "Mamluks:
+**** Is not allied with 0 "Ottomans
+*** 0 "Ottomans:
+**** Owns 1 "Smederevo
+**** Owns 0 "Constantinople
+**** Owns 0 "Athens
+*** 0 "Ottomans:
+**** Has an opinion of less than 0 with 0 "Persia
+*** Has at least 1 ports
+** Mean time to happen
+*** Base mean time to happen of 36 months
+** Option: 0 "Send the emissaries.:
+*** AI chance:
+**** Base chance of 99
+*** 0 "Mamluks:
+**** Gets the country event:
+***** ID is flavor_mam.18
+***** Base mean time to happen of 2 days
+***** Randomized by 4
+***** Tooltip:
+*** Changes piety by -5%
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Persian Scheming" towards our country
+** Option: 0 "We cannot ally with the Christians!:
+*** Changes piety by 5%
+* Gets the country event:
+** ID is flavor_mam.18
+** title = 0 "The Anti-Ottoman Coalition
+** desc = 0 "In 1501, the Shah of Persia sent an emissary to the Venetians through Mamluk lands to form an alliance against the Ottomans. The Ottomans accused the Mamluks of providing the envoys safe passage on their way to Venice, and the Sultan appeased the Ottomans. \nWhat shall we do? Try for a grand coalition?
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Send the emissaries to Venice:
+*** AI chance:
+**** Base chance of 99
+*** 0 "Venice:
+**** Gets the country event:
+***** ID is flavor_mam.19
+***** Base mean time to happen of 2 days
+***** Randomized by 4
+***** Tooltip:
+*** Changes piety by -5%
+** Option: 0 "It is too much of a risk:
+*** Changes piety by 5%
+* Gets the country event:
+** ID is flavor_mam.19
+** title = 0 "The Anti-Ottoman Coalition
+** desc = 0 "In 1501, the Shah of Persia sent and emissary to the Venetians through Mamluk lands to form an alliance against the Ottomans. The Ottomans accused the Mamluks of providing the envoys safe passage on their way to Venice, and the Sultan appeased the Ottomans. \nWhat shall we do? Try for a grand coalition?
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Agree to the coalition:
+*** AI chance:
+**** Base chance of 99
+*** 0 "Mamluks:
+**** Gets the country event:
+***** ID is flavor_mam.20
+***** Base mean time to happen of 2 days
+***** Randomized by 4
+***** Tooltip:
+*** Changes piety by -5%
+** Option: 0 "It is too much of a risk:
+*** Changes prestige by -5
+* Gets the country event:
+** ID is flavor_mam.20
+** title = 0 "The Emissaries return with good news
+** desc = 0 "The emissaries we sent to Venice have returned with good news. They are willing to form the grand coalition against the Ottoman Empire.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "We will form the coalition:
+*** AI chance:
+**** Base chance of 100
+*** Hidden effect:
+**** 0 "Venice:
+***** Gets the country event:
+****** ID is flavor_mam.21
+****** Base mean time to happen of 1 days
+**** 0 "Persia:
+***** Gets the country event:
+****** ID is flavor_mam.21
+****** Base mean time to happen of 1 days
+*** 0 "Ottomans:
+**** Gets the country event:
+***** ID is flavor_mam.22
+***** Base mean time to happen of 1 days
+***** Tooltip:
+*** 0 "Persia:
+**** Forms a coalition against 0 "Ottomans
+*** 0 "Venice:
+**** Forms a coalition against 0 "Ottomans
+*** Changes piety by -5%
+** Option: 0 "This is too much of a gamble:
+*** AI chance:
+**** Base chance of 0
+*** Changes piety by 5%
+* Gets the country event:
+** ID is flavor_mam.21
+** title = 0 "Coalition formed!
+** desc = 0 "The Mamluks have formed a grand coalition against the Ottoman Empire, and we have joined it, making a common front against the Turks.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Let's hope this is good news!:
+*** Changes prestige by 5
+* Gets the country event:
+** ID is flavor_mam.22
+** title = 0 "Coalition against the Ottoman Empire
+** desc = 0 "The Mamluks, the Persians and Venice have formed a coalition against the Ottoman Empire. When this was attempted in history, it spelled the doom for the Mamluk Sultanate, which was eradicated in a quick war by the Ottoman Empire in 1517.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Cairo must be sacked!:
+*** 0 "Mamluks:
+**** Every owned province:
+***** Limited to:
+****** The province is not claimed by 0 "Ottomans
+****** Has no core on 0 "Ottomans
+***** Adds claim to 0 "Ottomans
+*** Changes national manpower reserves by 12 years worth
+*** Changes war exhaustion by -5
+* Gets the country event:
+** ID is flavor_mam.23
+** title = 0 "The Fate of the Holy Cities
+** desc = 0 "The holiest cities of Islam, Mecca and Medina, are under Mamluk control. This of course establishes us as custodians of the faith, but there is still the matter of how the cities should be organized politically.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+*** AI chance:
+**** Base chance of 90
+*** Trigger:
+**** 0 "Hejaz:
+***** Is a vassal of our country
+***** Owns core province 0 "Mecca
+**** 0 "Medina:
+***** Is a vassal of our country
+***** Owns core province 0 "Medina
+** Option: 0 "The Sharif of Mecca shall rule both cities:
+*** 0 "Hejaz:
+**** Inherit 0 "Medina
+*** Changes prestige by 20
+*** 0 "Mecca:
+**** Changes base tax by 2
+**** add_base_production = 2
+**** add_base_manpower = 2
+*** AI chance:
+**** Base chance of 10
+*** Trigger:
+**** 0 "Hejaz:
+***** Is a vassal of our country
+***** Owns core province 0 "Mecca
+**** 0 "Medina:
+***** Is a vassal of our country
+***** Owns core province 0 "Medina
+** Option: 0 "Two Sharifs for two cities:
+*** Changes prestige by 10
+*** 0 "Mecca:
+**** Changes base tax by 2
+**** add_base_production = 2
+**** add_base_manpower = 2
+*** AI chance:
+**** Base chance of 5
+** Option: 0 "We will maintain them ourselves.:
+*** 0 "Mecca:
+**** Changes base tax by 2
+**** add_base_production = 2
+**** add_base_manpower = 2

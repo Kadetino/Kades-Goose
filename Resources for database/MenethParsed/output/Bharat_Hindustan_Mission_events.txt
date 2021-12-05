@@ -1,0 +1,176 @@
+
+=== title = "india_mission_events.1.t" ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Dharma
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: india_mission_events.1.a:'''
+
+* Trigger:
+** has_estate = estate_rajput
+* add_estate_loyalty_modifier:
+** estate = estate_rajput
+** desc = EST_VAL_RAJPUT_DOMINANCE
+** loyalty = 10
+** Lasting -1 days
+* Trigger:
+** has_estate_false = estate_rajput
+
+'''Option: india_mission_events.1.c:'''
+
+* add_stability_or_adm_power = yes
+* west_india_region:
+** Limited to:
+*** The province is owned by our country
+** Adds the modifier "0 "Integration of the Rajputs" until the end of the campaign:
+
+=== title = "india_mission_events.2.t" ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Dharma
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: india_mission_events.2.a:'''
+
+* Trigger:
+** has_estate = estate_maratha
+* add_estate_loyalty_modifier:
+** estate = estate_maratha
+** desc = EST_VAL_MARATHA_DOMINANCE
+** loyalty = 10
+** Lasting -1 days
+* Trigger:
+** has_estate_false = estate_maratha
+
+'''Option: india_mission_events.1.c:'''
+
+* add_stability_or_adm_power = yes
+* deccan_region:
+** Limited to:
+*** The province is owned by our country
+** Adds the modifier "0 "Integration of the Rajputs" until the end of the campaign:
+
+=== title = "india_mission_events.3.t" ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Dharma
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: india_mission_events.3.a:'''
+
+* Trigger:
+** Capital is not 0 "Delhi
+* 0 "Delhi:
+** move_capital_effect = yes
+** Changes base tax by 2
+** add_base_production = 2
+** add_base_manpower = 2
+** Adds the modifier "0 "The Peacock Throne" until the end of the campaign:
+
+'''Option: india_mission_events.3.b:'''
+
+* Capital:
+** Changes base tax by 2
+** add_base_production = 2
+** add_base_manpower = 2
+** Adds the modifier "0 "The Peacock Throne" until the end of the campaign:
+
+=== title = "india_mission_events.4.t" ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Dharma
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: india_mission_events.4.a:'''
+
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = 20
+* Adds the modifier "0 "Bathing in the Ganges" for the rest of the campaign:
+** -1 diplomatic relations limit
+** +30% stability cost modifier
+** Follows the yes religion
+
+=== title = "india_mission_events.5.t" ===
+* Trigger:
+** Primary culture is not 0 "Marathi
+* desc = india_mission_events.5.d
+* Trigger:
+** Primary culture is 0 "Marathi
+* desc = india_mission_events.5.d2
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Dharma
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Excellent:'''
+
+* Trigger:
+** Primary culture is 0 "Marathi
+* Changes army tradition by 20
+
+'''Option: india_mission_events.5.b:'''
+
+* Trigger:
+** Primary culture is not 0 "Marathi
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Any of the following:
+**** Country is 0 "Vijayanagar
+**** Country is 0 "Bahmanis
+* Change the primary culture to 0 "Marathi
+* Hidden effect:
+** Kills the heir of the country
+*** allow_new_heir_false = no
+* Spawns a ruler:
+** Culture is 0 "Marathi
+** Ruler's administrative skill is at least 3
+** Ruler's diplomatic skill is at least 3
+** Ruler's military skill is at least 6
+* If:
+** Limited to:
+*** has_states_general_mechanic = yes
+** change_statists_vs_orangists = 1
+
+'''Option: india_mission_events.5.c:'''
+
+* Trigger:
+** Primary culture is not 0 "Marathi
+* AI chance:
+** Base chance of 100
+** Multiplies value by 0:
+*** Country is not 0 "Vijayanagar
+*** Country is not 0 "Bahmanis
+* If:
+** Limited to:
+*** has_estate = estate_maratha
+** add_estate_loyalty:
+*** estate = estate_maratha
+*** loyalty = 20

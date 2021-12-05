@@ -1,0 +1,541 @@
+
+=== title = dhimmi_estate_events.1.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_dhimmi
+* has_estate = estate_church
+* Any owned province:
+** Is not in 0 "Muslim's religion group
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_OVERZEALOUS_QAZI_DHIMMI
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_OVERZEALOUS_PROTECTED_DHIMMI
+* estate_influence:
+** estate = estate_church
+** influence = 25
+* estate_territory:
+** estate = estate_dhimmi
+** territory = 1
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: dhimmi_estate_events.1.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.2:
+*** estate_loyalty:
+**** estate = estate_church
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 60
+** Multiplies value by 0.2:
+*** estate_loyalty:
+**** estate_false = estate_dhimmi
+**** loyalty_false = 40
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* Adds the modifier "overzealous_qazi" for 10 years:
+** -2% global missionary strength
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 15
+* add_estate_loyalty:
+** estate = estate_dhimmi
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_dhimmi
+** desc = EST_VAL_OVERZEALOUS_QAZI_DHIMMI
+** influence = -10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_OVERZEALOUS_QAZI_ULEMA
+** influence = 10
+** Lasting 5475 days
+
+'''Option: dhimmi_estate_events.1.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_dhimmi
+**** loyalty_false = 40
+** Multiplies value by 1.2:
+*** estate_loyalty:
+**** estate = estate_dhimmi
+**** loyalty = 50
+*** estate_loyalty:
+**** estate_false = estate_dhimmi
+**** loyalty_false = 60
+** Multiplies value by 0.2:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_dhimmi
+**** influence = 60
+* Modifies treasury by -0.1 years worth of income
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_estate_loyalty:
+** estate = estate_dhimmi
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_dhimmi
+** desc = EST_VAL_OVERZEALOUS_PROTECTED_DHIMMI
+** influence = 10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_OVERZEALOUS_PROTECTED_DHIMMI_ULEMA
+** influence = -10
+** Lasting 5475 days
+
+=== title = dhimmi_estate_events.2.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_dhimmi
+* estate_influence:
+** estate = estate_dhimmi
+** influence = 70
+* Any owned province:
+** Is not in 0 "Muslim's religion group
+** yes is a city
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Is not in our country's religion group
+**** yes is a city
+*** Sets the province flag demanding_dhimmi
+** Random owned province:
+*** Limited to:
+**** Is not in our country's religion group
+**** yes is a city
+**** Does not have the province flag demanding_dhimmi
+**** The owner of the province:
+***** Has at least 8 provinces
+*** Sets the province flag demanding_dhimmi
+** Random owned province:
+*** Limited to:
+**** Is not in our country's religion group
+**** yes is a city
+**** Does not have the province flag demanding_dhimmi
+**** The owner of the province:
+***** Has at least 15 provinces
+*** Sets the province flag demanding_dhimmi
+** Random owned province:
+*** Limited to:
+**** Is not in our country's religion group
+**** yes is a city
+**** Does not have the province flag demanding_dhimmi
+**** The owner of the province:
+***** Has at least 25 provinces
+*** Sets the province flag demanding_dhimmi
+
+'''Option: dhimmi_estate_events.2.a:'''
+
+* AI chance:
+** Base chance of 35
+** Multiplies value by 0.2:
+*** estate_loyalty:
+**** estate_false = estate_dhimmi
+**** loyalty_false = 40
+* add_estate_loyalty:
+** estate = estate_dhimmi
+** loyalty = -15
+* Every owned province:
+** Limited to:
+*** Has the province flag demanding_dhimmi
+** Spawns revolt of size 1 of 0 "Religious rebels
+** Removes the province flag demanding_dhimmi
+
+'''Option: dhimmi_estate_events.2.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.2:
+*** estate_loyalty:
+**** estate_false = estate_dhimmi
+**** loyalty_false = 40
+** Multiplies value by 1.2:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_dhimmi
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_church
+* desc_false = EST_VAL_DHIMMI_NOT_TAXED
+* influence_false = -10
+* duration_false = 5475
+* Adds the modifier "heathen_taxes_abolished" for 15 years:
+** -25% global tax modifier
+* Modifies treasury by -0.35 years worth of income
+
+=== title = dhimmi_estate_events.3.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_dhimmi
+* Any owned province:
+** Is not in 0 "Muslim's religion group
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_DHIMMI_DECLINES
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_DHIMMI_ADVANCES
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_DHIMMI_ADVANCES_20
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: dhimmi_estate_events.3.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_dhimmi
+** desc = EST_VAL_DHIMMI_ADVANCES
+** influence = 10
+** Lasting 5475 days
+
+=== title = dhimmi_estate_events.4.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_dhimmi
+* Any owned province:
+** Is not in 0 "Muslim's religion group
+* estate_influence:
+** estate = estate_dhimmi
+** influence = 15
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_DHIMMI_DECLINES
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_DHIMMI_ADVANCES
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_DHIMMI_ADVANCES_20
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: dhimmi_estate_events.4.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_dhimmi
+** desc = EST_VAL_DHIMMI_DECLINES
+** influence = -10
+** Lasting 5475 days
+
+=== title = dhimmi_estate_events.5.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_dhimmi
+* has_estate = estate_nobles
+* has_estate = estate_church
+* Any owned province:
+** Is not in 0 "Muslim's religion group
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_TEMPLE_DESTRUCTION
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_DHIMMI_TEMPLES_PROTECTED
+* estate_influence:
+** estate = estate_dhimmi
+** influence = 40
+* estate_territory:
+** estate = estate_dhimmi
+** territory = 1
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: dhimmi_estate_events.5.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.2:
+*** estate_loyalty:
+**** estate_false = estate_dhimmi
+**** loyalty_false = 45
+** Multiplies value by 1.2:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 30
+** Multiplies value by 1.2:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 30
+** Multiplies value by 1.2:
+*** estate_influence:
+**** estate = estate_dhimmi
+**** influence = 60
+* scaled_estate_dhimmi_negative_land_share_effect = yes
+* Random owned province:
+** Limited to:
+*** Is not in 0 "Muslim's religion group
+*** yes is a city
+** Adds the modifier "repression_of_influential_dhimmi" until the end of the campaign:
+*** local_unrest = 8
+*** -25% provincial tax income
+* add_estate_loyalty:
+** estate = estate_dhimmi
+** loyalty = -20
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = 15
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_dhimmi
+** desc = EST_VAL_TEMPLE_DESTRUCTION
+** influence = -15
+** Lasting 5475 days
+
+'''Option: dhimmi_estate_events.5.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.2:
+*** estate_loyalty:
+**** estate_false = estate_dhimmi
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_dhimmi
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_dhimmi
+** loyalty = 15
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_dhimmi
+** desc = EST_VAL_DHIMMI_TEMPLES_PROTECTED
+** influence = 10
+** Lasting 5475 days
+
+=== title = dhimmi_estate_events.6.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_dhimmi
+* Any owned province:
+** Is not in 0 "Muslim's religion group
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: dhimmi_estate_events.6.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_dhimmi
+**** influence = 60
+* Adds the modifier "dhimmi_administrators" for 15 years:
+** -15% advisor cost
+** +100% available advisors
+* add_estate_influence_modifier:
+** estate = estate_dhimmi
+** desc = EST_VAL_DHIMMI_ADMINISTRATORS
+** influence = 10
+** Lasting 5475 days
+
+'''Option: dhimmi_estate_events.6.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_dhimmi
+**** influence = 70
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_dhimmi
+** desc = EST_VAL_DHIMMI_NO_ADMINISTRATORS
+** influence = -10
+** Lasting 5475 days
+
+=== title = dhimmi_estate_events.7.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_dhimmi
+* Any owned province:
+** Is not in 0 "Muslim's religion group
+** The province is not the capital of the country
+** yes is a city
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_DHIMMI_CONCESSIONS
+* estate_territory:
+** estate = estate_dhimmi
+** territory = 1
+* estate_loyalty:
+** estate_false = estate_dhimmi
+** loyalty_false = 30
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: dhimmi_estate_events.7.a:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 2.0:
+*** Legitimacy is at least 95
+* Adds -15 legitimacy
+* add_horde_unity = -15
+* Changes republican tradition by -700%
+* add_devotion = -7
+* Random owned province:
+** Limited to:
+*** Is not in 0 "Muslim's religion group
+*** The province is not the capital of the country
+*** yes is a city
+** add_local_autonomy = 33
+
+'''Option: dhimmi_estate_events.7.b:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_dhimmi
+**** influence = 60
+* Changes stability by -1
+* add_estate_loyalty:
+** estate = estate_dhimmi
+** loyalty = 15
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_dhimmi
+** desc = EST_VAL_DHIMMI_CONCESSIONS
+** influence = 10
+** Lasting 5475 days
+
+=== title = dhimmi_estate_events.8.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_dhimmi
+* Any owned province:
+** Is not in 0 "Muslim's religion group
+* Any of the following:
+** 4 war exhaustion
+** Has at least 2 active loans
+* has_estate_influence_modifier:
+** estate_false = estate_dhimmi
+** modifier_false = EST_VAL_DHIMMI_INVESTMENTS
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: dhimmi_estate_events.8.a:'''
+
+* Modifies treasury by 0.25 years worth of income
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_dhimmi
+**** influence = 60
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_dhimmi
+** desc = EST_VAL_DHIMMI_INVESTMENTS
+** influence = 15
+** Lasting 9125 days
+
+'''Option: dhimmi_estate_events.8.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 15
+
+=== title = dhimmi_estate_events.9.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: dhimmi_estate_events.9.a:'''
+

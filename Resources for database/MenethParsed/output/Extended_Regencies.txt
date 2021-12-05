@@ -1,0 +1,235 @@
+
+=== title = extended_regency_events.1.t ===
+
+'''Trigger:'''
+
+* Stability is lower than 1
+* Has the monarchy government type
+* legitimacy_or_horde_unity_false = 50
+* Is in regency
+* Has an heir
+* Any of the following:
+** heir_adm = 3
+** heir_dip = 3
+** heir_mil = 3
+** The heir has a legitimacy of at least 75
+* has_ruler_flag_false = paranoid_regent
+* has_ruler_flag_false = paranoid_regent_investigation
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: extended_regency_events.1.a:'''
+
+* One of the following will happen:
+** 25 relative chance:
+*** Kills the ruler of the country
+** 75 relative chance:
+*** set_ruler_flag = paranoid_regent
+
+=== title = extended_regency_events.2.t ===
+
+'''Trigger:'''
+
+* has_ruler_flag = paranoid_regent
+* Is in regency
+* Has the monarchy government type
+* has_ruler_flag_false = paranoid_regent_investigation
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 3 months
+* Trigger:
+** Stability is at least 1
+
+'''Option: extended_regency_events.2.a:'''
+
+* One of the following will happen:
+** 75 relative chance:
+** 25 relative chance:
+*** extend_regency = 5
+*** set_ruler_flag = paranoid_regent_investigation
+* Trigger:
+** Stability is lower than 1
+
+'''Option: extended_regency_events.2.b:'''
+
+* One of the following will happen:
+** 50 relative chance:
+** 50 relative chance:
+*** extend_regency = 5
+*** set_ruler_flag = paranoid_regent_investigation
+* Trigger:
+** Stability is lower than -1
+
+'''Option: extended_regency_events.2.c:'''
+
+* Adds -10 legitimacy
+* extend_regency = 5
+
+'''Option: extended_regency_events.2.e:'''
+
+* One of the following will happen:
+** 50 relative chance:
+*** Kills the ruler of the country
+*** If:
+**** Limited to:
+***** Has no heir
+**** Spawns a ruler:
+***** Ruler's dynasty is our country
+***** Legitimacy of 20
+***** max_random_dip = 4
+***** max_random_adm = 4
+***** max_random_mil = 4
+** 50 relative chance:
+*** Changes stability by -1
+*** extend_regency = 5
+*** set_ruler_flag = paranoid_regent_investigation
+
+=== title = extended_regency_events.3.t ===
+
+'''Trigger:'''
+
+* has_ruler_flag = paranoid_regent_investigation
+* Is in regency
+* Has the monarchy government type
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: extended_regency_events.3.a:'''
+
+* Adds -15 legitimacy
+* Hidden effect:
+** clr_ruler_flag = paranoid_regent_investigation
+
+'''Option: extended_regency_events.3.b:'''
+
+* If:
+** Limited to:
+*** Has at least 150 ducats in the treasury
+** Changes treasury by -50 ducats
+** extend_regency = 5
+* else_if:
+** Limited to:
+*** Has at least 50 ducats in the treasury
+** Changes treasury by -20 ducats
+** extend_regency = 5
+* else:
+** Modifies treasury by -0.25 years worth of income
+** extend_regency = 5
+* Hidden effect:
+** clr_ruler_flag = paranoid_regent_investigation
+** clr_ruler_flag = paranoid_regent
+
+=== title = extended_regency_events.4.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is in regency
+* corruption = 3
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: extended_regency_events.4.a:'''
+
+* Kills the ruler of the country
+* add_corruption = -0.5
+* If:
+** Limited to:
+*** Any of the following:
+**** Has no heir
+**** The heir has a legitimacy lower than 25
+** Spawns a ruler:
+*** Ruler's dynasty is our country
+*** min_age = 50
+*** Legitimacy of 10
+
+'''Option: extended_regency_events.4.b:'''
+
+* extend_regency = 5
+* add_corruption = 0.5
+
+'''Option: extended_regency_events.4.c:'''
+
+* Trigger:
+** corruption = 5
+* add_corruption = 1
+* extend_regency = 5
+* Changes stability by -1
+
+=== title = extended_regency_events.5.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has an heir
+* Heir is less than 12 years old
+* is_in_extended_regency = yes
+* Stability is lower than 1
+* Any of the following:
+** ruler_has_personality = cruel_personality
+** ruler_has_personality = zealot_personality
+** ruler_has_personality = sinner_personality
+** ruler_has_personality = malevolent_personality
+** ruler_has_personality = drunkard_personality
+** ruler_has_personality = intricate_web_weaver_personality
+** ruler_has_personality = secretive_personality
+** ruler_has_personality = craven_personality
+** All of the following:
+*** Ruler's administrative skill is less than 2
+*** Ruler's diplomatic skill is less than 2
+*** Ruler's military skill is less than 2
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.5:
+** Stability is at least 0
+
+'''Option: extended_regency_events.5.a:'''
+
+* remove_heir:
+* extend_regency = 5
+* Capital:
+** add_unrest = 2
+
+=== title = extended_regency_events.6.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is in regency
+* Has an heir
+* Heir is at least 13 years old
+* Stability is at least 0
+* Any of the following:
+** Ruler's administrative skill is at least 4
+** Ruler's diplomatic skill is at least 4
+** Ruler's military skill is at least 4
+* Any of the following:
+** heir_adm_false = 3
+** heir_dip_false = 3
+** heir_mil_false = 3
+** The heir has a legitimacy lower than 50
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: extended_regency_events.6.a:'''
+
+* Adds 10 legitimacy
+* Changes stability by 1
+* Changes the heir's legitimacy by -10
+* extend_regency = 5
+
+'''Option: extended_regency_events.6.b:'''
+
+* Changes the heir's legitimacy by 10
+* add_corruption = 1

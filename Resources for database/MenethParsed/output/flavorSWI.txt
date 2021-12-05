@@ -1,0 +1,605 @@
+** Trigger:
+*** Any of the following:
+**** Capital:
+***** Region is south_german_region
+**** Country is 0 "Venice
+**** Country is 0 "Switzerland
+*** Year is at least 1515
+*** Year is less than 1541
+** Mean time to happen
+*** Base mean time to happen of 78 months
+*** Multiplies value by 0.95:
+**** Country is 0 "Switzerland
+*** Multiplies value by 0.9:
+**** Country is 0 "Austria
+*** Multiplies value by 0.8:
+**** Owns 0 "Zürich
+*** Multiplies value by 0.8:
+**** Owns 0 "Wien
+*** Multiplies value by 0.8:
+**** Country is 0 "Venice
+** Option: 0 "A Brilliant Scholar!:
+*** Creates an advisor of the 0 "Natural Scientist type:
+**** Named "Paracelsus"
+**** Culture is 0 "Swiss
+**** discount = yes
+**** With a skill level of 2
+* Gets the country event:
+** ID is flavor_swi.2
+** title = flavor_swi.2.t
+** desc = flavor_swi.2.d
+** picture = REVOLUTION_eventPicture
+** Trigger:
+*** Country is GNV
+*** Has the republic government type
+*** Is a vassal of 0 "Savoy
+*** Is not at war
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 36 months
+** Option: flavor_swi.2.a:
+*** AI chance:
+**** Base chance of 100
+*** Hidden effect:
+**** 0 "Savoy:
+***** Gets the country event:
+****** ID is flavor_swi.201
+****** Base mean time to happen of 10 days
+** Option: flavor_swi.2.b:
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_swi.201
+** title = flavor_swi.201.t
+** desc = flavor_swi.201.d
+** picture = REVOLUTION_eventPicture
+** is_triggered_only = yes
+** Option: flavor_swi.201.a:
+*** AI chance:
+**** Base chance of 50
+*** Every owned province:
+**** Limited to:
+***** Culture is 0 "Swiss
+**** Adds core on GNV
+**** Cedes province to GNV
+*** create_march = GNV
+** Option: flavor_swi.201.b:
+*** AI chance:
+**** Base chance of 10
+**** Multiplies value by 5:
+***** GNV:
+****** Wasn't player controlled
+*** Hidden effect:
+**** GNV:
+***** Gets the country event:
+****** ID is flavor_swi.202
+****** Base mean time to happen of 2 days
+*** Tooltip:
+**** GNV:
+***** Kills the ruler of the country
+***** Adds the modifier "geneva_liberty_desire" for the rest of the campaign:
+****** Liberty desire is at least 50
+***** Adds the opinion modifier "geneva_liberty_opinion" towards 0 "Savoy
+* Gets the country event:
+** ID is flavor_swi.202
+** title = flavor_swi.202.t
+** desc = flavor_swi.202.d
+** picture = REVOLUTION_eventPicture
+** is_triggered_only = yes
+** Option: flavor_swi.202.a:
+*** AI chance:
+**** Base chance of 100
+*** GNV:
+**** Kills the ruler of the country
+**** Adds the modifier "geneva_liberty_desire" for the rest of the campaign:
+***** Liberty desire is at least 50
+**** Adds the opinion modifier "geneva_liberty_opinion" towards 0 "Savoy
+* Gets the country event:
+** ID is flavor_swi.203
+** title = flavor_swi.203.t
+** desc = flavor_swi.203.d
+** picture = REVOLUTION_eventPicture
+** Trigger:
+*** Country is GNV
+*** Has the republic government type
+*** Is a vassal of 0 "Savoy
+*** Any of the following:
+**** Has the country modifier "geneva_liberty_desire"
+**** is_march = yes
+*** Has an opinion of at least 150 with 0 "Switzerland
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 12 months
+*** Multiplies value by 0.5:
+**** is_supporting_independence_of = 0 "Switzerland
+** Option: flavor_swi.203.a:
+*** AI chance:
+**** Base chance of 100
+*** Trigger:
+**** Country is GNV
+*** Hidden effect:
+**** 0 "Switzerland:
+***** Gets the country event:
+****** ID is flavor_swi.204
+*** Tooltip:
+**** 0 "Switzerland:
+***** Vassalizes GNV
+*** Gives the 0 "Subjugation casus belli against the country to 0 "Savoy
+** Option: flavor_swi.203.c:
+* Gets the country event:
+** ID is flavor_swi.204
+** title = flavor_swi.203.t
+** desc = flavor_swi.204.d
+** picture = REVOLUTION_eventPicture
+** is_triggered_only = yes
+** fire_only_once = yes
+** Option: flavor_swi.204.a:
+*** AI chance:
+**** Base chance of 100
+*** Gives the 0 "Diplomatic Insult casus belli against the country to 0 "Savoy
+*** Vassalizes GNV
+** Option: flavor_swi.203.c:
+* Gets the country event:
+** ID is flavor_swi.3
+** title = flavor_swi.3.t
+** desc = flavor_swi.3.d
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is GNV
+*** Is not a vassal of 0 "Savoy
+** Option: flavor_swi.3.a:
+*** Changes prestige by 20
+*** Changes republican tradition by 1000%
+*** Removes the country modifier "geneva_liberty_desire"
+*** remove_opinion:
+**** Affecting 0 "Savoy
+* Gets the country event:
+** ID is flavor_swi.4
+** title = flavor_swi.EVTNAME4
+** desc = flavor_swi.EVTDESC4
+** picture = HRE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Switzerland
+*** TTL:
+**** Is part of the Holy Roman Empire
+**** Any owned province:
+***** Culture is 0 "Swiss
+**** Wasn't player controlled
+**** Is not a vassal
+**** Is a neighbor of our country
+**** Has an opinion of at least 100 with our country
+*** Is part of the Holy Roman Empire
+*** Primary culture is 0 "Swiss
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Culture is 0 "Swiss
+***** Sets the province flag is_swiss_target
+**** Random owned province:
+***** Limited to:
+****** Culture is 0 "Swiss
+****** Does not have the province flag is_swiss_target
+***** Sets the province flag is_swiss_target
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: flavor_swi.EVTOPTA4:
+*** AI chance:
+**** Base chance of 100
+*** If:
+**** Limited to:
+***** Country is 0 "Switzerland
+***** mission_completed = emp_swi_start
+**** Inherit TTL
+*** else:
+**** Vassalizes TTL
+** Option: flavor_swi.EVTOPTB4:
+*** AI chance:
+**** Base chance of 0
+*** Every owned province:
+**** Limited to:
+***** Has the province flag is_swiss_target
+**** Changes base tax by 1
+**** add_base_production = 1
+**** add_base_manpower = 1
+**** Removes the province flag is_swiss_target
+* Gets the country event:
+** ID is flavor_swi.5
+** title = flavor_swi.EVTNAME5
+** desc = flavor_swi.EVTDESC5
+** picture = PROTESTANT_PRINTED_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** The 0 "Reformed religion is enabled
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the 0 "Catholic religion
+**** Follows the 0 "Reformed religion
+*** Any province in the world:
+**** Culture is 0 "Swiss
+**** Any of the following:
+***** Follows the 0 "Protestant religion
+***** Follows the 0 "Reformed religion
+*** owns_or_non_sovereign_subject_of = 4720
+** Immediate effects:
+*** Hidden effect:
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: flavor_swi.EVTOPTA5:
+*** AI chance:
+**** Base chance of 50
+**** Multiplies value by 2:
+***** Country is GNV
+*** 4720::
+**** Sets the province flag john_calvin_is_here
+**** If:
+***** Limited to:
+****** Does not follow the 0 "Reformed religion
+***** Changes religion to 0 "Reformed
+**** If:
+***** Limited to:
+****** calc_true_if:
+******* all_province:
+******** Does not follow the 0 "Reformed religion
+******** is_reformation_center_false = yes
+******* amount_false = 3
+***** add_reform_center = 0 "Reformed
+**** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+***** -100% missionary strength
+** Option: flavor_swi.EVTOPTB5:
+*** AI chance:
+**** Base chance of 50
+*** Trigger:
+**** Does not follow the 0 "Reformed religion
+*** 4720::
+**** If:
+***** Limited to:
+****** Does not follow the 0 "Reformed religion
+***** Changes religion to 0 "Reformed
+**** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+***** -100% missionary strength
+**** Adds the modifier "0 "Heresy" until the end of the campaign:
+***** -40% manpower modifier
+***** local_unrest = 2
+***** -33% provincial tax income
+***** local_autonomy = 0.05
+**** Sets the province flag calvin_is_expelled
+*** If:
+**** Limited to:
+***** Follows the 0 "Protestant religion
+**** add_church_power = 25
+*** If:
+**** Limited to:
+***** Follows the 0 "Catholic religion
+**** Changes Papal Influence by 25
+* Gets the country event:
+** ID is flavor_swi.6
+** title = flavor_swi.EVTNAME6
+** desc = flavor_swi.EVTDESC6
+** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** The 0 "Reformed religion is enabled
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the 0 "Catholic religion
+**** Follows the 0 "Reformed religion
+*** owns_or_non_sovereign_subject_of = 4720
+*** 4720::
+**** Follows the 0 "Reformed religion
+**** Has the province flag calvin_is_expelled
+** Mean time to happen
+*** Base mean time to happen of 48 months
+** Option: flavor_swi.EVTOPTA6:
+*** AI chance:
+**** Base chance of 50
+**** Multiplies value by 2:
+***** Country is GNV
+*** 4720::
+**** Sets the province flag john_calvin_is_here
+**** If:
+***** Limited to:
+****** Does not follow the 0 "Reformed religion
+***** Changes religion to 0 "Reformed
+***** If:
+****** Limited to:
+******* calc_true_if:
+******** all_province:
+********* Does not follow the 0 "Reformed religion
+********* is_reformation_center_false = yes
+******** amount_false = 3
+****** add_reform_center = 0 "Reformed
+***** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+****** -100% missionary strength
+** Option: flavor_swi.EVTOPTB6:
+*** AI chance:
+**** Base chance of 10
+*** Trigger:
+**** Does not follow the 0 "Reformed religion
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** Follows the 0 "Protestant religion
+**** add_church_power = 40
+*** If:
+**** Limited to:
+***** Follows the 0 "Catholic religion
+**** Changes Papal Influence by 40
+*** 4720::
+**** Spawns revolt of size 1.5 of 0 "Religious rebels
+**** If:
+***** Limited to:
+****** Follows the 0 "Reformed religion
+***** Changes religion to our country
+***** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+****** -100% missionary strength
+* Gets the country event:
+** ID is flavor_swi.7
+** title = flavor_swi.EVTNAME7
+** desc = flavor_swi.EVTDESC7
+** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** The 0 "Reformed religion is enabled
+*** If:
+**** Limited to:
+***** Country exists
+**** If:
+***** Limited to:
+****** GNV:
+******* Any of the following:
+******** Is not AI controlled
+******** Was player controlled
+******** Is not a vassal
+***** Country is GNV
+**** else:
+***** Any subject country:
+****** Country is GNV
+***** Country is 0 "Switzerland
+*** else:
+**** Country is 0 "Switzerland
+**** Owns 4720
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the 0 "Catholic religion
+**** Follows the 0 "Reformed religion
+*** 4720::
+**** Follows the 0 "Reformed religion
+**** Has the province flag john_calvin_is_here
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** GNV:
+******* Country does not exist
+***** Every owned province:
+****** Limited to:
+******* Has core on GNV
+******* Province is not 4720
+****** Removes core on GNV
+***** 4720::
+****** Adds core on GNV
+** Option: flavor_swi.EVTOPTA7:
+*** AI chance:
+**** Base chance of 50
+*** Trigger:
+**** Country is not GNV
+**** Country is not 0 "The Papal State
+*** If:
+**** Limited to:
+***** Does not follow the 0 "Reformed religion
+**** Changes religion to 0 "Reformed
+*** add_fervor = 25
+*** Adds the modifier "john_calvin_modifier" for 10 years:
+**** monthly_fervor_increase = 1
+**** +1 tolerance of the true faith
+** Option: flavor_swi.EVTOPTB7:
+*** AI chance:
+**** Base chance of 50
+*** Trigger:
+**** Any of the following:
+***** Country is GNV
+***** GNV:
+****** Is a vassal of our country
+***** GNV:
+****** Country does not exist
+*** add_fervor = 10
+*** If:
+**** Limited to:
+***** GNV:
+****** Country does not exist
+**** create_vassal = GNV
+*** GNV:
+**** Changes government type to theocracy
+**** add_government_reform = united_cantons_reform
+**** Changes religion to 0 "Reformed
+**** Spawns a ruler:
+***** Named "John"
+***** Ruler's dynasty is Calvin
+***** Culture is 0 "Norman
+***** Follows the 0 "Reformed religion
+***** Ruler's administrative skill is at least 4
+***** Ruler's diplomatic skill is at least 3
+***** Ruler's military skill is at least 4
+***** age = 31
+***** Legitimacy of 95
+** Option: flavor_swi.EVTOPTC7:
+*** AI chance:
+**** Base chance of 50
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** Follows the 0 "Protestant religion
+**** add_church_power = 40
+*** If:
+**** Limited to:
+***** Follows the 0 "Catholic religion
+**** Changes Papal Influence by 40
+*** 4720::
+**** If:
+***** Limited to:
+****** The province is owned by our country
+****** Does not follow our country's religion
+***** Spawns revolt of size 1.5 of 0 "Religious rebels
+***** Changes religion to our country
+***** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+****** -100% missionary strength
+**** Removes the province flag john_calvin_is_here
+* Gets the country event:
+** ID is flavor_swi.8
+** title = flavor_swi.EVTNAME8
+** desc = flavor_swi.EVTDESC8
+** picture = PROTESTANT_GREAT_REFORMER_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Has the country modifier "john_calvin_modifier"
+*** Is not a vassal
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Option: flavor_swi.EVTOPTA8:
+*** AI chance:
+**** Base chance of 50
+*** Trigger:
+**** Primary culture is 0 "Swiss
+*** If:
+**** Limited to:
+***** Does not follow the 0 "Reformed religion
+**** Changes religion to 0 "Reformed
+*** change_government_to_theocracy = yes
+*** add_government_reform = united_cantons_reform
+*** Spawns a ruler:
+**** Named "John"
+**** Ruler's dynasty is Calvin
+**** Culture is 0 "Norman
+**** Follows the 0 "Reformed religion
+**** Ruler's administrative skill is at least 4
+**** Ruler's diplomatic skill is at least 3
+**** Ruler's military skill is at least 4
+**** age = 36
+**** Legitimacy of 95
+** Option: flavor_swi.EVTOPTB8:
+*** AI chance:
+**** Base chance of 50
+*** Changes stability by -1
+*** Removes the country modifier "john_calvin_modifier"
+* Gets the country event:
+** ID is flavor_swi.9
+** title = flavor_swi.EVTNAME9
+** desc = flavor_swi.EVTDESC9
+** picture = LAND_MILITARY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Switzerland
+*** Year is less than 1500
+*** 0 "England:
+**** At war with 0 "France
+*** Any of the following:
+**** All of the following:
+***** is_renting_condottieri_to = 0 "England
+***** 0 "England:
+****** War score is at least 10
+**** All of the following:
+***** is_renting_condottieri_to = 0 "France
+***** 0 "France:
+****** War score is at least 10
+** Mean time to happen
+*** Base mean time to happen of 6 months
+** Option: flavor_swi.EVTOPTA9:
+*** AI chance:
+**** Base chance of 100
+*** add_army_professionalism = 0.05
+*** Changes army tradition by 10
+* Gets the country event:
+** ID is flavor_swi.10
+** title = flavor_swi.EVTNAME10
+** desc = flavor_swi.EVTDESC10
+** picture = LAND_MILITARY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Switzerland
+*** Primary culture is 0 "Swiss
+**** No known country:
+***** Primary culture is 0 "Swabian
+***** Is part of the Holy Roman Empire
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: flavor_swi.EVTOPTA10:
+*** AI chance:
+**** Base chance of 100
+*** Changes prestige by 20
+*** add_army_professionalism = 0.15
+*** Changes army tradition by 20
+*** Adds the modifier "mercenary_monopoly_modifier" for the rest of the campaign:
+**** mercenary_manpower = 0.25
+**** +10% prestige from land battles
+* Gets the country event:
+** ID is flavor_swi.11
+** title = flavor_swi.EVTNAME11
+** desc = flavor_swi.EVTDESC11
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Is the target of the revolution
+*** war_score_against:
+**** Affecting 0 "Switzerland
+**** value = 75
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: flavor_swi.EVTOPTA11:
+*** AI chance:
+**** Base chance of 100
+*** Trigger:
+**** Country is not 0 "Switzerland
+*** Ends any wars with 0 "Switzerland with a white peace
+*** Hidden effect:
+**** 0 "Switzerland:
+***** Sets the country flag at_war_with_rev_flag
+***** Gets the country event:
+****** ID is flavor_swi.1101
+** Option: flavor_swi.EVTOPTB11:
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_swi.1101
+** title = flavor_swi.EVTNAME11
+** desc = flavor_swi.EVTDESC1101
+** picture = REVOLUTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Switzerland
+*** Any of the following:
+**** Has the country flag at_war_with_rev_flag
+**** All of the following:
+***** num_of_provinces_in_states_false = 15
+***** Has at least 10 provinces where all of the following is true:
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: flavor_swi.EVTOPTA1101:
+*** AI chance:
+**** Base chance of 100
+*** 0 "Switzerland:
+**** change_government_to_republic = yes
+**** add_government_reform = military_dictatorship_reform
+*** Random known country:
+**** Limited to:
+***** Is the target of the revolution
+**** create_subject:
+***** subject_type = client_march
+***** subject = 0 "Switzerland
+** Option: flavor_swi.EVTOPTB1101:
+*** AI chance:
+**** Base chance of 0
+*** Trigger:
+**** Does not have the country flag at_war_with_rev_flag
+*** Random owned province:
+**** Limited to:
+***** has_revolution_in_province = yes
+**** Spawns revolt of size 1.5 of 0 "Revolutionary rebels
+*** Random owned province:
+**** Limited to:
+***** has_revolution_in_province = yes
+**** Spawns revolt of size 1 of 0 "Revolutionary rebels

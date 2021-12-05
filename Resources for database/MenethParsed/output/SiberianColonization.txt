@@ -1,0 +1,417 @@
+******** Trigger:
+********* Has the DLC Third Rome
+********* Has the idea 0 "Siberian Frontier
+********* Any of the following:
+********** has_reform = 1 "Russian Principality
+********** has_reform = 0 "Tsardom
+********* Any owned province:
+********** The province is a colony
+********** Any of the following:
+*********** Region is east_siberia_region
+*********** Region is west_siberia_region
+*********** Region is ural_region
+********** No owned province:
+*********** Has the province modifier "0 "Merchant Charter"
+********** No owned province:
+*********** Has the province modifier "0 "Siberian Trade Entrepot"
+********* has_ruler_flag_false = stroganovs_asked
+******** Immediate effects:
+********* Hidden effect:
+********** set_ruler_flag = stroganovs_asked
+********** Random owned province:
+*********** Limited to:
+************ The province is the capital of the country
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ is_state = yes
+************ Has the 0 "Market Place building
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ is_state = yes
+************ Any of the following:
+************* Has the province modifier "0 "Neva Estuary"
+************* Has the province modifier "0 "Volga Estuary"
+************* Has the province modifier "0 "Dnieper Estuary"
+************* Has the province modifier "0 "Dnestr Estuary"
+************* Has the province modifier "0 "Don Estuary"
+************* Has the province modifier "0 "Daugava Estuary"
+************* Has the province modifier "0 "River Estuary"
+************* Has the province modifier "0 "Taz Estuary"
+************* Has the province modifier "0 "Neman Estuary"
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ is_state = yes
+************ Any of the following:
+************* Has the province modifier "0 "Neva Estuary"
+************* Has the province modifier "0 "Daugava Estuary"
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ is_state = yes
+************ Region is not west_siberia_region
+************ Region is not east_siberia_region
+************ province_has_center_of_trade_of_level = 1
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ is_state = yes
+************ Region is russia_region
+************ province_has_center_of_trade_of_level = 1
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is a colony
+************ Any of the following:
+************* Region is ural_region
+************* Region is east_siberia_region
+************* Region is west_siberia_region
+*********** save_event_target_as = siberian_frontier_province
+******** Mean time to happen
+********* Base mean time to happen of 700 months
+********* Multiplies value by 0.8:
+********** Year is less than 1600
+******** Option: siberian_events.1.a:
+********* Modifies treasury by 0.15 years worth of income
+********* event_target:russian_center_of_trade:
+********** Adds the modifier "0 "Siberian Trade Entrepot" until the end of the campaign:
+*********** +500% provincial trade power
+*********** local_autonomy = 0.1
+*********** -10% provincial tax income
+********* event_target:siberian_frontier_province:
+********** Changes population of colony by 1000
+********** Constructs the 0 "Castle building
+********** Hidden effect:
+*********** Adds the modifier "0 "Merchant Charter" until the end of the campaign:
+************ -50% trade goods output
+************ -100% manpower modifier
+************ -100% provincial tax income
+********** area:
+*********** Limited to:
+************ Is uncolonized
+*********** ROOT:
+************ Discovers the PREV province
+*********** add_siberian_construction = 400
+*********** Adds the modifier "0 "Merchant Charter" until the end of the campaign:
+************ -50% trade goods output
+************ -100% manpower modifier
+************ -100% provincial tax income
+******** Option: siberian_events.1.b:
+********* add_government_power:
+********** government_mechanic = russian_mechanic
+********** which = 0 "Diplomatic
+********** 25 will be built
+********* Adds 5 legitimacy
+******* Gets the country event:
+******** ID is siberian_events.2
+******** title = siberian_events.2.t
+******** desc = siberian_events.2.d
+******** picture = MERCHANTS_IN_SIBERIA_eventPicture
+******** Trigger:
+********* Has the DLC Third Rome
+********* Has the idea 0 "Siberian Frontier
+********* Any of the following:
+********** has_reform = 1 "Russian Principality
+********** has_reform = 0 "Tsardom
+********* Any owned province:
+********** The province is a colony
+********** Any of the following:
+*********** Region is east_siberia_region
+*********** Region is west_siberia_region
+*********** Region is ural_region
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: siberian_events.2.a:
+********* Modifies treasury by 0.2 years worth of income
+******* Gets the country event:
+******** ID is siberian_events.3
+******** title = siberian_events.3.t
+******** desc = siberian_events.3.d
+******** picture = COSSACKS_IN_SIBERIA_eventPicture
+******** Trigger:
+********* Has the DLC Third Rome
+********* Has the idea 0 "Siberian Frontier
+********* Any of the following:
+********** has_reform = 1 "Russian Principality
+********** has_reform = 0 "Tsardom
+********* Any owned province:
+********** The province is a colony
+********** Any of the following:
+*********** Region is west_siberia_region
+*********** Region is east_siberia_region
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ The province is the capital of the country
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ is_state = yes
+************ Has the 0 "Market Place building
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ is_state = yes
+************ Any of the following:
+************* Has the province modifier "0 "Neva Estuary"
+************* Has the province modifier "0 "Volga Estuary"
+************* Has the province modifier "0 "Dnieper Estuary"
+************* Has the province modifier "0 "Dnestr Estuary"
+************* Has the province modifier "0 "Don Estuary"
+************* Has the province modifier "0 "Daugava Estuary"
+************* Has the province modifier "0 "River Estuary"
+************* Has the province modifier "0 "Taz Estuary"
+************* Has the province modifier "0 "Neman Estuary"
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ is_state = yes
+************ Any of the following:
+************* Has the province modifier "0 "Neva Estuary"
+************* Has the province modifier "0 "Daugava Estuary"
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ is_state = yes
+************ Region is not west_siberia_region
+************ Region is not east_siberia_region
+************ province_has_center_of_trade_of_level = 1
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ is_state = yes
+************ Region is russia_region
+************ province_has_center_of_trade_of_level = 1
+*********** save_event_target_as = russian_center_of_trade
+********** Random owned province:
+*********** Limited to:
+************ The province is a colony
+************ Any of the following:
+************* Region is east_siberia_region
+************* Region is west_siberia_region
+*********** save_event_target_as = siberian_frontier_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** is_triggered_only = yes
+******** Option: siberian_events.3.a:
+********* event_target:siberian_frontier_province:
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+*********** Adds the modifier "0 "Lawless Frontier" until the end of the campaign:
+************ -50% trade goods output
+************ local_unrest = 6
+******** Option: siberian_events.3.b:
+********* Modifies treasury by -0.1 years worth of income
+******* Gets the country event:
+******** ID is siberian_events.4
+******** title = siberian_events.4.t
+******** desc = siberian_events.4.d
+******** picture = COSSACKS_IN_SIBERIA_eventPicture
+******** Trigger:
+********* Has the DLC Third Rome
+********* Has the idea 0 "Siberian Frontier
+********* Any of the following:
+********** has_reform = 1 "Russian Principality
+********** has_reform = 0 "Tsardom
+********* Any owned province:
+********** Any of the following:
+*********** Region is west_siberia_region
+*********** Region is east_siberia_region
+********* Any province in the world:
+********** Any of the following:
+*********** Region is west_siberia_region
+*********** Region is east_siberia_region
+********** Has been discovered by our country
+********** Any province in the world:
+*********** area = PREV
+*********** Has not been discovered by our country
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random province in the world:
+*********** Limited to:
+************ Any of the following:
+************* Region is west_siberia_region
+************* Region is east_siberia_region
+************ Has been discovered by our country
+************ Any province in the world:
+************* area = PREV
+************* Has not been discovered by our country
+*********** save_event_target_as = cossack_exploration_province
+******** Option: siberian_events.4.a:
+********* If:
+********** Limited to:
+*********** has_estate = estate_cossacks
+********** add_estate_influence_modifier:
+*********** estate = estate_cossacks
+*********** desc = EST_VAL_COSSACK_EXPLORERS
+*********** influence = 5
+*********** Lasting 3650 days
+********* Modifies treasury by 0.15 years worth of income
+********* event_target:cossack_exploration_province:
+********** area:
+*********** ROOT:
+************ Discovers the PREV province
+******** Option: siberian_events.4.b:
+********* Trigger:
+********** has_estate = estate_cossacks
+********* add_estate_loyalty:
+********** estate = estate_cossacks
+********** loyalty = -5
+********* add_government_power:
+********** government_mechanic = russian_mechanic
+********** which = 0 "Diplomatic
+********** 10 will be built
+********* event_target:cossack_exploration_province:
+********** area:
+*********** ROOT:
+************ Discovers the PREV province
+******* Gets the country event:
+******** ID is siberian_events.5
+******** title = siberian_events.5.t
+******** desc = siberian_events.5.d
+******** picture = COSSACKS_IN_SIBERIA_eventPicture
+******** Trigger:
+********* Has the DLC Third Rome
+********* Has the idea 0 "Siberian Frontier
+********* Any of the following:
+********** has_reform = 1 "Russian Principality
+********** has_reform = 0 "Tsardom
+********* Any owned province:
+********** The province is a colony
+********** Any of the following:
+*********** Region is west_siberia_region
+*********** Region is east_siberia_region
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ The province is a colony
+************ Any of the following:
+************* Region is west_siberia_region
+************* Region is east_siberia_region
+*********** save_event_target_as = cossack_exploration_province
+********** One of the following will happen:
+*********** 50 relative chance:
+************ Sets the country flag country_angered
+*********** 50 relative chance:
+************ Sets the country flag province_problems
+******** Option: siberian_events.5.a:
+********* AI chance:
+********** Base chance of 0
+********* trigger_switch:
+********** on_trigger = has_country_flag
+********** country_angered:
+*********** Removes the country flag country_angered
+*********** If:
+************ Limited to:
+************* Any known country:
+************** Any owned province:
+*************** Any of the following:
+**************** Region is west_siberia_region
+**************** Region is east_siberia_region
+************ Random known country:
+************* Limited to:
+************** Any owned province:
+*************** Any of the following:
+**************** Region is west_siberia_region
+**************** Region is east_siberia_region
+************* Adds the opinion modifier "0 "Siberian Intermezzo" towards our country
+************ else:
+************* event_target:cossack_exploration_province:
+************** If:
+*************** Limited to:
+**************** Has a base tax of at least 2
+*************** Changes base tax by -1
+*************** else:
+**************** add_unrest = 6
+********** province_problems:
+*********** Removes the country flag province_problems
+*********** event_target:cossack_exploration_province:
+************ If:
+************* Limited to:
+************** Has a base tax of at least 2
+************* Changes base tax by -1
+************* else:
+************** add_unrest = 6
+******** Option: siberian_events.5.b:
+********* AI chance:
+********** Base chance of 1
+********* trigger_switch:
+********** on_trigger = has_country_flag
+********** country_angered:
+*********** Removes the country flag country_angered
+********** province_problems:
+*********** Removes the country flag province_problems
+********* Modifies treasury by -0.15 years worth of income
+******* Gets the country event:
+******** ID is siberian_events.6
+******** title = siberian_events.6.t
+******** desc = siberian_events.6.d
+******** picture = MERCHANTS_IN_SIBERIA_eventPicture
+******** Trigger:
+********* Has the DLC Third Rome
+********* Has the idea 0 "Siberian Frontier
+********* Any of the following:
+********** has_reform = 1 "Russian Principality
+********** has_reform = 0 "Tsardom
+********* Any owned province:
+********** Is constructing 0 "Siberian
+********** Any of the following:
+*********** Region is east_siberia_region
+*********** Region is west_siberia_region
+*********** Region is ural_region
+******** Immediate effects:
+********* Hidden effect:
+********** One of the following will happen:
+*********** 40 relative chance:
+************ Sets the country flag siberian_legitimacy
+*********** 40 relative chance:
+************ Sets the country flag siberian_prestige
+*********** 20 relative chance:
+************ Sets the country flag siberian_dip_power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** is_triggered_only = yes
+******** Option: siberian_events.6.a:
+********* trigger_switch:
+********** on_trigger = has_country_flag
+********** siberian_dip_power:
+*********** Removes the country flag siberian_dip_power
+*********** Changes diplomatic power stored by 20
+********** siberian_legitimacy:
+*********** Removes the country flag siberian_legitimacy
+*********** Adds 5 legitimacy
+********** siberian_prestige:
+*********** Removes the country flag siberian_prestige
+*********** Changes prestige by 10

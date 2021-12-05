@@ -1,0 +1,115 @@
+
+=== title = "empire_of_china_nomadic_border_events.1.t" ===
+* Cannot fire randomly
+
+'''Option: empire_of_china_in_name.1.a:'''
+
+* Changes stability by -2
+* add_mandate = -20
+
+=== title = "empire_of_china_nomadic_border_events.2.t" ===
+* Trigger:
+** is_emperor_of_china = yes
+* desc = empire_of_china_nomadic_border_events.2.d
+* Trigger:
+** is_emperor_of_china_false = no
+* desc = empire_of_china_nomadic_border_events.2.db
+* Cannot fire randomly
+
+'''Option: empire_of_china_nomadic_border_events.2.a:'''
+
+* If:
+** Limited to:
+*** is_emperor_of_china = yes
+** add_mandate = 20
+** Changes stability by 2
+* else:
+** Changes stability by -1
+
+=== title = "empire_of_china_nomadic_border_events.3.t" ===
+* Cannot fire randomly
+
+'''Option: empire_of_china_nomadic_border_events.3.opt:'''
+
+
+=== title = "empire_of_china_nomadic_border_events.4.t" ===
+* Cannot fire randomly
+* Trigger:
+** Any of the following:
+*** Primary culture is 1 "Jurchen
+*** Primary culture is manchu_new
+
+'''Option: empire_of_china_nomadic_border_events.4.opt.manchu:'''
+
+* Trigger:
+** Primary culture is not 1 "Jurchen
+** Primary culture is not manchu_new
+
+'''Option: empire_of_china_nomadic_border_events.4.opt:'''
+
+
+=== title = "empire_of_china_nomadic_border_events.5.t" ===
+* Trigger:
+** Any country:
+*** is_emperor_of_china = yes
+*** has_any_disaster_false = no
+* Trigger:
+** Any country:
+*** is_emperor_of_china = yes
+*** has_any_disaster = yes
+
+'''Trigger:'''
+
+* Has the country flag empire_of_china_nomadic_border_cause
+* Any country:
+** is_emperor_of_china = yes
+** Any of the following:
+*** The variable empire_of_china_nomadic_border_progress is lower than 5
+*** has_any_disaster = yes
+**** No neighbor country:
+***** has_reform = 0 "Steppe Nomads
+***** total_own_and_non_tributary_subject_development = 300
+***** Is not a vassal
+***** Has no truce with prev
+***** Is not allied with prev
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 180 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Removes the country flag empire_of_china_nomadic_border_cause
+** Random country:
+*** Limited to:
+**** is_emperor_of_china = yes
+*** Removes the country flag empire_of_china_nomadic_border_started_ticker
+*** Removes the country flag empire_of_china_nomadic_border_further_ticker
+*** save_event_target_as = emperor_of_china
+* Trigger:
+** Any country:
+*** is_emperor_of_china = yes
+*** has_any_disaster_false = no
+
+'''Option: empire_of_china_nomadic_border_events.5.opt:'''
+
+* Trigger:
+** Any country:
+*** is_emperor_of_china = yes
+*** has_any_disaster = yes
+** Any of the following:
+*** Primary culture is 1 "Jurchen
+*** Primary culture is manchu_new
+
+'''Option: empire_of_china_nomadic_border_events.4.opt.manchu:'''
+
+* Trigger:
+** Any country:
+*** is_emperor_of_china = yes
+*** has_any_disaster = yes
+** Primary culture is not 1 "Jurchen
+** Primary culture is not manchu_new
+
+'''Option: empire_of_china_nomadic_border_events.4.opt:'''
+

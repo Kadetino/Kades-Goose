@@ -1,0 +1,190 @@
+
+=== 0 "The Dacke War ===
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Changes stability by -3
+* Hidden effect:
+** Sets the country flag had_the_dacke_feud
+** If:
+*** Limited to:
+**** Owns 1 "Kalmar
+*** 1 "Kalmar:
+**** Sets the province flag dacke_feud
+*** Random owned province:
+**** Limited to:
+***** The province is not the capital of the country
+***** Has core on 0 "Sweden
+***** Province is not 1 "Kalmar
+**** Sets the province flag dacke_feud
+** If:
+*** Limited to:
+**** Does not own 1 "Kalmar
+*** Random owned province:
+**** Limited to:
+***** Any of the following:
+****** area = norrland_area
+****** area = svealand_area
+****** area = ostra_svealand_area
+****** area = vastra_gotaland_area
+****** area = gotaland_area
+****** area = skaneland_area
+***** The province is not the capital of the country
+***** Has core on 0 "Sweden
+**** Sets the province flag dacke_feud
+
+'''Option: 0 "Crush the rebellion:'''
+
+* Every owned province:
+** Limited to:
+*** Has the province flag dacke_feud
+** Spawns revolt of size 2 of 0 "Particularist rebels
+
+=== 0 "Dacke Revolt Spreads ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any owned province:
+** Any of the following:
+*** area = norrland_area
+*** area = svealand_area
+*** area = ostra_svealand_area
+*** area = gotaland_area
+*** area = vastra_gotaland_area
+*** area = skaneland_area
+** Controlled by 0 "Sweden
+** The province is nto under siege
+** local_autonomy_false = 50
+** Does not have the province flag dacke_prov
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random core province:
+*** Limited to:
+**** Controlled by 0 "Sweden
+**** The province is nto under siege
+**** local_autonomy_false = 50
+**** Does not have the province flag dacke_prov
+**** Any of the following:
+***** area = norrland_area
+***** area = svealand_area
+***** area = ostra_svealand_area
+***** area = gotaland_area
+***** area = vastra_gotaland_area
+***** area = skaneland_area
+*** Sets the province flag dacke_prov
+
+'''Option: 0 "We will crush them as well!:'''
+
+* AI chance:
+** Base chance of 70
+* Every core province:
+** Limited to:
+*** Has the province flag dacke_prov
+** Spawns revolt of size 2 of 0 "Particularist rebels
+
+'''Option: 0 "Negotiate with them:'''
+
+* AI chance:
+** Base chance of 20
+* Every core province:
+** Limited to:
+*** Has the province flag dacke_prov
+** add_local_autonomy = 10
+* Changes diplomatic power stored by -25
+
+'''Option: 0 "Give in to their demands:'''
+
+* AI chance:
+** Base chance of 10
+* Every core province:
+** Limited to:
+*** Has the province flag dacke_prov
+** add_local_autonomy = 50
+
+=== 0 "Support for Dacke Spreads ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any owned province:
+** Any of the following:
+*** area = norrland_area
+*** area = svealand_area
+*** area = ostra_svealand_area
+*** area = gotaland_area
+*** area = vastra_gotaland_area
+*** area = skaneland_area
+** Controlled by 0 "Sweden
+** The province is nto under siege
+** local_autonomy_false = 50
+** Does not have the province modifier "0 "Local Trade Embargo"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random core province:
+*** Limited to:
+**** Controlled by 0 "Sweden
+**** The province is nto under siege
+**** local_autonomy_false = 50
+**** Does not have the province modifier "0 "Local Trade Embargo"
+**** Any of the following:
+***** area = norrland_area
+***** area = svealand_area
+***** area = ostra_svealand_area
+***** area = gotaland_area
+***** area = vastra_gotaland_area
+***** area = skaneland_area
+*** Sets the province flag dacke_feud_trade_embargo_flag
+
+'''Option: 0 "Enforce an embargo:'''
+
+* AI chance:
+** Base chance of 75
+* Every core province:
+** Limited to:
+*** Has the province flag dacke_feud_trade_embargo_flag
+** Adds the modifier "0 "Local Trade Embargo" until the end of the campaign:
+*** -10% production efficiency
+*** -25% manpower modifier
+*** local_unrest = -3
+
+'''Option: 0 "It will only hurt us later:'''
+
+* AI chance:
+** Base chance of 25
+* Every core province:
+** Limited to:
+*** Has the province flag dacke_feud_trade_embargo_flag
+** Spawns revolt of size 1 of 0 "Particularist rebels
+
+=== 0 "The Dacke War Ends ===
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Every owned province:
+*** Removes the province flag dacke_prov
+*** Removes the province flag dacke_feud_trade_embargo_flag
+*** Removes the country modifier "0 "Local Trade Embargo"
+
+'''Option: 0 "Order has been restored:'''
+
+* add_stability_or_adm_power = yes

@@ -1,0 +1,206 @@
+** Trigger:
+*** Country is 0 "Muisca
+*** Owns 0 "Tunja
+*** Owns 0 "Bogota
+*** Ruler's dynasty is Bacatá
+** Mean time to happen
+*** Base mean time to happen of 2 months
+** Option: 0 "Support the Zipa of Bacatá:
+*** AI chance:
+**** Base chance of 95
+*** Sets the country flag mca_zipa_supporter
+*** 0 "Tunja:
+**** add_local_autonomy = 75
+**** Adds the modifier "0 "Capital of the Zaque" until the end of the campaign:
+***** local_autonomy = 0.15
+** Option: 0 "Support the Zaque of Hunza:
+*** AI chance:
+**** Base chance of 5
+*** Sets capital to 0 "Tunja
+*** Sets the country flag mca_zaque_supporter
+*** Spawns a ruler:
+**** Ruler's dynasty is Hunza
+**** Legitimacy of 100
+*** If:
+**** Limited to:
+***** Has an heir
+**** Kills the heir of the country
+***** allow_new_heir_false = no
+*** 0 "Tunja:
+**** add_local_autonomy = -100
+*** 0 "Bogota:
+**** add_local_autonomy = 75
+**** Adds the modifier "0 "Capital of the Zipa" until the end of the campaign:
+***** local_autonomy = 0.15
+* Gets the country event:
+** ID is flavor_mca.2
+** title = 0 "The Salt Mines of Zipaquira
+** desc = 0 "A recent source of conflict between the Zipa and the Zaque is the small region known as Zipaquira. As the name suggest it's currently under control by the Zipa, despite being in quite near the domain of the Zaque. As the salt production has increased lately the issue of who is to control the area has become quite infected.
+** picture = BORDER_TENSION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Muisca
+*** Owns 0 "Tunja
+*** Year is at least 1460
+*** Any of the following:
+**** Has the country flag mca_zaque_supporter
+**** Has the country flag mca_zipa_supporter
+*** Does not have the country modifier "0 "Intervention of the Iraca"
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: 0 "We must control the salt.:
+*** Trigger:
+**** Has the country flag mca_zaque_supporter
+*** 0 "Tunja:
+**** Adds the modifier "0 "Salt Mines of Zipaquira" until the end of the campaign:
+***** +50% trade goods output
+** Option: 0 "Leave it to the Zipa.:
+*** Trigger:
+**** Has the country flag mca_zaque_supporter
+*** add_stability_or_adm_power = yes
+*** 0 "Bogota:
+**** add_local_autonomy = -25
+** Option: 0 "They're mine!:
+*** Trigger:
+**** Has the country flag mca_zipa_supporter
+*** 0 "Tunja:
+**** Adds the modifier "0 "Salt Mines of Zipaquira" until the end of the campaign:
+***** +50% trade goods output
+** Option: 0 "Let the Zaque administer the area.:
+*** Trigger:
+**** Has the country flag mca_zipa_supporter
+*** add_stability_or_adm_power = yes
+*** 0 "Tunja:
+**** add_local_autonomy = -25
+* Gets the country event:
+** ID is flavor_mca.3
+** title = 0 "Ambitions of the Zipa
+** desc = 0 "The Zipa has decided to test our new Zaque by invading one of the chiefdoms that fall under our jurisdiction. While the invaded area is a lot closer to the Zipa's lands this is a blatant act of aggression and unless we act he will have expanded his influence at our expense.
+** picture = BORDER_TENSION_eventPicture
+** Trigger:
+*** Country is 0 "Muisca
+*** Has the country flag mca_zaque_supporter
+*** has_ruler_flag_false = mca_zipa_fought
+*** Has at least 3 provinces
+*** Does not have the country modifier "0 "Intervention of the Iraca"
+** Mean time to happen
+*** Base mean time to happen of 120 months
+*** Multiplies value by 0.8:
+**** Has at least 4 provinces
+*** Multiplies value by 0.8:
+**** Has at least 5 provinces
+*** Multiplies value by 0.8:
+**** Has at least 6 provinces
+** Option: 0 "Strike back at the Zipa.:
+*** set_ruler_flag = mca_zipa_fought
+*** Changes prestige by 10
+*** 0 "Bogota:
+**** Spawns revolt of size 2 of 0 "Pretender rebels
+** Option: 0 "Allow the chiefdom to be annexed.:
+*** Changes prestige by -10
+*** Random owned province:
+**** Limited to:
+***** The province is not the capital of the country
+***** Does not have the province modifier "0 "Capital of the Zipa"
+**** add_local_autonomy = 25
+* Gets the country event:
+** ID is flavor_mca.4
+** title = 0 "Ambitions of the Zaque
+** desc = 0 "The Zaque has decided to test our new Zipa by invading one of the chiefdoms that fall under our jurisdiction. While the invaded area is a lot closer to the Zaque's lands this is a blatant act of aggression and unless we act he will have expanded his influence at our expense.
+** picture = BORDER_TENSION_eventPicture
+** Trigger:
+*** Country is 0 "Muisca
+*** Has the country flag mca_zipa_supporter
+*** has_ruler_flag_false = mca_zaque_fought
+*** Has at least 3 provinces
+*** Does not have the country modifier "0 "Intervention of the Iraca"
+** Mean time to happen
+*** Base mean time to happen of 120 months
+*** Multiplies value by 0.8:
+**** Has at least 4 provinces
+*** Multiplies value by 0.8:
+**** Has at least 5 provinces
+*** Multiplies value by 0.6:
+**** Has at least 6 provinces
+** Option: 0 "Strike back at the Zaque.:
+*** set_ruler_flag = mca_zaque_fought
+*** Changes prestige by 10
+*** 0 "Tunja:
+**** Spawns revolt of size 2 of 0 "Pretender rebels
+** Option: 0 "Allow the chiefdom to be annexed.:
+*** Changes prestige by -10
+*** Random owned province:
+**** Limited to:
+***** The province is not the capital of the country
+***** Does not have the province modifier "0 "Capital of the Zaque"
+**** add_local_autonomy = 25
+* Gets the country event:
+** ID is flavor_mca.5
+** title = 0 "Influence of the Iraca
+** desc = 0 "The high priests of the Sun Temple in Suamox make up the leadership of the Iraca chiefdom. While much less important than the Zaque or Zipa the leader of the Iraca is an influential man due to his position as keeper of the temple and spiritual successor of the mythical hero Idacanzas.\nTraditionally a supporter of the Zaque of Hunza the current ruler of the Iraca have now come forward to attempt to mediate and create peace between the feuding Zipa and Zaque to ensure the Muisca stand united against any foreign threats.
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Muisca
+*** Owns 0 "Tunja
+*** Any of the following:
+**** Has the country flag mca_zipa_supporter
+**** Has the country flag mca_zaque_supporter
+*** Any known country:
+**** Any of the following:
+***** Capital:
+****** In the continent 0 "Europe
+***** Colonial parent:
+****** Capital:
+******* In the continent 0 "Europe
+**** Any owned province:
+***** In the continent 0 "South America
+** Mean time to happen
+*** Base mean time to happen of 44 months
+** Option: 0 "The time has come to act together.:
+*** AI chance:
+**** Base chance of 95
+*** Changes stability by -1
+*** Adds the modifier "0 "Intervention of the Iraca" for 20 years:
+**** +2 tolerance of the true faith
+**** +10% fort defence
+** Option: 0 "There can be only one authority in the Muiscan lands!:
+*** AI chance:
+**** Base chance of 5
+*** add_stability_or_adm_power = yes
+*** Adds 10 legitimacy
+* Gets the country event:
+** ID is flavor_mca.6
+** title = 0 "The Muisca Stand United
+** desc = 0 "With the growth of the Muiscan confederation under our leadership the old conflict between the Zaques and Zipas no longer seems relevant. The fact of the matter is that through the great leadership of $MONARCH$ and his ancestors [Root.Capital.GetCapitalName] is now the undisputed center of authority in the Muiscan lands.
+** picture = GOOD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Muisca
+*** Any of the following:
+**** Has the country flag mca_zipa_supporter
+**** Has the country flag mca_zaque_supporter
+*** Has at least 8 provinces
+*** Stability is at least 1
+*** Legitimacy is at least 50
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Great!:
+*** AI chance:
+**** Base chance of 95
+*** Changes stability by 2
+*** Changes prestige by 10
+*** Removes the country flag mca_zipa_supporter
+*** Removes the country flag mca_zaque_supporter
+*** Random owned province:
+**** Limited to:
+***** The province is the capital of the country
+**** Changes base tax by 2
+*** Random owned province:
+**** Limited to:
+***** Has the province modifier "0 "Capital of the Zipa"
+**** Removes the country modifier "0 "Capital of the Zipa"
+*** Random owned province:
+**** Limited to:
+***** Has the province modifier "0 "Capital of the Zaque"
+**** Removes the country modifier "0 "Capital of the Zaque"

@@ -1,0 +1,400 @@
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Any owned province:
+********** unrest = 5
+********* Is not in regency
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.5:
+********** Stability is at least -1
+******** Option: maya_religion_events.1.a:
+********* Adds the ruler modifier "maya_blodletting" until the ruler's death:
+********** -0.5 global unrest
+********** -5% land morale
+********** Follows the yes religion
+******** Option: maya_religion_events.1.b:
+********* Every owned province:
+********** Limited to:
+*********** unrest = 1
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+******* Gets the country event:
+******** ID is maya_religion_events.2
+******** title = maya_religion_events.2.t
+******** desc = maya_religion_events.2.d
+******** picture = HUMAN_SACRIFICE_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Is not in regency
+********* Any owned province:
+********** unrest = 1
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.2.a:
+********* One of the following will happen:
+********** 40 relative chance:
+*********** Every owned province:
+************ Limited to:
+************* unrest = 1
+************ Adds the modifier "0 "Happy People" until the end of the campaign:
+************* local_unrest = -5
+********** 30 relative chance:
+*********** Changes administrative power stored by 50
+********** 29 relative chance:
+*********** add_stability_or_adm_power = yes
+********** 1 relative chance:
+*********** Kills the ruler of the country
+******** Option: maya_religion_events.2.b:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is maya_religion_events.3
+******** title = maya_religion_events.3.t
+******** desc = maya_religion_events.3.d
+******** picture = HUMAN_SACRIFICE_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Any of the following:
+********** Stability is at least -1
+********** Legitimacy is less than 50
+********** 50 prestige
+********** Any owned province:
+*********** unrest = 3
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.3.a:
+********* Adds 15 legitimacy
+******** Option: maya_religion_events.3.b:
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is maya_religion_events.4
+******** title = maya_religion_events.4.t
+******** desc = maya_religion_events.4.d
+******** picture = END_OF_TIME_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Any of the following:
+********** Stability is at least 2
+********** Legitimacy is at least 70
+********** 50 prestige
+********* Does not have the country modifier "maya_creation_cycle_timer"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Adds the modifier "maya_creation_cycle_timer" for 20 years:
+*********** No effects
+******** Option: maya_religion_events.4.a:
+********* Adds the modifier "maya_chaos_creation" for 5 years:
+********** +1 global unrest
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is maya_religion_events.5
+******** title = maya_religion_events.5.t
+******** desc = maya_religion_events.5.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Has an heir
+********* Is not in regency
+********* Stability is lower than 1
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.5.a:
+********* Changes administrative power stored by 50
+******** Option: maya_religion_events.5.b:
+********* Changes diplomatic power stored by 50
+******** Option: maya_religion_events.5.c:
+********* Changes military power stored by 50
+******* Gets the country event:
+******** ID is maya_religion_events.6
+******** title = maya_religion_events.6.t
+******** desc = maya_religion_events.6.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Any of the following:
+********** Any owned province:
+*********** unrest = 3
+********** Stability is lower than 0
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.6.a:
+********* Modifies treasury by -0.25 years worth of income
+********* Adds the modifier "maya_pilgrimages" for 20 years:
+********** +0.2 prestige
+********** +10% global manpower modifier
+********** Follows the yes religion
+******** Option: maya_religion_events.6.b:
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is maya_religion_events.7
+******** title = maya_religion_events.7.t
+******** desc = maya_religion_events.7.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Any owned province:
+********** unrest = 3
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.7.a:
+********* Random owned province:
+********** Limited to:
+*********** unrest = 3
+********** Adds the modifier "0 "Happy People" until the end of the campaign:
+*********** local_unrest = -5
+******** Option: maya_religion_events.7.b:
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is maya_religion_events.8
+******** title = maya_religion_events.8.t
+******** desc = maya_religion_events.8.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.8.a:
+********* Modifies treasury by -0.05 years worth of income
+********* Changes military power stored by 20
+******** Option: maya_religion_events.8.b:
+********* Modifies treasury by -0.1 years worth of income
+********* Changes diplomatic power stored by 20
+******** Option: maya_religion_events.8.c:
+********* Changes administrative power stored by 10
+******* Gets the country event:
+******** ID is maya_religion_events.9
+******** title = maya_religion_events.9.t
+******** desc = maya_religion_events.9.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Any of the following:
+********** Does not have the country modifier "maya_hero_twins_timer"
+********** Stability is lower than 3
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Adds the modifier "maya_hero_twins_timer" for 5 years:
+*********** No effects
+******** Option: maya_religion_events.9.a:
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is maya_religion_events.10
+******** title = maya_religion_events.10.t
+******** desc = maya_religion_events.10.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Has an heir
+********* Heir is at least 10 years old
+********* Is not in regency
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.10.a:
+********* Adds 10 legitimacy
+********* Adds the ruler modifier "maya_embers" until the ruler's death:
+********** -10% stability cost modifier
+********** Follows the yes religion
+******** Option: maya_religion_events.10.b:
+********* Changes prestige by 5
+********* Adds the ruler modifier "maya_embers" until the ruler's death:
+********** -10% stability cost modifier
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is maya_religion_events.11
+******** title = maya_religion_events.11.t
+******** desc = maya_religion_events.11.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.1:
+********** Has the idea 0 "Comets?
+********* Multiplies value by 0.5:
+********** Has a Natural Scientist with a skill of at least 1
+********* Multiplies value by 0.5:
+********** Is a lucky nation
+********* Multiplies value by 1.1:
+********** Stability is at least 2
+********* Multiplies value by 1.1:
+********** Stability is at least 3
+******** Option: maya_religion_events.11.a:
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is maya_religion_events.12
+******** title = maya_religion_events.12.t
+******** desc = maya_religion_events.12.d
+******** picture = HUMAN_SACRIFICE_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Stability is lower than 3
+********* Is not at war
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.12.a:
+********* add_stability_or_adm_power = yes
+********* Random owned province:
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+******** Option: maya_religion_events.12.b:
+********* add_stability_or_adm_power = yes
+********* Random owned province:
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+******** Option: maya_religion_events.12.c:
+********* add_stability_or_adm_power = yes
+********* Random owned province:
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+******** Option: maya_religion_events.12.e:
+********* add_stability_or_adm_power = yes
+********* Random owned province:
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+******** Option: maya_religion_events.12.f:
+********* add_stability_or_adm_power = yes
+********* Random owned province:
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+******* Gets the country event:
+******** ID is maya_religion_events.13
+******** title = maya_religion_events.13.t
+******** desc = maya_religion_events.13.d
+******** picture = HUMAN_SACRIFICE_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Any owned province:
+********** unrest = 5
+********* Stability is lower than 0
+********* Legitimacy is less than 50
+********* Is not in regency
+********* Has an heir
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.13.a:
+********* Trigger:
+********** Has an heir
+********* Kills the heir of the country
+********* add_stability_or_adm_power = yes
+********* Changes administrative power stored by 50
+********* Changes diplomatic power stored by 50
+********* Changes military power stored by 50
+******** Option: maya_religion_events.13.b:
+********* Kills the ruler of the country
+********* add_stability_or_adm_power = yes
+********* Changes administrative power stored by 50
+********* Changes diplomatic power stored by 50
+********* Changes military power stored by 50
+******** Option: maya_religion_events.13.c:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is maya_religion_events.14
+******** title = maya_religion_events.14.t
+******** desc = maya_religion_events.14.d
+******** picture = ECONOMY_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Any neighbor country:
+********** Has an opinion of at least 50 with our country
+********** Is not at war
+********** Not at war with our country
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.14.a:
+********* Random neighbor country:
+********** Limited to:
+*********** Has an opinion of at least 50 with our country
+*********** Is not at war
+*********** Not at war with our country
+********** Gets the country event:
+*********** ID is maya_religion_events.15
+*********** Base mean time to happen of 1 days
+*********** Tooltip:
+******** Option: maya_religion_events.14.b:
+********* AI chance:
+********** Base chance of 1
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is maya_religion_events.15
+******** title = maya_religion_events.15.t
+******** desc = maya_religion_events.15.d
+******** picture = ECONOMY_eventPicture
+******** is_triggered_only = yes
+******** Option: maya_religion_events.15.a:
+********* AI chance:
+********** Base chance of 1
+********* Modifies treasury by 0.1 years worth of income
+********* Our country:
+********** Gets the country event:
+*********** ID is maya_religion_events.16
+*********** Base mean time to happen of 7 days
+*********** Tooltip:
+********** Adds the opinion modifier "maya_trade_quetzal_feathers" towards our country
+******** Option: maya_religion_events.15.b:
+********* Changes prestige by 10
+********* Our country:
+********** Gets the country event:
+*********** ID is maya_religion_events.17
+*********** Base mean time to happen of 7 days
+*********** Tooltip:
+********** Adds the opinion modifier "maya_notrade_quetzal_feathers" towards our country
+******* Gets the country event:
+******** ID is maya_religion_events.16
+******** title = maya_religion_events.16.t
+******** desc = maya_religion_events.16.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** is_triggered_only = yes
+******** Option: maya_religion_events.16.a:
+********* Tooltip:
+********** Our country:
+*********** Adds the opinion modifier "maya_trade_quetzal_feathers" from our country
+******* Gets the country event:
+******** ID is maya_religion_events.17
+******** title = maya_religion_events.17.t
+******** desc = maya_religion_events.17.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** is_triggered_only = yes
+******** Option: maya_religion_events.17.a:
+********* Tooltip:
+********** Our country:
+*********** Adds the opinion modifier "maya_notrade_quetzal_feathers" from our country
+******* Gets the country event:
+******** ID is maya_religion_events.18
+******** title = maya_religion_events.18.t
+******** desc = maya_religion_events.18.d
+******** picture = MESOAMERICAN_GODS_eventPicture
+******** Trigger:
+********* Has the DLC El Dorado
+********* Follows the 0 "Mayan religion
+********* Any owned province:
+********** Does not have the province modifier "maya_ek_chuaj"
+********* Any owned province:
+********** Produces 0 "Cocoa
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: maya_religion_events.18.a:
+********* Random owned province:
+********** Limited to:
+*********** Produces 0 "Cocoa
+********** Adds the modifier "maya_ek_chuaj" until the end of the campaign:
+*********** +5% production efficiency
+*********** province_trade_power_modifier = 0.05
+******** Option: maya_religion_events.18.b:
+********* Modifies treasury by 0.25 years worth of income

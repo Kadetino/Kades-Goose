@@ -1,0 +1,656 @@
+** Trigger:
+*** Country is 0 "Kilwa
+*** Follows the 0 "Sunni religion
+*** Has less than -0.05 piety
+*** Year is less than 1480
+** Mean time to happen
+*** Base mean time to happen of 108 months
+** Option: flavor_zan.1.a:
+*** AI chance:
+**** Base chance of 1
+*** Sets the country flag zan_shirazi_islam_confirmed
+*** Adds 30 legitimacy
+*** Changes piety by -25%
+*** Every known country:
+**** Limited to:
+***** Has at least 1 ports
+***** Is in the 0 "Muslim religion group
+***** Country is not 0 "Pate
+***** Country is not 0 "Malindi
+***** Country is not 0 "Mombasa
+***** Country is not 0 "Sofala
+***** Capital:
+****** Region is not malaya_region
+***** Capital:
+****** Region is not moluccas_region
+***** Capital:
+****** Region is not indonesia_region
+**** Adds the opinion modifier "zan_shirazi_islam" towards 0 "Kilwa
+** Option: flavor_zan.1.b:
+*** AI chance:
+**** Base chance of 0
+*** Adds -30 legitimacy
+*** Changes piety by 15%
+*** Adds the modifier "zan_religious_unrest" for 10 years:
+**** +2 global unrest
+**** Legitimacy is at least -0.05
+**** Follows the yes religion
+*** Every known country:
+**** Limited to:
+***** Has at least 1 ports
+***** Is in the 0 "Muslim religion group
+***** Country is not 0 "Pate
+***** Country is not 0 "Malindi
+***** Country is not 0 "Mombasa
+***** Country is not 0 "Sofala
+***** Capital:
+****** Region is not malaya_region
+***** Capital:
+****** Region is not moluccas_region
+***** Capital:
+****** Region is not indonesia_region
+**** Adds the opinion modifier "zan_religious_orthodoxy" towards 0 "Kilwa
+*** Sets the country flag zan_moving_away_from_shirazi_islam
+* Gets the country event:
+** ID is flavor_zan.2
+** title = flavor_zan.2.t
+** desc = flavor_zan.2.d
+** picture = BIG_BOOK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kilwa
+*** Year is at least 1500
+*** Year is less than 1520
+*** Follows the 0 "Sunni religion
+*** Has the country flag zan_shirazi_islam_confirmed
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: flavor_zan.2.a:
+*** AI chance:
+**** Base chance of 1
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Modifies treasury by -0.1 years worth of income
+*** Adds 5 legitimacy
+*** Changes prestige by 5
+*** Adds the modifier "zan_kilwa_chronicle" for the rest of the campaign:
+**** Legitimacy is at least 0.5
+** Option: flavor_zan.2.b:
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_zan.3
+** title = flavor_zan.3.t
+** desc = flavor_zan.3.d
+** picture = RELIGIOUS_TURMOIL_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kilwa
+*** Year is at least 1570
+*** Year is less than 1590
+*** Follows the 0 "Sunni religion
+*** Has the country flag zan_moving_away_from_shirazi_islam
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: flavor_zan.3.a:
+*** AI chance:
+**** Base chance of 1
+*** add_stability_or_adm_power = yes
+** Option: flavor_zan.3.b:
+*** AI chance:
+**** Base chance of 0
+*** Changes stability by -3
+*** Adds -25 legitimacy
+*** Changes religion to 0 "Shia
+*** Adds the modifier "zan_religious_unrest" for 10 years:
+**** +2 global unrest
+**** Legitimacy is at least -0.05
+**** Follows the yes religion
+*** Every known country:
+**** Limited to:
+***** Has at least 1 ports
+***** Follows the 0 "Shia religion
+**** Adds the opinion modifier "zan_religious_orthodoxy" towards 0 "Kilwa
+** Option: flavor_zan.3.c:
+*** AI chance:
+**** Base chance of 0
+*** Changes stability by -3
+*** Adds -25 legitimacy
+*** Changes religion to 0 "Ibadi
+*** Adds the modifier "zan_religious_unrest" for 10 years:
+**** +2 global unrest
+**** Legitimacy is at least -0.05
+**** Follows the yes religion
+*** Every known country:
+**** Limited to:
+***** Has at least 1 ports
+***** Follows the 0 "Ibadi religion
+**** Adds the opinion modifier "zan_religious_orthodoxy" towards 0 "Kilwa
+** Option: flavor_zan.3.od:
+*** AI chance:
+**** Base chance of 0
+*** Changes piety by 25%
+*** Adds the modifier "zan_religious_unrest" for 10 years:
+**** +2 global unrest
+**** Legitimacy is at least -0.05
+**** Follows the yes religion
+*** Every known country:
+**** Limited to:
+***** Has at least 1 ports
+***** Follows the 0 "Sunni religion
+***** Country is not 0 "Pate
+***** Country is not 0 "Malindi
+***** Country is not 0 "Mombasa
+***** Country is not 0 "Sofala
+***** Capital:
+****** Region is not malaya_region
+***** Capital:
+****** Region is not moluccas_region
+***** Capital:
+****** Region is not indonesia_region
+**** Adds the opinion modifier "zan_religious_orthodoxy" towards 0 "Kilwa
+*** Adds -25 legitimacy
+*** Changes stability by -1
+* Gets the country event:
+** ID is flavor_zan.4
+** title = flavor_zan.4.t
+** desc = flavor_zan.4.d
+** picture = WOUNDED_SOLDIERS_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kilwa
+*** Year is at least 1585
+*** Year is less than 1610
+*** Owns 0 "Kilwa
+** Mean time to happen
+*** Base mean time to happen of 75 months
+** Option: flavor_zan.4.a:
+*** 0 "Kilwa:
+**** Adds the modifier "zan_sacked_by_the_zimba" until the end of the campaign:
+***** Trade efficiency is at least -5%
+***** -25% provincial tax income
+** Option: flavor_zan.4.b:
+*** Trigger:
+**** Has at least 0.3 years worth of income
+*** Modifies treasury by -0.3 years worth of income
+*** 0 "Kilwa:
+**** Adds the modifier "zan_sacked_by_the_zimba" until the end of the campaign:
+***** Trade efficiency is at least -5%
+***** -25% provincial tax income
+* Gets the country event:
+** ID is flavor_zan.5
+** title = flavor_zan.5.t
+** desc = flavor_zan.5.d
+** picture = DEATH_OF_HEIR_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Trigger:
+*** Country is 0 "Kilwa
+*** Any of the following:
+**** Has the monarchy government type
+**** Has the tribal government type
+*** has_government_attribute = heir
+** Option: flavor_zan.5.a:
+*** AI chance:
+**** Base chance of 1
+*** Sets the country flag zan_plotting_viziers
+*** Changes stability by -2
+*** Spawns a ruler:
+**** Named "Suleiman"
+**** Ruler's dynasty is al-Mawahib
+**** Legitimacy of 80
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+*** set_ruler_flag = zan_muhammad_and_suleiman
+*** Hidden effect:
+**** Spawns an heir:
+***** Legitimacy of 75
+***** Ruler's dynasty is al-Mazlum
+***** Named "Muhammad"
+***** age = 45
+** Option: flavor_zan.5.b:
+*** AI chance:
+**** Base chance of 0
+*** Sets the country flag zan_plotting_viziers
+*** Changes stability by -2
+*** Spawns a ruler:
+**** Named "Muhammad"
+**** Ruler's dynasty is al-Mazlum
+**** Legitimacy of 80
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+*** set_ruler_flag = zan_muhammad_and_suleiman
+*** Hidden effect:
+**** Spawns an heir:
+***** Legitimacy of 75
+***** Ruler's dynasty is al-Mawahib
+***** Named "Suleiman"
+***** age = 50
+** Option: flavor_zan.5.c:
+*** AI chance:
+**** Base chance of 0
+*** Sets the country flag zan_plotting_viziers
+*** Changes stability by -1
+*** Capital:
+**** Spawns revolt of size 2 of 0 "Pretender rebels
+* Gets the country event:
+** ID is flavor_zan.6
+** title = flavor_zan.6.t
+** desc = flavor_zan.6.d
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kilwa
+*** Has the country flag zan_plotting_viziers
+*** has_ruler_flag = zan_muhammad_and_suleiman
+*** Has the monarchy government type
+** Mean time to happen
+*** Base mean time to happen of 30 months
+*** Trigger:
+**** Has an heir
+** Option: flavor_zan.6.a:
+*** Kills the ruler of the country
+** Option: flavor_zan.6.b:
+*** Changes stability by -1
+* Gets the country event:
+** ID is flavor_zan.7
+** title = flavor_zan.7.t
+** desc = flavor_zan.7.d
+** picture = SPY_eventPicture
+** Trigger:
+*** Country is 0 "Kilwa
+*** Has the country flag zan_plotting_viziers
+*** Has the monarchy government type
+*** Is a tribal nation
+*** Year is less than 1510
+*** Legitimacy is less than 70
+*** Stability is lower than 2
+*** has_ruler_flag_false = zan_muhammad_and_suleiman
+*** has_ruler_flag_false = vizier_plotted
+** Mean time to happen
+*** Base mean time to happen of 75 months
+** Option: flavor_zan.7.a:
+*** set_ruler_flag = vizier_plotted
+*** Random owned province:
+**** Spawns revolt of size 2 of 0 "Pretender rebels
+* Gets the country event:
+** ID is flavor_zan.8
+** title = flavor_zan.8.t
+** desc = flavor_zan.8.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_zan.8.a:
+*** Hidden effect:
+**** 0 "Shiraz:
+***** The owner of the province:
+****** Gets the country event:
+******* ID is flavor_zan.9
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** 0 "Shiraz:
+****** The owner of the province:
+******* Country is not 0 "Persia
+******* was_tag_false = 0 "Persia
+******* Culture group is not 0 "Iranian
+** Option: flavor_zan.8.b:
+*** Changes prestige by 20
+*** Adds 20 legitimacy
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** 0 "Shiraz:
+****** The owner of the province:
+******* Any of the following:
+******** Country is 0 "Persia
+******** was_tag = 0 "Persia
+******** Culture group is 0 "Iranian
+* Gets the country event:
+** ID is flavor_zan.9
+** title = flavor_zan.9.t
+** desc = flavor_zan.9.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_zan.9.a:
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_zan.10
+*** 0 "Shiraz:
+**** Adds the modifier "zan_kilwan_embassy" until the end of the campaign:
+*** Adds the opinion modifier "zan_has_embassy" from our country
+*** Hidden effect:
+**** save_global_event_target_as = kilwan_embassy_holder
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** Country is not 0 "Persia
+***** was_tag_false = 0 "Persia
+***** Culture group is not 0 "Iranian
+** Option: flavor_zan.9.b:
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_zan.11
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** Any of the following:
+****** Country is 0 "Persia
+****** was_tag = 0 "Persia
+****** Culture group is 0 "Iranian
+* Gets the country event:
+** ID is flavor_zan.10
+** title = flavor_zan.10.t
+** desc = flavor_zan.10.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_zan.10.a:
+*** Capital:
+**** Adds the modifier "zan_persian_embassy" until the end of the campaign:
+*** Adds the opinion modifier "zan_has_embassy" from our country
+*** Hidden effect:
+**** Sets the global flag zan_persia_embassy
+**** save_global_event_target_as = persian_embassy_holder
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.11
+** title = flavor_zan.11.t
+** desc = flavor_zan.11.desc
+** picture = ACCUSATION_eventPicture
+** is_triggered_only = yes
+** Option: flavor_zan.11.a:
+*** Adds the opinion modifier "zan_declined_embassy" towards our country
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.12
+** title = flavor_zan.12.t
+** desc = flavor_zan.12.desc
+** picture = COUNTRY_COLLAPSE_eventPicture
+** Trigger:
+*** Has the global flag zan_persia_embassy
+*** is_or_was_tag:
+**** Country is 0 "Kilwa
+*** Any of the following:
+**** Every owned province:
+***** Does not have the province modifier "zan_persian_embassy"
+**** 0 "Shiraz:
+***** Does not have the province modifier "zan_kilwan_embassy"
+** Immediate effects:
+*** Hidden effect:
+**** Removes the global flag zan_persia_embassy
+**** If:
+***** Limited to:
+****** Every owned province:
+******* Does not have the province modifier "zan_persian_embassy"
+***** 0 "Shiraz:
+****** The owner of the province:
+******* save_event_target_as = embassy_owner
+**** else:
+***** save_event_target_as = embassy_owner
+**** clear_global_event_target = persian_embassy_holder
+**** clear_global_event_target = kilwan_embassy_holder
+** Mean time to happen
+*** Base mean time to happen of 1 days
+** Option: flavor_zan.12.a:
+*** Trigger:
+**** Every owned province:
+***** Does not have the province modifier "zan_persian_embassy"
+*** If:
+**** Limited to:
+***** 0 "Shiraz:
+****** Has the province modifier "zan_kilwan_embassy"
+**** 0 "Shiraz:
+***** The owner of the province:
+****** Gets the country event:
+******* ID is flavor_zan.13
+*** Random country:
+**** Limited to:
+***** Has the opinion modifier zan_has_embassy with our country
+**** remove_opinion:
+***** Affecting our country
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_zan.12.b:
+*** Trigger:
+**** 0 "Shiraz:
+***** Does not have the province modifier "zan_kilwan_embassy"
+*** Random owned province:
+**** Limited to:
+***** Has the province modifier "zan_persian_embassy"
+**** Removes the country modifier "zan_persian_embassy"
+*** Random country:
+**** Limited to:
+***** Has the opinion modifier zan_has_embassy with our country
+**** Gets the country event:
+***** ID is flavor_zan.14
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.13
+** title = flavor_zan.13.t
+** desc = flavor_zan.13.desc
+** picture = COUNTRY_COLLAPSE_eventPicture
+** is_triggered_only = yes
+** Option: flavor_zan.13.a:
+*** 0 "Shiraz:
+**** Removes the country modifier "zan_kilwan_embassy"
+*** Our country:
+**** remove_opinion:
+***** Affecting our country
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.14
+** title = flavor_zan.14.t
+** desc = flavor_zan.14.desc
+** picture = COUNTRY_COLLAPSE_eventPicture
+** is_triggered_only = yes
+** Option: flavor_zan.14.a:
+*** remove_opinion:
+**** Affecting our country
+*** reverse_remove_opinion:
+**** Affecting our country
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.15
+** title = flavor_zan.15.t
+** desc = flavor_zan.15.desc
+** picture = MERCHANTS_TALKING_eventPicture
+** Trigger:
+*** Has the global flag zan_persia_embassy
+*** Any owned province:
+**** Any of the following:
+***** Has the province modifier "zan_persian_embassy"
+***** Has the province modifier "zan_kilwan_embassy"
+*** Any of the following:
+**** Does not have the country flag had_embassy_event
+**** Has had the country flag "had_embassy_event" for at least 3650 days
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Immediate effects:
+*** Hidden effect:
+**** Removes the country flag had_embassy_event
+**** Sets the country flag had_embassy_event
+** Option: flavor_zan.15.a:
+*** Modifies treasury by 0.25 years worth of income
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.16
+** title = flavor_zan.16.t
+** desc = flavor_zan.16.desc
+** picture = CULTURE_eventPicture
+** Trigger:
+*** Has the global flag zan_persia_embassy
+*** Any owned province:
+**** Any of the following:
+***** Has the province modifier "zan_persian_embassy"
+***** Has the province modifier "zan_kilwan_embassy"
+*** Any of the following:
+**** Does not have the country flag had_embassy_event
+**** Has had the country flag "had_embassy_event" for at least 3650 days
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Immediate effects:
+*** Hidden effect:
+**** Removes the country flag had_embassy_event
+**** Sets the country flag had_embassy_event
+** Option: flavor_zan.16.a:
+*** One of the following will happen:
+**** 33 relative chance:
+***** Changes administrative power stored by 50
+**** 33 relative chance:
+***** Changes diplomatic power stored by 50
+**** 33 relative chance:
+***** Changes military power stored by 50
+**** 1 relative chance:
+***** Changes administrative power stored by 50
+***** Changes diplomatic power stored by 50 add_mil_power
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.17
+** title = flavor_zan.17.t
+** desc = flavor_zan.17.desc
+** picture = MOSQUE_eventPicture
+** Trigger:
+*** Has the global flag zan_persia_embassy
+*** Any owned province:
+**** Any of the following:
+***** Has the province modifier "zan_persian_embassy"
+***** Has the province modifier "zan_kilwan_embassy"
+*** Any of the following:
+**** Does not have the country flag had_embassy_event
+**** Has had the country flag "had_embassy_event" for at least 3650 days
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Immediate effects:
+*** Hidden effect:
+**** Removes the country flag had_embassy_event
+**** Sets the country flag had_embassy_event
+** Option: flavor_zan.17.a:
+*** add_stability_or_adm_power = yes
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.18
+** title = flavor_zan.18.t
+** desc = flavor_zan.18.desc
+** picture = MOSQUE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Has the global flag zan_persia_embassy
+*** Any owned province:
+**** Has the province modifier "zan_persian_embassy"
+*** 0 "Shiraz:
+**** The owner of the province:
+***** Does not follow our country's religion
+*** Any of the following:
+**** Does not have the country flag had_embassy_event
+**** Has had the country flag "had_embassy_event" for at least 3650 days
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Immediate effects:
+*** Hidden effect:
+**** Removes the country flag had_embassy_event
+**** Sets the country flag had_embassy_event
+**** 0 "Shiraz:
+***** The owner of the province:
+****** save_event_target_as = zan_persia
+** Option: flavor_zan.18.a:
+*** Changes religion to event_target:zan_persia
+*** AI chance:
+**** Base chance of 0
+** Option: flavor_zan.18.b:
+*** Changes piety by 5%
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.19
+** title = flavor_zan.19.t
+** desc = flavor_zan.19.desc
+** picture = SONGHAI_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Has the global flag zan_persia_embassy
+*** Any owned province:
+**** Has the province modifier "zan_persian_embassy"
+*** 0 "Shiraz:
+**** The owner of the province:
+***** Does not follow our country's religion
+*** Any of the following:
+**** Does not have the country flag had_embassy_event
+**** Has had the country flag "had_embassy_event" for at least 3650 days
+** Mean time to happen
+*** Base mean time to happen of 1200 months
+** Immediate effects:
+*** Hidden effect:
+**** Removes the country flag had_embassy_event
+**** Sets the country flag had_embassy_event
+** Option: flavor_zan.19.a:
+*** Random owned province:
+**** Limited to:
+***** Has the province modifier "zan_persian_embassy"
+**** Removes the country modifier "zan_persian_embassy"
+*** persia_region:
+**** Adds claim to our country
+*** AI chance:
+**** Base chance of 0
+** Option: flavor_zan.19.b:
+*** Changes prestige by 25
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.20
+** title = flavor_zan.20.t
+** desc = flavor_zan.20.desc
+** picture = CONQUEST_eventPicture
+** is_triggered_only = yes
+** Option: flavor_zan.20.a:
+*** 0 "Kilwa:
+**** If:
+***** Limited to:
+****** province_has_center_of_trade_of_level_false = 2
+***** add_center_of_trade_level = 1
+**** else:
+***** add_base_production = 3
+**** add_prosperity = 100
+*** 0 "Mogadishu:
+**** If:
+***** Limited to:
+****** province_has_center_of_trade_of_level = 2
+***** add_center_of_trade_level = -1
+**** else:
+***** add_base_production = -2
+*** Changes treasury by 400 ducats
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_zan.21
+** title = flavor_zan.21.t
+** desc = flavor_zan.21.desc
+** picture = MERCHANTS_TALKING_eventPicture
+** is_triggered_only = yes
+** Option: flavor_zan.21.a:
+*** Hidden effect:
+**** Discovers the 0 "Central Doab province
+**** Discovers the 0 "Hangzhou province
+**** Discovers the 0 "Ava province
+**** bay_of_bengal_area:
+***** Discovers the country our country
+**** andaman_sea_area:
+***** Discovers the country our country
+**** south_china_sea_area:
+***** Discovers the country our country
+**** east_china_sea_area:
+***** Discovers the country our country
+*** AI chance:
+**** Base chance of 1

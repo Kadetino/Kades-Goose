@@ -1,0 +1,174 @@
+******** Trigger:
+********* Is at war
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "They would have been cowards anyway.:
+********* Changes war exhaustion by 1
+********* Changes national manpower by -0.5 years worth of men
+******* Gets the country event:
+******** ID is overextension.2
+******** title = 0 "Widespread Opposition
+******** desc = 0 "Our nation is extremely infamous, and there are a lot of people in $COUNTRY$ that have taken exception to this.
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** Trigger:
+********* Stability is at least -2
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "We need better whips...:
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is overextension.3
+******** title = 0 "Bad Reputation!
+******** desc = 0 "Our recent strategy to carve new provinces out of whoever happens to be in the way surprisingly seems to have had a somewhat negative effect on our standing among our fellow nations.
+******** picture = DIPLOMACY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* 0 prestige
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "They are overreacting as always!:
+********* Changes prestige by -25
+******* Gets the country event:
+******** ID is overextension.4
+******** title = 0 "Inflation
+******** desc = 0 "The state of constant war has eroded our economy and now inflation is spiraling out of control!
+******** picture = OVEREXTENSION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Inflation is less than 50
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Try minting more coins!:
+********* Changes inflation by 1
+******* Gets the country event:
+******** ID is overextension.5
+******** title = 0 "Officers Deserting
+******** desc = 0 "Disillusioned by the repeated and seemingly aimless wars of $MONARCH$, many officers in the army have deserted to seek better assignments elsewhere.
+******** picture = LAND_MILITARY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* 10 army tradition
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Bah, I'll lead the army myself!:
+********* Changes army tradition by -10
+******* Gets the country event:
+******** ID is overextension.6
+******** title = 0 "Merchants Resented
+******** desc = 0 "Apparently citing disgust with $COUNTRY$'s endless wars of conquest some Trade Nodes have decided to expel our merchants.
+******** picture = MERCHANTS_TALKING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has at least 1 merchants
+********* Any active trade node:
+********** has_merchant = PREV
+********** }
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Then I'll conquer them too!:
+********* Random active trade node:
+********** Limited to:
+*********** }
+*********** has_merchant = PREV
+********** If:
+*********** Limited to:
+************ trade_share:
+************* country = our country
+************* share = 5
+*********** Changes treasury by -10 months worth of trade income
+********** Adds trade modifier:
+*********** Affecting our country
+*********** Lasting 3650 days
+*********** Changing trade power by -10
+*********** Named "0 "Absent Merchant"
+******* Gets the country event:
+******** ID is overextension.7
+******** title = 0 "Merchants Assassinated!
+******** desc = 0 "Some countries are apparently so appalled by our foreign policy that they've decided to retaliate by assassinating our merchants in an attempt to strike at our finances!\n\nWhat makes it even more shocking is that it happens even in our own Trade Nodes...
+******** picture = ASSASSINATION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has at least 1 merchants
+********* Any active trade node:
+********** has_merchant = PREV
+********** }
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Heads will roll! Hopefully not mine...:
+********* Random active trade node:
+********** Limited to:
+*********** has_merchant = PREV
+*********** }
+********** Adds trade modifier:
+*********** Affecting our country
+*********** Lasting 3650 days
+*********** Changing trade power by -10
+*********** Named "0 "Absent Merchant"
+******* Gets the country event:
+******** ID is overextension.8
+******** title = 0 "Legitimacy Questioned
+******** desc = 0 "The bloodthirst shown by $MONARCH$ has ruined the reputation of $COUNTRY$ in the eyes of the world, and now our own subjects are starting to question the legitimacy of such a ruthless ruler.
+******** picture = COURT_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* legitimacy_or_horde_unity = 15
+********* has_reform_false = 0 "Celestial Empire
+********* Has the monarchy government type
+********* Is not the lesser partner in a union
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Tell my heir to start worrying...:
+********* If:
+********** Limited to:
+*********** has_reform_false = 0 "Steppe Nomads
+********** Adds -15 legitimacy
+********* If:
+********** Limited to:
+*********** has_reform = 0 "Steppe Nomads
+********** add_horde_unity = -15
+******* Gets the country event:
+******** ID is overextension.9
+******** title = 0 "Magistrates Resigns
+******** desc = 0 "Magistrates are the very sinews of a country, and unfortunately all ours are resigning!\n\n They claim this to be a protest to the burden of never-ending wars that has been laid upon them.
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has at least 10 diplomatic power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "I can do whatever they did myself!:
+********* Changes diplomatic power stored by -50
+******* Gets the country event:
+******** ID is overextension.10
+******** title = 0 "Advisor Resigns
+******** desc = 0 "Horrified by our conquest-bent foreign policy, a leading court adviser has resigned and left the country!
+******** picture = OVEREXTENSION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** Has the 0 "Philosopher advisor
+********** Has the 0 "Natural Scientist advisor
+********** Has the 0 "Artist advisor
+********** Has the 0 "Statesman advisor
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: 0 "Typical naysayer... Good riddance!:
+********* reduce_meritocracy_effect = yes
+********* If:
+********** Limited to:
+*********** Has the 0 "Philosopher advisor
+********** Removes the 0 "Philosopher advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Natural Scientist advisor
+********** Removes the 0 "Natural Scientist advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Artist advisor
+********** Removes the 0 "Artist advisor
+********* If:
+********** Limited to:
+*********** Has the 0 "Statesman advisor
+********** Removes the 0 "Statesman advisor

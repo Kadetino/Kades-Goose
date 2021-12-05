@@ -1,0 +1,94 @@
+******** Trigger:
+********* Has the DLC Emperor
+********* active_imperial_incident_false = any
+********* Has the global flag italians_leave_hre
+********* 0 "Firenze:
+********** Is part of the Holy Roman Empire
+********* 0 "Milan:
+********** Is part of the Holy Roman Empire
+********* 0 "Ferrara:
+********** Is part of the Holy Roman Empire
+********* Is not part of the Holy Roman Empire
+********* Is not a vassal
+********* Country is 0 "The Papal State
+********* Has less than 10 provinces
+********* hre_leagues_enabled_false = no
+********* hre_religion_treaty_false = no
+********* hre_religion_locked_false = no
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: incident_pope.1.a:
+********* AI chance:
+********** Base chance of 1000
+********** Multiplies value by 0:
+*********** Any of the following:
+************ Considers 0 "Emperor a rival
+************ Holy Roman Emperor:
+************* Considers 0 "The Papal State a rival
+********* set_imperial_incident = incident_pope
+******** Option: incident_pope.1.b:
+********* AI chance:
+********** Base chance of 1
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is incident_pope.2
+******** title = incident_pope.2.t
+******** desc = incident_pope.2.d
+******** picture = HRE_eventPicture
+******** fire_only_once = yes
+******** is_triggered_only = yes
+******** major = yes
+******** Option: incident_pope.2.a:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** Any of the following:
+************ Considers 0 "The Papal State a rival
+************ 0 "The Papal State:
+************* Considers our country a rival
+********* 0 "The Papal State:
+********** Adds the province to the Holy Roman Empire
+********** Adds the opinion modifier "opinion_pap_joins_empire" towards our country
+********* If:
+********** Limited to:
+*********** Any of the following:
+************ num_of_electors_false = 7
+************ All of the following:
+************* hre_reform_passed = emperor_rechenschaft
+************* num_of_electors_false = 8
+********** 0 "The Papal State:
+*********** elector = yes
+******** Option: incident_pope.2.b:
+********* AI chance:
+********** Base chance of 2
+********** Multiplies value by 0:
+*********** Any of the following:
+************ Does not consider 0 "The Papal State a rival
+************ 0 "The Papal State:
+************* Does not consider our country a rival
+********* Adds 5% reform desire
+******* Gets the country event:
+******** ID is incident_pope.3
+******** title = incident_pope.3.t
+******** desc = incident_pope.3.d
+******** picture = COUNCIL_TRENT_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Country is 0 "The Papal State
+********* Is part of the Holy Roman Empire
+********* Any of the following:
+********** hre_religion_treaty = yes
+********** hre_religion_false = 0 "Catholic
+******** Mean time to happen
+********* Base mean time to happen of 6 months
+******** Option: incident_pope.3.a:
+********* AI chance:
+********** Base chance of 1000
+********* Removes the province from the Holy Roman Empire
+********* Holy Roman Emperor:
+********** Adds the opinion modifier "pope_left_empire" towards our country
+******** Option: incident_pope.3.b:
+********* AI chance:
+********** Base chance of 0
+********* Changes prestige by -50

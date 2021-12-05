@@ -1,0 +1,94 @@
+** is_triggered_only = yes
+** Option: flavor_oyo.1.a:
+*** Random known country:
+**** Limited to:
+***** Any owned province:
+****** province_has_center_of_trade_of_level = 1
+****** Any of the following:
+******* area = western_sahara_area
+******* area = niger_bend_area
+******* area = dendi_area
+******* area = baghena_area
+******* area = atacora_oueme_area
+******* area = lower_volta_area
+******* area = kong_area
+******* area = upper_volta_area
+******* area = jenne_area
+******* area = massina_area
+******* area = manding_area
+******* area = tekrur_area
+***** Any of the following:
+****** Is a vassal of our country
+****** Has an opinion of at least 90 with our country
+**** Gets the country event:
+***** ID is flavor_oyo.2
+*** Changes treasury by -50 ducats
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_oyo.1.b:
+*** Changes diplomatic power stored by 50
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_oyo.2
+** title = flavor_oyo.2.t
+** desc = flavor_oyo.2.d
+** picture = MERCHANTS_TALKING_eventPicture
+** is_triggered_only = yes
+** Option: flavor_oyo.2.a:
+*** Changes treasury by 50 ducats
+*** Hidden effect:
+**** Our country:
+***** Gets the country event:
+****** ID is flavor_oyo.3
+****** Base mean time to happen of 20 days
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_oyo.3
+** title = flavor_oyo.3.t
+** desc = flavor_oyo.3.d
+** picture = MERCHANTS_TALKING_eventPicture
+** is_triggered_only = yes
+** Option: flavor_oyo.3.a:
+*** Changes military power stored by 25
+*** Adds the modifier "oyo_access_to_horses" for 25 years:
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_oyo.4
+** title = flavor_oyo.4.t
+** desc = flavor_oyo.4.d
+** picture = AFRICAN_BAD_WITH_MONARCH_eventPicture
+** Trigger:
+*** Country is 0 "Oyo
+*** Any of the following:
+**** estate_influence:
+***** estate = estate_nobles
+***** influence = 50
+**** has_estate_privilege = estate_nobles_grant_power_to_the_bashorun
+*** Stability is lower than 0
+*** Any of the following:
+**** 5 war exhaustion
+**** num_of_rebel_armies = 3
+**** num_of_rebel_controlled_provinces = 5
+**** Stability is lower than 2
+** Mean time to happen
+*** Base mean time to happen of 120 months
+*** Multiplies value by 0.5:
+**** Ruler's administrative skill is less than 3
+*** Multiplies value by 0.5:
+**** Ruler's diplomatic skill is less than 3
+*** Multiplies value by 0.5:
+**** Ruler's military skill is less than 3
+*** Multiplies value by 2:
+**** Ruler's administrative skill is at least 5
+*** Multiplies value by 2:
+**** Ruler's diplomatic skill is at least 5
+*** Multiplies value by 2:
+**** Ruler's military skill is at least 5
+** Option: flavor_oyo.4.a:
+*** Kills the ruler of the country
+*** Changes stability by 3
+*** AI chance:
+**** Base chance of 1

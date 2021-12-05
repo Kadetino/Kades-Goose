@@ -1,0 +1,109 @@
+
+=== 0 "Submission of the Clergy ===
+
+'''Trigger:'''
+
+* 0 "The Papal State exists
+* Has an opinion of less than 0 with 0 "The Papal State
+* Follows the 0 "Catholic religion
+* Is not in regency
+* Has the monarchy government type
+* Any owned province:
+** Any of the following:
+*** Follows the 0 "Protestant religion
+*** Follows the 0 "Reformed religion
+* Does not have the country flag submission_of_the_clergy
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+* Multiplies value by 0.9:
+** The dominant religion is 0 "Reformed
+* Multiplies value by 0.9:
+** The dominant religion is 0 "Protestant
+* Multiplies value by 0.9:
+** Has the 0 "Statesman advisor
+* Multiplies value by 1.2:
+** Has the idea 0 "Church Attendance Duty
+* Multiplies value by 1.2:
+** Has the 0 "Theologian advisor
+* Multiplies value by 1.2:
+** Ruler's diplomatic skill is at least 4
+
+'''Option: 0 "All power to the king:'''
+
+* Sets the country flag submission_of_the_clergy
+* Adds the modifier "0 "Increased Centralization" for 10 years:
+** global_autonomy = -0.05
+** +1 global unrest
+* Changes prestige by 5
+* add_stability_or_adm_power = yes
+* Changes Papal Influence by -25
+* Adds the opinion modifier "0 "Loyal to the monarch, not to the Church" towards 0 "The Papal State
+
+'''Option: 0 "Let the Clergy keep its authority:'''
+
+* Sets the country flag submission_of_the_clergy
+* Adds the opinion modifier "0 "Loyal to the Church, not to the monarch" towards 0 "The Papal State
+* Changes Papal Influence by 10
+
+=== 0 "Decline of Renaissance ===
+
+'''Trigger:'''
+
+* Has the country modifier "0 "Blooming Renaissance"
+* Has at least 6 provinces
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 6 months
+* Multiplies value by 0.9:
+** Has at least 7 provinces
+* Multiplies value by 0.9:
+** Has at least 8 provinces
+* Multiplies value by 0.9:
+** Has at least 9 provinces
+
+'''Option: 0 "Very unfortunate.:'''
+
+* Removes the country modifier "0 "Blooming Renaissance"
+
+=== 0 "Change in Government ===
+
+'''Trigger:'''
+
+* Any of the following:
+** has_reform = 0 "Iqta
+** has_reform = ottoman_government
+* Is not in 0 "Muslim's religion group
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 months
+
+'''Option: 0 "This is for the better...:'''
+
+* remove_government_reform = 0 "Iqta
+* remove_government_reform = ottoman_government
+
+=== 0 "Faith of the Patriarchate ===
+
+'''Trigger:'''
+
+* Is not in 0 "Christian's religion group
+* Any country:
+** reverse_has_opinion_modifier:
+*** Affecting our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 months
+
+'''Option: 0 "We see why it had to be done now.:'''
+
+* Random country:
+** Limited to:
+*** reverse_has_opinion_modifier:
+**** Affecting our country
+** reverse_remove_opinion:
+*** Affecting our country

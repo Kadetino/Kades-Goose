@@ -1,0 +1,1893 @@
+** Trigger:
+*** Country is 0 "Hungary
+*** Is in regency
+*** has_consort_regency_false = no
+*** Is not the lesser partner in a union
+*** Has the military leader János Hunyadi
+*** Year is at least 1445
+*** Year is less than 1470
+*** has_government_attribute = heir
+** Mean time to happen
+*** Base mean time to happen of 6 months
+*** AI chance:
+**** Base chance of 50
+*** Trigger:
+**** 0 "Austria:
+***** Has an heir
+** Option: 0 "Elect János Hunyadi as regent:
+*** Spawns a ruler:
+**** Named "János"
+**** Ruler's dynasty is Hunyadi
+**** Ruler's diplomatic skill is at least 5
+**** Ruler's administrative skill is at least 4
+**** Ruler's military skill is at least 5
+**** age = 39
+**** János Hunyadi will be considered the same person as the ruler
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+**** Hidden effect:
+***** add_ruler_personality_ancestor:
+****** Named "bold_fighter"
+*** Spawns an heir:
+**** Named "Ladislaus Postumus"
+**** Ruler's dynasty is von Habsburg
+**** Culture is 0 "Austrian
+**** Ruler's administrative skill is at least 3
+**** Ruler's diplomatic skill is at least 3
+**** Ruler's military skill is at least 2
+**** block_disinherit = yes
+**** Born on 1440.2.22
+*** Hidden effect:
+**** Sets the country flag hun_ladislaus_postumus_heir
+*** Every country:
+**** Limited to:
+***** Country is not our country
+***** Ruler's dynasty is von Habsburg
+**** Adds the opinion modifier "0 "Habsburgs spurned" towards our country
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 10
+** Option: 0 "Keep current council:
+*** Trigger:
+**** 0 "Austria:
+***** Has an heir
+*** AI chance:
+**** Base chance of 50
+*** add_stability_or_adm_power = yes
+*** Spawns an heir:
+**** Named "Ladislaus Postumus"
+**** Ruler's dynasty is von Habsburg
+**** Culture is 0 "Austrian
+**** Ruler's administrative skill is at least 3
+**** Ruler's diplomatic skill is at least 3
+**** Ruler's military skill is at least 2
+**** Born on 1440.2.22
+*** Hidden effect:
+**** Spawns a ruler:
+***** Ruler's administrative skill is at least 0
+***** Ruler's diplomatic skill is at least 0
+***** Ruler's military skill is at least 0
+***** As a regent
+*** Hidden effect:
+**** Sets the country flag hun_ladislaus_postumus_heir
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = -15
+*** AI chance:
+**** Base chance of 1
+*** Trigger:
+**** 0 "Austria:
+***** Has no heir
+** Option: flavor_hun.1.c:
+*** Spawns a ruler:
+**** Named "János"
+**** Ruler's dynasty is Hunyadi
+**** Ruler's diplomatic skill is at least 5
+**** Ruler's administrative skill is at least 4
+**** Ruler's military skill is at least 5
+**** age = 39
+**** János Hunyadi will be considered the same person as the ruler
+*** Spawns an heir:
+**** Named "Mátyás"
+**** Culture is 0 "Hungarian
+**** Ruler's dynasty is Hunyadi
+**** Ruler's administrative skill is at least 4
+**** Ruler's diplomatic skill is at least 5
+**** Ruler's military skill is at least 6
+**** Legitimacy of 50
+**** Born on 1443.2.23
+*** Hidden effect:
+**** Sets the country flag hun_matyas_already_existed
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+**** Hidden effect:
+***** add_ruler_personality_ancestor:
+****** Named "bold_fighter"
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 10
+* Gets the country event:
+** ID is flavor_hun.2
+** title = 0 "Mátyás Corvinus
+** desc = 1 "$MONARCHTITLE$ $MONARCH$ has suddenly died, rather suspiciously, leaving the throne vacant. The [HAB.Monarch.Dynasty.GetName] dynasty of [HAB.GetName] still desires to control our throne, but there is also the son of the great Voivode János Hunyadi. Should our great nation elect one of our own as King?
+** picture = ELECTION_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1450
+*** Year is less than 1457
+*** Any of the following:
+**** Heir is at least 15 years old
+**** Has no heir
+*** If:
+**** Limited to:
+***** Has no heir
+**** Does not have the country flag hun_matyas_already_existed
+*** Is not in regency
+*** Is not the lesser partner in a union
+*** 0 "Austria:
+**** Is not a vassal
+**** Has the monarchy government type
+**** Is not in regency
+*** has_government_attribute = heir
+*** Does not have the country flag hun_has_had_matthias_corvinus_event
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag hun_has_had_matthias_corvinus_event
+*** AI chance:
+**** Base chance of 75
+*** Trigger:
+**** Any of the following:
+***** Has no heir
+***** Has an heir
+** Option: 0 "Elect Mátyás as King:
+*** remove_historical_friend = 0 "Austria
+*** 0 "Austria:
+**** remove_historical_friend = 0 "Hungary
+*** Hidden effect:
+**** Removes the country flag hun_ladislaus_postumus_heir
+*** Spawns an heir:
+**** Named "Mátyás"
+**** Culture is 0 "Hungarian
+**** Ruler's dynasty is Hunyadi
+**** Ruler's administrative skill is at least 4
+**** Ruler's diplomatic skill is at least 5
+**** Ruler's military skill is at least 6
+**** Legitimacy of 50
+**** Born on 1443.2.23
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+**** Hidden effect:
+***** add_heir_personality_ancestor:
+****** Named "just"
+*** Sets the country flag hun_keep_ladislaus_alive
+*** Spawns a ruler:
+**** As a regent
+**** Ruler's administrative skill is at least 2
+**** Ruler's diplomatic skill is at least 2
+**** Ruler's military skill is at least 2
+*** 0 "Austria:
+**** Tooltip:
+***** Gives the 0 "Restoration of Union casus belli against 0 "Hungary
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_hun.10
+****** Base mean time to happen of 1 days
+** Option: 0 "A German King would be best!:
+*** AI chance:
+**** Base chance of 25
+*** add_stability_or_adm_power = yes
+*** 0 "Hungary:
+**** If:
+***** Limited to:
+****** Senior union partner over 0 "Croatia
+***** Inherit 0 "Croatia
+*** 0 "Austria:
+**** Creates a union with 0 "Hungary
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_hun.3
+****** Base mean time to happen of 1 days
+** Option: 0 "Let us not forget about [Root.Heir.GetName]?:
+*** Trigger:
+**** Has an heir
+**** Has no heir
+**** Ruler's dynasty is not 0 "Austria
+*** AI chance:
+**** Base chance of 25
+**** Multiplies value by 10:
+***** heir_adm = 5
+***** heir_mil = 5
+***** heir_dip = 5
+*** remove_historical_friend = 0 "Austria
+*** 0 "Austria:
+**** remove_historical_friend = 0 "Hungary
+*** Kills the ruler of the country
+*** 0 "Austria:
+**** Tooltip:
+***** Gives the 0 "Restoration of Union casus belli against 0 "Hungary
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_hun.10
+****** Base mean time to happen of 1 days
+* Gets the country event:
+** ID is flavor_hun.201
+** title = flavor_hun.201.name
+** desc:
+*** Trigger:
+**** Ruler's name is Ladislaus Postumus I
+**** Has no heir
+*** desc = flavor_hun.201.d.king_no_heir
+** desc:
+*** Trigger:
+**** Ruler's name is Ladislaus Postumus I
+**** Has an heir
+*** desc = flavor_hun.201.d.king
+** desc:
+*** Trigger:
+**** Has an heir
+*** desc = flavor_hun.201.d.heir
+** picture = DEATH_OF_HEIR_eventPicture
+** Mean time to happen
+*** Base mean time to happen of 20 years
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1450
+*** Year is less than 1457
+*** Any of the following:
+**** Has an heir
+**** Ruler's name is Ladislaus Postumus I
+*** 0 "Austria:
+**** Any of the following:
+***** Has an heir
+***** Ruler's name is Ladislaus Postumus
+*** Does not have the country flag hun_has_had_matthias_corvinus_event
+*** Is not the lesser partner in a union
+** Immediate effects:
+*** Sets the country flag hun_has_had_matthias_corvinus_event
+** Option: flavor_hun.201.a:
+*** AI chance:
+**** Base chance of 1
+*** Trigger:
+**** Has an heir
+*** remove_historical_friend = 0 "Austria
+*** 0 "Austria:
+**** remove_historical_friend = 0 "Hungary
+*** Kills the heir of the country
+**** allow_new_heir_false = no
+*** Spawns an heir:
+**** Named "Mátyás"
+**** Culture is 0 "Hungarian
+**** Ruler's dynasty is Hunyadi
+**** Ruler's administrative skill is at least 4
+**** Ruler's diplomatic skill is at least 5
+**** Ruler's military skill is at least 6
+**** Legitimacy of 50
+**** Born on 1443.2.23
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+**** Hidden effect:
+***** add_heir_personality_ancestor:
+****** Named "just"
+*** 0 "Austria:
+**** Tooltip:
+***** Gives the 0 "Restoration of Union casus belli against 0 "Hungary
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_hun.10
+****** Base mean time to happen of 1 days
+** Option: flavor_hun.201.b:
+*** AI chance:
+**** Base chance of 1
+*** Trigger:
+**** Ruler's name is Ladislaus Postumus I
+**** Has an heir
+*** Kills the ruler of the country
+** Option: flavor_hun.201.c:
+*** AI chance:
+**** Base chance of 1
+*** Trigger:
+**** Ruler's name is Ladislaus Postumus I
+**** Has no heir
+*** add_stability_or_adm_power = yes
+*** Kills the ruler of the country
+*** 0 "Hungary:
+**** If:
+***** Limited to:
+****** Senior union partner over 0 "Croatia
+***** Inherit 0 "Croatia
+*** 0 "Austria:
+**** Creates a union with 0 "Hungary
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_hun.3
+****** Base mean time to happen of 1 days
+** Option: flavor_hun.201.d:
+*** AI chance:
+**** Base chance of 3
+*** Trigger:
+**** Ruler's name is Ladislaus Postumus I
+**** Has no heir
+*** remove_historical_friend = 0 "Austria
+*** 0 "Austria:
+**** remove_historical_friend = 0 "Hungary
+*** Spawns an heir:
+**** Named "Mátyás"
+**** Culture is 0 "Hungarian
+**** Ruler's dynasty is Hunyadi
+**** Ruler's administrative skill is at least 4
+**** Ruler's diplomatic skill is at least 5
+**** Ruler's military skill is at least 6
+**** Legitimacy of 50
+**** Born on 1443.2.23
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+**** Hidden effect:
+***** add_heir_personality_ancestor:
+****** Named "just"
+*** Kills the ruler of the country
+*** 0 "Austria:
+**** Tooltip:
+***** Gives the 0 "Restoration of Union casus belli against 0 "Hungary
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_hun.10
+****** Base mean time to happen of 1 days
+* Gets the country event:
+** ID is flavor_hun.3
+** title = 0 "Union with Hungary
+** desc = 0 "Our kinsman on the throne of Hungary has suddenly died without an heir. This is rather tragic, but a great boon to us, as the Hungarian nobility has elected $MONARCH$ to become $MONARCHTITLE$ of Hungary
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "Let others wage wars...:
+*** Adds 5 legitimacy
+*** Changes prestige by 5
+* Gets the country event:
+** ID is flavor_hun.10
+** title = 0 "The Hungarian Throne
+** desc = 0 "The [From.Monarch.GetTitle] of [From.GetName] has suddenly died, rather suspiciously, leaving the throne vacant. The [From.GetAdjective] Diet has ignored that their former [From.Monarch.GetTitle] belonged to the Habsburg dynasty and elected their own [From.Monarch.GetTitle], completely ignoring our legitimate claim to the throne.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "War is the continuation of politics by other means...:
+*** If:
+**** Limited to:
+***** Has the 0 "Restoration of Union casus belli against 0 "Hungary
+**** Tooltip:
+***** Gives the 0 "Restoration of Union casus belli against 0 "Hungary
+*** else:
+**** Gives the 0 "Restoration of Union casus belli against 0 "Hungary
+* Gets the country event:
+** ID is flavor_hun.4
+** title = 0 "The Reforms of Mathias Corvinus
+** desc = 0 "During his reign, Mathias Corvinus quite significantly changed the Hungarian state and society. He managed to increase the royal income dramatically by making the poorer members of the Diet who were unable to attend it regularly agree to grant taxes several years in advance, outmaneuvering the high nobility, by establishing a regular, functional system of tax collection and by having the treasury administered by specialists with separate functions.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1466
+*** Year is less than 1470
+*** Is not in regency
+*** Ruler's dynasty is Hunyadi
+** Mean time to happen
+*** Base mean time to happen of 18 months
+*** AI chance:
+**** Base chance of 50
+** Option: 0 "Focus on Administrative Reforms:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes administrative power stored by 100
+*** Random owned province:
+**** Changes base tax by 1
+**** add_base_production = 1
+*** AI chance:
+**** Base chance of 50
+** Option: 0 "Focus on Social Reforms:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes diplomatic power stored by 100
+*** Random owned province:
+**** add_base_manpower = 1
+**** add_base_production = 1
+* Gets the country event:
+** ID is flavor_hun.5
+** title = 0 "Academia Istropolitana
+** desc = 0 "The Academia Istropolitana in Pressburg was the first University of Hungary. It was founded by Pope Paul II on the request of King Matthias Corvinus. It had many well-known lecturers from Austria and Italy, including Galeotto Marzio and Johann Vitez. Sadly the University closed after the death of Mathias Corvinus
+** picture = UNIVERSITY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1465
+*** Is not in regency
+*** Owns 0 "Pozsony
+*** Ruler's dynasty is Hunyadi
+*** Follows the 0 "Catholic religion
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "This will benefit us...:
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes Papal Influence by 10
+*** 0 "Pozsony:
+**** add_base_production = 1
+* Gets the country event:
+** ID is flavor_hun.6
+** title = 0 "The Printing Press of Buda
+** desc = 0 "1473 saw the first book printed in Hungary, the Chronica Hungarorum, relating the history of Hungary from the earliest times until the coronation of King Matthias. It was printed by András Hess, in his new printing press.
+** picture = INVENTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1473
+*** Year is less than 1500
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "This is great!:
+*** Changes administrative power stored by 50
+* Gets the country event:
+** ID is flavor_hun.7
+** title = 0 "Decline of Royal Power
+** desc = 1 "During the reign of $MONARCHTITLE$ $MONARCH$, the Hungarian royal power declined in favor of the Hungarian magnates, who used their power to curtail the peasants' freedom. [Root.Monarch.GetSheHeCap] got the nickname "$MONARCH$ Bene", because [Root.Monarch.GetSheHe] answered almost all request with "bene" (Latin for "It's well").
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1490
+*** Year is less than 1530
+*** Is a neighbor of 0 "Ottomans
+*** Is not in regency
+*** Ruler's administrative skill is less than 5
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Allow the Magnates free reign:
+*** Adds the ruler modifier "0 "Powerful Magnates" until the ruler's death:
+**** -10% global tax modifier
+**** -3 global unrest
+**** +25% technology cost
+**** +25% idea cost
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 15
+** Option: 0 "Reign them in!:
+*** Changes stability by -3
+*** Random owned province:
+**** Spawns 2 revolt size of noble rebels
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = -25
+* Gets the country event:
+** ID is flavor_hun.8
+** title = 0 "The Hungarian Vampire
+** desc = 0 "Elizabeth Báthory was a niece of the nobleman Stephen Bathory, but she had a cruel and bloody story. She tried to live like a vampire and slaughtered more than 600 virgins in an attempt to renew her youth by bathing in their blood. She was executed in 1614 after being imprisoned.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1614
+*** Year is less than 1620
+*** Has the monarchy government type
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Stop her reign!:
+*** If:
+**** Limited to:
+***** Is the lesser partner in a union
+**** Changes prestige by -10
+*** If:
+**** Limited to:
+***** Is not the lesser partner in a union
+**** Adds -10 legitimacy
+** Option: 0 "It is just peasants:
+*** Changes stability by -1
+* Gets the country event:
+** ID is flavor_hun.9
+** title = 0 "Advance of the Turks
+** desc = 1 "Our recent defeat against the Turks has set a number of reactions in motion. In the west the Habsburgs have begun to regard our Kingdom as a liability and Hungarian nobles are turning to [HAB.GetName] to secure aid against our enemies. While the Austrians haven't got as many friends in the east those regions instead seem to count on the Voivode of Transylvania. It is unfortunate that the kingdom of Hungary should be this divided when our enemies are currently so strong
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Has a truce with 0 "Ottomans
+*** 0 "Austria exists
+*** 0 "Austria:
+**** Is the Holy Roman Emperor
+*** 0 "Ottomans:
+**** Any owned province:
+***** Any of the following:
+****** area = alfold_area
+****** area = transdanubia_area
+***** previous_owner = 0 "Hungary
+*** Year is less than 1650
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 1 "We must unite against the enemies of Christendom!:
+*** Every owned province:
+**** Limited to:
+***** Has no core on 0 "Transylvania
+***** Any of the following:
+****** area = transylvania_area
+****** area = southern_transylvania_area
+****** area = alfold_area
+****** area = wallachia_area
+****** area = moldavia_area
+****** area = bulgaria_area
+****** area = red_ruthenia_area
+****** Region is ruthenia_region
+****** Region is crimea_region
+**** Gives 0 "Transylvania core on the province
+*** Every owned province:
+**** Limited to:
+***** Has no core on 0 "Transylvania
+**** add_permanent_claim = 0 "Austria
+* Gets the country event:
+** ID is flavor_hun.11
+** title = 0 "Hungarian Peasant Revolt
+** desc = 0 "A plan to assemble an army for a future crusade against the Ottoman Empire has backfired badly. The task to recruit and train the troops was given to György Dózsa, an experienced veteran from wars against the Turks, but also a soldier of fortune with questionable loyalties. Dózsa proceeded to train and equip a huge army drawing from some of the poorest and most disenfranchised parts of Hungarian society.\nWith weapons in hand and a bit of training these peasants, students and country priests have turned out to be a lot more eager to turn on their masters than to march against the Turks and one of the biggest peasant rebellions in the history of our kingdom is now in full swing. Manors are being burned and plundered, clergymen have been impaled and government officials tortured to death.
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Stability is lower than 3
+*** Has the ruler modifier 0 "Powerful Magnates
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Culture is 0 "Hungarian
+***** Sets the province flag hun_peasant_revolt
+***** Random bordering province:
+****** Limited to:
+******* The province is not the capital of the country
+****** Sets the province flag hun_peasant_revolt2
+***** Random bordering province:
+****** Limited to:
+******* The province is not the capital of the country
+******* not:
+******** Has the province flag hun_peasant_revolt
+****** Sets the province flag hun_peasant_revolt2
+** Option: 0 "Rebel scum!:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag hun_peasant_revolt
+**** Spawns revolt of size 2 of 0 "Peasant rebels
+**** Removes the province flag hun_peasant_revolt
+*** Every owned province:
+**** Limited to:
+***** Has the province flag hun_peasant_revolt2
+**** Spawns revolt of size 1 of 0 "Peasant rebels
+**** Removes the province flag hun_peasant_revolt2
+* Gets the country event:
+** ID is flavor_hun.12
+** title = 0 "Tamás Bakócz
+** desc = 0 "As a Bishop, a Cardinal and a member of the Royal Council the dynamic personality of Tamás Bakócz has served our kingdom well. After a solid education and career Bakócz have come to dominate Hungarian foreign policy as well as domestic matters.\nOne of the cornerstones of the foreign policy of Bakócz is that we must cultivate close ties with the Austrian rulers in Vienna, only they can help us against the Turks.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1490
+*** Year is less than 1520
+** Mean time to happen
+*** Base mean time to happen of 90 months
+** Option: 0 "Ok.:
+*** Changes administrative power stored by 100
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes prestige by 5
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "Tamás Bakócz"
+**** Culture is 0 "Hungarian
+**** discount = yes
+**** With a skill level of 2
+*** If:
+**** Limited to:
+***** 0 "Austria exists
+**** 0 "Austria:
+***** Adds the opinion modifier "0 "Pro-Habsburg Policies of Tamás Bakócz" towards 0 "Hungary
+**** Hidden effect:
+***** Adds the opinion modifier "0 "Pro-Habsburg Policies of Tamás Bakócz" towards 0 "Austria
+* Gets the country event:
+** ID is flavor_hun.13
+** title = 0 "Catholics in Bohemia Seek our Aid
+** desc = 0 "Appalled at the blatant favoritism of [From.Monarch.GetName] towards the heretic Hussites in the [From.GovernmentName] of [From.GetName] a number of faithful Catholic noble families have risen in revolt. With names such as von Rosenberg, Schwanberg, Sternberg or Hasenburg the rebels are not lacking for strong leadership but as pleasing as it may be to God it is quite uncertain if they will be able to stand against the forces of the [From.GetAdjective] Crown on their own.\nDesperate for aid the rebels have turned to [Root.Monarch.GetName] for salvation and protection. They now offer the Crown of Catholic Bohemia to our [Root.Monarch.GetTitle].
+** picture = BAD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "Deus Vult!:
+*** AI chance:
+**** Base chance of 90
+**** Multiplies value by 0:
+***** Is allied with 0 "Bohemia
+**** Multiplies value by 0:
+***** Is a vassal of 0 "Bohemia
+**** Multiplies value by 0:
+***** Has 0 "Bohemia as a vassal
+**** Multiplies value by 0.1:
+***** Is at war
+*** Adds the opinion modifier "0 "Accepted Crown from Rebels" towards 0 "Bohemia
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** 1 "Brno:
+****** The province is owned by 0 "Bohemia
+**** 1 "Brno:
+***** add_permanent_claim = 0 "Hungary
+*** If:
+**** Limited to:
+***** 0 "Olomouc:
+****** The province is owned by 0 "Bohemia
+**** 0 "Olomouc:
+***** add_permanent_claim = 0 "Hungary
+*** If:
+**** Limited to:
+***** silesia_area:
+****** country_or_non_sovereign_subject_holds = 0 "Bohemia
+**** silesia_area:
+***** Limited to:
+****** country_or_non_sovereign_subject_holds = 0 "Bohemia
+***** add_permanent_claim = 0 "Hungary
+*** 0 "Bohemia:
+**** 1 "Brno:
+***** Spawns revolt of size 1 of 0 "Heretic rebels
+**** 0 "Hradecko:
+***** Spawns revolt of size 1 of 0 "Heretic rebels
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_hun.14
+** Option: 0 "We could never move against [From.Monarch.GetName]...:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by -10
+*** Adds the opinion modifier "0 "Refused to Help Bohemian Catholics" from 0 "Bohemia
+*** 0 "Bohemia:
+**** Changes prestige by 10
+**** 1 "Brno:
+***** Spawns revolt of size 1 of 0 "Heretic rebels
+**** 0 "Hradecko:
+***** Spawns revolt of size 1 of 0 "Heretic rebels
+* Gets the country event:
+** ID is flavor_hun.14
+** title = 0 "Election in Olomouc
+** desc = 0 "Desperate for aid our Catholic rebels have turned to the [From.Monarch.GetTitle] of [From.GetName] for protection. The Catholic estates have now elected [From.Monarch.GetName] to be their [From.Monarch.GetTitle] and are eagerly awaiting the arrival of [From.GetAdjective] armies.\nThe estates of the core land of our [Root.GovernmentName], however, remain loyal to [Root.Monarch.GetName] and condemn the actions of the Catholic interlopers.
+** picture = BAD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "High Treason!:
+*** Adds the opinion modifier "0 "Accepted Crown from Rebels" towards our country
+*** Tooltip:
+**** If:
+***** Limited to:
+****** 1 "Brno:
+******* The province is owned by 0 "Bohemia
+***** 1 "Brno:
+****** add_permanent_claim = 0 "Hungary
+**** If:
+***** Limited to:
+****** 0 "Olomouc:
+******* The province is owned by 0 "Bohemia
+***** 0 "Olomouc:
+****** add_permanent_claim = 0 "Hungary
+**** If:
+***** Limited to:
+****** silesia_area:
+******* country_or_non_sovereign_subject_holds = 0 "Bohemia
+***** silesia_area:
+****** Limited to:
+******* country_or_non_sovereign_subject_holds = 0 "Bohemia
+****** add_permanent_claim = 0 "Hungary
+* Gets the country event:
+** ID is flavor_hun.15
+** title = 0 "Banditry in Upper Hungary
+** desc = 0 "In the wake of the Crusade for Varna, the Hussite wars internal struggles of Hungary in the 1430's and 1440's a great number of highly skilled mercenaries have found themselves to be idle and unemployed. Unable to earn their living in any other way these men have elected to make their own fortune through banditry and pillaging. In some cases local nobles have joined the troublemakers and seem to have hope of using these soldiers to create a stronger power base for themselves.\nThere is no doubt the insurrection will be overcome by our local forces in time, but it may come at a considerable cost for the local economy.
+** picture = BAD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Is not at war
+*** Has no truces
+*** slovakia_area:
+**** The province is owned by our country
+** Mean time to happen
+*** Base mean time to happen of 39 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag hun_had_mercenaries_in_slovakia
+** Option: 0 "We must crush these bandits!:
+*** slovakia_area:
+**** Limited to:
+***** The province is owned by our country
+**** Adds the modifier "0 "Curtailing Banditry" until the end of the campaign:
+***** local_monthly_devastation = -0.02
+**** add_devastation = 25
+*** Random owned province:
+**** Limited to:
+***** area = slovakia_area
+***** fort_level_false = 1
+**** Spawns revolt of size 2 of 0 "Separatists rebels
+** Option: 0 "Leave it to the local lords to handle.:
+*** slovakia_area:
+**** Limited to:
+***** The province is owned by our country
+**** Adds the modifier "0 "Countryside Bandits" until the end of the campaign:
+***** local_monthly_devastation = 0.03
+**** add_devastation = 50
+* Gets the country event:
+** ID is flavor_hun.16
+** title = 0 "The Army of [Root.Monarch.GetName] [Root.Monarch.Dynasty.GetName]
+** desc = 0 "With strong neighbors on all sides the Hungarian Kingdom has often had a need for a strong army. In wars past our nobles have supplied most of our armed forces with mercenary bands hired to complement their forces.\nSoldiers by occupation, these mercenaries are often quick to adopt new weapons and tactics and will generally have training that few levies can compete with. Some have now served us for years and in times of peace turn to banditry to make a living. Inspired by the writings of Julius Caesar, [Root.Monarch.GetTitle] [Root.Monarch.GetName] has begun to entertain the idea of a permanent mercenary force. Providing a permanent source of income for soldiers would undoubtedly deter them from banditry and could give us a force of unparalleled strength. At least if our our finances can support it...
+** picture = SIEGE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Is not in regency
+*** Any of the following:
+**** Has the country flag hun_had_mercenaries_in_slovakia
+**** Year is at least 1455
+*** Year is less than 1470
+** Mean time to happen
+*** Base mean time to happen of 45 months
+*** Multiplies value by 0.5:
+**** Has the country flag hun_had_mercenaries_in_slovakia
+** Option: 0 "Our army will be an elite force.:
+*** Modifies treasury by -0.75 years worth of income
+*** Adds the modifier "0 "Black Army" for the rest of the campaign:
+**** -5% land forcelimit
+**** nobles_influence_modifier = -0.1
+*** If:
+**** Limited to:
+***** has_estate = estate_nobles
+** Option: 0 "Money cannot buy true loyalty.:
+*** Changes military power stored by 50
+*** If:
+**** Limited to:
+***** has_estate = estate_nobles
+**** add_estate_loyalty:
+***** estate = estate_nobles
+***** loyalty = 15
+* Gets the country event:
+** ID is flavor_hun.17
+** title = 0 "Maintaining the Black Army
+** desc = 0 "The coronation of [Root.Monarch.GetName] comes with great hopes for the nobility of Hungary. They put their hopes to the new [Root.Monarch.GetTitle] for lightening the severe tax burden and allow them influence again in the affairs of the Kingdom. The leaders of the Black Army also have expectations on their new [Root.Monarch.GetTitle], they hope to finally get the pay promised them in the years past.
+** picture = BAD_WITH_MONARCH_eventPicture
+** is_triggered_only = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Is not in regency
+*** Has the country modifier "0 "Black Army"
+*** has_reform_false = black_army_reform
+** Option: 0 "Heed our nobles and abolish the Black Army.:
+*** Removes the country modifier "0 "Black Army"
+*** Changes prestige by -10
+*** If:
+**** Limited to:
+***** has_estate = estate_nobles
+**** add_estate_loyalty:
+***** estate = estate_nobles
+***** loyalty = 10
+**** Hidden effect:
+***** add_estate_influence_modifier:
+****** estate = estate_nobles
+****** desc = 0 "Abolished Black Army: §Y$VAL$%§!
+****** influence = 5
+****** Lasting 3650 days
+** Option: 0 "We need the Black Army.:
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** has_estate = estate_nobles
+**** add_estate_loyalty:
+***** estate = estate_nobles
+***** loyalty = -5
+* Gets the country event:
+** ID is flavor_hun.18
+** title = 0 "End of the Black Army
+** desc = 0 "The edge that the Black Army once possessed in technology and tactics have over time been reduced by the more widespread adoption of its innovations. In time the members have also either retired or been distributed among the ranks of our normal royal armies. The mercenary force that was once the core of the Hungarian military is no more, but their traditions and their reputation will live on in our army for years to come.
+** picture = MILITARY_CAMP_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** current_age = 0 "Age of Reformation
+*** Has the country modifier "0 "Black Army"
+*** has_reform_false = black_army_reform
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "All good things must come to an end.:
+*** Removes the country modifier "0 "Black Army"
+*** Changes army tradition by 20
+*** add_absolutism = 10
+*** Changes military power stored by 75
+*** If:
+**** Limited to:
+***** has_estate = estate_nobles
+** Option: flavor_hun.18.b:
+*** Trigger:
+**** Is not a vassal
+**** Has the DLC Emperor
+*** Sets the country flag black_army_reform_flag
+*** add_government_reform = black_army_reform
+*** If:
+**** Limited to:
+***** has_estate = estate_nobles
+**** add_estate_loyalty:
+***** estate = estate_nobles
+***** loyalty = -15
+* Gets the country event:
+** ID is flavor_hun.19
+** title = 0 "Mercenary Mutiny
+** desc = 0 "Claiming that we have been late with their payments a number of mercenary captains have deserted and taken their regiments with them. Claiming to be trying to secure the payment they are owed they have marched to [mercenary_mutiny_province.GetName] and have started to plunder the province. One captain has proclaimed himself the [Root.GetLowLevelOfficialForCountry] and have even falsely begun to take up taxes from the local population in our name.
+** picture = MILITARY_CAMP_eventPicture
+** Trigger:
+*** Has the country modifier "0 "Black Army"
+*** Any of the following:
+**** Does not have the country flag had_black_army_mutiny
+**** Has had the country flag "had_black_army_mutiny" for at least 7300 days
+*** Is at war
+*** Has at least 5 provinces
+*** Any owned province:
+**** The province is not the capital of the country
+**** is_in_capital_area = yes
+**** Does not have the province modifier "0 "Concessions to Mercenaries"
+*** Has at least 1 mercenaries
+*** has_reform_false = black_army_reform
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag had_black_army_mutiny
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** is_in_capital_area = yes
+****** Does not have the province modifier "0 "Concessions to Mercenaries"
+***** save_event_target_as = mercenary_mutiny_province
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** is_in_capital_area = yes
+****** development = 6
+****** Does not have the province modifier "0 "Concessions to Mercenaries"
+***** save_event_target_as = mercenary_mutiny_province
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** is_in_capital_area = yes
+****** development = 10
+****** Does not have the province modifier "0 "Concessions to Mercenaries"
+***** save_event_target_as = mercenary_mutiny_province
+** Mean time to happen
+*** Base mean time to happen of 80 months
+** Option: 0 "Crush the ingrates!:
+*** event_target:mercenary_mutiny_province:
+**** Spawns revolt of size 2 of 0 "Noble rebels
+**** add_devastation = 35
+** Option: 0 "Let us negotiate with their leaders.:
+*** event_target:mercenary_mutiny_province:
+**** Adds the modifier "0 "Concessions to Mercenaries" until the end of the campaign:
+***** local_autonomy = 0.15
+***** -25% provincial tax income
+* Gets the country event:
+** ID is flavor_hun.20
+** title = 0 "The Key of Hungary
+** desc = 0 "[belgrade_localized.GetName]'s position on the confluence of the Danube and its tributary, the Sava, makes it an ideal defensive position and a primary objective for anyone invading our country from the south. For this reason previous kings acquired the Banate of [belgrade_localized.GetName] from the Serbian Despot Durad Brankovic. The fortress itself, however, grand, is in dire need of repair and upgrade.\nUnfortunately the Hungarian nobility is currently unwilling to contribute to the maintenance of the fortress in [belgrade_localized.GetName], or any of the other border forts of our kingdom. They are unable to see the [threat_to_hungary.GetAdjective] threat and say this would weaken them and invite the crown to infringe on their rights. If we wish to see our defensive line properly maintained the [Root.Monarch.GetTitle] will need to pay for it directly out of the state coffers.
+** picture = MILITARY_CAMP_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Owns 0 "Belgrade
+*** Year is at least 1450
+*** Year is less than 1500
+*** Any of the following:
+**** All of the following:
+***** Is a neighbor of 0 "Ottomans
+***** Has less than 0 "Ottomans provinces
+**** Any rival country:
+***** Country exists
+***** Capital:
+****** Any of the following:
+******* Region is balkan_region
+******* Region is anatolia_region
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** Any neighbor country:
+******* Country is 0 "Ottomans
+******* Has at least our country provinces
+***** 0 "Ottomans:
+****** save_event_target_as = threat_to_hungary
+***** else:
+****** Random rival country:
+******* Limited to:
+******** Capital:
+********* Any of the following:
+********** Region is balkan_region
+********** Region is anatolia_region
+******* save_event_target_as = threat_to_hungary
+**** 0 "Belgrade:
+***** save_event_target_as = belgrade_localized
+** Mean time to happen
+*** Base mean time to happen of 150 months
+*** Multiplies value by 0.75:
+**** Has a truce with 0 "Ottomans
+*** Multiplies value by 0.5:
+**** At war with 0 "Ottomans
+** Option: 0 "We must divert more state funds.:
+*** Modifies treasury by -0.75 years worth of income
+*** Adds the modifier "0 "Végvár System" for 30 years:
+**** +25% fort defence
+**** -10% global tax modifier
+** Option: 0 "Current fortifications will have to do.:
+*** 0 "Belgrade:
+**** Adds the modifier "0 "Poorly Maintained Fortress" until the end of the campaign:
+***** -15% local defensiveness
+*** If:
+**** Limited to:
+***** has_estate = estate_nobles
+**** add_estate_loyalty:
+***** estate = estate_nobles
+***** loyalty = 10
+* Gets the country event:
+** ID is flavor_hun.21
+** title = 0 "Fall of Serbia
+** desc = 0 "With the fall of Serbia a large number of Serbian refugees have begun to enter our borders from the south. They seek a new home within our borders and many have begun to settle in the area around [belgrade_localized.GetName], in order to start new lives among those of their countrymen that already enjoy our protection.
+** picture = BORDER_TENSION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Owns 0 "Belgrade
+*** Is in the 0 "Christian religion group
+*** 0 "Serbia does not exist
+*** Is not allied with 0 "Ottomans
+*** 0 "Belgrade:
+**** Culture is 0 "Serbian
+**** Any bordering province:
+***** The province is owned by 0 "Ottomans
+***** Culture is 0 "Serbian
+** Immediate effects:
+*** Hidden effect:
+**** 0 "Belgrade:
+***** save_event_target_as = belgrade_localized
+** Mean time to happen
+*** Base mean time to happen of 48 months
+** Option: 0 "There is room for everyone...:
+*** 0 "Belgrade:
+**** add_devastation = 25
+**** add_base_manpower = 2
+**** Changes base tax by 1
+**** add_base_production = 1
+**** If:
+***** Limited to:
+****** Does not follow the 0 "Orthodox religion
+***** Changes religion to 0 "Orthodox
+* Gets the country event:
+** ID is flavor_hun.22
+** title = 0 "Synod of [debrecen_province.GetName]
+** desc = 0 "Ever since the Reformed thinkers of [reformed_origin.GetCapitalName] began to spread their religious ideas they have had a strong following in our kingdom. Reformed ideas such as predestination have struck home among noble and commoner alike and Reformed schools and colleges have begun to crop up in many of our provinces. With the hesitant acceptance of the second Helvetic Confession, the [Root.GetAdjective] Reformed churches have also begun to unite with the other Reformed churches of our time..\nThe Catholic clergy, however, have always been strong supporters of royal power and look at these developments with distrust. While strong, the Reformed church remains young and vulnerable. Do we want to give the Reformed church space to grow or should we attempt to root it out before it is too late?
+** picture = BORDER_TENSION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Hungary
+**** Country is 0 "Transylvania
+*** Follows the 0 "Catholic religion
+*** Year is at least 1560
+*** Year is less than 1570
+*** The 0 "Reformed religion is enabled
+*** Owns 0 "Szabolcs
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** 0 "Szabolcs:
+******* Follows the 0 "Catholic religion
+***** 0 "Szabolcs:
+****** Sets the province flag synod_of_debrecen_flag_start
+****** save_event_target_as = debrecen_province
+***** else:
+****** Random owned province:
+******* Limited to:
+******** Does not follow the 0 "Reformed religion
+******* Sets the province flag synod_of_debrecen_flag_start
+******* save_event_target_as = debrecen_province
+**** Random owned province:
+***** Limited to:
+****** Does not have the province flag synod_of_debrecen_flag_start
+****** Does not have the province modifier "0 "Religious Zeal"
+****** is_in_capital_area = yes
+****** Does not follow the 0 "Reformed religion
+****** Any bordering province:
+******* Any of the following:
+******** Follows the 0 "Reformed religion
+******** Has the province flag synod_of_debrecen_flag_start
+***** Sets the province flag synod_of_debrecen_flag
+**** Random owned province:
+***** Limited to:
+****** Does not have the province flag synod_of_debrecen_flag_start
+****** Does not have the province flag synod_of_debrecen_flag
+****** Does not have the province modifier "0 "Religious Zeal"
+****** is_in_capital_area = yes
+****** Does not follow the 0 "Reformed religion
+****** Any bordering province:
+******* Any of the following:
+******** Follows the 0 "Reformed religion
+******** Has the province flag synod_of_debrecen_flag
+******** Has the province flag synod_of_debrecen_flag_start
+***** Sets the province flag synod_of_debrecen_flag
+**** Random owned province:
+***** Limited to:
+****** Does not have the province flag synod_of_debrecen_flag_start
+****** Does not have the province flag synod_of_debrecen_flag
+****** Does not have the province modifier "0 "Religious Zeal"
+****** is_in_capital_area = yes
+****** Does not follow the 0 "Reformed religion
+****** Any bordering province:
+******* Any of the following:
+******** Follows the 0 "Reformed religion
+******** Has the province flag synod_of_debrecen_flag
+******** Has the province flag synod_of_debrecen_flag_start
+***** Sets the province flag synod_of_debrecen_flag
+**** Random province in the world:
+***** Limited to:
+****** is_reformation_center = yes
+****** Follows the 0 "Reformed religion
+***** save_event_target_as = reformed_origin
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Option: 0 "Time to invite the Jesuits.:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag synod_of_debrecen_flag_start
+**** Spawns revolt of size 1 of 0 "Religious rebels
+**** Changes religion to 0 "Reformed
+**** Removes the province flag synod_of_debrecen_flag_start
+*** Every owned province:
+**** Limited to:
+***** Has the province flag synod_of_debrecen_flag
+**** Changes religion to 0 "Reformed
+**** Removes the province flag synod_of_debrecen_flag
+*** Changes Papal Influence by 10
+*** If:
+**** Limited to:
+***** 0 "The Papal State exists
+**** Adds the opinion modifier "0 "Invited Jesuits" towards 0 "The Papal State
+**** 0 "The Papal State:
+***** Adds the opinion modifier "0 "Invited Jesuits" towards our country
+*** Adds the modifier "0 "Hungarian Counter-Reformation" for 20 years:
+**** +1% global missionary strength
+**** +2 Papal influence per year
+*** If:
+**** Limited to:
+***** has_estate = estate_church
+**** add_estate_loyalty:
+***** estate = estate_church
+***** loyalty = 10
+** Option: 0 "The time has come for reform!:
+*** Every owned province:
+**** Limited to:
+***** Any of the following:
+****** Has the province flag synod_of_debrecen_flag
+****** Has the province flag synod_of_debrecen_flag_start
+**** Changes religion to 0 "Reformed
+**** Adds the modifier "0 "Reformed Colleges" for 20 years:
+***** -1.0 #Same as religious zeal% missionary strength
+***** local_institution_spread = 0.3
+***** local_development_cost = -0.1
+**** Removes the province flag synod_of_debrecen_flag
+**** Removes the province flag synod_of_debrecen_flag_start
+*** If:
+**** Limited to:
+***** has_estate = estate_church
+**** add_estate_loyalty:
+***** estate = estate_church
+***** loyalty = -10
+* Gets the country event:
+** ID is flavor_hun.23
+** title = 0 "Tamás Nádasdy
+** desc = 0 "The Nádasdy family is not one of our oldest or most influential noble families but has no lack for ambition. Having completed his education and grand tour abroad the young Tamás Nádasdy shows promise both as a statesman, a diplomat and a general. He has in short time made a career out of balancing the many demands of the Hungarian estates, strengthening the economy while also tending to the defense of our country and the search for viable allies against our many enemies.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1530
+*** Year is less than 1555
+** Mean time to happen
+*** Base mean time to happen of 75 months
+** Option: 0 "We have need of an able administrator.:
+*** Changes administrative power stored by 50
+*** Creates an advisor of the 0 "Master of Mint type:
+**** With a skill level of 3
+**** discount = yes
+** Option: 0 "His contacts will serve us well.:
+*** Changes diplomatic power stored by 50
+*** Creates an advisor of the 0 "Diplomat type:
+**** With a skill level of 3
+**** discount = yes
+** Option: 0 "The army requires a new leader.:
+*** Changes military power stored by 50
+*** Creates an advisor of the 0 "Military Engineer type:
+**** Culture is 0 "Hungarian
+**** With a skill level of 3
+**** discount = yes
+* Gets the country event:
+** ID is flavor_hun.24
+** title = 0 "Fall of Hungary
+** desc = 0 "With the fall of Budapest to Ottoman forces the Hungarian estates have convened to decide who will be able to protect them going forward. In the first diet the nobles supporting the Voivode of Transylvania elected him as the new king of Hungary but the Austrian party now claims the diet was unfair and wishes to hold a new one. The result is that what remains of our country is now divided with half of our nobles looking to Austria for protection and the other half pursuing an independent policy based around our lands in Transylvania.
+** picture = BAD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** 0 "Austria exists
+*** Is not a vassal
+*** Has the monarchy government type
+*** 0 "Transylvania does not exist
+*** Has less than 25 provinces
+*** Any owned province:
+**** Has core on 0 "Transylvania
+*** Any owned province:
+**** is_permanent_claim = 0 "Austria
+*** 0 "Ottomans:
+**** Owns 0 "Pest
+**** Has at least 0 "Austria provinces
+*** 0 "Austria:
+**** Has at least 0 "Hungary provinces
+*** Capital:
+**** Any of the following:
+***** area = transdanubia_area
+***** area = slovakia_area
+***** area = croatia_area
+**** is_permanent_claim = 0 "Austria
+*** calc_true_if:
+**** Every owned province:
+***** Has core on 0 "Transylvania
+**** 6 will be built
+** Mean time to happen
+*** Base mean time to happen of 24 months
+** Option: 0 "Zápolya is the rightful King!:
+*** AI chance:
+**** Base chance of 25
+*** Sets the global flag hungary_inherited
+*** Changes country to 0 "Transylvania
+*** Spawns a ruler:
+**** Named "János"
+**** Culture is 0 "Hungarian
+**** Ruler's dynasty is Zápolya
+**** Legitimacy of 95
+**** Changes ruler's administrative skill by 4
+**** Changes ruler's diplomatic skill by 3
+**** Changes ruler's military skill by 2
+**** max_random_adm = 5
+**** max_random_dip = 4
+**** max_random_mil = 3
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+*** Every owned province:
+**** Limited to:
+***** is_permanent_claim = 0 "Austria
+**** Cedes province to 0 "Austria
+**** Hidden effect:
+***** Gives 0 "Austria core on the province
+***** Gives 0 "Hungary core on the province
+***** Sets the province flag royal_hungary_flag
+*** 0 "Austria:
+**** Gets the country event:
+***** ID is flavor_hun.25
+*** If:
+**** Limited to:
+***** has_custom_ideas_false = no
+**** Gets the country event:
+***** ID is ideagroups.1
+** Option: 0 "Zápolya is a traitor!:
+*** AI chance:
+**** Base chance of 75
+*** Release 0 "Transylvania as a vassal
+* Gets the country event:
+** ID is flavor_hun.25
+** title = 0 "Hungarian Estates turn to Austria for Leadership
+** desc = 0 "With the fall of Budapest to Ottoman forces the Hungarian estates have convened to decide who will be able to protect them going forward. In the first diet the nobles supporting the Voivode of Transylvania elected him as the new king of Hungary but many others have formed an Austrian party and held their own diet to elect the [Root.Monarch.GetTitle] to be the future King of Hungary. The result is that what remains of Hungary is now divided with half of the nobles pursuing an independent policy based around the lands of Transylvania and the other half turning to us.
+** picture = BORDER_TENSION_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "They choose wisely...:
+*** AI chance:
+**** Base chance of 100
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** Has the province flag royal_hungary_flag
+***** Removes the province flag royal_hungary_flag
+***** Adds the modifier "0 "Royal Hungary" until the end of the campaign:
+****** local_autonomy = 0.05
+****** -15% provincial tax income
+****** +10% local defensiveness
+*** Tooltip:
+**** Adds the modifier "0 "Royal Hungary" for 50 years:
+***** local_autonomy = 0.05
+***** -15% provincial tax income
+***** +10% local defensiveness
+** Option: 0 "Hungary and Austria will be separate crowns under one ruler.:
+*** AI chance:
+**** Base chance of 0
+*** Every owned province:
+**** Limited to:
+***** Has the province flag royal_hungary_flag
+**** Removes the province flag royal_hungary_flag
+*** Release 0 "Hungary as a vassal
+*** 0 "Austria:
+**** Creates a union with 0 "Hungary
+* Gets the country event:
+** ID is flavor_hun.26
+** title = 0 "Statuta Valachorum
+** desc = 0 "The advance of the Ottoman Empire has completely changed the political geography of Southeastern Europe and many Slavs and Romanians are leaving their old homes to resettle in the border areas of our [Root.GovernmentName]. Eager to win back their old homes these people could likely make fierce soldiers and guerrilla warriors. If we were to guarantee their religious and cultural freedoms the frontier may be a bit unruly but a populace united in their hate of the Ottomans could serve us very well.
+** picture = BORDER_TENSION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Hungary
+***** Is not the lesser partner in a union
+**** Senior union partner over 0 "Hungary
+*** 0 "Ottomans exists
+*** Is a neighbor of 0 "Ottomans
+*** Has less than 0 "Ottomans provinces
+*** Is not allied with 0 "Ottomans
+*** Is not a vassal of 0 "Ottomans
+*** Any owned province:
+**** Region is balkan_region
+**** Any bordering province:
+***** The province is owned by 0 "Ottomans
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Region is balkan_region
+***** Sets the province flag hun_military_frontier
+***** If:
+****** Limited to:
+******* Any of the following:
+******** Follows the 0 "Catholic religion
+******** Is in the 0 "Muslim religion group
+****** One of the following will happen:
+******* 40 relative chance:
+******** Sets the province flag will_be_orthodox_flag
+******* 10 relative chance:
+******** Sets the province flag will_be_reformed_flag
+******* 10 relative chance:
+******** Sets the province flag will_be_protestant_flag
+******* 40 relative chance:
+**** Random owned province:
+***** Limited to:
+****** Region is balkan_region
+****** Does not have the province flag hun_military_frontier
+***** If:
+****** Limited to:
+******* Any of the following:
+******** Follows the 0 "Catholic religion
+******** Is in the 0 "Muslim religion group
+****** One of the following will happen:
+******* 40 relative chance:
+******** Sets the province flag will_be_orthodox_flag
+******* 15 relative chance:
+******** Sets the province flag will_be_reformed_flag
+******* 15 relative chance:
+******** Sets the province flag will_be_protestant_flag
+******* 30 relative chance:
+***** Sets the province flag hun_military_frontier
+**** Random owned province:
+***** Limited to:
+****** Region is balkan_region
+****** Does not have the province flag hun_military_frontier
+***** If:
+****** Limited to:
+******* Any of the following:
+******** Follows the 0 "Catholic religion
+******** Is in the 0 "Muslim religion group
+****** One of the following will happen:
+******* 40 relative chance:
+******** Sets the province flag will_be_orthodox_flag
+******* 10 relative chance:
+******** Sets the province flag will_be_reformed_flag
+******* 10 relative chance:
+******** Sets the province flag will_be_protestant_flag
+******* 40 relative chance:
+***** Sets the province flag hun_military_frontier
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Let us guarantee their rights!:
+*** AI chance:
+**** Base chance of 75
+*** Every owned province:
+**** Limited to:
+***** Has the province flag hun_military_frontier
+**** add_base_manpower = 2
+**** If:
+***** Limited to:
+****** Has the province flag will_be_orthodox_flag
+****** Does not follow the 0 "Orthodox religion
+***** Removes the province flag will_be_orthodox_flag
+***** Changes religion to 0 "Orthodox
+**** If:
+***** Limited to:
+****** Has the province flag will_be_reformed_flag
+****** Does not follow the 0 "Reformed religion
+***** Removes the province flag will_be_reformed_flag
+***** If:
+****** Limited to:
+******* The 0 "Reformed religion is enabled
+****** Changes religion to 0 "Reformed
+****** else:
+******* Changes religion to 0 "Orthodox
+**** If:
+***** Limited to:
+****** Has the province flag will_be_protestant_flag
+****** Does not follow the 0 "Protestant religion
+***** Removes the province flag will_be_protestant_flag
+***** If:
+****** Limited to:
+******* The 0 "Protestant religion is enabled
+****** Changes religion to 0 "Protestant
+****** else:
+******* Changes religion to 0 "Orthodox
+**** Adds the modifier "0 "Hungarian Military Frontier" until the end of the campaign:
+***** -35% provincial tax income
+***** -100% missionary strength
+***** +25% local defensiveness
+***** +25% manpower modifier
+**** Removes the province flag hun_military_frontier
+** Option: 0 "No, law and order must be upheld.:
+*** AI chance:
+**** Base chance of 25
+*** Every owned province:
+**** Limited to:
+***** Has the province flag hun_military_frontier
+**** add_devastation = 25
+**** Adds the modifier "0 "Great Balkan Migration" until the end of the campaign:
+***** local_development_cost = -0.1
+***** -35% provincial tax income
+**** Removes the province flag hun_military_frontier
+**** Removes the province flag will_be_protestant_flag
+**** Removes the province flag will_be_reformed_flag
+**** Removes the province flag will_be_orthodox_flag
+* Gets the country event:
+** ID is flavor_hun.27
+** title = 0 "Romanian Revolt
+** desc = 0 "Romanians, or Vlachs, have been part of our lands in Transylvania for centuries but have had little representation in the Transylvanian Estates. The region has always been very mixed, with Szekelys, Transylvanian Saxons and the Vlachs co-existing in a delicate balance of power.\nRecently, however, the Vlachs have begun to demand rights and representation. Some have even taken up arms against the [Root.GetAdjective] authorities.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Hungary
+**** Country is 0 "Transylvania
+*** Primary culture is not 0 "Romanian
+*** Year is at least 1750
+*** Any owned province:
+**** Culture is 0 "Transylvanian
+**** The province is not the capital of the country
+** Mean time to happen
+*** Base mean time to happen of 210 months
+** Option: 0 "Ok.:
+*** Every owned province:
+**** Limited to:
+***** Any of the following:
+****** Culture is 0 "Romanian
+****** Culture is 0 "Transylvanian
+**** If:
+***** Limited to:
+****** Province is not 0 "Maros
+****** Province is not 0 "Királyföld
+***** Changes culture to 0 "Romanian
+**** Gives 0 "Romania core on the province
+*** Random owned province:
+**** Limited to:
+***** Culture is 0 "Romanian
+**** Spawns revolt of size 2 of 0 "Separatists rebels
+* Gets the country event:
+** ID is flavor_hun.28
+** title = 0 "Tamás Erdödy
+** desc = 0 "The Kingdom of Croatia has been united with that of Hungary since 1102 and during that time the local authority of the monarchy has been bestowed upon Bans, to lead the Croatian Army and Parliament. The recently appointed Ban of Croatia, Tamás Erdödy, has proven to be an unusually talented servant of the crown and an able general. For his services his family has been made the hereditary counts of Varazdin and Erdödy himself was congratulated by the pope after his victorious against our enemies.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1583
+*** Year is less than 1610
+*** Owns 0 "Zagreb
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "The state requires his services.:
+*** Creates an advisor of the 0 "Grand Captain type:
+** Option: 0 "He is needed in the field.:
+*** Creates a general:
+**** Named "Tamás Erdödy"
+**** 3 skill in shock
+**** 3 skill in fire
+**** 2 skill in manuever
+**** 2 skill in siege
+**** trait = hardy_warrior_personality
+* Gets the country event:
+** ID is flavor_hun.29
+** title = 0 "Matthias Dévay
+** desc = 0 "It is now decades since Luther nailed his 95 theses to the church door in Wittenberg but the ideas of the reformation are still spreading across the continent.\nHaving trained in Wittenberg as a student under Luther, Matthias Dévay is convinced that it is his task to spread the word of the reformation in the [Root.GovernmentName] of [Root.GetName].\nIt is little surprise that this is opposed by some members of our religious establishment. Tamás Szalaházy, the bishop of Erlau, has moved to limit Protestant influence and imprison this would-be Luther of Hungary.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1530
+*** Year is less than 1540
+*** Owns 0 "Zagreb
+*** The 0 "Protestant religion is enabled
+*** Any owned province:
+**** Follows the 0 "Catholic religion
+**** Culture is 0 "Hungarian
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Follows the 0 "Catholic religion
+****** Culture is 0 "Hungarian
+***** Sets the province flag magyar_reform
+**** Random owned province:
+***** Limited to:
+****** Follows the 0 "Catholic religion
+****** Any of the following:
+******* Culture is 0 "Hungarian
+******* Culture is 0 "Slovak
+****** Does not have the province flag magyar_reform
+***** Sets the province flag magyar_reform
+** Option: 0 "He must be released at once!:
+*** Creates an advisor of the 0 "Inquisitor type:
+*** Every owned province:
+**** Limited to:
+***** Has the province flag magyar_reform
+**** Changes religion to 0 "Protestant
+**** Removes the province flag magyar_reform
+** Option: 0 "As is well and proper.:
+*** Trigger:
+**** Follows the 0 "Catholic religion
+*** Every owned province:
+**** Limited to:
+***** Has the province flag magyar_reform
+**** Removes the province flag magyar_reform
+*** Creates an advisor of the 0 "Theologian type:
+* Gets the country event:
+** ID is flavor_hun.30
+** title = 0 "Janus Pannonius
+** desc = 0 "Having received a thorough renaissance education since early age, our new chancellor Pannonius has brought a wide network of contacts as well as a substantial library with him to the Hungarian court. In his work he is a constant agent for humanism and the new ideals of our age.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** is_institution_enabled = renaissance
+*** Year is at least 1450
+*** Year is less than 1470
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: 0 "Excellent.:
+*** Changes prestige by 25
+*** If:
+**** Limited to:
+***** Capital:
+****** renaissance_false = 50
+**** Capital:
+***** add_institution_embracement:
+****** which = renaissance
+****** value = 50
+**** else:
+***** Random owned province:
+****** Limited to:
+******* renaissance_false = 50
+****** add_institution_embracement:
+******* which = renaissance
+******* value = 50
+*** Creates an advisor of the 0 "Philosopher type:
+**** Culture is 0 "Croatian
+**** With a skill level of 2
+**** discount = yes
+* Gets the country event:
+** ID is flavor_hun.31
+** title = 0 "City Leagues of Upper Hungary
+** desc = 0 "The many and rich mines of Upper Hungary are in many ways vital to our economic interests and have therefore often been afforded much greater liberties than we tolerate for other settlements in our country. The German saying 'Stadtluft macht frei' holds true both for the cities themselves and for anyone serfs who might find their way into the communities. With bullion short in supply all over Europe the city leagues are now richer and more sure of themselves than ever.\nSome of our nobles, however, argue that we are allowing them far too free reins and that we should at the very least demand that they provide for the defense of our country.
+** picture = CITY_VIEW_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1580
+*** Year is less than 1640
+*** Owns 0 "Hont
+*** Owns 0 "Spiš
+** Mean time to happen
+*** Base mean time to happen of 180 months
+** Option: 0 "They must contribute like everyone else!:
+*** Every owned province:
+**** Limited to:
+***** area = slovakia_area
+***** Any of the following:
+****** Produces 0 "Gold
+****** Produces 0 "Iron
+****** Produces 0 "Copper
+**** Adds the modifier "0 "City League Defenses" until the end of the campaign:
+***** +25% local defensiveness
+***** +10% manpower modifier
+***** +5% trade goods output
+** Option: 0 "We will protect their privileges.:
+*** Every owned province:
+**** Limited to:
+***** area = slovakia_area
+***** Any of the following:
+****** Produces 0 "Gold
+****** Produces 0 "Iron
+****** Produces 0 "Copper
+**** Adds the modifier "0 "Booming Mining Industry" until the end of the campaign:
+***** -90% manpower modifier
+***** +15% trade goods output
+***** local_development_cost = -0.1
+* Gets the country event:
+** ID is flavor_hun.32
+** title = 0 "Slovak National Awakening
+** desc = 0 "Upper Hungary has always been home to both the Slovak people and the many different groups that have come to exploit the rich mines of the area. Inspired by the growing pan-slavic movement Slovak intellectuals and adherents to the Enlightenment have begun to talk of the possibility of a Slovak nation and some have begun to write down and organize a Slovak literary language.
+** picture = WESTERNISATION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** 0 "Nitra does not exist
+*** Year is at least 1750
+*** slovakia_area:
+**** The province is owned by our country
+** Mean time to happen
+*** Base mean time to happen of 210 months
+** Option: 0 "It is time we give the Slovaks greater privileges.:
+*** slovakia_area:
+**** Limited to:
+***** The province is owned by our country
+**** If:
+***** Limited to:
+****** Has no core on 0 "Nitra
+***** Gives 0 "Nitra core on the province
+**** If:
+***** Limited to:
+****** Culture is not 0 "Slovak
+***** Changes culture to 0 "Slovak
+**** add_local_autonomy = 40
+**** Adds the modifier "0 "Slovak National Awakening" until the end of the campaign:
+***** local_autonomy = 0.1
+** Option: 0 "They are, and will remain, Hungarians first.:
+*** slovakia_area:
+**** Limited to:
+***** The province is owned by our country
+**** If:
+***** Limited to:
+****** Has no core on 0 "Nitra
+***** Gives 0 "Nitra core on the province
+**** If:
+***** Limited to:
+****** Culture is not 0 "Slovak
+***** Changes culture to 0 "Slovak
+**** Adds the modifier "0 "Local Separatism" until the end of the campaign:
+***** local_unrest = 6
+* Gets the country event:
+** ID is flavor_hun.33
+** title = 0 "Kuruc and Hajdúk
+** desc = 0 "In the wake of wars and conflicts an increasing number of people have turned to banditry and guerrilla warfare. Disillusioned and impoverished, these men have no qualms about if they cause harm to us or our enemies as they move around our kingdom. They are, however, proving more of a problem for foreign armies in many ways. If we turn a blind eye to their transgressions, these irregulars might even prove a strong addition to our own armies.
+** picture = BORDER_TENSION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Year is at least 1600
+*** Year is less than 1700
+*** Any owned province:
+**** devastation = 25
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "We need every man we can get.:
+*** Changes prestige by -5
+*** random_owned_area:
+**** Limited to:
+***** The province has the same culture as its owner
+***** is_state = yes
+***** The province is not the capital of the country
+**** add_devastation = 50
+*** Adds the modifier "0 "Kurucs and Hajdu" for 25 years:
+**** +10% infantry power
+**** +5% cavalry power
+**** -10% global tax modifier
+** Option: 0 "Let us not encourage these stray serfs.:
+*** Changes administrative power stored by 50
+*** random_owned_area:
+**** Limited to:
+***** devastation = 25
+**** add_devastation = -25
+* Gets the country event:
+** ID is flavor_hun.34
+** title = 0 "Cum Deo Pro Patria et Libertate
+** desc = 0 "The son of one of the most influential families in our kingdom, yet fatherless from a young age, Ferenc Rákóczy, has grown up to be an able, ambitious and powerful man at the [Root.GetAdjective] court.\nConvinced that the Hungarian people can only truly aspire to the greatness they deserve under his leadership, he has taken arms against our enemies on more than one occasion, and has a strong following among both the commoners and many nobles.
+** picture = ELECTION_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** Is not a vassal
+*** Is in regency
+*** Has the monarchy government type
+*** Year is at least 1694
+*** Year is less than 1730
+** Mean time to happen
+*** Base mean time to happen of 54 months
+** Option: 0 "Elect Rákóczy to lead our country.:
+*** AI chance:
+**** Base chance of 95
+*** Spawns a ruler:
+**** Named "Ferenc"
+**** Ruler's dynasty is Rákóczy
+**** Culture is 0 "Hungarian
+**** Ruler's administrative skill is at least 4
+**** Ruler's diplomatic skill is at least 5
+**** Ruler's military skill is at least 4
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+** Option: 0 "He is not fit to lead the kingdom.:
+*** AI chance:
+**** Base chance of 5
+*** add_stability_or_adm_power = yes
+*** Random owned province:
+**** Limited to:
+***** is_in_capital_area = yes
+**** Spawns revolt of size 2 of 0 "Pretender rebels
+* Gets the country event:
+** ID is flavor_hun.35
+** title = 0 "Cum Deo Pro Patria et Libertate
+** desc = 0 "The son of one of the most influential families in our kingdom, yet fatherless from a young age, Ferenc Rákóczy, has grown up to be an able, ambitious and powerful man at the [Root.GetAdjective] court.\nConvinced that the Hungarian people can only truly aspire to the liberty they deserve under his leadership he has now gathered the support of commoners and parts of our nobility and taken up arms against the [Root.Overlord.GetAdjective].
+** picture = ELECTION_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Hungary
+*** is_subject_other_than_tributary_trigger = yes
+*** Has the monarchy government type
+*** Year is at least 1694
+*** Year is less than 1730
+** Mean time to happen
+*** Base mean time to happen of 108 months
+** Option: 0 "Rákóczy must lead our country.:
+*** AI chance:
+**** Base chance of 0
+*** overlord:
+**** Gets the country event:
+***** ID is flavor_hun.36
+**** Tooltip:
+***** ROOT:
+****** Declares war on 0 "Independence using the PREV casus belli
+****** Spawns a ruler:
+******* Named "Ferenc"
+******* Ruler's dynasty is Rákóczy
+******* Culture is 0 "Hungarian
+******* Ruler's administrative skill is at least 4
+******* Ruler's diplomatic skill is at least 5
+******* Ruler's military skill is at least 4
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+** Option: 0 "He is not fit to lead the kingdom.:
+*** AI chance:
+**** Base chance of 100
+*** Random owned province:
+**** Limited to:
+***** is_in_capital_area = yes
+**** Spawns revolt of size 3 of 0 "Pretender rebels
+* Gets the country event:
+** ID is flavor_hun.36
+** title = 0 "Revolt in Hungary
+** desc = 0 "The Hungarian magnate Ferenc Rákóczy has gathered the support of nobles and commoners alike and have taken up arms against our country!
+** picture = ELECTION_REPUBLICAN_eventPicture
+** is_triggered_only = yes
+** Option: 0 "This rebellion will be crushed!:
+*** 0 "Hungary:
+**** Declares war on 0 "Independence using the our country casus belli
+**** Hidden effect:
+***** Spawns a ruler:
+****** Named "Ferenc"
+****** Ruler's dynasty is Rákóczy
+****** Culture is 0 "Hungarian
+****** Ruler's administrative skill is at least 4
+****** Ruler's diplomatic skill is at least 5
+****** Ruler's military skill is at least 4
+* Gets the country event:
+** ID is flavor_hun.37
+** title = 0 "Revolt in Hungary
+** desc = 0 "The Hungarian magnate Ferenc Rákóczy has gathered the support of nobles and commoners alike and have taken up arms against our country!
+** picture = ELECTION_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Austria
+*** 0 "Hungary does not exist
+*** Any owned province:
+**** Culture is 0 "Hungarian
+*** Year is at least 1694
+*** Year is less than 1730
+** Mean time to happen
+*** Base mean time to happen of 108 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Culture is 0 "Hungarian
+***** save_event_target_as = rakoczy_spawn_province
+**** Random owned province:
+***** Limited to:
+****** Culture is 0 "Hungarian
+****** Any of the following:
+******* area = alfold_area
+******* area = transdanubia_area
+***** save_event_target_as = rakoczy_spawn_province
+**** Random owned province:
+***** Limited to:
+****** Culture is 0 "Hungarian
+****** Province is 0 "Pest
+***** save_event_target_as = rakoczy_spawn_province
+** Option: 0 "This rebellion will be crushed!:
+*** event_target:rakoczy_spawn_province:
+**** If:
+***** Limited to:
+****** Has no core on 0 "Hungary
+***** Gives 0 "Hungary core on the province
+**** Spawns revolt of size 3 of 0 "Separatists rebels
+* namespace = new_flavour_hun
+* Gets the country event:
+** ID is new_flavour_hun.1
+** title = new_flavour_hun.1.name
+** desc = new_flavour_hun.1.desc
+** picture = HRE_eventPicture
+** Immediate effects:
+*** Hidden effect:
+**** save_event_target_as = Hungary
+** is_triggered_only = yes
+** Option: new_flavour_hun.1.A:
+*** Sets the country flag hungary_flag_incident
+*** set_imperial_incident = incident_hungary_mission
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Any of the following:
+****** 0 prestige
+****** Holy Roman Emperor:
+******* Country is not 0 "Austria
+***** Holy Roman Emperor:
+****** Any of the following:
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Threatened
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Hostile
+******* ai_attitude:
+******** Affecting our country
+******** attitude = 0 "Outraged
+** Option: new_flavour_hun.1.B:
+*** Changes prestige by 15
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is new_flavour_hun.201
+** title = new_flavour_hun.2.name
+** desc = new_flavour_hun.2.desc
+** picture = HRE_eventPicture
+** is_triggered_only = yes
+** Immediate effects:
+*** Hidden effect:
+**** Random country:
+***** Limited to:
+****** Has the country flag hungary_flag_incident
+***** save_event_target_as = hungary_country
+** Option: new_flavour_hun.2.A:
+*** 0 "Bohemia:
+**** elector_false = no
+*** event_target:hungary_country:
+**** Adds the province to the Holy Roman Empire
+**** elector = yes
+*** event_target:hungary_country:
+**** Adds the opinion modifier "opinion_hun_let_into_empire" towards our country
+*** 0 "Bohemia:
+**** Adds the opinion modifier "opinion_bav_repealed_electorate" towards our country
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 2:
+***** Any of the following:
+****** ai_attitude:
+******* Affecting event_target:hungary_country
+******* attitude = 0 "Ally
+****** ai_attitude:
+******* Affecting event_target:hungary_country
+******* attitude = 0 "Friendly
+**** Multiplies value by 1.5:
+***** Has an opinion of at least 50 with event_target:hungary_country
+**** Multiplies value by 1.5:
+***** Has an opinion of at least 100 with event_target:hungary_country
+**** Multiplies value by 0.5:
+***** Has an opinion of less than -15 with event_target:hungary_country
+**** Multiplies value by 0:
+***** Any of the following:
+****** ai_attitude:
+******* Affecting event_target:hungary_country
+******* attitude = 0 "Threatened
+****** ai_attitude:
+******* Affecting event_target:hungary_country
+******* attitude = 0 "Hostile
+****** ai_attitude:
+******* Affecting event_target:hungary_country
+******* attitude = 0 "Outraged
+****** Has an opinion of less than -100 with event_target:hungary_country
+** Option: new_flavour_hun.2.B:
+*** event_target:hungary_country:
+**** Adds the opinion modifier "opinion_hun_didnt_let_into_empire" towards our country
+*** If:
+**** Limited to:
+***** Country is 0 "Austria
+**** austria_proper_area:
+***** Limited to:
+****** Has no claim on event_target:hungary_country
+****** Has no core on event_target:hungary_country
+***** Adds claim to event_target:hungary_country
+**** inner_austria_area:
+***** Limited to:
+****** Has no claim on event_target:hungary_country
+****** Has no core on event_target:hungary_country
+***** Adds claim to event_target:hungary_country
+**** carinthia_area:
+***** Limited to:
+****** Has no claim on event_target:hungary_country
+****** Has no core on event_target:hungary_country
+***** Adds claim to event_target:hungary_country
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0.5:
+***** Any of the following:
+****** ai_attitude:
+******* Affecting event_target:hungary_country
+******* attitude = 0 "Ally
+****** ai_attitude:
+******* Affecting event_target:hungary_country
+******* attitude = 0 "Friendly
+* Gets the country event:
+** ID is new_flavour_hun.3
+** title = new_flavour_hun.3.name
+** desc = new_flavour_hun.3.desc
+** picture = CITY_VIEW_eventPicture
+** is_triggered_only = yes
+** Option: new_flavour_hun.3.A:
+*** 0 "Constantinople:
+**** Changes culture to 0 "Greek
+**** Changes religion to 0 "Orthodox
+*** AI chance:
+**** Base chance of 1
+** Option: new_flavour_hun.3.B:
+*** 0 "Constantinople:
+**** add_nationalism = -5
+*** AI chance:
+**** Base chance of 0

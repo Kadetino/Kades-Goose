@@ -1,0 +1,475 @@
+
+=== title = siamese_rev.1.t ===
+* Cannot fire randomly
+* Can only fire once
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag siam_revolution_start_flag
+** Random known country:
+*** Limited to:
+**** Any of the following:
+***** Is allied with our country
+***** Has an opinion of at least 50 with our country
+**** Does not follow our country's religion
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+*** save_event_target_as = siam_european_country
+
+'''Option: siamese_rev.1.a:'''
+
+* Changes stability by -2
+
+=== title = siamese_rev.2.t ===
+* Trigger:
+** Has the country flag phetracha_coup
+* desc = siamese_rev.2.d
+* Trigger:
+** Has the country flag phetracha_arrested
+* desc = siamese_rev.2.d2
+* Cannot fire randomly
+* Can only fire once
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag had_siamese_revolution
+
+'''Option: siamese_rev.2.a:'''
+
+* add_stability_or_adm_power = yes
+* If:
+** Limited to:
+*** Has the country flag phetracha_coup
+** Every known country:
+*** Limited to:
+**** total_development = 200
+**** Not at war with our country
+**** Does not consider our country a rival
+**** Technology group is 0 "Chinese
+*** Adds the opinion modifier "opinion_siam_antiimperialist" towards our country
+* else_if:
+** Limited to:
+*** Has the country flag phetracha_arrested
+** Every known country:
+*** Limited to:
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+*** Adds the opinion modifier "opinion_open_siam" towards our country
+
+=== title = siamese_rev.3.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is not in 0 "Christian's religion group
+* Any known country:
+** Is in the 0 "Christian religion group
+** Not at war with our country
+** Capital:
+*** In the continent 0 "Europe
+** Technology group is 0 "Western
+* Any owned province:
+** Is coastal
+** yes is a city
+** superregion = east_indies_superregion
+** Follows our country's religion
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_SIA_RESTRICTED_FOREIGN_MISSIONARIES
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random known country:
+*** Limited to:
+**** Not at war with our country
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+*** save_event_target_as = siam_foreign_missionary_country
+** Random owned province:
+*** Limited to:
+**** Is coastal
+**** yes is a city
+**** superregion = east_indies_superregion
+**** Follows our country's religion
+*** save_event_target_as = siam_foreign_missionary_province
+
+'''Option: siamese_rev.3.a:'''
+
+* event_target:siam_foreign_missionary_country:
+** Changes diplomatic power stored by 50
+* event_target:siam_foreign_missionary_province:
+** Changes religion to event_target:siam_foreign_missionary_country
+* event_target:siam_foreign_missionary_country:
+** Adds the opinion modifier "siam_allowed_misionaries" towards our country
+* Changes the variable siam_openness by 1
+* AI chance:
+** Base chance of 25
+
+'''Option: siamese_rev.3.b:'''
+
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_influence_modifier:
+*** estate = estate_church
+*** desc = EST_VAL_SIA_RESTRICTED_FOREIGN_MISSIONARIES
+*** influence = 10
+*** Lasting 1825 days
+* event_target:siam_foreign_missionary_country:
+** Adds the opinion modifier "siam_denied_misionaries" towards our country
+* Changes the variable siam_reactionism by 1
+* AI chance:
+** Base chance of 75
+
+=== title = siamese_rev.4.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any owned province:
+** Controlled by our country
+** superregion = east_indies_superregion
+* has_estate_loyalty_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_SIA_PROVOKED_NOBLES
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_SIA_SUPPORTED_NOBLE_PLOTS
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Controlled by our country
+**** is_state = yes
+**** superregion = east_indies_superregion
+*** save_event_target_as = sia_noble_plot_province
+
+'''Option: siamese_rev.4.a:'''
+
+* event_target:sia_noble_plot_province:
+** Spawns revolt of size 1 of 0 "Noble rebels
+* If:
+** Limited to:
+*** has_estate = estate_nobles
+** add_estate_loyalty_modifier:
+*** estate = estate_nobles
+*** desc = EST_VAL_SIA_PROVOKED_NOBLES
+*** loyalty = -10
+*** Lasting 1825 days
+* Changes the variable siam_openness by 1
+* AI chance:
+** Base chance of 25
+
+'''Option: siamese_rev.4.b:'''
+
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_influence_modifier:
+*** estate = estate_nobles
+*** desc = EST_VAL_SIA_SUPPORTED_NOBLE_PLOTS
+*** influence = 10
+*** Lasting 1825 days
+* Changes the variable siam_reactionism by 2
+* AI chance:
+** Base chance of 75
+
+=== title = siamese_rev.5.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any known country:
+** Capital:
+*** In the continent 0 "Europe
+** Technology group is 0 "Western
+** }
+** Does not have the 0 "Annexation War casus belli against our country
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random known country:
+*** Limited to:
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+**** }
+**** Does not have the 0 "Subjugation casus belli against our country
+*** save_event_target_as = sia_european_aggressor_country
+
+'''Option: siamese_rev.5.a:'''
+
+* Changes the variable siam_openness by 1
+* One of the following will happen:
+** 50 relative chance:
+** 50 relative chance:
+*** event_target:sia_european_aggressor_country:
+**** Hidden effect:
+***** Gets the country event:
+****** ID is siamese_rev.10
+****** Base mean time to happen of 1 days
+**** Gives the 0 "Subjugation casus belli against our country
+* AI chance:
+** Base chance of 25
+
+'''Option: siamese_rev.5.b:'''
+
+* Changes military power stored by -50
+* event_target:sia_european_aggressor_country:
+** Adds the opinion modifier "opinion_sia_aggressive_acts" towards our country
+* Changes the variable siam_reactionism by 1
+* AI chance:
+** Base chance of 75
+
+=== title = siamese_rev.6.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any known country:
+** Has an opinion of at least 25 with our country
+** Not at war with our country
+** Capital:
+*** In the continent 0 "Europe
+** Technology group is 0 "Western
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random known country:
+*** Limited to:
+**** Has an opinion of at least 25 with our country
+**** Not at war with our country
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+*** save_event_target_as = sia_european_embassy_country
+
+'''Option: siamese_rev.6.a:'''
+
+* Adds -100% mercantilism
+* event_target:sia_european_embassy_country:
+** Adds the opinion modifier "opinion_sia_embassy_good" towards our country
+* Changes the variable siam_openness by 1
+* AI chance:
+** Base chance of 25
+
+'''Option: siamese_rev.6.b:'''
+
+* Adds 100% mercantilism
+* event_target:sia_european_embassy_country:
+** Adds the opinion modifier "opinion_sia_embassy_bad" towards our country
+* Changes the variable siam_reactionism by 1
+* AI chance:
+** Base chance of 75
+
+=== title = siamese_rev.7.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* The variable siam_reactionism is equal or higher than 10
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag phetracha_coup
+
+'''Option: siamese_rev.7.a:'''
+
+* Spawns a ruler:
+** Named "Phetracha"
+** Ruler's dynasty is Ban Phlu Luang
+** Ruler's administrative skill is at least 4
+** Ruler's diplomatic skill is at least 1
+** Ruler's military skill is at least 4
+* Adds the modifier "siamese_revolution" for the rest of the campaign:
+** +1 tolerance of the true faith
+** +15% global spy defence
+* Every known country:
+** Limited to:
+*** Technology group is 0 "Western
+*** Any owned province:
+**** superregion = east_indies_superregion
+** Adds the opinion modifier "opinion_siam_isolationism" from our country
+
+=== title = siamese_rev.8.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* The variable siam_openness is equal or higher than 10
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag phetracha_arrested
+
+'''Option: siamese_rev.8.a:'''
+
+* If:
+** Limited to:
+*** is_institution_enabled = renaissance
+*** Any known country:
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+**** has_institution = renaissance
+*** Capital:
+**** renaissance_false = 100
+** Capital:
+*** add_institution_embracement:
+**** which = renaissance
+**** value = 50
+* If:
+** Limited to:
+*** is_institution_enabled = new_world_i
+*** Any known country:
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+**** has_institution = renaissance
+*** Capital:
+**** new_world_i_false = 100
+** Capital:
+*** add_institution_embracement:
+**** which = new_world_i
+**** value = 50
+* If:
+** Limited to:
+*** is_institution_enabled = printing_press
+*** Any known country:
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+**** has_institution = renaissance
+*** Capital:
+**** printing_press_false = 100
+** Capital:
+*** add_institution_embracement:
+**** which = printing_press
+**** value = 50
+* If:
+** Limited to:
+*** is_institution_enabled = global_trade
+*** Any known country:
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+**** has_institution = renaissance
+*** Capital:
+**** global_trade_false = 100
+** Capital:
+*** add_institution_embracement:
+**** which = global_trade
+**** value = 50
+* If:
+** Limited to:
+** Multiplies value by manufactories:
+*** Any known country:
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+**** has_institution = renaissance
+*** Capital:
+**** Multiplies value by 100:
+** Capital:
+*** add_institution_embracement:
+*** Multiplies value by manufactories:
+**** value = 50
+* If:
+** Limited to:
+*** is_institution_enabled = enlightenment
+*** Any known country:
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+**** has_institution = renaissance
+*** Capital:
+**** enlightenment_false = 100
+** Capital:
+*** add_institution_embracement:
+**** which = enlightenment
+**** value = 50
+* Adds the modifier "siamese_age_of_openness" for the rest of the campaign:
+** global_institution_spread = 0.15
+** -15% global spy defence
+
+=== title = siamese_rev.9.t ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Ayutthaya
+** Country is SIA
+* Any known country:
+** Capital:
+*** In the continent 0 "Europe
+** Technology group is 0 "Western
+** Any owned province:
+*** superregion = east_indies_superregion
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random known country:
+*** Limited to:
+**** Capital:
+***** In the continent 0 "Europe
+**** Technology group is 0 "Western
+**** Any owned province:
+***** superregion = east_indies_superregion
+*** save_event_target_as = narai_foreign_policy_country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: siam_rev.9.a:'''
+
+* Changes diplomatic power stored by 150
+* Sets the variable siam_reactionism to 0
+* Sets the variable siam_openness to 0
+* Hidden effect:
+** Sets the country flag can_have_phaulkon_flag
+** Sets the country flag narai_foreign_policy_flag
+** Gets the country event:
+*** ID is flavor_ayu.9
+*** Base mean time to happen of 365 days
+
+=== title = siamese_rev.10.t ===
+* Cannot fire randomly
+
+'''Option: siam_rev.10.a:'''
+
+* Gives the 0 "Subjugation casus belli against our country

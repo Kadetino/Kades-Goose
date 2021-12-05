@@ -1,0 +1,1813 @@
+
+=== 0 "Carnal Sins ===
+
+'''Trigger:'''
+
+* The Papacy is enabled
+* Has no heir
+* Is not in regency
+* Ruler is male
+* Is not the lesser partner in a union
+* Follows the 0 "Catholic religion
+* Has the monarchy government type
+* Ruler's diplomatic skill is at least 2
+* has_reform_false = ottoman_government
+* has_government_attribute = heir
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+* Multiplies value by 0.5:
+** Ruler's diplomatic skill is at least 4
+
+'''Option: 0 "The need of an heir goes before the need of forgiveness.:'''
+
+* Spawns an heir:
+** Ruler's dynasty is our country
+** Legitimacy of 30
+* Changes Papal Influence by -5
+* Adds 0.5% reform desire
+
+'''Option: 0 "Forgive me, Father, for I have sinned.:'''
+
+* Changes Papal Influence by 2
+
+=== 0 "A beloved heir dies ===
+
+'''Trigger:'''
+
+* Has an heir
+* The heir has a legitimacy of at least 90
+* Ruler is male
+* Is not the lesser partner in a union
+* Is not in regency
+* Has the monarchy government type
+* has_reform_false = 0 "Elective Monarchy
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = ottoman_government
+* Any owned province:
+** num_free_building_slots = 1
+** Does not have the 0 "Cathedral building
+** Does not have the 0 "Temple building
+* has_government_attribute = heir
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 3600 months
+
+'''Option: 0 "In the arms of the Lord, I find solace.:'''
+
+* Kills the heir of the country
+* Random owned province:
+** Limited to:
+*** Does not have the 0 "Temple building
+*** Does not have the 0 "Cathedral building
+*** num_free_building_slots = 1
+** Constructs the 0 "Temple building
+
+'''Option: 0 "In the arms of the maid, I find solace.:'''
+
+* Kills the heir of the country
+** allow_new_heir_false = no
+* Spawns an heir:
+** Ruler's dynasty is our country
+** Legitimacy of 30
+
+=== 0 "Palace Coup ===
+
+'''Trigger:'''
+
+* Has an heir
+* Heir is at least 15 years old
+* The heir has a legitimacy of at least 90
+* Is not the lesser partner in a union
+* Stability is lower than -2
+* Is not in regency
+* Has the monarchy government type
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = 0 "Elective Monarchy
+* has_reform_false = ottoman_government
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+* Multiplies value by 0.5:
+** Is at war
+
+'''Option: 0 "I feel so old...:'''
+
+* Kills the ruler of the country
+* Adds the modifier "0 "Ruler considered illegitimate" for 5 years:
+** Legitimacy is at least -1
+** +2 global unrest
+** global_autonomy = 0.05
+
+'''Option: 0 "You spoiled little runt!:'''
+
+* Kills the heir of the country
+
+=== 0 "The Weeping Song ===
+
+'''Trigger:'''
+
+* Has an heir
+* War taxes are active
+* Is not the lesser partner in a union
+* Has at least 40 ducats in the treasury
+* 4 war exhaustion
+* Any of the following:
+** Is not in regency
+** All of the following:
+*** has_consort_regency = yes
+*** has_female_consort_false = no
+* Has the monarchy government type
+* has_reform_false = 0 "Mamluk Government
+* Heir is at least 4 years old
+* has_reform_false = 0 "Elective Monarchy
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 50 months
+
+'''Option: 0 "They are all weeping for their men...:'''
+
+* Changes treasury by -40 ducats
+* Changes war exhaustion by -2
+
+'''Option: 0 "They are merely crying.:'''
+
+* Changes national manpower reserves by 1 years worth
+
+=== 0 "A Silent Spring ===
+
+'''Trigger:'''
+
+* Has the monarchy government type
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* It is the 3. month of the year or later
+* It is before the 6. month of the year
+* Has no heir
+* Ruler is male
+* Is not the lesser partner in a union
+* Is not in regency
+* has_government_attribute = queen
+* has_government_attribute = heir
+* Any of the following:
+** Does not have the DLC Rights of Man
+** has_consort_false = no
+* Any known country:
+** Follows our country's religion
+** Has the monarchy government type
+** Is not the lesser partner in a union
+** Is allied with our country
+** Is AI controlled
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random known country:
+*** Limited to:
+**** Follows our country's religion
+**** Has the monarchy government type
+**** Is not the lesser partner in a union
+**** Is allied with our country
+**** Has no royal marriage with our country
+**** Is AI controlled
+*** save_event_target_as = bargaining_chip_country
+
+'''Option: 0 "Cute girl...:'''
+
+* Spawns an heir:
+** Ruler's dynasty is our country
+** Legitimacy of 30
+
+'''Option: 0 "Bargaining chip...:'''
+
+* Trigger:
+** Any known country:
+*** Follows our country's religion
+*** Has the monarchy government type
+*** Is not the lesser partner in a union
+*** Is allied with our country
+*** Has no royal marriage with our country
+*** Is AI controlled
+* event_target:bargaining_chip_country:
+** Creates a royal marriage with our country
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+** define_consort:
+*** country_of_origin = event_target:bargaining_chip_country
+*** Culture is event_target:bargaining_chip_country
+*** Follows the event_target:bargaining_chip_country religion
+
+=== 0 "Soirée ===
+
+'''Trigger:'''
+
+* Has no heir
+* Is not the lesser partner in a union
+* Has the monarchy government type
+* Is not in regency
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* has_government_attribute = heir
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 800 months
+
+'''Immediate effects:'''
+
+* check_if_non_state_advisor_effect:
+** chance_of_primary = 85
+** chance_of_tertiary = 5
+** chance_of_secondary = 15
+* Hidden effect:
+** One of the following will happen:
+*** 33 relative chance:
+**** Sets the country flag treasurer_flag
+*** 33 relative chance:
+**** Sets the country flag philosopher_flag
+*** 33 relative chance:
+**** Sets the country flag diplomat_flag
+
+'''Option: 0 "Good evening, My Lady!:'''
+
+* Trigger:
+** Ruler is male
+* Spawns an heir:
+** Ruler's dynasty is our country
+** Legitimacy of 30
+* Changes prestige by -10
+
+'''Option: 0 "Good evening, My Lord!:'''
+
+* Trigger:
+** Ruler is female
+* Spawns an heir:
+** Ruler's dynasty is our country
+** Legitimacy of 30
+* Changes prestige by -10
+
+'''Option: 0 "Good evening, My Good Sir!:'''
+
+* trigger_switch:
+** on_trigger = has_country_flag
+** treasurer_flag:
+*** generate_advisor_of_type_and_semi_random_religion_effect:
+**** advisor_type = 0 "Treasurer
+**** advisor_type_if_not_state = 0 "Trader
+**** With a skill level of 1
+**** discount = yes
+** philosopher_flag:
+*** generate_advisor_of_type_and_semi_random_religion_effect:
+**** advisor_type = 0 "Philosopher
+**** advisor_type_if_not_state = 0 "Artist
+**** With a skill level of 1
+**** discount = yes
+** diplomat_flag:
+*** generate_advisor_of_type_and_semi_random_religion_effect:
+**** advisor_type = 0 "Diplomat
+**** advisor_type_if_not_state = 0 "Spymaster
+**** With a skill level of 1
+**** discount = yes
+* Changes prestige by -5
+* trigger_switch:
+** on_trigger = has_country_flag
+** treasurer_flag:
+*** Removes the country flag treasurer_flag
+** philosopher_flag:
+*** Removes the country flag philosopher_flag
+** diplomat_flag:
+*** Removes the country flag diplomat_flag
+
+=== 0 "Heir falls ill ===
+
+'''Trigger:'''
+
+* Has an heir
+* Has the monarchy government type
+* Is not in regency
+* Is not the lesser partner in a union
+* has_reform_false = 0 "Elective Monarchy
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 2400 months
+
+'''Option: 0 "Send for a trained Medicus.:'''
+
+* Modifies treasury by -0.2 years worth of income
+* One of the following will happen:
+** 50 relative chance:
+*** Kills the heir of the country
+** 50 relative chance:
+*** Adds 5 legitimacy
+*** add_horde_unity = 5
+
+'''Option: 0 "Pray for $HEIR_ADJ$ life.:'''
+
+* One of the following will happen:
+** 75 relative chance:
+*** Kills the heir of the country
+** 25 relative chance:
+*** Adds 30 legitimacy
+*** add_horde_unity = 30
+
+=== 0 "A Child in The Reeds ===
+
+'''Trigger:'''
+
+* Has no heir
+* Is not the lesser partner in a union
+* Has the monarchy government type
+* Is in the 0 "Christian religion group
+* Is not in regency
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = 0 "Elective Monarchy
+* has_government_attribute = heir
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1500 months
+* Multiplies value by 0.7:
+** Is the defender of the faith
+
+'''Option: 0 "Adopt him as your own:'''
+
+* Spawns an heir:
+** Legitimacy of 20
+** Ruler's dynasty is our country
+** Changes ruler's administrative skill by 1
+** Changes ruler's diplomatic skill by 1
+** Changes ruler's military skill by 1
+** male = yes
+** no_consort_with_heir = yes
+* Changes prestige by -5
+* Adds the modifier "0 "Adopted Child of the Reeds" for 5 years:
+** +2 global unrest
+
+'''Option: 0 "Where did that deer go?:'''
+
+* Changes treasury by 5 ducats
+
+=== 0 "Jousting Tournament ===
+
+'''Trigger:'''
+
+* Has an heir
+* Heir is at least 15 years old
+* Is not the lesser partner in a union
+* has_reform_false = 0 "Elective Monarchy
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* Year is less than 1450
+* Does not have the country flag last_jousting_tournament_held
+* 20 army tradition
+* Technology group is 0 "Western
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 2400 months
+* Multiplies value by 0.9:
+** 40 army tradition
+
+'''Option: 0 "Watch your heir joust.:'''
+
+* One of the following will happen:
+** 50 relative chance:
+*** Modifies treasury by 0.05 years worth of income
+** 45 relative chance:
+*** Adds 20 legitimacy
+** 5 relative chance:
+*** Kills the heir of the country
+
+'''Option: 0 "Brag about our cultural accomplishments.:'''
+
+* Changes administrative power stored by 20
+
+'''Option: 0 "Simply enjoy the day.:'''
+
+* Changes prestige by 5
+
+=== 0 "Hunting Accident ===
+
+'''Trigger:'''
+
+* Has an heir
+* Heir is at least 15 years old
+* Is not the lesser partner in a union
+* has_reform_false = 0 "Elective Monarchy
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 2700 months
+
+'''Option: 0 "Sorrow overtakes you.:'''
+
+* Kills the heir of the country
+* Changes stability by -1
+
+'''Option: 0 "Oh well...:'''
+
+* Kills the heir of the country
+* Changes prestige by -10
+
+=== 0 "Family Secret? ===
+
+'''Trigger:'''
+
+* Capital:
+** In the continent 0 "Europe
+* Is in the 0 "Christian religion group
+* Has an heir
+* Heir is at least 15 years old
+* Is not the lesser partner in a union
+* Has the monarchy government type
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = 0 "Elective Monarchy
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 2000 months
+
+'''Option: 0 "Scold $HEIR_O_PRONOUN$ publicly.:'''
+
+* Changes prestige by -20
+
+'''Option: 0 "...so?:'''
+
+* Changes the heir's legitimacy by -10
+
+=== 0 "Scheming Bureaucracy ===
+
+'''Trigger:'''
+
+* Always false
+* Has the monarchy government type
+* Does not have the DLC Dharma
+* Does not have the DLC Emperor
+* is_free_or_tributary_trigger = yes
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Celestial Empire
+* Administrative technology is at least 20
+* Has at least 200 administrative power
+* The faction system is disabled
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 5000 months
+
+'''Option: 0 "Kill them. All.:'''
+
+* AI chance:
+** Base chance of 100
+* Changes administrative power stored by -100
+* Changes stability by -1
+
+'''Option: 0 "Well... yes... Yes this does seem to be all in good order.:'''
+
+* AI chance:
+** Base chance of 0
+* Kills the ruler of the country
+* Changes stability by -6
+
+=== 0 "The $DYNASTY$s ===
+
+'''Trigger:'''
+
+* Stability is at least 3
+* Has at least 100 ducats in the treasury
+* Has the monarchy government type
+* has_reform_false = 0 "Mamluk Government
+* Is not in regency
+* Any known country:
+** Ruler's dynasty is our country
+** Has the monarchy government type
+** Stability is lower than -2
+** Not senior union partner over our country
+** Not junior union partner under our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 18 months
+
+'''Option: 0 "Family first, brother.:'''
+
+* Random country:
+** Limited to:
+*** Ruler's dynasty is our country
+*** Has the monarchy government type
+*** Stability is lower than -2
+*** Not senior union partner over our country
+*** Not junior union partner under our country
+** Gets the country event:
+*** ID is 9476
+** Adds the opinion modifier "0 "Helped our family" towards our country
+* Changes treasury by -100 ducats
+* Changes prestige by 10
+
+'''Option: 0 "I already gave at the office, brother.:'''
+
+* Random country:
+** Limited to:
+*** Ruler's dynasty is our country
+*** Has the monarchy government type
+*** Stability is lower than -2
+*** Not senior union partner over our country
+*** Not junior union partner under our country
+** Gets the country event:
+*** ID is 9477
+** Adds the opinion modifier "0 "Ignored family in need" towards our country
+
+=== 0 "Regent usurps The Throne ===
+
+'''Trigger:'''
+
+* Stability is lower than -1
+* Is not the lesser partner in a union
+* Has the monarchy government type
+* legitimacy_or_horde_unity_false = 50
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Celestial Empire
+* has_reform_false = 0 "Mamluk Government
+* Is in regency
+* has_consort_regency_false = no
+* Has an heir
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 700 months
+
+'''Option: 0 "Alas, it was destined.:'''
+
+* Kills the heir of the country
+** allow_new_heir_false = no
+* Spawns a ruler:
+* If:
+** Limited to:
+*** has_states_general_mechanic = yes
+** change_statists_vs_orangists = 1
+* Changes stability by -1
+
+'''Option: 0 "To the salt mines, traitor!:'''
+
+* Changes stability by -2
+* Changes the heir's legitimacy by 30
+
+=== 0 "Lux Stella ===
+
+'''Trigger:'''
+
+* Has the monarchy government type
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = 0 "Elective Monarchy
+* Is not the lesser partner in a union
+* Has no heir
+* Is not in regency
+* Any of the following:
+** Does not have the DLC Rights of Man
+** has_consort = yes
+* has_government_attribute = heir
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 5000 months
+
+'''Option: 0 "I shall name him Alexander:'''
+
+* Trigger:
+** Is not in 0 "Muslim's religion group
+** Is not in 0 "Eastern's religion group
+** Is not in 0 "Dharmic's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in jewish_group's religion group
+** Is not in zoroastrian_group's religion group
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Alexander"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Iskandar:'''
+
+* Trigger:
+** Is not in 0 "Christian's religion group
+** Is not in 0 "Eastern's religion group
+** Is not in 0 "Dharmic's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in jewish_group's religion group
+** Is not in zoroastrian_group's religion group
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Iskandar"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Sikandar:'''
+
+* Trigger:
+** Is not in 0 "Christian's religion group
+** Is not in 0 "Eastern's religion group
+** Is not in 0 "Muslim's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in jewish_group's religion group
+** Is not in zoroastrian_group's religion group
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Sikandar"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Genghis:'''
+
+* Trigger:
+** Follows the tengri_pagan_reformed religion
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Genghis"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Gunnarr:'''
+
+* Trigger:
+** Follows the norse_pagan_reformed religion
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Gunnarr"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Ahuizotl:'''
+
+* Trigger:
+** Any of the following:
+*** Follows the 0 "Mayan religion
+*** Follows the 0 "Nahuatl religion
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Ahuizotl"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Pachakutiq:'''
+
+* Trigger:
+** Follows the 0 "Inti religion
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Pachakutiq"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Deganawida:'''
+
+* Trigger:
+** Follows the 0 "Totemist religion
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Deganawida"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Ruhinda:'''
+
+* Trigger:
+** Follows the 0 "Fetishist religion
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Ruhinda"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Cacique:'''
+
+* Trigger:
+** Follows the 0 "Animist religion
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Cacique"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Sikandar:'''
+
+* Trigger:
+** Is not in 0 "Christian's religion group
+** Is not in 0 "Dharmic's religion group
+** Is not in 0 "Muslim's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in jewish_group's religion group
+** Is not in zoroastrian_group's religion group
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Sikandar"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him Rustam:'''
+
+* Trigger:
+** Is not in 0 "Christian's religion group
+** Is not in 0 "Dharmic's religion group
+** Is not in 0 "Muslim's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in jewish_group's religion group
+** Is not in 0 "Eastern's religion group
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Rustam"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "I shall name him David:'''
+
+* Trigger:
+** Is not in 0 "Christian's religion group
+** Is not in 0 "Dharmic's religion group
+** Is not in 0 "Muslim's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in zoroastrian_group's religion group
+** Is not in 0 "Eastern's religion group
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "David"
+** Legitimacy of 100
+** Ruler's military skill is at least 6
+
+'''Option: 0 "His name shall be Caesar:'''
+
+* Trigger:
+** Is not in 0 "Muslim's religion group
+** Is not in 0 "Eastern's religion group
+** Is not in 0 "Dharmic's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in jewish_group's religion group
+** Is not in zoroastrian_group's religion group
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Caesar"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Mansur:'''
+
+* Trigger:
+** Is not in 0 "Christian's religion group
+** Is not in 0 "Eastern's religion group
+** Is not in 0 "Dharmic's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in jewish_group's religion group
+** Is not in zoroastrian_group's religion group
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Mansur"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Krishna:'''
+
+* Trigger:
+** Is not in 0 "Christian's religion group
+** Is not in 0 "Eastern's religion group
+** Is not in 0 "Muslim's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in jewish_group's religion group
+** Is not in zoroastrian_group's religion group
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Krishna"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Kubilai:'''
+
+* Trigger:
+** Follows the tengri_pagan_reformed religion
+* Spawns an heir:
+** Ruler's dynasty is our country
+** male = yes
+** Named "Kubilai"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Erik:'''
+
+* Trigger:
+** Follows the norse_pagan_reformed religion
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Erik"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Itzcoatl:'''
+
+* Trigger:
+** Any of the following:
+*** Follows the 0 "Mayan religion
+*** Follows the 0 "Nahuatl religion
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Itzcoatl"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Viracocha:'''
+
+* Trigger:
+** Follows the 0 "Inti religion
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Viracocha"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Hiawatha:'''
+
+* Trigger:
+** Follows the 0 "Totemist religion
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Hiawatha"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Ruhanga:'''
+
+* Trigger:
+** Follows the 0 "Fetishist religion
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Ruhanga"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Bochica:'''
+
+* Trigger:
+** Follows the 0 "Animist religion
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Bochica"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "I shall name him Ashoka:'''
+
+* Trigger:
+** Is not in 0 "Christian's religion group
+** Is not in 0 "Dharmic's religion group
+** Is not in 0 "Muslim's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in jewish_group's religion group
+** Is not in zoroastrian_group's religion group
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Ashoka"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Zal:'''
+
+* Trigger:
+** Is not in 0 "Christian's religion group
+** Is not in 0 "Dharmic's religion group
+** Is not in 0 "Muslim's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in jewish_group's religion group
+** Is not in 0 "Eastern's religion group
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Zal"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Solomon:'''
+
+* Trigger:
+** Is not in 0 "Christian's religion group
+** Is not in 0 "Dharmic's religion group
+** Is not in 0 "Muslim's religion group
+** Is not in 0 "Pagan's religion group
+** Is not in zoroastrian_group's religion group
+** Is not in 0 "Eastern's religion group
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Solomon"
+** Legitimacy of 100
+** Ruler's administrative skill is at least 6
+
+'''Option: 0 "His name shall be Johan:'''
+
+* Spawns an heir:
+** male = yes
+** Ruler's dynasty is our country
+** Named "Johan"
+** Legitimacy of 100
+** Ruler's diplomatic skill is at least 6
+
+=== 0 "Marriage Policies Pay Off ===
+
+'''Trigger:'''
+
+* Is in the 0 "Christian religion group
+* Has the monarchy government type
+* has_reform_false = 0 "Elective Monarchy
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* Is not in regency
+* Is not the lesser partner in a union
+* Has at least 4 royal marriages
+* has_government_attribute = heir
+* has_states_general_mechanic_false = no
+* Any country:
+** Is in the 0 "Christian religion group
+** Has the monarchy government type
+** has_reform_false = 0 "Elective Monarchy
+** has_reform_false = ottoman_government
+** has_reform_false = 0 "Mamluk Government
+** Has a royal marriage with our country
+** Ruler's dynasty is not our country
+** Has no heir
+** has_government_attribute = heir
+** has_states_general_mechanic_false = no
+** Is not the lesser partner in a union
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random country:
+*** Limited to:
+**** Has the monarchy government type
+**** Has a royal marriage with our country
+**** Ruler's dynasty is not our country
+**** Has no heir
+**** Is not the lesser partner in a union
+**** has_government_attribute = heir
+**** has_states_general_mechanic_false = no
+*** save_event_target_as = marriage_policy_paid_off_here
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1500 months
+* Multiplies value by 0.9:
+** Has at least 6 royal marriages
+
+'''Option: 0 "Take that, von Habsburgs.:'''
+
+* Trigger:
+** Ruler's dynasty is not von Habsburg
+* event_target:marriage_policy_paid_off_here:
+** Spawns an heir:
+*** Ruler's dynasty is our country
+*** age = 14
+** Hidden effect:
+*** Gets the country event:
+**** ID is dynastic_events.8
+*** set_heir_culture = our country
+*** set_heir_religion = our country
+
+'''Option: 0 "Excellent news:'''
+
+* Trigger:
+** Ruler's dynasty is von Habsburg
+* event_target:marriage_policy_paid_off_here:
+** Spawns an heir:
+*** Ruler's dynasty is our country
+*** age = 14
+** Hidden effect:
+*** Gets the country event:
+**** ID is dynastic_events.8
+*** set_heir_culture = our country
+*** set_heir_religion = our country
+
+=== 0 "The $DYNASTY$s ===
+* Cannot fire randomly
+
+'''Option: 0 "The $DYNASTY$s stick together.:'''
+
+* Changes treasury by 100 ducats
+* If:
+** Limited to:
+*** Stability is at least 3
+** add_stability_or_adm_power = yes
+* If:
+** Limited to:
+*** Stability is lower than 3
+** One of the following will happen:
+*** 10 relative chance:
+**** Changes stability by 1
+*** 10 relative chance:
+**** Changes stability by 2
+*** 10 relative chance:
+**** Changes stability by 3
+
+=== 0 "The $DYNASTY$s ===
+* Cannot fire randomly
+
+'''Option: 0 "A house divided cannot stand.:'''
+
+* One of the following will happen:
+** 10 relative chance:
+*** add_stability_or_adm_power = yes
+** 10 relative chance:
+*** Kills the ruler of the country
+** 10 relative chance:
+*** Changes stability by -2
+
+=== 0 "Fear and Loathing in $PROVINCENAME$ ===
+* Province event
+
+'''Trigger:'''
+
+* The Papacy is enabled
+* The province is the capital of the country
+* The owner of the province:
+** Is not in regency
+** Has an heir
+** Is in the 0 "Christian religion group
+** has_reform_false = 0 "Elective Monarchy
+** has_reform_false = ottoman_government
+** Is not the lesser partner in a union
+** Does not have the country flag murdering_bastard
+** Does not have the country flag contained_insanity
+** Heir is less than 3 years old
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 4000 months
+* Multiplies value by 0.75:
+** The owner of the province:
+*** ruler_has_personality = malevolent_personality
+
+'''Option: 0 "All work and no play, makes $MONARCH$ a dull, dull boy.:'''
+
+* The owner of the province:
+** Kills the heir of the country
+** Sets the country flag murdering_bastard
+
+'''Option: 0 "Lord God our Father, thou who art in heaven!:'''
+
+* The owner of the province:
+** Changes Papal Influence by 5
+** Sets the country flag contained_insanity
+
+=== 0 "The Discovery ===
+
+'''Trigger:'''
+
+* Has the country flag murdering_bastard
+* Does not have the country flag contained_insanity
+* Is not in regency
+* Is not the lesser partner in a union
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 12 months
+
+'''Option: 0 "What have I done!?:'''
+
+* Kills the ruler of the country
+* Removes the country flag murdering_bastard
+
+'''Option: 0 "Heeere's $MONARCH$!:'''
+
+* Changes prestige by -5
+* Changes treasury by -100 ducats
+* Sets the country flag contained_insanity
+
+=== 0 "Dance Macabre ===
+
+'''Trigger:'''
+
+* Has the country flag contained_insanity
+* Is not in regency
+* Is not the lesser partner in a union
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Option: 0 "Not by the hair of my chiny-chin-chin!:'''
+
+* Changes stability by -3
+* Changes prestige by -20
+* Removes the country flag contained_insanity
+
+'''Option: 0 "I'd give my god-damned soul for just a glass of beer.:'''
+
+* Kills the ruler of the country
+* Adds the modifier "0 "Delivered from Evil" for 10 years:
+** -2 global unrest
+** -10% stability cost modifier
+* Removes the country flag contained_insanity
+
+=== 0 "Our Monarch Dies ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country flag contained_insanity
+** Has the country flag murdering_bastard
+* Cannot fire randomly
+
+'''Option: 0 "God bless his soul:'''
+
+* Adds the modifier "0 "Delivered from Evil" for 10 years:
+** -2 global unrest
+** -10% stability cost modifier
+* Removes the country flag contained_insanity
+* Removes the country flag murdering_bastard
+
+=== 0 "Wedding Bells ===
+
+'''Trigger:'''
+
+* 30 prestige
+* Has the monarchy government type
+* has_reform_false = ottoman_government
+* Is not the lesser partner in a union
+* Is not at war
+* Is not in regency
+* Has no heir
+* Ruler is male
+* has_government_attribute = queen
+* has_government_attribute = heir
+* Any of the following:
+** Has less than 2 royal marriages
+** All of the following:
+*** Has the DLC Rights of Man
+*** has_consort_false = no
+* Any known country:
+** Follows our country's religion
+** Has the monarchy government type
+** Is not the lesser partner in a union
+** Is allied with our country
+** Is AI controlled
+** Has no royal marriage with our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 500 months
+
+'''Option: 0 "Nevermind. Nature always finds its course.:'''
+
+* Random country:
+** Limited to:
+*** Follows our country's religion
+*** Has the monarchy government type
+*** Is not the lesser partner in a union
+*** Is allied with our country
+*** Is AI controlled
+*** Has no royal marriage with our country
+** Creates a royal marriage with our country
+
+'''Option: 0 "Chess on the veranda?:'''
+
+* Changes prestige by 5
+* Adds the modifier "0 "Sought after Bachelor" for the rest of the campaign:
+** +1 prestige
+
+=== 0 "A Modest Proposal ===
+
+'''Trigger:'''
+
+* Any known country:
+** Has the country modifier "0 "Sought after Bachelor"
+** Is not the lesser partner in a union
+** Has the monarchy government type
+** Is in our country's religion group
+** Has no royal marriage with our country
+* Has the monarchy government type
+* Is not the lesser partner in a union
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+
+'''Option: 0 "Indeed we shall!:'''
+
+* Random country:
+** Limited to:
+*** Has the country modifier "0 "Sought after Bachelor"
+*** Is in our country's religion group
+*** Has no royal marriage with our country
+** One of the following will happen:
+*** 20 relative chance:
+**** Gets the country event:
+***** ID is 9486
+*** 80 relative chance:
+**** Gets the country event:
+***** ID is 9487
+* Changes treasury by -15 ducats
+* Changes diplomatic power stored by -10
+
+'''Option: 0 "We have better things to do.:'''
+
+* Changes treasury by 10 ducats
+* Changes administrative power stored by 10
+
+=== 0 "A rose from a foreign land ===
+* Cannot fire randomly
+
+'''Option: 0 "I must have her!:'''
+
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+** define_consort:
+*** country_of_origin = our country
+*** Culture is the same as our country
+*** Follows our country's religion
+* Creates a royal marriage with our country
+* Adds the opinion modifier "0 "Love between two families" towards our country
+* Removes the country modifier "0 "Sought after Bachelor"
+
+'''Option: 0 "What is this foul witchcraft? Begone!:'''
+
+* Adds the opinion modifier "0 "Witchcraft" from our country
+
+=== 0 "A thorn from a foreign land ===
+* Cannot fire randomly
+
+'''Option: 0 "A good $COUNTRY_RELIGION$ woman, I'm sure.:'''
+
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+** define_consort:
+*** country_of_origin = our country
+*** Culture is the same as our country
+*** Follows our country's religion
+* Creates a royal marriage with our country
+* Adds the opinion modifier "0 "United Dynasties" towards our country
+* Removes the country modifier "0 "Sought after Bachelor"
+
+'''Option: 0 "This will obviously not do.:'''
+
+* Adds the opinion modifier "0 "Refused marriage offer" from our country
+
+=== 0 "The Aftermath ===
+
+'''Trigger:'''
+
+* Has the monarchy government type
+* has_reform_false = 0 "Elective Monarchy
+* Has an heir
+* Heir is leading an army
+* Heir is at least 20 years old
+* Any known country:
+** Has a truce with our country
+* Is not at war
+* Is not the lesser partner in a union
+* 12 war exhaustion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Option: 0 "I accept responsibility:'''
+
+* Kills the ruler of the country
+* Changes war exhaustion by -4
+* add_stability_or_adm_power = yes
+
+'''Option: 0 "I will not be met with insolence in my own house!:'''
+
+* Kills the heir of the country
+* Changes war exhaustion by -2
+
+=== 0 "$COUNTRY_ADJ$ Moon ===
+
+'''Trigger:'''
+
+* 4 war exhaustion
+* Ruler's administrative skill is at least 3
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 800 months
+
+'''Option: 0 "May the memory live on:'''
+
+* Changes prestige by 5
+
+'''Option: 0 "Our sorrow proves the justness of our cause.:'''
+
+* Changes military power stored by 25
+
+=== 0 "Seeing The Real You ===
+
+'''Trigger:'''
+
+* Is not the lesser partner in a union
+* Has the monarchy government type
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = 0 "Elective Monarchy
+* Has no heir
+* Ruler is male
+* Is not in regency
+* Has at least 1 royal marriages
+* has_government_attribute = heir
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+** has_consort = yes
+* Does not have the country modifier "0 "A Woman Scorned"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1400 months
+
+'''Option: 0 "I just realized how much you mean to me.:'''
+
+* Spawns an heir:
+** Ruler's dynasty is our country
+
+'''Option: 0 "The economy is doing laughably good! Haha!:'''
+
+* Modifies treasury by 0.5 years worth of income
+* Adds the modifier "0 "A Woman Scorned" for 5 years:
+** -2 prestige
+** Legitimacy is at least -5
+
+=== 0 "Starlight ===
+
+'''Trigger:'''
+
+* Has no heir
+* ruler_age = 40
+* Has the monarchy government type
+* Is in the 0 "Christian religion group
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = 0 "Elective Monarchy
+* Is not the lesser partner in a union
+* has_government_attribute = heir
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 10000 months
+* Multiplies value by 0.5:
+** ruler_age = 50
+* Multiplies value by 0.5:
+** ruler_age = 60
+* Multiplies value by 0.5:
+** ruler_age = 70
+* Multiplies value by 0.5:
+** ruler_age = 80
+* Multiplies value by 0.5:
+** ruler_age = 90
+
+'''Option: 0 "Name her Elisabeth.:'''
+
+* Spawns an heir:
+** Named "Elisabeth"
+** Ruler's dynasty is our country
+** Legitimacy of 50
+** Ruler is female
+** Ruler's administrative skill is at least 4
+** Ruler's diplomatic skill is at least 3
+** Ruler's military skill is at least 3
+
+'''Option: 0 "Catherine will be her name.:'''
+
+* Spawns an heir:
+** Ruler's dynasty is our country
+** Named "Caterine"
+** Legitimacy of 50
+** Ruler's administrative skill is at least 3
+** Ruler's diplomatic skill is at least 3
+** Ruler's military skill is at least 4
+** Ruler is female
+
+'''Option: 0 "Give her a traditional [Root.Culture.GetName] name.:'''
+
+* Spawns an heir:
+** Ruler's dynasty is our country
+** Legitimacy of 50
+** Ruler's administrative skill is at least 3
+** Ruler's diplomatic skill is at least 4
+** Ruler's military skill is at least 3
+** Ruler is female
+
+'''Option: 0 "Sara is a lovely name.:'''
+
+* Spawns an heir:
+** Ruler's dynasty is our country
+** Named "Sara"
+** Legitimacy of 50
+** Ruler's administrative skill is at least 3
+** Ruler's diplomatic skill is at least 3
+** Ruler's military skill is at least 4
+** Ruler is female
+
+=== 0 "Newborn Daughter ===
+
+'''Trigger:'''
+
+* Has no heir
+* ruler_age = 20
+* Has the monarchy government type
+* Is not in 0 "Muslim's religion group
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = 0 "Elective Monarchy
+* has_reform_false = 0 "Shogunate
+* Is not the lesser partner in a union
+* Does not have the country modifier "0 "Denied Newborn Daughter"
+* has_government_attribute = heir
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 600 months
+
+'''Option: 0 "I declare her my new heir.:'''
+
+* add_horde_unity = 10
+* Adds -10 legitimacy
+* If:
+** Limited to:
+*** Follows the 0 "Catholic religion
+** Changes Papal Influence by -10
+* If:
+** Limited to:
+*** Is in the 0 "Muslim religion group
+** Changes piety by -10%
+* Spawns an heir:
+** Ruler's dynasty is our country
+** Ruler is female
+** Legitimacy of 50
+
+'''Option: 0 "I want a male heir!:'''
+
+* Adds the modifier "0 "Denied Newborn Daughter" for 12 months:
+** -100% chance of getting an heir
+** +3 global unrest
+
+=== 0 "Talented and Ambitious Daughter ===
+
+'''Trigger:'''
+
+* Has no heir
+* ruler_age = 40
+* Has the monarchy government type
+* has_reform_false = 0 "Elective Monarchy
+* Is not in 0 "Muslim's religion group
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = 0 "Shogunate
+* has_government_attribute = heir
+* Is not the lesser partner in a union
+* has_ruler_flag_false = talented_daughter_happened
+
+'''Immediate effects:'''
+
+* set_ruler_flag = talented_daughter_happened
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 500 months
+* Multiplies value by 0.9:
+** ruler_age = 50
+* Multiplies value by 0.9:
+** ruler_age = 60
+* Multiplies value by 0.9:
+** ruler_age = 70
+* Multiplies value by 0.9:
+** ruler_age = 80
+* Multiplies value by 0.9:
+** ruler_age = 90
+
+'''Option: 0 "She would make an excellent ruler.:'''
+
+* add_horde_unity = -10
+* Adds -10 legitimacy
+* If:
+** Limited to:
+*** Follows the 0 "Catholic religion
+** Changes Papal Influence by -10
+* If:
+** Limited to:
+*** Is in the 0 "Muslim religion group
+** Changes piety by -10%
+* Spawns an heir:
+** Ruler's dynasty is our country
+** age = 13
+** Changes ruler's administrative skill by 3
+** Changes ruler's diplomatic skill by 3
+** Changes ruler's military skill by 3
+** Legitimacy of 50
+** Ruler is female
+** no_consort_with_heir = yes
+
+'''Option: 0 "I am not dead yet! I can still sire a son or two.:'''
+
+* Random owned province:
+** Limited to:
+*** The province is the capital of the country
+** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*** local_unrest = 5
+
+=== 0 "The Ruler's Daughter ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has no heir
+* Has at least 2 provinces
+* Is in regency
+* Is not the lesser partner in a union
+* Has the monarchy government type
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Elective Monarchy
+* has_reform_false = 0 "Mamluk Government
+* Is in the 0 "Christian religion group
+* Capital:
+** In the continent 0 "Europe
+* Any known country:
+** Has the monarchy government type
+** Is in the 0 "Christian religion group
+** has_reform_false = ottoman_government
+** has_reform_false = 0 "Elective Monarchy
+** Is not in regency
+** is_free_or_tributary_trigger = yes
+** Has at least our country provinces
+** Ruler is male
+** Does not have the country flag dyn_woman_pretender_flag
+** Capital:
+*** In the continent 0 "Europe
+** Not at war with our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random known country:
+*** Limited to:
+**** Has the monarchy government type
+**** has_reform_false = ottoman_government
+**** has_reform_false = 0 "Elective Monarchy
+**** Is not in regency
+**** is_free_or_tributary_trigger = yes
+**** Has at least our country provinces
+**** Ruler is male
+**** Is in the 0 "Christian religion group
+**** Capital:
+***** In the continent 0 "Europe
+**** Not at war with our country
+*** Sets the country flag dyn_woman_pretender_flag
+
+'''Option: 0 "Crown the former ruler's daughter.:'''
+
+* If:
+** Limited to:
+*** Follows the 0 "Catholic religion
+** Changes Papal Influence by -10
+* Spawns a ruler:
+** Ruler's dynasty is our country
+** age = 20
+** Ruler's administrative skill is at least 3
+** Ruler's diplomatic skill is at least 3
+** Ruler's military skill is at least 3
+** Legitimacy of 50
+** Ruler is female
+* If:
+** Limited to:
+*** has_states_general_mechanic = yes
+** change_statists_vs_orangists = 1
+* Random known country:
+** Limited to:
+*** Has the country flag dyn_woman_pretender_flag
+** Gives the 0 "Restoration of Union casus belli against our country
+** Adds the opinion modifier "0 "Spurned Heir from our Dynasty" towards our country
+** Removes the country flag dyn_woman_pretender_flag
+
+'''Option: 0 "Choose the foreign noble.:'''
+
+* Random known country:
+** Limited to:
+*** Has the country flag dyn_woman_pretender_flag
+** Removes the country flag dyn_woman_pretender_flag
+** Adds the opinion modifier "0 "Choose Heir from our Dynasty" towards our country
+** ROOT:
+*** Spawns a ruler:
+**** Ruler's dynasty is PREV
+**** age = 20
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+** Spawns revolt of size 2 of 0 "Pretender rebels
+
+=== 0 "A Political Marriage ===
+
+'''Trigger:'''
+
+* Has no heir
+* Has the monarchy government type
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = 0 "Elective Monarchy
+* Is in the 0 "Christian religion group
+* is_free_or_tributary_trigger = yes
+* has_consort_false = no
+* ruler_age = 16
+* ruler_age_false = 40
+* Any neighbor country:
+** Has the monarchy government type
+** has_reform_false = ottoman_government
+** has_reform_false = 0 "Elective Monarchy
+** Is in the 0 "Christian religion group
+** Has no heir
+** ruler_age = 16
+** ruler_age_false = 40
+** Any of the following:
+*** }
+*** reverse_has_opinion_modifier:
+**** who_false = our country
+**** modifier_false = 0 "Spurned Personal Union with us
+** Any of the following:
+*** All of the following:
+**** Ruler is male
+**** ROOT:
+***** Ruler is female
+*** All of the following:
+**** Ruler is female
+**** ROOT:
+***** Ruler is male
+** Any of the following:
+*** Ruler's dynasty is our country
+*** Culture group is the same as our country
+** Has an opinion of at least 75 with our country
+** Has an opinion of at least 75 of our country
+** is_free_or_tributary_trigger = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 500 months
+
+'''Immediate effects:'''
+
+* Random neighbor country:
+** Limited to:
+*** Has the monarchy government type
+*** has_reform_false = ottoman_government
+*** has_reform_false = 0 "Elective Monarchy
+*** has_reform_false = 0 "Mamluk Government
+*** Is in the 0 "Christian religion group
+*** Has no heir
+*** ruler_age = 16
+*** ruler_age_false = 40
+*** Any of the following:
+**** }
+**** reverse_has_opinion_modifier:
+***** who_false = our country
+***** modifier_false = 0 "Spurned Personal Union with us
+*** Any of the following:
+**** All of the following:
+***** Ruler is male
+***** ROOT:
+****** Ruler is female
+**** All of the following:
+***** Ruler is female
+***** ROOT:
+****** Ruler is male
+*** Any of the following:
+**** Ruler's dynasty is our country
+**** Culture group is the same as our country
+*** Has an opinion of at least 75 with our country
+*** Has an opinion of at least 75 of our country
+*** is_free_or_tributary_trigger = yes
+** Hidden effect:
+*** save_event_target_as = nameless_neighbor_no_more
+
+'''Option: 0 "Send a herald to the monarch and suggest this political marriage between us.:'''
+
+* event_target:nameless_neighbor_no_more:
+** Gets the country event:
+*** ID is dynastic_events.6
+*** Tooltip:
+
+'''Option: 0 "If I am to marry, it will be based on love.:'''
+
+* Adds 10 legitimacy
+
+=== 0 "A Political Marriage Offered ===
+* Cannot fire randomly
+
+'''Option: 0 "Accept it.:'''
+
+* Changes prestige by 20
+* Our country:
+** Sets the country flag dyn_pu_accepted_flag
+** Tooltip:
+*** Creates a union with our country
+** Gets the country event:
+*** ID is dynastic_events.7
+*** Tooltip:
+* AI chance:
+** Base chance of 20
+** Multiplies value by 4:
+*** total_development_false = our country
+
+'''Option: 0 "Politely decline it.:'''
+
+* Our country:
+** Sets the country flag dyn_pu_refused_flag
+** Adds the opinion modifier "0 "Spurned Personal Union with us" towards our country
+** Gives the 0 "Diplomatic Insult casus belli against our country
+** Gets the country event:
+*** ID is dynastic_events.7
+*** Tooltip:
+* AI chance:
+** Base chance of 20
+** Multiplies value by 4:
+*** total_development = our country
+
+=== 0 "A Political Marriage - Accepted or Not? ===
+* Cannot fire randomly
+
+'''Option: 0 "[From.Monarch.GetTitle] [From.Monarch.GetName] accepted!:'''
+
+* Trigger:
+** Has the country flag dyn_pu_accepted_flag
+* Adds 20 legitimacy
+* If:
+** define_consort:
+*** country_of_origin = our country
+*** Ruler's dynasty is our country
+*** Culture is the same as our country
+*** Follows our country's religion
+* Creates a union with our country
+
+'''Option: 0 "[From.Monarch.GetTitle] [From.Monarch.GetName] refused!:'''
+
+* Trigger:
+** Has the country flag dyn_pu_refused_flag
+* Tooltip:
+** Adds the opinion modifier "0 "Spurned Personal Union with us" towards our country
+** Gives the 0 "Diplomatic Insult casus belli against our country
+
+=== 0 "[From.GetAdjective] [Root.Heir.GetTitle] ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_states_general_mechanic_false = no
+* has_government_attribute = heir
+
+'''Option: 0 "At least it is not the Habsburgs.:'''
+
+* Trigger:
+** Our country:
+*** Ruler's dynasty is not von Habsburg
+
+'''Option: 0 "A.E.I.O.U.:'''
+
+* Trigger:
+** Our country:
+*** Ruler's dynasty is von Habsburg

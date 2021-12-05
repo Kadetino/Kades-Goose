@@ -1,0 +1,31 @@
+******** Trigger:
+********* 0 "Westphalia does not exist
+********* Is the target of the revolution
+********* normal_or_historical_nations = yes
+********* Owns 0 "Lüneburg
+********* Owns 0 "Osnabrück
+********* Owns 1 "Oberhessen
+********* Owns 0 "Westfalen
+********* Owns 0 "Münster
+******** fire_only_once = yes
+******** Mean time to happen
+********* Base mean time to happen of 180 months
+********* Multiplies value by 0.95:
+********** Owns 0 "Magdeburg
+********* Multiplies value by 0.95:
+********** Owns 0 "Stade
+********* Multiplies value by 0.95:
+********** Owns 0 "Brunswick
+********* Multiplies value by 0.95:
+********** Owns 0 "Nassau
+******** Option: 0 "Support the idea of a Westphalian Nation.:
+********* 0 "Westphalia:
+********** Adds core on 0 "Magdeburg
+********** Adds core on 0 "Lüneburg
+********** Adds core on 0 "Stade
+********** Adds core on 0 "Osnabrück
+********** Adds core on 0 "Brunswick
+********** Adds core on 1 "Oberhessen
+********** Adds core on 0 "Westfalen
+********** Adds core on 0 "Nassau
+********** Adds core on 0 "Münster

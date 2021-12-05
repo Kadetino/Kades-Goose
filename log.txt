@@ -1,0 +1,55 @@
+Message:--extract https://media.discordapp.net/attachments/622074746556907533/915173308700442644/2.png
+Output:
+ 
+
+Thoughts of disapproval against the Roman Catholic Church are spreading across Europe
+as a result of the increasing corruption of monks and clerics. Voices are raised questioning
+the current principles and greed of the Church. A monk in Aachen has for some time
+expressed deep concerns and is now openly declaring his discontent with the Church,
+
+| paving the way towards a reformation of the faith.
+
+ 
+
+Only time will tell what this might bring
+
+   
+
+------------------
+Message:--extract https://media.discordapp.net/attachments/622074746556907533/915178889964306482/4.png
+Output:
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+The Protestant Reformation
+
+&\|
+ON bial
+
+Thoughts of disapproval against the Roman Catholic Church are spreading across Europe
+as a result of the increasing corruption of monks and cle es are raised questioning
+
+‘the current principles and greed of the Church. A monk in Aachen has for some time ’
+‘expressed deep concerns and is now openly declaring his discontent with the Church, 4 Pog
+paving the way towards a reformation of the faith.
+
+ 
+
+‘Only time will tell what this might bring
+
+  
+
+------------------

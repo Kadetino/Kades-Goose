@@ -1,0 +1,175 @@
+******** Trigger:
+********* Country is 0 "Lübeck
+********* Has the DLC Emperor
+********* Is not a vassal
+********* Holy Roman Emperor:
+********** Is not at war
+********* 0 "Lübeck:
+********** The strongest trade power is not our country
+********* 0 "Lübeck:
+********** Strongest trade power in node:
+*********** is_in_trade_league_with_false = our country
+********* Is part of the Holy Roman Empire
+********* current_age_false = 0 "Age of Discovery
+********* active_imperial_incident_false = any
+********* has_reform = merchants_reform
+********* Is not a vassal
+******** Mean time to happen
+********* Base mean time to happen of 36 months
+******** Immediate effects:
+********* Hidden effect:
+********** 0 "Lübeck:
+*********** Strongest trade power in node:
+************ save_global_event_target_as = lubeck_trade_power
+************ Sets the country flag lubeck_trade_power_flag
+********* AI chance:
+********** Base chance of 1
+******** Option: hansa_incident.1.a:
+********* set_imperial_incident = incident_hansa
+******** Option: hansa_incident.1.b:
+********* AI chance:
+********** Base chance of 0
+********* If:
+********** Limited to:
+*********** Has the DLC Mare Nostrum
+********** Every country:
+*********** Limited to:
+************ is_in_trade_league_with = our country
+*********** Adds the opinion modifier "hanseatic_consolidation" towards our country
+********* else:
+********** Adds 200% mercantilism
+******* Gets the country event:
+******** ID is hansa_incident.2
+******** title = hansa_incident.t
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** desc = hansa_incident.2.d
+******** fire_only_once = yes
+******** is_triggered_only = yes
+******** major = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random country:
+*********** Limited to:
+************ Has the country flag lubeck_trade_power_flag
+*********** save_global_event_target_as = lubeck_trade_power
+******** Option: hansa_incident.2.a:
+********* AI chance:
+********** Base chance of 20
+********** Multiplies value by 2000:
+*********** Considers 0 "Lübeck a rival
+********** Multiplies value by 100:
+*********** Any country:
+************ is_in_trade_league_with = 0 "Lübeck
+************ Considers our country a rival
+********* 0 "Lübeck:
+********** Adds the opinion modifier "opinion_emperor_wont_help_hansa" towards our country
+********* Every country:
+********** Limited to:
+*********** is_in_trade_league_with = 0 "Lübeck
+********** Adds the opinion modifier "opinion_emperor_wont_help_hansa" towards our country
+******** Option: hansa_incident.2.b:
+********* Trigger:
+********** Any country:
+*********** has_reform = free_city
+*********** is_in_trade_league_with_false = 0 "Lübeck
+********** Any of the following:
+*********** Has the DLC Mare Nostrum
+*********** Has the DLC Wealth of Nations
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 50:
+*********** Has an opinion of at least 100 with 0 "Lübeck
+********** Multiplies value by 1000:
+*********** Is allied with 0 "Lübeck
+********* Every country:
+********** Limited to:
+*********** has_reform = free_city
+*********** is_in_trade_league_with_false = 0 "Lübeck
+********** Hidden effect:
+*********** Gets the country event:
+************ ID is hansa_incident.3
+************ Base mean time to happen of 3 days
+********* 0 "Lübeck:
+********** Adds the opinion modifier "opinion_emperor_helped_hansa" towards our country
+********* Every country:
+********** Limited to:
+*********** is_in_trade_league_with = 0 "Lübeck
+********** Adds the opinion modifier "opinion_emperor_helped_hansa" towards our country
+******** Option: hansa_incident.2.c:
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 1000:
+*********** Any of the following:
+************ At war with event_target:lubeck_trade_power
+************ Considers event_target:lubeck_trade_power a rival
+********* 0 "Lübeck:
+********** Adds trade modifier:
+*********** Affecting event_target:lubeck_trade_power
+*********** Lasting 7200 days
+*********** Changing trade power by -30
+*********** Named "IMPERIAL_EMBARGO"
+********* 0 "Frankfurt:
+********** Adds trade modifier:
+*********** Affecting event_target:lubeck_trade_power
+*********** Lasting 7200 days
+*********** Changing trade power by -30
+*********** Named "IMPERIAL_EMBARGO"
+********* 4744::
+********** Adds trade modifier:
+*********** Affecting event_target:lubeck_trade_power
+*********** Lasting 7200 days
+*********** Changing trade power by -30
+*********** Named "IMPERIAL_EMBARGO"
+********* 0 "Lübeck:
+********** Adds the opinion modifier "opinion_emperor_imperial_embargo" towards our country
+********* Every country:
+********** Limited to:
+*********** is_in_trade_league_with = 0 "Lübeck
+********** Adds the opinion modifier "opinion_emperor_imperial_embargo" towards our country
+********* event_target:lubeck_trade_power:
+********** Gets the country event:
+*********** ID is hansa_incident.4
+*********** Base mean time to happen of 1 days
+******** after:
+********* clear_global_event_target = lubeck_trade_power
+******* Gets the country event:
+******** ID is hansa_incident.3
+******** title = hansa_incident.3.t
+******** picture = GOOD_WITH_MONARCH_eventPicture
+******** desc = hansa_incident.3.d
+******** is_triggered_only = yes
+******** Option: hansa_incident.3.a:
+********* AI chance:
+********** Base chance of 50
+********** Multiplies value by 0:
+*********** is_in_trade_league = yes
+********** Multiplies value by 0:
+*********** 0 "Lübeck:
+************ The strongest trade power is our country
+********** Multiplies value by 0:
+*********** 0 "Lübeck:
+************ trade_range_false = our country
+********* If:
+********** Limited to:
+*********** Has the DLC Mare Nostrum
+********** 0 "Lübeck:
+*********** join_trade_league = our country
+********* else_if:
+********** Limited to:
+*********** Has the DLC Wealth of Nations
+********** 0 "Lübeck:
+*********** transfer_trade_power = our country
+********* Holy Roman Emperor:
+********** Changes Imperial influence by 5
+******** Option: hansa_incident.3.b:
+********* AI chance:
+********** Base chance of 30
+********* Holy Roman Emperor:
+********** Changes Imperial influence by -5
+******* Gets the country event:
+******** ID is hansa_incident.4
+******** title = hansa_incident.4.t
+******** picture = HRE_eventPicture
+******** desc = hansa_incident.4.d
+******** is_triggered_only = yes
+******** Option: hansa_incident.4.a:

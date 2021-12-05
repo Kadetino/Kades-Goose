@@ -1,0 +1,129 @@
+** Trigger:
+*** 0 "Greece does not exist
+*** 0 "Byzantium does not exist
+*** Does not have the global flag greek_cores
+*** Primary culture is not 0 "Greek
+*** Primary culture is not 0 "Pontic
+*** Administrative technology is at least 20
+*** Any owned province:
+**** Culture is 0 "Greek
+**** Any of the following:
+***** area = morea_area
+***** area = northern_greece_area
+***** area = aegean_archipelago_area
+***** Province is 0 "Macedonia
+***** Province is 0 "Kastoria
+***** Province is 4702
+***** Province is 4705
+***** Province is 4779
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Ok.:
+*** Trigger:
+**** Does not have the country flag greek_information
+*** Sets the global flag greek_cores
+*** morea_area:
+**** Limited to:
+***** Has no core on 0 "Greece
+**** Gives 0 "Greece core on the province
+*** northern_greece_area:
+**** Limited to:
+***** Has no core on 0 "Greece
+**** Gives 0 "Greece core on the province
+*** aegean_archipelago_area:
+**** Limited to:
+***** Has no core on 0 "Greece
+**** Gives 0 "Greece core on the province
+*** Every province in the world:
+**** Limited to:
+***** Any of the following:
+****** Province is 0 "Macedonia
+****** Province is 0 "Kastoria
+****** Province is 4702
+****** Province is 4705
+****** Province is 4779
+***** Has no core on 0 "Greece
+**** Gives 0 "Greece core on the province
+*** 0 "Kastoria:
+**** If:
+***** Limited to:
+****** Culture is not 0 "Greek
+***** Changes culture to 0 "Greek
+*** If:
+**** Limited to:
+***** 0 "Kastoria:
+****** The owner of the province:
+******* Primary culture is not 0 "Greek
+******* Primary culture is not 0 "Pontic
+**** 0 "Kastoria:
+***** add_unrest = 4
+*** Every province in the world:
+**** Limited to:
+***** Has core on 0 "Byzantium
+**** Removes core on 0 "Byzantium
+*** Hidden effect:
+**** Every known country:
+***** Limited to:
+****** Any owned province:
+******* Any of the following:
+******** area = northern_greece_area
+******** area = morea_area
+******** area = aegean_archipelago_area
+******** Any of the following:
+********* Province is 0 "Macedonia
+********* Province is 0 "Kastoria
+********* Province is 4702
+********* Province is 4705
+********* Province is 4779
+***** Sets the country flag greek_information
+***** Gets the country event:
+****** ID is flavor_gre.1
+** Option: 0 "Ok.:
+*** Trigger:
+**** Has the country flag greek_information
+**** Primary culture is not 0 "Greek
+**** Primary culture is not 0 "Pontic
+*** Tooltip:
+**** morea_area:
+***** Gives 0 "Greece core on the province
+**** northern_greece_area:
+***** Gives 0 "Greece core on the province
+**** aegean_archipelago_area:
+***** Gives 0 "Greece core on the province
+**** Every province in the world:
+***** Limited to:
+****** Any of the following:
+******* Province is 0 "Macedonia
+******* Province is 0 "Kastoria
+******* Province is 4702
+******* Province is 4705
+******* Province is 4779
+***** Gives 0 "Greece core on the province
+*** If:
+**** Limited to:
+***** Owns 0 "Kastoria
+**** Tooltip:
+***** 0 "Kastoria:
+****** add_unrest = 4
+** Option: 0 "Ok.:
+*** Trigger:
+**** Has the country flag greek_information
+**** Any of the following:
+***** Primary culture is 0 "Greek
+***** Primary culture is 0 "Pontic
+*** Tooltip:
+**** morea_area:
+***** Gives 0 "Greece core on the province
+**** northern_greece_area:
+***** Gives 0 "Greece core on the province
+**** aegean_archipelago_area:
+***** Gives 0 "Greece core on the province
+**** Every province in the world:
+***** Limited to:
+****** Any of the following:
+******* Province is 0 "Macedonia
+******* Province is 0 "Kastoria
+******* Province is 4702
+******* Province is 4705
+******* Province is 4779
+***** Gives 0 "Greece core on the province

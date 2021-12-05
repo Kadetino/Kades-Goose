@@ -1,0 +1,710 @@
+******** Trigger:
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** Has the country flag pap_swiss_guard_mission_flag
+********* else:
+********** Has the DLC Common Sense
+********** Country is 0 "The Papal State
+********** 0 "Switzerland exists
+********** Has an opinion of at least 25 with 0 "Switzerland
+********** Has an opinion of at least 25 of 0 "Switzerland
+********** Any of the following:
+*********** Does not have the country modifier "pap_swiss_guard_timer"
+*********** Does not have the country modifier "pap_swiss_guard"
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag enable_swiss_guard
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: papacy_events.1.a:
+********* Adds the modifier "pap_papal_swiss_guard" for 20 years:
+******* Gets the country event:
+******** ID is papacy_events.5
+******** title = papacy_events.5.t
+******** desc = papacy_events.5.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** goto = 118
+******** Trigger:
+********* Has the DLC Common Sense
+********* Our country:
+********** Province is 0 "Roma
+********** The province is the capital of the country
+********** Not controlled by 0 "The Papal State
+********* Country is 0 "The Papal State
+********* Does not have the country modifier "pap_passetto_di_borgo_timer"
+********* Ruler is not leading an army
+******** Immediate effects:
+********* Hidden effect:
+********** Adds the modifier "pap_passetto_di_borgo_timer" for 5 years:
+*********** No effects
+******** Option: papacy_events.5.a:
+********* Changes prestige by -5
+********* add_devotion = -10
+******** Option: papacy_events.5.b:
+********* add_devotion = 10
+********* One of the following will happen:
+********** 10 relative chance:
+*********** Kills the ruler of the country
+********** 90 relative chance:
+******* Gets the country event:
+******** ID is papacy_events.6
+******** title = papacy_events.6.t
+******** desc = papacy_events.6.d
+******** picture = RELIGION_eventPicture
+******** goto = cardinal_nephew_province
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Common Sense
+********* Country is 0 "The Papal State
+********* total_number_of_cardinals_false = 49
+********* Any known country:
+********** Capital:
+*********** Region is italy_region
+********** Has an opinion of at least 25 with our country
+********** Has an opinion of at least 25 of our country
+********** Follows the 0 "Catholic religion
+********** Has less than 7 cardinals
+********** Any owned province:
+*********** has_cardinal_false = no
+********** Does not have the country flag pap_cardinal_nephew_flag
+******** Immediate effects:
+********* Hidden effect:
+********** Random known country:
+*********** Limited to:
+************ Capital:
+************* Region is italy_region
+************ Has an opinion of at least 25 with our country
+************ Has an opinion of at least 25 of our country
+************ Follows the 0 "Catholic religion
+************ Has less than 7 cardinals
+************ Any owned province:
+************* has_cardinal_false = no
+*********** save_event_target_as = cardinal_nephew_country
+*********** Random owned province:
+************ Limited to:
+************* has_cardinal_false = no
+************* development = 10
+************ save_event_target_as = cardinal_nephew_province
+******** Option: papacy_events.6.a:
+********* Changes prestige by 5
+********* add_devotion = 5
+******** Option: papacy_events.6.b:
+********* add_devotion = -5
+********* add_corruption = 0.25
+********* event_target:cardinal_nephew_country:
+********** Sets the country flag pap_cardinal_nephew_flag
+********* event_target:cardinal_nephew_province:
+********** Gets the province event:
+*********** ID is papacy_events.7
+*********** Tooltip:
+******* Gets the province event:
+******** ID is papacy_events.7
+******** title = papacy_events.7.t
+******** desc = papacy_events.7.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** goto = our country
+******** Option: papacy_events.7.a:
+********* add_cardinal = yes
+********* The owner of the province:
+********** Changes Papal Influence by 20
+********** Changes prestige by -10
+********** Every known country:
+*********** Limited to:
+************ Has at least 1 cardinals
+*********** Adds the opinion modifier "opinion_popes_pet" towards our country
+********** 0 "The Papal State:
+*********** Adds the opinion modifier "opinion_cardinal_nephew" towards our country
+*********** Adds the opinion modifier "opinion_cardinal_nephew" from our country
+*********** Gets the country event:
+************ ID is papacy_events.8
+************ Tooltip:
+******** Option: papacy_events.7.b:
+********* The owner of the province:
+********** Changes prestige by 5
+********** 0 "The Papal State:
+*********** Gets the country event:
+************ ID is papacy_events.9
+************ Tooltip:
+******* Gets the country event:
+******** ID is papacy_events.8
+******** title = papacy_events.8.t
+******** desc = papacy_events.8.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: papacy_events.8.a:
+********* Tooltip:
+********** Adds the opinion modifier "opinion_cardinal_nephew" towards our country
+********** Adds the opinion modifier "opinion_cardinal_nephew" from our country
+******* Gets the country event:
+******** ID is papacy_events.9
+******** title = papacy_events.9.t
+******** desc = papacy_events.9.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: papacy_events.9.a:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is papacy_events.10
+******** title = papacy_events.10.t
+******** desc = papacy_events.10.d
+******** picture = RELIGION_eventPicture
+******** goto = 118
+******** Trigger:
+********* Has the DLC Common Sense
+********* Country is 0 "The Papal State
+********* 2 war exhaustion
+********* 0 "Roma:
+********** The province is owned by 0 "The Papal State
+********** is_looted = yes
+********** devastation = 10
+********** Controlled by 0 "The Papal State
+********* Does not have the country modifier "pap_rome_loot_timer"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Adds the modifier "pap_rome_loot_timer" for 5 years:
+*********** No effects
+********* goto = 118
+******** Option: papacy_events.10.a:
+********* Modifies treasury by -0.05 years worth of income
+********* 0 "Roma:
+********** Adds the modifier "roman_garisson" until the end of the campaign:
+*********** +25% garrison growth
+*********** +25% local defensiveness
+********* goto = 118
+******** Option: papacy_events.10.b:
+********* Modifies treasury by -0.05 years worth of income
+********* Changes war exhaustion by -1
+********* 0 "Roma:
+********** add_devastation = -10
+******* Gets the country event:
+******** ID is papacy_events.11
+******** title = papacy_events.11.t
+******** desc = papacy_events.11.d
+******** picture = RELIGION_eventPicture
+******** fire_only_once = yes
+******** goto = 118
+******** Trigger:
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** Has the country flag vatican_library_mission_flag
+********* else:
+********** Has the DLC Common Sense
+********** Country is 0 "The Papal State
+********** Owns 0 "Roma
+********** has_institution = renaissance
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* goto = 118
+******** Option: papacy_events.11.a:
+********* Changes administrative power stored by 5
+********* 0 "Roma:
+********** add_province_triggered_modifier = adm_vatican_library
+********* goto = 118
+******** Option: papacy_events.11.b:
+********* Changes diplomatic power stored by 5
+********* 0 "Roma:
+********** add_province_triggered_modifier = dip_vatican_library
+********* goto = 118
+******** Option: papacy_events.11.c:
+********* Changes military power stored by 5
+********* 0 "Roma:
+********** add_province_triggered_modifier = mil_vatican_library
+******* Gets the country event:
+******** ID is papacy_events.12
+******** title = papacy_events.12.t
+******** desc = papacy_events.12.d
+******** picture = RELIGION_eventPicture
+******** fire_only_once = yes
+******** goto = 118
+******** Trigger:
+********* Has the DLC Common Sense
+********* Country is 0 "The Papal State
+********* Owns 0 "Roma
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* goto = 118
+******** Option: papacy_events.12.a:
+********* Modifies treasury by -0.25 years worth of income
+********* add_devotion = 5
+********* 0 "Roma:
+********** add_province_triggered_modifier = pap_sistine_chapel
+********* Sets the country flag pap_sistine_chapel_flag
+******* Gets the country event:
+******** ID is papacy_events.13
+******** title = papacy_events.13.t
+******** desc = papacy_events.13.d
+******** picture = RELIGION_eventPicture
+******** goto = 118
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Common Sense
+********* Country is 0 "The Papal State
+********* Has had the country flag "pap_sistine_chapel_flag" for at least 1825 days
+********* Owns 0 "Roma
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag sistine_chapel_decorated
+********* goto = 118
+******** Option: papacy_events.13.a:
+********* Trigger:
+********** Year is less than 1510
+********* Modifies treasury by -0.25 years worth of income
+********* 0 "Roma:
+********** add_province_triggered_modifier = pap_sistinechapel_botticelli
+********* goto = 118
+******** Option: papacy_events.13.b:
+********* Trigger:
+********** Year is at least 1449
+********** Year is less than 1494
+********* Modifies treasury by -0.25 years worth of income
+********* 0 "Roma:
+********** add_province_triggered_modifier = pap_sistinechapel_ghirlandaio
+********* goto = 118
+******** Option: papacy_events.13.c:
+********* Trigger:
+********** Year is at least 1446
+********** Year is less than 1523
+********* Modifies treasury by -0.25 years worth of income
+********* 0 "Roma:
+********** add_province_triggered_modifier = pap_sistinechapel_perugino
+********* goto = 118
+******** Option: papacy_events.13.e:
+********* Trigger:
+********** Year is at least 1475
+********** Year is less than 1564
+********* Modifies treasury by -0.25 years worth of income
+********* 0 "Roma:
+********** add_province_triggered_modifier = pap_sistinechapel_michelangelo
+********* goto = 118
+******** Option: papacy_events.13.f:
+********* Modifies treasury by -0.25 years worth of income
+********* 0 "Roma:
+********** add_province_triggered_modifier = pap_sistinechapel_decorated
+******* Gets the country event:
+******** ID is papacy_events.14
+******** title = papacy_events.14.t
+******** desc = papacy_events.14.d
+******** picture = RELIGION_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Common Sense
+********* Country is 0 "The Papal State
+********* Does not have the country modifier "pap_indulgences"
+********* Reform desire is at least 50%
+********* The 0 "Protestant religion is not enabled
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.5:
+********** Has the country modifier "pap_simony"
+********* Multiplies value by 0.5:
+********** Has the country modifier "pap_veneration_relics"
+******** Option: papacy_events.14.a:
+********* AI chance:
+********** Base chance of 10
+********* Changes stability by -1
+********* Adds -5% reform desire
+********* add_devotion = 10
+********* Sets the global flag pap_disables_indulgences_flag
+******** Option: papacy_events.14.b:
+********* AI chance:
+********** Base chance of 90
+********* add_devotion = -10
+********* Adds the modifier "pap_indulgences" for the rest of the campaign:
+********** global_tax_income = 5
+******* Gets the country event:
+******** ID is papacy_events.15
+******** title = papacy_events.15.t
+******** desc = papacy_events.15.d
+******** picture = RELIGION_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Common Sense
+********* Country is 0 "The Papal State
+********* Does not have the country modifier "pap_simony"
+********* Reform desire is at least 50%
+********* The 0 "Protestant religion is not enabled
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.5:
+********** Has the country modifier "pap_indulgences"
+********* Multiplies value by 0.5:
+********** Has the country modifier "pap_veneration_relics"
+******** Option: papacy_events.15.a:
+********* AI chance:
+********** Base chance of 1
+********* Changes stability by -1
+********* Adds -5% reform desire
+********* add_devotion = 10
+********* Sets the global flag pap_disables_simony_flag
+******** Option: papacy_events.15.b:
+********* AI chance:
+********** Base chance of 90
+********* add_devotion = -10
+********* Adds the modifier "pap_simony" for the rest of the campaign:
+********** global_tax_income = 5
+******* Gets the country event:
+******** ID is papacy_events.16
+******** title = papacy_events.16.t
+******** desc = papacy_events.16.d
+******** picture = RELIGION_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Common Sense
+********* Country is 0 "The Papal State
+********* Does not have the country modifier "pap_veneration_relics"
+********* Reform desire is at least 25%
+********* The 0 "Protestant religion is not enabled
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+********* Multiplies value by 0.5:
+********** Has the country modifier "pap_simony"
+********* Multiplies value by 0.5:
+********** Has the country modifier "pap_indulgences"
+******** Option: papacy_events.16.a:
+********* AI chance:
+********** Base chance of 10
+********* Changes stability by -1
+********* Adds -5% reform desire
+********* add_devotion = 10
+********* Sets the global flag pap_disables_veneration_relics_flag
+******** Option: papacy_events.16.b:
+********* AI chance:
+********** Base chance of 90
+********* add_devotion = -10
+********* Adds the modifier "pap_veneration_relics" for the rest of the campaign:
+********** global_tax_income = 5
+******* Gets the country event:
+******** ID is papacy_events.17
+******** title = papacy_events.17.t
+******** desc = papacy_events.17.d
+******** picture = RELIGION_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC Common Sense
+********* Country is 0 "The Papal State
+********* Year is at least 1600
+********* Has the global flag ven_galileo_galilei_flag
+******** Mean time to happen
+********* Base mean time to happen of 5 months
+******** Option: papacy_events.17.a:
+********* add_stability_or_adm_power = yes
+********* Adds the modifier "0 "Increased Innovative" for 10 years:
+********** -5% technology cost
+********** -1% global missionary strength
+******** Option: papacy_events.17.b:
+********* Changes administrative power stored by 50
+********* Changes diplomatic power stored by 50
+********* Changes military power stored by 50
+********* Adds the modifier "0 "Increased Narrow-minded" for 10 years:
+********** +5% technology cost
+********** +1% global missionary strength
+******* Gets the country event:
+******** ID is papacy_events.22
+******** title = papacy_events.22.t
+******** desc = papacy_events.22.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* Year is less than 1550
+********* Any of the following:
+********** All of the following:
+*********** Country is 0 "The Papal State
+*********** Any known country:
+************ Follows the 0 "Catholic religion
+************ Any of the following:
+************* Any owned province:
+************** Has the province modifier "local_witch_hunts"
+************* Has the country modifier "nationwide_witch_hunts"
+********** All of the following:
+*********** Follows the 0 "Catholic religion
+*********** Any of the following:
+************ Any owned province:
+************* Has the province modifier "local_witch_hunts"
+************ Has the country modifier "nationwide_witch_hunts"
+*********** Does not have the country flag pap_condemn_witchtrials_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: papacy_events.22.a:
+********* Trigger:
+********** Country is 0 "The Papal State
+********* Random known country:
+********** Limited to:
+*********** Follows the 0 "Catholic religion
+*********** Any of the following:
+************ Any owned province:
+************* Has the province modifier "local_witch_hunts"
+************ Has the country modifier "nationwide_witch_hunts"
+********** Sets the country flag pap_condemn_witchtrials_flag
+********** Gets the country event:
+*********** ID is papacy_events.23
+******** Option: papacy_events.22.b:
+********* Trigger:
+********** Country is 0 "The Papal State
+********* add_stability_or_adm_power = yes
+******** Option: papacy_events.22.c:
+********* Trigger:
+********** Country is not 0 "The Papal State
+********* 0 "The Papal State:
+********** Gets the country event:
+*********** ID is papacy_events.26
+******** Option: papacy_events.22.e:
+********* Trigger:
+********** Country is not 0 "The Papal State
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is papacy_events.23
+******** title = papacy_events.23.t
+******** desc = papacy_events.23.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: papacy_events.23.a:
+********* Changes Papal Influence by 5
+********* If:
+********** Limited to:
+*********** Any owned province:
+************ Has the province modifier "local_witch_hunts"
+********** Every owned province:
+*********** Limited to:
+************ Has the province modifier "local_witch_hunts"
+*********** Removes the country modifier "local_witch_hunts"
+********* If:
+********** Limited to:
+*********** Has the country modifier "nationwide_witch_hunts"
+********** Removes the country modifier "nationwide_witch_hunts"
+********* 0 "The Papal State:
+********** Adds the opinion modifier "opinion_condemn_witchtrials_good" towards our country
+********** Sets the global flag pap_condemn_witchtrials_good_flag
+********** Gets the country event:
+*********** ID is papacy_events.24
+******** Option: papacy_events.23.b:
+********* 0 "The Papal State:
+********** Adds the opinion modifier "opinion_allows_witchtrials_bad" towards our country
+********** Sets the global flag pap_allows_witchtrials_bad_flag
+********** Gets the country event:
+*********** ID is papacy_events.25
+*********** Tooltip:
+******* Gets the country event:
+******** ID is papacy_events.24
+******** title = papacy_events.24.t
+******** desc = papacy_events.24.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Any of the following:
+********** Has the global flag pap_condemn_witchtrials_good_flag
+********** Has the global flag pap_condemn_witchtrials_bad_flag
+******** Option: papacy_events.24.a:
+********* Trigger:
+********** Has the global flag pap_condemn_witchtrials_good_flag
+********* Tooltip:
+********** Adds the opinion modifier "opinion_condemn_witchtrials_good" towards our country
+********* Removes the global flag pap_condemn_witchtrials_good_flag
+******** Option: papacy_events.24.b:
+********* Trigger:
+********** Has the global flag pap_condemn_witchtrials_bad_flag
+********* Tooltip:
+********** Adds the opinion modifier "opinion_condemn_witchtrials_bad" towards our country
+********* Removes the global flag pap_condemn_witchtrials_bad_flag
+******* Gets the country event:
+******** ID is papacy_events.25
+******** title = papacy_events.25.t
+******** desc = papacy_events.25.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: papacy_events.25.a:
+********* Trigger:
+********** Has the global flag pap_allows_witchtrials_bad_flag
+********* Tooltip:
+********** Adds the opinion modifier "opinion_allows_witchtrials_bad" towards our country
+********* Removes the global flag pap_allows_witchtrials_bad_flag
+******** Option: papacy_events.25.b:
+********* Trigger:
+********** Has the global flag pap_allows_witchtrials_good_flag
+********* Tooltip:
+********** Adds the opinion modifier "opinion_allows_witchtrials_good" towards our country
+********* Removes the global flag pap_allows_witchtrials_good_flag
+******* Gets the country event:
+******** ID is papacy_events.26
+******** title = papacy_events.26.t
+******** desc = papacy_events.26.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: papacy_events.26.a:
+********* AI chance:
+********** Base chance of 90
+********* add_devotion = 10
+********* Our country:
+********** Gets the country event:
+*********** ID is papacy_events.27
+*********** Tooltip:
+******** Option: papacy_events.26.b:
+********* AI chance:
+********** Base chance of 10
+********* Adds -5% reform desire
+********* Our country:
+********** Gets the country event:
+*********** ID is papacy_events.28
+*********** Tooltip:
+******* Gets the country event:
+******** ID is papacy_events.27
+******** title = papacy_events.27.t
+******** desc = papacy_events.27.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: papacy_events.27.a:
+********* Changes Papal Influence by 5
+********* If:
+********** Limited to:
+*********** Any owned province:
+************ Has the province modifier "local_witch_hunts"
+********** Every owned province:
+*********** Limited to:
+************ Has the province modifier "local_witch_hunts"
+*********** Removes the country modifier "local_witch_hunts"
+********* If:
+********** Limited to:
+*********** Has the country modifier "nationwide_witch_hunts"
+********** Removes the country modifier "nationwide_witch_hunts"
+********* 0 "The Papal State:
+********** Adds the opinion modifier "opinion_condemn_witchtrials_good" towards our country
+********** Sets the global flag pap_condemn_witchtrials_good_flag
+********** Gets the country event:
+*********** ID is papacy_events.24
+*********** Tooltip:
+******** Option: papacy_events.27.b:
+********* 0 "The Papal State:
+********** Adds the opinion modifier "opinion_allows_witchtrials_bad" towards our country
+********** Sets the global flag pap_allows_witchtrials_bad_flag
+********** Gets the country event:
+*********** ID is papacy_events.25
+*********** Tooltip:
+******* Gets the country event:
+******** ID is papacy_events.28
+******** title = papacy_events.28.t
+******** desc = papacy_events.28.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: papacy_events.28.a:
+********* 0 "The Papal State:
+********** Adds the opinion modifier "opinion_allows_witchtrials_good" towards our country
+********** Sets the global flag pap_allows_witchtrials_good_flag
+********** Gets the country event:
+*********** ID is papacy_events.25
+*********** Tooltip:
+******** Option: papacy_events.28.b:
+********* Changes Papal Influence by 5
+********* 0 "The Papal State:
+********** Adds the opinion modifier "opinion_condemn_witchtrials_bad" towards our country
+********** Sets the global flag pap_condemn_witchtrials_bad_flag
+********** Gets the country event:
+*********** ID is papacy_events.24
+******* Gets the country event:
+******** ID is papacy_events.29
+******** title = papacy_events.29.t
+******** desc = papacy_events.29.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* Has the DLC Common Sense
+********* Country is 0 "The Papal State
+********* has_ruler_flag_false = bad_bad_pope
+********* Any known country:
+********** Country is not 0 "The Papal State
+********** is_papal_controller = yes
+********** Any rival country:
+*********** Country is not 0 "The Papal State
+*********** is_previous_papal_controller = yes
+******** Immediate effects:
+********* Hidden effect:
+********** set_ruler_flag = bad_bad_pope
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: papacy_events.29.a:
+********* add_devotion = -10
+********* Random known country:
+********** Limited to:
+*********** Country is not 0 "The Papal State
+*********** is_papal_controller = yes
+*********** Any rival country:
+************ Country is not 0 "The Papal State
+************ is_previous_papal_controller = yes
+********** Sets the country flag pap_erased_rival_pope_flag
+********** Gets the country event:
+*********** ID is papacy_events.30
+*********** Tooltip:
+********** Adds the opinion modifier "opinion_erased_rival_pope" towards our country
+********** Random rival country:
+*********** Limited to:
+************ Country is not 0 "The Papal State
+************ is_previous_papal_controller = yes
+*********** Sets the country flag pap_erased_pope_flag
+*********** Gets the country event:
+************ ID is papacy_events.31
+************ Tooltip:
+*********** Adds the opinion modifier "opinion_erased_pope" towards our country
+******** Option: papacy_events.29.b:
+********* add_devotion = 10
+********* Random known country:
+********** Limited to:
+*********** Country is not 0 "The Papal State
+*********** is_papal_controller = yes
+*********** Any rival country:
+************ Country is not 0 "The Papal State
+************ is_previous_papal_controller = yes
+********** Sets the country flag pap_not_erased_rival_pope_flag
+********** Gets the country event:
+*********** ID is papacy_events.30
+*********** Tooltip:
+********** Adds the opinion modifier "opinion_not_erased_rival_pope" towards our country
+********** Random rival country:
+*********** Limited to:
+************ Country is not 0 "The Papal State
+************ is_previous_papal_controller = yes
+*********** Sets the country flag pap_not_erased_pope_flag
+*********** Gets the country event:
+************ ID is papacy_events.31
+************ Tooltip:
+*********** Adds the opinion modifier "opinion_not_erased_pope" towards our country
+******* Gets the country event:
+******** ID is papacy_events.30
+******** title = papacy_events.30.t
+******** desc = papacy_events.30.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: papacy_events.30.a:
+********* Trigger:
+********** Has the country flag pap_erased_rival_pope_flag
+********* Removes the country flag pap_erased_rival_pope_flag
+********* Tooltip:
+********** Adds the opinion modifier "opinion_erased_rival_pope" towards our country
+******** Option: papacy_events.30.b:
+********* Trigger:
+********** Has the country flag pap_not_erased_rival_pope_flag
+********* Removes the country flag pap_not_erased_rival_pope_flag
+********* Tooltip:
+********** Adds the opinion modifier "opinion_not_erased_rival_pope" towards our country
+******* Gets the country event:
+******** ID is papacy_events.31
+******** title = papacy_events.31.t
+******** desc = papacy_events.31.d
+******** picture = RELIGION_eventPicture
+******** is_triggered_only = yes
+******** Option: papacy_events.31.a:
+********* Trigger:
+********** Has the country flag pap_erased_pope_flag
+********* Removes the country flag pap_erased_pope_flag
+********* Tooltip:
+********** Adds the opinion modifier "opinion_erased_pope" towards our country
+******** Option: papacy_events.31.b:
+********* Trigger:
+********** Has the country flag pap_not_erased_pope_flag
+********* Removes the country flag pap_not_erased_pope_flag
+********* Tooltip:
+********** Adds the opinion modifier "opinion_not_erased_pope" towards our country

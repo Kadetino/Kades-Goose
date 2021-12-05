@@ -1,0 +1,1228 @@
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1444
+*** Year is less than 1481
+*** Capital is 0 "Constantinople
+*** Any of the following:
+**** 0 "Venice:
+***** Any active trade node:
+****** Province is 0 "Sea of Marmara
+****** has_merchant = PREV
+**** 0 "Genoa:
+***** Any active trade node:
+****** Province is 0 "Sea of Marmara
+****** has_merchant = PREV
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Break the Agreements:
+*** AI chance:
+**** Base chance of 50
+*** Adds the ruler modifier "0 "Mehmed's Economic Reforms" until the ruler's death:
+**** +25% domestic trade power
+*** If:
+**** Limited to:
+***** 0 "Venice:
+****** Any active trade node:
+******* Province is 0 "Sea of Marmara
+******* has_merchant = PREV
+**** 0 "Venice:
+***** Adds the opinion modifier "0 "Broken Trade Agreement" towards our country
+*** If:
+**** Limited to:
+***** 0 "Genoa:
+****** Any active trade node:
+******* Province is 0 "Sea of Marmara
+******* has_merchant = PREV
+**** 0 "Genoa:
+***** Adds the opinion modifier "0 "Broken Trade Agreement" towards our country
+** Option: 0 "Honor the Agreements:
+*** AI chance:
+**** Base chance of 50
+*** If:
+**** Limited to:
+***** 0 "Venice:
+****** Any active trade node:
+******* Province is 0 "Sea of Marmara
+******* has_merchant = PREV
+**** 0 "Venice:
+***** Adds the opinion modifier "0 "Honored Trade Agreement" towards our country
+*** If:
+**** Limited to:
+***** 0 "Genoa:
+****** Any active trade node:
+******* Province is 0 "Sea of Marmara
+******* has_merchant = PREV
+**** 0 "Genoa:
+***** Adds the opinion modifier "0 "Honored Trade Agreement" towards our country
+* Gets the country event:
+** ID is flavor_tur.3354
+** title = 0 "Military Reforms
+** desc = 0 "The reigns of Mehmed I and Murad II saw the Ottoman Empire reunified after the crushing defeat it had suffered at the hands of Tamerlane. The military was expanded and reformed to match any potential threat and ensure further expansion. It was also during this period that the Ottomans started to realize the vital importance of a strong navy.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1450
+*** Year is less than 1550
+*** Ruler's military skill is at least 3
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Great Army Reform:
+*** AI chance:
+**** Base chance of 50
+*** add_army_professionalism = 0.02
+*** Adds the modifier "0 "Army Reform" for 20 years:
+**** +10% infantry power
+** Option: 0 "Reform Army and Navy:
+*** AI chance:
+**** Base chance of 25
+*** add_army_professionalism = 0.02
+*** Adds the modifier "0 "Army and Navy Reform" for 20 years:
+**** +5% infantry power
+**** +10% galley combat ability
+** Option: 0 "Great Naval Reform:
+*** AI chance:
+**** Base chance of 25
+*** add_army_professionalism = 0.02
+*** Adds the modifier "0 "Navy Reform" for 20 years:
+**** +20% galley combat ability
+* Gets the country event:
+** ID is flavor_tur.3357
+** title = 0 "Enderun Academy
+** desc = 1 "In order to train administrators for his expanding empire, Mehmed II established an educational institution in the inner courtyard (Enderun) of the newly constructed Topkapi Palace. Students were chosen from among the most promising devshirme recruits (conscripted Christian youths mostly from the Balkans), and were trained in the Islamic faith, the sciences, and the military arts. They were expected to develop competency in the three languages of Turkish, Arabic, and Persian. This prepared them to serve in the Sultan's household, from which they could hope to graduate as government administrators with the rank of bey or pasha. The staffing of government posts with devshirme recruits trained in the palace school and loyal to the sultan formed the backbone of the Ottoman system of patrimonial rule throughout the fifteenth and sixteenth centuries.
+** picture = UNIVERSITY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Has the idea 0 "Timar System
+*** Has the country modifier "0 "Devshirme System"
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Found the Enderun:
+*** Modifies treasury by -0.10 years worth of income
+*** add_army_professionalism = 0.02
+*** Adds the modifier "0 "Enderun Academy" for 10 years:
+**** +2.5% discipline
+** Option: 1 "Expand the Timar system instead:
+*** add_army_professionalism = 0.02
+*** Adds the modifier "0 "Expanded Timariot System" for 10 years:
+**** +10% cavalry power
+* Gets the country event:
+** ID is flavor_tur.3358
+** title = 1 "Land Reforms of Mehmed II
+** desc = 1 ""Mehmed II was a centralizing monarch, who sought to expand his personal power within the Ottoman Empire at all costs. Near the end of his reign he sought to reduce the power of the ulema by rerouting revenues from the foundations (waqf) which supported them to the timar system instead, further strengthening the Ottoman army. This move, illegal under Islamic Law, caused widespread resentment and was quickly reversed by his son Bayezid upon Mehmed's death in 1481.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1450
+*** Year is less than 1500
+*** Is in the 0 "Muslim religion group
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 1 "Expand the Timar System.:
+*** Changes piety by -25%
+*** add_estate_nobles_loyalty_effect = yes
+*** reduce_estate_church_loyalty_effect = yes
+** Option: 1 "Leave the Ulema alone.:
+*** Changes piety by 25%
+*** reduce_estate_nobles_loyalty_effect = yes
+*** add_estate_church_loyalty_effect = yes
+* Gets the country event:
+** ID is flavor_tur.3359
+** title = 0 "The Veneto-Turkish Conflict
+** desc = 0 "Since the capture of Constantinople by the Turks on May 29th, 1453, Venice had seen its commercial positions in the Black Sea deteriorate. Numerous wars had been fought between 1456 and 1490, pitching the Republic against the Ottomans, with the consequence of Venice losing more pieces of her commercial empire (inherited from the 4th Crusade in 1204) in the Aegean Sea and in Greece (Athens in 1460, Negroponte in 1470). A war erupted again in 1499, Venice losing fortresses in Morea such as Modon, Coron and Navarrin.
+** picture = BATTLE_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Refuse even to discuss compensation:
+*** AI chance:
+**** Base chance of 90
+*** 0 "Venice:
+**** Adds claim to 0 "Alexandria
+**** Adds the opinion modifier "0 "Trade Conflict" towards our country
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_ven.2
+****** Base mean time to happen of 10 days
+** Option: 0 "Give Alexandria as compensation:
+*** AI chance:
+**** Base chance of 10
+**** Multiplies value by 0:
+***** Army is at least as large as 0 "Venice's
+***** Navy is at least as large as 0 "Venice's
+*** 0 "Alexandria:
+**** Cedes province to 0 "Venice
+*** 0 "Venice:
+**** Adds the opinion modifier "0 "Ceded Alexandria" towards our country
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_ven.3
+****** Base mean time to happen of 10 days
+* Gets the country event:
+** ID is flavor_tur.3360
+** title = 0 "Turko-Persian Conflicts: Shiite rebels
+** desc = 1 "Ever since the young Ismail, head of the Safavid order, threw off the yoke of the Aq Qoyunlu to proclaim himself Shah of Iran in 1501, the Qizilbash heresy had grown stronger in Anatolia. Near the end of the reign of Bayezid II, the Qizilbash (Shiite-leaning Turkmen) rose up in revolt against the centralization efforts of the Ottomans' Sunni regime. Supported by Shah Ismail, and taking advantage of the succession struggle between Bayezid's sons, the rebels threatened to change the course of Ottoman history...
+** picture = ANGRY_MOB_eventPicture
+** is_triggered_only = yes
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Follows the 0 "Shia religion
+***** Sets the province flag shiite_revolt
+** Option: 0 "Crush the Shiite rebellion:
+*** AI chance:
+**** Base chance of 90
+*** Random owned province:
+**** Limited to:
+***** Has the province flag shiite_revolt
+**** Spawns revolt of size 3 of 0 "Religious rebels
+**** Removes the province flag shiite_revolt
+*** 0 "Persia:
+**** Adds the opinion modifier "0 "Crushed Shiite Revolt" towards our country
+** Option: 0 "Give in to their demands:
+*** AI chance:
+**** Base chance of 10
+**** Multiplies value by 0:
+***** Stability is lower than 0
+*** Random owned province:
+**** Limited to:
+***** Has the province flag shiite_revolt
+**** add_local_autonomy = 100
+**** Removes the province flag shiite_revolt
+* Gets the country event:
+** ID is flavor_tur.3362
+** title = 0 "Murad III's campaigns against Persia
+** desc = 0 "Murad III, a Sultan ruled by women, fought the Persians in an exhausting war (1578-90) that severely strained the Empire and forced heavy taxes upon the citizens. Though the war was not for nothing - Persia had to cede Azerbaijan, Tiflis and Hamadan to the Ottomans - the resources might have been better spent elsewhere.
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1550
+*** Any neighbor country:
+**** Country is 0 "Persia
+**** Any owned province:
+***** Has no core on 0 "Ottomans
+***** The province is not claimed by 0 "Ottomans
+***** Any bordering province:
+****** The province is owned by 0 "Ottomans
+*** 0 "Persia:
+**** is_free_or_tributary_trigger = yes
+*** Is not allied with 0 "Persia
+*** Not at war with 0 "Persia
+** Mean time to happen
+*** Base mean time to happen of 250 months
+** Option: 0 "Fan the Flames of War:
+*** AI chance:
+**** Base chance of 75
+**** Multiplies value by 0:
+***** Army is smaller than as 0 "Persia's
+*** 0 "Persia:
+**** Random owned province:
+***** Limited to:
+****** Has no core on 0 "Ottomans
+****** The province is not claimed by 0 "Ottomans
+****** Any bordering province:
+******* The province is owned by 0 "Ottomans
+***** Adds claim to 0 "Ottomans
+**** Adds the opinion modifier "0 "Border Aggression" towards our country
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_per.3562
+****** Base mean time to happen of 10 days
+** Option: 0 "Seek reconciliation:
+*** 0 "Persia:
+**** Adds the opinion modifier "0 "Successful Diplomacy" towards our country
+* Gets the country event:
+** ID is flavor_tur.3363
+** title = 0 "Persians take advantage of Ottoman instability
+** desc = 0 "The Spahi revolts in Eastern Anatolia encouraged the Persian Shah to seek revenge for the humiliating losses incurred by Murad III. War broke out yet again in 1603.
+** picture = ANGRY_MOB_eventPicture
+** is_triggered_only = yes
+** Immediate effects:
+*** Random owned province:
+**** Limited to:
+***** Any bordering province:
+****** The province is owned by 0 "Persia
+**** Sets the province flag spahi_revolt
+** Option: 0 "Crush the rebels and prepare for war!:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag spahi_revolt
+**** Spawns revolt of size 3 of 0 "Religious rebels
+**** Removes the province flag spahi_revolt
+* Gets the country event:
+** ID is flavor_tur.3366
+** title = 0 "The Expansion of the Royal Bureaucracy
+** desc = 0 "Süleyman I was probably the greatest of the Ottoman Sultans. Called Kanuni (Lawgiver), he was an unsurpassed administrator who realized that the power of the provincial Beys had to be curbed by a strong central government. Thus he struggled to promote a powerful royal bureaucracy which was not popular in all camps...
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Is not at war
+*** Year is at least 1520
+*** Year is less than 1566
+** Mean time to happen
+*** Base mean time to happen of 25 months
+** Option: 0 "Expand the Royal Bureaucracy:
+*** AI chance:
+**** Base chance of 25
+**** Multiplies value by 0:
+***** Stability is lower than 0
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes stability by -2
+*** Adds the modifier "0 "Expanded Royal Bureaucracy" for 40 years:
+**** -10% technology cost
+**** -10% idea cost
+**** +10% global tax modifier
+**** +10% stability cost modifier
+** Option: 0 "Limited reforms:
+*** AI chance:
+**** Base chance of 50
+**** Multiplies value by 4:
+***** Has less than 100 administrative power
+*** Changes administrative power stored by 50
+** Option: 0 "Reduce the Royal Bureaucracy:
+*** AI chance:
+**** Base chance of 25
+**** Multiplies value by 0:
+***** Stability is at least 3
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_tur.3367
+** title = 0 "The Great Naval Reform
+** desc = 0 "Selim I, called the Grim, was an ascetic man with a sharp mind. Seeing the threat of the great Christian navies, especially the Venetian one, he realized that the Ottoman Empire had to greatly expand its navy. In emulation of the Arsenale in Venice, he thus ordered the construction of the 'Imperial Halic Shipyard' in Constantinople. The great shipyard stood complete in 1517.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1500
+*** Year is less than 1520
+*** Is not at war
+*** Any owned province:
+**** Is coastal
+** Mean time to happen
+*** Base mean time to happen of 25 months
+** Option: 0 "Build the Imperial Halic Shipyard:
+*** AI chance:
+**** Base chance of 60
+**** Multiplies value by 0:
+***** Has less than 0.5 years worth of income
+*** Modifies treasury by -1.0 years worth of income
+*** Adds the modifier "0 "Imperial Halic Shipyard" for the rest of the campaign:
+**** -5% ship cost
+** Option: 0 "Build a lesser shipyard:
+*** AI chance:
+**** Base chance of 20
+**** Multiplies value by 4:
+***** Has less than 100 diplomatic power
+*** Changes diplomatic power stored by 50
+** Option: 0 "Reform the army instead:
+*** AI chance:
+**** Base chance of 20
+**** Multiplies value by 4:
+***** Has less than 100 military power
+*** Changes military power stored by 50
+* Gets the country event:
+** ID is flavor_tur.3368
+** title = 0 "Cem Sultan's Rebellion
+** desc = 0 "Cem Sultan, the governor of Karaman and Konya rebelled against his older brother Sultan Bayezid II upon the death of their father. However, Bayezid had broader support in court and Cem was ultimately defeated. He fled to Rhodes, where he remained a captive of the Knights of St. John until his death in 1494.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1450
+*** Year is less than 1500
+*** Is not at war
+*** Legitimacy is less than 50
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Crush Cem's rebellion:
+*** AI chance:
+**** Base chance of 75
+*** Random owned province:
+**** Limited to:
+***** Has core on our country
+***** The province is not the capital of the country
+**** Spawns revolt of size our country of 0 "Pretender rebels
+** Option: 0 "Seek reconciliation:
+*** AI chance:
+**** Base chance of 25
+**** Multiplies value by 0:
+***** Stability is lower than 0
+*** Changes stability by -1
+*** Modifies treasury by -0.25 years worth of income
+* Gets the country event:
+** ID is flavor_tur.3370
+** title = 0 "The Celali Uprising
+** desc = 0 "Yet again the Shiites of Eastern Anatolia rose up in rebellion, this time led by a charismatic man named Celal. For centuries, subsequent uprisings in Asia Minor, whether of religious nature or not, were to be called Celali.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1500
+*** Year is less than 1550
+*** Is not at war
+*** Any owned province:
+**** The province is not the capital of the country
+**** Follows the 0 "Shia religion
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Follows the 0 "Shia religion
+***** Sets the province flag celali_uprising
+** Option: 0 "Crush Celali and the Shiites:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag celali_uprising
+**** Spawns revolt of size 2 of 0 "Religious rebels
+**** Removes the province flag celali_uprising
+** Option: 0 "Heed their demands:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag celali_uprising
+**** add_local_autonomy = 100
+**** Removes the province flag celali_uprising
+* Gets the country event:
+** ID is flavor_tur.3371
+** title = 1 "Protector of the Pilgrimage
+** desc = 1 "Following the spectacularly successful Mamluk campaign, Sultan Selim I accepted the homage of the Sharif of Mecca and adopted the title "Servant of the Two Holy Places" (Khadim al-Haramayn), pledging to protect the security of the pilgrims traveling to Mecca and Medina each year for the hajj rituals required by the Muslim faith. Defense of the pilgrimage routes henceforth became one of the most significant sources of legitimacy and prestige for the Ottoman dynasty, as it was a role of immeasurable importance for all Muslims which no other dynasty could claim to fulfill.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Is not at war
+*** Owns 0 "Cairo
+*** Owns 0 "Alexandria
+*** Owns 0 "Damascus
+*** Owns 0 "Jerusalem
+*** Is in the 0 "Muslim religion group
+*** Any owned province:
+**** Province is 0 "Cairo
+** Mean time to happen
+*** Base mean time to happen of 36 months
+** Option: 1 "Assume the title of Khadim al-Haramayn.:
+*** Changes administrative power stored by 400
+*** Changes prestige by 25
+*** Adds 25 legitimacy
+*** Changes piety by 25%
+* Gets the country event:
+** ID is flavor_tur.3373
+** title = 0 "Mamluk Uprising
+** desc = 1 "The treacherous governor of the newly conquered Mamluk Syria, Janbirdi al-Ghazali, rose up in rebellion against the Ottomans hoping to re-establish the Mamluk state under his own leadership.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** 0 "Mamluks does not exist
+*** Any owned province:
+**** Has core on 0 "Mamluks
+**** area = syria_area
+**** Can spawn the 0 "Separatists rebel type
+** Mean time to happen
+*** Base mean time to happen of 240 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Has core on 0 "Mamluks
+****** area = syria_area
+****** Can spawn the 0 "Separatists rebel type
+***** Sets the province flag mameluk_uprising_3
+**** Random owned province:
+***** Limited to:
+****** Has core on 0 "Mamluks
+****** area = syria_area
+****** Can spawn the 0 "Separatists rebel type
+****** Does not have the province flag mameluk_uprising_3
+***** Sets the province flag mameluk_uprising_2
+** Option: 0 "Crush them!:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag mameluk_uprising_3
+**** Spawns revolt of size 2 of 0 "Separatists rebels
+**** Removes the province flag mameluk_uprising_3
+*** Random owned province:
+**** Limited to:
+***** Has the province flag mameluk_uprising_2
+**** Spawns revolt of size 1 of 0 "Separatists rebels
+**** Removes the province flag mameluk_uprising_2
+* Gets the country event:
+** ID is flavor_tur.3374
+** title = 0 "Mimar Sinan's Great Constructions
+** desc = 0 "Mimar Sinan planned and oversaw the construction of countless mosques, aqueducts, bathhouses, bridges, palaces, caravanserais and schools during his half-a-century long career. His masterpieces were the Selimiye and Suleymaniye Mosques in Adrianople and Constantinople respectively.
+** picture = UNIVERSITY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1519
+*** Year is less than 1560
+*** Owns 0 "Constantinople
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Appoint him royal architect:
+*** AI chance:
+**** Base chance of 90
+*** Adds the ruler modifier "0 "Mimar Sinan" until the ruler's death:
+**** -10% build cost
+**** development_cost = -0.1
+** Option: 0 "Enlist his services for a short time:
+*** AI chance:
+**** Base chance of 10
+**** Multiplies value by 10:
+***** Has less than 50 administrative power
+**** Multiplies value by 0:
+***** Has at least 50 administrative power
+*** Changes administrative power stored by 50
+* Gets the country event:
+** ID is flavor_tur.3375
+** title = 0 "The Great Legal Reform
+** desc = 1 "Sultan Süleyman I became known as Kanuni - Lawgiver - to his own people thanks to his extensive legal reforms and just rule. While further codifying the dynastic laws, 'kanun', he worked in conjunction with the famous Sheikh al-Islam Ebussuud Efendi to bring them in line with Muslim Shari'ah laws, creating a more harmonious legal system for the empire.
+** picture = REFORM_eventPicture
+** Trigger:
+*** Does not have the country flag TUR_had_event_3375
+*** Year is at least 1500
+*** Year is less than 1600
+*** Country is 0 "Ottomans
+*** Owns 0 "Constantinople
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Immediate effects:
+*** Sets the country flag TUR_had_event_3375
+** Option: 0 "Codify the Ottoman Laws.:
+*** AI chance:
+**** Base chance of 75
+*** Changes piety by 25%
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** add_innovativeness_small_effect = yes
+*** Every owned province:
+**** add_local_autonomy = -10
+** Option: 0 "Leave it be:
+*** AI chance:
+**** Base chance of 25
+*** Changes piety by -10%
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_tur.3377
+** title = 0 "Kösem Sultan
+** desc = 0 "Ahmed I married a beautiful Greek slave girl who would prove a very mixed blessing to the people of the Ottoman Empire. Kösem Sultan ruled her husband as she would rule no less than four of his successors - with an iron grip. Kösem was the real power behind the throne, and although she was a very able ruler, she was not a very popular one.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1600
+*** Year is less than 1650
+*** Ruler is male
+*** Is not in regency
+*** Does not have the global flag wih_kosem_tur_flag
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Wed Kösem:
+*** AI chance:
+**** Base chance of 90
+*** Adds the ruler modifier "0 "Kösem Sultan" until the ruler's death:
+**** -10% technology cost
+**** -10% idea cost
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+***** has_consort_false = no
+***** has_government_attribute = queen
+**** define_consort:
+***** Named "Kösem Sultan"
+***** Culture is 0 "Greek
+***** Ruler's administrative skill is at least 5
+***** Ruler's diplomatic skill is at least 4
+***** Ruler's military skill is at least 5
+***** Ruler is female
+**** Hidden effect:
+***** add_queen_personality_ancestor:
+****** Named "incorruptible"
+** Option: 0 "Choose another wife:
+*** AI chance:
+**** Base chance of 10
+**** Multiplies value by 10:
+***** Has less than 50 administrative power
+**** Multiplies value by 0:
+***** Has at least 50 administrative power
+*** Changes administrative power stored by 50
+* Gets the country event:
+** ID is flavor_tur.3384
+** title = 0 "The Murder of Kösem
+** desc = 0 "Old Kösem Sultana, still meddling in high politics, probably attempted to have her grandson Mehmed IV killed, but was herself strangled by men in the entourage of her daughter-in-law, Turhan Sultan. Although the old conniving witch was hardly missed by most, she still had loyal supporters among the Janissaries, who were outraged by her murder.
+** picture = DEATH_OF_HEIR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Has the ruler modifier 0 "Kösem Sultan
+*** Does not have the global flag wih_kosem_tur_flag
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Kösem is murdered:
+*** Removes the country modifier "0 "Kösem Sultan"
+* Gets the country event:
+** ID is flavor_tur.3385
+** title = 0 "The Age of the Köprülüs
+** desc = 0 "Born around 1575 in the village of Radnick in Albania, Mehmed Köprülü was a young Christian boy taken by the devshirme system (abducted and raised in the Muslim faith, just like most Janissary troops). He started his career as a cook, then moved to the Treasury. A pasha in central Anatolia, he gained a name for himself as an excellent and honest administrator - a rare creature in the Ottoman Empire. On 15th September 1656 he was appointed Grand Vizier by the mother of the young sultan Mehmed IV. A fierce fighter of corruption, he enacted many successful reforms, balanced the budget and led the war against Venice. After his death in 1661, his son Fazil Ahmed 'the Virtuous' succeeded him and governed till 1676. Other Grand Viziers such as Kara Mustafa (1676-1683), Mustafa Pasha (1689-1691) and Hussein Pasha (1697-1702) were his direct heirs.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1600
+*** Year is less than 1650
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Support the Köprülü Family:
+*** AI chance:
+**** Base chance of 90
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Adds the ruler modifier "0 "Köprülü Family" until the ruler's death:
+**** +10% global tax modifier
+**** yearly_corruption = -0.2
+** Option: 0 "Rely on more popular advisors:
+*** AI chance:
+**** Base chance of 10
+**** Multiplies value by 10:
+***** Has less than 100 diplomatic power
+**** Multiplies value by 0:
+***** Has at least 200 diplomatic power
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes diplomatic power stored by 50
+* Gets the country event:
+** ID is flavor_tur.3386
+** title = 0 "The Reforms of Kemankes
+** desc = 0 "During the reign of Ibrahim I, 'Kemankes' Kara Mustafa Pasha, was the Sadrazam, or prime minister. He tried to curtail overspending and revitalized the navy, but was finally executed by the Sultan in 1644. The Sultan had instead started to heed Jinji Hoja - a minor religious official with a reputation for occult powers who was brought into the palace to remedy the sultan's lack of heirs.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1600
+*** Year is less than 1650
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Empower Kemankes:
+*** AI chance:
+**** Base chance of 90
+*** Adds the ruler modifier "0 "Reforms of Kemankes" until the ruler's death:
+**** +5% global tax modifier
+**** -10% ship cost
+** Option: 0 "Ignore his advice:
+*** AI chance:
+**** Base chance of 10
+*** Adds 10 legitimacy
+* Gets the country event:
+** ID is flavor_tur.3387
+** title = 0 "The Treaty of Kasr-i Sirin
+** desc = 0 "The Treaty of Kasr-i Sirin, signed between the Ottoman Empire and Persia in 1635, established borders that have changed little to this day. Hostilities between the two great empires decreased remarkably following the treaty as their relations steadily improved until 1722 when war broke out again. However, the treaty was dusted off and renewed in 1747.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1600
+*** 0 "Persia exists
+*** 0 "Persia:
+**** is_free_or_tributary_trigger = yes
+*** Is not allied with 0 "Persia
+*** Not at war with 0 "Persia
+*** Has an opinion of less than 0 with 0 "Persia
+*** 0 "Persia:
+**** Has an opinion of less than 0 with our country
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Suggest full reconciliation:
+*** AI chance:
+**** Base chance of 25
+**** Multiplies value by 0.5:
+***** Army is at least as large as 0 "Persia's
+*** 0 "Persia:
+**** Sets the country flag 0 "Full Reconciliation
+**** Gets the country event:
+***** ID is flavor_tur.1
+***** Base mean time to happen of 10 tooltip days
+** Option: 0 "Suggest a moderate Treaty:
+*** AI chance:
+**** Base chance of 25
+*** 0 "Persia:
+**** Sets the country flag 0 "Moderate Treaty
+**** Gets the country event:
+***** ID is flavor_tur.1
+***** Base mean time to happen of 10 tooltip days
+** Option: 0 "There will be no Treaty:
+*** AI chance:
+**** Base chance of 50
+**** Multiplies value by 0:
+***** Army is smaller than as 0 "Persia's
+*** Changes prestige by 5
+* Gets the country event:
+** ID is flavor_tur.1
+** title = 0 "The Treaty of Kasr-i Sirin
+** desc = 0 "The Treaty of Kasr-i Sirin, signed between the Ottoman Empire and Persia in 1635, established borders that have changed little to this day. Hostilities between the two great empires decreased remarkably following the treaty as their relations steadily improved until 1722 when war broke out again. However, the treaty was dusted off and renewed in 1747.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Agree full reconciliation:
+*** Trigger:
+**** Has the country flag 0 "Full Reconciliation
+*** AI chance:
+**** Base chance of 25
+**** Multiplies value by 0:
+***** Army is at least as large as 0 "Ottomans's
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Full Reconciliation" towards our country
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_tur.2
+****** Base mean time to happen of 10 days
+** Option: 0 "Agree on a moderate Treaty:
+*** Trigger:
+**** Has the country flag 0 "Moderate Treaty
+*** AI chance:
+**** Base chance of 50
+**** Multiplies value by 0.5:
+***** Army is at least as large as 0 "Ottomans's
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Moderate Treaty" towards our country
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_tur.2
+****** Base mean time to happen of 10 days
+** Option: 0 "There will be no Treaty:
+*** AI chance:
+**** Base chance of 25
+**** Multiplies value by 4:
+***** Army is smaller than as 0 "Ottomans's
+*** Changes prestige by 5
+*** Hidden effect:
+**** Removes the country flag 0 "Full Reconciliation
+**** Removes the country flag 0 "Moderate Treaty
+**** 0 "Ottomans:
+***** Gets the country event:
+****** ID is flavor_tur.3
+****** Base mean time to happen of 10 days
+* Gets the country event:
+** ID is flavor_tur.2
+** title = 0 "Persian Response
+** desc = 0 "Our embassy sent to [From.GetName] has returned with good news! They agreed to the terms of the treaty. May peace reign between our nations.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Excellent:
+*** Trigger:
+**** 0 "Persia:
+***** Has the country flag 0 "Full Reconciliation
+*** 0 "Persia:
+**** Adds the opinion modifier "0 "Full Reconciliation" towards our country
+**** Hidden effect:
+***** Removes the country flag 0 "Full Reconciliation
+** Option: 0 "Excellent:
+*** Trigger:
+**** 0 "Persia:
+***** Has the country flag 0 "Moderate Treaty
+*** 0 "Persia:
+**** Adds the opinion modifier "0 "Moderate Treaty" towards our country
+**** Hidden effect:
+***** Removes the country flag 0 "Moderate Treaty
+* Gets the country event:
+** ID is flavor_tur.3
+** title = 0 "Persian Response
+** desc = 0 "Our embassy sent to [From.GetName] has returned. They did not agree to the terms of the treaty!
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "They will pay for this insult:
+* Gets the country event:
+** ID is flavor_tur.3391
+** title = 0 "The Tunisian Rebellion
+** desc = 0 "In the first decades of the 18th century the Beys and Deys (Janissary leaders) of Northern Africa were in a rebellious mood in the wake of the Peace of Carlowitz between the Ottoman Empire and the Holy League. In 1705, Hussein bin Ali Agha of Cretan origin staged a coup and founded the Husseinic dynasty which ruled Tunisia until 1957. Tunisia did not become truly autonomous at once, but it gained a large measure of independence.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1700
+*** 0 "Tunis does not exist
+*** Any owned province:
+**** Has core on 0 "Tunis
+**** Culture is tunisian
+**** Can spawn the 0 "Separatists rebel type
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Has core on 0 "Tunis
+****** Culture is tunisian
+****** Can spawn the 0 "Separatists rebel type
+***** Sets the province flag tunisian_uprising_3
+**** Random owned province:
+***** Limited to:
+****** Has core on 0 "Tunis
+****** Culture is tunisian
+****** Can spawn the 0 "Separatists rebel type
+****** Does not have the province flag tunisian_uprising_3
+***** Sets the province flag tunisian_uprising_2
+** Option: 0 "Crush them!:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag tunisian_uprising_3
+**** Spawns revolt of size 3 of 0 "Separatists rebels
+**** Removes the province flag tunisian_uprising_3
+*** Random owned province:
+**** Limited to:
+***** Has the province flag tunisian_uprising_2
+**** Spawns revolt of size 2 of 0 "Separatists rebels
+**** Sets the province flag tunisian_uprising_2
+* Gets the country event:
+** ID is flavor_tur.3392
+** title = 0 "The Tripolitanian Rebellion
+** desc = 0 "In 1711, Ahmad Karamanli, a Turkish cavalry officer and Janissary Dey, killed the Ottoman governor of Tripolitania and prevailed upon the Sultan to name him Bey. The post of governor remained hereditary in the Karamanli family until 1835. While the Karamanlis formally answered to Istanbul, Tripolitania was in effect an autonomous state.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1700
+*** 0 "Trier does not exist
+*** Any owned province:
+**** Has core on 0 "Trier
+**** Culture is tunisian
+**** Can spawn the 0 "Separatists rebel type
+** Mean time to happen
+*** Base mean time to happen of 1000 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Culture is tunisian
+****** Has core on 0 "Trier
+****** Can spawn the 0 "Separatists rebel type
+***** Sets the province flag tripolitanian_uprising_3
+**** Random owned province:
+***** Limited to:
+****** Culture is tunisian
+****** Has core on 0 "Trier
+****** Can spawn the 0 "Separatists rebel type
+****** Does not have the province flag tripolitanian_uprising_3
+***** Sets the province flag tripolitanian_uprising_2
+** Option: 0 "Crush them!:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag tripolitanian_uprising_3
+**** Spawns revolt of size 3 of 0 "Separatists rebels
+**** Removes the province flag tripolitanian_uprising_3
+*** Random owned province:
+**** Limited to:
+***** Has the province flag tripolitanian_uprising_2
+**** Spawns revolt of size 2 of 0 "Separatists rebels
+**** Removes the province flag tripolitanian_uprising_2
+* Gets the country event:
+** ID is flavor_tur.3394
+** title = 0 "Ali Bey's Rebellion in Egypt
+** desc = 0 "When war broke out between Russia and Turkey, Ali Bey declared Egypt's independence and proposed to fight on the Russian side, refusing to pay any more taxes to the Ottomans. Next, he invaded Syria, but he was betrayed by his rival Ismaïl Bey and killed in 1773.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1700
+*** At war with 0 "Russia
+*** egypt_region:
+**** The province is owned by 0 "Ottomans
+**** Culture is 0 "Egyptian
+**** Can spawn the 0 "Separatists rebel type
+** Mean time to happen
+*** Base mean time to happen of 24 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Region is egypt_region
+****** Culture is 0 "Egyptian
+****** Can spawn the 0 "Separatists rebel type
+***** Sets the province flag mameluk_uprising_3
+**** Random owned province:
+***** Limited to:
+****** Region is egypt_region
+****** Culture is 0 "Egyptian
+****** Can spawn the 0 "Separatists rebel type
+***** Sets the province flag mameluk_uprising_2
+** Option: 0 "Crush them!:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag mameluk_uprising_3
+**** Spawns revolt of size 3 of 0 "Separatists rebels
+**** Removes the province flag mameluk_uprising_3
+*** Random owned province:
+**** Limited to:
+***** Has the province flag mameluk_uprising_2
+**** Spawns revolt of size 2 of 0 "Separatists rebels
+**** Removes the province flag mameluk_uprising_2
+* Gets the country event:
+** ID is flavor_tur.3395
+** title = 0 "The Horrible Plague in Anatolia
+** desc = 0 "During the 18th and early 19th centuries, Anatolia was afflicted with intermittent outbreaks of cholera and the bubonic plague.
+** picture = PLAGUE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1700
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "There is nothing we can do:
+*** AI chance:
+**** Base chance of 25
+*** Every owned province:
+**** Limited to:
+***** Region is anatolia_region
+***** The province is not the capital of the country
+**** Adds the modifier "0 "Severe Plague" until the end of the campaign:
+***** -25% manpower modifier
+***** -25% provincial tax income
+***** trade_goods_size_modifier = -0.25
+***** local_unrest = -3
+***** local_autonomy = 0.05
+** Option: 0 "Try to contain it:
+*** AI chance:
+**** Base chance of 75
+*** Modifies treasury by -0.25 years worth of income
+*** Every owned province:
+**** Limited to:
+***** Region is anatolia_region
+***** The province is not the capital of the country
+**** Adds the modifier "0 "Contained Plague" until the end of the campaign:
+***** -10% manpower modifier
+***** -10% provincial tax income
+***** trade_goods_size_modifier = -0.1
+***** local_unrest = -1
+***** local_autonomy = 0.01
+* Gets the country event:
+** ID is flavor_tur.3750
+** title = 0 "Fate of the Patriarchate
+** desc = 1 "Your Excellency, with Constantinople in our hands, we must decide the fate of the Christian Patriarch. There are many Christians still in the city, and it might therefore be prudent to show some leniency. Furthermore, its survival might serve as a means of continuity between ourselves and the Roman Empire.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Capital is 0 "Constantinople
+*** Is in the 0 "Muslim religion group
+*** 0 "Byzantium does not exist
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 1 "Use the Patriarchate as proof for our claim of being the Second Rome.:
+*** AI chance:
+**** Base chance of 50
+*** Capital:
+**** add_base_manpower = 3
+*** Every known country:
+**** Limited to:
+***** Follows the 0 "Orthodox religion
+**** Adds the opinion modifier "0 "Allows the Patriarchate" towards our country
+** Option: 1 "Close down the Patriarchate and confiscate its properties.:
+*** AI chance:
+**** Base chance of 50
+**** Multiplies value by 0.5:
+***** Any neighbor country:
+****** Follows the 0 "Orthodox religion
+****** Army is at least as large as 0 "Ottomans's
+*** Modifies treasury by 0.5 years worth of income
+*** Capital:
+**** Changes base tax by 1
+*** Every known country:
+**** Limited to:
+***** Follows the 0 "Orthodox religion
+**** Adds the opinion modifier "0 "Closed Down the Patriarchate" towards our country
+* Gets the country event:
+** ID is flavor_tur.3897
+** title = 0 "The Algerian Rebellion
+** desc = 0 "In the first decades of the 18th century the Beys and Deys (Janissary leaders) of Northern Africa were in a rebellious mood in the wake of the Peace of Carlowitz between the Ottoman Empire and the Holy League. In 1710, it was the turn of the Bey of Algiers to begin to start down the road to independence.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1700
+*** Year is less than 1800
+*** Any owned province:
+**** Culture is algerian
+**** Can spawn the 0 "Separatists rebel type
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Culture is algerian
+****** Can spawn the 0 "Separatists rebel type
+***** Sets the province flag algerian_uprising_3
+**** Random owned province:
+***** Limited to:
+****** Culture is algerian
+****** Can spawn the 0 "Separatists rebel type
+****** Does not have the province flag algerian_uprising_3
+***** Sets the province flag algerian_uprising_2
+** Option: 0 "Crush them!:
+*** Random owned province:
+**** Limited to:
+***** Has the province flag algerian_uprising_3
+**** Spawns revolt of size 3 of 0 "Separatists rebels
+**** Removes the province flag algerian_uprising_3
+*** Random owned province:
+**** Limited to:
+***** Has the province flag algerian_uprising_2
+**** Spawns revolt of size 2 of 0 "Separatists rebels
+**** Removes the province flag algerian_uprising_2
+* Gets the country event:
+** ID is flavor_tur.5
+** title = 0 "The Decentralizing Effect of the Provincial System
+** desc = 0 "The provincial governors, or 'Beys', were powerful men, usually ambitious, and not always loyal. Although the Ottoman Empire did not have a noble class or a feudal system like most European nations, the Beys were a close equivalent with many of the same intrinsic problems. The Beys were reluctant to give up their powers and usually demanded even more concessions... even to the point of outright independence.\n\nThe Beys are now demanding more power.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ottomans
+*** Year is at least 1600
+*** Has the country modifier "0 "Provincial Government System"
+*** Any owned province:
+**** The province is not the capital of the country
+**** Culture is 0 "Turkish
+**** local_autonomy_false = 50
+**** development = 9
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Immediate effects:
+*** Every owned province:
+**** Limited to:
+***** The province is not the capital of the country
+***** Culture is 0 "Turkish
+***** local_autonomy_false = 50
+***** development = 9
+**** Sets the province flag bey_uproar
+** Option: 0 "Give in to their demands:
+*** Every owned province:
+**** Limited to:
+***** Has the province flag bey_uproar
+**** add_local_autonomy = 30
+**** Removes the province flag bey_uproar
+** Option: 0 "Limit the concessions:
+*** Every owned province:
+**** Limited to:
+***** Has the province flag bey_uproar
+**** add_local_autonomy = 10
+**** Removes the province flag bey_uproar
+*** Adds -20 legitimacy
+** Option: 0 "Rein them in:
+*** Changes stability by -2
+*** Every owned province:
+**** Limited to:
+***** Has the province flag bey_uproar
+**** add_unrest = 10
+**** Removes the province flag bey_uproar
+* Gets the country event:
+** ID is flavor_tur.100
+** title = 0 "The Janissaries
+** desc = 0 "The Ottoman army was traditionally mainly composed of cavalry. In the mid-14th century, Orhan I and later on his son, Murad I, introduced the Janissaries. Formed from prisoners of war and slaves, the Janissaries went on to become an elite standing infantry, regularly paid and highly disciplined.
+** picture = MILITARY_CAMP_eventPicture
+** fire_only_once = yes
+** major = yes
+** is_triggered_only = yes
+** Option: 0 "Continue building up the Janissaries:
+*** Adds the modifier "0 "The Janissaries" for the rest of the campaign:
+**** +10% manpower recovery speed
+**** +5% infantry power
+**** +2.5% discipline
+*** Sets the country flag janissary_timer
+* Gets the country event:
+** ID is flavor_tur.101
+** title = 1 "The Janissaries and the Bektashi Order
+** desc = 1 "With the rising importance of the Janissary Corps in our society we have also seen an increased influence for the Bektashi order of Sufis. The highly unorthodox, quasi-Shiite Bektashi order has maintained a close relationship with the Janissaries since the 15th century, contributing to their unique culture. So long as the Janissaries remain influential, we will have to provide a degree of tolerance even for the most heterodox of religious practitioners.
+** picture = MILITARY_CAMP_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** has_disaster_false = 1 "Janissary Coup
+*** Any of the following:
+**** Has the country modifier "0 "The Janissaries"
+**** All of the following:
+***** num_of_janissaries = 10
+***** janissary_percentage = 0.1
+** Mean time to happen
+*** Base mean time to happen of 500 months
+** Option: 1 "Ok.:
+*** Changes piety by -10%
+* Gets the country event:
+** ID is flavor_tur.102
+** title = 0 "Janissary Reward
+** desc = 1 "As the standing army and loyal servants of the Sultan, the Janissaries and other palace troops traditionally expected to be paid a salary bonus upon the accession of each new ruler. Breaking this tradition could cause riots and instability.
+** picture = MILITARY_CAMP_eventPicture
+** Trigger:
+*** has_reform = ottoman_government
+*** has_disaster_false = 1 "Janissary Coup
+*** If:
+**** Limited to:
+***** Does not have the DLC Cradle of Civilization
+**** Has the country modifier "0 "The Janissaries"
+**** else:
+***** num_of_janissaries = 3
+*** Is not in regency
+** is_triggered_only = yes
+** Option: 0 "Give a reward and higher wages:
+*** Modifies treasury by -0.5 years worth of income
+** Option: 0 "Refuse such blackmail:
+*** Adds the ruler modifier "0 "Janissaries Denied Reward" until the ruler's death:
+**** is_janissary_modifier = yes
+**** reinforce_cost_modifier = 0.25
+**** -5% discipline
+* Gets the country event:
+** ID is flavor_tur.111
+** title = 0 "Janissaries Demand Pay
+** desc = 0 "Due to the current state of inactivity in the army, the Janissaries have taken it upon themselves to demand that the State compensate them for the recent lack of booty, and expect to receive wealth directly from the treasury.
+** picture = LAND_MILITARY_eventPicture
+** Trigger:
+*** Any of the following:
+**** Has the country modifier "0 "The Janissaries"
+**** num_of_janissaries = 10
+*** has_disaster_false = 1 "Janissary Coup
+*** Does not have the country modifier "tur_janissaries_timer"
+*** Has at least 30 provinces where all of the following is true:
+**** Has core on our country
+*** Is not at war
+*** Less than 1 war exhaustion
+*** Ruler's administrative skill is less than 6
+*** Ruler's military skill is less than 6
+** Mean time to happen
+*** Base mean time to happen of 700 months
+** Immediate effects:
+*** Hidden effect:
+**** Adds the modifier "tur_janissaries_timer" for 50 years:
+***** No effects
+** Option: 0 "Pay them immediately:
+*** Modifies treasury by -0.5 years worth of income
+** Option: 0 "Pay them over time:
+*** Adds the ruler modifier "0 "Greedy Janissaries" until the ruler's death:
+**** is_janissary_modifier = yes #Without CoC this part is ignored and this becomes a normal global modifier.
+**** +10% land maintenance
+** Option: 0 "Refuse their demands:
+*** Changes stability by -1
+* Gets the country event:
+** ID is flavor_tur.105
+** title = 1 "Civilianization
+** desc = 1 "While Janissaries had become active in trades and landholding from an early date, the practice became more widespread due to rampant inflation in the Mediterranean economy. Unable to support themselves on their declining salaries, Janissaries increasingly turned to craft trades in order to make a living, reducing their military discipline.
+** picture = MILITARY_CAMP_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** If:
+**** Limited to:
+***** Has the DLC Cradle of Civilization
+**** num_of_janissaries = 10
+**** janissary_percentage = 0.1
+*** If:
+**** Limited to:
+***** Does not have the DLC Cradle of Civilization
+**** Has the country modifier "0 "The Janissaries"
+*** current_age_false = 0 "Age of Discovery
+*** Does not have the country flag had_janissary_civilianization
+*** Does not have the ruler modifier 0 "Enforced Discipline Among the Janissaries
+*** has_disaster_false = 1 "Janissary Coup
+** Mean time to happen
+*** Base mean time to happen of 500 months
+** Option: 1 "Everyone needs to make a living.:
+*** If:
+**** Limited to:
+***** Does not have the DLC Cradle of Civilization
+**** Adds the ruler modifier "0 "Janissary Landholders" until the ruler's death:
+***** is_janissary_modifier = yes
+***** -2.5% discipline
+*** else:
+**** Adds the ruler modifier "0 "Janissary Landholders" until the ruler's death:
+***** is_janissary_modifier = yes
+***** -2.5% discipline
+*** Adds 100% mercantilism
+*** add_estate_burghers_loyalty_effect = yes
+** Option: 1 "Let us increase drilling and salaries instead.:
+*** If:
+**** Limited to:
+***** Does not have the DLC Cradle of Civilization
+**** Adds the ruler modifier "0 "Janissaries Upset" until the ruler's death:
+***** +2 global unrest
+**** Sets the country flag had_janissary_civilianization
+*** else:
+**** Adds the ruler modifier "0 "Enforced Discipline Among the Janissaries" until the ruler's death:
+***** is_janissary_modifier = yes
+***** +10% land maintenance
+*** Adds -100% mercantilism
+*** reduce_estate_burghers_loyalty_effect = yes
+* Gets the country event:
+** ID is flavor_tur.106
+** title = 0 "Dissolution of the Janissary Corp
+** desc = 0 "Due to the great changes our society has been going through the old Janissary corp has been dissolved. The Janissaries have been absorbed by our regular armies and their special privileges are no more.
+** picture = MILITARY_CAMP_eventPicture
+** Trigger:
+*** Has the country modifier "0 "The Janissaries"
+*** has_disaster_false = 1 "Janissary Coup
+*** has_reform_false = ottoman_government
+** Mean time to happen
+*** Base mean time to happen of 10 months
+** Immediate effects:
+*** Removes the country modifier "0 "The Janissaries"
+** Option: 0 "Ok.:
+* Gets the country event:
+** ID is flavor_tur.107
+** title = 0 "Muslim-Born Men Enroll as Janissaries
+** desc = 0 "While the intention had originally been for the Janissaries to be raised only through the devshirme, the social status associated with being a Janissary together with a guaranteed state salary is very attractive for many of our subjects. As the Corps grows in size, we find ourselves unable to fill its ranks solely with devshirme recruits, and have consequently begun to allow Muslim-born men to buy their way into the Corps. As these outsiders have not spent their lives in our service, they are more difficult to train and discipline.
+** picture = MILITARY_CAMP_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** current_age_false = 0 "Age of Discovery
+*** has_disaster_false = 1 "Janissary Coup
+*** Any of the following:
+**** Has the country modifier "0 "The Janissaries"
+**** All of the following:
+***** num_of_janissaries = 10
+***** janissary_percentage = 0.1
+** Mean time to happen
+*** Base mean time to happen of 500 months
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** Does not have the country flag had_muslim_janissaries
+***** Sets the country flag had_muslim_janissaries
+** Option: 0 "We must enforce all rules to the letter.:
+*** Adds the modifier "0 "Strictly Enforced Discipline" for 10 years:
+**** is_janissary_modifier = yes
+**** +1.5% discipline
+** Option: 0 "No harm can come of this.:
+*** Adds the modifier "0 "Growing Recruitment of Muslim Janissaries" for 10 years:
+**** is_janissary_modifier = yes
+**** reinforce_cost_modifier = -0.5
+* Gets the country event:
+** ID is flavor_tur.108
+** title = 0 "The Lapse of the Devshirme
+** desc = 0 "By the middle of the 17th century, the Devshirme had run its course in Ottoman history. The ümera class, in addition to being overpopulated relative to state offices available, now got its manpower from new sources, particularly Abkhazian, Circassian, and Georgian slaves. The Janissaries, too, had long since begun to recruit from the empire's Muslim population, rendering the Devshirme obsolete. Although occasional levies would still take place into the early years of the 18th century, by the 1650s the practice had for all intents and purposes come to an end.
+** picture = MILITARY_CAMP_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** current_age_false = 0 "Age of Discovery
+*** current_age_false = 0 "Age of Reformation
+*** has_disaster_false = 1 "Janissary Coup
+*** Has the country modifier "0 "Devshirme System"
+*** Has at least 50 provinces
+*** Has the country flag had_muslim_janissaries
+*** Does not have the country flag lapse_of_devshirme
+** Mean time to happen
+*** Base mean time to happen of 500 months
+** Option: 0 "So be it.:
+*** Removes the country modifier "0 "Devshirme System"
+*** Sets the country flag lapse_of_devshirme

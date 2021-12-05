@@ -1,0 +1,104 @@
+******** is_triggered_only = yes
+******** Option: incidents_bur_join_empire.1.a:
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 1.5:
+*********** Has an opinion of at least 100 with 0 "Emperor
+********** Multiplies value by 1.25:
+*********** Does not consider 0 "Emperor a rival
+********** Multiplies value by 1.25:
+*********** Holy Roman Emperor:
+************ Does not consider our country a rival
+********* Holy Roman Emperor:
+********** set_imperial_incident = incident_burgundy_wants_to_join
+******** Option: incidents_bur_join_empire.1.b:
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 1.5:
+*********** Has an opinion of less than 0 with 0 "Emperor
+********** Multiplies value by 1.25:
+*********** Considers 0 "Emperor a rival
+********** Multiplies value by 1.25:
+*********** Holy Roman Emperor:
+************ Considers our country a rival
+********* Sets the country flag burgundy_refused_empire
+******* Gets the country event:
+******** ID is incidents_bur_join_empire.2
+******** title = incidents_bur_join_empire.2.t
+******** desc = incidents_bur_join_empire.2.desc
+******** picture = HRE_eventPicture
+******** is_triggered_only = yes
+******** Option: incidents_bur_join_empire.2.a:
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 2:
+*********** Has an opinion of at least 100 with 0 "Burgundy
+********** Multiplies value by 0.5:
+*********** Holy Roman Emperor:
+************ Considers 0 "Burgundy a rival
+********** Multiplies value by 0.5:
+*********** 0 "Burgundy:
+************ Considers 0 "Emperor a rival
+********** Multiplies value by 2:
+*********** Holy Roman Emperor:
+************ Does not consider 0 "Burgundy a rival
+********** Multiplies value by 2:
+*********** 0 "Burgundy:
+************ Does not consider 0 "Emperor a rival
+********* 0 "Burgundy:
+********** Adds the province to the Holy Roman Empire
+******** Option: incidents_bur_join_empire.2.c:
+********* AI chance:
+********** Base chance of 10
+********** Multiplies value by 1.5:
+*********** Has an opinion of less than 0 with 0 "Emperor
+********** Multiplies value by 2:
+*********** Considers 0 "Burgundy a rival
+********** Multiplies value by 2:
+*********** 0 "Burgundy:
+************ Considers 0 "Emperor a rival
+********** Multiplies value by 0:
+*********** Is allied with 0 "Burgundy
+********* Hidden effect:
+********** 0 "Burgundy:
+*********** Gets the country event:
+************ ID is incidents_bur_join_empire.4
+************ Base mean time to happen of 5 days
+********* Tooltip:
+********** 0 "Burgundy:
+*********** Every known country:
+************ Limited to:
+************* Is an elector in the Holy Roman Empire
+************* Isn't the Holy Roman Emperor
+************* Does not have the monarchy government type
+************ Gives the 0 "Subjugation casus belli against the country to 0 "Burgundy
+*********** Every known country:
+************ Limited to:
+************* Is an elector in the Holy Roman Empire
+************* Isn't the Holy Roman Emperor
+************* Has the monarchy government type
+************ Gives the 0 "Restoration of Union casus belli against the country to 0 "Burgundy
+******* Gets the country event:
+******** ID is incidents_bur_join_empire.4
+******** title = incidents_bur_join_empire.4.t
+******** desc = incidents_bur_join_empire.4.desc
+******** picture = BAD_WITH_MONARCH_eventPicture
+******** is_triggered_only = yes
+******** Option: incidents_bur_join_empire.4.a:
+********* AI chance:
+********** Base chance of 1
+********* Every known country:
+********** Limited to:
+*********** Is an elector in the Holy Roman Empire
+*********** Isn't the Holy Roman Emperor
+*********** Has the monarchy government type
+********** Gives the 0 "Restoration of Union casus belli against the country to 0 "Burgundy
+********* Every known country:
+********** Limited to:
+*********** Is an elector in the Holy Roman Empire
+*********** Isn't the Holy Roman Emperor
+*********** Does not have the monarchy government type
+********** Gives the 0 "Subjugation casus belli against the country to 0 "Burgundy
+********* Adds the opinion modifier "burgundy_refused_membership_opinion" towards 0 "Emperor
+********* Adds the opinion modifier "burgundy_refused_membership_opinion" from 0 "Emperor
+********* Sets the country flag burgundy_refused_empire

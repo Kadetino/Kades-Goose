@@ -1,0 +1,181 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* Follows the hussite religion
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** has_church_aspect = pacifism_aspect
+********* is_in_war:
+********** attacker_leader = our country
+********* Does not have the country modifier "conscripting_pacifists"
+******** Immediate effects:
+********* Hidden effect:
+********** Random country:
+*********** Limited to:
+************ is_in_war:
+************* attacker_leader = our country
+************* defender_leader = THIS
+********** save_event_target_as = pacifist_target
+******** Option: hussite.1.a:
+********* add_church_power = 10
+********* Changes war exhaustion by -1
+********* Changes national manpower by -1 years worth of men
+******** Option: hussite.1.b:
+********* add_church_power = -20
+********* Changes war exhaustion by 2
+********* Adds the modifier "conscripting_pacifists" for 5 years:
+********** +15% manpower recovery speed
+******* Gets the country event:
+******** ID is hussite.2
+******** title = hussite.2.t
+******** desc = hussite.2.d
+******** picture = ADULT_BAPTISME_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Follows the hussite religion
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** has_church_aspect = pacifism_aspect
+********* Is not at war
+********* Less than 1 war exhaustion
+********* had_recent_war_false = 5
+******** Immediate effects:
+********* Hidden effect:
+********** set_saved_name:
+*********** Named "pacifist_theologian"
+*********** scope = our country
+******** Option: hussite.2.a:
+********* add_stability_or_adm_power = yes
+********* add_church_power = 20
+******* Gets the country event:
+******** ID is hussite.3
+******** title = hussite.3.t
+******** desc = hussite.3.d
+******** picture = ADULT_BAPTISME_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Follows the hussite religion
+********* has_estate = estate_church
+******** Trigger:
+********* Follows the hussite religion
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** has_church_aspect = clerical_poverty_aspect
+********* has_estate = estate_church
+******** Option: hussite.3.a:
+********* add_church_power = -25
+********* change_estate_land_share:
+********** estate = estate_church
+********** share = -5.0
+******** Option: hussite.3.b:
+********* add_church_power = 15
+********* add_estate_loyalty:
+********** estate = estate_church
+********** loyalty = 10
+******* Gets the country event:
+******** ID is hussite.4
+******** title = hussite.4.t
+******** desc = hussite.4.d
+******** picture = ADULT_BAPTISME_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Follows the hussite religion
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** has_church_aspect = punishment_of_sins_aspect
+********* has_estate = estate_nobles
+********* has_estate = estate_church
+********* has_estate_influence_modifier:
+********** estate_false = estate_nobles
+********** modifier_false = EST_VAL_PUNISHMENT_FOR_SINS
+******** Immediate effects:
+********* Hidden effect:
+********** set_saved_name:
+*********** Named "sinful_noble"
+*********** scope = our country
+******** Option: hussite.4.a:
+********* add_church_power = 20
+********* add_estate_loyalty:
+********** estate = estate_nobles
+********** loyalty = -10
+********* add_estate_influence_modifier:
+********** estate = estate_nobles
+********** desc = EST_VAL_PUNISHMENT_FOR_SINS
+********** influence = -10
+********** Lasting 3650 days
+******** Option: hussite.4.b:
+********* add_church_power = -20
+********* add_estate_loyalty:
+********** estate = estate_nobles
+********** loyalty = 10
+********* add_estate_loyalty:
+********** estate = estate_church
+********** loyalty = -10
+******** after:
+********* clear_saved_name = sinful_noble
+******* Gets the country event:
+******** ID is hussite.5
+******** title = hussite.5.t
+******** desc = hussite.5.d
+******** picture = HUSSITE_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Follows the hussite religion
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** has_church_aspect = regular_defenestrations_aspect
+********* Does not have the country modifier "entertaining_defenestrations"
+******** Option: hussite.5.a:
+********* Adds the modifier "entertaining_defenestrations" for 10 years:
+********** -2 global unrest
+******* Gets the country event:
+******** ID is hussite.6
+******** title = hussite.6.t
+******** desc = hussite.6.d
+******** picture = ADULT_BAPTISME_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Follows the hussite religion
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** Any of the following:
+*********** has_church_aspect = taborite_resurgence_aspect
+*********** has_church_aspect = freedom_to_preach_aspect
+********* Does not have the country modifier "taborite_radicals"
+********* Does not have the country modifier "utraquist_moderates"
+******** Option: hussite.6.a:
+********* add_church_power = -15
+********* Adds the modifier "taborite_radicals" for 10 years:
+********** +1% global missionary strength
+******** Option: hussite.6.b:
+********* add_church_power = 15
+********* Adds the modifier "utraquist_moderates" for 10 years:
+********** -15% stability cost modifier
+******* Gets the country event:
+******** ID is hussite.7
+******** title = hussite.7.t
+******** desc = hussite.7.d
+******** picture = HUSSITE_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Follows the hussite religion
+********* If:
+********** Limited to:
+*********** Has the DLC Emperor
+********** has_church_aspect = orphan_hetmans_aspect
+********* Year is less than 1550
+********* Does not have the country modifier "war_wagons"
+********* Does not have the country modifier "less_war_wagons"
+******** Option: hussite.7.a:
+********* Adds the modifier "war_wagons" for 10 years:
+********** shock_damage_received = -0.05
+********** shock_damage = -0.05
+******** Option: hussite.7.b:
+********* Adds the modifier "less_war_wagons" for 10 years:
+********** shock_damage_received = 0.05
+********** shock_damage = 0.05

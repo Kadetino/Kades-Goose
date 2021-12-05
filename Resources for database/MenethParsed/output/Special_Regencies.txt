@@ -1,0 +1,351 @@
+********* Trigger:
+********** Has the DLC Mandate of Heaven
+********* picture = BAD_WITH_MONARCH_eventPicture
+******** picture:
+********* Trigger:
+********** Does not have the DLC Art of War
+********* picture = KING_SICK_IN_BED_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Country is 0 "Portugal
+********* Is not in regency
+********* Is not the lesser partner in a union
+********* Ruler's name is Maria I
+********* Year is at least 1792
+********* Year is less than 1816
+********* Has an heir
+********* Heir is at least 15 years old
+********* Does not have the country flag queen_maria_illness
+********* Has the monarchy government type
+******** Mean time to happen
+********* Base mean time to happen of 24 months
+********* Multiplies value by 0.5:
+********** Stability is lower than 1
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag queen_maria_illness
+******** Option: special_regency_events.1.a:
+********* Hidden effect:
+********** exile_ruler_as = por_exhiled_maria
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality = naive_personality
+******** Option: special_regency_events.1.b:
+********* add_estate_loyalty:
+********** estate = estate_nobles
+********** loyalty = -5
+********* add_estate_loyalty:
+********** estate = estate_burghers
+********** loyalty = -5
+******* Gets the country event:
+******** ID is special_regency_events.2
+******** title = special_regency_events.2.t
+******** desc = special_regency_events.2.d
+******** picture = GREAT_BUILDING_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Country is 0 "France
+********* Year is at least 1519
+********* Year is less than 1589
+********* Any of the following:
+********** Ruler's name is Catherine
+********** Has the global flag wih_catherine_demedici_flag
+********* Does not have the country flag catherine_demedici
+********* Has the monarchy government type
+******** Mean time to happen
+********* Base mean time to happen of 24 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag catherine_demedici
+******** Option: special_regency_events.2.a:
+********* If:
+********** Limited to:
+*********** Owns core province 0 "Touraine
+********** 0 "Touraine:
+*********** If:
+************ Limited to:
+************* fort_level_false = 2
+************ Constructs the 0 "Courthouse building
+*********** Adds the modifier "chateau_de_chenonceau" until the end of the campaign:
+************ +25% local defensiveness
+********* else:
+********** Capital:
+*********** If:
+************ Limited to:
+************* fort_level_false = 2
+************ Constructs the 0 "Courthouse building
+*********** Adds the modifier "chateau_de_chenonceau" until the end of the campaign:
+************ +25% local defensiveness
+********* Changes treasury by 50 ducats
+******* Gets the country event:
+******** ID is special_regency_events.3
+******** title = special_regency_events.3.t
+******** desc = special_regency_events.3.d
+******** picture = REVOLUTION_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Country is 0 "Sweden
+********* Is not in regency
+********* Year is at least 1460
+********* Year is less than 1503
+********* Does not have the country flag sten_sture_regency
+********* Ruler's name is not Sten Gustavsson
+********* Has the monarchy government type
+********* Any of the following:
+********** Ruler's name is Karl VIII
+********** Heir is less than 15 years old
+********** Has no heir
+********* Is not the lesser partner in a union
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag sten_sture_regency
+******** Option: special_regency_events.3.a:
+********* Hidden effect:
+********** exile_ruler_as = swe_karl_exiled
+********* If:
+********** Limited to:
+*********** Ruler's name is not Sten Gustavsson
+********** If:
+*********** Limited to:
+************ Has an heir
+************ Heir is less than 15 years old
+*********** Spawns a ruler:
+************ Named "Sten Gustavsson"
+************ Ruler's dynasty is Sture
+************ As a regent
+************ age = 30
+************ Legitimacy of 75
+************ Ruler's administrative skill is at least 1
+************ Ruler's diplomatic skill is at least 1
+************ Ruler's military skill is at least 1
+********** else:
+*********** Spawns a ruler:
+************ Named "Sten Gustavsson"
+************ Ruler's dynasty is Sture
+************ age = 30
+************ Legitimacy of 75
+************ Ruler's administrative skill is at least 1
+************ Ruler's diplomatic skill is at least 1
+************ Ruler's military skill is at least 1
+********** Hidden effect:
+*********** add_ruler_personality = scholar_personality
+********* else:
+********** Changes ruler's military skill by 1
+********** Hidden effect:
+*********** add_ruler_personality = scholar_personality
+********* If:
+********** Limited to:
+*********** 0 "Demak exists
+********** 0 "Demak:
+*********** Adds the opinion modifier "sten_sture_opinion" towards our country
+********* add_estate_loyalty:
+********** estate = estate_burghers
+********** loyalty = 5
+********* add_estate_loyalty:
+********** estate = estate_church
+********** loyalty = -5
+********* Capital:
+********** add_unrest = -2
+******** Option: special_regency_events.3.b:
+********* add_estate_loyalty:
+********** estate = estate_nobles
+********** loyalty = 5
+********* add_estate_loyalty:
+********** estate = estate_church
+********** loyalty = 10
+********* Random owned province:
+********** add_unrest = 3
+********* Random owned province:
+********** add_unrest = 3
+******* Gets the country event:
+******** ID is special_regency_events.4
+******** title = special_regency_events.4.t
+******** desc = special_regency_events.4.d
+******** picture:
+********* Trigger:
+********** Has the DLC El Dorado
+********* picture = wihgfx_FEMALE_RULER_eventPicture
+******** picture:
+********* Trigger:
+********** Does not have the DLC El Dorado
+********* picture = GOOD_WITH_MONARCH_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Year is at least 1440
+********* Year is less than 1459
+********* Any of the following:
+********** Country is 0 "Dai Viet
+********** Primary culture is 0 "Vietnamese
+********* Does not have the global flag nguyen_thi_anh
+********* Ruler's name is Nguyen Thi Anh
+********* Is in regency
+********* Stability is at least 1
+********* Is not at war
+******** Mean time to happen
+********* Base mean time to happen of 60 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag nguyen_thi_anh
+******** Option: special_regency_events.4.a:
+********* Trigger:
+********** Heir is at least 15 years old
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Diplomat type:
+********** discount = yes
+********** With a skill level of 2
+********** Ruler is female
+******** Option: special_regency_events.4.b:
+********* Spawns a ruler:
+********** Named "Nguyen Thi Anh"
+********** Culture is 0 "Vietnamese
+********** age = 22
+********** Legitimacy of 65
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's military skill is at least 3
+********** Ruler is female
+******** Option: special_regency_events.4.c:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is special_regency_events.5
+******** title = special_regency_events.5.t
+******** desc = special_regency_events.5.d
+******** picture:
+********* Trigger:
+********** Has the DLC Mare Nostrum
+********* picture = QUEEN_AND_MALE_HEIR_eventPicture
+******** picture:
+********* Trigger:
+********** Does not have the DLC Mare Nostrum
+********* picture = PRAYING_evenPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Year is at least 1440
+********* Year is less than 1459
+********* Any of the following:
+********** Country is 0 "Dai Viet
+********** Primary culture is 0 "Vietnamese
+********* Ruler's name is Nguyen Thi Anh
+********* Has the global flag nguyen_thi_anh
+********* Has an heir
+********* Does not have the global flag dai_heir_education
+******** Mean time to happen
+********* Base mean time to happen of 30 months
+******** Immediate effects:
+********* Sets the global flag dai_heir_education
+******** Option: special_regency_events.5.a:
+********* One of the following will happen:
+********** 33 relative chance:
+*********** change_heir_adm = 1
+********** 33 relative chance:
+*********** change_heir_dip = 1
+********** 33 relative chance:
+*********** change_heir_mil = 1
+********** 1 relative chance:
+********* Changes treasury by -10 ducats
+******* Gets the country event:
+******** ID is special_regency_events.6
+******** title = special_regency_events.6.t
+******** desc = special_regency_events.6.d
+******** picture:
+********* Trigger:
+********** Has the DLC Mare Nostrum
+********* picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
+******** picture:
+********* Trigger:
+********** Does not have the DLC Mare Nostrum
+********* picture = KING_SICK_IN_BED_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Any of the following:
+********** Country is 0 "Korea
+********** Primary culture is 0 "Korean
+********* Year is at least 1759
+********* Year is less than 1805
+********* Is not in regency
+********* Stability is lower than 1
+********* Ruler's name is not Jung Soon
+********* Does not have the country flag queen_jung_soon
+********* Any of the following:
+********** estate_loyalty:
+*********** estate_false = estate_nobles
+*********** loyalty_false = 65
+********** estate_loyalty:
+*********** estate_false = estate_church
+*********** loyalty_false = 50
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag queen_jung_soon
+******** Option: special_regency_events.6.a:
+********* Trigger:
+********** Has an heir
+********* Hidden effect:
+********** exile_ruler_as = yes
+********* Spawns a ruler:
+********** Named "Jung Soon"
+********** Culture is 0 "Korean
+********** As a regent
+********** Legitimacy of 65
+********** Changes ruler's administrative skill by 3
+********** Changes ruler's diplomatic skill by 3
+********** Changes ruler's military skill by 1
+********** Ruler is female
+******** Option: special_regency_events.6.b:
+********* Hidden effect:
+********** exile_ruler_as = yes
+********* Spawns a ruler:
+********** Named "Jung Soon"
+********** Culture is 0 "Korean
+********** Legitimacy of 65
+********** Changes ruler's administrative skill by 3
+********** Changes ruler's diplomatic skill by 3
+********** Changes ruler's military skill by 1
+********** Ruler is female
+********* Changes stability by -1
+******** Option: special_regency_events.6.c:
+********* Hidden effect:
+********** exile_ruler_as = yes
+********* Trigger:
+********** Heir is at least 15 years old
+******* Gets the country event:
+******** ID is special_regency_events.7
+******** title = special_regency_events.7.t
+******** desc = special_regency_events.7.d
+******** picture = RELIGIOUS_TURMOIL_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Is not in regency
+********* Year is at least 1759
+********* Year is less than 1805
+********* Has the country flag queen_jung_soon
+********* Any owned province:
+********** Is in the 0 "Christian religion group
+******** Mean time to happen
+********* Base mean time to happen of 30 months
+********* Multiplies value by 0.8:
+********** estate_loyalty:
+*********** estate = estate_nobles
+*********** loyalty = 65
+******** Option: special_regency_events.7.a:
+********* Every owned province:
+********** Limited to:
+*********** Is in the 0 "Christian religion group
+********** Changes religion to our country
+********** add_unrest = 2
+******** Option: special_regency_events.7.b:
+********* Every owned province:
+********** Limited to:
+*********** Is in the 0 "Christian religion group
+********** add_unrest = -1
+********* add_estate_loyalty:
+********** estate = estate_nobles
+********** loyalty = -10

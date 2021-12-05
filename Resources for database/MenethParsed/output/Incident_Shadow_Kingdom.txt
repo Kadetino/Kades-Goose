@@ -1,0 +1,271 @@
+******** Trigger:
+********* Is the Holy Roman Emperor
+********* Year is less than 1490
+********* normal_or_historical_nations = yes
+******** Mean time to happen
+********* Base mean time to happen of 6 months
+******** Option: 1 "A grave matter.:
+******* Gets the country event:
+******** ID is shadow_kingdom.2
+******** title = 0 "The Shadow Kingdom
+******** desc = shadow_kingdom.2.d
+******** picture = HRE_eventPicture
+******** fire_only_once = yes
+******** is_triggered_only = yes
+********* AI chance:
+********** Base chance of 10000
+******** Option: shadow_kingdom.2.a:
+********* Changes prestige by -10
+********* Changes Imperial influence by -20
+********* Sets the global flag italians_leave_hre
+********* Hidden effect:
+********** Every country:
+*********** Limited to:
+************ is_shadow_kingdom_eligible_trigger = yes
+************ Any of the following:
+************* Is not a vassal
+************* overlord:
+************** is_shadow_kingdom_eligible_trigger_false = no
+*********** Gets the country event:
+************ ID is shadow_kingdom.4
+********* Every province in the world:
+********** Limited to:
+*********** Is part of the Holy Roman Empire
+*********** Region is italy_region
+*********** The owner of the province:
+************ Is not part of the Holy Roman Empire
+********** Removes the province from the Holy Roman Empire
+********* AI chance:
+********** Base chance of 0
+******** Option: shadow_kingdom.2.b:
+********* Sets the global flag emperor_trying_to_avert_shadow_kingdom
+******* Gets the country event:
+******** ID is shadow_kingdom.3
+******** title = shadow_kingdom.3.t
+******** desc:
+********* Trigger:
+********** Any country:
+*********** will_leave_for_shadow_kingdom_trigger = yes
+*********** is_shadow_kingdom_eligible_trigger = yes
+*********** Any of the following:
+************ Is not a vassal
+************ All of the following:
+************* Is a vassal
+************* overlord:
+************** Is not part of the Holy Roman Empire
+************** Capital:
+*************** Region is not italy_region
+********* desc = shadow_kingdom.3.d
+******** desc:
+********* Trigger:
+*********** No country:
+************ will_leave_for_shadow_kingdom_trigger = yes
+************ is_shadow_kingdom_eligible_trigger = yes
+************ Any of the following:
+************* Is not a vassal
+************* All of the following:
+************** Is a vassal
+************** overlord:
+*************** Is not part of the Holy Roman Empire
+*************** Capital:
+**************** Region is not italy_region
+********* desc = shadow_kingdom.3.d2
+******** picture = HRE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Is the Holy Roman Emperor
+********* Has the global flag emperor_trying_to_avert_shadow_kingdom
+********* Any of the following:
+********** Has the country flag shadow_kingdom_early_success
+********** Year is at least 1490
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the global flag italians_leave_hre
+******** Option: shadow_kingdom.3.a:
+********* Trigger:
+********** Any country:
+*********** will_leave_for_shadow_kingdom_trigger = yes
+*********** is_shadow_kingdom_eligible_trigger = yes
+*********** Any of the following:
+************ Is not a vassal
+************ All of the following:
+************* Is a vassal
+************* overlord:
+************** Is not part of the Holy Roman Empire
+************** Capital:
+*************** Region is not italy_region
+********* Hidden effect:
+********** Every country:
+*********** Limited to:
+************ is_shadow_kingdom_eligible_trigger = yes
+************ Any of the following:
+************* Is not a vassal
+************* All of the following:
+************** Is a vassal
+************** overlord:
+*************** Is not part of the Holy Roman Empire
+*************** Capital:
+**************** Region is not italy_region
+*********** Gets the country event:
+************ ID is shadow_kingdom.4
+********* Every country:
+********** Limited to:
+*********** is_shadow_kingdom_eligible_trigger = yes
+*********** will_leave_for_shadow_kingdom_trigger = yes
+*********** Any of the following:
+************ Is not a vassal
+************ All of the following:
+************* Is a vassal
+************* overlord:
+************** Is not part of the Holy Roman Empire
+************** Capital:
+*************** Region is not italy_region
+********* Every country:
+********** Limited to:
+*********** is_shadow_kingdom_eligible_trigger = yes
+*********** will_leave_for_shadow_kingdom_trigger_false = no
+*********** Any of the following:
+************ Is not a vassal
+************ All of the following:
+************* Is a vassal
+************* overlord:
+************** Is not part of the Holy Roman Empire
+************** Capital:
+*************** Region is not italy_region
+********* Every province in the world:
+********** Limited to:
+*********** Is part of the Holy Roman Empire
+*********** Region is italy_region
+*********** The owner of the province:
+************ Is not part of the Holy Roman Empire
+********** Removes the province from the Holy Roman Empire
+********* Trigger:
+*********** No country:
+************ will_leave_for_shadow_kingdom_trigger = yes
+************ is_shadow_kingdom_eligible_trigger = yes
+************ Any of the following:
+************* Is not a vassal
+************* All of the following:
+************** Is a vassal
+************** overlord:
+*************** Is not part of the Holy Roman Empire
+*************** Capital:
+**************** Region is not italy_region
+******** Option: shadow_kingdom.3.b:
+********* Changes Imperial influence by 25
+********* Sets the global flag shadow_kingdom_averted
+******* Gets the country event:
+******** ID is shadow_kingdom.4
+******** title = 0 "The Shadow Kingdom
+******** desc:
+********* Trigger:
+********** Has the country flag reined_in_for_shadow_kingdom
+********* desc = shadow_kingdom.4.d2
+******** desc:
+********* Trigger:
+********** Does not have the country flag reined_in_for_shadow_kingdom
+********* desc = 0 "While the Kingdom of Italy is still formally part of the Holy Roman Empire it has in many ways turned into a 'Shadow Kingdom', with the Italian states acting independently of the Emperor. The failure of successive Emperors to restore Imperial authority in the region has also left large areas under the control of states that outright reject Imperial Authority.\nBy now the question for many Italian states is why they should allow a German Emperor any authority over their lands.
+******** picture = HRE_eventPicture
+******** is_triggered_only = yes
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 1000:
+*********** will_leave_for_shadow_kingdom_trigger_false = no
+******** Option: 0 "Our country is a natural part of the Empire.:
+********* If:
+********** Limited to:
+*********** Has the global flag emperor_trying_to_avert_shadow_kingdom
+********** Holy Roman Emperor:
+*********** Changes Imperial influence by 5
+********* If:
+********** Limited to:
+*********** Does not have the country flag reined_in_for_shadow_kingdom
+********** Changes prestige by -20
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 1000:
+*********** will_leave_for_shadow_kingdom_trigger = yes
+********* Trigger:
+********** Does not have the country flag reined_in_for_shadow_kingdom
+******** Option: 0 "The Empire does not concern us.:
+********* Removes the province from the Holy Roman Empire
+********* Sets the country flag permanently_left_hre_flag
+********* Holy Roman Emperor:
+********** Adds the opinion modifier "0 "Left the Empire" towards our country
+********* If:
+********** Limited to:
+*********** Any country:
+************ Is a vassal of our country
+************ Capital:
+************* Region is italy_region
+************ Is part of the Holy Roman Empire
+********** Every subject country:
+*********** Limited to:
+************ Capital:
+************* Region is italy_region
+************ Is part of the Holy Roman Empire
+*********** Removes the province from the Holy Roman Empire
+********* If:
+********** Limited to:
+*********** Has the global flag emperor_trying_to_avert_shadow_kingdom
+********** Holy Roman Emperor:
+*********** Changes Imperial influence by -10
+******* Gets the country event:
+******** ID is shadow_kingdom.5
+******** title = 0 "The Shadow Kingdom
+******** desc = shadow_kingdom.2.d
+******** picture = HRE_eventPicture
+******** fire_only_once = yes
+******** major = yes
+******** Trigger:
+********* Is the Holy Roman Emperor
+********* Year is at least 1460
+********* Does not have the global flag italians_leave_hre
+********* Any country:
+********** is_shadow_kingdom_eligible_trigger = yes
+********** Does not have the country flag reined_in_for_shadow_kingdom
+********* active_imperial_incident_false = any
+******** Mean time to happen
+********* Base mean time to happen of 3 months
+******** Option: shadow_kingdom.5.a:
+********* Trigger:
+********** Has the DLC Emperor
+********* set_imperial_incident = incident_shadow_kingdom
+********* Trigger:
+********** Does not have the DLC Emperor
+********* AI chance:
+********** Base chance of 10000
+******** Option: shadow_kingdom.2.a:
+********* Changes prestige by -10
+********* Changes Imperial influence by -20
+********* Sets the global flag italians_leave_hre
+********* Hidden effect:
+********** Every country:
+*********** Limited to:
+************ is_shadow_kingdom_eligible_trigger = yes
+************ Any of the following:
+************* Is not a vassal
+************* All of the following:
+************** Is a vassal
+************** overlord:
+*************** Is not part of the Holy Roman Empire
+*************** Capital:
+**************** Region is not italy_region
+*********** Gets the country event:
+************ ID is shadow_kingdom.4
+********* Every province in the world:
+********** Limited to:
+*********** Is part of the Holy Roman Empire
+*********** Region is italy_region
+*********** The owner of the province:
+************ Is not part of the Holy Roman Empire
+********** Removes the province from the Holy Roman Empire
+********* Trigger:
+********** Does not have the DLC Emperor
+********* AI chance:
+********** Base chance of 0
+******** Option: shadow_kingdom.2.b:
+********* Sets the global flag emperor_trying_to_avert_shadow_kingdom

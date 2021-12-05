@@ -1,0 +1,18 @@
+******** Trigger:
+********* Owns 0 "Daman
+********* 0 "Daman:
+********** Follows the zoroastrian religion
+********* employed_advisor:
+********** Follows the zoroastrian religion
+********** Culture is parsi
+******** Mean time to happen
+********* Base mean time to happen of 180 months
+******** Option: zoroastrian.1.a:
+********* 0 "Daman:
+********** Changes culture to parsi
+********** Changes province name to Sanjan
+********** Changes province capital name to Sanjan
+********* Adds -10 legitimacy
+********* Changes republican tradition by -500%
+******** Option: zoroastrian.1.b:
+********* Changes stability by -1

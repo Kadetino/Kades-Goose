@@ -1,0 +1,649 @@
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* Is not in 0 "Muslim's religion group
+********* Any active trade node:
+********** any_country_active_in_node:
+*********** Is in the 0 "Muslim religion group
+*********** trading_policy_in_node:
+************ node = PREV
+************ policy = propagate_religion
+********** Any province owned by a trade node member:
+*********** The province is owned by our country
+*********** Is not in 0 "Muslim's religion group
+*********** Is coastal
+*********** Does not have the province modifier "trading_settlement"
+******** Immediate effects:
+********* Hidden effect:
+********** Random active trade node:
+*********** Limited to:
+************ Any country:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ Any province owned by a trade node member:
+************* The province is owned by our country
+************* Is not in 0 "Muslim's religion group
+************* Is coastal
+************* Does not have the province modifier "trading_settlement"
+*********** Random province owned by a trade node member:
+************ Limited to:
+************* The province is owned by our country
+************* Is not in 0 "Muslim's religion group
+************* Is coastal
+************* Does not have the province modifier "trading_settlement"
+************ save_event_target_as = trade_province
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: propagate_religion_events.1.a:
+********* event_target:trade_province:
+********** Adds the modifier "trading_settlement" until the end of the campaign:
+*********** +3% missionary strength
+*********** local_development_cost = -0.15
+******** Option: propagate_religion_events.1.b:
+********* event_target:trade_province:
+********** Adds the modifier "muslim_traders_controlled" until the end of the campaign:
+*********** -1% missionary strength
+*********** +25% provincial tax income
+*********** local_development_cost = 0.15
+******* Gets the country event:
+******** ID is propagate_religion_events.2
+******** title = propagate_religion_events.2.t
+******** desc = propagate_religion_events.2.d
+******** picture = MYSTIC_IN_PRAYER_eventPicture
+******** goto = trade_province
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* Is not in 0 "Muslim's religion group
+********* Any active trade node:
+********** any_country_active_in_node:
+*********** Is in the 0 "Muslim religion group
+*********** trading_policy_in_node:
+************ node = PREV
+************ policy = propagate_religion
+********** Any province owned by a trade node member:
+*********** The province is owned by our country
+*********** Is not in 0 "Muslim's religion group
+*********** Is coastal
+*********** Does not have the province flag had_missionaries_settle
+*********** Does not have the province modifier "islamic_missionaries"
+******** Immediate effects:
+********* Hidden effect:
+********** Random active trade node:
+*********** Limited to:
+************ Any country:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ Any province owned by a trade node member:
+************* The province is owned by our country
+************* Is not in 0 "Muslim's religion group
+************* Is coastal
+************* Does not have the province flag had_missionaries_settle
+************* Does not have the province modifier "islamic_missionaries"
+*********** Random country:
+************ Limited to:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ save_event_target_as = converter_country
+*********** Random province owned by a trade node member:
+************ Limited to:
+************* The province is owned by our country
+************* Is not in 0 "Muslim's religion group
+************* Is coastal
+************* Does not have the province flag had_missionaries_settle
+************* Does not have the province modifier "islamic_missionaries"
+************ save_event_target_as = trade_province
+************ Sets the province flag had_missionaries_settle
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: propagate_religion_events.2.a:
+********* Adds 10 legitimacy
+******** Option: propagate_religion_events.2.b:
+********* event_target:trade_province:
+********** Changes base tax by 1
+********** add_base_production = 1
+********** Adds the modifier "islamic_missionaries" until the end of the campaign:
+*********** local_autonomy = 0.1
+*********** +3% missionary strength
+******* Gets the country event:
+******** ID is propagate_religion_events.3
+******** title = propagate_religion_events.3.t
+******** desc = propagate_religion_events.3.d
+******** picture = DHOW_AT_SEA_eventPicture
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* Is not in 0 "Muslim's religion group
+********* Any active trade node:
+********** any_country_active_in_node:
+*********** Is in the 0 "Muslim religion group
+*********** trading_policy_in_node:
+************ node = PREV
+************ policy = propagate_religion
+********** Any province owned by a trade node member:
+*********** The province is owned by our country
+*********** Is coastal
+******** Immediate effects:
+********* Hidden effect:
+********** Random active trade node:
+*********** Limited to:
+************ Any country:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ Any province owned by a trade node member:
+************* The province is owned by our country
+************* Is coastal
+*********** Random country:
+************ Limited to:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ save_event_target_as = converter_country
+*********** Random province owned by a trade node member:
+************ Limited to:
+************* The province is owned by our country
+************* Is coastal
+************ save_event_target_as = sailor_province
+********** One of the following will happen:
+*********** 50 relative chance:
+************ Sets the country flag sailors_flag
+*********** 50 relative chance:
+************ Sets the country flag captain_flag
+********** set_saved_name:
+*********** Named "sailor_person"
+*********** scope = event_target:converter_country
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: propagate_religion_events.3.a:
+********* goto = sailor_province
+********* event_target:sailor_province:
+********** Adds the modifier "muslim_sailor_community" until the end of the campaign:
+*********** +2% missionary strength
+*********** local_sailors_modifier = 0.5
+********* trigger_switch:
+********** on_trigger = has_country_flag
+********** sailors_flag:
+*********** Removes the country flag sailors_flag
+*********** add_yearly_sailors = 2
+********** captain_flag:
+*********** Removes the country flag captain_flag
+*********** Creates an advisor of the 0 "Trader type:
+************ Follows the event_target:converter_country religion
+************ Culture is event_target:converter_country
+************ With a skill level of 2
+************ discount = yes
+********* Modifies treasury by -0.75 years worth of income
+******** Option: propagate_religion_events.3.b:
+********* Adds 5 legitimacy
+******** after:
+********* clear_saved_name = sailor_person
+******* Gets the country event:
+******** ID is propagate_religion_events.4
+******** title = propagate_religion_events.4.t
+******** desc = propagate_religion_events.4.d
+******** picture = MYSTIC_IN_PRAYER_eventPicture
+******** goto = cured_province
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* Any active trade node:
+********** any_country_active_in_node:
+*********** Is in the 0 "Muslim religion group
+*********** trading_policy_in_node:
+************ node = PREV
+************ policy = propagate_religion
+********** Any province owned by a trade node member:
+*********** The province is not the capital of the country
+*********** The province is owned by our country
+*********** Is not in 0 "Muslim's religion group
+******** Immediate effects:
+********* Hidden effect:
+********** Random active trade node:
+*********** Limited to:
+************ Any country:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ Any province owned by a trade node member:
+************* The province is not the capital of the country
+************* The province is owned by our country
+************* Is not in 0 "Muslim's religion group
+*********** Random country:
+************ Limited to:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ save_event_target_as = converter_country
+*********** Random province owned by a trade node member:
+************ Limited to:
+************* The province is not the capital of the country
+************* The province is owned by our country
+************* Is not in 0 "Muslim's religion group
+************ save_event_target_as = cured_province
+********** One of the following will happen:
+*********** 50 relative chance:
+************ Sets the country flag theologian_flag
+*********** 50 relative chance:
+************ Sets the country flag philosopher_flag
+********** set_saved_name:
+*********** Named "miracle_person"
+*********** scope = event_target:converter_country
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: propagate_religion_events.4.a:
+********* add_stability_or_adm_power = yes
+********* event_target:cured_province:
+********** Changes religion to event_target:converter_country
+******** Option: propagate_religion_events.4.b:
+********* event_target:cured_province:
+********** Changes religion to event_target:converter_country
+********* trigger_switch:
+********** on_trigger = has_country_flag
+********** philosopher_flag:
+*********** Removes the country flag philosopher_flag
+*********** Creates an advisor of the 0 "Philosopher type:
+************ Culture is event_target:converter_country
+************ Follows the event_target:converter_country religion
+************ With a skill level of 2
+************ discount = yes
+********** theologian_flag:
+*********** Removes the country flag theologian_flag
+*********** Creates an advisor of the 0 "Theologian type:
+************ Culture is event_target:converter_country
+************ Follows the event_target:converter_country religion
+************ With a skill level of 2
+************ discount = yes
+******** after:
+********* clear_saved_name = miracle_person
+******* Gets the country event:
+******** ID is propagate_religion_events.5
+******** title = propagate_religion_events.5.t
+******** desc = propagate_religion_events.5.d
+******** picture = PRAYER_IN_MOSQUE_eventPicture
+******** goto = mosque_province
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* Is not in 0 "Muslim's religion group
+********* Any active trade node:
+********** any_country_active_in_node:
+*********** Is in the 0 "Muslim religion group
+*********** Administrative technology is at least 4
+*********** trading_policy_in_node:
+************ node = PREV
+************ policy = propagate_religion
+********** Any province owned by a trade node member:
+*********** The province is owned by our country
+*********** Is in the 0 "Muslim religion group
+*********** Any bordering province:
+************ Is not in 0 "Muslim's religion group
+************ area = PREV
+************ The province is owned by our country
+************ The province is not the capital of the country
+******** Immediate effects:
+********* Hidden effect:
+********** Random active trade node:
+*********** Limited to:
+************ Any country:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************* Administrative technology is at least 4
+************ Any province owned by a trade node member:
+************* The province is owned by our country
+************* Is in the 0 "Muslim religion group
+************* Any bordering province:
+************** area = PREV
+************** Is not in 0 "Muslim's religion group
+************** The province is owned by our country
+************** The province is not the capital of the country
+*********** Random country:
+************ Limited to:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************* Administrative technology is at least 4
+************ save_event_target_as = converter_country
+*********** Random province owned by a trade node member:
+************ Limited to:
+************* The province is owned by our country
+************* Is in the 0 "Muslim religion group
+************* Any province in the world:
+************** area = PREV
+************** Is not in 0 "Muslim's religion group
+************** The province is owned by our country
+************** The province is not the capital of the country
+************ save_event_target_as = mosque_province
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: propagate_religion_events.5.a:
+********* event_target:mosque_province:
+********** Adds the modifier "religious_community_isolated" until the end of the campaign:
+*********** +5% missionary strength
+********* event_target:converter_country:
+********** Adds the opinion modifier "discriminated_our_countrymen" towards our country
+******** Option: propagate_religion_events.5.b:
+********* event_target:mosque_province:
+********** If:
+*********** Limited to:
+************ Does not have the 0 "Temple building
+************ Does not have the 0 "Cathedral building
+************ num_free_building_slots = 1
+*********** Constructs the 0 "Temple building
+********** Changes base tax by 1
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+************ Province is not PREV
+************ Does not follow the PREV religion
+*********** add_local_autonomy = 15
+*********** Adds the modifier "mosque_of_x" until the end of the campaign:
+************ +3% missionary strength
+************ local_autonomy = 0.1
+******* Gets the country event:
+******** ID is propagate_religion_events.6
+******** title = propagate_religion_events.6.t
+******** desc = propagate_religion_events.6.d
+******** picture = SULTAN_AND_MERCHANT_eventPicture
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* Is not in 0 "Muslim's religion group
+********* Is not in regency
+********* Has the monarchy government type
+********* Country is not 0 "Arakan
+********* has_reform_false = 0 "Shogunate
+********* has_ruler_flag_false = said_no_to_islamic_titles
+********* is_free_or_tributary_trigger = yes
+********* The dominant religion is not our country
+********* Capital:
+********** Is in the 0 "Muslim religion group
+********** is_node_in_trade_company_region = yes
+********* Does not have the country modifier "islamic_titles"
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: propagate_religion_events.6.a:
+********* Sets the country flag sultan_titles_for_non_muslims
+********* Adds the modifier "islamic_titles" for the rest of the campaign:
+********** -15% advisor cost
+********** -2 tolerance of the true faith
+********** Follows the yes religion
+********* Hidden effect:
+********** Every known country:
+*********** Limited to:
+************ Is in the 0 "Muslim religion group
+*********** Adds the opinion modifier "adopted_islamic_titles" towards our country
+******** Option: propagate_religion_events.6.b:
+********* set_ruler_flag = said_no_to_islamic_titles
+********* Adds the ruler modifier "defended_traditional_kingship" until the ruler's death:
+********** +2 tolerance of the true faith
+********** -1 tolerance of heathens
+********** Legitimacy is at least 1
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is propagate_religion_events.7
+******** title = propagate_religion_events.7.t
+******** desc = propagate_religion_events.7.d
+******** picture = SULTAN_AND_MERCHANT_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* Is in the 0 "Muslim religion group
+********* has_religious_school_false = no
+********* Any of the following:
+********** has_ruler_flag = said_no_to_islamic_titles
+********** Capital:
+*********** is_node_in_trade_company_region = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Removes the country flag sultan_titles_for_non_muslims
+******** Option: propagate_religion_events.7.a:
+********* Hidden effect:
+********** Every country:
+*********** Limited to:
+************ Has the opinion modifier adopted_islamic_titles with our country
+*********** remove_opinion:
+************ Affecting our country
+********** Every known country:
+*********** Limited to:
+************ Is in the 0 "Muslim religion group
+*********** add_mutual_opinion_modifier_effect:
+************ scope_country = our country
+************ opinion_modifier = converted_to_islam
+******* Gets the country event:
+******** ID is propagate_religion_events.8
+******** title = propagate_religion_events.8.t
+******** desc = propagate_religion_events.8.d
+******** picture = MUSLIM_SCHOLAR_WRITING_eventPicture
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* Any active trade node:
+********** Any country:
+*********** Country is not our country
+*********** trading_policy_in_node:
+************ node = PREV
+************ policy = propagate_religion
+********** Any province owned by a trade node member:
+*********** The province is owned by our country
+*********** The province is the capital of the country
+******** Immediate effects:
+********* Hidden effect:
+********** Random active trade node:
+*********** Limited to:
+************ Any country:
+************* Country is not our country
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ Any province owned by a trade node member:
+************* The province is owned by our country
+************* The province is the capital of the country
+*********** Random country:
+************ Limited to:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ save_event_target_as = converter_country
+********** One of the following will happen:
+*********** 33 relative chance:
+************ Sets the country flag qadi
+*********** 33 relative chance:
+************ Sets the country flag mufti
+*********** 33 relative chance:
+************ Sets the country flag sufi
+********** set_saved_name:
+*********** Named "qadi_person"
+*********** scope = event_target:converter_country
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: propagate_religion_events.8.a:
+********* trigger_switch:
+********** on_trigger = has_country_flag
+********** qadi:
+*********** Removes the country flag qadi
+*********** Creates an advisor of the 0 "Inquisitor type:
+************ Named "qadi_person"
+************ With a skill level of 2
+************ Culture is event_target:converter_country
+************ Follows the event_target:converter_country religion
+************ discount = yes
+********** mufti:
+*********** Removes the country flag mufti
+*********** Creates an advisor of the 0 "Theologian type:
+************ With a skill level of 2
+************ Named "qadi_person"
+************ Culture is event_target:converter_country
+************ Follows the event_target:converter_country religion
+************ discount = yes
+********** sufi:
+*********** Removes the country flag sufi
+*********** Creates an advisor of the 0 "Philosopher type:
+************ Named "qadi_person"
+************ With a skill level of 2
+************ Culture is event_target:converter_country
+************ Follows the event_target:converter_country religion
+************ discount = yes
+******** Option: propagate_religion_events.8.b:
+********* Changes diplomatic power stored by 15
+********* Changes military power stored by 15
+********* event_target:converter_country:
+********** add_spy_network_from:
+*********** Affecting our country
+*********** value = 75
+******** after:
+********* clear_saved_name = qadi_person
+******* Gets the country event:
+******** ID is propagate_religion_events.9
+******** title = propagate_religion_events.9.t
+******** desc = propagate_religion_events.9.d
+******** picture = HEIR_AND_FOREIGN_ADVISOR_eventPicture
+******** goto = hinterland_province
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* Any active trade node:
+********** Any country:
+*********** trading_policy_in_node:
+************ node = PREV
+************ policy = propagate_religion
+********** Any province owned by a trade node member:
+*********** The province is owned by our country
+*********** Is not in 0 "Muslim's religion group
+*********** The province is not the capital of the country
+*********** Does not have the province modifier "chiefs_with_pretensions"
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Random active trade node:
+*********** Limited to:
+************ Any country:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ Any province owned by a trade node member:
+************* The province is owned by our country
+************* Is not in 0 "Muslim's religion group
+************* The province is not the capital of the country
+************* Does not have the province modifier "chiefs_with_pretensions"
+*********** Random country:
+************ Limited to:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ save_event_target_as = converter_country
+*********** Random province owned by a trade node member:
+************ Limited to:
+************* The province is not the capital of the country
+************* The province is owned by our country
+************* Is not in 0 "Muslim's religion group
+************* Does not have the province modifier "chiefs_with_pretensions"
+************ save_event_target_as = hinterland_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: propagate_religion_events.9.a:
+********* event_target:hinterland_province:
+********** Changes religion to event_target:converter_country
+********** Adds the modifier "chiefs_with_pretensions" until the end of the campaign:
+*********** -3% missionary strength
+*********** local_autonomy = 0.2
+*********** local_unrest = 6
+******* Gets the country event:
+******** ID is propagate_religion_events.10
+******** title = propagate_religion_events.10.t
+******** desc = propagate_religion_events.10.d
+******** picture = MYSTICS_DANCING_eventPicture
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* Is not in 0 "Muslim's religion group
+********* Does not have the country modifier "rejection_of_syncretism"
+********* Any owned province:
+********** Is in the 0 "Muslim religion group
+********** The province has the same culture as its owner
+********** is_node_in_trade_company_region = yes
+********* Any active trade node:
+********** Any country:
+*********** trading_policy_in_node:
+************ node = PREV
+************ policy = propagate_religion
+********** Any province owned by a trade node member:
+*********** The province is owned by our country
+*********** Is not in 0 "Muslim's religion group
+*********** The province is not the capital of the country
+******** is_triggered_only = yes
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* Hidden effect:
+********** Random active trade node:
+*********** Limited to:
+************ Any country:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ Any province owned by a trade node member:
+************* The province is owned by our country
+************* Is not in 0 "Muslim's religion group
+************* The province is not the capital of the country
+*********** Random country:
+************ Limited to:
+************* trading_policy_in_node:
+************** node = PREV
+************** policy = propagate_religion
+************ save_event_target_as = converter_country
+*********** Random province owned by a trade node member:
+************ Limited to:
+************* The province is owned by our country
+************* Is not in 0 "Muslim's religion group
+************* The province is not the capital of the country
+************ save_event_target_as = islamic_syncretism_province
+******** Option: propagate_religion_events.10.a:
+********* Adds the ruler modifier "rejection_of_syncretism" until the ruler's death:
+********** +1% global missionary strength
+********** +1 tolerance of the true faith
+********** Follows the yes religion
+******** Option: propagate_religion_events.10.b:
+********* goto = islamic_syncretism_province
+********* add_stability_or_adm_power = yes
+********* event_target:islamic_syncretism_province:
+********** Changes religion to event_target:converter_country
+******* Gets the province event:
+******** ID is propagate_religion_events.11
+******** title = propagate_religion_events.11.t
+******** desc = propagate_religion_events.11.d
+******** picture = SOUP_KITCHEN_eventPicture
+******** goto = our country
+******** Trigger:
+********* Has the DLC Cradle of Civilization
+********* is_node_in_trade_company_region = yes
+********* Borders an uncolonized province
+********* The owner of the province:
+********** Is not in 0 "Muslim's religion group
+********* Any country:
+********** Not at war with our country
+********** trading_policy_in_node:
+*********** node = our country
+*********** policy = propagate_religion
+******** is_mtth_scaled_to_size = 1
+******** Immediate effects:
+********* Hidden effect:
+********** Random country:
+*********** Limited to:
+************ Not at war with our country
+************ trading_policy_in_node:
+************* node = our country
+************* policy = propagate_religion
+*********** save_event_target_as = converter_country
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+******** Option: propagate_religion_events.11.a:
+********* Random uncolonized bordering province:
+********** Founds a colony
+********** Changes religion to event_target:converter_country
+********** Changes culture to event_target:converter_country
+******** Option: propagate_religion_events.11.b:
+********* The owner of the province:
+********** Adds 10 legitimacy

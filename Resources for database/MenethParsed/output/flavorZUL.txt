@@ -1,0 +1,141 @@
+********* Trigger:
+********** Has the country flag zulu_attracted_flag
+********* desc = flavor_zul.1.d.a
+******** desc:
+********* Trigger:
+********** Does not have the country flag zulu_attracted_flag
+********* desc = flavor_zul.1.d.a
+******** picture = AFRICAN_CHIEFTAIN_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has at least 3 provinces
+********* 0 "Mtetwa:
+********** The province is owned by our country
+********** is_capital_of_false = our country
+********** Culture is 0 "Nguni
+********* Any of the following:
+********** Year is at least 1750
+********** Has the country flag zulu_attracted_flag
+********* Country does not exist
+********* Country is not 0 "Mutapa
+********* Country is not GZI
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+********* Multiplies value by 0.5:
+********** Year is at least 1800
+********* Multiplies value by 0.01:
+********** Year is at least 1816
+********* Multiplies value by 0.01:
+********** Has the country flag zulu_attracted_flag
+******** Immediate effects:
+********* Hidden effect:
+********** 0 "Mtetwa:
+*********** Adds core on ZUL
+*********** Cedes province to ZUL
+********** If:
+*********** Limited to:
+************ 0 "Natal:
+************* The province is owned by our country
+************* is_capital_of_false = our country
+*********** 0 "Natal:
+************ Adds core on ZUL
+************ Cedes province to ZUL
+********** else:
+*********** 0 "Natal:
+************ Adds core on ZUL
+********** ZUL:
+*********** If:
+************ Limited to:
+************* Year is at least 1800
+************ Spawns a ruler:
+************* Named "Shaka"
+************* Ruler's dynasty is Zulu
+************* Ruler's administrative skill is at least 5
+************* Ruler's diplomatic skill is at least 3
+************* Ruler's military skill is at least 6
+************* age = 23
+************* Legitimacy of 100
+************ define_ruler_to_general:
+************* 4 skill in fire
+************* 5 skill in shock
+************* 4 skill in manuever
+************* 2 skill in siege
+*********** else:
+************ Spawns a ruler:
+************* Ruler's administrative skill is at least 3
+************* Ruler's diplomatic skill is at least 3
+************* Ruler's military skill is at least 5
+************* age = 20
+************* Legitimacy of 100
+*********** If:
+************ Limited to:
+************* Has the DLC Rights of Man
+************ Hidden effect:
+************* add_ruler_personality_ancestor:
+************** Named "strict"
+*********** Changes government type to tribal
+*********** add_government_reform = shaka_regime
+*********** Sets capital to 0 "Mtetwa
+*********** Capital:
+************ Changes province name to Bulawayo
+************ Changes province capital name to Bulawayo
+************ Changes base tax by 3
+************ add_base_production = 3
+************ add_base_manpower = 2
+************ build_to_forcelimit:
+************* Spawns an infantry unit in 0.9
+************* Spawns a cavalry unit in 0.1
+*********** Changes national manpower reserves by 15 years worth
+*********** Changes treasury by 300 ducats
+*********** add_army_professionalism = 0.05
+*********** Changes army tradition by 20
+********** limpopo_area:
+*********** Limited to:
+************ Has no core on ZUL
+************ is_permanent_claim_false = ZUL
+*********** add_permanent_claim = ZUL
+******** Option: flavor_zul.1.a:
+********* Tooltip:
+********** 0 "Mtetwa:
+*********** Adds core on ZUL
+*********** Cedes province to ZUL
+********** 0 "Natal:
+*********** Adds core on ZUL
+*********** Cedes province to ZUL
+********* Declares war on 0 "Imperialism using the ZUL casus belli
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** Is at war
+********** Multiplies value by 0:
+*********** Has at least 3 provinces where all of the following is true:
+******** Option: flavor_zul.1.b:
+********* AI chance:
+********** Base chance of 1
+********* Tooltip:
+********** 0 "Mtetwa:
+*********** Adds core on ZUL
+*********** Cedes province to ZUL
+********** 0 "Natal:
+*********** Adds core on ZUL
+*********** Cedes province to ZUL
+********* Adds the opinion modifier "zul_let_the_zulu_alone" from ZUL
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** Is not at war
+********** Multiplies value by 0:
+************ Has less than 3 provinces where all of the following is true:
+******** Option: flavor_zul.1.c:
+********* AI chance:
+********** Base chance of 0
+********* Tooltip:
+********** 0 "Mtetwa:
+*********** Adds core on ZUL
+*********** Cedes province to ZUL
+********** 0 "Natal:
+*********** Adds core on ZUL
+*********** Cedes province to ZUL
+********* switch_tag = ZUL
+********* AI chance:
+********** Base chance of 0

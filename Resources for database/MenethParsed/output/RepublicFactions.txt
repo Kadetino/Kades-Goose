@@ -1,0 +1,892 @@
+******** Trigger:
+********* Has the DLC Res Publica
+********* The owner of the province:
+********** Any of the following:
+*********** has_government_attribute = is_merchant_republic
+*********** has_reform = veche_republic
+********* Does not have the province modifier "free_trade_of_goods"
+********* Does not have the province modifier "strong_guild"
+********* Does not produce 0 "Unknown
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: republic_factions.1.a:
+********* The owner of the province:
+********** Changes the influence of 0 "The Traders by 10
+********** Changes the influence of 0 "The Guilds by -10
+********** Every owned province:
+*********** Limited to:
+************ Produces our country
+************ area = our country
+*********** Adds the modifier "free_trade_of_goods" until the end of the campaign:
+************ +200% provincial trade power
+************ -20% production efficiency
+******** Option: republic_factions.1.b:
+********* The owner of the province:
+********** Changes the influence of 0 "The Guilds by 10
+********** Changes the influence of 0 "The Traders by -10
+********** Every owned province:
+*********** Limited to:
+************ Produces our country
+************ area = our country
+*********** Adds the modifier "strong_guild" until the end of the campaign:
+************ +25% production efficiency
+************ local_unrest = 3
+******* Gets the country event:
+******** ID is republic_factions.2
+******** title = republic_factions.2.t
+******** desc = republic_factions.2.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.2.a:
+********* Changes the influence of 0 "The Traders by 10
+********* Changes the influence of 0 "The Guilds by -10
+********* Changes diplomatic power stored by 50
+******** Option: republic_factions.2.b:
+********* Changes the influence of 0 "The Guilds by 10
+********* Changes the influence of 0 "The Traders by -10
+********* Adds 100% mercantilism
+********* Changes administrative power stored by -50
+********* Changes diplomatic power stored by -50
+******* Gets the province event:
+******** ID is republic_factions.3
+******** title = republic_factions.3.t
+******** desc = republic_factions.3.d
+******** picture = HARBOUR_eventPicture
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC Res Publica
+********* The owner of the province:
+********** Any of the following:
+*********** has_government_attribute = is_merchant_republic
+*********** has_reform = veche_republic
+********* Does not have the province modifier "strong_guild"
+********* }
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: republic_factions.3.a:
+********* The owner of the province:
+********** Changes the influence of 0 "The Traders by 10
+********** Changes the influence of 0 "The Guilds by -10
+********** Every active trade node:
+*********** Limited to:
+************ Any province owned by a trade node member:
+************* Produces our country
+*********** Adds trade modifier:
+************ Affecting our country
+************ Lasting 1095 days
+************ Changing trade power by 10
+************ Named "allowed_imports"
+******** Option: republic_factions.3.b:
+********* The owner of the province:
+********** Changes the influence of 0 "The Guilds by 10
+********** Changes the influence of 0 "The Traders by -10
+********** Every owned province:
+*********** Limited to:
+************ Produces our country
+*********** Adds the modifier "strong_guild" until the end of the campaign:
+************ +25% production efficiency
+************ local_unrest = 3
+******* Gets the province event:
+******** ID is republic_factions.4
+******** title = republic_factions.4.t
+******** desc = republic_factions.4.d
+******** picture = MERCHANTS_TALKING_eventPicture
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC Res Publica
+********* The owner of the province:
+********** Any of the following:
+*********** has_government_attribute = is_merchant_republic
+*********** has_reform = veche_republic
+********* Does not have the province modifier "influential_nobles"
+********* Does not have the province modifier "influential_guild_members"
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: republic_factions.4.a:
+********* The owner of the province:
+********** Changes the influence of 0 "The Guilds by 10
+********** Changes the influence of 0 "The Aristocrats by -10
+********** Changes prestige by -15
+********* Adds the modifier "influential_guild_members" until the end of the campaign:
+********** +20% production efficiency
+******** Option: republic_factions.4.b:
+********* The owner of the province:
+********** Changes the influence of 0 "The Aristocrats by 10
+********** Changes the influence of 0 "The Guilds by -10
+********** Changes administrative power stored by -10
+********** Changes diplomatic power stored by -10
+********** Changes military power stored by -10
+********* Adds the modifier "influential_nobles" until the end of the campaign:
+********** +40% manpower modifier
+******* Gets the country event:
+******** ID is republic_factions.5
+******** title = republic_factions.5.t
+******** desc = republic_factions.5.d
+******** picture = SPY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* Does not have the country modifier "paranoid_recruitment"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.5.a:
+********* Changes the influence of 0 "The Guilds by 10
+********* Changes the influence of 0 "The Aristocrats by -10
+********* add_stability_or_adm_power = yes
+********* Changes prestige by -15
+********* Hidden effect:
+********** One of the following will happen:
+*********** 30 relative chance:
+************ Gets the country event:
+************* ID is republic_factions.6
+************* Base mean time to happen of 730 days
+*********** 20 relative chance:
+************ Gets the country event:
+************* ID is republic_factions.6
+************* Base mean time to happen of 1460 days
+*********** 50 relative chance:
+******** Option: republic_factions.5.b:
+********* Changes the influence of 0 "The Aristocrats by 10
+********* Changes the influence of 0 "The Guilds by -10
+********* Changes prestige by 10
+********* Adds the modifier "paranoid_recruitment" for 3 years:
+********** +25% advisor cost
+******* Gets the country event:
+******** ID is republic_factions.6
+******** title = republic_factions.6.t
+******** desc = republic_factions.6.d
+******** picture = ACCUSATION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Has at least one advisor
+******** Option: republic_factions.6.a:
+********* Kills the random advisor
+********* Changes administrative power stored by -50
+******** Option: republic_factions.6.b:
+********* Changes administrative power stored by -100
+******* Gets the country event:
+******** ID is republic_factions.7
+******** title = republic_factions.7.t
+******** desc = republic_factions.7.d
+******** picture = DIPLOMACY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* Does not have the country modifier "foreign_guild_infiltrated"
+********* Does not have the country modifier "guilds_compromised"
+********* Does not have the country modifier "suspended_diplomat"
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.7.a:
+********* Changes the influence of 0 "The Guilds by 10
+********* Changes the influence of 0 "The Aristocrats by -10
+********* One of the following will happen:
+********** 50 relative chance:
+*********** Adds the modifier "foreign_guild_infiltrated" for 3 years:
+************ +25% spy offense
+********** 50 relative chance:
+*********** Adds the modifier "guilds_compromised" for 3 years:
+************ -25% global spy defence
+******** Option: republic_factions.7.b:
+********* Changes the influence of 0 "The Aristocrats by 10
+********* Changes the influence of 0 "The Guilds by -10
+********* Adds the modifier "suspended_diplomat" for 3 years:
+********** -1 diplomat
+******* Gets the province event:
+******** ID is republic_factions.8
+******** title = republic_factions.8.t
+******** desc = republic_factions.8.d
+******** picture = GREAT_BUILDING_eventPicture
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC Res Publica
+********* The owner of the province:
+********** Any of the following:
+*********** has_government_attribute = is_merchant_republic
+*********** has_reform = veche_republic
+********* Does not have the province modifier "trade_with_neighbor"
+********* Any bordering province:
+********** The owner of the province:
+*********** Country is not our country
+********** The province is not claimed by our country
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: republic_factions.8.a:
+********* The owner of the province:
+********** Changes the influence of 0 "The Aristocrats by 10
+********** Changes the influence of 0 "The Traders by -10
+********* Random bordering province:
+********** Limited to:
+*********** The owner of the province:
+************ Country is not our country
+*********** The province is not claimed by our country
+********** Adds claim to our country
+******** Option: republic_factions.8.b:
+********* The owner of the province:
+********** Changes the influence of 0 "The Traders by 10
+********** Changes the influence of 0 "The Aristocrats by -10
+********* Adds the modifier "trade_with_neighbor" until the end of the campaign:
+********** +500% provincial trade power
+********* Random bordering province:
+********** Limited to:
+*********** The owner of the province:
+************ Country is not our country
+********** The owner of the province:
+*********** Adds the opinion modifier "goods_crossing_borders" towards our country
+******* Gets the country event:
+******** ID is republic_factions.9
+******** title = republic_factions.9.t
+******** desc = republic_factions.9.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Immediate effects:
+********* check_if_non_state_advisor_effect:
+********** chance_of_primary = 75
+********** chance_of_tertiary = 10
+********** chance_of_secondary = 25
+******** Option: republic_factions.9.a:
+********* Changes the influence of 0 "The Aristocrats by 10
+********* Changes the influence of 0 "The Traders by -10
+********* generate_advisor_of_type_and_semi_random_religion_effect:
+********** advisor_type = 0 "Commandant
+********** advisor_type_if_not_state = 0 "Commandant
+********** scaled_skill = yes
+********** discount = yes
+********* Changes diplomatic power stored by -30
+******** Option: republic_factions.9.b:
+********* Changes the influence of 0 "The Traders by 10
+********* Changes the influence of 0 "The Aristocrats by -10
+********* generate_advisor_of_type_and_semi_random_religion_effect:
+********** advisor_type = 0 "Trader
+********** advisor_type_if_not_state = 0 "Trader
+********** scaled_skill = yes
+********** discount = yes
+********* Changes military power stored by -30
+******** after:
+********* erase_advisor_flags_effect = yes
+******* Gets the country event:
+******** ID is republic_factions.10
+******** title = republic_factions.10.t
+******** desc = republic_factions.10.d
+******** picture = MERCHANTS_TALKING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* Any rival country:
+********** Not at war with our country
+********** trade_embargo_by_false = our country
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.10.a:
+********* Changes the influence of 0 "The Aristocrats by 10
+********* Changes the influence of 0 "The Traders by -10
+********* Modifies treasury by -0.3 years worth of income
+********* Changes military power stored by 25
+******** Option: republic_factions.10.b:
+********* Changes the influence of 0 "The Traders by 10
+********* Changes the influence of 0 "The Aristocrats by -10
+********* Random rival country:
+********** Gets the country event:
+*********** ID is republic_factions.11
+*********** Base mean time to happen of 7 tooltip days
+********* Changes diplomatic power stored by 25
+******* Gets the country event:
+******** ID is republic_factions.11
+******** title = republic_factions.11.t
+******** desc = republic_factions.11.d
+******** picture = MERCHANTS_TALKING_eventPicture
+******** is_triggered_only = yes
+******** Option: republic_factions.11.a:
+********* Our country:
+********** Random active trade node:
+*********** Adds trade modifier:
+************ Affecting our country
+************ Lasting 1095 days
+************ Changing trade power by 10
+************ Named "enemy_allowed_trade"
+******* Gets the country event:
+******** ID is republic_factions.12
+******** title = republic_factions.12.t
+******** desc = republic_factions.12.d
+******** picture = CORRUPTION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Guilds is in power
+********* Has the 0 "Artist advisor
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.12.a:
+********* Removes the 0 "Artist advisor
+********* Changes the influence of 0 "The Guilds by -15
+********* If:
+********** Limited to:
+*********** corruption = 0.01
+********** add_corruption = -0.5
+******** Option: republic_factions.12.b:
+********* Modifies treasury by 0.5 years worth of income
+********* add_corruption = 0.5
+********* Changes republican tradition by -500%
+******* Gets the country event:
+******** ID is republic_factions.13
+******** title = republic_factions.13.t
+******** desc = republic_factions.13.d
+******** picture = CORRUPTION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Traders is in power
+********* Has the 0 "Trader advisor
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.13.a:
+********* Removes the 0 "Trader advisor
+********* Changes the influence of 0 "The Traders by -15
+********* add_corruption = -0.5
+******** Option: republic_factions.13.b:
+********* Modifies treasury by 0.5 years worth of income
+********* Changes republican tradition by -300%
+********* add_corruption = 0.5
+******* Gets the country event:
+******** ID is republic_factions.14
+******** title = republic_factions.14.t
+******** desc = republic_factions.14.d
+******** picture = CORRUPTION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Aristocrats is in power
+********* Has the 0 "Commandant advisor
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.14.a:
+********* Removes the 0 "Commandant advisor
+********* Changes the influence of 0 "The Aristocrats by -15
+********* If:
+********** Limited to:
+*********** corruption = 1
+********** add_corruption = -2
+******** Option: republic_factions.14.b:
+********* Modifies treasury by 0.6 years worth of income
+********* add_corruption = 2
+********* Changes republican tradition by -1000%
+******* Gets the country event:
+******** ID is republic_factions.15
+******** title = republic_factions.15.t
+******** desc = republic_factions.15.d
+******** picture = DIPLOMACY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Guilds is not in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.15.a:
+********* Changes administrative power stored by -50
+******** Option: republic_factions.15.b:
+********* Changes republican tradition by -500%
+********* Changes the influence of 0 "The Guilds by 15
+******* Gets the country event:
+******** ID is republic_factions.16
+******** title = republic_factions.16.t
+******** desc = republic_factions.16.d
+******** picture = CORRUPTION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Traders is not in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.16.a:
+********* Changes diplomatic power stored by -50
+******** Option: republic_factions.16.b:
+********* Changes republican tradition by -500%
+********* Changes the influence of 0 "The Traders by 15
+******* Gets the country event:
+******** ID is republic_factions.17
+******** title = republic_factions.17.t
+******** desc = republic_factions.17.d
+******** picture = DIPLOMACY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Aristocrats is not in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.17.a:
+********* Changes military power stored by -50
+******** Option: republic_factions.17.b:
+********* Changes republican tradition by -500%
+********* Changes the influence of 0 "The Aristocrats by 15
+******* Gets the country event:
+******** ID is republic_factions.18
+******** title = republic_factions.18.t
+******** desc = republic_factions.18.d
+******** picture = MERCHANTS_TALKING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Guilds is in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.18.a:
+********* Adds the modifier "guilds_cooperating" for 3 years:
+********** +10% production efficiency
+********** +5% domestic trade power
+******* Gets the country event:
+******** ID is republic_factions.19
+******** title = republic_factions.19.t
+******** desc = republic_factions.19.d
+******** picture = SHIP_SAILING_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Traders is in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.19.a:
+********* Adds the modifier "traders_look_abroad" for 3 years:
+********** Trade efficiency is at least 10%
+********** +5% trade power abroad
+******* Gets the country event:
+******** ID is republic_factions.20
+******** title = republic_factions.20.t
+******** desc = republic_factions.20.d
+******** picture = DIPLOMACY_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* has_government_attribute = is_merchant_republic
+********* 0 "The Aristocrats is in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.20.a:
+********* Adds the modifier "aristocracy_united" for 3 years:
+********** +5% discipline
+********** -1 global unrest
+******* Gets the province event:
+******** ID is republic_factions.21
+******** title = republic_factions.21.t
+******** desc = republic_factions.21.d
+******** picture = TRADEGOODS_eventPicture
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC Res Publica
+********* The owner of the province:
+********** Any of the following:
+*********** has_government_attribute = is_merchant_republic
+*********** has_reform = veche_republic
+********** 0 "The Guilds is not in power
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Option: republic_factions.21.a:
+********* The owner of the province:
+********** Every owned province:
+*********** Limited to:
+************ Produces our country
+*********** Adds the modifier "guilds_obstruct_trade" until the end of the campaign:
+************ -500% provincial trade power
+******* Gets the country event:
+******** ID is republic_factions.22
+******** title = republic_factions.22.t
+******** desc = republic_factions.22.d
+******** picture = DEBATE_REPUBLICAN_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Traders is not in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.22.a:
+********* Random active trade node:
+********** Adds trade modifier:
+*********** Affecting our country
+*********** Lasting 1095 days
+*********** Changing trade power by -15
+*********** Named "uncooperative_trader"
+******* Gets the country event:
+******** ID is republic_factions.23
+******** title = republic_factions.23.t
+******** desc = republic_factions.23.d
+******** picture = BATTLE_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Aristocrats is not in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.23.a:
+********* Random owned province:
+********** Limited to:
+*********** The province is not overseas
+********** Spawns revolt of size 2 of 0 "Noble rebels
+******* Gets the country event:
+******** ID is republic_factions.24
+******** title = republic_factions.24.t
+******** desc = republic_factions.24.d
+******** picture = THEATRE_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* 0 "The Aristocrats is not in power
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: republic_factions.24.a:
+********* Changes the influence of 0 "The Aristocrats by -20
+******** Option: republic_factions.24.b:
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is republic_factions.101
+******** title = republic_factions.101.t
+******** desc = republic_factions.101.d
+******** picture = ANGRY_MOB_eventPicture
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* has_ruler_flag_false = republic_revolution
+********* faction_influence:
+********** faction = 0 "The Guilds
+********** influence = 80
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction = 0 "The Guilds
+*********** influence = 90
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction = 0 "The Guilds
+*********** influence = 95
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction = 0 "The Guilds
+*********** influence = 100
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction_false = 0 "The Traders
+*********** influence_false = 5
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction_false = 0 "The Aristocrats
+*********** influence_false = 5
+********* Multiplies value by 0.95:
+********** Stability is lower than 2
+********* Multiplies value by 0.95:
+********** Stability is lower than 1
+********* Multiplies value by 0.95:
+********** Stability is lower than 0
+********* Multiplies value by 0.8:
+********** Stability is lower than 2
+********* Multiplies value by 0.9:
+********** Republican tradition is less than 80
+********* Multiplies value by 0.9:
+********** Republican tradition is less than 60
+********* Multiplies value by 0.9:
+********** Republican tradition is less than 40
+******** Immediate effects:
+********* set_ruler_flag = republic_revolution
+******** Option: republic_factions.101.a:
+********* Changes stability by -1
+********* Changes prestige by -15
+********* Changes republican tradition by -2000%
+********* If:
+********** Limited to:
+*********** Has at least 2 provinces
+*********** Any owned province:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ The owner of the province:
+************* Administrative technology is at least 22
+*********** Spawns revolt of size 2 of 0 "Revolutionary rebels
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ The owner of the province:
+************* Administrative technology is lower than 22
+*********** Spawns revolt of size 2 of 0 "Noble rebels
+********* If:
+********** Limited to:
+*********** Any of the following:
+************ Has less than 2 provinces
+************* No owned province:
+************** The province is not the capital of the country
+************** is_in_capital_area = yes
+*********** Capital:
+************ Does not have the province modifier "wrecked_by_factional_riots"
+********** Capital:
+*********** Adds the modifier "wrecked_by_factional_riots" until the end of the campaign:
+************ local_unrest = 8
+************ -25% provincial tax income
+************ -500% provincial trade power
+******** Option: republic_factions.101.b:
+********* Changes stability by -1
+********* Modifies treasury by -0.25 years worth of income
+********* Changes republican tradition by 500%
+********* Changes the influence of 0 "The Guilds by -60
+********* set_ruler_flag = leader_has_been_pushed_out
+********* Gets the country event:
+********** ID is 700
+******* Gets the country event:
+******** ID is republic_factions.102
+******** title = republic_factions.102.t
+******** desc = republic_factions.102.d
+******** picture = ANGRY_MOB_eventPicture
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* has_ruler_flag_false = republic_revolution
+********* faction_influence:
+********** faction = 0 "The Traders
+********** influence = 80
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction = 0 "The Traders
+*********** influence = 90
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction = 0 "The Traders
+*********** influence = 95
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction = 0 "The Traders
+*********** influence = 100
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction_false = 0 "The Guilds
+*********** influence_false = 5
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction_false = 0 "The Aristocrats
+*********** influence_false = 5
+********* Multiplies value by 0.95:
+********** Stability is lower than 2
+********* Multiplies value by 0.95:
+********** Stability is lower than 1
+********* Multiplies value by 0.95:
+********** Stability is lower than 0
+********* Multiplies value by 0.8:
+********** Stability is lower than 2
+********* Multiplies value by 0.9:
+********** Republican tradition is less than 80
+********* Multiplies value by 0.9:
+********** Republican tradition is less than 60
+********* Multiplies value by 0.9:
+********** Republican tradition is less than 40
+******** Immediate effects:
+********* set_ruler_flag = republic_revolution
+******** Option: republic_factions.102.a:
+********* Changes stability by -1
+********* Changes prestige by -15
+********* Changes republican tradition by -2000%
+********* If:
+********** Limited to:
+*********** Has at least 2 provinces
+*********** Any owned province:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ The owner of the province:
+************* Administrative technology is at least 22
+*********** Spawns revolt of size 2 of 0 "Revolutionary rebels
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ The owner of the province:
+************* Administrative technology is lower than 22
+*********** Spawns revolt of size 2 of 0 "Noble rebels
+********* If:
+********** Limited to:
+*********** Any of the following:
+************ Has less than 2 provinces
+************* No owned province:
+************** The province is not the capital of the country
+************** is_in_capital_area = yes
+*********** Capital:
+************ Does not have the province modifier "wrecked_by_factional_riots"
+********** Capital:
+*********** Adds the modifier "wrecked_by_factional_riots" until the end of the campaign:
+************ local_unrest = 8
+************ -25% provincial tax income
+************ -500% provincial trade power
+******** Option: republic_factions.102.b:
+********* Changes stability by -1
+********* Modifies treasury by -0.25 years worth of income
+********* Changes republican tradition by 500%
+********* Changes the influence of 0 "The Traders by -60
+********* set_ruler_flag = leader_has_been_pushed_out
+********* Gets the country event:
+********** ID is 700
+******* Gets the country event:
+******** ID is republic_factions.103
+******** title = republic_factions.103.t
+******** desc = republic_factions.103.d
+******** picture = ANGRY_MOB_eventPicture
+******** Trigger:
+********* Has the DLC Res Publica
+********* Any of the following:
+********** has_government_attribute = is_merchant_republic
+********** has_reform = veche_republic
+********* Any of the following:
+********** has_ruler_flag_false = republic_revolution
+********** had_ruler_flag:
+*********** flag = republic_revolution
+*********** Base mean time to happen of 3650 days
+********* faction_influence:
+********** faction = 0 "The Aristocrats
+********** influence = 80
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction = 0 "The Aristocrats
+*********** influence = 90
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction = 0 "The Aristocrats
+*********** influence = 95
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction = 0 "The Aristocrats
+*********** influence = 100
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction_false = 0 "The Guilds
+*********** influence_false = 5
+********* Multiplies value by 0.9:
+********** faction_influence:
+*********** faction_false = 0 "The Traders
+*********** influence_false = 5
+********* Multiplies value by 0.95:
+********** Stability is lower than 2
+********* Multiplies value by 0.95:
+********** Stability is lower than 1
+********* Multiplies value by 0.95:
+********** Stability is lower than 0
+********* Multiplies value by 0.8:
+********** Stability is lower than 2
+********* Multiplies value by 0.9:
+********** Republican tradition is less than 80
+********* Multiplies value by 0.9:
+********** Republican tradition is less than 60
+********* Multiplies value by 0.9:
+********** Republican tradition is less than 40
+******** Immediate effects:
+********* Sets the country flag republic_revolution
+******** Option: republic_factions.103.a:
+********* Changes stability by -1
+********* Changes prestige by -15
+********* Changes republican tradition by -2000%
+********* If:
+********** Limited to:
+*********** Has at least 2 provinces
+*********** Any owned province:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ The owner of the province:
+************* Administrative technology is at least 22
+*********** Spawns revolt of size 2 of 0 "Revolutionary rebels
+********** Random owned province:
+*********** Limited to:
+************ The province is not the capital of the country
+************ is_in_capital_area = yes
+************ The owner of the province:
+************* Administrative technology is lower than 22
+*********** Spawns revolt of size 2 of 0 "Peasant rebels
+********* If:
+********** Limited to:
+*********** Any of the following:
+************ Has less than 2 provinces
+************* No owned province:
+************** The province is not the capital of the country
+************** is_in_capital_area = yes
+*********** Capital:
+************ Does not have the province modifier "wrecked_by_factional_riots"
+********** Capital:
+*********** Adds the modifier "wrecked_by_factional_riots" until the end of the campaign:
+************ local_unrest = 8
+************ -25% provincial tax income
+************ -500% provincial trade power
+******** Option: republic_factions.103.b:
+********* Changes stability by -1
+********* Modifies treasury by -0.25 years worth of income
+********* Changes republican tradition by 500%
+********* Changes the influence of 0 "The Aristocrats by -60
+********* set_ruler_flag = leader_has_been_pushed_out
+********* Gets the country event:
+********** ID is 700

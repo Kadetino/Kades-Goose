@@ -1,0 +1,539 @@
+******** Trigger:
+********* Does not have the DLC The Cossacks
+********* Native population is at least 3
+********* The owner of the province:
+********** Does not have the country flag NF_colony
+********* Any of the following:
+********** In the continent 0 "North America
+********** In the continent 0 "South America
+********** In the continent 1 "The New World
+********* The province is a colony
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** goto = our country
+******** Option: 1 "Erase these savages from [Root.GetName]!:
+********* AI chance:
+********** Base chance of 40
+********* The owner of the province:
+********** Sets the country flag NF_colony
+********** Sets the country flag NF_ruthless
+********* Changes population of colony by 200
+********* Changes number of natives by -3000
+******** Option: 1 "Just pay them to stop hissing at us.:
+********* AI chance:
+********** Base chance of 20
+********* The owner of the province:
+********** Changes treasury by 50 ducats
+********** Sets the country flag NF_colony
+********** Sets the country flag NF_trader
+********* Changes base tax by 1
+******** Option: 1 "Offer them whatever they desire, we should live in peace.:
+********* AI chance:
+********** Base chance of 20
+********* The owner of the province:
+********** Changes prestige by 5
+********** Sets the country flag NF_colony
+********** Sets the country flag NF_peacenik
+********* Adds the modifier "colonial_accommodation_mod" until the end of the campaign:
+********** +25 colonial growth
+******* Gets the province event:
+******** ID is 3072
+******** title = 1 "[Root.NativeCulture.GetName] Raids on Our Colonies
+******** desc:
+********* desc = 2 "The [Root.Culture.GetName] settlers in [Root.GetName] are merely attempting to bring civilization to the savage lands of [Root.GetSuperRegionName] and enlighten it with superior [Root.Culture.GetGroupName] culture. However, it seems that the [Root.NativeCulture.GetName] savages refuse to accept our superior ways, and our harsh treatment of these native people has only served to increase tensions between the [Root.NativeCulture.GetName] tribesmen and our colonists. The only question now is how do we resolve this situation?
+********* Trigger:
+********** Any of the following:
+*********** In the continent 0 "North America
+*********** In the continent 0 "South America
+*********** In the continent 1 "The New World
+*********** In the colonial region 0 "Colonial Australia
+******** desc:
+********* desc = EVTDESC3072.TC
+********* Trigger:
+********** Any of the following:
+*********** Not in the continent 0 "North America
+*********** Not in the continent 0 "South America
+*********** Not in the continent 1 "The New World
+*********** Not in the colonial region 0 "Colonial Australia
+******** picture = NATIVES_eventPicture
+******** Trigger:
+********* The owner of the province:
+********** Any of the following:
+*********** Has the country flag NF_ruthless
+*********** native_policy = native_policy_hostile
+********* The province is a colony
+********* Native hostilty is at least 5
+********* Native population is at least 3
+********* Less than 1 units are present in the province
+********* Colony has a population of at least 200
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 0.95:
+********** Native hostilty is at least 7
+********* Multiplies value by 0.85:
+********** Native hostilty is at least 9
+********* Multiplies value by 0.95:
+********** Native ferocity is at least 3
+********* Multiplies value by 0.95:
+********** Native ferocity is at least 4
+********* Multiplies value by 0.95:
+********** Native ferocity is at least 5
+********* Multiplies value by 1.15:
+********** Native ferocity is less than 3
+********* Multiplies value by 1.15:
+********** Native ferocity is less than 2
+******** goto = our country
+******** Option: 1 "We end it with a show of force!:
+********* AI chance:
+********** Base chance of 60
+********* The owner of the province:
+********** Changes treasury by -100 ducats
+********* Changes hostility of natives by 3
+********* Changes ferocity of natives by 2
+******** Option: 1 "The situation can’t be salvaged, abandon the colony.:
+********* AI chance:
+********** Base chance of 40
+********* Hidden effect:
+********** Changes population of colony by -1000
+******* Gets the province event:
+******** ID is 3073
+******** title = 1 "[Root.NativeCulture.GetName] People Plead for Aid
+******** desc = 1 "It seems our harsh treatment of the [Root.NativeCulture.GetName] people living in and around our colonies have had quite the adverse effect on their continued existence. A combination of the foreign diseases our colonists brought over both intentionally and unintentionally has devastated the [Root.NativeCulture.GetName] populace living in [Root.GetName] and now their leaders have approached us begging us to relent and take pity on the suffering of their people.
+******** picture = NATIVES_eventPicture
+******** Trigger:
+********* The owner of the province:
+********** Any of the following:
+*********** Has the country flag NF_ruthless
+*********** native_policy = native_policy_hostile
+********* The province is a colony
+********* Colony has a population lower than 200
+********* Native population is at least 5
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+********* Multiplies value by 0.8:
+********** Colony has a population lower than 150
+********* Multiplies value by 0.8:
+********** Any bordering province:
+*********** The province is a colony
+*********** The province is owned by our country
+******** goto = our country
+******** Option: 1 "These savages haven’t known true suffering yet.:
+********* AI chance:
+********** Base chance of 75
+********* Changes number of natives by -5000
+********* The owner of the province:
+********** Random owned province:
+*********** Limited to:
+************ The province is a colony
+************ Native population is at least 2
+*********** Changes number of natives by -2000
+********** Adds the modifier "0 "Disregard Natives" for 2 years:
+*********** -5% colonist chance
+*********** -5 global settler increase
+******** Option: 1 "Perhaps we should show charity this once.:
+********* AI chance:
+********** Base chance of 25
+********* The owner of the province:
+********** Changes treasury by -20 ducats
+********** Adds the modifier "0 "Aid Natives" for 12 months:
+*********** +2% colonist chance
+*********** +2 global settler increase
+******* Gets the province event:
+******** ID is 3074
+******** title = 1 "Colonial Expansion
+******** desc:
+********* desc = 1 "It would seem that our harsh treatment of the [Root.NativeCulture.GetName] people living in [Root.GetName] has paid off in a massive way. Forcing those primitives off of their rich fertile soil has created new opportunities for [Root.Culture.GetName] settlers to take their place and our colonial companies have already begun exploiting the ancestral land of the [Root.NativeCulture.GetName], but they request financial aid to complete the construction of the new settlement.
+********* Trigger:
+********** Any of the following:
+*********** In the continent 0 "North America
+*********** In the continent 0 "South America
+*********** In the continent 1 "The New World
+*********** In the colonial region 0 "Colonial Australia
+******** desc:
+********* desc = EVTDESC3074.TC
+********* Trigger:
+********** Any of the following:
+*********** Not in the continent 0 "North America
+*********** Not in the continent 0 "South America
+*********** Not in the continent 1 "The New World
+*********** Not in the colonial region 0 "Colonial Australia
+******** picture = COLONIZATION_eventPicture
+******** Trigger:
+********* The province is a colony
+********* The owner of the province:
+********** Any of the following:
+*********** Has the country flag NF_ruthless
+*********** native_policy = native_policy_hostile
+********** Ruler's military skill is at least 2
+********* Any bordering province:
+********** The province is owned by our country
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Ruler's military skill is at least 3
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Has a Colonial Governor with a skill of at least 2
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Has a Colonial Governor with a skill of at least 3
+********* Multiplies value by 8.0:
+********** The owner of the province:
+*********** Has at least 30 provinces
+******** goto = our country
+******** Option: 1 "For glory, God, and gold!:
+********* AI chance:
+********** Base chance of 75
+********* Changes population of colony by 200
+********* The owner of the province:
+********** Changes treasury by -30 ducats
+********** Adds the modifier "0 "Expand Colonial Land" for 2 years:
+*********** +5% colonist chance
+*********** +1 global settler increase
+******** Option: 1 "It's too expensive.:
+********* AI chance:
+********** Base chance of 25
+********* Changes population of colony by 50
+********* The owner of the province:
+********** Adds the modifier "0 "Restrict Colonial Expansion" for 2 years:
+*********** -10 global settler increase
+******* Gets the province event:
+******** ID is 3075
+******** title = 1 "Lucrative Trade Agreements With the [Root.NativeCulture.GetName] Tribe
+******** desc = 1 "Lesser nations question what value there is in engaging the [Root.NativeCulture.GetName] people in trade, but our merchants know better. It seems that these people do not know the true value of what they hold, and we have a golden opportunity to strike riches from these people by taking massive stores of valuable goods and metals in exchange for some relatively trivial medical resources.
+******** picture = MERCHANTS_TALKING_eventPicture
+******** Trigger:
+********* The owner of the province:
+********** Any of the following:
+*********** Has the country flag NF_trader
+*********** native_policy = native_policy_trade
+********** Trade efficiency is at least 50%
+********* Does not have the province modifier "0 "Merchant Investment"
+********* The province is not the capital of the country
+********* Native population is at least 1
+******** Mean time to happen
+********* Base mean time to happen of 2000 months
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Has the idea 0 "National Trade Policy
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Has the idea 0 "Merchant Adventures
+********* Multiplies value by 1.1:
+********** The owner of the province:
+*********** Does not have the idea 0 "National Trade Policy
+********* Multiplies value by 1.1:
+********** The owner of the province:
+*********** Does not have the idea 0 "Merchant Adventures
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Trade efficiency is at least 60%
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Trade efficiency is at least 70%
+********* Multiplies value by 0.95:
+********** The owner of the province:
+*********** Trade efficiency is at least 80%
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Stability is at least 2
+********* Multiplies value by 1.1:
+********** The owner of the province:
+*********** Stability is lower than -1
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Has the 0 "Trader advisor
+********* Multiplies value by 1.05:
+********** The owner of the province:
+*********** Does not have a 0 "Trader advisor
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Has a Trader with a skill of at least 2
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Has a Trader with a skill of at least 3
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has at least 10 colonies
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has at least 20 colonies
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has at least 30 colonies
+******** goto = our country
+******** Option: 1 "Make the deal!:
+********* AI chance:
+********** Base chance of 20
+********* The owner of the province:
+********** Changes treasury by 50 ducats
+******** Option: 1 "Make an investment in their tribe.:
+********* AI chance:
+********** Base chance of 50
+********* Adds the modifier "0 "Merchant Investment" until the end of the campaign:
+********** +25% provincial trade power
+********* The owner of the province:
+********** Changes treasury by 10 ducats
+******** Option: 1 "We will not exploit these people.:
+********* AI chance:
+********** Base chance of 30
+********* The owner of the province:
+********** Changes diplomatic power stored by 20
+******* Gets the province event:
+******** ID is 3076
+******** title = 1 "[Root.NativeCulture.GetName] People Request Aid
+******** desc = 2 "It seems that the trading between our colonists in [Root.GetName] and the [Root.NativeCulture.GetName] has led to an outbreak of diseases usually foreign to [Root.GetSuperRegionName]. They come to us with grizzly stories of bringing goods traded from our nation back to their tribe, only for it to infect their weak and elderly with a plethora of diseases their healers have never encountered before. All they ask is for a single free shipment of medical supplies, and they will gladly begin integrating with our colony.
+******** picture = PLAGUE_eventPicture
+******** Trigger:
+********* The owner of the province:
+********** Any of the following:
+*********** Has the country flag NF_trader
+*********** native_policy = native_policy_trade
+********* Colony has a population lower than 200
+********* The province is a colony
+********* Native population is at least 5
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+********* Multiplies value by 0.8:
+********** Colony has a population lower than 150
+********* Multiplies value by 0.8:
+********** Any bordering province:
+*********** The province is a colony
+*********** The province is owned by our country
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has at least 5 colonies
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has at least 10 colonies
+********* Multiplies value by 3.0:
+********** The owner of the province:
+*********** Has at least 20 colonies
+******** goto = our country
+******** Option: 1 "Can the treasury bear such an expense?:
+********* AI chance:
+********** Base chance of 50
+********* Changes number of natives by -5000
+********* The owner of the province:
+********** Random owned province:
+*********** Limited to:
+************ The province is a colony
+************ Native population is at least 2
+*********** Changes number of natives by -2000
+********** Adds the modifier "0 "Disregard Natives" for 2 years:
+*********** -5% colonist chance
+*********** -5 global settler increase
+******** Option: 1 "Give them everything they need and more!:
+********* AI chance:
+********** Base chance of 50
+********* The owner of the province:
+********** Changes treasury by -40 ducats
+********** Adds the modifier "0 "Aid Natives" for 2 years:
+*********** +2% colonist chance
+*********** +2 global settler increase
+******* Gets the province event:
+******** ID is 3077
+******** title = 1 "[Root.NativeCulture.GetName] People Request [Root.Owner.Religion.GetName] Conversion!
+******** desc:
+********* Trigger:
+********** The owner of the province:
+*********** has_reform = mission_to_civilize_reform
+********* desc = 1 "We have made it our holy duty to civilize the New World and enlighten the native people with our [Root.Owner.Religion.GetName] faith. As our priests and missionaries perform their holy duty in [Root.GetName], they report being approached by some [Root.NativeCulture.GetName] shamans requesting to abandon their [Root.OriginalReligion.GetName] roots and join [Root.Owner.Monarch.GetTitle] [Root.Owner.Monarch.GetName] in [Root.Owner.Monarch.GetHerHis] holy duty to propagate the [Root.Owner.Religion.GetName] faith amongst the unenlightened members of the local [Root.NativeCulture.GetName] tribe. If we accept, we will have a whole new clerical class of [Root.NativeCulture.GetName] to spread our faith, but we risk angering the more traditional [Root.OriginalReligion.GetName] members of their tribe.
+******** desc:
+********* Trigger:
+********** The owner of the province:
+*********** Any of the following:
+************ Has the country flag NF_peacenik
+************ native_policy = native_policy_coexist
+********* desc = 1 "Although we have not been actively propagating our religion in [Root.GetName], many members of the [Root.NativeCulture.GetName] tribe have been adopting the [Root.Owner.Religion.GetName] religion regardless and request to officially abandon their old faith in favor of ours and join our colony. We could take this offer and apply it to the entire [Root.NativeCulture.GetName] tribe living close to our colony in [Root.GetName], but this may anger some of the more traditional [Root.OriginalReligion.GetName] members of their tribe.
+******** desc:
+********* Trigger:
+********** The owner of the province:
+*********** Any of the following:
+************ Has the country flag NF_trader
+************ native_policy = native_policy_trade
+********* desc = 1 "We have always made it our policy to propagate trade between our good people and the strange people of the new world. As of late, however, the [Root.NativeCulture.GetName] traders have come to us asking not for food or medical supplies, but for symbols and tools of worship of the [Root.Owner.Religion.GetName] faith and many are even requesting to be ordained as priests so they may spread the faith amongst their entire tribe! If we accept, we will be united with the [Root.NativeCulture.GetName] people in faith, but we risk angering the more traditional [Root.OriginalReligion.GetName] members of their tribe.
+******** picture = NATIVES_eventPicture
+******** Trigger:
+********* The owner of the province:
+********** Any of the following:
+*********** Has the country flag NF_peacenik
+*********** Has the country flag NF_trader
+*********** native_policy = native_policy_coexist
+*********** native_policy = native_policy_trade
+*********** has_reform = mission_to_civilize_reform
+********* Any of the following:
+********** All of the following:
+*********** Follows the owner religion
+*********** Native population is at least 1
+********** Does not follow the owner religion
+********* The province is a colony
+********* Native hostilty is less than 4
+********* Does not have the province modifier "converted_natives_colony_timer"
+********* The owner of the province:
+*********** No owned province:
+************ expulsion_target:
+************* Province is our country
+******** Mean time to happen
+********* Base mean time to happen of 320 months
+********* Multiplies value by 0.9:
+********** Native hostilty is less than 3
+********* Multiplies value by 0.8:
+********** Native hostilty is less than 2
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Has a Colonial Governor with a skill of at least 1
+******** Immediate effects:
+********* Hidden effect:
+********** Adds the modifier "converted_natives_colony_timer" until the end of the campaign:
+*********** No effects
+******** goto = our country
+******** Option: 1 "Welcome to the faith!:
+********* AI chance:
+********** Base chance of 70
+********* Changes hostility of natives by 2
+********* Changes ferocity of natives by 2
+********* If:
+********** Limited to:
+*********** Does not follow the owner religion
+********** Changes religion to owner
+********* else:
+********** Changes population of colony by 100
+******** Option: 1 "A good [Root.Owner.Monarch.GetTitle] allows [Root.Owner.Monarch.GetHerHis] people their ways.:
+********* AI chance:
+********** Base chance of 30
+********* Changes hostility of natives by -2
+********* Changes ferocity of natives by -2
+******* Gets the province event:
+******** ID is 3079
+******** title = 1 "The Suffering of the [Root.NativeCulture.GetName] People
+******** desc = 1 "To our horror, we have discovered that our mere presence in [Root.GetName] is causing massive damage to the [Root.NativeCulture.GetName] people! We have always strived to coexist with native people, but just glancing at the effect that foreign diseases have had on the local [Root.NativeCulture.GetName] villages is more than anyone can bear. The suffering of their people cannot be ignored, and if we do nothing then we risk bringing an end to the [Root.NativeCulture.GetName] people…
+******** picture = PLAGUE_eventPicture
+******** Trigger:
+********* The owner of the province:
+********** Any of the following:
+*********** Has the country flag NF_peacenik
+*********** native_policy = native_policy_coexist
+********* Colony has a population lower than 200
+********* The province is a colony
+********* Native population is at least 5
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+********* Multiplies value by 0.8:
+********** Colony has a population lower than 150
+********* Multiplies value by 0.8:
+********** Any bordering province:
+*********** The province is a colony
+*********** The province is owned by our country
+******** goto = our country
+******** Option: 1 "We simply can't afford it.:
+********* AI chance:
+********** Base chance of 30
+********* Changes number of natives by -5000
+********* The owner of the province:
+********** Changes stability by -1
+********** Random owned province:
+*********** Limited to:
+************ The province is a colony
+************ Native population is at least 2
+*********** Changes number of natives by -2000
+********** Adds the modifier "0 "Disregard Natives" for 2 years:
+*********** -5% colonist chance
+*********** -5 global settler increase
+******** Option: 1 "Give them everything they need!:
+********* AI chance:
+********** Base chance of 70
+********* The owner of the province:
+********** Changes treasury by -80 ducats
+********** Adds the modifier "0 "Aid Natives" for 4 years:
+*********** +2% colonist chance
+*********** +2 global settler increase
+******* Gets the province event:
+******** ID is 4900
+******** title = 1 "Natives in [Root.GetName] Adopt [Root.Culture.GetName] Culture
+******** desc = 1 "To our surprise, many members of the [Root.NativeCulture.GetName] tribe have chosen to adopt our language and etiquette and have integrated themselves into the [Root.GetName] colony! These people are now considered another component of the unique cultural melting pot in [Root.GetName].
+******** picture = NATIVES_eventPicture
+******** Trigger:
+********* The province is a colony
+********* Native population is at least 3
+********* If:
+********** Limited to:
+*********** Has the DLC The Cossacks
+********** The owner of the province:
+*********** Any of the following:
+************ native_policy = native_policy_coexist
+************ native_policy = native_policy_trade
+********* else:
+********** The owner of the province:
+*********** Any of the following:
+************ Has the country flag NF_peacenik
+************ Has the country flag NF_trader
+******** Mean time to happen
+********* Base mean time to happen of 20 years
+********* Multiplies value by 0.9:
+********** Native population is at least 5
+********* Multiplies value by 0.9:
+********** Native population is at least 10
+********* Multiplies value by 0.9:
+********** Native population is at least 20
+********* Multiplies value by 0.9:
+********** Native population is at least 40
+********* Multiplies value by 0.9:
+********** Native population is at least 60
+********* Multiplies value by 0.9:
+********** Native population is at least 80
+******** goto = our country
+******** Option: 1 "They’re going to love being [Root.Owner.Culture.GetName]!:
+********* Changes population of colony by 100
+******* Gets the province event:
+******** ID is 4901
+******** title = 1 "Accommodation with Natives in $PROVINCENAME$
+******** desc = 1 "Though there have been troubles in our relations with the native people of [Root.GetName], we have managed to find an agreement with the ruling class of their tribe, and this should lead to a massive reduction in violence and conflict between our two people. We have broken bread with their leaders and jointly agreed to cease our conflict and move forward as friends and allies!
+******** picture = NATIVES_eventPicture
+******** Trigger:
+********* The province is a colony
+********* Native population is at least 3
+********* Native ferocity is at least 1
+********* Native hostilty is at least 1
+********* Does not have the province modifier "colonial_accommodation_mod"
+********* Any of the following:
+********** At least 1 units are present in the province
+********** The owner of the province:
+*********** Any of the following:
+************ Has the country flag NF_peacenik
+************ native_policy = native_policy_coexist
+******** Mean time to happen
+********* Base mean time to happen of 20 years
+********* Multiplies value by 0.9:
+********** At least 2 units are present in the province
+********** Native population is lower than 41
+********* Multiplies value by 0.9:
+********** At least 4 units are present in the province
+********** Native population is lower than 81
+********* Multiplies value by 0.9:
+********** At least 6 units are present in the province
+********** Native population is lower than 121
+********* Multiplies value by 0.9:
+********** At least 8 units are present in the province
+********* Multiplies value by 0.5:
+********** The owner of the province:
+*********** Any of the following:
+************ Has the country flag NF_peacenik
+************ native_policy = native_policy_coexist
+******** goto = our country
+******** Option: 1 "Peace!:
+********* If:
+********** Limited to:
+*********** Does not have the DLC The Cossacks
+********** Changes ferocity of natives by -1
+********* Adds the modifier "colonial_accommodation_mod" until the end of the campaign:
+********** +25 colonial growth
+********* If:
+********** Limited to:
+*********** The owner of the province:
+************ Does not have the country modifier "colonial_assimilation_of_natives_mod"
+********** The owner of the province:
+*********** Adds the modifier "colonial_assimilation_of_natives_mod" for 5 years:
+************ native_uprising_chance = -0.2
+************ native_assimilation = 0.4

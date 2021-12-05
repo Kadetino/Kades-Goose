@@ -1,0 +1,1676 @@
+** Trigger:
+*** 0 "Spain does not exist
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** Not at war with 0 "Aragon
+***** Is not a vassal
+***** 0 "Aragon:
+****** Country exists
+****** Is AI controlled
+****** Wasn't player controlled
+****** Is not a vassal
+****** Is a neighbor of our country
+****** is_in_war:
+******* attacker_leader_false = 0 "Aragon
+****** is_in_war:
+******* defender_leader_false = 0 "Aragon
+***** Has at least 25 provinces
+**** All of the following:
+***** Country is 0 "Aragon
+***** Not at war with 0 "Castile
+***** Is not a vassal
+***** Is not AI controlled
+***** 0 "Castile:
+****** Country exists
+****** Is AI controlled
+****** Wasn't player controlled
+****** Is not a vassal
+****** Is a neighbor of our country
+****** is_in_war:
+******* attacker_leader_false = 0 "Castile
+****** is_in_war:
+******* defender_leader_false = 0 "Castile
+***** Has at least 16 provinces
+*** Year is at least 1450
+*** Year is less than 1530
+*** Is not a vassal
+*** Has at least 10 provinces
+*** Any of the following:
+**** All of the following:
+***** 0 "Castile:
+****** Ruler is female
+***** 0 "Aragon:
+****** Ruler is male
+**** All of the following:
+***** 0 "Castile:
+****** Ruler is male
+***** 0 "Aragon:
+****** Ruler is female
+**** 0 "Aragon:
+***** Is AI controlled
+***** Is in regency
+**** 0 "Castile:
+***** Is AI controlled
+***** Is in regency
+** Mean time to happen
+*** Base mean time to happen of 120 months
+*** Multiplies value by 0.1:
+**** Any of the following:
+***** All of the following:
+****** Country is 0 "Castile
+****** 0 "Aragon:
+******* Is not in regency
+***** All of the following:
+****** Country is 0 "Aragon
+****** 0 "Castile:
+******* Is not in regency
+** Option: 0 "Let us bind their Dynasty to ours:
+*** AI chance:
+**** Base chance of 90
+*** If:
+**** Limited to:
+***** Country is 0 "Castile
+**** Creates a union with 0 "Aragon
+**** Adds the opinion modifier "0 "Iberian Wedding" towards 0 "Aragon
+**** 0 "Aragon:
+***** Adds the opinion modifier "0 "Iberian Wedding" towards our country
+***** Adds -50 liberty desire
+**** Every known country:
+***** Limited to:
+****** Has a royal marriage with 0 "Aragon
+***** Adds the opinion modifier "0 "Iberian Wedding" towards our country
+*** If:
+**** Limited to:
+***** Country is 0 "Aragon
+**** Creates a union with 0 "Castile
+**** Adds the opinion modifier "0 "Iberian Wedding" towards 0 "Castile
+**** 0 "Castile:
+***** Adds the opinion modifier "0 "Iberian Wedding" towards our country
+***** Adds -50 liberty desire
+**** Every known country:
+***** Limited to:
+****** Has a royal marriage with 0 "Castile
+***** Adds the opinion modifier "0 "Iberian Wedding" towards our country
+*** Random owned province:
+**** Limited to:
+***** The province is not the capital of the country
+**** Spawns revolt of size 2 of 0 "Noble rebels
+** Option: 0 "No, let us marry a local talent instead:
+*** AI chance:
+**** Base chance of 10
+*** add_stability_or_adm_power = yes
+*** If:
+**** Limited to:
+***** Country is 0 "Castile
+**** 0 "Aragon:
+***** Adds the opinion modifier "0 "Declined Iberian Wedding" towards our country
+*** If:
+**** Limited to:
+***** Country is 0 "Aragon
+**** 0 "Castile:
+***** Adds the opinion modifier "0 "Declined Iberian Wedding" towards our country
+*** If:
+**** Limited to:
+***** Is not in regency
+***** has_consort_false = no
+***** has_government_attribute = queen
+**** define_consort:
+***** Ruler's administrative skill is at least 2
+***** Ruler's military skill is at least 2
+***** Ruler's diplomatic skill is at least 2
+* Gets the country event:
+** ID is flavor_spa.3150
+** title = 0 "Torquemada and the Conversion of the Moors
+** desc = 0 "After having expelled the Jews on 3rd August 1492, the Catholic sovereigns of Spain considered it was time to look after the Moorish population of Al-Andalus, the southern part of the peninsula from the old Muslims kingdoms of Valencia and, above all, Grenada. With the renewal of the Inquisition led by Tomás de Torquemada, Spain became a country of religious fanatics where agricultural work and crafts were considered labors unworthy of Christians. Forced conversions followed as well as enslavement, torture and executions where many were burned at the stake. In the wake of these persecutions, many thousands left Spain.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** 0 "Granada does not exist
+*** Follows the 0 "Catholic religion
+*** Is not at war
+*** Any owned province:
+**** Region is iberia_region
+**** Is in the 0 "Muslim religion group
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag spa_holy_inquisition
+** Option: 0 "Let us be rid of those we cannot trust:
+*** Creates an advisor of the 0 "Inquisitor type:
+**** Named "TomÃ¡s de Torquemada"
+**** In the province 1 "Valladolid
+**** discount = yes
+**** With a skill level of 1
+*** Every owned province:
+**** Limited to:
+***** Region is iberia_region
+***** Is in the 0 "Muslim religion group
+**** Changes religion to 0 "Catholic
+**** Adds the modifier "0 "Forced Conversion" until the end of the campaign:
+***** -40% manpower modifier
+***** -33% provincial tax income
+***** local_unrest = 2
+*** Random country:
+**** Limited to:
+***** Is in the 0 "Muslim religion group
+***** Any owned province:
+****** 0 "Sea Zone:
+******* Any bordering province:
+******** The province is owned by our country
+**** Gets the country event:
+***** ID is flavor_spa.3151
+***** Base mean time to happen of 10 tooltip days
+*** Sets the country flag torquemada_expelled
+*** Adds 2% reform desire
+** Option: 0 "Toleration is key to the nation's prosperity:
+*** AI chance:
+**** Base chance of 0
+*** Adds -1% reform desire
+*** add_stability_or_adm_power = yes
+*** Adds the ruler modifier "0 "Religious Tolerance" until the ruler's death:
+**** -10% stability cost modifier
+**** +1 tolerance of heretics
+**** +1 tolerance of heathens
+**** -2 tolerance of the true faith
+* Gets the country event:
+** ID is flavor_spa.3151
+** title = 0 "Fate of the Spanish Moors
+** desc = 0 "In a foolish decision of faith over economy, [From.GetName] have caused many of the Moors still living in their lands to leave.
+** picture = ECONOMY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "They are a welcome addition to our country.:
+*** AI chance:
+**** Base chance of 90
+*** Random owned province:
+**** Changes base tax by 1
+* Gets the country event:
+** ID is flavor_spa.1
+** title = 0 "Christopher Columbus
+** desc = 0 "Explorer Christopher Columbus made two attempts to convince the King of Portugal, [From.Monarch.GetName], to finance an expedition to try and find a western route to the Orient. After being rejected the second time, Columbus turned his efforts towards the [Root.GetAdjective] Crown. Backed up by Italian investors, Columbus hopes to convince King [Root.Monarch.GetName] to agree to the expedition.
+** picture = SHIP_SAILING_eventPicture
+** is_triggered_only = yes
+** Trigger:
+*** Does not have the global flag columbus_happened
+*** Has the idea 0 "Quest for the New World
+*** Any of the following:
+**** 0 "North America:
+***** Has not been discovered by our country
+**** 0 "South America:
+***** Has not been discovered by our country
+***** No known country:
+****** 0 "North America:
+******* Has discovered PREV
+***** No known country:
+****** 0 "South America:
+******* Has discovered PREV
+** Option: 0 "Reject his proposal:
+*** AI chance:
+**** Base chance of 10
+*** Sets the country flag turned_down_columbus
+*** Random known country:
+**** Limited to:
+***** Does not have the country flag turned_down_columbus
+***** Follows the 0 "Catholic religion
+***** Has the idea 0 "Quest for the New World
+**** Gets the country event:
+***** ID is flavor_spa.1
+** Option: 0 "Hire Columbus:
+*** AI chance:
+**** Base chance of 90
+*** Modifies treasury by -0.25 years worth of income
+*** Sets the global flag columbus_happened
+*** Creates an explorer:
+**** Named "NAME_CRISTOBAL_COLON"
+**** 2 skill in fire
+**** 2 skill in shock
+**** 6 skill in manuever
+**** 0 skill in siege
+* Gets the country event:
+** ID is flavor_spa.1005
+** title = 0 "Discovery of the New World!
+** desc = 0 "On October 12, 1492, after 34 days out of sight of land, Christopher Columbus and his crew set foot on an island in the Bahamas, which Columbus named San Salvador. They had discovered a New World.
+** picture = COLONIZATION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Does not have the global flag new_world_discovered
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** Any of the following:
+**** 0 "North America:
+***** Has been discovered by our country
+**** 0 "South America:
+***** Has been discovered by our country
+**** 1 "The New World:
+***** Has been discovered by our country
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Immediate effects:
+*** Sets the global flag new_world_discovered
+** Option: 0 "Now so have we!:
+*** Changes prestige by 50
+*** add_innovativeness_small_effect = yes
+* Gets the country event:
+** ID is flavor_spa.1011
+** title = 0 "Ignacio de Loyola
+** desc = 0 "Ignacio de Loyola was born in 1491 into a Basque noble family. He served as a soldier under Antonio Manrique de Lara, the Viceroy of Navarre - a Kingdom that Spain had conquered in 1512 - and was wounded in the Battle of Pamplona. When the French army, supporting the expelled Navarrese monarchy, stormed the city on May 20, 1521, Loyola was hit by a cannonball that severely injured both his legs. During the long and painful recovery, Ignacio read a translated version of Ludolph of Saxony's 'De Vita Christi' - a commentary on the life of Jesus that had a great influence on Loyola. He abandoned his military life and decided to devote himself entirely to serving God. In 1534 he and six companions formed the Society of Jesus, commonly known as the Jesuits, devoted to opposing heresy and actively promoting the counter-reformation.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** Follows the 0 "Catholic religion
+*** Year is at least 1521
+*** Year is less than 1556
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "An Excellent Minister!:
+*** Changes administrative power stored by 50
+*** Changes Papal Influence by 25
+*** Creates an advisor of the 0 "Theologian type:
+**** Culture is 0 "Basque
+**** Follows the 0 "Catholic religion
+**** Named "Ignacio de Loyola"
+**** discount = yes
+**** With a skill level of 2
+* Gets the country event:
+** ID is flavor_spa.3152
+** title = 0 "The Quest for the New World
+** desc = 0 "After the Conquest of Granada, Spain was filled with veterans and warriors of the faith with nothing to do and many needs. Deeds and needs would be fulfilled as Cortez and Pizarro started out to conquer South- and Central America. All these people became the hacienda-owners and trader-barons of the New World bringing wealth both into their own pockets and the vaults of the Spanish treasury.
+** picture = EXPLORERS_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** Follows the 0 "Catholic religion
+*** Any of the following:
+**** 0 "North America:
+***** Has been discovered by our country
+**** 0 "South America:
+***** Has been discovered by our country
+** Mean time to happen
+*** Base mean time to happen of 64 months
+** Option: 0 "A New Reconquista! We need Conquistadors:
+*** AI chance:
+**** Base chance of 45
+*** Creates a conquistador:
+**** 2 skill in fire
+**** 2 skill in shock
+**** 5 skill in manuever
+*** Changes military power stored by 50
+** Option: 0 "A New Reconquista! We need Explorers:
+*** AI chance:
+**** Base chance of 45
+*** Creates an explorer:
+**** 2 skill in fire
+**** 2 skill in shock
+**** 5 skill in manuever
+*** Changes military power stored by 50
+* Gets the country event:
+** ID is flavor_spa.1000
+** title = 0 "Crusade against Oran
+** desc = 0 "Early in the 16th century cardinal Francisco Jimenez de Cisneros set his sights on the North African coast, a region where his religious zeal could find an outlet now that the Reconquista was over in Spain. He personally organized and financed a crusade against the city of Oran. The port of Mers El Kebir was captured in 1505 and in 1509 a strong force accompanied by Cisneros himself and led by the Condottieri Pedro Navarro finally took Oran in an assault.
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** 0 "Oran:
+**** The province is owned by our country
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Expansion in North Africa seems prosperous:
+*** Changes prestige by 10
+*** Modifies treasury by 0.05 years worth of income
+* Gets the country event:
+** ID is flavor_spa.1001
+** title = 0 "Laws of Burgos
+** desc = 0 "The Laws of Burgos was a set of laws concerning the behavior of Spaniards in America that were issued in the city of Burgos in 1512. They especially concerned the treatment of the indigenous peoples. Though the laws authorized colonizers to forcibly grouping together Indians to work for them, the laws also regulated rules regarding work, pay, provisioning and living quarters. It also prohibited any form of punishment by others than the authorities. The laws, however, did little to ease the suffering of the Indians due to lax implementation.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1500
+*** Year is less than 1600
+*** colony = 3
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Enforce these laws!:
+*** AI chance:
+**** Base chance of 75
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Every subject country:
+**** Limited to:
+***** is_colonial_nation_of = our country
+**** Adds the modifier "0 "Laws of Burgos" for the rest of the campaign:
+***** global_trade_goods_size_modifier = -0.05
+***** -2 global unrest
+** Option: 0 "We rule by the right of Conqueror!:
+*** AI chance:
+**** Base chance of 25
+*** Changes prestige by 25
+* Gets the country event:
+** ID is flavor_spa.1003
+** title = 0 "Casa de Contratación
+** desc = 0 "The Casa de Contratación was established by Isabella I of Castile in 1503 as a government agency to oversee all Spanish colonization. Voyages of exploration and trade had to be approved by it and all colonial taxes were collected by it. The Casa was also instructed to try and protect secret information on new trade routes and discoveries.
+** picture = COLONIZATION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Does not have the DLC Golden Century
+***** Any of the following:
+****** All of the following:
+******* Country is 0 "Castile
+******* 0 "Spain does not exist
+****** Country is 0 "Spain
+***** num_of_colonists = 2
+**** Has the country flag spa_house_of_trade_flag
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "We should establish it:
+*** AI chance:
+**** Base chance of 90
+*** Adds the modifier "0 "Casa de Contratación" for the rest of the campaign:
+**** +1% colonist chance
+**** +5 global settler increase
+* Gets the country event:
+** ID is flavor_spa.1004
+** title = 0 "The Sun Never Sets
+** desc = 0 "During the 16th century under the rule of Charles V, the Spanish Empire reached its greatest span. Charles' extensive domains in Europe included Spain, Austria, the Low Countries, Milan and the Kingdom of Naples. To this came numerous colonies in North and South America, Africa and Asia.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** 0 "Europe:
+**** country_or_vassal_holds = our country
+*** 0 "North America:
+**** country_or_vassal_holds = our country
+*** 0 "South America:
+**** country_or_vassal_holds = our country
+*** 0 "Africa:
+**** country_or_vassal_holds = our country
+*** 0 "Asia:
+**** country_or_vassal_holds = our country
+** Mean time to happen
+*** Base mean time to happen of 64 months
+** Option: 0 "It was said to be 'The empire on which the sun never sets.':
+*** Changes prestige by 25
+*** Adds 25 legitimacy
+*** Changes Papal Influence by 100
+* Gets the country event:
+** ID is flavor_spa.3153
+** title = 0 "The Trade Center of Sevilla
+** desc = 0 "With the discovery of the New World, Seville entered its greatest period of prosperity. It was the chief port of trade with the new colonies. Quickly the Spanish monarchs let it have the monopoly on freights from the Spanish colonies.
+** picture = MERCHANTS_TALKING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Does not have the DLC Golden Century
+***** Country is 0 "Spain
+***** Owns 0 "Sevilla
+***** colony = 3
+**** Has the country flag sevilla_trade_center_flag
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "We now have control of our Oversea Trade:
+*** 0 "Sevilla:
+**** Adds the modifier "0 "Port to the New World" until the end of the campaign:
+***** +2000% provincial trade power
+* Gets the country event:
+** ID is flavor_spa.3154
+** title = 0 "The Fuggers
+** desc = 0 "The Fuggers were a peasant family of weavers from Augsburg during the 15th Century who rose through trade and transactions in money to Bankers of the Habsburgs and the Popes. Jakob Fugger the Rich (1511-1525) financed Charles V wars and election to the Empire, controlled European lead, silver and copper production and obtained a monopoly in quicksilver. Anton Fugger (1525-1560) had trading concessions in Chile, Peru and Moscow. However, the company declined by the end of the 16th Century because of state bankruptcies in Spain, family conflicts and lack of interest on the part of the heirs.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1500
+*** Year is less than 1600
+** Mean time to happen
+*** Base mean time to happen of 240 months
+** Option: 0 "Let the Fuggers run our Finances:
+*** Adds the ruler modifier "0 "The Fuggers" until the ruler's death:
+**** -0.25 interest
+** Option: 0 "Turn the Fuggers offer down:
+*** Adds 5 legitimacy
+* Gets the country event:
+** ID is flavor_spa.3155
+** title = 0 "The Comuneros
+** desc = 0 "The commons, angered by the exploitation by the nobles formed into brotherhoods, notably the 'Comuneros' of Castile and the 'Germania' of Valencia, and attempted to pressurize the nobles into giving them more rights and a better deal.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** Year is at least 1500
+*** Year is less than 1600
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Crush the Rebellion:
+*** Every owned province:
+**** Limited to:
+***** Region is iberia_region
+**** add_unrest = 10
+** Option: 0 "Give concessions to the commoners:
+*** Adds the ruler modifier "0 "Concessions to the Peasantry" until the ruler's death:
+**** -10% global tax modifier
+**** global_autonomy = 0.05
+* Gets the country event:
+** ID is flavor_spa.3158
+** title = 0 "State Bankruptcy
+** desc = 0 "In 1557, on the very first year as Spanish king, Philip II was forced to declare the country bankrupt. Spain had for many years undercut its tax base and what was worse, had no control of the price-fluctuations from the inflow of American silver and gold. It was impossible for the Spanish minister of finance to forecast any repayments as all costs fluctuated volatile. The spending was based on the planned budget, but the inflow was irregular at best which made Spain spend more than it actually had, thus the Great Bankruptcies of 1557 and 1596.
+** picture = BANKRUPTCY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** Is bankrupt
+*** Year is less than 1590
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Do we ever learn from history?:
+*** Adds -5 legitimacy
+* Gets the country event:
+** ID is flavor_spa.3160
+** title = 0 "The Expulsion of the Moriscos
+** desc = 0 "Southern parts of Spain were inhabited mostly by Moriscos - Muslims who had converted to Catholicism under the threat of expulsion by Ferdinand and Isabella following the Reconquista. Many, however, continued secretly to practice Islam, and at times provided the Ottoman Turks with information facilitating Turkish raids on the Spanish coast. Persecuted by the Spanish Inquisition and subjected to restrictive legislation, the Moriscos rose in a bloody rebellion (1568-71), which Philip II put down with the help of Don John of Austria. The Moriscos prospered in spite of persecutions and furthered Spanish agriculture, trade, and industries. However, in 1609 Philip III, influenced by the Duke of Lerma, decreed their expulsion for both religious and political reasons, and the Moriscos to leave the Kingdom, only allowing them to keep what they could carry. Everything else was confiscated. The expulsions came to hurt the Spanish economy for generations.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Follows the 0 "Catholic religion
+*** Primary culture is not 0 "Andalusian
+*** 0 "Granada does not exist
+*** Year is at least 1600
+*** Any owned province:
+**** Culture is 0 "Andalusian
+*** Does not have the DLC Golden Century
+** Immediate effects:
+*** Hidden effect:
+**** Sets the global flag expulsion_of_the_moriscos_flag
+** Mean time to happen
+*** Base mean time to happen of 140 months
+** Option: 0 "Expel them!:
+*** AI chance:
+**** Base chance of 90
+*** Changes Papal Influence by 25
+*** Every owned province:
+**** Limited to:
+***** Culture is 0 "Andalusian
+**** add_unrest = 5
+*** Random country:
+**** Limited to:
+***** Is in the 0 "Muslim religion group
+***** Any owned province:
+****** 0 "Sea Zone:
+******* Any bordering province:
+******** The province is owned by our country
+**** Gets the country event:
+***** ID is flavor_spa.3161
+***** Base mean time to happen of 10 tooltip days
+** Option: 0 "Let them be as they are needed for the economy:
+*** Changes Papal Influence by -25
+* Gets the country event:
+** ID is flavor_spa.3161
+** title = 0 "Expulsion of the Moriscos
+** desc = 0 "In a foolish decision of faith over economy [From.GetName] has chosen to expel the Moriscos living in their land. This is an opportunity to enhance our own economy. Should we allow them to settle in our provinces?
+** picture = ECONOMY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "They are a welcome addition:
+*** AI chance:
+**** Base chance of 90
+*** Random owned province:
+**** Changes base tax by 1
+* Gets the country event:
+** ID is flavor_spa.3710
+** title = 0 "Baltasar de Zuniga
+** desc = 0 "Baltasar de Zuniga came from a powerful Spanish noble family. He served Philip III as ambassador to Brussels, Paris and Vienna between 1599 to 1617. In the latter position he was instrumental in Spain's intervention in the Thirty Years War. In 1618 he managed to remove the Duke of Lerma as Philip III's key advisor, a position he then overtook himself. De Zuniga's nephew, Olivares, was placed in the household of Prince Philip - later Philip IV - to assure continued dominance at the royal court.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** Year is at least 1591
+*** Year is less than 1622
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "An Excellent Minister!:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes administrative power stored by 40
+*** Changes diplomatic power stored by 40
+*** Changes military power stored by 40
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "Baltasar de Zuniga"
+**** discount = yes
+**** With a skill level of 3
+* Gets the country event:
+** ID is flavor_spa.3711
+** title = 0 "Olivares
+** desc = 0 "The Duke of Olivares led the Spanish government between 1621 and 1643, under King Philip IV (1621-1665) whom he was enjoying the favor. He was devious and cunning leader, he involved Spain in the Thirty Years War alongside the Imperials and had the war with Holland renewed. This proved disastrous and precipitated Spanish decline, with secession of both Catalonia (reunited 1652) and Portugal in 1640. Under his governments, poetry, literature (Calderon) and painting (El Greco, Velasquez, and Murillo) prospered and Spanish modes and customs spread across Europe.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1617
+*** Year is less than 1645
+** Mean time to happen
+*** Base mean time to happen of 64 months
+** Immediate effects:
+*** Sets the country flag SPA_had_event_3711
+** Option: 0 "An Excellent Minister!:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes administrative power stored by 100
+*** Changes diplomatic power stored by 100
+*** Changes military power stored by 100
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "Conde-Duque Olivares"
+**** Culture is 0 "Umbrian
+**** discount = yes
+**** With a skill level of 3
+* Gets the country event:
+** ID is flavor_spa.3162
+** title = 0 "The Portuguese Crown
+** desc = 0 "Philip I arrived in Portugal and was accepted as King (1580-98) by the Cortes held at Tomar (1581). He undertook to preserve Portuguese autonomy, to consider the union as a personal one like that of Aragon and Castile under Ferdinand and Isabella, to appoint only Portuguese to the administration, to summon Cortes frequently, and to be accompanied by a Portuguese council in Madrid.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Has a royal marriage with 0 "Portugal
+*** Is not a vassal
+*** 0 "Portugal:
+**** Country exists
+**** Is AI controlled
+**** Wasn't player controlled
+**** Is not a vassal
+**** Is in regency
+**** Follows our country's religion
+**** Does not consider 0 "Spain a rival
+**** Has an opinion of at least 150 with our country
+*** Year is at least 1550
+*** Year is less than 1650
+** Mean time to happen
+*** Base mean time to happen of 2000 months
+** Option: 0 "One King, Two Kingdoms:
+*** AI chance:
+**** Base chance of 90
+*** Creates a union with 0 "Portugal
+** Option: 0 "The extra burden is not worth it:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by 1
+* Gets the country event:
+** ID is flavor_spa.3164
+** title = 0 "State Bankruptcy
+** desc = 0 "In 1596, a couple of years after the disastrous defeat of the Armada, Philip II were again forced to declare the country bankrupt. Spain had for many years undercut its tax base and what was worse, had no control of the price-fluctuations from the inflow of American silver and gold. It was impossible for the Spanish minister of finance to forecast any repayments as all costs fluctuated volatile. The spending was based on the planned budget, but the inflow was irregular at best which made Spain spend more than it actually had, thus the Great Bankruptcies of 1557 and 1596.
+** picture = BANKRUPTCY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1590
+*** Is bankrupt
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Do we ever learn from history?:
+*** Changes prestige by -5
+* Gets the country event:
+** ID is flavor_spa.3165
+** title = 0 "Epidemic Plague
+** desc = 0 "The epidemics that swept Spain in the 1590s significantly reduced the population. In addition, as Philip II strengthened the Inquisition, intellectual life became narrower and less open to new currents of thought. At his death in 1598 Philip left a country that was declining domestically and internationally.
+** picture = PLAGUE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Has at least 4 provinces
+*** iberia_region:
+**** The province is owned by our country
+*** Year is at least 1550
+*** Year is less than 1700
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "We will recover:
+*** Adds the modifier "0 "Severe Plague" for 5 years:
+**** -25% manpower modifier
+**** -25% provincial tax income
+**** trade_goods_size_modifier = -0.25
+**** local_unrest = -3
+**** local_autonomy = 0.05
+* Gets the country event:
+** ID is flavor_spa.3169
+** title = 0 "The Iberian Revolts
+** desc = 0 "In 1639 Olivares opened a campaign against southern France from Catalonia. If the Catalans had to defend their country, Olivares argued, they would have to support the army. This logic was lost on the Catalans. The peasants, urged on by their clergy, refused to support the troops. Soon there were clashes with the population, then riots and open rebellion. On June 7 the mob murdered the viceroy in Barcelona. In the autumn of 1640 Olivares scraped together the last available troops and sent them against the Catalan rebels. The rebel leader, Pau Claris, countered by transferring Catalan allegiance to the king of France, 'as in the time of Charlemagne' (Jan. 1641). French troops now entered Catalonia. Only when the renewed French civil wars (the Fronde) induced the French to withdraw their army was the Castilians able to re-conquer Catalonia (1652).
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Has at least 10 provinces
+*** Year is at least 1600
+*** Year is less than 1700
+*** Primary culture is not 0 "Catalan
+*** Any owned province:
+**** Culture is 0 "Catalan
+** Mean time to happen
+*** Base mean time to happen of 400 months
+** Option: 0 "Put it down!:
+*** Every owned province:
+**** Limited to:
+***** Culture is 0 "Catalan
+**** add_unrest = 20
+** Option: 0 "Appease them!:
+*** Every owned province:
+**** Limited to:
+***** Culture is 0 "Catalan
+**** add_local_autonomy = 25
+* Gets the country event:
+** ID is flavor_spa.3168
+** title = 0 "National revolt in Portugal
+** desc = 0 "In 1640, Portugal had been under the domination of Spanish kings for 60 years, since the fall of the Aviz dynasty in 1578. However, in 1640, the Portuguese rose up in revolt and started a long liberation war against Spain. A long 24 years struggle, along with Spanish defeat in the Thirty Years War (1648), peace with France (1659) would lead to a renewed independence for Portugal, under the new Braganza dynasty, which would turn to Stuart England as an ally and protector (marriage of Catherine of Braganza with Charles II and transfer of Bombay to England as a dowry).
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Has at least 10 provinces
+*** Year is at least 1600
+*** Year is less than 1700
+*** Primary culture is not 0 "Portuguese
+*** Any owned province:
+**** Culture is 0 "Portuguese
+** Mean time to happen
+*** Base mean time to happen of 400 months
+** Option: 0 "Put it down!:
+*** Every owned province:
+**** Limited to:
+***** Culture is 0 "Portuguese
+**** add_unrest = 20
+** Option: 0 "Appease them!:
+*** Every owned province:
+**** Limited to:
+***** Culture is 0 "Portuguese
+**** add_local_autonomy = 25
+* Gets the country event:
+** ID is flavor_spa.3170
+** title = 0 "The Italian Revolts
+** desc = 0 "In 1647, popular revolutions broke out in Naples and Palermo, and soon these two cities were in the hands of revolutionary governments. In Naples, at least, it was again the excessive taxation, imposed for Spain's war effort that had precipitated the rebellion. The Spanish monarchy, wrote the Venetian ambassador to Madrid at the time, 'resembled that great colossus that during an earthquake had collapsed in a few moments while everyone hurried along to enrich himself with the fragments.' In fact, Spain survived and even managed to hold on to much of its empire. The revolts of Naples and Sicily, directed as much against the local nobility as against Spain, were put down in 1648.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Has at least 10 provinces
+*** Year is at least 1600
+*** Year is less than 1700
+*** Any owned province:
+**** Region is italy_region
+** Mean time to happen
+*** Base mean time to happen of 400 months
+** Option: 0 "Put it down!:
+*** Every owned province:
+**** Limited to:
+***** Region is italy_region
+**** add_unrest = 20
+** Option: 0 "Appease them!:
+*** Every owned province:
+**** Limited to:
+***** Region is italy_region
+**** add_local_autonomy = 25
+* Gets the country event:
+** ID is flavor_spa.3712
+** title = 0 "Alberoni
+** desc = 0 "Born in 1664 the son of a gardener in Fiorenzuela (near Placentia, Italy), Giulio Alberoni owned his political career and success to the Duke of Vendôme, the French general whom he served in Italy, France and Spain. Agent of the Duke of Parma, he facilitated the wedding of Philip V of Spain with Elizabeth Farnese and become a Cardinal in 1717. His bellicose policy in Spain had him expelled in 1719. He was cunning and sly, but Spain did not have the resources needed to fulfill his ambitious plan. The Age of Spanish Supremacy was long gone.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1694
+*** Year is less than 1752
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "An Excellent Minister!:
+*** Changes diplomatic power stored by 100
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Creates an advisor of the 0 "Statesman type:
+**** Culture is 0 "Romagnol
+**** Follows the 0 "Catholic religion
+**** Named "Giulio Alberoni"
+**** discount = yes
+**** With a skill level of 2
+* Gets the country event:
+** ID is flavor_spa.3094
+** title = 0 "Jose Moñino
+** desc = 0 "After the expulsion of the Jesuits from Spain (1767), Moñino was sent to Rome as ambassador to obtain the papal suppression of the Society of Jesus. He was ennobled (1773) for the success of his mission. In 1776 Charles III appointed him chief minister. Under Conde de Floridablanca, as he was simply known in Spain, the Spanish enlightened despotism reached its peak, and his internal reforms, notably in finance, helped centralize the state. This, however, brought him into conflict with especially the Aragonese faction at court who accused him of embezzlement. After serving a three-year sentence he withdrew from public life. At the age of eighty he made a comeback into political life as he accepted the title of President of the Supreme Central and Governmental Junta that led the defense against Napoleon in 1808.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1758
+*** Year is less than 1808
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "An Excellent Minister!:
+*** Changes administrative power stored by 100
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "José Monino"
+**** Culture is 0 "Andalusian
+**** discount = yes
+**** With a skill level of 3
+* Gets the country event:
+** ID is flavor_spa.3095
+** title = 0 "The Constitution of 1812
+** desc = 0 "The Cortes, when they met at Cadiz in 1810, were dominated by liberals who wished to go beyond the mere support of the war effort and establish a constitution that would make impossible the revival of rule by a favorite like Godoy. The Constitution of Cadiz gave Spain a strictly limited monarchy (the king must work through his responsible ministers), a single-chamber Parliament with no special representation for the Church or the nobility, and a modern centralized administrative system based on provinces and municipalities.
+** picture = DEBATE_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1800
+*** has_reform_false = parliamentary_reform
+*** has_reform_false = 0 "Celestial Empire
+*** Has the monarchy government type
+** Mean time to happen
+*** Base mean time to happen of 10 months
+** Option: 0 "Follow the Cortes:
+*** AI chance:
+**** Base chance of 75
+*** add_government_reform = parliamentary_reform
+** Option: 0 "Resist these liberals!:
+*** AI chance:
+**** Base chance of 25
+*** Changes stability by -1
+* Gets the country event:
+** ID is flavor_spa.1100
+** title = 0 "Miguel de Cervantes
+** desc = 0 "In his early twenties novelist and poet Miguel de Cervantes served as a soldier in the Spanish navy. He was captured by Algerian corsairs in 1575 and kept hostage for five years, until ransomed by his parents and a Catholic religious order. In 1585 he published his first novel, La Galetea, but continued to support himself as a purveyor and tax collector. His break as an author came in 1605 with the publication of 'The Ingenious Gentleman Don Quixote of La Mancha' which became an immediate success and was later followed by a second part in 1615.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1577
+*** Year is less than 1616
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Excellent:
+*** Changes diplomatic power stored by 50
+* Gets the country event:
+** ID is flavor_spa.1101
+** title = 0 "Tomás Luis de Victoria
+** desc = 0 "Although an accomplished organist and singer, Tomás Luis de Victoria preferred the more quiet life of a composer to that of a performer. He was considered the most famous composer of 16th century Spain and one of the best-regarded composers of sacred music.
+** picture = THEATRE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1578
+*** Year is less than 1611
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Immediate effects:
+*** Sets the country flag SPA_had_event_1101
+** Option: 0 "Excellent:
+*** Changes prestige by 25
+* Gets the country event:
+** ID is flavor_spa.1007
+** title = 0 "The Italian Wars
+** desc = 0 "The Italian Wars were a series of wars between 1494 and 1559 that involved most Italian city-states, the Papal State and drew in major powers like France, Spain and the Holy Roman Empire. The earlier War of Lombardy against the Republic of Venice had left the Duchy of Milan seeking an ally and turned to Charles VIII of France for help. Using the House of Valois' old claim to the throne of Naples as a pretext when Ferdinand I of Naples died, Charles invaded the peninsula in 1494. With his army followed a large and mobile siege train that battered down the medieval city walls in a matter of days - triggering the reforms that led to the fortification style called 'Trace Italienne.' Despite tactical victories in the field, Charles became cut off from France and was forced to return home in 1498. The conflict over Italy was, however, far from over and the wars between Spain and France would go on for another 61 years.
+** picture:
+*** Trigger:
+**** Has the DLC Emperor
+*** picture = ITALIAN_wars_eventPicture
+** picture:
+*** Trigger:
+**** Does not have the DLC Emperor
+*** picture = MILITARY_CAMP_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** 0 "France exists
+*** Year is at least 1490
+*** Year is less than 1590
+*** Is not allied with 0 "France
+*** Is not a vassal of 0 "France
+*** Not at war with 0 "France
+*** italy_region:
+**** Is part of the Holy Roman Empire
+*** italy_region:
+**** The province is owned by 0 "France
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Claim all French land in Italy!:
+*** AI chance:
+**** Base chance of 90
+*** 0 "France:
+**** Adds the opinion modifier "0 "Claimed Italy" towards our country
+**** Every owned province:
+***** Limited to:
+****** Region is italy_region
+***** Adds claim to our country
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_spa.1008
+****** Base mean time to happen of 10 days
+** Option: 0 "Italy lies outside our sphere of interest:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by -10
+* Gets the country event:
+** ID is flavor_spa.1008
+** title = 0 "The Italian Wars
+** desc = 0 "The Italian Wars were a series of wars between 1494 and 1559 that involved most Italian city-states, the Papal State and drew in major powers like France, Spain and the Holy Roman Empire. The earlier War of Lombardy against the Republic of Venice had left the Duchy of Milan seeking an ally and turned to Charles VIII of France for help. Using the House of Valois' old claim to the throne of Naples as a pretext when Ferdinand I of Naples died, Charles invaded the peninsula in 1494. Despite tactical victories in the field, Charles became cut off from France and was forced to return home in 1498. The conflict over Italy was, however, far from over and the wars between Spain and France would go on for another 61 years.\n\n[From.GetName] has now claimed all our provinces in Italy!
+** picture:
+*** Trigger:
+**** Has the DLC Emperor
+*** picture = ITALIAN_wars_eventPicture
+** picture:
+*** Trigger:
+**** Does not have the DLC Emperor
+*** picture = MILITARY_CAMP_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Then counter-claim all [From.GetAdjective] provinces!:
+*** AI chance:
+**** Base chance of 90
+*** Our country:
+**** Every owned province:
+***** Limited to:
+****** Region is italy_region
+***** Adds claim to our country
+**** Tooltip:
+***** Adds the opinion modifier "0 "Claimed Italy" towards our country
+**** Hidden effect:
+***** Gets the country event:
+****** ID is flavor_spa.1009
+****** Base mean time to happen of 10 days
+** Option: 0 "We should back down in Italy:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by -10
+* Gets the country event:
+** ID is flavor_spa.1009
+** title = 0 "The Italian Wars
+** desc = 0 "Our move to claim all [From.GetAdjective] provinces in Italy has met with a response from [From.GetName]. They have now claimed all of our provinces in Italy!
+** picture:
+*** Trigger:
+**** Has the DLC Emperor
+*** picture = ITALIAN_wars_eventPicture
+** picture:
+*** Trigger:
+**** Does not have the DLC Emperor
+*** picture = MILITARY_CAMP_eventPicture
+** is_triggered_only = yes
+** Option: 0 "How dare they?! Italy is ours!:
+*** Adds the opinion modifier "0 "Claimed Italy" towards our country
+* Gets the country event:
+** ID is flavor_spa.2
+** title = 0 "The Valladolid Debate
+** desc = 0 "The treatment of the native population in our colonies has become the subject of great debate among the [Root.Culture.GetName] intellectuals. A priest named Bartolomé de las Casas have made himself the spokesman of the natives and demand that we recognize their free will to receive Christ rather than force them into slavery and compelled conversions. The discussion has been going on for some time in various publications and has now culminated in a great debate being held in Valladolid at the request of [Root.Monarch.GetName].\nLas Casas main opponent, Juan Ginés de Sepúlveda, argues that the natives are naturally disposed towards slavery and that this is the only sure way to get them to stop their barbaric customs of cannibalism and human sacrifice in order to make them convert to the true faith.
+** picture = UNIVERSITY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** Follows the 0 "Catholic religion
+*** Year is at least 1540
+*** Year is less than 1570
+*** colony = 3
+*** Any of the following:
+**** 0 "North America:
+***** country_or_vassal_holds = our country
+**** 0 "South America:
+***** country_or_vassal_holds = our country
+*** Owns 1 "Valladolid
+** Mean time to happen
+*** Base mean time to happen of 90 months
+** Option: 0 "Let us follow Sepúlveda's reasoning.:
+*** AI chance:
+**** Base chance of 15
+**** Multiplies value by 2:
+***** Has the idea group 0 "Religious Ideas
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Adds the modifier "0 "Colonial Policies: Sepúlveda" for 10 years:
+**** +10% global tariffs
+*** Every subject country:
+**** Limited to:
+***** is_colonial_nation_of = our country
+**** Adds the modifier "0 "Colonial Policies: Sepúlveda" for 10 years:
+***** +0.5% global missionary strength
+***** -1 tolerance of heathens
+***** +10 global settler increase
+** Option: 0 "A good debate is always valuable in itself.:
+*** AI chance:
+**** Base chance of 70
+*** Changes prestige by 10
+** Option: 0 "Let us follow Las Casas reasoning.:
+*** AI chance:
+**** Base chance of 15
+**** Multiplies value by 2:
+***** Has the idea group 0 "Humanist Ideas
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Every subject country:
+**** Limited to:
+***** is_colonial_nation_of = our country
+**** Adds the modifier "0 "Colonial Policies: Las Casas" for 10 years:
+***** -1% global missionary strength
+***** +1 tolerance of heathens
+***** +15 global settler increase
+**** Adds the opinion modifier "0 "Angered Land Owners" towards our country
+* Gets the country event:
+** ID is flavor_spa.3
+** title = 0 "The Alhambra Decree
+** desc = 0 "With the fall of Granada the last Muslim bastion of the Iberian Peninsula is now in Christian hands. Among our subjects there are still, however, a large number of Jews, Muslims and converts of questionable sincerity known as Marranos and Moriscos.\nIn order to create a truly universal Catholic state it has been suggested that we force our Jewish population to either convert or leave the country forever with what possessions they have that are not of precious metals.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** 0 "Granada does not exist
+*** Follows the 0 "Catholic religion
+*** Has the idea 0 "Spanish Inquisition
+*** Is not at war
+*** Year is at least 1480
+*** Year is less than 1540
+** Mean time to happen
+*** Base mean time to happen of 180 months
+** Option: 0 "Expulsion or Conversion:
+*** AI chance:
+**** Base chance of 70
+*** Adds the modifier "0 "Alhambra Decree" for 10 years:
+**** Trade efficiency is at least -10%
+**** -10% stability cost modifier
+**** +1 tolerance of the true faith
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Enacted Alhambra Decree" towards our country
+** Option: 0 "Let them stay.:
+*** AI chance:
+**** Base chance of 30
+**** Multiplies value by 2:
+***** Has the idea group 0 "Humanist Ideas
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** Has the DLC Leviathan
+**** Adds the modifier "0 "Alhambra Workforce" for 10 years:
+***** great_project_upgrade_cost = -0.25
+* Gets the country event:
+** ID is flavor_spa.4
+** title = 0 "Unification of Spain
+** desc = 0 "Up until now the Spanish [Root.Monarch.GetTitle] has technically been the ruler of many states that together have been known as Spain. With the recent centralization of the government, however, and the creation of a new type of Parliament in [Root.Capital.GetCapitalName] [Root.Monarch.GetName] has suggested that it is time that we abolish the power of the local Cortes of the Spanish states. While this will not be an easy undertaking the alternative is to risk having the local Cortes stifle our new Parliamentary system with their old provincial interests.
+** picture = ELECTION_REPUBLICAN_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Any of the following:
+**** has_reform = 0 "Constitutional Monarchy
+**** has_reform = 0 "Constitutional Republic
+**** has_reform = parliamentary_reform
+*** Is not at war
+*** Does not have the country modifier "0 "Increased Decentralization"
+*** Owns core province 0 "Cadiz
+*** Owns core province 2 "Corunna
+*** Owns core province 0 "Navarra
+*** Owns core province 0 "València
+*** Owns core province 0 "Barcelona
+*** Owns core province 0 "Zaragoza
+*** Owns core province 0 "León
+*** Owns core province 0 "Madrid
+*** 0 "Castile does not exist
+*** 0 "Aragon does not exist
+*** 0 "Navarra does not exist
+*** 0 "Galicia does not exist
+*** 0 "León does not exist
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Option: 0 "One Cortes for a United Spain.:
+*** AI chance:
+**** Base chance of 90
+*** Changes administrative power stored by -50
+*** Adds the modifier "0 "Nueva Planta Decrees" for the rest of the campaign:
+**** global_autonomy = -0.05
+**** +5% stability cost modifier
+** Option: 0 "We cannot infringe on their ancient rights.:
+*** AI chance:
+**** Base chance of 10
+*** Adds the modifier "0 "Cortes of all Spains" for 10 years:
+**** -1 global unrest
+**** global_autonomy = 0.05
+*** If:
+**** Limited to:
+***** Has the DLC Common Sense
+**** Every owned province:
+***** Limited to:
+****** Any of the following:
+******* Province is 0 "Cadiz
+******* Province is 2 "Corunna
+******* Province is 0 "Navarra
+******* Province is 0 "València
+******* Province is 0 "Barcelona
+******* Province is 0 "Zaragoza
+******* Province is 0 "León
+******* Province is 0 "Madrid
+****** has_seat_in_parliament_false = no
+***** set_seat_in_parliament = yes
+*** else:
+**** Every owned province:
+***** Limited to:
+****** Any of the following:
+******* Province is 0 "Cadiz
+******* Province is 2 "Corunna
+******* Province is 0 "Navarra
+******* Province is 0 "València
+******* Province is 0 "Barcelona
+******* Province is 0 "Zaragoza
+******* Province is 0 "León
+******* Province is 0 "Madrid
+****** The province is not the capital of the country
+***** add_local_autonomy = 50
+* Gets the country event:
+** ID is flavor_spa.5
+** title = 0 "Grammar of the [Root.Culture.GetName] Tongue
+** desc = 0 "Spain is a country of many languages and while some attempts have been made to create a standardized overview of grammar for the [Root.Culture.GetName] language it's far from the only language used in our administration even in the core of our lands. Recently a particularly well researched and thorough new Grammar for the [Root.Culture.GetName] tongue was presented to [Root.Monarch.GetName]. When our [Root.Monarch.GetTitle] asked what use this might be to the state the bishop of Avila offered this simple suggestion:\n'After Your Highness has subjected barbarous peoples and nations of varied tongues, with conquest will come the need for them to accept the laws that the conqueror imposes on the conquered, and among them will be our language.'
+** picture = BIG_BOOK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1490
+*** Has at least 25 provinces
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Adopt [Root.Culture.GetName] as the language of our administration.:
+*** AI chance:
+**** Base chance of 90
+*** Adds the ruler modifier "0 "One Language of Government" until the ruler's death:
+**** -15% culture conversion cost
+**** +10% stability cost modifier
+** Option: 0 "We must try to incorporate all languages of our realm instead.:
+*** AI chance:
+**** Base chance of 10
+*** Adds the ruler modifier "0 "A Government of Many Languages" until the ruler's death:
+**** num_accepted_cultures = 1
+**** global_autonomy = 0.02
+* Gets the country event:
+** ID is flavor_spa.6
+** title = 0 "A new Spanish Capital
+** desc = 0 "The unification of Spain has created a kingdom consisting of many former realms. [Root.Capital.GetCapitalName] has served our predecessors well but it has been suggested that the small city of Madrid with its central position and welcoming climate would be a better location from which to rule all the Spanish realms. The existing Real Alcázar de Madrid could be expanded into a suitable royal residence while the city in general is still undeveloped enough to offer a blank sheet for the city planners of our kingdom. Let us build a new capital fit to rule a Great Empire!
+** picture = CITY_DEVELOPMENT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Owns core province 0 "Madrid
+*** Capital is not 0 "Madrid
+*** Has at least 25 provinces
+*** Has the monarchy government type
+*** Year is at least 1520
+*** Year is less than 1580
+** Mean time to happen
+*** Base mean time to happen of 180 months
+** Option: 0 "¡Sólo Madrid es corte!:
+*** AI chance:
+**** Base chance of 90
+**** Multiplies value by 0:
+***** Primary culture is not 0 "Castilian
+*** Sets capital to 0 "Madrid
+*** 0 "Madrid:
+**** Adds the modifier "0 "Sólo Madrid es corte!" until the end of the campaign:
+***** +1 prestige
+***** global_autonomy = -0.03
+** Option: 0 "[Root.Capital.GetCapitalName] will remain the capital of our dynasty.:
+*** AI chance:
+**** Base chance of 10
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_spa.7
+** title = 0 "War of Las Alpujarras
+** desc = 0 "The Christian clergy has always regarded the Morisco converts to Christianity with suspicion. This is all the more true in the recently conquered kingdom of Granada where the policies to encourage conversions have been too efficient according to some. Whether the Christian suspicions have been proven right or if it is a result of their actions to persecute feared Crypto-Catholics we cannot know but it is clear the Moriscos in the former kingdom of Granada feel they have had enough.\nOn the slopes of the Sierra Nevada mountains the Moors have enthroned a new king of Granada and as the revolt spreads reports reach us of the destruction of churches, torture and murder of Christian priests and open defiance of our most Catholic kingdom.
+** picture = BORDER_TENSION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** Follows the 0 "Catholic religion
+*** Year is less than 1600
+*** Has the country flag spa_holy_inquisition
+*** 0 "Granada does not exist
+*** Owns 0 "Granada
+*** Any owned province:
+**** Does not have the province modifier "0 "Forced Conversion"
+**** Region is iberia_region
+**** Culture is 0 "Andalusian
+**** Has core on 0 "Granada
+*** Any of the following:
+**** Has the country flag torquemada_expelled
+**** All of the following:
+***** Does not have the country flag torquemada_expelled
+***** Any owned province:
+****** Has core on 0 "Granada
+****** The province is currently being converted
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Region is iberia_region
+****** Has core on 0 "Granada
+****** Any of the following:
+******* fort_level = 1
+******* Province is 0 "Granada
+***** Sets the province flag alpujarras_centre_of_revolt
+**** Every owned province:
+***** Limited to:
+****** Region is iberia_region
+****** Has core on 0 "Granada
+****** Does not have the province flag alpujarras_centre_of_revolt
+***** Sets the province flag alpujarras_revolt
+** Option: 0 "Ok.:
+*** Changes stability by -1
+*** Sets the country flag alpujarras_revolt_happened
+*** Random owned province:
+**** Limited to:
+***** Has the province flag alpujarras_centre_of_revolt
+**** If:
+***** Limited to:
+****** Does not follow the 0 "Sunni religion
+***** Changes religion to 0 "Sunni
+**** Spawns revolt of size 2 of 0 "Separatists rebels
+**** Removes the province flag alpujarras_centre_of_revolt
+*** Every owned province:
+**** Limited to:
+***** Has the province flag alpujarras_revolt
+**** If:
+***** Limited to:
+****** Does not follow the 0 "Sunni religion
+***** Changes religion to 0 "Sunni
+**** Spawns revolt of size 1 of 0 "Separatists rebels
+**** Removes the province flag alpujarras_revolt
+* Gets the country event:
+** ID is flavor_spa.8
+** title = 0 "Fate of the Kingdom of Granada
+** desc = 0 "With all important locations in Granada once again under our control we must decide what to do with the Morisco population. It is true that most of them never supported the rebellion but how could we trust them not to turn on us in the future?
+** picture = MILITARY_CAMP_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Has the country flag fate_of_granada_mission_flag
+**** All of the following:
+***** Does not have the DLC Golden Century
+***** Any of the following:
+****** All of the following:
+******* Country is 0 "Castile
+******* 0 "Spain does not exist
+****** Country is 0 "Spain
+***** Has the country flag alpujarras_revolt_happened
+***** Does not have the country flag end_of_granada
+***** 0 "Granada does not exist
+***** Owns 0 "Granada
+****** No owned province:
+******* Has core on 0 "Granada
+******* Controlled by 0 "Rebels
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Expel all Granadan Moriscos!:
+*** AI chance:
+**** Base chance of 1
+*** Sets the country flag end_of_granada
+*** Changes stability by -2
+*** Every owned province:
+**** Limited to:
+***** Has core on 0 "Granada
+**** Changes religion to 0 "Catholic
+**** Removes core on 0 "Granada
+*** Random country:
+**** Limited to:
+***** Is in the 0 "Muslim religion group
+***** Any owned province:
+****** 0 "Sea Zone:
+******* Any bordering province:
+******** The province is owned by our country
+**** Gets the country event:
+***** ID is flavor_spa.3151
+***** Base mean time to happen of 10 tooltip days
+** Option: 0 "We must mend these wounds, not cut off the limb.:
+*** If:
+**** Limited to:
+***** Stability is lower than 3
+**** add_stability_or_adm_power = yes
+*** If:
+**** Limited to:
+***** Stability is at least 3
+**** Every owned province:
+***** Limited to:
+****** Has core on 0 "Granada
+***** add_unrest = -2
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_spa.9
+** title = 0 "New Testament Translated Into Spanish
+** desc = 0 "With its strongly Catholic history and identity the kingdom of Spain has not seen widespread interest in the Protestant reformation. There are, however, rumors of small groups of intellectuals secretly meeting to discuss these matters in larger cities. It is therefore with some concern that news has reached our most catholic majesty that the New Testament has been translated into Spanish by our countryman Francisco de Enzinas. While the printing presses in Spain itself are tightly controlled by the state it seems the printers of the Low Countries feel no obligation to protect the tender minds of our subjects. The Holy Inquisition has asked us to make an example of any Protestants they can find in our country to track down those who would bring the book into Spain as well as any Crypto-Lutherans inside our borders.
+** picture = BIG_BOOK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** The 0 "Protestant religion is enabled
+*** Has the monarchy government type
+*** Follows the 0 "Catholic religion
+*** Year is at least 1530
+*** Year is less than 1560
+*** iberia_region:
+**** is_reformation_center_false = yes
+**** Has less than 4 provinces where all of the following is true:
+***** Region is iberia_region
+***** Any of the following:
+****** Follows the 0 "Reformed religion
+****** Follows the 0 "Protestant religion
+** Mean time to happen
+*** Base mean time to happen of 90 months
+** Option: 0 "Best to nip this in the bud.:
+*** AI chance:
+**** Base chance of 9
+**** Multiplies value by 0.1:
+***** Has the idea group 0 "Humanist Ideas
+*** Adds the ruler modifier "0 "Intensified Suppression of Protestantism" until the ruler's death:
+**** +1% global heretic missionary strength
+**** -1 tolerance of heretics
+**** Follows the yes religion
+** Option: 0 "We can tolerate a few Protestants as long as they keep in line.:
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** Has the country modifier "0 "Counter-Reformation"
+*** Adds the modifier "0 "Spanish Bible Translation" for 19.73 years:
+**** -1% global heretic missionary strength
+**** +1 tolerance of heretics
+**** Follows the yes religion
+* Gets the country event:
+** ID is flavor_spa.10
+** title = 0 "Ottoman Expansion in the Western Mediterranean
+** desc = 0 "The expanding Ottoman Empire has long been cause for concern for the Christian countries with interest in the Eastern Mediterranean and the Balkans. With the fall of Tunis to the Ottomans they are now also present in the Western Mediterranean and seem destined to quickly supplant the weak Muslim dynasties that control most of the area. Interestingly enough the Emir in Tunis, recently ousted by Ottoman forces, has taken refuge in our country and is imploring us to retake his lost city. Perhaps his cooperation is just what we need to be able to stop the Ottoman menace before it is too late?
+** picture = NAVAL_MILITARY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+**** Country is 0 "Spain
+*** Follows the 0 "Catholic religion
+*** Any of the following:
+**** 0 "Tunis does not exist
+**** 0 "Tunis:
+***** A vassal of our country
+*** 0 "Ottomans:
+**** Is not allied with our country
+**** Not at war with our country
+**** Has at least 40 provinces
+**** Is not in 0 "Christian's religion group
+**** Owns 0 "Tunis
+** Mean time to happen
+*** Base mean time to happen of 24 months
+** Option: 0 "We must act to contain this threat!:
+*** AI chance:
+**** Base chance of 1
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Supporting Tunisian Claimant." towards our country
+*** 0 "Tunis:
+**** Adds claim to our country
+** Option: 0 "Our interests lie elsewhere.:
+*** Changes prestige by -5
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Turned down Tunisian Claimant." towards our country
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_spa.11
+** title = 0 "Reforming the Colonial Administration
+** desc = 0 "The Spanish Colonial Empire is one of the oldest in the world and as such has one of the oldest systems of administration. [Root.Monarch.GetName] has recently taken an interest in how the government of the colonies might be improved in order to increase our revenue extraction from them. The advisors of [Root.Monarch.GetName] are all men of the Enlightenment and have suggested a number of ways to improve the situation, among other things the colonies should be allowed to trade freely rather than through a few select ports, Intendants appointed directly by the crown should be sent out to ensure the efficiency and honesty of our administration and tax reductions for vital sectors might stimulate the growth of the colonial economies.
+** picture = GOOD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Year is at least 1700
+*** Has the monarchy government type
+*** colony = 3
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Reform our colonial administration.:
+*** AI chance:
+**** Base chance of 1
+*** Changes administrative power stored by -75
+*** Adds the modifier "0 "Colonial Reforms" for the rest of the campaign:
+**** +10% global tariffs
+*** Every subject country:
+**** Limited to:
+***** is_colonial_nation_of = our country
+**** Adds the modifier "0 "Colonial Reforms" for 19.73 years:
+***** +10% stability cost modifier
+***** -1 tolerance of heathens
+***** +10% production efficiency
+***** +5% trade power
+**** Adds the opinion modifier "0 "Colonial Reforms" towards our country
+** Option: 0 "Let us not mend what is not broken.:
+*** AI chance:
+**** Base chance of 0
+*** Every subject country:
+**** Limited to:
+***** is_colonial_nation_of = our country
+**** Adds -5 liberty desire
+**** Adds the opinion modifier "0 "Colonial Privileges Kept" towards our country
+* Gets the country event:
+** ID is flavor_spa.12
+** title = 0 "Expulsion of the Jesuit Order
+** desc = 0 "The Society of Jesus has played a very active part in the history of our country through the years both as agents of the Counter-Reformation and as facilitators of the colonization and conversion of the Americas. Through the centuries the order has come to wield considerable political power, especially in the colonies, where it has over time grown to become something of a nuisance. Our colonial administrators and landowners complain that the Jesuits protect runaway Indian slaves and that some of their reductions take up valuable land that would serve much better as a direct part of our country. The Order has also used its influence more than once to deflect or prevent our political goals and many suspect they support autonomy for our colonial possessions. The defenders of the Jesuits, however, claim that they bring many indirect benefits to our colonies and that we will see far from beneficial long term effects from expelling the order.
+** picture = POPE_PREACHING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Spain
+*** Follows the 0 "Catholic religion
+*** colony = 3
+*** Year is at least 1750
+*** Has the monarchy government type
+*** Has the country modifier "0 "The Societas Jesu"
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Expel all Jesuits and auction of their property.:
+*** AI chance:
+**** Base chance of 1
+*** Modifies treasury by 0.25 years worth of income
+*** Changes prestige by -10
+*** Removes the country modifier "0 "The Societas Jesu"
+*** Every subject country:
+**** Limited to:
+***** is_colonial_nation_of = our country
+***** Follows the 0 "Catholic religion
+**** Every owned province:
+***** Limited to:
+****** Has the province modifier "0 "Jesuit Mission"
+***** Removes the country modifier "0 "Jesuit Mission"
+**** Modifies treasury by 0.25 years worth of income
+**** Adds the modifier "0 "Jesuits Expelled" for the rest of the campaign:
+***** +10% technology cost
+***** -1% global missionary strength
+**** Adds -5 liberty desire
+** Option: 0 "Their contributions to society more than make up for the problems they bring.:
+*** Changes prestige by 25
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_spa.13
+** title = 0 "A Strategic Marriage
+** desc = 0 "As France grows stronger and begins to exert her power across Western Europe, those of us unfortunate enough to be her neighbors have to take action. In order to counter the rising threat, we have skillfully devised a political marriage with the Habsburgs of Austria, ensuring good relations between our countries for all time.
+** picture = NEW_HEIR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Spain
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+*** Has no heir
+*** Is not the lesser partner in a union
+*** Has a royal marriage with 0 "Austria
+*** 0 "Austria:
+**** Ruler's dynasty is von Habsburg
+**** Any of the following:
+***** Does not have the country flag bur_marriage_successor
+***** Is not AI controlled
+*** Ruler's dynasty is not 0 "Austria
+*** 0 "France:
+**** Considers 0 "Austria a rival
+**** Considers our country a rival
+*** Any of the following:
+**** Does not consider 0 "Austria a rival
+**** Not at war with 0 "Austria
+**** 0 "Austria:
+***** Does not consider 0 "Spain a rival
+**** All of the following:
+***** 0 "Austria:
+****** Does not consider 0 "Castile a rival
+****** 0 "Spain does not exist
+*** Ruler's dynasty is not 0 "France
+*** ruler_age = 20
+*** has_government_attribute = heir
+** Mean time to happen
+*** Base mean time to happen of 6 months
+** Option: 0 "Glory to the Habsburgs! Glory to $COUNTRY$!:
+*** Spawns an heir:
+**** Legitimacy of 100
+**** Ruler's dynasty is von Habsburg
+*** Hidden effect:
+**** 0 "Austria:
+***** Gets the country event:
+****** ID is flavor_spa.14
+* Gets the country event:
+** ID is flavor_spa.14
+** title = 0 "Spain, a Habsburg Throne
+** desc = 0 "As a response to our common enemy, France, the heirless [From.Monarch.GetTitle] [From.Monarch.GetName] of $FROM$ has married their line of succession into a branch of the glorious house of Habsburg. This will ensure good relations and cooperation across Habsburg Europe for all eternity.
+** picture = NEW_HEIR_eventPicture
+** is_triggered_only = yes
+** Option: 0 "One house, united against one enemy.:
+*** Changes prestige by 5
+* Gets the country event:
+** ID is flavor_spa.15
+** title = 0 "A Very Strategic Marriage
+** desc = 1 "Our marriage pacts with the House of [HAB.Monarch.Dynasty.GetName] have resulted in a complex yet potentially advantageous situation. An heir has emerged of both [HAB.Monarch.Dynasty.GetName] and [Root.Monarch.Dynasty.GetName] blood who holds the strongest claim to the [HAB.GetAdjective] Low Countries. If we confirm this child as heir to the throne of [Root.GetName], we stand to inherit all parts of the Low Countries that are part of the [HAB.Monarch.Dynasty.GetName] domain.
+** picture = NEW_HEIR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Spain
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+*** Has no heir
+*** Is not the lesser partner in a union
+*** Has a royal marriage with 0 "Austria
+*** 0 "Austria:
+**** Is AI controlled
+**** Any of the following:
+***** Any subject country:
+****** Any owned province:
+******* Any of the following:
+******** Region is low_countries_region
+******** area = picardy_area
+***** Any owned province:
+****** Any of the following:
+******* Region is low_countries_region
+******* area = picardy_area
+*** ruler_age = 20
+*** Does not consider 0 "Austria a rival
+*** Not at war with 0 "Austria
+*** 0 "Austria:
+**** Does not consider our country a rival
+*** has_government_attribute = heir
+** Mean time to happen
+*** Base mean time to happen of 120 months
+*** Multiplies value by 0.5:
+**** Ruler's dynasty is not 0 "Austria
+*** Multiplies value by 0.5:
+**** 0 "France:
+***** Considers 0 "Austria a rival
+***** Considers our country a rival
+**** Ruler's dynasty is not 0 "France
+*** Multiplies value by 0.5:
+**** 0 "Austria:
+***** Ruler's dynasty is von Habsburg
+*** Multiplies value by 0.5:
+**** 0 "Austria:
+***** Any of the following:
+****** Any subject country:
+******* Has at least 5 provinces where all of the following is true:
+****** Has at least 5 provinces where all of the following is true:
+** Option: 0 "Secure an heir with territorial claims.:
+*** AI chance:
+**** Base chance of 85
+*** Spawns an heir:
+**** Legitimacy of 100
+**** Ruler's dynasty is von Habsburg
+**** age = 15
+*** Hidden effect:
+**** 0 "Austria:
+***** Gets the country event:
+****** ID is flavor_spa.14
+***** Every owned province:
+****** Limited to:
+******* Any of the following:
+******** Region is low_countries_region
+******** area = picardy_area
+****** Gives our country core on the province
+****** Removes core on 0 "Austria
+****** Cedes province to our country
+***** Every subject country:
+****** Every owned province:
+******* Limited to:
+******** Any of the following:
+********* Region is low_countries_region
+********* area = picardy_area
+******* Gives our country core on the province
+******* Removes core on 0 "Austria
+******* Cedes province to our country
+** Option: 0 "Keep Austrian and [Root.GetAdjective] lands completely separate.:
+*** AI chance:
+**** Base chance of 15
+*** Spawns an heir:
+**** Legitimacy of 100
+**** Ruler's dynasty is von Habsburg
+**** age = 15
+*** Hidden effect:
+**** 0 "Austria:
+***** Gets the country event:
+****** ID is flavor_spa.14
+* Gets the country event:
+** ID is flavor_spa.16
+** title = 0 "Merino Wool
+** desc = 0 "[Root.GetName] has secured a monopoly on the export of wool from Merino flocks. This fine wool is prized in markets from Seville to Flanders, and is an important cornerstone of the [Root.GetAdjective] economy. The ranchers, mostly nobles and clergy, have organized themselves into the ‘Mesta’, an association promoting their interests at court and in local governance. Their influence ensures that it remains a serious crime to export sheep of this breed outside of [Root.GetName].
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Spain
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+*** Year is less than 1600
+*** Any owned province:
+**** Region is iberia_region
+**** Produces 0 "Wool
+*** has_estate = estate_church
+*** has_estate = estate_nobles
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Excellent.:
+*** Every owned province:
+**** Limited to:
+***** Region is iberia_region
+***** Produces 0 "Wool
+**** Adds the modifier "0 "Merino Wool" until the end of the campaign:
+***** +20% production efficiency
+***** local_development_cost = 0.1
+*** give_estate_land_share_medium:
+**** estate = estate_nobles
+*** give_estate_land_share_medium:
+**** estate = estate_church
+* Gets the country event:
+** ID is flavor_spa.17
+** title = 0 "Privileges of the Mesta
+** desc = 0 "The Mesta, a powerful association of sheep ranchers, are facing new challenges to their rural privileges; textile manufacturers argue that their use of land is wasteful and stifles new development. The price of Merino wool has dropped somewhat since the height of Mesta influence, weakening their political leverage. Though the economic importance of the Mesta has already waned, the nobles and clergy that make up their membership continue to wield a great deal of influence at court, and demand that their privileges be upheld regardless of the changing circumstances.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Spain
+**** All of the following:
+***** Country is 0 "Castile
+***** 0 "Spain does not exist
+*** Any owned province:
+**** Has the province modifier "0 "Merino Wool"
+**** Any of the following:
+***** Has the 0 "Counting House building
+***** Has the 0 "Textile Manufactory building
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Revoke Mesta privileges.:
+*** add_estate_loyalty:
+**** estate = estate_church
+**** loyalty = -10
+*** take_estate_land_share_small:
+**** estate = estate_nobles
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = -10
+*** take_estate_land_share_small:
+**** estate = estate_church
+*** Every owned province:
+**** Limited to:
+***** Has the province modifier "0 "Merino Wool"
+**** Removes the country modifier "0 "Merino Wool"
+**** Changes trade goods produced to 0 "Cloth
+**** Adds the modifier "0 "Mesta Privileges Revoked" until the end of the campaign:
+***** local_development_cost = -0.2
+** Option: 0 "The current situation is preferable.:
+*** add_estate_loyalty:
+**** estate = estate_church
+**** loyalty = 5
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 5
+*** Every owned province:
+**** Limited to:
+***** Has the province modifier "0 "Merino Wool"
+**** add_local_autonomy = 50

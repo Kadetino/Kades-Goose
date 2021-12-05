@@ -1,0 +1,1723 @@
+*** Trigger:
+**** Has the DLC Emperor
+*** picture = ADULT_BAPTISME_eventPicture
+** picture:
+*** Trigger:
+**** Does not have the DLC Emperor
+*** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "England
+*** Year is less than 1500
+*** Has at least 5 provinces
+*** Follows the 0 "Catholic religion
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the global flag lollard_heresy
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+***** Sets the province flag 0 "Lollards
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** Does not have the province flag 0 "Lollards
+***** Sets the province flag 0 "Lollards
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** Does not have the province flag 0 "Lollards
+***** Sets the province flag 0 "Lollards
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** Does not have the province flag 0 "Lollards
+***** Sets the province flag 0 "Lollards
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** Does not have the province flag 0 "Lollards
+***** Sets the province flag 0 "Lollards
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** Does not have the province flag 0 "Lollards
+***** Sets the province flag 0 "Lollards
+** Option: 0 "Stop the Heretics:
+*** AI chance:
+**** Base chance of 75
+*** Every owned province:
+**** Limited to:
+***** Has the province flag 0 "Lollards
+**** Adds the modifier "0 "Lollards" until the end of the campaign:
+***** -1 Papal influence per year
+***** +1 tolerance of heretics
+**** Removes the province flag 0 "Lollards
+*** Adds the modifier "0 "Opposing the Lollards" for the rest of the campaign:
+**** +1 Papal influence per year
+**** +1 tolerance of the true faith
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Opposing the Lollards" towards our country
+** Option: 0 "Let them be:
+*** AI chance:
+**** Base chance of 25
+*** Adds 3% reform desire
+*** Adds the modifier "0 "Tolerates Lollards" for the rest of the campaign:
+**** -1 Papal influence per year
+**** +1 tolerance of heretics
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Tolerates Lollards" towards our country
+*** If:
+**** Limited to:
+***** 0 "France:
+****** Country exists
+****** Follows the 0 "Catholic religion
+**** 0 "France:
+***** Adds the opinion modifier "0 "Tolerates Lollards" towards our country
+*** If:
+**** Limited to:
+***** 0 "Burgundy:
+****** Country exists
+****** Follows the 0 "Catholic religion
+**** 0 "Burgundy:
+***** Adds the opinion modifier "0 "Tolerates Lollards" towards our country
+*** If:
+**** Limited to:
+***** 0 "Brittany:
+****** Country exists
+****** Follows the 0 "Catholic religion
+**** 0 "Brittany:
+***** Adds the opinion modifier "0 "Tolerates Lollards" towards our country
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** Has the province flag 0 "Lollards
+***** Removes the province flag 0 "Lollards
+* Gets the country event:
+** ID is flavor_eng.9104
+** title = 0 "The End of the Hundred Years War
+** desc = 0 "The Hundred Years War was the last great medieval war. It was a war not just between kings, but lesser nobles were also able to pursue their own personal agendas while participating in the larger conflict. Future wars saw far less factionalism, at least on the scale found in medieval conflicts. The Hundred Years War was actually dozens of little wars and hundreds of battles and sieges that went on for over a century, between 1337 and 1453, until both sides were exhausted. While neither side won in any real sense, the end result was that while there were two kingdoms at the beginning of the war, there were two nations at the end of it.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Has the global flag hyw_mission_resolution
+***** Country is 0 "England
+**** All of the following:
+***** Year is less than 1500
+***** Does not have the global flag eng_had_end_of_hundred_years_war
+***** Any of the following:
+****** All of the following:
+******* Country is 0 "England
+******* 0 "Great Britain does not exist
+****** Country is 0 "Great Britain
+***** Primary culture is 0 "English
+***** france_region:
+****** The province is not owned by our country
+***** 0 "France:
+****** Country exists
+****** Is not a vassal of 0 "England
+****** Is not a vassal of 0 "Great Britain
+****** Not at war with 0 "England
+****** Not at war with 0 "Great Britain
+** Immediate effects:
+*** Hidden effect:
+**** Sets the global flag eng_had_end_of_hundred_years_war
+**** If:
+***** Limited to:
+****** 0 "France:
+******* Does not have the country flag had_end_of_HYW_france
+***** 0 "France:
+****** Gets the country event:
+******* ID is flavor_fra.9104
+******* Base mean time to happen of 1 days
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "We have lost our foothold in France:
+*** AI chance:
+**** Base chance of 80
+*** add_stability_or_adm_power = yes
+*** Every core province:
+**** Limited to:
+***** Region is france_region
+***** The province is not owned by our country
+**** Removes core on our country
+*** 0 "France:
+**** Adds the opinion modifier "0 "No English in France" towards our country
+** Option: 0 "We will never give this up!:
+*** AI chance:
+**** Base chance of 20
+*** Changes stability by -1
+*** 0 "France:
+**** Adds the opinion modifier "0 "Refuse to Give Up France" towards our country
+* Gets the country event:
+** ID is flavor_eng.9105
+** title = 0 "The Justices of Peace
+** desc = 0 "The position of Justice of the Peace originated in England in about the 12th Century, believed to be from a Royal Edict issued by King Richard I and the Archbishop of Canterbury in the year 1195. The title was first known as Custodes Pacis, but was later changed to Justices of the Peace. An act concerning Justices of the Peace was passed in 1489. It required that justices devote part of every quarter session to acknowledgment of the areas in which they themselves are particularly weak. The same act provided the general populace with the right to complain about the actions of justices directly to the monarch or his council. The appointment of the justices by the Lord Chancellor at irregular annual intervals allowed for the possible removal of uncooperative gentlemen at the next annual re-issue of the commissions.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1485
+*** Year is less than 1509
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 72 months
+** Option: 0 "Yes, we need them:
+*** AI chance:
+**** Base chance of 75
+*** reduce_estate_nobles_loyalty_effect = yes
+*** Modifies treasury by -0.5 years worth of income
+*** add_innovativeness_small_effect = yes
+*** Adds the modifier "0 "The Justices of Peace" for the rest of the campaign:
+**** -10% stability cost modifier
+**** state_maintenance_modifier = -0.1
+** Option: 0 "No, that is the Noblemen's job:
+*** AI chance:
+**** Base chance of 25
+*** add_estate_nobles_loyalty_effect = yes
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_eng.9106
+** title = 0 "Support Middle-class Bureaucrats
+** desc = 0 "Promoting government officers from the middle class, primarily clerics and lawyers, was a Yorkish tradition in England. As our administrative needs keep growing, both the nobility and the middle class eagerly awaits to see if we will continue this policy.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1485
+*** Year is less than 1550
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Is not at war
+** Mean time to happen
+*** Base mean time to happen of 600 months
+** Option: 0 "Give them our support:
+*** AI chance:
+**** Base chance of 75
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes administrative power stored by 50
+*** Random owned province:
+**** Spawns revolt of size 1 of 0 "Noble rebels
+** Option: 0 "Prohibit them from working in the Government:
+*** AI chance:
+**** Base chance of 25
+*** Changes administrative power stored by -25
+* Gets the country event:
+** ID is flavor_eng.9107
+** title = 0 "Court of the Star Chamber
+** desc = 0 "The Court of Star Chamber was a court of law which evolved from meetings of the king's royal council. Although its roots go back to the medieval period, the court only became powerful as a separate entity during the reign of Henry VII. In 1487 the court became a judicial body separate from the king's council, with a mandate to hear petitions of redress. The Court of Star Chamber was named for the star pattern painted on the ceiling of the room at Westminster Palace where its meetings were held. In a sense the court was a supervisory body.
+** picture = LIBERUM_VETO_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1470
+*** Year is less than 1600
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Is not at war
+** Mean time to happen
+*** Base mean time to happen of 390 months
+** Option: 0 "Yes, we need one:
+*** AI chance:
+**** Base chance of 90
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Adds the modifier "0 "Star Chamber" for the rest of the campaign:
+**** -1 global unrest
+**** +5% stability cost modifier
+** Option: 0 "No, we don't:
+*** AI chance:
+**** Base chance of 10
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_eng.9108
+** title = 0 "The Enclosure Movement
+** desc = 0 "The population of England lived on the land under a manorial system. They were primarily tenant farmers who were tied to a particular locality, rarely if ever leaving their places of birth. With the rise of commerce, it became increasingly profitable for the aristocracy who owned the land to enclose it. The enclosure movement displaced the tenant farmers and caused a movement into the cities. As people congregated in cities, they became a source of cheap labor for the factories and mines that developed. The concentration of population into cities, however, also created a class of poor, many of whom were willing to became 'indentured servants' and migrate to the North American colonies in search of a better life.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1509
+*** Year is less than 1521
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Is not at war
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+***** Sets the province flag enclosure_movement
+** Option: 0 "Reform:
+*** AI chance:
+**** Base chance of 75
+*** Capital:
+**** Changes base tax by 2
+*** Changes stability by -1
+*** add_innovativeness_small_effect = yes
+*** Every owned province:
+**** Limited to:
+***** Has the province flag enclosure_movement
+**** Spawns revolt of size 1 of 0 "Peasant rebels
+**** Removes the province flag enclosure_movement
+** Option: 0 "Do not reform:
+*** AI chance:
+**** Base chance of 25
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_eng.9109
+** title = 0 "The Act of Supremacy
+** desc = 0 "Henry VIII Tudor of England (1509-1547) had first received in 1521 the papal title of Defender of the Faith for his pamphlet against Luther. The king's main concern was over his succession and in 1529, when the papal Curia rejected his proposal to divorce Catherine of Aragon, he had the Legate of the Pope, Cardinal Wolsey, executed and coerced the English clergy to recognize the king as the supreme head of the Church. He had his divorce granted in 1533 and married the lady-in-waiting Ann Boleyn. Altogether, Henry VIII contracted 6 marriages.
+** picture = POPE_PREACHING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1530
+*** Year is less than 1560
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Follows the 0 "Catholic religion
+*** Ruler is male
+*** Is not in regency
+*** At least 0.15 provinces follow the 0 "Protestant religion
+*** 0 "The Papal State:
+**** Country exists
+**** Follows the 0 "Catholic religion
+*** Does not have the DLC Rule Britannia
+** Mean time to happen
+*** Base mean time to happen of 72 months
+** Option: 0 "Take Command of the Church of England:
+*** AI chance:
+**** Base chance of 75
+*** Changes religion to 0 "Protestant
+*** Modifies treasury by 2 years worth of income
+*** Changes stability by -2
+** Option: 0 "Accept Rome's Supremacy:
+*** AI chance:
+**** Base chance of 25
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Accepted Supremacy of Rome" towards our country
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_eng.9111
+** title = 0 "The Admiralty
+** desc = 0 "The Admiralty was instituted to give the growing naval power an efficient and strong strategic leadership at sea. Earlier there had only existed a number of odd King's ships, each of which where the king's personal property. By making the admiralty responsible for all warships and the production of new and the repair of old, the English navy got continuity and order. The Admiralty was also a plant school for military leaders and also important figures in the political life of London.
+** picture = NAVAL_MILITARY_eventPicture
+** Trigger:
+*** Does not have the country modifier "0 "The Admiralty"
+*** Does not have the country modifier "0 "The Royal Army"
+*** Year is at least 1500
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 1200 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9111
+** Option: 0 "Let us authorize the Admiralty:
+*** AI chance:
+**** Base chance of 90
+*** Adds the modifier "0 "The Admiralty" for the rest of the campaign:
+**** +0.5 navy tradition
+**** +5% prestige from naval battles
+** Option: 0 "Let us institute the Royal Army instead:
+*** AI chance:
+**** Base chance of 10
+*** Adds the modifier "0 "The Royal Army" for the rest of the campaign:
+**** +0.3 army tradition
+**** +3% prestige from land battles
+* Gets the country event:
+** ID is flavor_eng.9112
+** title = 0 "The Royal Army
+** desc = 0 "England as we know it decided on becoming a naval power and instituted the Admiralty as one of its assets. There where also signs of England taking another route, a route toward the continent and Land Power. Some elements can be found in Cromwell's New Model Army, but also the question-marks of a possible pro-French Stuart Dynasty if England had managed to keep some of its French possessions. If that had happened, England would have had much greater interests to defend on the Continent than on the high seas.
+** picture = MILITARY_CAMP_eventPicture
+** Trigger:
+*** Does not have the country modifier "0 "The Admiralty"
+*** Does not have the country modifier "0 "The Royal Army"
+*** Year is at least 1500
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 1200 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9112
+** Option: 0 "Let us institute the Royal Army:
+*** AI chance:
+**** Base chance of 90
+*** add_army_professionalism = 0.02
+*** Adds the modifier "0 "The Royal Army" for the rest of the campaign:
+**** +0.3 army tradition
+**** +3% prestige from land battles
+** Option: 0 "Let us authorize the Admiralty instead:
+*** AI chance:
+**** Base chance of 10
+*** Adds the modifier "0 "The Admiralty" for the rest of the campaign:
+**** +0.5 navy tradition
+**** +5% prestige from naval battles
+* Gets the country event:
+** ID is flavor_eng.9113
+** title = 0 "Jane Grey
+** desc = 0 "As the granddaughter of King Henry VIII's elder sister Mary, Lady Jane Grey had a claim to the English throne. Married against her will in 1553 to Lord Guildford Dudley, son of the Duke of Northumberland, she was used as a pawn by Northumberland, who was King Edward VI's regent, in his determined effort to retain his power after the king's death. King Edward VI was deadly sick and during his last illness Northumberland had him sign a 'device' excluding Henry VIII's daughters, the future queens Mary I and Elizabeth I, from the throne in favor of Jane. On July 10, 1553, four days after Edward's death, Jane was proclaimed queen. Her reign lasted only until July 19. The country supported the Catholic Mary's claim, and Northumberland's forces were dispersed by troops loyal to Mary.
+** picture = COURT_eventPicture
+** Trigger:
+*** Does not have the country flag ENG_had_event_9113
+*** Year is at least 1530
+*** Year is less than 1560
+*** Is in regency
+*** has_consort_regency_false = no
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Owns 0 "Northumberland
+** Mean time to happen
+*** Base mean time to happen of 360 months
+*** Multiplies value by 0.8:
+**** Legitimacy is less than 80
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9113
+** Option: 0 "Her claim will not be recognized!:
+*** 0 "Northumberland:
+**** Spawns revolt of size 2 of 0 "Pretender rebels
+*** Changes stability by -1
+* Gets the country event:
+** ID is flavor_eng.9114
+** title = 0 "Bloody Mary and King Felipe of England
+** desc = 0 "In 1554 the Catholic Queen Mary married Felipe of Spain, a union that opened great possibilities for both England and Spain. Felipe was granted the title of King of England by Parliament, but was not allowed to govern the country. But the imminent question of importance was over religion. The Act of Supremacy had given clerical control to the monarch, but the people of England were sundered over religion. Catholics demanded papal authority, while Protestants wanted liberal clerical laws. Mary chose to throw in her lot with the fanatical Catholics, and a wave of terror commenced, earning her the nickname 'Bloody Mary'.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1500
+*** Year is less than 1600
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the anglican religion
+*** Any of the following:
+**** Has a royal marriage with 0 "Spain
+**** Junior union partner under 0 "Spain
+*** 0 "Spain:
+**** Follows the 0 "Catholic religion
+** Mean time to happen
+*** Base mean time to happen of 600 months
+*** Multiplies value by 0.1:
+**** Junior union partner under 0 "Spain
+** Option: 0 "Reinstate Papal power over Church of England:
+*** AI chance:
+**** Base chance of 15
+**** Multiplies value by 20:
+***** Junior union partner under 0 "Spain
+*** Changes religion to 0 "Catholic
+*** 0 "Spain:
+**** Adds the opinion modifier "0 "Accepted Supremacy of Rome" towards our country
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Accepted Supremacy of Rome" towards our country
+*** Changes stability by -3
+*** Adds the modifier "0 "The Heresy Act" for 10 years:
+**** -2 tolerance of heretics
+**** +1 global unrest
+**** +1% global missionary strength
+**** Follows the yes religion
+** Option: 0 "Confirm religious freedom for all:
+*** AI chance:
+**** Base chance of 85
+*** 0 "Spain:
+**** Adds the opinion modifier "0 "Tolerates Religious Freedom" towards our country
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Tolerates Religious Freedom" towards our country
+*** add_stability_or_adm_power = yes
+*** Adds the modifier "0 "Religious Freedom Act" for 10 years:
+**** +2 tolerance of heretics
+**** -1 global unrest
+**** -1% global missionary strength
+**** Follows the yes religion
+* Gets the country event:
+** ID is flavor_eng.9115
+** title = 0 "The Muscovy Trade Company
+** desc = 0 "In 1553, the Merchant Adventurers Company sent a fleet of three ships with the intent of sailing to China through the Northeast Passage. Most ships were struck frozen by the ice-cap and all their crew died of starvation, except the Edward, under senior navigator Richard Chancellor, who entered the White Sea and reached Arkhangelsk, a small village that would later grow to a port in 1584. There he learned about the wealth and power of the Russian emperor and journeyed in horse-drawn sleighs, in winter, to Moscow. Although Russia and England had diverging interests in establishing relationships with each other, the Muscovy Trade Company formed to exploit the new trade was a commercial success, in particular with the Russian fur trade.
+** picture = MERCHANTS_TALKING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Year is at least 1540
+*** Year is less than 1640
+*** Has discovered 0 "White Sea
+*** Has discovered 0 "Soroka
+*** Any of the following:
+**** 0 "Russia exists
+**** 0 "Muscovy exists
+*** 0 "Soroka:
+**** Any of the following:
+***** The province is owned by 0 "Russia
+***** The province is owned by 0 "Muscovy
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "We will exploit this!:
+*** 0 "White Sea:
+**** Adds trade modifier:
+***** Affecting our country
+***** Lasting -1 days
+***** Changing trade power by 20
+***** Named "0 "The Muscovy Trade Company"
+* Gets the country event:
+** ID is flavor_eng.9116
+** title = 0 "Sir Francis Walsingham
+** desc = 0 "Sir Francis Walsingham was Queen Elizabeth's Private Secretary. His main achievement was the perfect organization of a secret service and spying network that proved extremely efficient in aborting all conspiracies against the Queen's life and all other political and diplomatic plots. Extremely anti-Spanish, he was also the protector of Drake and financed most of the famous privateer's early expeditions against the Iberian power.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1550
+*** Year is less than 1590
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** The advisor with the id 236 does not exist
+*** Any of the following:
+**** Owns 0 "Kent
+**** Owns 0 "London
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "An Excellent Minister!:
+*** Changes administrative power stored by 25
+*** add_innovativeness_small_effect = yes
+*** If:
+**** Limited to:
+***** Owns 0 "Kent
+**** Creates an advisor of the 0 "Spymaster type:
+***** Named "Francis Walsingham"
+***** Culture is 0 "English
+***** In the province 0 "Kent
+***** With a skill level of 3
+***** discount = yes
+*** If:
+**** Limited to:
+***** Does not own 0 "Kent
+***** Owns 0 "London
+**** Creates an advisor of the 0 "Spymaster type:
+***** Named "Francis Walsingham"
+***** Culture is 0 "English
+***** In the province 0 "London
+***** With a skill level of 3
+***** discount = yes
+* Gets the country event:
+** ID is flavor_eng.9117
+** title = 0 "Sir Thomas Gresham's Currency Reform
+** desc = 0 "English financier, born in London, and educated at the University of Cambridge. After attending the university, he was apprenticed to his uncle, a merchant, in whose service he displayed unusual business ability. In later years he became one of the wealthiest men in England. In 1551 he was appointed a factor, or royal agent, by King Edward VI. Charged with the management of the royal debt abroad, he virtually liquidated it by adroit financial manipulations on the bourse, or stock exchange, of Antwerp. He was knighted by Queen Elizabeth I in 1559. While serving as her financial agent abroad, Gresham found that his tasks were difficult to execute because of the lower value of English currency in relation to the currencies of other countries.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1537
+*** Year is less than 1579
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Owns 0 "London
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Reform:
+*** 0 "London:
+**** Changes base tax by 1
+*** Changes inflation by -3
+*** add_innovativeness_small_effect = yes
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Creates an advisor of the 0 "Treasurer type:
+**** Named "Thomas Gresham"
+**** Culture is 0 "English
+**** discount = yes
+**** In the province 0 "London
+**** With a skill level of 3
+* Gets the country event:
+** ID is flavor_eng.9118
+** title = 0 "The Northern Rebellion
+** desc = 0 "Queen Elizabeth I sought to bring about a religious settlement with the objective of establishing in England a Protestant Anglican Church with herself as the Supreme Governor. Things began to fray around the edges when Mary Queen of Scots fled to England. The problem for Elizabeth I was that Mary was a Catholic claimant to the English throne. Elizabeth I had Mary locked away in various castles, but she still became the center of numerous conspiracies to overthrow the upstarts who had displaced the ancient aristocracy. Their basic idea was to marry Mary to Norfolk, England's only Duke. This combination represented a serious threat to Elizabeth I but Norfolk seemed undecided and continued to delay until Elizabeth I invited him to London whereupon she locked him in the Tower. Elizabeth I suspected that the Earls of Northumberland, Westmorland and Cumberland were involved in the conspiracy and invited them to London as well. The Earls guessed their accommodation would be the Tower and opted instead for a rebellion which began at about midnight on the 9 November 1569. The Catholic faith had survived in the North and there was real resentment against the extension of Tudor domination and Elizabeth I's new men. The Earl of Northumberland mustered his troops in Richmond on the 16 November. Sir George was appointed provost marshal and martial law was declared. Elizabeth I ordered that 700 of the riffraff be executed, 200 of these were to be from or around Richmond. How many were actually executed is not known but seemingly it was a smaller number, perhaps around 57, 12 of whom were from Richmond. The decade after the Rebellion was a difficult period for Catholics who faced constant persecution. Religious meetings were held in secret, away from the eyes of unfriendly informants. It seems, however, that the few gentry who were accused in court of holding Catholic beliefs were the 'mere tip of a great pyramid' which represented a hidden underground movement.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1500
+*** Year is less than 1600
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the anglican religion
+*** Does not have the country modifier "0 "Increased Aristocracy"
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Any of the following:
+**** Owns 0 "Northumberland
+**** Owns 0 "Cumbria
+** Mean time to happen
+*** Base mean time to happen of 1600 months
+*** Multiplies value by 0.8:
+**** Legitimacy is less than 90
+*** Multiplies value by 0.8:
+**** Is in regency
+** Option: 0 "Keep Norfolk in the Tower and smash the rebels:
+*** AI chance:
+**** Base chance of 60
+*** add_stability_or_adm_power = yes
+*** If:
+**** Limited to:
+***** Owns 0 "Northumberland
+**** 0 "Northumberland:
+***** Spawns revolt of size 2 of 0 "Noble rebels
+*** If:
+**** Limited to:
+***** Owns 0 "Cumbria
+**** 0 "Cumbria:
+***** Spawns revolt of size 1 of 0 "Noble rebels
+*** If:
+**** Limited to:
+***** Owns 1 "York
+**** 1 "York:
+***** Spawns revolt of size 1 of 0 "Noble rebels
+*** If:
+**** Limited to:
+***** Owns 0 "Lancashire
+**** 0 "Lancashire:
+***** Spawns revolt of size 1 of 0 "Noble rebels
+*** If:
+**** Limited to:
+***** Does not have the country modifier "0 "Increased Narrow-minded"
+**** Adds the modifier "0 "Increased Narrow-minded" for 5 years:
+***** +5% technology cost
+***** +1% global missionary strength
+** Option: 0 "Keep Norfolk in the Tower and start to negotiate:
+*** AI chance:
+**** Base chance of 30
+*** If:
+**** Limited to:
+***** Owns 0 "Northumberland
+**** 0 "Northumberland:
+***** Spawns revolt of size 2 of 0 "Noble rebels
+*** If:
+**** Limited to:
+***** Does not own 0 "Northumberland
+***** Owns 0 "Cumbria
+**** 0 "Cumbria:
+***** Spawns revolt of size 2 of 0 "Noble rebels
+*** Adds the modifier "0 "Increased Aristocracy" for 5 years:
+**** -10% cavalry cost
+**** Trade efficiency is at least -5%
+** Option: 0 "Release Norfolk:
+*** AI chance:
+**** Base chance of 10
+*** Changes stability by -1
+*** Adds the modifier "0 "Increased Aristocracy" for 10 years:
+**** -10% cavalry cost
+**** Trade efficiency is at least -5%
+* Gets the country event:
+** ID is flavor_eng.9119
+** title = 0 "The Creation of the London Stock Exchange
+** desc = 0 "The year 1571 saw the creation of the London Stock Exchange. Although small in importance and with limited trading in the 16th and 17th centuries, it would grow and gradually overcome its Amsterdam competitor and prove to be the most active stock market in 18th century Europe, boosting the English trade, manufacturing and economy as a whole. England would then benefit from an easy and reliable access to credit.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1500
+*** Year is less than 1600
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Owns 0 "London
+** Mean time to happen
+*** Base mean time to happen of 800 months
+** Option: 0 "Expand Loan Market:
+*** AI chance:
+**** Base chance of 50
+*** add_stability_or_adm_power = yes
+*** Modifies treasury by 1.5 years worth of income
+*** Changes inflation by 3
+*** add_innovativeness_small_effect = yes
+** Option: 0 "Issue Strict Control:
+*** AI chance:
+**** Base chance of 50
+*** add_stability_or_adm_power = yes
+*** Changes inflation by -3
+*** add_innovativeness_small_effect = yes
+* Gets the country event:
+** ID is flavor_eng.9121
+** title = 0 "The Canceling of Royal Monopolies
+** desc = 0 "Elizabeth's popularity began to wane towards the end of her reign. The war with Spain dragged on inconclusively. The parliament became less tractable and began to object to the abuse of the royally granted monopolies, which was used to reward her favorites and tolerate considerable corruption. A last Golden speech to Parliament in 1601 reaffirmed her love for her subjects, but it came in the context of a bitter clash over royal monopolies, which she ceased from.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1500
+*** Year is less than 1650
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 1000 months
+** Option: 0 "Cancel them!:
+*** AI chance:
+**** Base chance of 75
+*** Changes treasury by -200 ducats
+*** Adds the modifier "0 "Increased Free Trade" for 5 years:
+**** Trade efficiency is at least 10%
+**** -10% global spy defence
+**** global_institution_spread = 0.2
+** Option: 0 "Strengthen them!:
+*** AI chance:
+**** Base chance of 25
+*** Changes treasury by 100 ducats
+*** add_corruption = 0.5
+*** Adds the modifier "0 "Increased Mercantilism" for 5 years:
+**** +10% provincial trade power
+**** +10% global spy defence
+* Gets the country event:
+** ID is flavor_eng.9122
+** title = 0 "Hugh O'Neill's Irish Rebellion
+** desc = 0 "Hugh O'Neill lived in England in the 1560s. He served the government in the 1580s but in 1594 rebelled. Dissatisfied with the English government's persistent policy of playing the chiefs against one another, O'Neill was also angered by the English refusal to restore the lands granted to his grandfather. At last he formed an alliance with the other Irish chiefs and sought aid against Protestant England from Catholic Spain. He achieved something like unity among his allies and, after 1595, defeated some of Queen Elizabeth's best commanders in Ireland. O'Neill was defeated while attempting to join a Spanish force that arrived at Kinsale in 1601. His Irish allies dispersed, and O'Neill retreated to Ulster. In 1603 he made peace with the English, surrendering his tribal authority. King James I later pardoned him.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1520
+*** Year is less than 1616
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the anglican religion
+*** Any of the following:
+**** munster_area:
+***** The province is owned by our country
+***** Culture is 0 "Irish
+**** connacht_area:
+***** The province is owned by our country
+***** Culture is 0 "Irish
+**** leinster_area:
+***** The province is owned by our country
+***** Culture is 0 "Irish
+**** ulster_area:
+***** The province is owned by our country
+***** Culture is 0 "Irish
+** Mean time to happen
+*** Base mean time to happen of 1200 months
+*** Multiplies value by 0.5:
+**** mission_completed = 0 "Conquer Ireland
+** Option: 0 "We are not amused!:
+*** Random owned province:
+**** Limited to:
+***** Any of the following:
+****** area = munster_area
+****** area = connacht_area
+****** area = leinster_area
+****** area = ulster_area
+***** Culture is 0 "Irish
+**** Spawns revolt of size 2 of 0 "Noble rebels
+* Gets the country event:
+** ID is flavor_eng.9123
+** title = 0 "The Petition of Rights
+** desc = 0 "In 1628 the English Parliament passed the Petition of Rights. Under its terms the King could not levy any new taxes without the consent of Parliament. Furthermore soldiers could not be billeted in private homes. Martial law could not be imposed in time of peace. Finally, the Petition of Rights forbid the imprisonment of individuals without cause.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1600
+*** Year is less than 1700
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Has the monarchy government type
+** Mean time to happen
+*** Base mean time to happen of 1800 months
+*** Multiplies value by 0.8:
+**** Stability is lower than 1
+*** Multiplies value by 0.8:
+**** Has at least 6 active loans
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** The province is not the capital of the country
+****** Does not have the province modifier "0 "Refusal of the Petition of Rights"
+***** Sets the province flag 0 "Refusal of the Petition of Rights
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** The province is not the capital of the country
+****** Does not have the province modifier "0 "Refusal of the Petition of Rights"
+***** Sets the province flag 0 "Refusal of the Petition of Rights
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** The province is not the capital of the country
+****** Does not have the province modifier "0 "Refusal of the Petition of Rights"
+***** Sets the province flag 0 "Refusal of the Petition of Rights
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** The province is not the capital of the country
+****** Does not have the province modifier "0 "Refusal of the Petition of Rights"
+***** Sets the province flag 0 "Refusal of the Petition of Rights
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** The province is not the capital of the country
+****** Does not have the province modifier "0 "Refusal of the Petition of Rights"
+***** Sets the province flag 0 "Refusal of the Petition of Rights
+** Option: 0 "Sign it:
+*** AI chance:
+**** Base chance of 75
+*** Changes stability by -1
+*** Adds the modifier "0 "The Petition of Rights" for 20 years:
+**** global_trade_goods_size_modifier = 0.05
+**** -5% global tax modifier
+**** -5% global manpower modifier
+**** -1 global unrest
+** Option: 0 "Refuse to sign it:
+*** AI chance:
+**** Base chance of 25
+*** Changes stability by -2
+*** Sets the country flag 0 "Refusal of the Petition of Rights
+*** Every owned province:
+**** Limited to:
+***** Has the province flag 0 "Refusal of the Petition of Rights
+**** Adds the modifier "0 "Refusal of the Petition of Rights" until the end of the campaign:
+***** -25% manpower modifier
+***** -10% provincial tax income
+***** local_unrest = 3
+**** Removes the province flag 0 "Refusal of the Petition of Rights
+* Gets the country event:
+** ID is flavor_eng.9124
+** title = 0 "The Parliamentary Conflict
+** desc = 0 "The 16th century saw the number of members in the House of Commons increase, while the House of Lords remained significantly smaller. The power base in Parliament shifted to the House of Commons who were well aware of the fact. Elizabeth I had a mix of determination, majestic presence and kindness towards the members of Parliament that her successors Jacob I and his son Charles I did not. The Parliament wanted to have more say in matters of the Church, justice and taxes to which the King naturally was opposed. When Jacob I tried to propose marriage of his son to a Spanish, and later a French princess (both Catholic) they had enough. The Parliament of 1628 voiced the Petition of Right which forbade arrests and taxation ordered by the King. In 1629 the Parliament voted for resolutions to condemn Religious and Tax politics and the King opposed the Parliament and tried to dissolve it. Eleven years of Dictatorship ensued. In 1642 the Civil War divided the country into Cavaliers (Royalists) versus Roundheads (the Parliament's wigless).
+** picture = LIBERUM_VETO_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1600
+*** Year is less than 1700
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Has the monarchy government type
+*** Has the country flag 0 "Refusal of the Petition of Rights
+** Mean time to happen
+*** Base mean time to happen of 300 months
+*** Multiplies value by 0.7:
+**** Year is at least 1670
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** The province is not the capital of the country
+***** Sets the province flag 0 "Refusal of the Petition of Rights
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** The province is not the capital of the country
+****** Does not have the province flag 0 "Refusal of the Petition of Rights
+***** Sets the province flag 0 "Refusal of the Petition of Rights
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** The province is not the capital of the country
+****** Does not have the province flag 0 "Refusal of the Petition of Rights
+***** Sets the province flag 0 "Refusal of the Petition of Rights
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** The province is not the capital of the country
+****** Does not have the province flag 0 "Refusal of the Petition of Rights
+***** Sets the province flag 0 "Refusal of the Petition of Rights
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+****** The province is not the capital of the country
+****** Does not have the province flag 0 "Refusal of the Petition of Rights
+***** Sets the province flag 0 "Refusal of the Petition of Rights
+** Option: 0 "Combat the Parliament:
+*** AI chance:
+**** Base chance of 75
+*** Changes stability by -2
+*** Every owned province:
+**** Limited to:
+***** Has the province flag 0 "Refusal of the Petition of Rights
+**** Spawns revolt of size 2 of 0 "Noble rebels
+**** Removes the province flag 0 "Refusal of the Petition of Rights
+** Option: 0 "Submit to the Parliament:
+*** AI chance:
+**** Base chance of 25
+*** Removes the country flag 0 "Refusal of the Petition of Rights
+*** Changes stability by -1
+*** Adds the modifier "0 "The Petition of Rights" for 20 years:
+**** global_trade_goods_size_modifier = 0.05
+**** -5% global tax modifier
+**** -5% global manpower modifier
+**** -1 global unrest
+* Gets the country event:
+** ID is flavor_eng.9127
+** title = 0 "The Act of Navigation
+** desc = 0 "Cromwell, Lord Protector of the English Commonwealth, promulgated the Act of Navigation in 1651. It was mostly directed against the Dutch carrier trade and provided that all goods shipped to and from England was to be transported on English ships, while also confirming the colonial exclusive policy. The Act directly caused the first English-Dutch war of 1652-1654 and the second in 1665-1667. At the Peace of Breda (1667), New Amsterdam (New York) was exchanged for Suriname (Dutch Guiana) and the Act slightly modified. It nevertheless contributed to the enormous growth in English naval and colonial trade.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1600
+*** Year is less than 1700
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 2000 months
+** Option: 0 "Enact:
+*** AI chance:
+**** Base chance of 75
+*** Changes diplomatic power stored by 350
+** Option: 0 "The present policy is perfect:
+*** AI chance:
+**** Base chance of 25
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_eng.9129
+** title = 0 "The Decree of Indulgence and the Bill of Test
+** desc = 0 "Charles II was secretly Catholic and his brother James II openly. The Decree of Indulgence issued in 1672 was aimed at relieving the situation for dissenters and Catholics. In addition to personal reasons, any king who supported Catholicism could count on the support from France. In fact, Charles II got his reward in form of a large sum of money in a Treaty closed behind the back of the Parliament. Around the same time Parliament issued the Bill of Test which again excluded dissenting religious groups (including Catholics) from public offices and allowed persecution. The Parliament subsequently raised the issue of excluding the openly Catholic James II from succession rights.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1600
+*** Year is less than 1700
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the 0 "Reformed religion
+**** Follows the anglican religion
+** Mean time to happen
+*** Base mean time to happen of 1200 months
+** Option: 0 "Religious Freedom for All:
+*** AI chance:
+**** Base chance of 50
+*** Changes stability by -1
+*** Adds the modifier "0 "The Decree of Indulgence" for the rest of the campaign:
+**** +2 tolerance of heretics
+**** -1% global missionary strength
+** Option: 0 "Protestant Supremacy:
+*** AI chance:
+**** Base chance of 50
+*** Changes stability by -1
+*** Adds the modifier "0 "Bill of Test" for the rest of the campaign:
+**** -2 tolerance of heretics
+**** +1% global missionary strength
+** Option: 0 "Catholic Supremacy:
+*** AI chance:
+**** Base chance of 0
+*** Changes religion to 0 "Catholic
+*** Changes stability by -3
+* Gets the country event:
+** ID is flavor_eng.9134
+** title = 0 "The Creation of Bank of England
+** desc = 0 "The Bank of England was founded in 1694. It soon enjoyed a reputation of seriousness and reliability, in particular regarding the credibility of the English Pound Sterling, in a time where most other currencies were at the mercy of state bankruptcies and coinage debasement. This stability was preponderant in the slowly but constantly increasing domination of the world economy by Great Britain in the 18th and 19th centuries. It also allowed a greater flexibility to the British government in raising funds for warfare.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1650
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 1200 months
+*** Multiplies value by 0.75:
+**** Has at least 4 Economic ideas
+** Option: 0 "Institute it:
+*** Changes inflation by -3
+*** add_innovativeness_big_effect = yes
+* Gets the country event:
+** ID is flavor_eng.9139
+** title = 0 "Jacobite Rebellion
+** desc = 0 "This rebellion of the Jacobite cause led by the Earl of Mar began in 1715. By the end of September, most of the Highlands were in his control and his army numbered some 5,000 with more appearing daily. But all this was done without even notifying the King they were claiming to support. The Old Pretender, King James III, was not even aware of the situation as of yet. Word was sent to the King, and the size of the force continued to grow. The Earl, with his growing army, moved to Perth and established his base there after taking the city. Meanwhile another Jacobite army was forming to the south, The Old Pretender hearing the news began to make preparations for his trip to Scotland and his crowning. By early November, the northern Jacobite army numbered some 12,000, mostly Clansmen from the Highlands. The Earl then decided to march south where he soon met the army of the Duke of Argyll, the only remaining government troops in Scotland. The Jacobite forces were mismanaged and split. The southern army marched south to raise Lancashire instead of turning on the Duke of Argyll's flank, while a much smaller force under the Duke defeated the larger northern army of the Jacobites at Sheriffmuir on November 13th. The southern army was also met and defeated at Preston by other government forces in England. The Jacobites were forced to retreat to Perth, while still waiting for their leader to arrive. The Old Pretender finally arrived in Scotland on the 22nd of December after leaving fittingly enough from Dunkirk. But the matter was already settled, as the Duke of Argyll was already receiving reinforcements of experienced troops and was preparing an overwhelming force to march north. The King, James III, was again forced to retreat after spending a dismal six weeks in Scotland.
+** picture = ANGRY_MOB_eventPicture
+** Trigger:
+*** Does not have the country flag ENG_had_event_9139
+*** Does not have the country flag ENG_had_event_9143
+*** Year is at least 1700
+*** Year is less than 1800
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Ruler's dynasty is not Stuart
+** Mean time to happen
+*** Base mean time to happen of 1400 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9139
+** Option: 0 "We will smash them!:
+*** If:
+**** Limited to:
+***** highlands_area:
+****** The province is owned by our country
+**** Random owned province:
+***** Limited to:
+****** area = highlands_area
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+*** If:
+**** Limited to:
+***** highlands_area:
+****** The province is not owned by our country
+***** lowlands_area:
+****** The province is owned by our country
+**** Random owned province:
+***** Limited to:
+****** area = lowlands_area
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+*** If:
+**** Limited to:
+***** highlands_area:
+****** The province is not owned by our country
+***** lowlands_area:
+****** The province is not owned by our country
+***** british_isles_region:
+****** The province is owned by our country
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+* Gets the country event:
+** ID is flavor_eng.9140
+** title = 0 "Sir Robert Walpole
+** desc = 0 "Robert Walpole, Earl of Orford (1676-1745) was appointed War Minister in 1708. Compromised in many scandals, he loses his functions but is recalled upon the advent of the Hanoverian dynasty. He fervent partisan of European overall peace and balance, he dominated English political life from 1721 to 1742, as First Lord and Exchequer, a Prime Minister in fact if not in title.
+** picture = ADVISOR_eventPicture
+** Trigger:
+*** Does not have the country flag ENG_had_event_9140
+*** Year is at least 1700
+*** Year is less than 1745
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** The advisor with the id 284 does not exist
+*** Any of the following:
+**** Owns 0 "Essex
+**** Owns 0 "London
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9140
+** Option: 0 "An Excellent Minister!:
+*** Changes administrative power stored by 25
+*** If:
+**** Limited to:
+***** Owns 0 "Essex
+**** Creates an advisor of the 0 "Statesman type:
+***** Named "Robert Walpole"
+***** Culture is 0 "English
+***** discount = yes
+***** In the province 0 "Essex
+***** With a skill level of 3
+*** If:
+**** Limited to:
+***** Does not own 0 "Essex
+***** Owns 0 "London
+**** Creates an advisor of the 0 "Statesman type:
+***** Named "Robert Walpole"
+***** Culture is 0 "English
+***** discount = yes
+***** In the province 0 "London
+***** With a skill level of 3
+* Gets the country event:
+** ID is flavor_eng.9141
+** title = 0 "Captain Jenkin's Ear
+** desc = 0 "The War of Jenkins's Ear (which merged into the War of the Austrian Succession) was the result, amongst other things, of a minor, alleged confrontation between Spanish Guarda Costas and the Captain and crew of the Glasgow brig 'Rebecca' in 1731. Captain Jenkins claimed that, whilst in the Caribbean, his ship had been boarded by the Guarda Costa and his crew maltreated, and that the Spaniards had then cut off one of his ears. Additionally, he claimed he was tortured and threatened with death. There were no major actions fought during this war, although the declaration of war led to the dispatch of Anson's squadron to attack the coast of South America, and to finally circumnavigate the globe, and Admiral Edward Vernon's fleet attacked Spanish land in the Caribbean.
+** picture = NAVAL_MILITARY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1700
+*** Year is less than 1800
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** 0 "Spain exists
+*** Considers 0 "Spain a rival
+** Mean time to happen
+*** Base mean time to happen of 1500 months
+** Option: 0 "Use it as an excuse for War:
+*** AI chance:
+**** Base chance of 75
+*** add_stability_or_adm_power = yes
+*** Gives the 0 "Diplomatic Insult casus belli against 0 "Spain
+*** 0 "Spain:
+**** Adds the opinion modifier "0 "Captain Jenkins Incident" towards our country
+** Option: 0 "Try not to severe our relation too much:
+*** AI chance:
+**** Base chance of 25
+*** Changes prestige by -10
+* Gets the country event:
+** ID is flavor_eng.9143
+** title = 0 "Jacobite Rebellion
+** desc = 0 "In 1745, the war of the Austrian Succession was raging in Europe. England had most of her troops busy in the Austrian Netherlands. The time seemed ripe for Charles-Edward Stuart (1720-1788) to boldly land in Scotland. He and his Jacobite supporters managed to beat an English army at Prestonpans on October 2nd, 1745 and entered Edinburgh where he had his father James recognized as King of Scotland. At the head of a small army, he then invaded England as far as Derby, but had to retreat when promised French support did not materialize (the intended landing of French troops had failed). Caught up by the British army under Cumberland (recalled from the Low Countries), he was soundly defeated at Culloden on 16th April, 1746. This was the best shot the Stuarts ever got to reclaim the throne, but the rash young prince did not listen to the sober advice of his Generals, thus forever burying the Stuart cause.
+** picture = ANGRY_MOB_eventPicture
+** Trigger:
+*** Does not have the country flag ENG_had_event_9143
+*** Year is at least 1700
+*** Year is less than 1800
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Ruler's dynasty is not Stuart
+** Mean time to happen
+*** Base mean time to happen of 1400 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9143
+** Option: 0 "We will smash them!:
+*** If:
+**** Limited to:
+***** highlands_area:
+****** The province is owned by our country
+**** Random owned province:
+***** Limited to:
+****** area = highlands_area
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+*** If:
+**** Limited to:
+***** highlands_area:
+****** The province is not owned by our country
+***** lowlands_area:
+****** The province is owned by our country
+**** Random owned province:
+***** Limited to:
+****** area = lowlands_area
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+*** If:
+**** Limited to:
+***** highlands_area:
+****** The province is not owned by our country
+***** lowlands_area:
+****** The province is not owned by our country
+***** british_isles_region:
+****** The province is owned by our country
+**** Random owned province:
+***** Limited to:
+****** Region is british_isles_region
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+* Gets the country event:
+** ID is flavor_eng.9144
+** title = 0 "William Pitt the Elder
+** desc = 0 "William Pitt, the first Pitt (1708-1778), was the grandson of the Governor of Madras. Initially destined for a military career, he became a deputy in the Commons, member of the Whigs and an ardent patriot. Striving to give England a world maritime empire, he lead the coalition government of 1757 despite the profound hatred of George II and obtained decisive results in Canada and India. His departure in 1763 saved France from the toughest clauses of the Treaty of Paris ending the Seven Years War. Back to power in 1766-1778 despite his poor health, he advocated war against France in 1778.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1735
+*** Year is less than 1778
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** The advisor with the id 293 does not exist
+*** Owns 0 "London
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "An Excellent Minister!:
+*** Changes administrative power stored by 25
+*** If:
+**** Limited to:
+***** Owns 0 "London
+**** Creates an advisor of the 0 "Statesman type:
+***** Named "W. Pitt the Elder"
+***** Culture is 0 "English
+***** discount = yes
+***** In the province 0 "London
+***** With a skill level of 3
+* Gets the country event:
+** ID is flavor_eng.9145
+** title = 0 "The East India Company
+** desc = 0 "Created two years before its Dutch equivalent, the English East India Company had a difficult start. Its first trading posts in the Moluccas (Amboina) and Indonesia were soon overwhelmed and closed by the Dutch and activity concentrated to India (Madras, Bombay, Calcutta). It is there that she would know its greatest success, from a small trading ventures of harbor factories to the large Indian Empire build by Warren Hastings and Robert Clive (from 1757 onwards) that would control most of the Indian subcontinent. The company would outlast all its competitors and would only be taken over by the British government in 1867, in the wake of the great Sepoy revolt of 1857.
+** picture = MERCHANTS_TALKING_eventPicture
+** is_triggered_only = yes
+** Option: 0 "We will exploit this!:
+*** Changes treasury by 100 ducats
+* Gets the country event:
+** ID is flavor_eng.9150
+** title = 0 "William Pitt the Younger
+** desc = 0 "William Pitt was the second son of William Pitt, 1st earl of Chatham. In December 1783, King George III took the opportunity to dismiss the coalition and asked the 24-year-old Pitt to form a government. When Parliament reassembled in January 1784, the government was at once defeated by 39 votes on a virtual motion of censure, but Pitt refused to resign, and gradually the coalition's majority in Parliament began to crumble. By March 8 the majority against him was one vote, and on March 25 Parliament was dissolved. In 1788 he signed the Triple Alliance between Britain, Prussia, and Holland, thereby ensuring that in a future war his country would not be bereft of allies as it had been during the American Revolution. In 1790 he demonstrated Britain's renewed power and prestige by negotiating a peace between Austria and Turkey. In 1784 he passed his own India Act, creating a board of control regulating Indian affairs and the East India Company. Finally, in 1791 the Canada Constitutional Act was passed. London became responsible for the government of both Lower and Upper Canada, but both provinces were given representative assemblies.
+** picture = ADVISOR_eventPicture
+** Trigger:
+*** Does not have the country flag ENG_had_event_9150
+*** Year is at least 1781
+*** Year is less than 1806
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** The advisor with the id 315 does not exist
+*** Any of the following:
+**** Owns 0 "Kent
+**** Owns 0 "London
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9150
+** Option: 0 "An Excellent Minister!:
+*** Changes administrative power stored by 25
+*** If:
+**** Limited to:
+***** Owns 0 "Kent
+**** Creates an advisor of the 0 "Statesman type:
+***** Named "W. Pitt the Younger"
+***** Culture is 0 "English
+***** discount = yes
+***** In the province 0 "Kent
+***** With a skill level of 3
+*** If:
+**** Limited to:
+***** Does not own 0 "Kent
+***** Owns 0 "London
+**** Creates an advisor of the 0 "Statesman type:
+***** Named "W. Pitt the Younger"
+***** Culture is 0 "English
+***** discount = yes
+***** In the province 0 "London
+***** With a skill level of 3
+* Gets the country event:
+** ID is flavor_eng.9193
+** title = 0 "The Methuen Agreement
+** desc = 0 "John Methuen was born in 1650. An accomplished diplomat, he is well remembered for the treaty signed in 1703 between England and Portugal. The main purpose of the treaty was to allow free introduction of English wool and cloths to Portugal in exchange of free entry of Portuguese wine into England (Port wine). The treaty made in effect Portugal an economic and political satellite of England, and was abrogated only in 1836. John Methuen died in 1706 shortly after his greatest success.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1650
+*** Year is less than 1700
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Is not at war
+*** 0 "Portugal exists
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** british_isles_region:
+****** The province is owned by 0 "England
+****** Is coastal
+**** All of the following:
+***** Country is 0 "Great Britain
+***** british_isles_region:
+****** The province is owned by 0 "Great Britain
+****** Is coastal
+** Mean time to happen
+*** Base mean time to happen of 500 months
+** Option: 0 "Accept the Agreement:
+*** AI chance:
+**** Base chance of 75
+*** Changes stability by -1
+*** 0 "Portugal:
+**** Adds the opinion modifier "0 "Accepted Methuen Agreement" towards our country
+*** Random owned province:
+**** Limited to:
+***** Region is british_isles_region
+***** Is coastal
+**** Changes base tax by 1
+** Option: 0 "Denounce the Agreement:
+*** AI chance:
+**** Base chance of 25
+*** add_stability_or_adm_power = yes
+*** 0 "Portugal:
+**** Adds the opinion modifier "0 "Denounced Methuen Agreement" towards our country
+* Gets the country event:
+** ID is flavor_eng.9182
+** title = 0 "The Gunpowder Plot
+** desc = 0 "'Remember, remember,\nThe Fifth of November,\nGunpowder treason and plot.\nI know of no reason,\nWhy the gunpowder treason,\nShould ever be forgot.'\n\nA plot to blow up the King and the Houses of Parliament has been discovered! The conspirators, led by Guy Fawkes and Robert Catesby, hid barrels of gunpowder below the Houses of Parliament and planned to detonate them when the Houses were in session with the King attending. Their goal was to seize control of the government and restore England to Catholicism. The conspirators will undoubtedly be executed, but how should we react towards Catholics as a whole?
+** picture = ASSASSINATION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1600
+*** Year is less than 1650
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the 0 "Reformed religion
+**** Follows the anglican religion
+*** Any owned province:
+**** The province is not the capital of the country
+**** Follows the 0 "Catholic religion
+**** Can spawn the 0 "Religious rebel type
+** Mean time to happen
+*** Base mean time to happen of 600 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Follows the 0 "Catholic religion
+****** Can spawn the 0 "Religious rebel type
+***** Sets the province flag gunpowder_plot
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Follows the 0 "Catholic religion
+****** Can spawn the 0 "Religious rebel type
+****** Does not have the province flag gunpowder_plot
+***** Sets the province flag gunpowder_plot
+** Option: 0 "Punish all Catholics!:
+*** AI chance:
+**** Base chance of 75
+*** add_stability_or_adm_power = yes
+*** Every owned province:
+**** Limited to:
+***** Has the province flag gunpowder_plot
+**** Spawns revolt of size 2 of 0 "Religious rebels
+**** Removes the province flag gunpowder_plot
+*** If:
+**** Limited to:
+***** 0 "The Papal State:
+****** Country exists
+****** Follows the 0 "Catholic religion
+**** 0 "The Papal State:
+***** Adds the opinion modifier "0 "Harsh Punishment of Catholics" towards our country
+*** If:
+**** Limited to:
+***** 0 "Spain:
+****** Country exists
+****** Follows the 0 "Catholic religion
+**** 0 "Spain:
+***** Adds the opinion modifier "0 "Harsh Punishment of Catholics" towards our country
+*** If:
+**** Limited to:
+***** 0 "France:
+****** Country exists
+****** Follows the 0 "Catholic religion
+**** 0 "France:
+***** Adds the opinion modifier "0 "Harsh Punishment of Catholics" towards our country
+** Option: 0 "Punish only the obvious conspirators:
+*** AI chance:
+**** Base chance of 25
+*** Changes stability by -2
+* Gets the country event:
+** ID is flavor_eng.9200
+** title = 0 "Hobbes publishes 'Leviathan'
+** desc = 0 "English philosopher Thomas Hobbes held that the state of nature was a state of strife and chaos which could be ended only if individuals agreed in a 'Social Contract' to give their liberty into the hands of a sovereign. The sovereign on his part was obliged to protect his subjects. Failure to do so would allow the people to seek a new ruler. Strangely enough Hobbes managed to offend both sides in the English Civil War and spent 11 years in Paris before he dared set foot in England again in 1651.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1651
+*** Year is less than 1670
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Excellent:
+*** Changes administrative power stored by 10
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** add_innovativeness_small_effect = yes
+* Gets the country event:
+** ID is flavor_eng.9201
+** title = 0 "Adam Smith publishes 'The Wealth of Nations'
+** desc = 0 "The Wealth of Nations' was the first great work in political economy and the corner-stone of what later became known as laissez-faire capitalism (Smith called it the system of perfect liberty). The Scotsman introduced the concept of the 'invisible hand' - the intrinsic ability of a system of perfect liberty to control itself and still give rise to an orderly society through the mechanism of competition.
+** picture = ECONOMY_eventPicture
+** Trigger:
+*** Does not have the country flag ENG_had_event_9201
+*** Year is at least 1776
+*** Year is less than 1790
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9201
+** Option: 0 "Excellent:
+*** Changes administrative power stored by 10
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** add_innovativeness_small_effect = yes
+* Gets the country event:
+** ID is flavor_eng.9202
+** title = 0 "David Hume
+** desc = 0 "Scotsman David Hume was one of the foremost philosophers of his day who is best known for his philosophical empiricism and skepticism. Taking the scientific method of the English physicist Sir Isaac Newton as his model and building on the epistemology of the English philosopher John Locke, Hume tried to describe how the mind works in acquiring what is called knowledge. He concluded that no theory of reality is possible - there can be no knowledge of anything beyond experience.
+** picture = INVENTION_eventPicture
+** Trigger:
+*** Does not have the country flag ENG_had_event_9202
+*** Year is at least 1750
+*** Year is less than 1776
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9202
+** Option: 0 "Excellent:
+*** Changes administrative power stored by 10
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** add_innovativeness_small_effect = yes
+* Gets the country event:
+** ID is flavor_eng.9203
+** title = 0 "John Locke
+** desc = 0 "John Locke was an initiator of the Enlightenment in England and France, an inspirer of the U.S. Constitution and the author of, among other works, 'An Essay Concerning Human Understanding'. Locke held that knowledge of the world could only be gained by experience and reflection on experience, and this knowledge was being gained by Boyle, Sydenham, Christiaan, Huygens, and Newton. They were the true philosophers who were advancing knowledge.
+** picture = ECONOMY_eventPicture
+** Trigger:
+*** Does not have the country flag ENG_had_event_9203
+*** Year is at least 1689
+*** Year is less than 1700
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9203
+** Option: 0 "Excellent:
+*** Changes administrative power stored by 10
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** add_innovativeness_big_effect = yes
+* Gets the country event:
+** ID is flavor_eng.9204
+** title = 0 "Isaac Newton
+** desc = 0 "English physicist and mathematician Isaac Newton was the culminating figure of the scientific revolution of the 17th century. In optics his discovery of the composition of white light integrated the phenomena of colors into the science of light and laid the foundation for modern physical optics. In mechanics his three laws of motion, the basic principles of modern physics, resulted in the formulation of the law of universal gravitation. In mathematics he was the original discoverer of the infinitesimal calculus. Newton's 'Mathematical Principles of Natural Philosophy' from 1687, was one of the most important single works in the history of modern science.
+** picture = INVENTION_eventPicture
+** Trigger:
+*** Does not have the country flag ENG_had_event_9204
+*** Year is at least 1687
+*** Year is less than 1713
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9204
+** Option: 0 "Excellent:
+*** Changes administrative power stored by 10
+*** Changes prestige by 10
+*** add_innovativeness_big_effect = yes
+* Gets the country event:
+** ID is flavor_eng.9205
+** title = 0 "William Shakespeare
+** desc = 0 "English poet, dramatist and actor William Shakespeare is often called the English national poet and considered by many to be the greatest dramatist of all time. His plays written in the late 16th and early 17th centuries for a small repertory theater are now performed and read more often and in more countries than ever before. The prophecy of his great contemporary, the poet and dramatist Ben Jonson, that Shakespeare 'was not of an age but for all time' has been fulfilled.
+** picture = ECONOMY_eventPicture
+** Trigger:
+*** Does not have the country flag ENG_had_event_9205
+*** Year is at least 1593
+*** Year is less than 1616
+*** The advisor with the id 245 does not exist
+*** Any of the following:
+**** All of the following:
+***** Country is 0 "England
+***** 0 "Great Britain does not exist
+**** Country is 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Immediate effects:
+*** Sets the country flag ENG_had_event_9205
+** Option: 0 "Glory to our Nation!:
+*** Creates an advisor of the 0 "Artist type:
+**** discount = yes
+* Gets the country event:
+** ID is flavor_eng.9250
+** title = 0 "Lack of an Heir
+** desc = 0 "The lack of an heir has caused rumors at the court concerning [Root.Monarch.GetName]'s alleged infertility. This is most troubling as there are several nobles waiting in the wings, ready to claim the throne at the death of [Root.Monarch.GetName].
+** picture = WAR_OF_THE_ROSES_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "England
+*** Is not in regency
+*** Has no heir
+*** Is not the lesser partner in a union
+*** ruler_has_personality_false = infertile_personality
+*** Does not have the country flag had_war_of_the_roses
+*** has_disaster_false = 0 "War of the Roses
+*** Year is less than 1500
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: 0 "Most troubling indeed:
+*** Adds the ruler modifier "0 "Low Fertility" until the ruler's death:
+**** -50% chance of getting an heir
+* Gets the country event:
+** ID is flavor_eng.9251
+** title = 0 "Rumors Dispelled
+** desc = 0 "With the birth of an heir, [Root.Monarch.GetName] has finally dispelled the rumors of infertility.
+** picture = WAR_OF_THE_ROSES_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "England
+*** Has the ruler modifier 0 "Low Fertility
+*** Has an heir
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Option: 0 "I will surely prove them wrong:
+*** Removes the country modifier "0 "Low Fertility"
+* Gets the country event:
+** ID is flavor_eng.9237
+** title = 0 "The Rise of a Dynasty
+** desc = 0 "With the final battle now won, the War of the Roses - as it will come to be known - is at an end. We must now decide how to proceed, to strengthen our position at home and abroad. Even now there are whispers of potential usurpers, including the return from exile of the ambitious Henry Tudor. It might be prudent therefore to reconcile our two houses in matrimony.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Trigger:
+*** Has the country flag war_of_the_roses_ended
+*** Any of the following:
+**** Ruler's dynasty is York
+**** Ruler's dynasty is Lancaster
+*** Is not the lesser partner in a union
+*** has_government_attribute = heir
+*** } 
+** Option: 0 "There will never be reconciliation between our two dynasties!:
+*** AI chance:
+**** Base chance of 0
+*** Every owned province:
+**** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+***** local_unrest = 5
+*** Changes prestige by 10
+** Option: 0 "It is time for peace, let us join our two houses together in marriage.:
+*** AI chance:
+**** Base chance of 100
+*** add_stability_or_adm_power = yes
+*** Spawns an heir:
+**** Legitimacy of 100
+**** Named "Henry"
+**** Ruler's dynasty is Tudor
+**** Culture is 0 "English
+**** Ruler's administrative skill is at least 3
+**** Ruler's diplomatic skill is at least 4
+**** Ruler's military skill is at least 2
+**** age = 24
+* Gets the country event:
+** ID is flavor_eng.9880
+** title = 0 "[Root.OxOrBridgeTitle] Symposium
+** desc = 0 "[Root.OxOrBridgeLocation]\n\nThe Symposium featured a wide-ranging debate on matters of national importance. This year, the much anticipated subject was, [Root.OxOrBridgeSubject]. A great deal of pertinent information was collated by scholars from both universities, and the findings are, as usual, most noteworthy.
+** picture = UNIVERSITY_eventPicture
+** is_triggered_only = yes
+** Trigger:
+*** 1 "Oxford:
+**** The province is owned by our country
+*** 1 "Bedfordshire:
+**** The province is owned by our country
+*** mission_completed = eng_rb_universities
+** Immediate effects:
+** Option: 0 "Splendid.:
+*** If:
+**** Limited to:
+***** The variable oxbridge_subject is equal or higher than 1
+***** The variable oxbridge_subject is lower than 2
+**** Adds the modifier "0 "The Passage of the Spheres" for 5 years:
+***** global_institution_spread = 0.15
+*** else_if:
+**** Limited to:
+***** The variable oxbridge_subject is equal or higher than 2
+***** The variable oxbridge_subject is lower than 3
+**** Adds the modifier "0 "Theory of Warfare" for 5 years:
+***** +0.5 army tradition
+*** else_if:
+**** Limited to:
+***** The variable oxbridge_subject is equal or higher than 3
+***** The variable oxbridge_subject is lower than 4
+**** Adds the modifier "0 "Philosophy of Royalty" for 5 years:
+***** Legitimacy is at least 0.5
+*** else_if:
+**** Limited to:
+***** The variable oxbridge_subject is equal or higher than 4
+***** The variable oxbridge_subject is lower than 5
+**** Adds the modifier "0 "On Divinity..." for 5 years:
+***** -1 global unrest
+*** else_if:
+**** Limited to:
+***** The variable oxbridge_subject is equal or higher than 5
+**** Adds the modifier "0 "Economic Studies" for 5 years:
+***** +5% global tax modifier
+*** Hidden effect:
+**** Gets the country event:
+***** ID is flavor_eng.9880
+***** Base mean time to happen of 3650 days
+**** If:
+***** Limited to:
+****** The variable oxbridge_subject is equal or higher than 1
+****** The variable oxbridge_subject is lower than 2
+***** One of the following will happen:
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 2
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 3
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 4
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 5
+**** else_if:
+***** Limited to:
+****** The variable oxbridge_subject is equal or higher than 2
+****** The variable oxbridge_subject is lower than 3
+***** One of the following will happen:
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 1
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 3
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 4
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 5
+**** else_if:
+***** Limited to:
+****** The variable oxbridge_subject is equal or higher than 3
+****** The variable oxbridge_subject is lower than 4
+***** One of the following will happen:
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 1
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 2
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 4
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 5
+**** else_if:
+***** Limited to:
+****** The variable oxbridge_subject is equal or higher than 4
+****** The variable oxbridge_subject is lower than 5
+***** One of the following will happen:
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 1
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 2
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 3
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 5
+**** else_if:
+***** Limited to:
+****** The variable oxbridge_subject is equal or higher than 5
+***** One of the following will happen:
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 1
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 2
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 3
+****** 25 relative chance:
+******* Sets the variable oxbridge_subject to 4
+**** If:
+***** Limited to:
+****** The variable oxbridge_symposium is equal or higher than 0
+****** The variable oxbridge_symposium is lower than 1
+***** Sets the variable oxbridge_symposium to 2
+**** else_if:
+***** Limited to:
+****** The variable oxbridge_symposium is equal or higher than 1
+****** The variable oxbridge_symposium is lower than 2
+***** Sets the variable oxbridge_symposium to 2
+**** else_if:
+***** Limited to:
+****** The variable oxbridge_symposium is equal or higher than 2
+***** Sets the variable oxbridge_symposium to 1
+* Gets the country event:
+** ID is flavor_eng.99
+** title = flavor_eng.99.t
+** desc = flavor_eng.99.d
+** picture = wihgfx_FEMALE_GENERAL_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Capital:
+**** Region is british_isles_region
+*** Any of the following:
+**** Culture group is 0 "British
+**** Culture group is 0 "Celtic
+**** Primary culture is 0 "Anglo-Saxon
+*** has_reform = revolutionary_republic_reform
+** Mean time to happen
+*** Base mean time to happen of 2 years
+** Option: flavor_eng.99.a:
+*** Adds the modifier "sister_suffragettes" for the rest of the campaign:
+**** female_advisor_chance = 0.25
+**** may_recruit_female_generals = yes
+**** +100% available advisors
+** Option: flavor_eng.99.b:
+*** Adds the modifier "sexist_revolution" for 10 years:
+**** yearly_revolutionary_zeal = -0.5

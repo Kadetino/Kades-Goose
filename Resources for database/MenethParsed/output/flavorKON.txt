@@ -1,0 +1,504 @@
+** Trigger:
+*** Country is 0 "Kongo
+*** 0 "Portugal:
+**** Follows the 0 "Catholic religion
+*** coastal_kongo:
+**** Has been discovered by 0 "Portugal
+*** Does not follow the 0 "Catholic religion
+*** Does not have the DLC Origins
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "Let them preach.:
+*** AI chance:
+**** Base chance of 90
+*** Changes stability by -1
+*** Changes prestige by -25
+*** Adds -25 legitimacy
+*** Random owned province:
+**** Limited to:
+***** Does not follow the 0 "Catholic religion
+**** Changes religion to 0 "Catholic
+*** Sets the country flag kongo_allows_missionaries
+*** Adds the opinion modifier "0 "Missionaries accepted" from 0 "Portugal
+*** Hidden effect:
+**** 0 "Portugal:
+***** Gets the country event:
+****** ID is flavor_kon.2
+****** Base mean time to happen of 1 days
+** Option: 0 "Drive off the missionaries!:
+*** AI chance:
+**** Base chance of 10
+*** add_stability_or_adm_power = yes
+*** Changes prestige by 10
+*** Adds the opinion modifier "0 "Missionaries rebuffed" from 0 "Portugal
+*** Hidden effect:
+**** 0 "Portugal:
+***** Gets the country event:
+****** ID is flavor_kon.3
+****** Base mean time to happen of 1 days
+* Gets the country event:
+** ID is flavor_kon.2
+** title = 0 "Missionaries Enter the Kongo!
+** desc = 0 "The Kingdom of Kongo, a pagan state on the coast of Central Africa, has agreed to let our missionaries spread the word of Christ to their kingdom. Thousands in one of their provinces have joined the Church and are calling for a bishop and church constructions throughout the land!
+** picture = RELIGION_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Good news!:
+*** Changes Papal Influence by 25
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Adds the opinion modifier "0 "Missionaries accepted" from 0 "Kongo
+* Gets the country event:
+** ID is flavor_kon.3
+** title = 0 "Missionaries rebuffed!
+** desc = 1 "The barbaric [KON.Monarch.GetTitle] of the Kingdom of [KON.GetName] had our missionaries whipped and humiliated! The idol-worshipers not only mock Christ, they mock our power. This insult to [Root.GetName] and to our Holy Mother Church must be avenged.
+** picture = RELIGION_eventPicture
+** is_triggered_only = yes
+** Option: 0 "We shall wipe the dust.. on them.:
+*** Changes prestige by -5
+*** Adds the opinion modifier "0 "Missionaries rebuffed" from 0 "Kongo
+* Gets the country event:
+** ID is flavor_kon.4
+** title = 0 "The King of Kongo Converts!
+** desc = 0 "Today, our great Manikongo $MONARCH$, flanked by a Portuguese priest, declared himself born anew as a Christian. Rejecting the faith of his ancestors, which he called idolatrous, our ruler is calling for a total adoption of Catholic faith, with a permanent diocese bishop, the destruction of the idols of the old gods, and the end of our traditional way of life. Already infuriated Kongolese elders are calling for the King's head and a restoration of the old order. Either way, our country is in for a period of great unrest.
+** picture = POPE_PREACHING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Kongo
+*** If:
+**** Limited to:
+***** Has the DLC Origins
+**** Does not follow the 0 "Catholic religion
+**** Does not have the country flag kon_secured_coast_from_missionaries
+**** Has the global flag kon_kongo_got_discovered_by_europeans
+**** The dominant religion is 0 "Catholic
+**** Ruler is male
+*** else:
+**** Has the country flag kongo_allows_missionaries
+**** Does not follow the 0 "Catholic religion
+**** Ruler is male
+**** Any owned province:
+***** Follows the 0 "Catholic religion
+** Mean time to happen
+*** Base mean time to happen of 60 months
+*** Multiplies value by 0.1:
+**** Has the DLC Origins
+** Option: 0 "Christianity will triumph in Kongo!:
+*** Changes religion to 0 "Catholic
+*** If:
+**** Limited to:
+***** Is a tribal nation
+**** change_government_to_monarchy = yes
+*** If:
+**** Limited to:
+***** Has the country flag kon_picked_side_with_europeans
+**** Changes stability by 1
+*** else:
+**** Hidden effect:
+***** Changes stability by -3
+***** Sets the country flag kon_picked_oppose_europeans
+***** Sets the country flag kon_betrayed_own_people
+***** Removes the country flag kon_picked_side_with_europeans
+***** swap_non_generic_missions = yes
+*** Hidden effect:
+**** 0 "Portugal:
+***** Gets the country event:
+****** ID is flavor_kon.5
+****** Base mean time to happen of 1 days
+*** AI chance:
+**** Base chance of 90
+**** Multiplies value by 0:
+***** Has the country flag kon_picked_oppose_europeans
+** Option: 0 "Off with his head!:
+*** Kills the ruler of the country
+*** If:
+**** Limited to:
+***** Has the country flag kon_picked_oppose_europeans
+**** Changes stability by 2
+*** else:
+**** Hidden effect:
+***** Changes stability by -3
+***** Removes the country flag kon_picked_side_with_europeans
+***** Sets the country flag kon_picked_oppose_europeans
+***** swap_non_generic_missions = yes
+*** AI chance:
+**** Base chance of 10
+**** Multiplies value by 0:
+***** Has the country flag kon_picked_side_with_europeans
+* Gets the country event:
+** ID is flavor_kon.5
+** title = 0 "Conversion of the Kongo!
+** desc = 0 "The Kongolese Manikongo [From.Monarch.GetName] has, at the urging of our missionaries, embraced the Holy Mother Church and the one true Faith. The Kongolese are already calling out for priests, Bibles, and aid establishing their local Church that only we can give. The Kongolese Manikongo, who is now a Catholic brother monarch, has pledged his friendship to our kingdom for our help in leading him to the true faith.
+** picture = POPE_PREACHING_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Another investment pays off.:
+*** Changes prestige by 25
+*** Changes Papal Influence by 25
+* Gets the country event:
+** ID is flavor_kon.6
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** hidden = yes
+** fire_only_once = yes
+** Trigger:
+*** Capital:
+**** In the continent 0 "Europe
+*** coastal_kongo:
+**** Has been discovered by our country
+*** Does not have the global flag kon_kongo_got_discovered_by_europeans
+*** 0 "Kongo exists
+*** 0 "Kongo:
+**** Has at least 1 ports
+*** Has the DLC Origins
+** Mean time to happen
+*** Base mean time to happen of 100 months
+*** Multiplies value by 0.1:
+**** Any of the following:
+***** Country is 0 "Spain
+***** Country is 0 "Castile
+***** Country is 0 "Portugal
+***** Country is 0 "The Papal State
+*** Sets the global flag kon_kongo_got_discovered_by_europeans
+*** 0 "Kongo:
+**** Gets the country event:
+***** ID is flavor_kon.7
+**** Sets the country flag kon_chooses_new_missions
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_kon.7
+** title = flavor_kon.7.t
+** desc:
+*** desc = flavor_kon.7.desc.ib
+*** Trigger:
+**** Our country:
+***** Any of the following:
+****** Country is 0 "Portugal
+****** Country is 0 "Spain
+****** Country is 0 "Castile
+***** Follows the 0 "Catholic religion
+** desc:
+*** desc = flavor_kon.7.desc.pap
+*** Trigger:
+**** Our country:
+***** Country is 0 "The Papal State
+***** Follows the 0 "Catholic religion
+** desc:
+*** desc = flavor_kon.7.desc.catholic
+*** Trigger:
+**** Our country:
+***** Country is not 0 "Portugal
+***** Country is not 0 "Spain
+***** Country is not 0 "Castile
+***** Country is not 0 "The Papal State
+***** Follows the 0 "Catholic religion
+** desc:
+*** desc = flavor_kon.7.desc.christian
+*** Trigger:
+**** Our country:
+***** Is in the 0 "Christian religion group
+***** Does not follow the 0 "Catholic religion
+** desc:
+*** desc = flavor_kon.7.desc.others
+*** Trigger:
+**** Our country:
+***** Is not in 0 "Christian's religion group
+** picture = RELIGION_eventPicture
+** is_triggered_only = yes
+** Option: flavor_kon.7.a:
+*** Hidden effect:
+**** Removes the country flag kon_picked_oppose_europeans
+**** Sets the country flag kon_picked_side_with_europeans
+*** Changes stability by -1
+*** Changes prestige by -25
+*** Adds -25 legitimacy
+*** Random owned province:
+**** Limited to:
+***** Does not follow the 0 "Catholic religion
+**** Changes religion to 0 "Catholic
+*** If:
+**** Limited to:
+***** Our country:
+****** Follows the 0 "Catholic religion
+**** Adds the opinion modifier "0 "Missionaries accepted" from our country
+**** Hidden effect:
+***** Our country:
+****** Gets the country event:
+******* ID is flavor_kon.2
+******* Base mean time to happen of 1 days
+*** AI chance:
+**** Base chance of 90
+** Option: flavor_kon.7.b:
+*** Hidden effect:
+**** Sets the country flag kon_picked_oppose_europeans
+**** Removes the country flag kon_picked_side_with_europeans
+*** add_stability_or_adm_power = yes
+*** Changes prestige by 10
+*** If:
+**** Limited to:
+***** Our country:
+****** Follows the 0 "Catholic religion
+**** Adds the opinion modifier "0 "Missionaries rebuffed" from our country
+**** Hidden effect:
+***** Our country:
+****** Gets the country event:
+******* ID is flavor_kon.3
+******* Base mean time to happen of 1 days
+*** AI chance:
+**** Base chance of 10
+** after:
+*** swap_non_generic_missions = yes
+* Gets the country event:
+** ID is flavor_kon.8
+** title = flavor_kon.8.t
+** desc = flavor_kon.8.d
+** picture = AFRICAN_CATHOLIC_eventPicture
+** Trigger:
+*** has_mission = kon_annex_vassals
+*** Does not have the country flag kon_picked_oppose_europeans
+*** Does not have the country flag kon_picked_side_with_europeans
+*** Does not have the country flag kon_chooses_new_missions
+*** Has the global flag kon_kongo_got_discovered_by_europeans
+*** Has the DLC Origins
+** Mean time to happen
+*** Base mean time to happen of 1 days
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag kon_chooses_new_missions
+** Option: flavor_kon.8.a:
+*** Hidden effect:
+**** Removes the country flag kon_picked_oppose_europeans
+**** Sets the country flag kon_picked_side_with_europeans
+*** Changes stability by -1
+*** Changes prestige by -25
+*** Adds -25 legitimacy
+*** Random owned province:
+**** Limited to:
+***** Does not follow the 0 "Catholic religion
+**** Changes religion to 0 "Catholic
+*** AI chance:
+**** Base chance of 90
+** Option: flavor_kon.8.b:
+*** Hidden effect:
+**** Sets the country flag kon_picked_oppose_europeans
+**** Removes the country flag kon_picked_side_with_europeans
+*** add_stability_or_adm_power = yes
+*** Changes prestige by 10
+*** AI chance:
+**** Base chance of 10
+** after:
+*** swap_non_generic_missions = yes
+* Gets the country event:
+** ID is flavor_kon.9
+** title = flavor_kon.9.t
+** desc = flavor_kon.9.d
+** picture = AFRICAN_CATHOLIC_eventPicture
+** is_triggered_only = yes
+** Option: flavor_kon.9.a:
+*** Changes stability by 2
+*** If:
+**** Limited to:
+***** 0 prestige
+**** set_prestige_to_zero = yes
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_kon.10
+** title = flavor_kon.10.t
+** desc = flavor_kon.10.d
+** picture = RELIGION_eventPicture
+** goto = kon_converted_province
+** Trigger:
+*** Country is 0 "Kongo
+*** Any country:
+**** Follows the 0 "Catholic religion
+**** coastal_kongo:
+***** Has discovered PREV
+*** Does not have the country flag kon_secured_coast_from_missionaries
+*** Has the global flag kon_kongo_got_discovered_by_europeans
+*** Does not follow the 0 "Catholic religion
+*** Has at least 2 provinces
+*** Any owned province:
+**** Does not follow the 0 "Catholic religion
+*** Has the DLC Origins
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Does not follow the 0 "Catholic religion
+***** save_event_target_as = kon_converted_province
+** Option: flavor_kon.10.a:
+*** event_target:kon_converted_province:
+**** Changes religion to 0 "Catholic
+*** If:
+**** Limited to:
+***** Has the country flag kon_picked_oppose_europeans
+**** Capital:
+***** spawn_country_religious_rebels:
+****** size = 3
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** Has the country flag kon_picked_oppose_europeans
+** Option: flavor_kon.10.b:
+*** event_target:kon_converted_province:
+**** Spawns revolt of size 1 of 0 "Religious rebels
+*** If:
+**** Limited to:
+***** Has the country flag kon_picked_side_with_europeans
+**** Changes stability by -2
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** Has the country flag kon_picked_side_with_europeans
+* Gets the country event:
+** ID is flavor_kon.11
+** title = flavor_kon.11.t
+** desc = flavor_kon.11.d
+** picture = SHIP_SAILING_eventPicture
+** is_triggered_only = yes
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** The province is not overseas
+****** Is coastal
+***** save_event_target_as = kon_port
+** Option: flavor_kon.11.a:
+*** Trigger:
+**** Any of the following:
+***** Is allied with 0 "The Papal State
+***** Has an opinion of at least 100 of 0 "The Papal State
+*** Changes treasury by -500 ducats
+*** Hidden effect:
+**** 0 "The Papal State:
+***** Gets the country event:
+****** ID is flavor_kon.12
+****** Base mean time to happen of 160 days
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_kon.11.b:
+*** Trigger:
+**** Any country:
+***** Has at least 1 cardinals
+***** Any of the following:
+****** Is allied with our country
+****** Has an opinion of at least 100 with our country
+*** Changes treasury by -500 ducats
+*** Hidden effect:
+**** Random country:
+***** Limited to:
+****** Has at least 1 cardinals
+****** Any of the following:
+******* Is allied with our country
+******* Has an opinion of at least 100 with our country
+***** Gets the country event:
+****** ID is flavor_kon.13
+****** Base mean time to happen of 160 days
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_kon.11.c:
+*** Trigger:
+***** No country:
+****** Has at least 1 cardinals
+****** Any of the following:
+******* Is allied with our country
+******* Has an opinion of at least 100 with our country
+**** Is not allied with 0 "The Papal State
+**** Has an opinion lower than 100 of 0 "The Papal State
+*** Changes treasury by -1000 ducats
+*** Hidden effect:
+**** Random country:
+***** Limited to:
+****** Owns 0 "Roma
+***** Gets the country event:
+****** ID is flavor_kon.14
+****** Base mean time to happen of 160 days
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_kon.12
+** title = flavor_kon.12.t
+** desc = flavor_kon.12.d
+** picture = AFRICAN_CATHOLIC_eventPicture
+** is_triggered_only = yes
+** Option: flavor_kon.12.a:
+*** If:
+**** Limited to:
+***** Has the DLC Emperor
+**** add_curia_treasury = 500
+*** else:
+**** Changes treasury by 500 ducats
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_kon.15
+***** Base mean time to happen of 160 days
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_kon.13
+** title = flavor_kon.13.t
+** desc = flavor_kon.13.d
+** picture = AFRICAN_CATHOLIC_eventPicture
+** is_triggered_only = yes
+** Option: flavor_kon.13.a:
+*** Changes treasury by 500 ducats
+*** Changes Papal Influence by 100
+*** Random owned province:
+**** Limited to:
+***** has_cardinal = yes
+**** remove_cardinal = yes
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_kon.15
+***** Base mean time to happen of 160 days
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_kon.14
+** title = flavor_kon.14.t
+** desc = flavor_kon.14.d
+** picture = AFRICAN_CATHOLIC_eventPicture
+** is_triggered_only = yes
+** Option: flavor_kon.14.a:
+*** Changes treasury by 1000 ducats
+*** Random owned province:
+**** Limited to:
+***** has_cardinal = yes
+**** remove_cardinal = yes
+*** Our country:
+**** Gets the country event:
+***** ID is flavor_kon.15
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_kon.15
+** title = flavor_kon.15.t
+** desc = flavor_kon.15.d
+** picture = AFRICAN_CATHOLIC_eventPicture
+** is_triggered_only = yes
+** Option: flavor_kon.15.a:
+*** Capital:
+**** add_cardinal = yes
+**** Hidden effect:
+***** add_province_triggered_modifier = kongo_cardinal_modifier
+*** AI chance:
+**** Base chance of 1
+* Gets the province event:
+** ID is flavor_kon.103
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** hidden = yes
+** Trigger:
+*** has_active_triggered_province_modifier = kongo_cardinal_modifier
+*** has_cardinal_false = no
+** Mean time to happen
+*** Base mean time to happen of 1 days
+*** add_cardinal = yes
+*** AI chance:
+**** Base chance of 1

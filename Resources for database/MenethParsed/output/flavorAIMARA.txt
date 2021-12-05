@@ -1,0 +1,181 @@
+
+=== 0 "Copacatiraca ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Pacajes
+** Country is 0 "Charca
+** Country is 0 "Colla
+* At war with 0 "Inca
+* Any of the following:
+** 5 war exhaustion
+** Any owned province:
+*** sieged_by = 0 "Inca
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 32 months
+
+'''Option: 0 "No, we will not submit to the Inca!:'''
+
+* Changes national manpower reserves by 2 years worth
+* Changes war exhaustion by -1
+
+=== 0 "Titi'kaka ===
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Pacajes
+** Country is 0 "Charca
+** Country is 0 "Colla
+* Any of the following:
+** All of the following:
+*** Owns 0 "Macaya
+*** 0 "Macaya:
+**** num_free_building_slots = 1
+**** Does not have the 0 "Temple building
+** All of the following:
+*** Owns 0 "Tiahuanaco
+*** 0 "Tiahuanaco:
+**** Does not have the 0 "Temple building
+** All of the following:
+*** Owns 0 "Puno
+*** 0 "Puno:
+**** num_free_building_slots = 1
+**** Does not have the 0 "Temple building
+** All of the following:
+*** Owns 0 "Chuquiabo
+*** 0 "Chuquiabo:
+**** num_free_building_slots = 1
+**** Does not have the 0 "Temple building
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Option: 0 "Convert it into a pilgrimage destination!:'''
+
+* Changes treasury by -30 ducats
+* Random owned province:
+** Limited to:
+*** Does not have the 0 "Temple building
+*** num_free_building_slots = 1
+*** Any of the following:
+**** Province is 0 "Macaya
+**** Province is 0 "Tiahuanaco
+**** Province is 0 "Puno
+**** Province is 0 "Chuquiabo
+** Constructs the 0 "Temple building
+
+'''Option: 0 "We shall not exploit something so sacred!:'''
+
+* add_stability_or_adm_power = yes
+
+=== 0 "Tupac Amaru II and Micaela Bastidas Puyucahua ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Pacajes
+** Country is 0 "Charca
+** Country is 0 "Colla
+* Year is at least 1600
+* Any neighbor country:
+** Capital:
+*** In the continent 0 "Europe
+** Any of the following:
+*** At war with our country
+*** Has a truce with our country
+*** Any owned province:
+**** Has core on our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 32 months
+
+'''Option: 0 "Hire Tupac Amaru II.:'''
+
+* Modifies treasury by -0.25 years worth of income
+* Creates a general:
+** Named "Tupac Amaru II"
+** 1 skill in shock
+** 3 skill in fire
+** 3 skill in manuever
+** 2 skill in siege
+** trait = hardy_warrior_personality
+
+'''Option: 0 "Hire Micaela Bastidas Puyucahua.:'''
+
+* Modifies treasury by -0.25 years worth of income
+* Creates a general:
+** Named "Micaela Bastidas Puyucahua"
+** 2 skill in shock
+** 2 skill in fire
+** 2 skill in manuever
+** 3 skill in siege
+** Ruler is female
+** trait = inspirational_leader_general_personality
+
+'''Option: 0 "Hire Tupac Amaru II and Micaela Bastidas Puyucahua.:'''
+
+* Modifies treasury by -0.5 years worth of income
+* Creates a general:
+** Named "Micaela Bastidas Puyucahua"
+** 2 skill in shock
+** 2 skill in fire
+** 2 skill in manuever
+** 3 skill in siege
+** Ruler is female
+** trait = inspirational_leader_general_personality
+* Creates a general:
+** Named "Túpac Amaru II"
+** 1 skill in shock
+** 3 skill in fire
+** 3 skill in manuever
+** 2 skill in siege
+** trait = hardy_warrior_personality
+
+'''Option: 1 "Hire neither of them.:'''
+
+* Changes prestige by 5
+
+=== 0 "The Troublesome Yatiri ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Pacajes
+** Country is 0 "Charca
+** Country is 0 "Colla
+* Any of the following:
+** At least 5% of provinces are in revolt
+** Any owned province:
+*** unrest = 2
+* Is not at war
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 32 months
+
+'''Option: 0 "Silence the Yatiri with any means necessary!:'''
+
+* Changes prestige by -5
+* Random owned province:
+** Limited to:
+*** unrest = 2
+** Adds the modifier "0 "Happy People" until the end of the campaign:
+*** local_unrest = -5
+
+'''Option: 0 "Leave them alone.:'''
+
+* Changes prestige by 5
+* Random owned province:
+** Limited to:
+*** unrest = 2
+** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*** local_unrest = 5

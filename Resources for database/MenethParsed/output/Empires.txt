@@ -1,0 +1,233 @@
+
+=== 0 "Threats to the Crown ===
+
+'''Trigger:'''
+
+* Has at least 25 provinces
+* Has less than 100 ducats in the treasury
+* Is at war
+* War score lower than least -10
+* Ruler's military skill is less than 3
+* Has at least 20 active loans
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 264 months
+* Multiplies value by 0.9:
+** Has at least 6 Economic ideas
+* Multiplies value by 0.9:
+** Has at least 7 Economic ideas
+* Multiplies value by 0.95:
+** Has less than 3 Economic ideas
+* Multiplies value by 0.95:
+** Has less than 1 Economic ideas
+* Multiplies value by 0.9:
+** War taxes are active
+
+'''Option: 0 "Make a final stand:'''
+
+* AI chance:
+** Base chance of 50
+* Changes prestige by 5
+* Modifies treasury by -0.25 years worth of income
+* Adds the modifier "0 "Military Funding" for 5 years:
+** +15% global manpower modifier
+
+'''Option: 0 "Seek diplomatic compromise:'''
+
+* AI chance:
+** Base chance of 50
+* Changes prestige by -5
+* Changes diplomatic power stored by 50
+
+=== 0 "National Fragmentation ===
+
+'''Trigger:'''
+
+* Has at least 25 provinces
+* Ruler's administrative skill is less than 3
+* Stability is lower than 0
+* Any owned province:
+** has_owner_accepted_culture_false = no
+** Culture group is not the same as our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 216 months
+* Multiplies value by 0.9:
+** Ruler's administrative skill is less than 1
+* Multiplies value by 0.9:
+** Stability is lower than -1
+* Multiplies value by 0.9:
+** Stability is lower than -2
+* Multiplies value by 0.9:
+** Has less than 2 Economic ideas
+* Multiplies value by 0.9:
+** Has less than 1 Economic ideas
+* Multiplies value by 0.9:
+** vassal = 2
+
+'''Option: 0 "Increase centralization efforts:'''
+
+* AI chance:
+** Base chance of 50
+* Modifies treasury by -0.25 years worth of income
+
+'''Option: 0 "Leave as it is:'''
+
+* AI chance:
+** Base chance of 50
+* Changes stability by -1
+
+=== 0 "$TREASURER$'s Reforms ===
+
+'''Trigger:'''
+
+* Has at least 25 provinces
+* Has the 0 "Treasurer advisor
+* Has at least 20 active loans
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 264 months
+* Multiplies value by 0.9:
+** Has a Treasurer with a skill of at least 2
+* Multiplies value by 0.9:
+** Has a Treasurer with a skill of at least 3
+
+'''Option: 0 "Implement national debt funding plan.:'''
+
+* AI chance:
+** Base chance of 70
+* Changes prestige by -10
+* Adds the modifier "0 "Debt Funding Plan" for 5 years:
+** -0.5 interest
+
+'''Option: 0 "Implement tax reform.:'''
+
+* AI chance:
+** Base chance of 30
+* Adds the modifier "0 "Tax Reform" for 5 years:
+** +10% global tax modifier
+
+=== 0 "Prospering Times ===
+
+'''Trigger:'''
+
+* Has at least 25 provinces
+* Any of the following:
+** Has the idea group 0 "Innovative Ideas
+** Has the 0 "Artist advisor
+** Stability is at least 3
+* Stability is at least 1
+* Does not have the country flag prosper_time_event
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+* Multiplies value by 0.75:
+** Has completed the 0 "Innovative Ideas idea group
+* Multiplies value by 0.9:
+** Has the 0 "Philosopher advisor
+* Multiplies value by 0.9:
+** Has a Artist with a skill of at least 3
+* Multiplies value by 0.9:
+** Has a Artist with a skill of at least 2
+
+'''Immediate effects:'''
+
+* Sets the country flag prosper_time_event
+* Hidden effect:
+** Random owned province:
+*** save_event_target_as = invest_province
+
+'''Option: 0 "Invest in better urban infrastructure.:'''
+
+* goto = invest_province
+* AI chance:
+** Base chance of 50
+* Changes administrative power stored by 25
+* event_target:invest_province:
+** Changes base tax by 1
+
+'''Option: 0 "Invest in better production methods.:'''
+
+* goto = invest_province
+* AI chance:
+** Base chance of 20
+* Changes diplomatic power stored by 25
+* event_target:invest_province:
+** add_base_production = 1
+
+'''Option: 0 "Invest in better rural infrastructure.:'''
+
+* goto = invest_province
+* AI chance:
+** Base chance of 30
+* Changes military power stored by 25
+* event_target:invest_province:
+** add_base_manpower = 1
+
+=== 0 "Colonial Ventures ===
+
+'''Trigger:'''
+
+* Has at least 25 provinces
+* Has the idea group 0 "Exploration Ideas
+* Any of the following:
+** 0 "North America:
+*** Has been discovered by our country
+** 0 "South America:
+*** Has been discovered by our country
+** 1 "The New World:
+*** Has been discovered by our country
+* Capital:
+** Not in the continent 0 "North America
+** Not in the continent 0 "South America
+** Not in the continent 1 "The New World
+* Does not have the country modifier "0 "Naval Improvements"
+* Does not have the country modifier "0 "Naval Disarmament"
+* Army is at least as large as 50's
+* Navy is at least as large as 1's
+* Any country:
+** naval_strength:
+*** Affecting our country
+*** value = 1.5
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 600 months
+* Multiplies value by 0.9:
+** Has at least 1 conquistadors
+* Multiplies value by 0.9:
+** Has at least 1 explorers
+* Multiplies value by 0.9:
+** Has the idea 0 "Viceroys
+* Multiplies value by 0.9:
+** Stability is at least 1
+* Multiplies value by 0.9:
+** Stability is at least 2
+* Multiplies value by 0.9:
+** Stability is at least 3
+* Multiplies value by 1.1:
+** Stability is lower than 0
+* Multiplies value by 1.1:
+** Stability is lower than -1
+* Multiplies value by 1.1:
+** Stability is lower than -2
+
+'''Option: 0 "Invest in the naval force:'''
+
+* AI chance:
+** Base chance of 5
+* Adds the modifier "0 "Naval Improvements" for 10 years:
+** -10% diplomatic technology cost
+** +10% heavy ship cost
+** +10% light ship cost
+
+'''Option: 0 "Abandon the idea of naval supremacy:'''
+
+* AI chance:
+** Base chance of 5
+* Adds the modifier "0 "Naval Disarmament" for 10 years:
+** +10% diplomatic technology cost

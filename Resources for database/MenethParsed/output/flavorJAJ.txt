@@ -1,0 +1,50 @@
+** Trigger:
+*** Year is at least 1500
+*** 0 "Habsan does not exist
+*** Is not a vassal
+*** Is not at war
+*** Has at least 2 ports
+*** Is in the 0 "Muslim religion group
+*** Any owned province:
+**** Any of the following:
+***** area = konkan_area
+***** area = kanara_area
+** Mean time to happen
+*** Base mean time to happen of 600 months
+*** Multiplies value by 0.5:
+**** Owns 0 "Chaul
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Any of the following:
+******* area = konkan_area
+******* area = kanara_area
+****** Is coastal
+***** If:
+****** Limited to:
+******* Province is 0 "Chaul
+****** Changes province name to Janjira
+****** Changes province capital name to Janjira
+***** Gives 0 "Habsan core on the province
+**** Release 0 "Habsan as a vassal
+**** 0 "Habsan:
+***** Changes government type to monarchy
+***** add_government_reform = autocracy_reform
+***** adopt_reform_progress = our country
+***** Change the primary culture to amhara
+***** Spawns a ruler:
+****** Ruler's dynasty is Siddhi
+****** Culture is amhara
+****** Follows the 0 "Sunni religion
+****** Legitimacy of 100
+***** adopt_reform_progress = our country
+** Option: flavor_jaj.1.a:
+*** AI chance:
+**** Base chance of 1
+*** create_march = 0 "Habsan
+** Option: flavor_jaj.1.b:
+*** AI chance:
+**** Base chance of 0
+*** 0 "Habsan:
+**** Declares war on 0 "Independence using the our country casus belli

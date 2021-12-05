@@ -1,0 +1,402 @@
+
+=== 0 "Castilian Civil War ===
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Sets the country flag had_cas_civil_war
+* Changes stability by -2
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Has the 0 "Castle building
+*** Sets the province flag cas_civil_war_start
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Does not have the province flag cas_civil_war_start
+*** Sets the province flag cas_civil_war_2
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Does not have the province flag cas_civil_war_start
+**** Does not have the province flag cas_civil_war_2
+*** Sets the province flag cas_civil_war_3
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Does not have the province flag cas_civil_war_start
+**** Does not have the province flag cas_civil_war_2
+**** Does not have the province flag cas_civil_war_3
+**** Any of the following:
+***** Has the 0 "Castle building
+***** Has the 0 "Bastion building
+***** All of the following:
+****** The owner of the province:
+******** No owned province:
+********* Has the 0 "Castle building
+****** development = 10
+*** Spawns revolt of size 1 of 0 "Noble rebels
+
+'''Option: 0 "Support [Root.Heir.GetName]:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Considers 0 "Portugal a rival
+*** Is allied with 0 "Aragon
+* Sets the country flag civil_war_in_castile
+* Sets the country flag cas_portugal_candidate
+* Adds -20 legitimacy
+* Random owned province:
+** Limited to:
+*** Has the province flag cas_civil_war_start
+** Spawns revolt of size 1 of 0 "Pretender rebels
+** Removes the province flag cas_civil_war_start
+* Every owned province:
+** Limited to:
+*** Any of the following:
+**** Has the province flag cas_civil_war_2
+**** Has the province flag cas_civil_war_3
+** Spawns revolt of size 1 of 0 "Pretender rebels
+** Removes the province flag cas_civil_war_2
+** Removes the province flag cas_civil_war_3
+* 0 "Aragon:
+** Gets the country event:
+*** ID is castilian_civil_war.5
+*** Base mean time to happen of 20 days
+* 0 "Portugal:
+** Gets the country event:
+*** ID is castilian_civil_war.3
+*** Base mean time to happen of 10 days
+
+'''Option: 0 "Support the Aragonese Candidate:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Considers 0 "Aragon a rival
+*** Is allied with 0 "Portugal
+* Sets the country flag cas_aragon_candidate
+* Sets the country flag civil_war_in_castile
+* If:
+** Limited to:
+*** has_government_attribute = heir
+** Spawns an heir:
+*** Ruler's dynasty is our country
+* Random owned province:
+** Limited to:
+*** Has the province flag cas_civil_war_start
+** Spawns revolt of size 1 of 0 "Pretender rebels
+** Removes the province flag cas_civil_war_start
+* Every owned province:
+** Limited to:
+*** Any of the following:
+**** Has the province flag cas_civil_war_2
+**** Has the province flag cas_civil_war_3
+** Spawns revolt of size 1 of 0 "Pretender rebels
+** Removes the province flag cas_civil_war_2
+** Removes the province flag cas_civil_war_3
+* 0 "Aragon:
+** Gets the country event:
+*** ID is castilian_civil_war.5
+*** Base mean time to happen of 20 days
+* 0 "Portugal:
+** Gets the country event:
+*** ID is castilian_civil_war.3
+*** Base mean time to happen of 10 days
+
+=== 0 "Spread of Civil War ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any owned province:
+** In the continent 0 "Europe
+** The province is not the capital of the country
+** Controlled by owner
+** Does not have the province flag civil_war_spreads
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** In the continent 0 "Europe
+**** The province is not the capital of the country
+**** Controlled by owner
+**** Does not have the province flag civil_war_spreads
+*** One of the following will happen:
+**** 85 relative chance:
+***** Sets the province flag revolt_1
+**** 15 relative chance:
+***** Sets the province flag revolt_2
+*** area:
+**** Sets the province flag civil_war_spreads
+
+'''Option: 0 "Where is the loyalty...:'''
+
+* Random owned province:
+** Limited to:
+*** Has the province flag revolt_2
+** Spawns revolt of size 2 of 0 "Pretender rebels
+** Removes the province flag revolt_2
+* Random owned province:
+** Limited to:
+*** Has the province flag revolt_1
+** Spawns revolt of size 1 of 0 "Pretender rebels
+** Removes the province flag revolt_1
+
+=== 0 "Castilian Civil War ===
+* Cannot fire randomly
+
+'''Option: 0 "Support this Claimant:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Is allied with 0 "Aragon
+*** Does not consider 0 "Castile a rival
+** Multiplies value by 0.5:
+*** Is allied with 0 "Castile
+* 0 "Castile:
+** Gets the country event:
+*** ID is castilian_civil_war.4
+*** Base mean time to happen of 15 days
+** If:
+*** Limited to:
+**** Has the country flag cas_aragon_candidate
+*** Adds the opinion modifier "0 "Meddled in Internal Affairs" towards 0 "Portugal
+** If:
+*** Limited to:
+**** Has the country flag cas_portugal_candidate
+*** Adds the opinion modifier "0 "Involvement in Civil War" towards 0 "Portugal
+* If:
+** Limited to:
+*** 0 "Castile:
+**** Has the country flag cas_portugal_candidate
+** Adds the opinion modifier "0 "Involvement in Civil War" towards 0 "Castile
+* Changes national manpower reserves by -2 years worth
+
+'''Option: 0 "Let the Castilians handle their own conflicts.:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Considers 0 "Aragon a rival
+** Multiplies value by 0:
+*** Considers 0 "Castile a rival
+* Adds the opinion modifier "0 "Grateful for non-interference" towards 0 "Castile
+
+=== 0 "Portuguese Involvement ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_disaster = 0 "Castilian Civil War
+
+'''Option: 0 "Great!:'''
+
+* Trigger:
+** Has the country flag cas_portugal_candidate
+* Changes national manpower reserves by 3 years worth
+* Changes military power stored by 50
+
+'''Option: 0 "This is an outrage!:'''
+
+* Trigger:
+** Has the country flag cas_aragon_candidate
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+** Spawns revolt of size 1 of 0 "Pretender rebels
+* Changes military power stored by 50
+
+=== 0 "Castilian Civil War ===
+* Cannot fire randomly
+
+'''Option: 0 "Support this Claimant:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Is allied with 0 "Portugal
+*** Does not consider 0 "Castile a rival
+** Multiplies value by 0.5:
+*** Is allied with 0 "Castile
+* 0 "Castile:
+** Gets the country event:
+*** ID is castilian_civil_war.6
+*** Base mean time to happen of 15 days
+** If:
+*** Limited to:
+**** Has the country flag cas_portugal_candidate
+*** Adds the opinion modifier "0 "Meddled in Internal Affairs" towards 0 "Aragon
+** If:
+*** Limited to:
+**** Has the country flag cas_aragon_candidate
+*** Adds the opinion modifier "0 "Involvement in Civil War" towards 0 "Aragon
+* If:
+** Limited to:
+*** 0 "Castile:
+**** Has the country flag cas_aragon_candidate
+** Adds the opinion modifier "0 "Involvement in Civil War" towards 0 "Castile
+* Changes national manpower reserves by -2 years worth
+* Hidden effect:
+** If:
+*** Limited to:
+**** 0 "Castile:
+***** Has the country flag cas_aragon_candidate
+**** Any neighbor country:
+***** Country is 0 "France
+***** Is not allied with 0 "Aragon
+*** 0 "France:
+**** Gets the country event:
+***** ID is castilian_civil_war.7
+***** Base mean time to happen of 20 days
+
+'''Option: 0 "Let the Castilians handle their own conflicts.:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Considers 0 "Portugal a rival
+** Multiplies value by 0:
+*** Considers 0 "Castile a rival
+* Adds the opinion modifier "0 "Grateful for non-interference" towards 0 "Castile
+
+=== 0 "Aragonese Involvement ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_disaster = 0 "Castilian Civil War
+
+'''Option: 0 "Great!:'''
+
+* Trigger:
+** Has the country flag cas_aragon_candidate
+* Changes national manpower reserves by 2 years worth
+* Changes military power stored by 50
+
+'''Option: 0 "This is an outrage!:'''
+
+* Trigger:
+** Has the country flag cas_portugal_candidate
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+** Spawns revolt of size 1 of 0 "Pretender rebels
+
+=== 0 "Castilian Civil War ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* 0 "Castile:
+** has_disaster = 0 "Castilian Civil War
+
+'''Option: 0 "Support the other candidate.:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Is allied with 0 "Castile
+* Changes national manpower reserves by -2 years worth
+* 0 "Castile:
+** Gets the country event:
+*** ID is castilian_civil_war.8
+*** Base mean time to happen of 15 days
+** Adds the opinion modifier "0 "Meddled in Internal Affairs" towards 0 "France
+
+'''Option: 0 "Avoid Involvement.:'''
+
+* AI chance:
+** Base chance of 1
+** Multiplies value by 0:
+*** Considers 0 "Castile a rival
+* Adds the opinion modifier "0 "Grateful for non-interference" towards 0 "Castile
+
+=== 0 "French Involvement ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_disaster = 0 "Castilian Civil War
+
+'''Option: 0 "This is an outrage!:'''
+
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+** Spawns revolt of size 1 of 0 "Pretender rebels
+
+=== 0 "End of the Castilian Civil War ===
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "This will bring us closer to Aragon.:'''
+
+* Trigger:
+** Any of the following:
+*** All of the following:
+**** Has the country flag cas_aragon_candidate
+**** Does not have the country flag cas_civil_war_rebels_won
+*** All of the following:
+**** Has the country flag cas_portugal_candidate
+**** Has the country flag cas_civil_war_rebels_won
+* If:
+** Limited to:
+*** Has the country flag cas_civil_war_rebels_won
+** Changes stability by -1
+* If:
+** Limited to:
+*** Has the opinion modifier 0 "Meddled in Internal Affairs with 0 "Aragon
+** remove_opinion:
+*** Affecting 0 "Aragon
+* If:
+** Limited to:
+*** Does not have the country flag cas_civil_war_rebels_won
+** add_stability_or_adm_power = yes
+* Adds the opinion modifier "0 "Castilian Civil War" towards 0 "Aragon
+* 0 "Aragon:
+** Adds the opinion modifier "0 "Castilian Civil War" towards 0 "Castile
+
+'''Option: 0 "This will bring us closer to Portugal.:'''
+
+* Trigger:
+** Any of the following:
+*** All of the following:
+**** Has the country flag cas_portugal_candidate
+**** Does not have the country flag cas_civil_war_rebels_won
+*** All of the following:
+**** Has the country flag cas_aragon_candidate
+**** Has the country flag cas_civil_war_rebels_won
+* If:
+** Limited to:
+*** Has the country flag cas_civil_war_rebels_won
+** Changes stability by -1
+* If:
+** Limited to:
+*** Has the opinion modifier 0 "Meddled in Internal Affairs with 0 "Portugal
+** remove_opinion:
+*** Affecting 0 "Portugal
+* If:
+** Limited to:
+*** Does not have the country flag cas_civil_war_rebels_won
+** add_stability_or_adm_power = yes
+* Adds the opinion modifier "0 "Castilian Civil War" towards 0 "Portugal
+* 0 "Portugal:
+** Adds the opinion modifier "0 "Castilian Civil War" towards 0 "Castile

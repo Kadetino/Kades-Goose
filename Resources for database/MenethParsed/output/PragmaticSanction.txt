@@ -1,0 +1,5 @@
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Sets the country flag pragmatic_sanction
+******** Option: 0 "We can have an Empress!:
+********* Allow women to rule the Holy Roman Empire

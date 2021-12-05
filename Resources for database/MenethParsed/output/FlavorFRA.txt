@@ -1,0 +1,1147 @@
+** Trigger:
+*** Country is 0 "France
+*** Year is less than 1500
+*** Owns 0 "Paris
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Issue it:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Capital:
+**** Changes base tax by 1
+**** Adds the modifier "0 "Permanent Tax System" until the end of the campaign:
+***** local_unrest = 5
+*** add_innovativeness_small_effect = yes
+*** Random owned province:
+**** Limited to:
+***** Region is france_region
+***** The province is not the capital of the country
+**** Changes base tax by 1
+**** Adds the modifier "0 "Permanent Tax System" until the end of the campaign:
+***** local_unrest = 5
+* Gets the country event:
+** ID is flavor_fra.9104
+** title = 0 "The End of the Hundred Years War
+** desc = 0 "Louis XI benefited from the outcome of the hundred year war. The virtual destruction of the feudal nobility enabled him to unite France more solidly under the royal authority and to promote and ally with the middle class.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Has the global flag hyw_mission_resolution
+**** All of the following:
+***** Country is 0 "France
+***** Year is less than 1500
+***** Does not have the country flag had_end_of_HYW_france
+***** france_region:
+****** The province is not owned by 0 "England
+***** france_region:
+****** The province is not owned by 0 "Great Britain
+***** 0 "England:
+****** Not at war with 0 "France
+***** Is not a vassal of 0 "England
+***** 0 "Great Britain:
+****** Not at war with 0 "France
+***** Is not a vassal of 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag had_end_of_HYW_france
+**** If:
+***** Limited to:
+****** 0 "England exists
+****** 0 "Great Britain does not exist
+****** Does not have the global flag eng_had_end_of_hundred_years_war
+***** 0 "England:
+****** Gets the country event:
+******* ID is flavor_eng.9104
+******* Base mean time to happen of 1 days
+**** If:
+***** Limited to:
+****** 0 "Great Britain exists
+****** Does not have the global flag eng_had_end_of_hundred_years_war
+***** 0 "Great Britain:
+****** Gets the country event:
+******* ID is flavor_eng.9104
+******* Base mean time to happen of 1 days
+** Option: 0 "Time to build a stronger nation:
+*** add_stability_or_adm_power = yes
+*** Changes administrative power stored by 50
+* Gets the country event:
+** ID is flavor_fra.3105
+** title = 0 "The Anjou Claims to the Kingdom of Naples
+** desc = 2 "In 1442 René of Anjou lost control of the Kingdom of Naples to the Trastamara dynasty. Though he would never reacquire the crown himself, René continued to style himself King of Naples throughout his life. With René now gone, the Anjou claims to the kingdom are looking increasingly inconsequential.\nThe Neapolitan Kingdom is not without its enemies, however, and now [Root.Monarch.GetName] has a chance to claim the Kingdom of Naples for [Root.Monarch.GetHerselfHimself] by citing Papal rulings and the marriage ties between King René and our own dynasty in the past as a pretext. Normally, this would be seen as a very weak claim but due to the unpopularity of the Neapolitan rulers this might be overlooked.
+** picture:
+*** Trigger:
+**** Has the DLC Emperor
+*** picture = ITALIAN_wars_eventPicture
+** picture:
+*** Trigger:
+**** Does not have the DLC Emperor
+*** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is less than 1550
+*** Not senior union partner over 0 "Naples
+*** 0 "Provence does not exist
+*** 0 "Aragon:
+**** Has had the country flag "alfonso_died_yes_really" for at least 7 days
+*** Any of the following:
+**** Ruler's dynasty is de Valois
+**** Ruler's dynasty is d'Anjou
+*** Any country:
+**** Any of the following:
+***** Country is 0 "Naples
+***** Country is 0 "Aragon
+***** Country is 0 "Castile
+***** Country is 0 "Spain
+**** Any owned province:
+***** Any of the following:
+****** area = sicily_area
+****** area = naples_area
+****** area = apulia_area
+****** area = calabria_area
+****** area = western_sicily_area
+****** Province is 0 "Abruzzi
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Let us claim what is rightfully ours!:
+*** If:
+**** Limited to:
+***** 0 "Naples exists
+***** 0 "Naples:
+****** Is not a vassal
+**** Gives the 0 "Restoration of Union casus belli against 0 "Naples
+*** else:
+**** Every province in the world:
+***** Limited to:
+****** Any of the following:
+******* area = sicily_area
+******* area = naples_area
+******* area = apulia_area
+******* area = calabria_area
+******* area = western_sicily_area
+******* Province is 0 "Abruzzi
+****** Any of the following:
+******* The province is owned by 0 "Naples
+******* The province is owned by 0 "Aragon
+******* The province is owned by 0 "Castile
+******* The province is owned by 0 "Spain
+***** Adds claim to 0 "France
+*** Every known country:
+**** Limited to:
+***** Any of the following:
+****** Country is 0 "Naples
+****** Country is 0 "Aragon
+****** Country is 0 "Castile
+****** Country is 0 "Spain
+***** Any owned province:
+****** Any of the following:
+******* area = sicily_area
+******* area = naples_area
+******* area = apulia_area
+******* area = calabria_area
+******* area = western_sicily_area
+******* Province is 0 "Abruzzi
+**** Adds the opinion modifier "0 "Claimed Naples" towards our country
+*** Sets the country flag claimed_naples
+** Option: 0 "Let us drop our claims for good!:
+*** Every known country:
+**** Limited to:
+***** Any of the following:
+****** Country is 0 "Naples
+****** Country is 0 "Aragon
+****** Country is 0 "Castile
+****** Country is 0 "Spain
+***** Any owned province:
+****** Any of the following:
+******* area = sicily_area
+******* area = naples_area
+******* area = apulia_area
+******* area = calabria_area
+******* area = western_sicily_area
+******* Province is 0 "Abruzzi
+**** Adds the opinion modifier "0 "Did Not Claim Naples" towards our country
+* Gets the country event:
+** ID is flavor_fra.3106
+** title = 0 "The State takes control of the Guilds
+** desc = 0 "The word gilde, or ghilde, is but one of many terms used formerly in France and in the Low Countries to denote what the more modern word corporation stands for. In France and the Low Countries a guild was originally a sort of fraternity for common support, protection, and amusement. The members paid each a certain contribution to the common fund. After the end of the fifteenth century, under the despotic rule of the French kings, the guilds ceased to be a means of protection for a majority of their members. Their privileges became a means of filling the royal coffers at the expense of the employers.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is less than 1550
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Take Control of the Guilds:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Modifies treasury by 0.33 years worth of income
+** Option: 0 "Do not mess with the Guilds:
+*** add_stability_or_adm_power = yes
+** Option: 0 "Give more control to the Guilds:
+*** Changes administrative power stored by 25
+*** Changes diplomatic power stored by 25
+*** Changes military power stored by 25
+* Gets the country event:
+** ID is 3114
+** title = 0 "Le Tellier and Louvois
+** desc = 0 "Michel Le Tellier (1603-1685) was the son of a counselor at the Account Chamber. Pinpointed by Prime Minister Cardinal Mazarin, he was named Secretary of War in 1643. He started the needed reformation of the French army and war administration as minister till 1666 and Chancellor till 1677. His eldest son, Marquis de Louvois, continued and perfected his reforms and offered his master, Louis XIV, the largest and best army of the last half of the 17th century.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1650
+*** Year is less than 1693
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "An Excellent Military Specialist!:
+*** Trigger:
+**** Year is less than 1666
+*** Changes military power stored by 50
+*** Creates an advisor of the 0 "Army Reformer type:
+**** Culture is 0 "Francien
+**** Named "Le Tellier"
+**** discount = yes
+**** With a skill level of 2
+** Option: 0 "An Excellent Military Specialist!:
+*** Trigger:
+**** Year is at least 1666
+*** Changes military power stored by 50
+*** Creates an advisor of the 0 "Army Reformer type:
+**** Named "Louvois"
+**** Culture is 0 "Francien
+**** discount = yes
+**** With a skill level of 2
+* Gets the country event:
+** ID is flavor_fra.3115
+** title = 0 "Samuel de Champlain and the Hurons
+** desc = 0 "Samuel de Champlain was sent by a man named Aymar de Clermont who had been given the privilege to establish a fur trading company by the king of France. During his travels Samuel de Champlain made friends with the Indians. He spent time with the Algonquin and Huron Indians exploring the area.
+** picture = MERCHANTS_TALKING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** 0 "North America:
+**** country_or_vassal_holds = 0 "France
+*** 0 "Huron exists
+*** 0 "Iroquois exists
+*** 0 "Huron:
+**** Capital:
+***** Has been discovered by 0 "France
+*** 0 "Iroquois:
+**** Capital:
+***** Has been discovered by 0 "France
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "Let us befriend the Hurons:
+*** 0 "Huron:
+**** Adds the opinion modifier "0 "Samuel de Champlain" towards 0 "France
+** Option: 0 "Let us befriend the Iroquois:
+*** 0 "Iroquois:
+**** Adds the opinion modifier "0 "Samuel de Champlain" towards 0 "France
+* Gets the country event:
+** ID is flavor_fra.3118
+** title = 0 "Revolt in France
+** desc = 0 "Marie de' Medici was married to Henry IV in 1600. After his assassination in 1610 she became regent for her son Louis XIII and went on to reverse a lot of the policies set by her husband.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1600
+*** Year is less than 1650
+*** Any of the following:
+**** Is in regency
+**** Legitimacy is less than 50
+** Mean time to happen
+*** Base mean time to happen of 50 months
+*** Multiplies value by 0.95:
+**** Stability is lower than 0
+*** Multiplies value by 0.95:
+**** Stability is lower than -1
+*** Multiplies value by 0.95:
+**** Stability is lower than -2
+** Option: 0 "Treat the Noble Rebels with Dignity:
+*** Random owned province:
+**** Limited to:
+***** Has core on 0 "France
+***** development = 10
+***** is_in_capital_area = yes
+**** Spawns revolt of size 2 of 0 "Noble rebels
+** Option: 0 "Kill them and expropriate their land:
+*** Modifies treasury by 0.5 years worth of income
+*** Random owned province:
+**** Limited to:
+***** Has core on 0 "France
+***** development = 10
+***** is_in_capital_area = yes
+**** Spawns revolt of size 3 of 0 "Noble rebels
+* Gets the country event:
+** ID is flavor_fra.3119
+** title = 0 "Protestant Revolt in Bearn
+** desc = 0 "In the reign of King Louis XIII, Cardinal Richelieu decided to suppress Protestant political privileges. An uprising (1621-22) against the introduction of Catholicism in Bearn was put down by Richelieu, and the Protestants lost all the strongholds given to them under the Edict of Nantes, except Montauban and La Rochelle.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Owns 0 "Béarn
+*** 0 "Béarn:
+**** Does not follow the religion of its owner
+**** Follows the 0 "Protestant religion
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Crush them!:
+*** 0 "Béarn:
+**** Spawns revolt of size 2 of 0 "Religious rebels
+* Gets the country event:
+** ID is flavor_fra.3120
+** title = 0 "Richelieu
+** desc = 0 "Armand Jean du Plessis, Cardinal of Richelieu, was 39 years old when he became Chief Minister of King Louis XIII in 1624. His main successful efforts in domestic policy were the fight against the upper nobility and the Protestant political privileges. He also supported overseas trade, colonial expansion and the constitution of a permanent royal navy. Its most notable achievement remained the diplomatic game he played during the Thirty Years War, pushing with French gold the Swedish intervention in 1630 and ultimately joining the war in 1635. His aims had been the reduction of the House of Habsburg and the extrication of France from encirclement by enemy lands. He is considered as the inventor of the concept of Real Politik.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1621
+*** Year is less than 1642
+*** The advisor with the id 429 does not exist
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: 0 "An Excellent Minister!:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes administrative power stored by 100
+*** Changes military power stored by 100
+*** Changes diplomatic power stored by 100
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "Armand Jean Richelieu"
+**** Culture is 0 "Francien
+**** Follows the 0 "Catholic religion
+**** discount = yes
+**** With a skill level of 3
+* Gets the country event:
+** ID is flavor_fra.3122
+** title = 0 "The Fronde in France
+** desc = 0 "The Fronde (1648-1653) was mostly the last revolt of the French nobility against royal absolutism. It had started by the revolt of the Parliament of Paris (at the time the highest French court with jurisdiction over royal edicts) against the domestic policies of Cardinal Mazarin, who acted as Prime Minister of the 5-year-old Louis XIV. It was followed by that of the upper nobility (Fronde des Princes), but the rebellion was finally suppressed by a combination of Machiavellian diplomacy, betrayals and reverses of fortune. The Parliament was muzzled (it would not be convened again before 1789) and the upper nobility deprived of political power, preparing the advent of total royal absolutism under the Sun King, Louis XIV, after 1661.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1600
+*** Year is less than 1650
+*** Any of the following:
+**** Is in regency
+**** Legitimacy is less than 50
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Crush the Parliament and the Nobles:
+*** Random owned province:
+**** Limited to:
+***** Has core on 0 "France
+***** is_in_capital_area = yes
+**** Spawns revolt of size 2 of 0 "Noble rebels
+** Option: 0 "Appease them:
+*** If:
+**** Limited to:
+***** Is not in regency
+**** Adds the ruler modifier "0 "Concessions to the Nobility" until the ruler's death:
+***** -10% global tax modifier
+***** +10% administrative technology cost
+*** If:
+**** Limited to:
+***** Is in regency
+**** Adds the modifier "0 "Concessions to the Nobility" for 10 years:
+***** -10% global tax modifier
+***** +10% administrative technology cost
+* Gets the country event:
+** ID is flavor_fra.3123
+** title = 0 "Academie française
+** desc = 0 "Cardinal Richelieu, a liberal patron of literature, created l'Academie française in 1636 in order to promote French language and literary pursuits. Although the scientific part of the academy never matched the literary one in fame, it did make a number of important scientific discoveries in the eighteenth century. It was French expeditions in 1735 and 1743, for instance, which established the oblate shape of the earth.
+** picture = UNIVERSITY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1600
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Yes, we need it:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Modifies treasury by -0.5 years worth of income
+*** Adds the modifier "0 "Académie française" for the rest of the campaign:
+**** -2.5% administrative technology cost
+** Option: 0 "No, it's too expensive:
+*** Changes prestige by -5
+* Gets the country event:
+** ID is flavor_fra.3124
+** title = 0 "Colbert
+** desc = 0 "Nominated Minister of Finance in 1661, Jean-Baptiste Colbert (born 1619) developed the first national economy of the modern age. His state-guided economy included better tax collection, statistical planning of the budget and regular bookkeeping. An advocate of Mercantilism (also Colbertism), he aimed at a favorable French balance of trade through the export of valuable finished products (like luxury items) and high import tariffs. He encouraged a more efficient domestic trade (roads, canals, suppression of local duties), established state monopolies, subsidized manufactures, promoted navigation and trade associations, fixed agricultural prices, encouraged marriage and prohibited emigration (except to Canada). To support his policies, he also greatly enlarged the size of the royal navy. While mercantilism promoted commerce and crafts, thereby increasing prosperity, peasants were not stimulated to increase their production. When he died in 1683, his son Colbert de Seignelay pursued his task till 1690.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1649
+*** Year is less than 1683
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "An Excellent Minister!:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes administrative power stored by 25
+*** Changes diplomatic power stored by 25
+*** Changes military power stored by 25
+*** Creates an advisor of the 0 "Treasurer type:
+**** Named "Jean-Baptiste Colbert"
+**** Culture is 0 "Francien
+**** discount = yes
+**** With a skill level of 3
+** Option: 0 "Build a Navy and modernize the Infrastructure:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Adds the modifier "0 "Colbert Economic Reforms" for 10 years:
+**** +10% global tax modifier
+**** +10% production efficiency
+** Option: 0 "Concentrate on Economic Domination:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Adds the modifier "0 "Colbert Trade Reforms" for 10 years:
+**** +15% domestic trade power
+**** +20% trade steering
+** Option: 0 "Concentrate on Naval Supremacy:
+*** Adds the modifier "0 "Colbert Naval Reforms" for 10 years:
+**** -10% ship cost
+* Gets the country event:
+** ID is flavor_fra.3125
+** title = 0 "The Commissioning of Versailles
+** desc = 0 "The major influence which France did exert over the baroque age was one of courtly opulence. In 1669 Louis XIV (1638-1715) decided to convert an old hunting lodge at Versailles into a palace of unprecedented magnificence. It was completed in 1682, and the court moved there in 1683. There was not a kingly or princely court in Europe which could match Versailles for the opulence of its gilded interiors, its mirrors and chandeliers, with an appropriately matching flamboyance of courtly ceremony, and there was not a kingly or princely court in Europe which did not, either openly or secretly, aspire to match this model.
+** picture = UNIVERSITY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Has the country flag versailles_flag
+**** All of the following:
+***** has_mission_false = emp_fra_move_court_to_versailles
+***** Country is 0 "France
+***** Year is at least 1650
+***** Year is less than 1700
+***** Has the monarchy government type
+***** Is not in regency
+** Mean time to happen
+*** Base mean time to happen of 100 months
+** Option: 0 "We need it for the Glory:
+*** Modifies treasury by -0.5 years worth of income
+*** Adds the modifier "0 "Versailles" for the rest of the campaign:
+**** -3% global tax modifier
+*** If:
+**** Limited to:
+***** Has the DLC Leviathan
+**** 0 "Paris:
+***** set_great_project_tier_2:
+** Option: 0 "Such a project will not benefit us:
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_fra.3127
+** title = 0 "Chambers of Reunion
+** desc = 0 "Aiming at European hegemony and the rounding of French frontiers in the North and in the East (to the Rhine), Louis XIV had established the Chambers of Reunion, courts that advanced claims to Imperial lands. These expansionist policies were at first tolerated by France powerless neighbors. It reached its climax in 1681, with the annexation of the free city of Strasbourg in Alsace and the 1684 occupation of Luxembourg. The reunion was recognized by the Empire in the 1684 Truce of Regensburg, mostly because the Emperor was preoccupied by the Turkish menace (siege of Vienna in 1683) and this led to the creation of the anti-French League of Augsburg (1686).
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1650
+*** Year is less than 1750
+*** Any neighbor country:
+**** Is not a vassal of 0 "France
+**** Any owned province:
+***** Culture group is 0 "French
+***** Any bordering province:
+****** The province is owned by 0 "France
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Make the Claim:
+*** Every neighbor country:
+**** Limited to:
+***** Is not a vassal of 0 "France
+***** Any owned province:
+****** Culture group is 0 "French
+****** Any bordering province:
+******* The province is owned by 0 "France
+**** Adds the opinion modifier "0 "Claims Through Chambers of Union" towards our country
+**** Every owned province:
+***** Limited to:
+****** Culture group is 0 "French
+****** Any bordering province:
+******* The province is owned by 0 "France
+***** Adds claim to 0 "France
+*** Sets the country flag FRA_chambers_of_union
+** Option: 0 "Let the matter fall:
+*** Every neighbor country:
+**** Limited to:
+***** Any owned province:
+****** Culture group is 0 "French
+****** Any bordering province:
+******* The province is owned by 0 "France
+**** Adds the opinion modifier "0 "Did Not Form Chambers of Union" towards our country
+* Gets the country event:
+** ID is flavor_fra.3128
+** title = 0 "Protestants expelled from France
+** desc = 0 "One of the preoccupations of Louis XIV had been the restoration of national unity, in particular religious unity. Safeguarding the Catholic Church by royal privileges and censoring Papal decrees (Gallicanism), he also sent dragoons to harass French Protestant families, persecuting them into conversions. In 1685, his revocation of the Edict of Nantes prompted nearly half a million Huguenots (French Protestants) to flee the country, to more tolerant places such as Holland (from where many migrated to South Africa) or realms that welcomed them, like Brandenburg-Prussia who alone welcomed 20,000. With them, France lost commercial, judicial and cultural elite, to the benefit of her enemies.
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Has the country flag FRA_wars_of_religion_ended
+*** Is not in regency
+*** Follows the 0 "Catholic religion
+*** Any owned province:
+**** In the continent 0 "Europe
+**** Does not follow the religion of its owner
+**** is_reformation_center_false = no
+**** Any of the following:
+***** Follows the 0 "Protestant religion
+***** Follows the 0 "Reformed religion
+**** Has a base tax of at least 3
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "Expel the Traitors:
+*** add_stability_or_adm_power = yes
+*** Sets the country flag FRA_had_event_3128
+*** If:
+**** Limited to:
+***** Any owned province:
+****** In the continent 0 "Europe
+****** Does not follow the religion of its owner
+****** is_reformation_center_false = no
+****** Follows the 0 "Protestant religion
+****** development = 7
+****** Has a base tax of at least 2
+**** Every owned province:
+***** Limited to:
+****** In the continent 0 "Europe
+****** Does not follow the religion of its owner
+****** is_reformation_center_false = no
+****** Follows the 0 "Protestant religion
+****** development = 7
+****** Has a base tax of at least 2
+***** Changes religion to owner
+***** Changes base tax by -1
+***** Adds the modifier "0 "Forced Conversion" until the end of the campaign:
+****** -40% manpower modifier
+****** -33% provincial tax income
+****** local_unrest = 2
+**** If:
+***** Limited to:
+****** Any known country:
+******* Capital:
+******** In the continent 0 "Europe
+******* Follows the 0 "Protestant religion
+******* Any owned province:
+******** Follows the 0 "Protestant religion
+***** Random known country:
+****** Limited to:
+******* Capital:
+******** In the continent 0 "Europe
+******* Follows the 0 "Protestant religion
+******* Any owned province:
+******** Follows the 0 "Protestant religion
+****** Gets the country event:
+******* ID is flavor_fra.1
+******* Base mean time to happen of 10 tooltip days
+*** If:
+**** Limited to:
+***** Any owned province:
+****** In the continent 0 "Europe
+****** Does not follow the religion of its owner
+****** is_reformation_center_false = no
+****** Follows the 0 "Reformed religion
+****** development = 7
+****** Has a base tax of at least 2
+**** Every owned province:
+***** Limited to:
+****** In the continent 0 "Europe
+****** Does not follow the religion of its owner
+****** is_reformation_center_false = no
+****** Follows the 0 "Reformed religion
+****** development = 7
+****** Has a base tax of at least 2
+***** Changes religion to owner
+***** Changes base tax by -1
+***** Adds the modifier "0 "Forced Conversion" until the end of the campaign:
+****** -40% manpower modifier
+****** -33% provincial tax income
+****** local_unrest = 2
+**** If:
+***** Limited to:
+****** Any known country:
+******* Capital:
+******** In the continent 0 "Europe
+******* Follows the 0 "Reformed religion
+******* Any owned province:
+******** Follows the 0 "Reformed religion
+***** Random known country:
+****** Limited to:
+******* Capital:
+******** In the continent 0 "Europe
+******* Follows the 0 "Reformed religion
+******* Any owned province:
+******** Follows the 0 "Reformed religion
+****** Gets the country event:
+******* ID is flavor_fra.2
+******* Base mean time to happen of 10 tooltip days
+** Option: 0 "Have Mercy with these Misguided Creatures:
+*** Changes stability by -1
+* Gets the country event:
+** ID is flavor_fra.1
+** title = 0 "Protestants expelled from France
+** desc = 0 "In a foolish decision of faith over economy [From.GetName] has chosen to expel all Protestants still living in their land. This is an opportunity to enhance our own economy. Should we allow them to settle in our provinces?
+** picture = RELIGION_eventPicture
+** is_triggered_only = yes
+** Option: 0 "They are a welcome addition:
+*** Random owned province:
+**** Limited to:
+***** Follows the 0 "Protestant religion
+**** Changes base tax by 1
+* Gets the country event:
+** ID is flavor_fra.2
+** title = 0 "Protestants expelled from France
+** desc = 0 "In a foolish decision of faith over economy [From.GetName] has chosen to expel all Reformed still living in their land. This is an opportunity to enhance our own economy. Should we allow them to settle in our provinces?
+** picture = RELIGION_eventPicture
+** is_triggered_only = yes
+** Option: 0 "They are a welcome addition:
+*** Random owned province:
+**** Limited to:
+***** Follows the 0 "Reformed religion
+**** Changes base tax by 1
+* Gets the country event:
+** ID is flavor_fra.3132
+** title = 0 "The Mississippi Trade Company
+** desc = 0 "In 1717 the Mississippi Trade Company was founded. It had a Royal Monopoly on the utilization of the large colonial areas along the Mississippi River in America. In 1719 the Government borrowed 1.5 billion livres from the company. The company was more of a financial institution than a Company of Trade and Industry and the price of shares hit the roof. In 1720 the French hausse turned into a baisse and the fact that the shares of the Company were overvalued was evident even to the man on the street. Soon panic broke out and the Company was declared bankrupt. John Law was forced to flee from France.
+** picture = MERCHANTS_TALKING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Has the country flag fra_louis_mission
+**** All of the following:
+***** Country is 0 "France
+***** Year is at least 1700
+***** Year is less than 1750
+***** 0 "Colonial Louisiana:
+****** country_or_vassal_holds = 0 "France
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Immediate effects:
+*** Sets the country flag FRA_had_event_3132
+** Option: 0 "This sounds like Easy Money!:
+*** Modifies treasury by 0.5 years worth of income
+*** Sets the country flag mississippi_trade_company
+* Gets the country event:
+** ID is flavor_fra.3133
+** title = 0 "Mississippi Trade Company Folds
+** desc = 0 "After the early success with John Law's Bank and the Mississippi Trade Company the government bought the Bank and borrowed 1.5 billion livres from the Trade Company to pay mortgage on its huge national loans. These events brought a hausse to the French industry and the government lacked all restrains printing stockpiles of money without any security. When the overheated economy started to recycle with reality the shareholders of the trade company panicked driving both the Bank and the Trade Company into bankruptcy. As much of two years of collected tax money disappeared in the catastrophe and France thus was forced to declare bankruptcy in 1724.
+** picture = BANKRUPTCY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Has had the country flag "mississippi_trade_company" for at least 1825 days
+*** 0 "Colonial Louisiana:
+**** country_or_vassal_holds = 0 "France
+** Mean time to happen
+*** Base mean time to happen of 1000 months
+** Immediate effects:
+*** Removes the country flag mississippi_trade_company
+** Option: 0 "Hope we can avoid bankruptcy...:
+*** Changes stability by -1
+*** Changes inflation by 5
+* Gets the country event:
+** ID is flavor_fra.3134
+** title = 0 "Expansion in North America
+** desc = 0 "The rapid expansion in North America seems to have sustained the shareholder's faith in the Mississippi Trade Company, and the rumors of both the company and the State going into bankruptcy have been dispelled.
+** picture = COLONIZATION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Has had the country flag "mississippi_trade_company" for at least 1825 days
+*** 0 "Colonial Louisiana:
+**** country_or_vassal_holds = 0 "France
+** Mean time to happen
+*** Base mean time to happen of 1000 months
+** Immediate effects:
+*** Removes the country flag mississippi_trade_company
+** Option: 0 "Thank goodness:
+*** Modifies treasury by 0.25 years worth of income
+* Gets the country event:
+** ID is flavor_fra.3135
+** title = 0 "Charles-François de Broglie
+** desc = 0 "Charles-François de Broglie was an Earl of France that became the master spy organizer of King Louis XV. Under the King's direction and ideas, he organized the first complete and structured secret service, Le Secret du Roy. His network covered most of Europe and, if its first mission in the Polish succession question failed, his major achievement was the role played during the American War of Independence, in providing the first and precious help to the Insurgents (military supplies, finance, diplomatic support to Franklin's mission in Paris, etc.)
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1749
+*** Year is less than 1781
+** Mean time to happen
+*** Base mean time to happen of 90 months
+** Option: 0 "An Excellent Minister!:
+*** Changes administrative power stored by 50
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "Charles Fran?ois de Broglie"
+**** Culture is 0 "Gascon
+**** discount = yes
+**** With a skill level of 2
+* Gets the country event:
+** ID is flavor_fra.3137
+** title = 0 "Andre-Hercule de Fleury
+** desc = 0 "Born in 1653 the son of a tax collector, Andre-Hercule de Fleury becomes the preceptor of the young Louis XV on 23rd August 1715. A great confidence always prevailed between master and student and in 1726, at 73 years of age, Fleury becomes Prime Minister, and this till his death in 1743. Faithful, honest, Fleury was above all a partisan of peace and did his best to maintain it. Under his government, France enjoyed the longest peaceful period of its history for the last 3 centuries.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1683
+*** Year is less than 1743
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Option: 0 "An Excellent Minister!:
+*** Changes administrative power stored by 50
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "NAME_ANDRE_HERCULE_DE_FLEURY"
+**** Culture is 0 "Occitan
+**** Follows the 0 "Catholic religion
+**** discount = yes
+**** With a skill level of 2
+*** add_innovativeness_small_effect = yes
+* Gets the country event:
+** ID is flavor_fra.3139
+** title = 0 "Machault and the 5 percent tax
+** desc = 0 "When Jean-Baptiste de Machault became controller-general of the finances in France in December 1745, he found the country on the verge of bankruptcy. Neither the aristocracy nor the clergy were paying the general land tax, the taille. In 1749, Machault tried to reform the system by proposing to substitute the old tax of a tenth, which many of the clergy and the nobility evaded, with a five percent tax without exceptions. The proposal was met by such loud protests from the clergy and the nobility, which cited their historical privileges, that Machault was unable to see it through.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1700
+** Mean time to happen
+*** Base mean time to happen of 300 months
+** Option: 0 "Introduce it for all:
+*** Adds the modifier "0 "Five Percent Tax" for the rest of the campaign:
+**** +10% global tax modifier
+**** +1 global unrest
+** Option: 0 "Introduce it, except for Nobles and Priests:
+*** Adds the modifier "0 "Five Percent Tax With Exceptions" for the rest of the campaign:
+**** +5% global tax modifier
+** Option: 0 "Do not introduce it:
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_fra.3141
+** title = 0 "Turgot and the Economic Reforms
+** desc = 0 "Turgot issued his 'Six Edicts' eliminating the forced labor system of building roads, dissolved the guild system, lifted all sorts of tariffs and foreign trade controls, and implemented the Physiocrats' favorite policy - a single tax on landowners.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1750
+** Mean time to happen
+*** Base mean time to happen of 150 months
+** Immediate effects:
+*** Sets the country flag FRA_had_event_3141
+** Option: 0 "Let him Reform:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes stability by -1
+*** Adds the modifier "0 "Turgot's Economic Reforms" for the rest of the campaign:
+**** +10% global tax modifier
+**** Reduces inflation by -0.1 per year
+**** +1 global unrest
+** Option: 0 "Don't let him Reform:
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_fra.3142
+** title = 0 "Necker announces the Budget Deficit
+** desc = 0 "Jacques Necker was originally a conservative compromise to the post as minister of finance. He, however, introduced a number of financial reforms, including a more equitable system of taxation and a plan for the funding of the national debt. In 1781 Necker was forced to announce the budget deficit in an effort to get new loans. The figures were highly colored, but everyone could now see what absurd sums the Court spent.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1700
+*** Has at least 5 active loans
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Immediate effects:
+*** Sets the country flag FRA_had_event_3142
+** Option: 0 "Remove him from his post:
+*** add_stability_or_adm_power = yes
+** Option: 0 "Encourage his excellent work:
+*** Changes stability by -1
+*** Adds the modifier "0 "Necker Reforms" for the rest of the campaign:
+**** -0.25 interest
+* Gets the country event:
+** ID is flavor_fra.3143
+** title = 0 "The Eden Agreement
+** desc = 0 "In 1786 William Pitt the Younger signed an important commercial agreement, the Eden Treaty, with France. It was in keeping with the argument made by the economist Adam Smith in his The Wealth of Nations (1776) that Britain should be less economically dependent on trade with America and become more adventurous in exploring trading opportunities in continental Europe.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1700
+*** Any of the following:
+**** All of the following:
+***** 0 "England exists
+***** 0 "Great Britain does not exist
+**** All of the following:
+***** 0 "Great Britain exists
+***** 0 "England does not exist
+*** Not at war with 0 "England
+*** Not at war with 0 "Great Britain
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Sign it:
+*** If:
+**** Limited to:
+***** 0 "England exists
+**** 0 "England:
+***** Adds the opinion modifier "0 "The Eden Agreement" towards our country
+*** If:
+**** Limited to:
+***** 0 "Great Britain exists
+**** 0 "Great Britain:
+***** Adds the opinion modifier "0 "The Eden Agreement" towards our country
+** Option: 0 "Refuse to sign it:
+*** Changes prestige by 5
+*** If:
+**** Limited to:
+***** 0 "England exists
+**** 0 "England:
+***** Adds the opinion modifier "0 "Refusal of the Eden Agreement" towards our country
+*** If:
+**** Limited to:
+***** 0 "Great Britain exists
+**** 0 "Great Britain:
+***** Adds the opinion modifier "0 "Refusal of the Eden Agreement" towards our country
+* Gets the country event:
+** ID is flavor_fra.5000
+** title = 0 "Rousseau Publishes 'The Social Contract'
+** desc = 0 "Rousseau was one of the first modern writers to seriously attack the institution of private property and is therefore considered a forebearer of modern socialism and Communism. Rousseau also questioned the assumption that the will of the majority is always correct. He argued that the goal of government should be to secure freedom, equality and justice for all within the state regardless of the will of the majority.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1762
+*** Year is less than 1780
+** Mean time to happen
+*** Base mean time to happen of 50 months
+** Option: 0 "Excellent:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes diplomatic power stored by 25
+*** Changes prestige by 10
+* Gets the country event:
+** ID is flavor_fra.5001
+** title = 0 "Voltaire publishes 'Philosophical Letters'
+** desc = 0 "In 1729 Voltaire returned to France from his exile in England. Determined to present England as a model to his countrymen the great writer of the Enlightenment began writing plays in discrete imitation of Shakespeare. He also commenced work on his biography of the great Swedish King Charles XII. His greatest achievement to date, however, was published in 1734. 'Philosophical Letters' was an incisive critique of the religious establishment and the Christian philosopher Blaise Pascal. A warrant of arrest was issued in May and Voltaire was once again forced to flee Paris.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1732
+*** Year is less than 1750
+** Mean time to happen
+*** Base mean time to happen of 50 months
+** Option: 0 "Excellent:
+*** Changes diplomatic power stored by 100
+*** Changes Papal Influence by -10
+*** add_innovativeness_big_effect = yes
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+* Gets the country event:
+** ID is flavor_fra.5002
+** title = 0 "Montesquieu publishes 'The Spirit of Laws'
+** desc = 0 "In 1750 Charles-Louis de Secondat baron de La Montesquieu published the crowning achievement of his literary career - 'The Spirit of Laws.' This monumental 1086 page work was most celebrated for three of its numerous theories: the classification of governments, the political influence of climate, and the most important one, the theory of the separation of powers. Montesquieu argued that in the state that most effectively promotes liberty, the Legislative Executive and Judicial powers must be confided to different individuals or bodies acting independently. This idea was soon to become central to the Constitution of the United States.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1750
+*** Year is less than 1770
+** Mean time to happen
+*** Base mean time to happen of 50 months
+** Option: 0 "Excellent:
+*** add_stability_or_adm_power = yes
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes prestige by 5
+*** add_innovativeness_small_effect = yes
+* Gets the country event:
+** ID is flavor_fra.5003
+** title = 0 "Rene Descartes
+** desc = 0 "French mathematician, scientist and philosopher Rene Descartes has been called the father of modern philosophy because he was one of the first to oppose scholastic Aristotelianism. He began by methodically doubting knowledge based on authority the senses and reason then found certainty in the intuition that when he is thinking he exists - this he expressed in the famous statement 'I think therefore I am.' Descartes developed a dualistic system in which he distinguished radically between mind the essence of which is thinking and matter the essence of which is extension in three dimensions.
+** picture = INVENTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1637
+*** Year is less than 1660
+** Mean time to happen
+*** Base mean time to happen of 50 months
+** Option: 0 "Excellent:
+*** Changes administrative power stored by 30
+*** Adds 10 legitimacy
+*** add_innovativeness_big_effect = yes
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+* Gets the country event:
+** ID is flavor_fra.5004
+** title = 0 "Vauban
+** desc = 0 "Sebastien Le Prestre de Vauban was a French military engineer who revolutionized the art of siege craft and defensive fortifications. He fought in all of France's wars of Louis XIV's reign (1643-1715) and went on frequent tours around the frontiers redesigning and improving numerous fortifications. His design for the fortification of Landau in Bavaria is sometimes reckoned as his greatest work.
+** picture = INVENTION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1681
+*** Year is less than 1700
+** Mean time to happen
+*** Base mean time to happen of 50 months
+** Option: 0 "Excellent:
+*** Changes military power stored by 50
+*** Changes prestige by 10
+* Gets the country event:
+** ID is flavor_fra.5
+** title = 0 "The Royal Musketeers
+** desc = 0 "While overseeing the restructuring of our army the king has come up with an idea to form a military unit within Maison du Roi that would be open to the lower nobility, providing them with an opportunity to prove their military skill and loyalty to the crown.
+** picture = LAND_MILITARY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Has the country flag fra_musketeers_mission
+**** All of the following:
+***** has_mission_false = emp_fra_establish_the_musketeers
+***** Country is 0 "France
+***** Has the monarchy government type
+***** Has at least 300 ducats in the treasury
+***** 0 "Paris:
+****** Controlled by 0 "France
+****** The province is owned by 0 "France
+****** The province is the capital of the country
+****** The province is nto under siege
+****** Does not have the province modifier "0 "Mousquetaires du Roi"
+***** Is not in regency
+***** Ruler's military skill is at least 6
+***** Administrative technology is at least 25
+***** Year is at least 1600
+***** is_free_or_tributary_trigger = yes
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "A splendid idea!:
+*** add_army_professionalism = 0.1
+*** 0 "Paris:
+**** Adds the modifier "0 "Mousquetaires du Roi" until the end of the campaign:
+***** +25% manpower modifier
+***** +10% local defensiveness
+***** +10% garrison growth
+* Gets the country event:
+** ID is flavor_fra.6
+** title = 0 "The Surrender of Maine
+** desc = 0 "In exchange for accepting the treaty of Tours in 1444 the county of Maine was promised to France. In practice, however, this has still not come to pass. No English governor wants to be remembered as the one to surrender Maine and in [Root.Capital.GetCapitalName] prominent nobles are claiming that our negotiator, William de la Pole, had no mandate to make this concession in the first place. French emissaries have repeatedly tried to remind us of this ever since the signing and [FRA.Monarch.GetName] has now finally taken matters in his own hands and shown up at the walls of Le Mans, demanding the city to surrender.\nUnless we surrender Maine to the French we are very likely looking at a hasty resumption of hostilities.
+** picture = SIEGE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "England
+*** Is not a vassal
+*** 0 "France exists
+*** Is not allied with 0 "France
+*** Not at war with 0 "France
+*** Year is less than 1450
+*** Has no truce with 0 "France
+*** 0 "Maine:
+**** Any of the following:
+***** The province is owned by 0 "England
+***** The owner of the province:
+****** Is a vassal of 0 "England
+*** 0 "France:
+**** Is not a vassal
+*** Year is at least 1445
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 1 "We must honor our obligations, even if it pains us.:
+*** AI chance:
+**** Base chance of 25
+*** Tooltip:
+**** 0 "Maine:
+***** Cedes province to 0 "France
+**** add_truce_with = 0 "France
+*** 0 "France:
+**** Gets the country event:
+***** ID is flavor_fra.8
+*** Changes prestige by -10
+*** Changes stability by -1
+*** Sets the country flag rb_gave_up_maine
+** Option: 1 "We will not surrender an inch of territory to the French!:
+*** AI chance:
+**** Base chance of 75
+**** Multiplies value by 0:
+***** Is at war
+**** Multiplies value by 0:
+***** has_any_disaster = yes
+*** 0 "France:
+**** Gets the country event:
+***** ID is flavor_fra.7
+* Gets the country event:
+** ID is flavor_fra.7
+** title = 0 "The Surrender of Maine
+** desc = 0 "In exchange for accepting the treaty of Tours in 1444 the county of Maine was promised to France. In practice, however, this has still not come to pass. The English have repeatedly evaded the question and it is becoming increasingly clear that many in the English camp are arguing that the treaty will not be honored. In one last attempt to force the question [Root.Monarch.GetName] has approached the county capital, Le Mans, himself and demanded the surrender of the city.\nThe local commander, however, shows no signs of intending to open the gates, despite not having a force strong enough to withstand an attack.
+** picture = SIEGE_eventPicture
+** is_triggered_only = yes
+** major = yes
+** Option: 0 "Time to teach them how to war.:
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Is at war
+**** Multiplies value by 0:
+***** has_any_disaster = yes
+*** 0 "England:
+**** Declares war on 0 "Restoration of Union using the 0 "France casus belli
+*** 0 "Maine:
+**** Changes province controller to 0 "France
+** Option: 0 "Let us back down.:
+*** AI chance:
+**** Base chance of 1
+*** Changes prestige by -10
+*** Our country:
+**** add_truce_with = our country
+*** add_truce_with = our country
+*** If:
+**** Limited to:
+***** 0 "Provence exists
+**** 0 "Provence:
+***** Adds the opinion modifier "0 "Gave Up on Maine" towards our country
+*** If:
+**** Limited to:
+***** has_estate = estate_nobles
+**** add_estate_loyalty:
+***** estate = estate_nobles
+***** loyalty = -10
+* Gets the country event:
+** ID is flavor_fra.8
+** title = 0 "The Surrender of Maine
+** desc = 0 "In exchange for accepting the treaty of Tours in 1444 the county of Maine was promised to France. In practice, however, this has taken quite some time to materialize. The arrival of [Root.Monarch.GetName] [Root.Monarch.GetHerselfHimself] on the scene seems to have made the holdup go away, however, and finally Maine is now in our hands.
+** picture = SIEGE_eventPicture
+** is_triggered_only = yes
+** major = yes
+** Option: 0 "Great!:
+*** Changes prestige by 10
+*** Hidden effect:
+**** Our country:
+***** add_truce_with = our country
+*** add_truce_with = our country
+*** 0 "Maine:
+**** Cedes province to 0 "France
+**** Hidden effect:
+***** add_local_autonomy = -50
+* Gets the country event:
+** ID is flavor_fra.9000
+** title = 0 "A Controversial Poet
+** desc = 0 "As is customary, we released a few prisoners to celebrate the crowning of [Root.Monarch.GetTitle] [Root.Monarch.GetName]. Among them was a young poet who thanked us by writing a ballad against the enemies of France. However, our bailiff informs us that he is still wanted in Paris for stealing money from the university and killing a priest in a brawl.
+** picture = REFORM_eventPicture
+** is_triggered_only = yes
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Is not in regency
+*** Year is at least 1450
+*** Year is less than 1465
+** Option: 0 "These are serious crimes, throw him back in jail!:
+*** If:
+**** Limited to:
+***** has_estate = estate_church
+**** add_estate_loyalty:
+***** estate = estate_church
+***** loyalty = 10
+** Option: 0 "I like him, issue a full pardon and bring him to my court.:
+*** Creates an advisor of the 0 "Artist type:
+**** Named "François Villon"
+**** Culture is 0 "Francien
+**** discount = yes
+**** With a skill level of 3
+*** If:
+**** Limited to:
+***** has_estate = estate_church
+**** add_estate_loyalty:
+***** estate = estate_church
+***** loyalty = -10
+** Option: 0 "Better not get involved in this.:
+*** Changes prestige by -5
+* Gets the country event:
+** ID is flavor_fra.9500
+** title = flavor_fra.9500.name
+** desc = flavor_fra.9500.desc
+** picture:
+*** Trigger:
+**** Has the DLC Rights of Man
+*** picture = CONSORT_DOING_BADLY_eventPicture
+** picture:
+*** Trigger:
+**** Does not have the DLC Rights of Man
+*** picture = COURT_eventPicture
+** is_triggered_only = yes
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "France
+*** Year is at least 1630
+*** Year is less than 1780
+*** Has the monarchy government type
+*** Ruler is male
+*** has_consort = yes
+*** consort_age_false = 41
+*** Has an heir
+*** Heir is at least 1 years old
+*** Is in the 0 "Christian religion group
+*** ruler_culture = 0 "Francien
+*** Any of the following:
+**** consort_culture = 0 "Francien
+**** Any known country:
+***** Any of the following:
+****** Culture group is 0 "British
+****** Culture group is 0 "French
+****** Culture group is 0 "Germanic
+****** Culture group is 0 "Nordic
+****** Culture group is 0 "Iberian
+****** Culture group is 0 "Latin
+****** Culture group is 0 "West Slavic
+****** Culture group is 0 "East Slavic
+****** Culture group is 0 "Byzantine
+***** root:
+****** consort_culture = prev
+** Immediate effects:
+*** Hidden effect:
+**** export_to_variable:
+***** which = consort_culture_var
+***** value = consort_culture
+** after:
+*** Sets the variable consort_culture_var to 0
+** Option: flavor_fra.9500.A:
+*** Changes prestige by -10
+** Option: flavor_fra.9500.B:
+*** Adds -10 legitimacy
+*** reduce_mandate_effect = yes
+** Option: flavor_fra.9500.C:
+*** divorce_consort_effect = yes

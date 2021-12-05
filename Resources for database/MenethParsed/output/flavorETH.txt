@@ -1,0 +1,1469 @@
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Year is less than 1550
+*** Is in the 0 "Christian religion group
+*** Any owned province:
+**** Has been discovered by 0 "Portugal
+*** Not at war with 0 "Portugal
+** Mean time to happen
+*** Base mean time to happen of 30 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag eth_contact_with_portugal
+** Option: 0 "Honor him!:
+*** AI chance:
+**** Base chance of 90
+*** Changes prestige by 5
+*** Sets the country flag portuguese_embassy
+*** Hidden effect:
+**** Capital:
+***** 0 "Portugal:
+****** Discovers the PREV province
+** Option: 0 "Banish him!:
+*** AI chance:
+**** Base chance of 5
+*** Adds 5 legitimacy
+*** Hidden effect:
+**** Capital:
+***** 0 "Portugal:
+****** Discovers the PREV province
+** Option: 0 "Execute him!:
+*** AI chance:
+**** Base chance of 5
+*** Gives the 0 "Diplomatic Insult casus belli against the country to 0 "Portugal
+*** Hidden effect:
+**** Capital:
+***** 0 "Portugal:
+****** Discovers the PREV province
+* Gets the country event:
+** ID is flavor_eth.2
+** title = 0 "An Embassy Is Here!
+** desc = 0 "Francisco Álvares, representing the same country that sent the previous emissary, wishes to discuss what our two regimes can do together. He says he was looking for a 'Prester John', and we are apparently the country he seeks. Should we begin an exchange?
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Has the country flag portuguese_embassy
+*** Not at war with 0 "Portugal
+** Mean time to happen
+*** Base mean time to happen of 90 months
+** Option: 0 "Seek aid against the Mamluks!:
+*** Trigger:
+**** Is a neighbor of 0 "Mamluks
+*** 0 "Portugal:
+**** Gets the country event:
+***** ID is flavor_eth.3
+***** Base mean time to happen of 180 days
+***** Tooltip:
+*** Changes military power stored by 25
+** Option: 0 "Ask for a cultural exchange?:
+*** Changes administrative power stored by 50
+*** Changes diplomatic power stored by 50
+*** Changes military power stored by 50
+** Option: 0 "Maybe a trade deal is in order?:
+*** Modifies treasury by 1.0 years worth of income
+* Gets the country event:
+** ID is flavor_eth.3
+** title = 0 "Prester John?
+** desc = 0 "The Negus of Ethiopia, who may or may not be the legendary Prester John, has apparently fallen on hard times and is pleading with us to help him restore his lands. He has sent an ambassador named Mateus. Mateus is a Christian, albeit of a kind we have never seen before, and begs us to restore his master's rightful dominions, but Mamluk power is still threatening and it seems to be a big risk for questionable gain. Should we aid Mateus?
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Deus Vult!:
+*** AI chance:
+**** Base chance of 90
+*** Hidden effect:
+**** 0 "Ethiopia:
+***** Gets the country event:
+****** ID is flavor_eth.4
+****** Base mean time to happen of 180 days
+*** Changes military power stored by -50
+*** Changes Papal Influence by 10
+*** Adds the opinion modifier "0 "Military Aid" from 0 "Ethiopia
+** Option: 0 " I thought Prester John was supposed to help us, not the other way around?:
+*** Changes prestige by -5
+*** Hidden effect:
+**** 0 "Ethiopia:
+***** Gets the country event:
+****** ID is flavor_eth.5
+****** Base mean time to happen of 1825 days
+*** Adds the opinion modifier "0 "Refused giving aid" from 0 "Ethiopia
+* Gets the country event:
+** ID is flavor_eth.4
+** title = 0 "Help from the West
+** desc = 0 "A small fleet, carrying weapons and troops, has arrived at our shores. The leader of these Portuguese soldiers bring a letter from their monarch, saying 'We are both Christian Monarchs, united in our struggles against the infidels.'.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "God is good!:
+*** Adds the opinion modifier "0 "Military Aid" from 0 "Portugal
+*** Adds the modifier "0 "Military Aid from Portugal" for 10 years:
+**** +5% land morale
+**** -5% military technology cost
+**** +5% global manpower modifier
+* Gets the country event:
+** ID is flavor_eth.5
+** title = 0 "We have been neglected.
+** desc = 0 "There is no more embassies from Portugal, no more traders coming, and no reply to our request for help.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "We are alone!:
+*** Adds -10 legitimacy
+* Gets the country event:
+** ID is flavor_eth.6
+** title = flavor_eth.6.t
+** desc = flavor_eth.6.d
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Year is less than 1460
+*** Ruler's name is Zara Yakob
+** Mean time to happen
+*** Base mean time to happen of 48 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag eth_had_centralization_event
+** Option: flavor_eth.6.a:
+*** AI chance:
+**** Base chance of 90
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Adds the ruler modifier "eth_zara_yakob_centralisation" until the ruler's death:
+**** +1 global unrest
+**** global_autonomy = -0.02
+** Option: flavor_eth.6.b:
+*** AI chance:
+**** Base chance of 10
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_eth.7
+** title = flavor_eth.7.t
+** desc = flavor_eth.7.d
+** picture = GOOD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Year is less than 1460
+*** Does not have the DLC Origins
+** Mean time to happen
+*** Base mean time to happen of 48 months
+** Option: flavor_eth.7.a:
+*** AI chance:
+**** Base chance of 50
+*** add_stability_or_adm_power = yes
+*** Sets the country flag eth_itinerant_capital_flag
+** Option: flavor_eth.7.b:
+*** Sets the country flag eth_itinerant_capital_flag
+*** AI chance:
+**** Base chance of 50
+*** Adds the modifier "eth_itinerant_capital" for 10 years:
+**** +10% stability cost modifier
+**** -5% culture conversion cost
+**** -0.5 global unrest
+* Gets the country event:
+** ID is flavor_eth.8
+** title = flavor_eth.8.t
+** desc = flavor_eth.8.d
+** picture = CITY_VIEW_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Year is at least 1455
+*** Year is less than 1520
+*** Owns core province 0 "Shewa
+*** Has the country flag eth_itinerant_capital_flag
+*** Does not have the DLC Origins
+*** Is in the 0 "Christian religion group
+** Mean time to happen
+*** Base mean time to happen of 195 months
+** Option: flavor_eth.8.a:
+*** AI chance:
+**** Base chance of 90
+*** Removes the country flag eth_itinerant_capital_flag
+*** Sets the country flag eth_debre_berhan_capital_flag
+*** Changes administrative power stored by -25
+*** Sets capital to 0 "Shewa
+*** 0 "Shewa:
+**** Changes province capital name to Debre Berhan
+**** Constructs the 0 "Temple building
+*** Every owned province:
+**** Limited to:
+***** Any of the following:
+****** Province is 0 "Shewa
+****** Any bordering province:
+******* Province is 0 "Shewa
+**** add_local_autonomy = -25
+** Option: flavor_eth.8.b:
+*** AI chance:
+**** Base chance of 10
+*** add_stability_or_adm_power = yes
+* Gets the province event:
+** ID is flavor_eth.9
+** title = flavor_eth.9.t
+** desc = flavor_eth.9.d
+** picture = COUNTRY_COLLAPSE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** The province is owned by 0 "Ethiopia
+*** The owner of the province:
+**** Has the country flag eth_debre_berhan_capital_flag
+*** The province is the capital of the country
+*** is_looted = yes
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Option: flavor_eth.9.a:
+*** The owner of the province:
+**** Sets the country flag eth_itinerant_capital_flag
+**** Removes the country flag eth_debre_berhan_capital_flag
+**** Changes stability by -1
+* Gets the country event:
+** ID is flavor_eth.10
+** title = flavor_eth.10.t
+** desc = flavor_eth.10.d
+** picture = CITY_VIEW_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Year is at least 1630
+*** Owns core province 0 "Gonder
+*** Does not have the DLC Origins
+** Mean time to happen
+*** Base mean time to happen of 195 months
+*** Multiplies value by 0.75:
+**** Has the country flag eth_itinerant_capital_flag
+** Option: flavor_eth.10.a:
+*** Removes the country flag eth_itinerant_capital_flag
+*** AI chance:
+**** Base chance of 90
+*** Changes administrative power stored by -25
+*** Sets capital to 0 "Gonder
+*** Every owned province:
+**** Limited to:
+***** Any of the following:
+****** Province is 0 "Gonder
+****** Any bordering province:
+******* Province is 0 "Gonder
+**** add_local_autonomy = -25
+** Option: flavor_eth.10.b:
+*** AI chance:
+**** Base chance of 10
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_eth.11
+** title = flavor_eth.11.t
+** desc = flavor_eth.11.d
+** picture = ORTHODOX_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Year is at least 1450
+*** Year is less than 1480
+*** 0 "Mamluks exists
+*** Not a vassal of 0 "Mamluks
+*** Does not have 0 "Mamluks as a vassal
+*** Is not allied with 0 "Mamluks
+*** Not at war with 0 "Mamluks
+*** 0 "Mamluks:
+**** Is in the 0 "Muslim religion group
+**** Owns 0 "Alexandria
+*** Follows the 0 "Coptic religion
+** Mean time to happen
+*** Base mean time to happen of 90 months
+** Option: flavor_eth.11.a:
+*** AI chance:
+**** Base chance of 1
+*** Every country:
+**** Limited to:
+***** Follows the 0 "Coptic religion
+**** Adds the opinion modifier "0 "Good relations" towards 0 "Ethiopia
+*** 0 "Mamluks:
+**** Gets the country event:
+***** ID is flavor_eth.12
+***** Base mean time to happen of 14 days
+** Option: flavor_eth.11.b:
+*** AI chance:
+**** Base chance of 0
+*** Changes prestige by -15
+** Option: flavor_eth.11.c:
+*** AI chance:
+**** Base chance of 0
+*** Gives the 0 "Diplomatic Insult casus belli against 0 "Mamluks
+*** 0 "Mamluks:
+**** Gets the country event:
+***** ID is flavor_eth.13
+***** Base mean time to happen of 14 days
+* Gets the country event:
+** ID is flavor_eth.12
+** title = flavor_eth.12.t
+** desc = flavor_eth.12.d
+** picture = ACCUSATION_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.12.a:
+*** AI chance:
+**** Base chance of 90
+*** Changes prestige by 5
+*** 0 "Ethiopia:
+**** Gets the country event:
+***** ID is flavor_eth.14
+***** Base mean time to happen of 14 days
+** Option: flavor_eth.12.b:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by -10
+*** 0 "Ethiopia:
+**** Adds the opinion modifier "0 "Improved Relations" towards 0 "Mamluks
+*** 0 "Ethiopia:
+**** Gets the country event:
+***** ID is flavor_eth.15
+***** Base mean time to happen of 1 days
+* Gets the country event:
+** ID is flavor_eth.13
+** title = flavor_eth.13.t
+** desc = flavor_eth.13.d
+** picture = ACCUSATION_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.13.a:
+*** Tooltip:
+**** 0 "Ethiopia:
+***** Gives the 0 "Diplomatic Insult casus belli against 0 "Mamluks
+* Gets the country event:
+** ID is flavor_eth.14
+** title = flavor_eth.14.t
+** desc = flavor_eth.14.d
+** picture = ACCUSATION_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.14.a:
+*** AI chance:
+**** Base chance of 90
+*** Changes prestige by 5
+*** 0 "Mamluks:
+**** Gets the country event:
+***** ID is flavor_eth.16
+***** Base mean time to happen of 14 days
+**** Adds the opinion modifier "0 "Irritated" towards 0 "Ethiopia
+** Option: flavor_eth.14.b:
+*** AI chance:
+**** Base chance of 0
+*** Changes prestige by 10
+*** Gives the 0 "Diplomatic Insult casus belli against 0 "Mamluks
+*** 0 "Mamluks:
+**** Gets the country event:
+***** ID is flavor_eth.13
+***** Base mean time to happen of 1 days
+** Option: flavor_eth.14.c:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by -15
+* Gets the country event:
+** ID is flavor_eth.15
+** title = flavor_eth.15.t
+** desc = flavor_eth.15.d
+** picture = GOOD_WITH_MONARCH_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.15.a:
+*** Changes prestige by 10
+*** Tooltip:
+**** Adds the opinion modifier "0 "Improved Relations" towards 0 "Mamluks
+* Gets the country event:
+** ID is flavor_eth.16
+** title = flavor_eth.16.t
+** desc = flavor_eth.16.d
+** picture = ACCUSATION_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.16.a:
+*** Sets the country flag eth_ambassador_detained
+*** Tooltip:
+**** Adds the opinion modifier "0 "Irritated" towards 0 "Ethiopia
+* Gets the country event:
+** ID is flavor_eth.17
+** title = flavor_eth.17.t
+** desc = flavor_eth.17.d
+** picture = ORTHODOX_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mamluks
+*** Owns 0 "Alexandria
+*** Year is at least 1460
+*** 0 "Ethiopia exists
+*** Is in the 0 "Muslim religion group
+*** 0 "Ethiopia:
+**** Does not have the country flag eth_autonomous_church
+**** Follows the 0 "Coptic religion
+*** Not a vassal of 0 "Ethiopia
+*** Does not have 0 "Ethiopia as a vassal
+*** Is not allied with 0 "Ethiopia
+*** Not at war with 0 "Ethiopia
+** Mean time to happen
+*** Base mean time to happen of 450 months
+** Option: flavor_eth.17.a:
+*** AI chance:
+**** Base chance of 90
+*** 0 "Ethiopia:
+**** Adds the opinion modifier "0 "Irritated" towards 0 "Mamluks
+**** Gets the country event:
+***** ID is flavor_eth.18
+***** Base mean time to happen of 14 days
+** Option: flavor_eth.17.b:
+*** AI chance:
+**** Base chance of 10
+* Gets the country event:
+** ID is flavor_eth.18
+** title = flavor_eth.18.t
+** desc = flavor_eth.18.d
+** picture = ORTHODOX_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.18.a:
+*** Changes stability by -1
+*** Tooltip:
+**** Adds the opinion modifier "0 "Irritated" towards 0 "Mamluks
+* Gets the country event:
+** ID is flavor_eth.19
+** title = flavor_eth.19.t
+** desc = flavor_eth.19.d
+** picture = ORTHODOX_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Follows the 0 "Coptic religion
+** Mean time to happen
+*** Base mean time to happen of 600 months
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Follows the 0 "Coptic religion
+****** The province is not the capital of the country
+***** Sets the province flag eth_strong_monastaries
+**** Random owned province:
+***** Limited to:
+****** Follows the 0 "Coptic religion
+****** The province is not the capital of the country
+****** not:
+******* Has the province flag eth_strong_monastaries
+***** Sets the province flag eth_strong_monastaries
+**** Random owned province:
+***** Limited to:
+****** Follows the 0 "Coptic religion
+****** The province is not the capital of the country
+****** not:
+******* Has the province flag eth_strong_monastaries
+***** Sets the province flag eth_strong_monastaries
+** Option: flavor_eth.19.a:
+*** AI chance:
+**** Base chance of 50
+*** Changes stability by -1
+*** Every owned province:
+**** Limited to:
+***** Has the province flag eth_strong_monastaries
+**** add_local_autonomy = -25
+** Option: flavor_eth.19.b:
+*** AI chance:
+**** Base chance of 50
+*** add_stability_or_adm_power = yes
+*** Every owned province:
+**** Limited to:
+***** Has the province flag eth_strong_monastaries
+**** add_local_autonomy = 25
+* Gets the country event:
+** ID is flavor_eth.20
+** title = flavor_eth.20.t
+** desc = flavor_eth.20.d
+** picture = ORTHODOX_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Follows the 0 "Coptic religion
+*** Year is at least 1475
+*** Year is less than 1515
+*** 0 "Alexandria:
+**** The owner of the province:
+***** Is in the 0 "Muslim religion group
+** Mean time to happen
+*** Base mean time to happen of 40 months
+** Option: flavor_eth.20.a:
+*** AI chance:
+**** Base chance of 90
+*** add_stability_or_adm_power = yes
+** Option: flavor_eth.20.b:
+*** AI chance:
+**** Base chance of 10
+*** Changes stability by -1
+*** Adds the modifier "eth_independent_church" for 10 years:
+**** +10% stability cost modifier
+**** -5% idea cost
+**** Follows the yes religion
+*** Sets the country flag eth_autonomous_church
+* Gets the country event:
+** ID is flavor_eth.21
+** title = flavor_eth.21.t
+** desc = flavor_eth.21.d
+** picture = FAMINE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1570
+*** Year is less than 1680
+*** Any of the following:
+**** Owns core province 0 "Sidamo
+**** Owns core province 0 "Dawaro
+**** Owns core province 0 "Afder
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag eth_start_oromo
+**** Sets the global flag eth_start_of_the_oromo
+** Mean time to happen
+*** Base mean time to happen of 330 months
+** Option: flavor_eth.21.a:
+*** Every province in the world:
+**** Limited to:
+***** Any of the following:
+****** Province is 0 "Ogaden
+****** Province is 0 "Dawaro
+****** Province is 0 "Sidamo
+****** Province is 0 "Hadiya
+****** Province is 0 "Arsi
+****** Province is 0 "Afder
+**** Sets the province flag eth_starting_oromo_provinces
+**** Tooltip:
+***** Adds the modifier "eth_oromo_migration" until the end of the campaign:
+****** local_unrest = 2
+****** -8% missionary strength
+***** Changes culture to oromo
+***** Changes religion to 0 "Fetishist
+**** Hidden effect:
+***** If:
+****** Limited to:
+******* The province is owned by our country
+****** Adds the modifier "eth_oromo_migration" until the end of the campaign:
+******* local_unrest = 2
+******* -8% missionary strength
+****** Changes culture to oromo
+****** Changes religion to 0 "Fetishist
+*** Every country:
+**** Limited to:
+***** Does not have the country flag eth_start_oromo
+***** Any owned province:
+****** Any of the following:
+******* Province is 0 "Ogaden
+******* Province is 0 "Dawaro
+******* Province is 0 "Sidamo
+******* Province is 0 "Hadiya
+******* Province is 0 "Arsi
+******* Province is 0 "Afder
+**** Gets the country event:
+***** ID is flavor_eth.22
+* Gets the country event:
+** ID is flavor_eth.22
+** title = flavor_eth.21.t
+** desc = flavor_eth.21.d
+** picture = FAMINE_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.21.a:
+*** 0 "Ogaden:
+**** If:
+***** Limited to:
+****** The province is owned by our country
+***** Adds the modifier "eth_oromo_migration" until the end of the campaign:
+****** local_unrest = 2
+****** -8% missionary strength
+***** Changes culture to oromo
+***** Changes religion to 0 "Fetishist
+*** 0 "Dawaro:
+**** If:
+***** Limited to:
+****** The province is owned by our country
+***** Adds the modifier "eth_oromo_migration" until the end of the campaign:
+****** local_unrest = 2
+****** -8% missionary strength
+***** Changes culture to oromo
+***** Changes religion to 0 "Fetishist
+*** 0 "Sidamo:
+**** If:
+***** Limited to:
+****** The province is owned by our country
+***** Adds the modifier "eth_oromo_migration" until the end of the campaign:
+****** local_unrest = 2
+****** -8% missionary strength
+***** Changes culture to oromo
+***** Changes religion to 0 "Fetishist
+*** 0 "Hadiya:
+**** If:
+***** Limited to:
+****** The province is owned by our country
+***** Adds the modifier "eth_oromo_migration" until the end of the campaign:
+****** local_unrest = 2
+****** -8% missionary strength
+***** Changes culture to oromo
+***** Changes religion to 0 "Fetishist
+*** 0 "Arsi:
+**** If:
+***** Limited to:
+****** The province is owned by our country
+***** Adds the modifier "eth_oromo_migration" until the end of the campaign:
+****** local_unrest = 2
+****** -8% missionary strength
+***** Changes culture to oromo
+***** Changes religion to 0 "Fetishist
+*** 0 "Afder:
+**** If:
+***** Limited to:
+****** The province is owned by our country
+***** Adds the modifier "eth_oromo_migration" until the end of the campaign:
+****** local_unrest = 2
+****** -8% missionary strength
+***** Changes culture to oromo
+***** Changes religion to 0 "Fetishist
+* Gets the province event:
+** ID is flavor_eth.23
+** title = flavor_eth.23.t
+** desc = flavor_eth.23.d
+** picture = BORDER_TENSION_eventPicture
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Trigger:
+*** Does not have the province modifier "eth_oromo_migration"
+*** Does not have the global flag end_of_oromo_migrations
+*** Region is horn_of_africa_region
+*** area_false = red_sea_coast_area
+*** area_false = dongola_area
+*** area_false = upper_nubia_area
+*** Any bordering province:
+**** Has the province modifier "eth_oromo_migration"
+** Option: flavor_eth.23.a:
+*** Adds the modifier "eth_oromo_migration" until the end of the campaign:
+**** local_unrest = 2
+**** -8% missionary strength
+*** Changes culture to oromo
+*** Changes religion to 0 "Fetishist
+* Gets the country event:
+** ID is flavor_eth.24
+** title = flavor_eth.24.t
+** desc = flavor_eth.24.d
+** picture = CITY_DEVELOPMENT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Does not have the global flag end_of_oromo_migrations
+*** Any owned province:
+**** Has the province modifier "eth_oromo_migration"
+*** Any of the following:
+**** Has at least 6 provinces where all of the following is true:
+***** Has the province modifier "eth_oromo_migration"
+**** Has had the global flag "eth_start_of_the_oromo" for at least 3650 days
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag eth_end_oromo
+**** Every country:
+***** Limited to:
+****** not:
+******* Has the country flag eth_end_oromo
+****** Any owned province:
+******* Has the province modifier "eth_oromo_migration"
+***** Gets the country event:
+****** ID is flavor_eth.25
+****** Base mean time to happen of 1 days
+** Mean time to happen
+*** Base mean time to happen of 36 months
+*** Multiplies value by 0.5:
+**** Has at least 8 provinces where all of the following is true:
+***** Has the province modifier "eth_oromo_migration"
+*** Multiplies value by 0.5:
+**** Has at least 10 provinces where all of the following is true:
+***** Has the province modifier "eth_oromo_migration"
+*** Multiplies value by 0.5:
+**** Has at least 12 provinces where all of the following is true:
+***** Has the province modifier "eth_oromo_migration"
+** Option: flavor_eth.24.a:
+*** Sets the global flag end_of_oromo_migrations
+*** Every province in the world:
+**** Limited to:
+***** Has the province modifier "eth_oromo_migration"
+**** Removes the country modifier "eth_oromo_migration"
+*** Random province in the world:
+**** Limited to:
+***** Culture is oromo
+***** Has no core on 0 "Jimma
+**** Gives 0 "Jimma core on the province
+* Gets the country event:
+** ID is flavor_eth.25
+** title = flavor_eth.24.t
+** desc = flavor_eth.24.d
+** picture = CITY_DEVELOPMENT_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.24.a:
+*** Sets the country flag eth_end_oromo
+* Gets the country event:
+** ID is flavor_eth.26
+** title = flavor_eth.26.t
+** desc = flavor_eth.26.d
+** picture = KING_SICK_IN_BED_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Owns 0 "Gonder
+*** ruler_age = 40
+*** Is not the lesser partner in a union
+*** Has no heir
+*** Has the monarchy government type
+*** has_government_attribute = heir
+** Mean time to happen
+*** Base mean time to happen of 48 months
+** Option: flavor_eth.26.a:
+*** AI chance:
+**** Base chance of 90
+*** add_stability_or_adm_power = yes
+*** Spawns an heir:
+**** Legitimacy of 100
+**** Ruler's dynasty is our country
+*** Adds the modifier "eth_mount_geshen" for the rest of the campaign:
+**** +20% chance of getting an heir
+** Option: flavor_eth.26.b:
+*** AI chance:
+**** Base chance of 10
+* Gets the country event:
+** ID is flavor_eth.27
+** title = flavor_eth.27.t
+** desc = flavor_eth.27.d
+** picture = GOOD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Ruler's name is Zara Yakob
+*** Year is less than 1468
+*** Does not have the global flag wih_eleniethiopia_flag
+** Mean time to happen
+*** Base mean time to happen of 24 months
+** Immediate effects:
+*** Sets the global flag wih_eleniethiopia_flag
+** Option: flavor_eth.27.a:
+*** Changes administrative power stored by 25
+*** If:
+**** Limited to:
+***** Does not have the DLC Rights of Man
+**** Creates an advisor of the 0 "Statesman type:
+***** Named "Eleni"
+***** Culture is sidamo
+***** Follows the 0 "Coptic religion
+***** With a skill level of 3
+***** Ruler is female
+***** discount = yes
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+***** has_government_attribute = queen
+**** define_consort:
+***** Named "Eleni"
+***** country_of_origin = 0 "Hadiya
+***** Ruler's dynasty is Hadiya
+***** Culture is sidamo
+***** Follows the 0 "Coptic religion
+***** Ruler's administrative skill is at least 4
+***** Ruler's diplomatic skill is at least 4
+***** Ruler's military skill is at least 3
+***** Ruler is female
+**** Hidden effect:
+***** add_queen_personality = righteous_personality
+***** add_queen_personality = intricate_web_weaver_personality
+* Gets the country event:
+** ID is flavor_eth.28
+** title = flavor_eth.28.t
+** desc = flavor_eth.28.d
+** picture = KING_SICK_IN_BED_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Has the country modifier "eth_mount_geshen"
+** Mean time to happen
+*** Base mean time to happen of 1000 months
+** Option: flavor_eth.28.a:
+*** AI chance:
+**** Base chance of 90
+*** Changes stability by -2
+*** Removes the country modifier "eth_mount_geshen"
+* Gets the country event:
+** ID is flavor_eth.29
+** title = flavor_eth.29.t
+** desc = flavor_eth.29.desc
+** picture = NEGUSA_NAGAST_eventPicture
+** Trigger:
+*** Has the DLC Origins
+*** has_mission = eth_reform_the_negusa_government
+*** Does not have the country modifier "eth_negusa_nagast_issues"
+*** has_reform = negusa_nagast
+*** Does not have the country flag has_negusa_event
+*** mission_completed_false = eth_reform_the_negusa_government
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag has_negusa_event
+** Option: flavor_eth.29.a:
+*** Adds the modifier "eth_negusa_nagast_issues" for the rest of the campaign:
+**** global_autonomy = 0.2
+*** Hidden effect:
+**** Removes the country flag has_negusa_event
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_eth.30
+** title = flavor_eth.30.t
+** desc = flavor_eth.30.desc
+** picture = NEGUSA_NAGAST_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.30.a:
+*** If:
+**** Limited to:
+***** Does not have the monarchy government type
+**** Changes government type to monarchy
+*** add_government_reform = solomonic_empire
+*** Removes the country modifier "eth_negusa_nagast_issues"
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_eth.30.b:
+*** Removes the country modifier "eth_negusa_nagast_issues"
+*** Capital:
+**** Region is 
+***** Limited to:
+****** The province is owned by our country
+***** add_local_autonomy = -25
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_eth.33
+** title = flavor_eth.33.t
+** desc = flavor_eth.33.desc
+** picture = DEATH_OF_HEIR_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.33.a:
+*** Adds the modifier "eth_blessing_of_kings" for the rest of the campaign:
+*** Changes stability by 2
+*** add_estate_loyalty:
+**** estate = estate_church
+**** loyalty = 100
+* Gets the country event:
+** ID is flavor_eth.35
+** title = flavor_eth.35.t
+** desc = flavor_eth.35.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.35.a:
+*** Adds the modifier "eth_better_integration" for 30 years:
+*** AI chance:
+**** Base chance of 100
+** Option: flavor_eth.35.b:
+*** Adds the modifier "eth_better_vassal_handling" for 30 years:
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_eth.37
+** title = flavor_eth.37.t
+** desc = flavor_eth.37.desc
+** picture = COPTIC_BISHOP_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.37.a:
+*** 0 "Suakin:
+**** Changes religion to 0 "Coptic
+**** Changes base tax by 2
+**** add_base_production = 2
+**** add_base_manpower = 1
+*** AI chance:
+**** Base chance of 100
+* Gets the country event:
+** ID is flavor_eth.38
+** title = flavor_eth.38.t
+** desc = flavor_eth.38.desc
+** picture = COPTIC_CITY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.38.a:
+*** 0 "Massawa:
+**** Changes province name to Adulis
+**** Changes province capital name to Adulis
+**** Changes base tax by 3
+**** add_base_production = 3
+**** add_base_manpower = 2
+**** center_of_trade = 2
+*** AI chance:
+**** Base chance of 100
+* Gets the country event:
+** ID is flavor_eth.39
+** title = flavor_eth.39.t
+** desc = flavor_eth.39.desc
+** picture = NEGUSA_NAGAST_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.39.a:
+*** Adds the modifier "eth_restoration_of_ancient_borders" for 25 years:
+*** Changes country to AKS
+*** Changes prestige by 25
+*** If:
+**** Limited to:
+***** has_custom_ideas_false = no
+***** Does not have the idea group 0 "Aksumite Ideas
+**** Gets the country event:
+***** ID is ideagroups.1
+*** Sets the country flag formed_aksumite_empire_flag
+*** AI chance:
+**** Base chance of 100
+** Option: flavor_eth.39.b:
+*** Adds the modifier "eth_restoration_of_ancient_borders" for 25 years:
+*** Hidden effect:
+**** Sets the country flag eth_can_form_aksumite
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_eth.40
+** title = flavor_eth.40.t
+** desc = flavor_eth.40.desc
+** picture = AFRICAN_BATTLE_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.40.a:
+*** Changes stability by -2
+*** If:
+**** Limited to:
+***** Owns 0 "Aksum
+**** 0 "Aksum:
+***** Changes religion to our country
+***** Removes core on 0 "Semien
+*** If:
+**** Limited to:
+***** Owns 0 "Semien
+**** 0 "Semien:
+***** Changes religion to our country
+***** Removes core on 0 "Semien
+*** If:
+**** Limited to:
+***** Owns 0 "Dembiya
+**** 0 "Dembiya:
+***** Changes religion to our country
+***** Removes core on 0 "Semien
+*** AI chance:
+**** Base chance of 0
+** Option: flavor_eth.40.b:
+*** Changes stability by 1
+*** If:
+**** Limited to:
+***** Owns 0 "Semien
+**** 0 "Semien:
+***** Adds the modifier "eth_accepted_society" until the end of the campaign:
+****** local_religious_unity_contribution = -1
+****** -100% missionary strength
+*** If:
+**** Limited to:
+***** Owns 0 "Dembiya
+**** 0 "Dembiya:
+***** Adds the modifier "eth_accepted_society" until the end of the campaign:
+****** local_religious_unity_contribution = -1
+****** -100% missionary strength
+*** AI chance:
+**** Base chance of 100
+* Gets the country event:
+** ID is flavor_eth.41
+** title = flavor_eth.41.t
+** desc = flavor_eth.41.desc
+** picture = SHIP_SAILING_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.41.a:
+*** eastern_mediterrenean_area:
+**** Discovers the country our country
+*** Hidden effect:
+**** Gets the country event:
+***** ID is flavor_eth.42
+***** Base mean time to happen of 50 days
+* Gets the country event:
+** ID is flavor_eth.42
+** title = flavor_eth.42.t
+** desc = flavor_eth.42.desc
+** picture = SHIP_SAILING_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.42.a:
+*** western_mediterrenean_area:
+**** Discovers the country our country
+*** italy_region:
+**** Discovers the country our country
+*** If:
+**** Limited to:
+***** 0 "The Papal State exists
+***** 0 "Roma:
+****** The province is owned by 0 "The Papal State
+**** 0 "The Papal State:
+***** Gets the country event:
+****** ID is flavor_eth.43
+***** Adds the opinion modifier "eth_restored_contact" towards our country
+* Gets the country event:
+** ID is flavor_eth.43
+** title = flavor_eth.43.t
+** desc = flavor_eth.43.desc
+** picture = SHIP_SAILING_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.43.a:
+*** Hidden effect:
+**** Every province in the world:
+***** Limited to:
+****** The province is owned by our country
+***** Discovers the country our country
+*** Changes diplomatic power stored by 50
+*** Adds the opinion modifier "eth_restored_contact" from our country
+* Gets the country event:
+** ID is flavor_eth.44
+** title = flavor_eth.44.t
+** desc = flavor_eth.44.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.44.a:
+*** 0 "Portugal:
+**** Gets the country event:
+***** ID is flavor_eth.45
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Any of the following:
+****** Considers 0 "Portugal a rival
+****** 0 "Portugal:
+******* Considers our country a rival
+** Option: flavor_eth.44.b:
+*** Changes diplomatic power stored by 100
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Does not consider 0 "Portugal a rival
+***** 0 "Portugal:
+****** Does not consider our country a rival
+* Gets the country event:
+** ID is flavor_eth.45
+** title = flavor_eth.45.t
+** desc = flavor_eth.45.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.45.a:
+*** add_historical_friend = our country
+*** Tooltip:
+**** create_alliance = our country
+**** Our country:
+***** add_historical_friend = our country
+*** If:
+**** Limited to:
+***** 0 "Adal exists
+*** Hidden effect:
+**** Our country:
+***** Gets the country event:
+****** ID is flavor_eth.46
+**** Every province in the world:
+***** Limited to:
+****** The province is owned by our country
+***** Discovers the country our country
+*** Changes military power stored by -50
+*** Changes diplomatic power stored by 50
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Any of the following:
+****** Our country:
+******* Is not in our country's religion group
+****** Our country:
+******* Considers our country a rival
+****** Considers our country a rival
+** Option: flavor_eth.45.b:
+*** Hidden effect:
+**** Our country:
+***** Gets the country event:
+****** ID is flavor_eth.47
+*** Changes military power stored by 50
+*** Changes diplomatic power stored by -50
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Our country:
+****** Is in our country's religion group
+****** Does not consider our country a rival
+***** Does not consider our country a rival
+* Gets the country event:
+** ID is flavor_eth.46
+** title = flavor_eth.46.t
+** desc = flavor_eth.46.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.46.a:
+*** If:
+**** Limited to:
+***** 0 "Adal exists
+*** create_alliance = our country
+*** add_historical_friend = our country
+*** Tooltip:
+**** Our country:
+***** add_historical_friend = our country
+*** Hidden effect:
+**** Sets the country flag portuguese_embassy
+**** Sets the country flag eth_portuguese_help
+**** Every province in the world:
+***** Limited to:
+****** The province is owned by our country
+***** Discovers the country our country
+* Gets the country event:
+** ID is flavor_eth.47
+** title = flavor_eth.47.t
+** desc = flavor_eth.47.desc
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.47.a:
+* Gets the country event:
+** ID is flavor_eth.48
+** title = flavor_eth.48.t
+** desc = flavor_eth.48.desc
+** picture = MILITARY_CAMP_eventPicture
+** is_triggered_only = yes
+** Option: flavor_eth.48.a:
+*** Changes technology group to 0 "Western
+*** Changes unit types to 0 "Western
+*** Adds the modifier "eth_modernized_army" for 25 years:
+*** Changes military power stored by -200
+* Gets the country event:
+** ID is flavor_eth.49
+** title = flavor_eth.49.t
+** desc:
+*** desc = flavor_eth.49.desc
+*** Trigger:
+**** 0 "Ottomans exists
+** desc:
+*** desc = flavor_eth.49.ada.desc
+*** Trigger:
+**** 0 "Ottomans does not exist
+** picture = JANISSARIES_IN_FORMATION_eventPicture
+** Trigger:
+*** Has the country flag ada_has_turkish_help
+*** Year is less than 1600
+*** At war with 0 "Ethiopia
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** major = yes
+** Option: flavor_eth.49.a:
+*** Hidden effect:
+**** Sets the global flag eth_ottoman_company_available
+**** Removes the country flag ada_has_turkish_help
+*** Creates a general:
+**** Named "Sayid Mehmed"
+**** 3 skill in shock
+**** 3 skill in fire
+**** 2 skill in manuever
+**** 0 skill in siege
+*** add_army_professionalism = 0.05
+*** Changes army tradition by 25
+*** AI chance:
+**** Base chance of 90
+* Gets the country event:
+** ID is flavor_eth.50
+** title = flavor_eth.50.t
+** desc = flavor_eth.50.desc
+** picture = AFRICAN_BATTLE_eventPicture
+** Trigger:
+*** Has the global flag eth_ottoman_company_available
+*** Country is 0 "Ethiopia
+*** 0 "Portugal exists
+*** Has the country flag eth_portuguese_help
+*** Is at war
+*** Not at war with 0 "Portugal
+*** Year is less than 1600
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 240 months
+*** Multiplies value by 0.1:
+**** At war with 0 "Adal
+*** Multiplies value by 0.5:
+**** Any owned province:
+***** Has been discovered by 0 "Portugal
+** major = yes
+** Option: flavor_eth.50.a:
+*** Hidden effect:
+**** Sets the global flag eth_portugese_company_available
+**** Removes the country flag eth_portuguese_help
+*** Creates a general:
+**** Named "Cristóvão da Gama"
+**** 4 skill in shock
+**** 4 skill in fire
+**** 3 skill in manuever
+**** 0 skill in siege
+*** add_army_professionalism = 0.05
+*** Changes army tradition by 25
+*** AI chance:
+**** Base chance of 90
+* Gets the country event:
+** ID is flavor_eth.51
+** title = flavor_eth.51.t
+** desc = flavor_eth.51.desc
+** picture = LAND_MILITARY_eventPicture
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Ethiopia
+**** was_tag = 0 "Ethiopia
+*** Has the global flag eth_ottoman_company_available
+*** Year is at least 1600
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** major = yes
+** Option: flavor_eth.51.a:
+*** Hidden effect:
+**** Removes the global flag eth_ottoman_company_available
+**** Removes the global flag eth_portugese_company_available
+*** AI chance:
+**** Base chance of 100
+* Gets the country event:
+** ID is flavor_eth.52
+** title = flavor_eth.52.t
+** desc = flavor_eth.52.desc
+** picture = AFRICAN_CATHOLIC_eventPicture
+** Trigger:
+*** Country is 0 "Ethiopia
+*** Year is at least 1600
+*** Year is less than 1700
+*** 0 "Portugal exists
+*** Any of the following:
+**** Is allied with 0 "Portugal
+**** Has the country flag portuguese_embassy
+*** Follows the 0 "Coptic religion
+*** Has at least 6 provinces where all of the following is true:
+*** Has the DLC Origins
+** fire_only_once = yes
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: flavor_eth.52.a:
+*** Adds the opinion modifier "eth_banned_jesuits" from 0 "Portugal
+*** Random owned province:
+**** Limited to:
+***** Region is horn_of_africa_region
+***** Follows the 0 "Coptic religion
+**** spawn_small_scaled_rebels:
+***** no_defined_leader = yes
+*** AI chance:
+**** Base chance of 60
+** Option: flavor_eth.52.b:
+*** Random owned province:
+**** Limited to:
+***** Region is horn_of_africa_region
+***** Follows the 0 "Coptic religion
+**** Changes religion to 0 "Catholic
+**** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+***** -100% missionary strength
+*** Random owned province:
+**** Limited to:
+***** Region is horn_of_africa_region
+***** Follows the 0 "Coptic religion
+**** Changes religion to 0 "Catholic
+**** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+***** -100% missionary strength
+*** Random owned province:
+**** Limited to:
+***** Region is horn_of_africa_region
+***** Follows the 0 "Coptic religion
+**** Changes religion to 0 "Catholic
+**** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+***** -100% missionary strength
+*** Changes stability by -1
+*** AI chance:
+**** Base chance of 30
+** Option: flavor_eth.52.c:
+*** Changes religion to 0 "Catholic
+*** Capital:
+**** Changes religion to 0 "Catholic
+**** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+***** -100% missionary strength
+*** Random owned province:
+**** Limited to:
+***** Region is horn_of_africa_region
+***** Follows the 0 "Coptic religion
+**** Changes religion to 0 "Catholic
+**** Adds the modifier "0 "Religious Zeal" for 24.66 years:
+***** -100% missionary strength
+*** Random owned province:
+**** Limited to:
+***** Region is horn_of_africa_region
+***** Follows the 0 "Coptic religion
+**** spawn_large_scaled_rebels:
+***** no_defined_leader = yes
+*** Random owned province:
+**** Limited to:
+***** Region is horn_of_africa_region
+***** Follows the 0 "Coptic religion
+**** spawn_large_scaled_rebels:
+***** no_defined_leader = yes
+*** AI chance:
+**** Base chance of 10
+* Gets the country event:
+** ID is flavor_eth.100
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** hidden = yes
+** Trigger:
+*** has_government_attribute = has_itinerant_capital
+*** Capital:
+**** Does not have the province flag is_itinerent_capital
+*** Has the DLC Origins
+** Mean time to happen
+*** Base mean time to happen of 1 days
+*** Every owned province:
+**** Limited to:
+***** Has the province modifier "itinerant_capital_area"
+**** Removes the country modifier "itinerant_capital_area"
+*** Every owned province:
+**** Limited to:
+***** Has the province flag is_itinerent_capital
+**** add_local_autonomy = 10
+**** Removes the province flag is_itinerent_capital
+*** Capital:
+**** Sets the province flag is_itinerent_capital
+**** add_local_autonomy = -100
+**** area:
+***** Limited to:
+****** The province is owned by our country
+***** Option: itinerant_capital_area:
+***** Adds the modifier "" until the end of the campaign:
+***** add_local_autonomy = -10
+*** Adds the modifier "itinerant_capital_just_moved" for 5 years:
+**** move_capital_cost_modifier = 10
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_eth.101
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** hidden = yes
+** Trigger:
+*** Any owned province:
+**** Has the province flag is_itinerent_capital
+*** has_government_attribute_false = has_itinerant_capital
+** Mean time to happen
+*** Base mean time to happen of 1 days
+*** Every owned province:
+**** Limited to:
+***** Has the province flag is_itinerent_capital
+**** Removes the province flag is_itinerent_capital
+*** Every owned province:
+**** Limited to:
+***** Has the province modifier "itinerant_capital_area"
+**** Removes the country modifier "itinerant_capital_area"
+*** If:
+**** Limited to:
+***** Has the country modifier "itinerant_capital_just_moved"
+**** Removes the country modifier "itinerant_capital_just_moved"
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_eth.102
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** hidden = yes
+** Trigger:
+*** has_government_attribute = has_itinerant_capital
+*** Capital:
+**** Has the province flag is_itinerent_capital
+**** area_for_scope_province:
+***** Does not have the province modifier "itinerant_capital_area"
+***** The province is owned by our country
+*** Has the DLC Origins
+** Mean time to happen
+*** Base mean time to happen of 1 days
+*** Capital:
+**** area:
+***** Limited to:
+****** Does not have the province modifier "itinerant_capital_area"
+****** The province is owned by our country
+***** Option: itinerant_capital_area:
+***** Adds the modifier "" until the end of the campaign:
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_eth.103
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** hidden = yes
+** Trigger:
+*** has_government_attribute = has_itinerant_capital
+*** Has the country modifier "eth_negusa_nagast_issues"
+*** Does not have the country modifier "itinerant_capital_just_moved"
+*** Has the DLC Origins
+*** Any owned province:
+**** In the continent our country
+**** Controlled by our country
+**** Does not have the province modifier "itinerant_capital_area"
+**** Does not have the province flag is_itinerent_capital
+*** Is AI controlled
+*** Is not at war
+** Mean time to happen
+*** Base mean time to happen of 1 days
+** Immediate effects:
+*** Random owned province:
+**** Limited to:
+***** In the continent our country
+***** Controlled by our country
+***** is_state = yes
+***** Does not have the province modifier "itinerant_capital_area"
+***** Does not have the province flag is_itinerent_capital
+**** save_event_target_as = eth_new_capital
+*** Random owned province:
+**** Limited to:
+***** In the continent our country
+***** Controlled by our country
+***** is_state = yes
+***** Does not have the province modifier "itinerant_capital_area"
+***** Does not have the province flag is_itinerent_capital
+***** Any of the following:
+****** local_autonomy = 20
+****** development = 10
+**** save_event_target_as = eth_new_capital
+*** Random owned province:
+**** Limited to:
+***** In the continent our country
+***** Controlled by our country
+***** is_state = yes
+***** Does not have the province modifier "itinerant_capital_area"
+***** Does not have the province flag is_itinerent_capital
+***** Any of the following:
+****** local_autonomy = 40
+****** development = 20
+**** save_event_target_as = eth_new_capital
+*** Random owned province:
+**** Limited to:
+***** In the continent our country
+***** Controlled by our country
+***** is_state = yes
+***** Does not have the province modifier "itinerant_capital_area"
+***** Does not have the province flag is_itinerent_capital
+***** Any of the following:
+****** local_autonomy = 60
+****** development = 30
+**** save_event_target_as = eth_new_capital
+*** Random owned province:
+**** Limited to:
+***** In the continent our country
+***** Controlled by our country
+***** is_state = yes
+***** Does not have the province modifier "itinerant_capital_area"
+***** Does not have the province flag is_itinerent_capital
+***** Any of the following:
+****** local_autonomy = 80
+****** development = 40
+**** save_event_target_as = eth_new_capital
+*** Every owned province:
+**** Limited to:
+***** Has the province modifier "itinerant_capital_area"
+**** Removes the country modifier "itinerant_capital_area"
+*** Every owned province:
+**** Limited to:
+***** Has the province flag is_itinerent_capital
+**** add_local_autonomy = 10
+**** Removes the province flag is_itinerent_capital
+*** Sets capital to event_target:eth_new_capital
+*** event_target:eth_new_capital:
+**** Sets the province flag is_itinerent_capital
+**** add_local_autonomy = -100
+**** area:
+***** Limited to:
+****** The province is owned by our country
+***** Option: itinerant_capital_area:
+***** Adds the modifier "" until the end of the campaign:
+***** add_local_autonomy = -10
+*** Adds the modifier "itinerant_capital_just_moved" for 5 years:
+**** move_capital_cost_modifier = 10
+*** AI chance:
+**** Base chance of 1

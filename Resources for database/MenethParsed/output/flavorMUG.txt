@@ -1,0 +1,92 @@
+** Trigger:
+*** Country is 0 "Mughals
+*** Is in the 0 "Muslim religion group
+*** Year is at least 1650
+*** 0 "Marathas does not exist
+*** Any owned province:
+**** Any of the following:
+***** area = maidan_area
+***** area = desh_area
+***** Culture is 0 "Marathi
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "We must crush any shred of separatism!:
+*** Every owned province:
+**** Limited to:
+***** Any of the following:
+****** area = maidan_area
+****** area = desh_area
+****** Culture is 0 "Marathi
+***** The province is not the capital of the country
+**** Gives 0 "Marathas core on the province
+**** Adds the modifier "0 "Peasants Rage" until the end of the campaign:
+***** local_unrest = 10
+* Gets the country event:
+** ID is flavor_mug.2
+** title = 0 "Akbar's Reforms
+** desc = 0 "The Emperor has proposed sweeping reforms in order to modernize and restructure our state. These include economic reforms, a better tax-gathering system, a streamlined bureaucracy, and military restructuring. However, such a plan will be expensive and will cause a fair amount of resentment among the populace, the bureaucracy, and the military. Shall we implement the reforms?
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mughals
+*** Year is at least 1570
+*** Year is less than 1600
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Implement the administrative reforms:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes administrative power stored by 50
+** Option: 0 "Implement the diplomatic reforms:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes diplomatic power stored by 50
+** Option: 0 "Implement the military reforms:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Changes military power stored by 50
+* Gets the country event:
+** ID is flavor_mug.3
+** title = 0 "The Sikh Rebellions
+** desc = 0 "The Guru of the Sikhs has come to our capital to explain his sect's heterodox teachings. Sikhism is a mixture of Hindu and Islamic beliefs, and the Emperor feels such teachings are a heresy to Islam. However, any actions we take against him will have repercussions in our Sikh provinces, where the Guru is revered as a holy man. What shall we do with this accused heretic?
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mughals
+*** Does not follow the 0 "Sikh religion
+*** Any owned province:
+**** Follows the 0 "Sikh religion
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Execute him as a heretic!:
+*** Random owned province:
+**** Limited to:
+***** Follows the 0 "Sikh religion
+***** Does not have the province modifier "0 "Peasants Rage"
+**** Adds the modifier "0 "Peasants Rage" until the end of the campaign:
+***** local_unrest = 10
+* Gets the country event:
+** ID is flavor_mug.4
+** title = 0 "The Afghan Rebellions
+** desc = 0 "The Afghans, under the leadership of Mir Ways, have risen up in rebellion in their home provinces!
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Mughals
+*** 0 "Afghanistan does not exist
+*** Any owned province:
+**** Culture is afghani
+** Mean time to happen
+*** Base mean time to happen of 2000 months
+** Option: 0 "Curses!:
+*** Every owned province:
+**** Limited to:
+***** Culture is afghani
+**** Adds the modifier "0 "Peasants Rage" until the end of the campaign:
+***** local_unrest = 10

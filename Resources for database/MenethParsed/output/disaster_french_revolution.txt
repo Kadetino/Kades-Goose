@@ -1,0 +1,1618 @@
+
+=== 1 "The Estates General ===
+* Cannot fire randomly
+* Can only fire once
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** log = [Root.GetName] has the French Revolution Disaster.
+* If:
+** Limited to:
+*** Any owned province:
+**** development = 20
+**** highest_supply_limit_in_area = yes
+**** is_in_capital_area = yes
+**** fort_level = 1
+**** The province is not the capital of the country
+** Random owned province:
+*** Limited to:
+**** development = 20
+**** highest_supply_limit_in_area = yes
+**** is_in_capital_area = yes
+**** fort_level = 1
+**** The province is not the capital of the country
+*** If:
+**** Limited to:
+***** Does not have the DLC Emperor
+**** Spawns revolt of size 3 of 0 "Revolutionary rebels
+*** else:
+**** Sets the province flag revolution_spawn_rebels_here
+* else:
+** Random owned province:
+*** Limited to:
+**** highest_supply_limit_in_area = yes
+**** The province is not the capital of the country
+*** If:
+**** Limited to:
+***** Does not have the DLC Emperor
+**** Spawns revolt of size 3 of 0 "Revolutionary rebels
+*** else:
+**** Sets the province flag revolution_spawn_rebels_here
+* If:
+** Limited to:
+*** Does not have the DLC Emperor
+** Random owned province:
+*** Limited to:
+**** The province is the capital of the country
+*** Spawns revolt of size 2 of 0 "Revolutionary rebels
+* Changes stability by -3
+* Sets the country flag had_revolution
+* If:
+** Limited to:
+*** Is bankrupt
+** Sets the country flag no_revolution_bankruptcy_event
+
+'''Option: 0 "Dire times are ahead of us.:'''
+
+* Trigger:
+** Does not have the DLC Emperor
+* Changes prestige by -10
+
+'''Option: revolution.1.A:'''
+
+* Trigger:
+** Has the DLC Emperor
+* Sets the country flag revolution_disaster_reactionary
+* Random owned province:
+** Limited to:
+*** Has the province flag revolution_spawn_rebels_here
+** Removes the province flag revolution_spawn_rebels_here
+** Spawns revolt of size 3 of 0 "Revolutionary rebels
+* Random owned province:
+** Limited to:
+*** The province is the capital of the country
+** Spawns revolt of size 2 of 0 "Revolutionary rebels
+* AI chance:
+** Base chance of 1
+
+'''Option: revolution.1.B:'''
+
+* Trigger:
+** Has the DLC Emperor
+* Sets the country flag revolution_disaster_revolutionary
+* Sets the country flag revolution_disaster_immediate_revolution
+* Random owned province:
+** Limited to:
+*** Has the province flag revolution_spawn_rebels_here
+** Removes the province flag revolution_spawn_rebels_here
+** Spawns revolt of size 3 of 0 "Pretender rebels
+** If:
+*** Limited to:
+**** Any bordering province:
+***** The province is owned by our country
+*** Random bordering province:
+**** Limited to:
+***** The province is owned by our country
+**** Spawns revolt of size 2 of 0 "Pretender rebels
+* Hidden effect:
+** Gets the country event:
+*** ID is french_revolution.2
+* AI chance:
+** Base chance of 2
+** Multiplies value by 2:
+*** A revolution target has not been set
+** Multiplies value by 0:
+*** Is the Holy Roman Emperor
+
+=== 1 "The Storming of the Bastille ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* revolution_event_can_happen_trigger = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 1 "Vive la Révolution!:'''
+
+* If:
+** Limited to:
+*** Any of the following:
+**** Ruler is female
+**** All of the following:
+***** Is in regency
+***** Heir is female
+** Sets the country flag french_revolution_female_ruler
+* else:
+** Sets the country flag french_revolution_male_ruler
+* enact_revolution_effect = yes
+
+=== 0 "The Reign of Terror ===
+* Trigger:
+** Has the DLC Emperor
+* picture = GUILLOTINE_eventPicture
+* Trigger:
+** Does not have the DLC Emperor
+* picture = REVOLUTION_eventPicture
+* Can only fire once
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* has_ruler_flag_false = bonaparte_flag
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Execute the enemies of the Revolution!:'''
+
+* Changes army tradition by -20
+* Changes navy tradition by -20
+* Changes national manpower by -0.5 years worth of men
+* add_sailors = -0.15
+* Adds the modifier "0 "The Reign of Terror" for 10 years:
+** -1 global unrest
+** -10% global tax modifier
+** -10% production efficiency
+** global_autonomy = -0.05
+** yearly_revolutionary_zeal = 0.5
+* Spawns a ruler:
+** Named "Maximilien de Robespierre"
+** Ruler's administrative skill is at least 3
+** Ruler's diplomatic skill is at least 0
+** Ruler's military skill is at least 4
+** min_age = 30
+** max_age = 40
+* set_ruler_flag = robespierre_flag
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+** Hidden effect:
+*** add_ruler_personality = malevolent_personality
+* Hidden effect:
+** Gets the country event:
+*** ID is french_revolution.4
+*** Base mean time to happen of 270 random days
+* AI chance:
+** Base chance of 10
+
+'''Option: 0 "Show leniency.:'''
+
+* Changes stability by -3
+* AI chance:
+** Base chance of 0
+
+=== title = french_revolution.301.name ===
+* Trigger:
+** Has the country flag french_revolution_301_1
+* desc = french_revolution.301.desc1
+* Trigger:
+** Has the country flag french_revolution_301_2
+* desc = french_revolution.301.desc2
+* Trigger:
+** Has the country flag french_revolution_301_3
+* desc = french_revolution.301.desc3
+* Trigger:
+** Has the DLC Emperor
+* picture = GUILLOTINE_eventPicture
+* Trigger:
+** Does not have the DLC Emperor
+* picture = REVOLUTION_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Has the country modifier "0 "The Reign of Terror"
+* Does not have the country flag advisor_events_adm
+* Does not have the country flag advisor_events_dip
+* Does not have the country flag advisor_events_mil
+* Any of the following:
+** has_adm_advisor = yes
+** has_dip_advisor = yes
+** has_mil_advisor = yes
+* Does not have the country modifier "recent_reign_of_terror_event_timer"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** One of the following will happen:
+*** 1 relative chance:
+**** Sets the country flag french_revolution_301_1
+*** 1 relative chance:
+**** Sets the country flag french_revolution_301_2
+*** 1 relative chance:
+**** Sets the country flag french_revolution_301_3
+** One of the following will happen:
+*** 1 relative chance:
+**** Trigger:
+***** has_adm_advisor = yes
+**** Sets the country flag advisor_events_adm
+*** 1 relative chance:
+**** Trigger:
+***** has_dip_advisor = yes
+**** Sets the country flag advisor_events_dip
+*** 1 relative chance:
+**** Trigger:
+***** has_mil_advisor = yes
+**** Sets the country flag advisor_events_mil
+** Adds the modifier "recent_reign_of_terror_event_timer" for 12 months:
+*** No effects
+
+'''Option: french_revolution.301.A:'''
+
+* trigger_switch:
+** on_trigger = has_country_flag
+** advisor_events_adm:
+*** remove_advisor_by_category = 0 "Administrative
+** advisor_events_dip:
+*** remove_advisor_by_category = 0 "Diplomatic
+** advisor_events_mil:
+*** remove_advisor_by_category = 0 "Military
+
+'''Option: french_revolution.301.B:'''
+
+* If:
+** Limited to:
+*** Has the DLC Emperor
+** add_revolutionary_zeal = -10
+* else:
+** add_absolutism = -10
+** trigger_switch:
+*** on_trigger = has_country_flag
+*** advisor_events_adm:
+**** Removes the country flag advisor_events_adm
+*** advisor_events_dip:
+**** Removes the country flag advisor_events_dip
+*** advisor_events_mil:
+**** Removes the country flag advisor_events_mil
+** Removes the country flag french_revolution_301_1
+** Removes the country flag french_revolution_301_2
+** Removes the country flag french_revolution_301_3
+
+=== title = french_revolution.301.name ===
+* Trigger:
+** Has the country flag french_revolution_301_1
+* desc = french_revolution.301.desc1
+* Trigger:
+** Has the country flag french_revolution_301_2
+* desc = french_revolution.301.desc2
+* Trigger:
+** Has the country flag french_revolution_301_3
+* desc = french_revolution.301.desc3
+* Trigger:
+** Has the DLC Emperor
+* picture = GUILLOTINE_eventPicture
+* Trigger:
+** Does not have the DLC Emperor
+* picture = REVOLUTION_eventPicture
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Has the country modifier "0 "The Reign of Terror"
+* Does not have the country flag advisor_events_adm
+* Does not have the country flag advisor_events_dip
+* Does not have the country flag advisor_events_mil
+* Any of the following:
+** has_adm_advisor = yes
+** has_dip_advisor = yes
+** has_mil_advisor = yes
+* has_disaster_false = 0 "French Revolution
+* Does not have the country modifier "recent_reign_of_terror_event_timer"
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** One of the following will happen:
+*** 1 relative chance:
+**** Sets the country flag french_revolution_301_1
+*** 1 relative chance:
+**** Sets the country flag french_revolution_301_2
+*** 1 relative chance:
+**** Sets the country flag french_revolution_301_3
+** One of the following will happen:
+*** 1 relative chance:
+**** Trigger:
+***** has_adm_advisor = yes
+**** Sets the country flag advisor_events_adm
+*** 1 relative chance:
+**** Trigger:
+***** has_dip_advisor = yes
+**** Sets the country flag advisor_events_dip
+*** 1 relative chance:
+**** Trigger:
+***** has_mil_advisor = yes
+**** Sets the country flag advisor_events_mil
+** Adds the modifier "recent_reign_of_terror_event_timer" for 5 years:
+*** No effects
+
+'''Option: french_revolution.301.A:'''
+
+* trigger_switch:
+** on_trigger = has_country_flag
+** advisor_events_adm:
+*** remove_advisor_by_category = 0 "Administrative
+** advisor_events_dip:
+*** remove_advisor_by_category = 0 "Diplomatic
+** advisor_events_mil:
+*** remove_advisor_by_category = 0 "Military
+
+'''Option: french_revolution.301.B:'''
+
+* If:
+** Limited to:
+*** Has the DLC Emperor
+** add_revolutionary_zeal = -5
+* else:
+** add_absolutism = -5
+** trigger_switch:
+*** on_trigger = has_country_flag
+*** advisor_events_adm:
+**** Removes the country flag advisor_events_adm
+*** advisor_events_dip:
+**** Removes the country flag advisor_events_dip
+*** advisor_events_mil:
+**** Removes the country flag advisor_events_mil
+** Removes the country flag french_revolution_301_1
+** Removes the country flag french_revolution_301_2
+** Removes the country flag french_revolution_301_3
+
+=== title = french_revolution.303.name ===
+* Trigger:
+** Has the DLC Emperor
+* picture = GUILLOTINE_eventPicture
+* Trigger:
+** Does not have the DLC Emperor
+* picture = REVOLUTION_eventPicture
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Has the country modifier "0 "The Reign of Terror"
+* has_disaster_false = 0 "French Revolution
+* Does not have the country modifier "recent_reign_of_terror_event_timer"
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "recent_reign_of_terror_event_timer" for 5 years:
+*** No effects
+
+'''Option: french_revolution.303.A:'''
+
+* If:
+** Limited to:
+*** Has the DLC Emperor
+** add_revolutionary_zeal = 10
+* else:
+** add_absolutism = 10
+
+=== title = french_revolution.303.name ===
+* Trigger:
+** Has the DLC Emperor
+* picture = GUILLOTINE_eventPicture
+* Trigger:
+** Does not have the DLC Emperor
+* picture = REVOLUTION_eventPicture
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Has the country modifier "0 "The Reign of Terror"
+* Does not have the country modifier "recent_reign_of_terror_event_timer"
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "recent_reign_of_terror_event_timer" for 12 months:
+*** No effects
+
+'''Option: french_revolution.303.A:'''
+
+* If:
+** Limited to:
+*** Has the DLC Emperor
+** add_revolutionary_zeal = 10
+* else:
+** add_absolutism = 10
+
+=== 1 "The End of Terror ===
+* Trigger:
+** has_ruler_flag_false = robespierre_flag
+* desc = 2 "The Reign of Terror has seen countless Frenchmen massacred in the name of the Republic. No sooner has one threat been eliminated then the next is identified and purged. Fearing that they might be next - after all, it is 'Today you, Tomorrow me' - the National Assembly has united to bring an end to the Terror by deposing [Root.Monarch.GetTitle] [Root.Monarch.GetName] and establishing a Directory that will return stability to the realm and ensure that no one may use the chaos as an excuse to restore the monarchy.
+* Trigger:
+** has_ruler_flag = robespierre_flag
+* desc = french_revolution.4.robespierre
+* Can only fire once
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the country modifier "0 "The Reign of Terror"
+* is_revolutionary_republic_trigger = yes
+
+'''Immediate effects:'''
+
+* Sets the country flag the_directory_flag
+
+'''Option: 1 "You live by the sword, you die by the sword.:'''
+
+* Trigger:
+** has_ruler_flag_false = robespierre_flag
+* Kills the ruler of the country
+* Changes stability by 1
+* Removes the country modifier "0 "The Reign of Terror"
+
+'''Option: french_revolution.4.robespierre.A:'''
+
+* Trigger:
+** has_ruler_flag = robespierre_flag
+* Kills the ruler of the country
+* Changes stability by 1
+* Removes the country modifier "0 "The Reign of Terror"
+
+'''Option: french_revolution.4.robespierre.B:'''
+
+* Trigger:
+** has_ruler_flag = robespierre_flag
+* Changes stability by -1
+* Hidden effect:
+** Removes the country modifier "0 "The Reign of Terror"
+* Adds the modifier "0 "The Reign of Terror" for the rest of the campaign:
+** -1 global unrest
+** -10% global tax modifier
+** -10% production efficiency
+** global_autonomy = -0.05
+** yearly_revolutionary_zeal = 0.5
+
+=== 1 "The Fate of a Monarch ===
+* Trigger:
+** Has the country flag french_revolution_female_ruler
+* desc = french_revolution.5.female
+* Trigger:
+** Has the country flag french_revolution_male_ruler
+* desc = french_revolution.5.male
+* Trigger:
+** Has the DLC Emperor
+* picture = GUILLOTINE_eventPicture
+* Trigger:
+** Does not have the DLC Emperor
+* picture = REVOLUTION_eventPicture
+* Can only fire once
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Does not have the country flag had_execution_of_king_louis_event_flag
+* Any of the following:
+** Has the country modifier "0 "The Reign of Terror"
+** Has the country flag the_directory_flag
+* is_revolutionary_republic_trigger = yes
+* Any country:
+** Capital:
+*** In the continent our country
+** Is not a vassal of our country
+** Is not allied with our country
+** is_revolutionary_false = no
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag had_execution_of_king_louis_event_flag
+** Removes the country flag ruler_of_france_exiled
+** Removes the country flag heir_of_france_exiled
+** If:
+*** Limited to:
+**** Any rival country:
+***** Is a neighbor of our country
+***** is_revolutionary_false = no
+*** Random rival country:
+**** Limited to:
+***** Is a neighbor of our country
+***** is_revolutionary_false = no
+**** save_event_target_as = flee_to_country
+** else_if:
+*** Limited to:
+**** Any rival country:
+***** Has the monarchy government type
+***** is_revolutionary_false = no
+*** Random rival country:
+**** Limited to:
+***** Has the monarchy government type
+***** is_revolutionary_false = no
+**** save_event_target_as = flee_to_country
+** else_if:
+*** Limited to:
+**** Any rival country:
+***** Country exists
+***** is_revolutionary_false = no
+*** Random rival country:
+**** Limited to:
+***** Country exists
+***** is_revolutionary_false = no
+**** save_event_target_as = flee_to_country
+** else:
+*** Random country:
+**** Limited to:
+***** Is not a vassal of our country
+***** Is not allied with our country
+***** is_revolutionary_false = no
+***** Capital:
+****** In the continent our country
+***** Any of the following:
+****** Is a neighbor of our country
+****** ROOT:
+******** No neighbor country:
+********* Is not a vassal of our country
+********* Capital:
+********** In the continent our country
+**** save_event_target_as = flee_to_country
+
+'''Option: 0 "361 votes for and 360 against execution.:'''
+
+* add_stability_or_adm_power = yes
+* Sets the country flag fra_monarch_executed
+* Every country:
+** Limited to:
+*** Has the monarchy government type
+*** Capital:
+**** In the continent our country
+*** border_distance:
+**** who_false = our country
+**** distance_false = 150
+** Adds the opinion modifier "0 "Executed Monarch" towards our country
+* Hidden effect:
+** If:
+*** Limited to:
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** Is coastal
+***** The province is not the capital of the country
+***** Controlled by our country
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Follows our country's religion
+***** Controlled by our country
+*** Randomized by 
+**** Acquisition chance:
+**** Gets the country event:
+***** ID is french_revolution.6
+***** Base mean time to happen of 20 random days
+* add_revolutionary_zeal = 10
+
+'''Option: 0 "361 votes against and 360 for execution.:'''
+
+* Changes stability by -1
+
+=== 0 "The Chouan Revolt ===
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag the_chouan_revolt
+** Random owned province:
+*** Limited to:
+**** In the continent our country
+**** Has core on our country
+**** Is coastal
+**** The province is not the capital of the country
+**** Controlled by our country
+**** Any of the following:
+***** highest_supply_limit_in_area = yes
+***** root:
+******* No owned province:
+******** In the continent our country
+******** Has core on our country
+******** Is coastal
+******** The province is not the capital of the country
+******** highest_supply_limit_in_area = yes
+*** Sets the province flag choun_revolt_pretender
+*** save_event_target_as = first_province
+** Random owned province:
+*** Limited to:
+**** In the continent our country
+**** Has core on our country
+**** The province is not the capital of the country
+**** Follows our country's religion
+**** Controlled by our country
+**** Any of the following:
+***** highest_supply_limit_in_area = yes
+***** root:
+******* No owned province:
+******** In the continent our country
+******** Has core on our country
+******** The province is not the capital of the country
+******** highest_supply_limit_in_area = yes
+******** Does not have the province flag choun_revolt_pretender
+**** Does not have the province flag choun_revolt_pretender
+*** Sets the province flag choun_revolt_religious
+*** save_event_target_as = second_province
+
+'''Option: 1 "We shall crush them.:'''
+
+* Changes republican tradition by -1000%
+* Random owned province:
+** Limited to:
+*** Has the province flag choun_revolt_pretender
+** Spawns revolt of size 3 of 0 "Pretender rebels
+** Removes the province flag choun_revolt_pretender
+* Random owned province:
+** Limited to:
+*** Has the province flag choun_revolt_religious
+** Spawns revolt of size 2 of 0 "Religious rebels
+** Removes the province flag choun_revolt_religious
+
+=== 1 "Napoléon Bonaparte ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Does not have the global flag napoleon_happened_flag
+* Any of the following:
+** Year is at least 1799
+** Has the country flag fra_monarch_executed
+** Has the country flag the_directory_flag
+* Ruler's dynasty is not Bonaparte
+* Is the target of the revolution
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Sets the global flag napoleon_happened_flag
+
+'''Option: 1 "We need his leadership!:'''
+
+* Changes stability by -1
+* If:
+** Limited to:
+*** Has an heir
+** Hidden effect:
+*** Kills the heir of the country
+**** allow_new_heir_false = no
+* Spawns a ruler:
+** Named "Napoléon I"
+** Ruler's dynasty is Bonaparte
+** Ruler's administrative skill is at least 6
+** Ruler's diplomatic skill is at least 5
+** Ruler's military skill is at least 6
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+** Hidden effect:
+*** add_ruler_personality_ancestor:
+**** Named "inspiring_leader"
+* If:
+** Limited to:
+*** Has the country modifier "0 "The Reign of Terror"
+** Removes the country modifier "0 "The Reign of Terror"
+* set_ruler_flag = bonaparte_flag
+* Hidden effect:
+** Gets the country event:
+*** ID is french_revolution.8
+*** Base mean time to happen of 1460 random days
+
+'''Option: 0 "We don't want a new Caesar!:'''
+
+* Changes stability by 1
+* If:
+** Limited to:
+*** Any owned province:
+**** area = provence_area
+**** Has core on our country
+** If:
+*** Limited to:
+**** Any owned province:
+***** area = provence_area
+***** Has core on our country
+***** fort_level = 2
+*** Random owned province:
+**** Limited to:
+***** area = provence_area
+***** Has core on our country
+***** fort_level = 2
+**** Spawns revolt of size 3 of 0 "Pretender rebels
+** else:
+*** Random owned province:
+**** Limited to:
+***** area = provence_area
+***** highest_supply_limit_in_area = yes
+**** Spawns revolt of size 3 of 0 "Pretender rebels
+* else:
+** Random owned province:
+*** Limited to:
+**** In the continent our country
+**** The province is not the capital of the country
+**** highest_supply_limit_in_area = yes
+*** Spawns revolt of size 3 of 0 "Pretender rebels
+
+=== 0 "The Infernal Machine ===
+* Trigger:
+** Does not have the country flag napoleon_dies
+* desc = 1 "There has been an attempt on the life of our beloved [Root.Monarch.GetTitle]! The royalist conspirators concealed their bomb in a barrel on a cart parked on the Rue Saint-Nicaise, where Napoléon had to pass on the way to the Opéra to see the opening of Joseph Haydn's oratorio 'Die Schöpfung.' Nicknamed the 'Infernal Machine', the bomb was filled with gunpowder, flammable materials and bullets, and set off by using a long fuse. The explosion killed several bystanders but failed to hurt Napoléon.
+* Trigger:
+** Has the country flag napoleon_dies
+* desc = french_revolution.8.desc
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Does not have the country flag infernal_machine_flag
+* has_ruler_flag = bonaparte_flag
+* Any of the following:
+** has_reform = revolutionary_republic_reform
+** has_reform = revolutionary_empire_reform
+
+'''Immediate effects:'''
+
+* Sets the country flag infernal_machine_flag
+* Hidden effect:
+** One of the following will happen:
+*** 1 relative chance:
+**** Sets the country flag napoleon_dies
+*** 3 relative chance:
+
+'''Option: french_revolution.8.B:'''
+
+* Trigger:
+** Has the country flag napoleon_dies
+* Changes republican tradition by -1000%
+* Kills the ruler of the country
+
+'''Option: 1 "A lucky escape.:'''
+
+* Trigger:
+** Does not have the country flag napoleon_dies
+* Changes republican tradition by -500%
+
+=== 0 "Aspirations of an Empire ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_reform = revolutionary_republic_reform
+* has_ruler_flag = bonaparte_flag
+
+'''Option: 0 "France will be an Empire!:'''
+
+* Changes stability by -2
+* If:
+** Limited to:
+*** Does not have the monarchy government type
+** change_government_to_monarchy = yes
+* add_government_reform = revolutionary_empire_reform
+* Random owned province:
+** Limited to:
+*** In the continent our country
+*** Has core on our country
+*** The province is not the capital of the country
+*** highest_supply_limit_in_area = yes
+** Spawns revolt of size 3 of 0 "Revolutionary rebels
+
+'''Option: 0 "The Revolution must continue!:'''
+
+* Changes republican tradition by 1000%
+
+=== title = french_revolution.10.name ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Any of the following:
+** All of the following:
+*** Does not have the DLC Emperor
+*** has_disaster = 0 "French Revolution
+*** Any of the following:
+**** Does not have the country flag revolutionary_republic_trouble
+**** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+** Has the country flag revolution_disaster_revolutionary
+* Manpower are less than 25% of maximum
+* Any of the following:
+** Does not have the country flag revolutionary_republic_trouble
+** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.75:
+** Does not have the DLC Emperor
+
+'''Immediate effects:'''
+
+* Sets the country flag revolutionary_republic_trouble
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the country flag revolution_disaster_revolutionary
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Sets the country flag noble_rebels_rise
+** If:
+*** Limited to:
+**** Republican tradition is less than 50
+**** Republican tradition is at least 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+* Hidden effect:
+** If:
+*** Limited to:
+**** Does not have the country flag noble_rebels_rise
+**** Republican tradition is less than 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+** If:
+*** Limited to:
+**** Has the country flag noble_rebels_rise
+*** Random owned province:
+**** Limited to:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+**** save_event_target_as = rebel_spawn_province
+
+'''Option: 0 "The republic will survive!:'''
+
+* Trigger:
+** Has the country flag noble_rebels_rise
+* goto = rebel_spawn_province
+* Changes republican tradition by -1000%
+* event_target:rebel_spawn_province:
+** Spawns revolt of size 2 of 0 "Pretender rebels
+* Removes the country flag noble_rebels_rise
+
+'''Option: 0 "The republic will survive!:'''
+
+* Changes republican tradition by -1000%
+* Trigger:
+** Does not have the country flag noble_rebels_rise
+
+=== title = french_revolution.11.name ===
+* Trigger:
+** Has the DLC Emperor
+* picture = CONSPIRACY_eventPicture
+* Trigger:
+** Does not have the DLC Emperor
+* picture = IMPORTANT_STATUE_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Any of the following:
+** All of the following:
+*** Does not have the DLC Emperor
+*** has_disaster = 0 "French Revolution
+*** Any of the following:
+**** Does not have the country flag revolutionary_republic_trouble
+**** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+** Has the country flag revolution_disaster_revolutionary
+* 10 war exhaustion
+* Any of the following:
+** Does not have the country flag revolutionary_republic_trouble
+** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.75:
+** Does not have the DLC Emperor
+
+'''Immediate effects:'''
+
+* Sets the country flag revolutionary_republic_trouble
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the country flag revolution_disaster_revolutionary
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Sets the country flag noble_rebels_rise
+** If:
+*** Limited to:
+**** Republican tradition is less than 50
+**** Republican tradition is at least 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+* Hidden effect:
+** If:
+*** Limited to:
+**** Does not have the country flag noble_rebels_rise
+**** Republican tradition is less than 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+** If:
+*** Limited to:
+**** Has the country flag noble_rebels_rise
+*** Random owned province:
+**** Limited to:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+**** save_event_target_as = rebel_spawn_province
+
+'''Option: 0 "The republic will survive!:'''
+
+* Trigger:
+** Has the country flag noble_rebels_rise
+* goto = rebel_spawn_province
+* Changes republican tradition by -1000%
+* event_target:rebel_spawn_province:
+** Spawns revolt of size 2 of 0 "Pretender rebels
+* Removes the country flag noble_rebels_rise
+
+'''Option: 0 "The republic will survive!:'''
+
+* Trigger:
+** Does not have the country flag noble_rebels_rise
+* Changes republican tradition by -1000%
+
+=== title = french_revolution.12.name ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Any of the following:
+** All of the following:
+*** Does not have the DLC Emperor
+*** has_disaster = 0 "French Revolution
+*** Any of the following:
+**** Does not have the country flag revolutionary_republic_trouble
+**** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+** Has the country flag revolution_disaster_revolutionary
+* Is bankrupt
+* Does not have the country flag no_revolution_bankruptcy_event
+* Any of the following:
+** Does not have the country flag revolutionary_republic_trouble
+** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.75:
+** Does not have the DLC Emperor
+
+'''Immediate effects:'''
+
+* Sets the country flag revolutionary_republic_trouble
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the country flag revolution_disaster_revolutionary
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Sets the country flag noble_rebels_rise
+** If:
+*** Limited to:
+**** Republican tradition is less than 50
+**** Republican tradition is at least 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+* Hidden effect:
+** If:
+*** Limited to:
+**** Does not have the country flag noble_rebels_rise
+**** Republican tradition is less than 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+** If:
+*** Limited to:
+**** Has the country flag noble_rebels_rise
+*** Random owned province:
+**** Limited to:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+**** save_event_target_as = rebel_spawn_province
+
+'''Option: 0 "The republic will survive!:'''
+
+* Trigger:
+** Has the country flag noble_rebels_rise
+* goto = rebel_spawn_province
+* Changes republican tradition by -1000%
+* event_target:rebel_spawn_province:
+** Spawns revolt of size 2 of 0 "Pretender rebels
+* Removes the country flag noble_rebels_rise
+
+'''Option: 0 "The republic will survive!:'''
+
+* Trigger:
+** Does not have the country flag noble_rebels_rise
+* Changes republican tradition by -1000%
+
+=== title = french_revolution.13.name ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Any of the following:
+** All of the following:
+*** Does not have the DLC Emperor
+*** has_disaster = 0 "French Revolution
+*** Any of the following:
+**** Does not have the country flag revolutionary_republic_trouble
+**** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+** Has the country flag revolution_disaster_revolutionary
+* Has at least 20 active loans
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.75:
+** Does not have the DLC Emperor
+
+'''Immediate effects:'''
+
+* Sets the country flag revolutionary_republic_trouble
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the country flag revolution_disaster_revolutionary
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Sets the country flag noble_rebels_rise
+** If:
+*** Limited to:
+**** Republican tradition is less than 50
+**** Republican tradition is at least 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+* Hidden effect:
+** If:
+*** Limited to:
+**** Does not have the country flag noble_rebels_rise
+**** Republican tradition is less than 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+
+'''Option: 0 "The republic will survive!:'''
+
+* Changes republican tradition by -1000%
+* If:
+** Limited to:
+*** Has the country flag noble_rebels_rise
+** Random owned province:
+*** Limited to:
+**** In the continent our country
+**** Has core on our country
+**** The province is not the capital of the country
+**** Not controlled by 0 "Rebels
+**** The province is nto under siege
+*** Spawns revolt of size 2 of 0 "Noble rebels
+** Removes the country flag noble_rebels_rise
+
+=== title = french_revolution.14.name ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Any of the following:
+** All of the following:
+*** Does not have the DLC Emperor
+*** has_disaster = 0 "French Revolution
+*** Any of the following:
+**** Does not have the country flag revolutionary_republic_trouble
+**** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+** Has the country flag revolution_disaster_revolutionary
+* At least 25% of provinces are in revolt
+* Any of the following:
+** Does not have the country flag revolutionary_republic_trouble
+** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.75:
+** Does not have the DLC Emperor
+
+'''Immediate effects:'''
+
+* Sets the country flag revolutionary_republic_trouble
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the country flag revolution_disaster_revolutionary
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Sets the country flag noble_rebels_rise
+** If:
+*** Limited to:
+**** Republican tradition is less than 50
+**** Republican tradition is at least 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+* Hidden effect:
+** If:
+*** Limited to:
+**** Does not have the country flag noble_rebels_rise
+**** Republican tradition is less than 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+
+'''Option: 0 "The republic will survive!:'''
+
+* Changes republican tradition by -1000%
+* If:
+** Limited to:
+*** Has the country flag noble_rebels_rise
+** Random owned province:
+*** Limited to:
+**** In the continent our country
+**** Has core on our country
+**** The province is not the capital of the country
+**** Not controlled by 0 "Rebels
+**** The province is nto under siege
+*** Spawns revolt of size 2 of 0 "Pretender rebels
+** Removes the country flag noble_rebels_rise
+
+=== title = french_revolution.15.name ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Any of the following:
+** All of the following:
+*** Does not have the DLC Emperor
+*** has_disaster = 0 "French Revolution
+*** Any of the following:
+**** Does not have the country flag revolutionary_republic_trouble
+**** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+** Has the country flag revolution_disaster_revolutionary
+* Stability is lower than 0
+* Any of the following:
+** Does not have the country flag revolutionary_republic_trouble
+** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.75:
+** Does not have the DLC Emperor
+
+'''Immediate effects:'''
+
+* Sets the country flag revolutionary_republic_trouble
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the country flag revolution_disaster_revolutionary
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Sets the country flag noble_rebels_rise
+** If:
+*** Limited to:
+**** Republican tradition is less than 10
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+* Hidden effect:
+** If:
+*** Limited to:
+**** Does not have the country flag noble_rebels_rise
+**** Republican tradition is less than 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+
+'''Option: 0 "The republic will survive!:'''
+
+* Changes republican tradition by -1000%
+* If:
+** Limited to:
+*** Has the country flag noble_rebels_rise
+** Random owned province:
+*** Limited to:
+**** In the continent our country
+**** Has core on our country
+**** The province is not the capital of the country
+**** Not controlled by 0 "Rebels
+**** The province is nto under siege
+*** Spawns revolt of size 2 of 0 "Pretender rebels
+** Removes the country flag noble_rebels_rise
+
+=== title = french_revolution.16.name ===
+* Trigger:
+** Has the DLC Emperor
+* picture = CONSPIRACY_eventPicture
+* Trigger:
+** Does not have the DLC Emperor
+* picture = IMPORTANT_STATUE_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* is_revolutionary_republic_trigger = yes
+* Any of the following:
+** All of the following:
+*** Does not have the DLC Emperor
+*** has_disaster = 0 "French Revolution
+*** Any of the following:
+**** Does not have the country flag revolutionary_republic_trouble
+**** Has had the country flag "revolutionary_republic_trouble" for at least 365 days
+** Has the country flag revolution_disaster_revolutionary
+* Any of the following:
+** Does not have the country flag revolutionary_republic_trouble
+** Has had the country flag "revolutionary_republic_trouble" for at least 730 days
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 0.75:
+** Does not have the DLC Emperor
+
+'''Immediate effects:'''
+
+* Sets the country flag revolutionary_republic_trouble
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the country flag revolution_disaster_revolutionary
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Sets the country flag noble_rebels_rise
+** If:
+*** Limited to:
+**** Republican tradition is less than 50
+**** Republican tradition is at least 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+* Hidden effect:
+** If:
+*** Limited to:
+**** Does not have the country flag noble_rebels_rise
+**** Republican tradition is less than 25
+**** Any owned province:
+***** In the continent our country
+***** Has core on our country
+***** The province is not the capital of the country
+***** Not controlled by 0 "Rebels
+***** The province is nto under siege
+*** Randomized by 
+**** Acquisition chance:
+**** Sets the country flag noble_rebels_rise
+
+'''Option: 0 "Who dares question the republic!:'''
+
+* Changes republican tradition by -1000%
+* If:
+** Limited to:
+*** Has the country flag noble_rebels_rise
+** Random owned province:
+*** Limited to:
+**** In the continent our country
+**** Has core on our country
+**** The province is not the capital of the country
+**** Not controlled by 0 "Rebels
+**** The province is nto under siege
+*** Spawns revolt of size 2 of 0 "Pretender rebels
+** Removes the country flag noble_rebels_rise
+
+'''Option: 1 "Increase our public relief program.:'''
+
+* Changes administrative power stored by -50
+
+'''Option: 0 "Cut back on diplomatic spending.:'''
+
+* Changes diplomatic power stored by -50
+
+'''Option: 0 "Cut back on military spending.:'''
+
+* Changes military power stored by -50
+
+=== 0 "The French Gamble for Supremacy ===
+
+'''Trigger:'''
+
+* Does not have the country flag french_gamble_for_supremacy_flag
+* Country is 0 "France
+* Is the target of the revolution
+* 0 "Spain:
+** A vassal of our country
+* 0 "Austria:
+** A vassal of our country
+* 0 "Prussia:
+** A vassal of our country
+* 0 "Russia:
+** A vassal of our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 100 months
+
+'''Immediate effects:'''
+
+* Sets the country flag french_gamble_for_supremacy_flag
+
+'''Option: 0 "We are the Masters of Europe!:'''
+
+* Changes prestige by 100
+
+=== 0 "Calmer Times ===
+* Trigger:
+** is_revolutionary = yes
+* desc = 1 "The time of revolts and constant instability seem to be behind us. The Revolution has succeeded in transforming our society, sweeping away the old and renewing the state. Things will never be as they once were.
+* Trigger:
+** is_revolutionary_false = no
+* desc = french_revolution.18.d.reactionary
+* Trigger:
+** Has the DLC Emperor
+** is_revolutionary_false = no
+* picture = FAILED_REVOLUTION_eventPicture
+* Trigger:
+** Does not have the republic government type
+** Any of the following:
+*** is_revolutionary = yes
+*** Does not have the DLC Emperor
+* picture = GOOD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the republic government type
+* picture = ELECTION_REPUBLICAN_eventPicture
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* end_disaster = 0 "French Revolution
+* Hidden effect:
+** If:
+*** Limited to:
+**** is_revolutionary_republic_trigger = yes
+**** has_ruler_flag = bonaparte_flag
+*** Gets the country event:
+**** ID is french_revolution.9
+**** Base mean time to happen of 365 random days
+
+'''Option: 0 "Long Live the [Root.Monarch.GetTitle]!:'''
+
+* Trigger:
+** is_revolutionary_republic_trigger_false = yes
+** Does not have the DLC Emperor
+* add_stability_or_adm_power = yes
+* increase_legitimacy_large_effect = yes
+* clear_standard_revolution_elements_effect = yes
+
+'''Option: 0 "Long Live the Republic!:'''
+
+* Trigger:
+** is_revolutionary_republic_trigger = yes
+** Does not have the DLC Emperor
+* add_stability_or_adm_power = yes
+* increase_legitimacy_large_effect = yes
+* clear_standard_revolution_elements_effect = yes
+
+'''Option: french_revolution.18.e:'''
+
+* Trigger:
+** Has the DLC Emperor
+** Any of the following:
+*** All of the following:
+**** is_revolutionary_false = no
+**** Has the country flag revolution_disaster_revolutionary
+*** All of the following:
+**** is_revolutionary = yes
+**** Has the country flag revolution_disaster_reactionary
+* add_stability_or_adm_power = yes
+* If:
+** Limited to:
+*** is_revolutionary_false = no
+** Capital:
+*** Region is 
+**** Limited to:
+***** has_revolution_in_province = yes
+***** The province is owned by our country
+***** is_center_of_revolution_false = no
+**** remove_revolution_from_province_effect = yes
+** Hidden effect:
+*** log = [Root.GetName] lost the Revolution as the Revolutionaries.
+* else:
+** Hidden effect:
+*** log = [Root.GetName] lost the Revolution as the Reactionaries.
+* clear_standard_revolution_elements_effect = yes
+
+'''Option: french_revolution.18.f:'''
+
+* Trigger:
+** Has the DLC Emperor
+** Any of the following:
+*** All of the following:
+**** is_revolutionary = yes
+**** Has the country flag revolution_disaster_revolutionary
+*** All of the following:
+**** is_revolutionary_false = no
+**** Has the country flag revolution_disaster_reactionary
+* add_stability_or_adm_power = yes
+* If:
+** Limited to:
+*** is_revolutionary_false = no
+** Adds the modifier "no_revolution_here_country_dummy" for the rest of the campaign:
+*** No effects
+** If:
+*** Limited to:
+**** Any owned province:
+***** is_center_of_revolution = yes
+*** remove_center_of_revolution = yes
+** Hidden effect:
+*** Every owned province:
+**** Limited to:
+***** has_revolution_in_province = yes
+**** remove_revolution_from_province_effect = yes
+** increase_legitimacy_large_effect = yes
+** Hidden effect:
+*** log = [Root.GetName] won the Revolution as the Revolutionaries.
+* else:
+** Hidden effect:
+*** add_revolutionary_zeal = 1000
+** Hidden effect:
+*** log = [Root.GetName] won the Revolution as the Revolutionaries.
+* clear_standard_revolution_elements_effect = yes

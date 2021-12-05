@@ -1,0 +1,287 @@
+** Trigger:
+*** area = highlands_area
+*** Year is less than 1500
+*** The owner of the province:
+**** Country is 0 "Scotland
+**** Does not have the country modifier "0 "The Highlanders"
+**** is_free_or_tributary_trigger = yes
+**** In a defensive war against 0 "England
+**** Owns 0 "Inverness
+**** Controls the province 0 "Inverness
+*** Controlled by owner
+** Mean time to happen
+*** Base mean time to happen of 3 months
+** Option: 0 "We are ready for war!:
+*** Spawns an infantry unit belonging to our country
+*** Spawns an infantry unit belonging to our country
+*** Spawns an infantry unit belonging to our country
+*** Spawns a cavalry unit belonging to our country
+* namespace = flavor_sco
+* Gets the country event:
+** ID is flavor_sco.1
+** title = 0 "The Breaking of the Douglases
+** desc = 0 "In 1449 the king James II was old enough to marry and reclaim control of his kingdom. He immediately seized the Livingston estates, but was a bit more lenient against the Douglasses. In a quarrel in 1452, however, he himself stabbed William, 8th Earl of Douglas, to death. Historically this was the end of the power of the Douglas family and 3 years later all their land was confiscated and their castles demolished.
+** picture = ASSASSINATION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Scotland
+*** Year is less than 1474
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Destroy the castles and confiscate the lands of Douglasses:
+*** Modifies treasury by 0.5 years worth of income
+*** Changes administrative power stored by 50
+*** Random owned province:
+**** Limited to:
+***** In the continent 0 "Europe
+**** Spawns revolt of size 2 of 0 "Noble rebels
+** Option: 0 "Make peace with the Douglas family:
+*** Changes prestige by -5
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_sco.2
+** title = 0 "The Auld Alliance
+** desc = 0 "In 1512 France and Scotland renewed their ''Auld Alliance'' as a counterbalance to England's involvement in the anti-French schemes of Pope Julius II. This later drew the Scottish into a disastrous war against the English.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** 0 "France exists
+*** 0 "England exists
+*** Not at war with 0 "France
+*** Country is 0 "Scotland
+*** Year is at least 1512
+*** Year is less than 1550
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Good relations with France:
+*** 0 "France:
+**** Adds the opinion modifier "0 "Good relations" towards 0 "Scotland
+*** Adds the opinion modifier "0 "Good relations" towards 0 "France
+*** 0 "England:
+**** Adds the opinion modifier "0 "Irritated" towards 0 "Scotland
+** Option: 0 "We shall have nothing to do with France!:
+*** 0 "England:
+**** Adds the opinion modifier "0 "Pleased" towards 0 "Scotland
+*** 0 "France:
+**** Adds the opinion modifier "0 "Mildly displeased" towards 0 "Scotland
+* Gets the country event:
+** ID is flavor_sco.3
+** title = 0 "Cardinal Beaton
+** desc = 0 "As a trusted advisor of James V, Cardinal David Beaton managed to make sure that Scotland did not follow in England's footsteps and become Protestant. Instead he worked to strengthen the bond to Catholic France and even managed to arrange two marriages with French noblewomen which both brought considerable dowries in gold to the Scottish courts treasury.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Scotland
+*** 0 "France exists
+*** Not at war with 0 "France
+*** Year is at least 1529
+*** Year is less than 1555
+*** Follows the 0 "Catholic religion
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "An excellent minister:
+*** Changes administrative power stored by 50
+*** Changes military power stored by 50
+*** Changes diplomatic power stored by 50
+*** Changes prestige by 10
+*** Creates an advisor of the 0 "Theologian type:
+**** Named "Cardinal Beaton"
+**** Follows the 0 "Catholic religion
+**** Culture is 0 "Scottish
+**** discount = yes
+**** With a skill level of 3
+* Gets the country event:
+** ID is flavor_sco.4
+** title = 0 "John Knox and the Religious Strife
+** desc = 0 "John Knox became something of a spokesman for Protestantism in Scotland in the 1540s. Initially he was accompanying George Wishart on his preaching tours, but Wishart was captured and handed over to Cardinal David Beaton in St Andrews. There he was tried and burned on the stakes in 1546 for spreading Protestant heresy. Three months later Cardinal Beaton was murdered in revenge by Protestants. When John Knox arrived in St Andrews about a year later he was persuaded by scholars at the university to preach in the town. In June 1547, French assistance to fight the Protestants arrived and the castle of St Andrews which capitulated on terms that were later not kept. Knox and others were carried off to slavery in the French galleys but due to English intervention Knox was released 19 months later. He could, however, not return to Scotland and continue his preaching but had to stay under the protection of the English and had a large influence on the forming of the English Puritanism. He stayed in England until the Catholic Mary Tudor ascended the throne, at which time he thought it wise to flee to the continent. There he formulated his view that God-fearing magistrates and nobility have both the right and the duty to resist, if necessary by force, a ruler who threatens the safety of true religion. In 1559 he again was able to return to Scotland and was astounded by the progress made by the Reformed cause and by the eager reception given to him by all classes in the community.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Follows the 0 "Catholic religion
+*** Country is 0 "Scotland
+*** Year is at least 1546
+*** Year is less than 1570
+*** Any owned province:
+**** In the continent 0 "Europe
+**** Follows the 0 "Protestant religion
+**** Can spawn the 0 "Religious rebel type
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Religious Turmoil:
+*** Random owned province:
+**** Limited to:
+***** In the continent 0 "Europe
+***** Follows the 0 "Protestant religion
+***** Can spawn the 0 "Religious rebel type
+**** Spawns revolt of size 2 of 0 "Religious rebels
+*** Adds the modifier "0 "Religious Strife in Scotland" for 5 years:
+**** -25% religious unity
+* Gets the country event:
+** ID is flavor_sco.5
+** title = 0 "The First Covenant
+** desc = 0 "In 1557, a powerful group of nobles, called the Lords of the Congregation, drew up a Protestant proclamation which was later called the First Covenant, calling for the expulsion of the Catholic Church from Scotland. The motives, however, were probably much more to be able to confiscate the vast riches of the Catholic Church in Scotland than purely true faith.
+** picture = REFORM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Scotland
+*** Year is at least 1557
+*** Year is less than 1583
+*** Follows the 0 "Catholic religion
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Support the Lords of the Congregation:
+*** Changes stability by -1
+*** Every owned province:
+**** Limited to:
+***** Follows the 0 "Catholic religion
+**** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+***** local_unrest = 5
+*** Changes Papal Influence by -5
+*** Changes treasury by 300 ducats
+** Option: 0 "Oppose the Lords of the Congregation:
+*** Changes stability by -1
+*** Changes Papal Influence by 10
+* Gets the country event:
+** ID is flavor_sco.6
+** title = 0 "The Scottish East Indian Company
+** desc = 0 "As all other nations in this time with a coastline, the Scottish tried to duplicate the efforts of the highly successful English East Indian Company.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Scotland
+*** Year is at least 1698
+*** Year is less than 1800
+*** Has at least 2 ports
+*** Any of the following:
+**** Any active trade node:
+***** has_merchant = PREV
+***** Any province owned by a trade node member:
+****** Any of the following:
+******* Region is west_india_region
+******* Region is coromandel_region
+******* Region is deccan_region
+******* Region is bengal_region
+******* Region is malaya_region
+******* Region is moluccas_region
+******* Region is indonesia_region
+******* Region is oceanea_region
+**** bengal_region:
+***** The province is owned by 0 "Scotland
+**** west_india_region:
+***** The province is owned by 0 "Scotland
+**** deccan_region:
+***** The province is owned by 0 "Scotland
+**** coromandel_region:
+***** The province is owned by 0 "Scotland
+**** malaya_region:
+***** The province is owned by 0 "Scotland
+**** moluccas_region:
+***** The province is owned by 0 "Scotland
+**** indonesia_region:
+***** The province is owned by 0 "Scotland
+**** oceanea_region:
+***** The province is owned by 0 "Scotland
+** Mean time to happen
+*** Base mean time to happen of 2000 months
+** Option: 0 "We will exploit this!:
+*** Modifies treasury by -0.5 years worth of income
+*** Adds the modifier "0 "Casa da Índia" for the rest of the campaign:
+**** #merchants = 1
+**** #global_trade_power = 0.05
+**** Trade efficiency is at least 10%
+* Gets the country event:
+** ID is flavor_sco.7
+** title = 0 "Major Road Constructions in the Highlands
+** desc = 0 "The improving of roads and trade routes in northern Scotland had a great impact on Scottish economy in these areas, leading to increased trade and thus also higher tax incomes
+** picture = CITY_DEVELOPMENT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Scotland
+*** Year is at least 1725
+*** Year is less than 1800
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Invest in the road constructions:
+*** Changes treasury by -50 ducats
+*** 0 "Inverness:
+**** Changes base tax by 1
+*** 1 "Aberdeen:
+**** Changes base tax by 1
+** Option: 0 "Don't do it:
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_sco.8
+** title = 0 "The Glasgow Chamber of Commerce
+** desc = 0 "The opening of the Scottish Chamber of Commerce did a lot for helping Scottish pre-industrial trade and was one of the many factors behind keeping the Scottish economy Scottish.
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Scotland
+*** Year is at least 1700
+*** Year is less than 1800
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Trade reform:
+*** Adds 500% mercantilism
+** Option: 0 "Free trade:
+*** Adds -500% mercantilism
+*** Modifies treasury by 2 years worth of income
+*** Adds the modifier "0 "Free Trade in Scotland" for the rest of the campaign:
+**** +10% trade power abroad
+* Gets the country event:
+** ID is flavor_sco.9
+** title = 0 "George Bruce of Carnock
+** desc = 0 "The Scottish merchant, engineer and innovator in coal mining techniques, Sir George Bruce, introduced undersea mining into the Upper Hirst seam. It used a new drainage technology that attracted a visit from King James VI in 1617. The king accepted Bruce's invitation to visit one of his mines which tunneled down beneath the sea bed. After venturing into a tunnel which went far out into the Firth of Forth, the king found himself at a shaft point where the coal was loaded onto the ships. Water surrounded the top of the shaft and king James, alarmed with this, accused Sir George of an assassination attempt and of treason. George Bruce then pointed out the rowing boat and explained that they could either use the boat or return by the tunnel from whence they came. The king relaxed and took the option of the boat journey.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Scotland
+*** Year is at least 1570
+*** Year is less than 1625
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Employ him:
+*** Creates an advisor of the 0 "Natural Scientist type:
+**** Named "George Bruce"
+**** Culture is 0 "Scottish
+**** discount = yes
+**** With a skill level of 3
+** Option: 0 "Ignore him:
+*** Changes prestige by -1
+* Gets the country event:
+** ID is flavor_sco.10
+** title = 0 "The Scottish Witchcraft Act
+** desc = 0 "The Scottish Witchcraft Act of 1563 made the practice of witchcraft and consulting with witches capital offenses. James VI played a major part as 'victim' and investigator in the North Berwick witch trials that began in 1589 and were the first major series of trials under the new act. The king published a defense of witch-hunting in the 'Daemonologie' in 1597 but later became increasingly skeptical and took steps to limit prosecutions. Scotland tried an estimate of 6,000 people for witchcraft, where seventy-five per cent of the accused were women and over 1,500 executed.
+** picture = ANGRY_MOB_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Scotland
+*** Year is at least 1563
+*** Year is less than 1735
+*** Is not in regency
+** Mean time to happen
+*** Base mean time to happen of 2000 months
+** Option: 0 "Defend the Witchcraft Act:
+*** Adds the ruler modifier "0 "Scottish Witchcraft Act" until the ruler's death:
+**** +1 Papal influence per year
+**** +5% technology cost
+** Option: 0 "Denounce it:
+*** Changes prestige by -5
+* Gets the country event:
+** ID is flavor_sco.11
+** title = 0 "Annexing London
+** desc = 0 "The defenders of London have surrendered the city and treaties have been signed formally annexing it into Scotland. All that remains is to decide London's fate. Should we let the Londoners be? Or should we sack the city and relocate its treasures and institutions to our own capital?
+** picture = CITY_DEVELOPMENT_eventPicture
+** is_triggered_only = yes
+** Option: 0 "To Edinburgh!:
+*** 0 "London:
+**** Changes base tax by -2
+**** add_base_manpower = -2
+**** add_base_production = -2
+*** 0 "Lothian:
+**** Changes base tax by 3
+**** add_base_manpower = 3
+**** add_base_production = 3
+**** Adds the modifier "0 "London to Edinburgh" until the end of the campaign:
+** Option: 0 "Leave London be:
+*** add_stability_or_adm_power = yes

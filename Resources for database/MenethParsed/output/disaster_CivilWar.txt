@@ -1,0 +1,432 @@
+
+=== 0 "Civil War! ===
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** set_saved_name:
+*** Named "upstart_pretender"
+* Random owned province:
+** Limited to:
+*** Has core on our country
+*** development = 10
+*** The province is not the capital of the country
+** Spawns revolt of size 2 of 0 "Pretender rebels
+** add_local_autonomy = 25
+** Hidden effect:
+*** save_event_target_as = rebel_province
+* Sets the country flag had_civil_war
+
+'''Option: 0 "Crush the opposition!:'''
+
+* Changes prestige by -10
+* If:
+** Limited to:
+*** Country is 0 "Lan Xang
+
+=== 0 "End of Civil War ===
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Victory is ours!:'''
+
+* Removes the country flag civilwar_on_capital
+* Removes the country flag total_war_peak
+* Removes the country flag favoured_faction
+* Removes the country flag dominant_faction
+* Removes the country flag civil_war_knees_event
+* Adds 10 legitimacy
+* add_horde_unity = 10
+* add_mandate_large_effect = yes
+* Changes stability by 3
+
+=== 0 "A Cry for Help ===
+
+'''Trigger:'''
+
+* At least 5% of provinces are in revolt
+* Has at least 1 allies
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random ally:
+*** save_event_target_as = ally_country
+
+'''Option: 0 "Request aid from [ally_country.GetName].:'''
+
+* Changes diplomatic power stored by -100
+* AI chance:
+** Base chance of 40
+
+'''Option: 1 "Rely on our own strength.:'''
+
+* AI chance:
+** Base chance of 60
+* Adds 5 legitimacy
+* add_horde_unity = 5
+* add_mandate_effect = yes
+* Random owned province:
+** Limited to:
+*** Has core on our country
+** Spawns revolt of size 1 of 0 "Pretender rebels
+
+=== 0 "Unscrupulous In-laws ===
+
+'''Trigger:'''
+
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+** has_consort = yes
+* else:
+** Has at least 1 royal marriages
+* Any owned province:
+** The province is not the capital of the country
+** Has core on our country
+** local_autonomy_false = 90
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Has core on our country
+**** local_autonomy_false = 90
+*** save_event_target_as = inlaws_province
+
+'''Option: 0 "Take appropriate measures.:'''
+
+* AI chance:
+** Base chance of 40
+* Changes administrative power stored by -25
+* event_target:inlaws_province:
+** Spawns 1 revolt size of pretender rebels
+
+'''Option: 0 "Ignore their pathetic attempts.:'''
+
+* AI chance:
+** Base chance of 60
+* Changes prestige by -20
+* event_target:inlaws_province:
+** add_local_autonomy = 20
+
+=== 1 "The Defense of [Root.GetCapitalName] Falters ===
+* Province event
+
+'''Trigger:'''
+
+* fort_level = 1
+* The province is under siege
+* sieged_by = 0 "Rebels
+* The owner of the province:
+** Is not at war
+** has_disaster = 0 "Civil War
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 120 months
+
+'''Option: 0 "So be it.:'''
+
+* Changes siege status by 3
+
+=== 0 "Army Deserters ===
+
+'''Trigger:'''
+
+* Does not have the country modifier "0 "Deserters"
+* Does not have the country modifier "0 "Morale Boost"
+* Manpower are at least 1% of maximum
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Try to strengthen their morale.:'''
+
+* Modifies treasury by -0.50 years worth of income
+* Adds 5 legitimacy
+* add_horde_unity = 5
+* add_mandate_effect = yes
+* Adds the modifier "0 "Morale Boost" for 5 years:
+** +10% land morale
+** +5% discipline
+** +20% land morale recovery
+
+'''Option: 0 "We have no resources for that.:'''
+
+* AI chance:
+** Base chance of 0
+* Adds the modifier "0 "Deserters" for 5 years:
+** -10% land morale
+* Changes national manpower by -0.25 years worth of men
+
+=== 0 "Rebel Support in $CAPITAL$ ===
+
+'''Trigger:'''
+
+* Does not have the country flag civilwar_on_capital
+* Capital:
+** Controlled by owner
+** The province is nto under siege
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Sets the country flag civilwar_on_capital
+* Hidden effect:
+** Capital:
+*** save_event_target_as = the capital
+
+'''Option: 0 "This is serious!:'''
+
+* Capital:
+** Spawns 2 revolt size of pretender rebels
+
+=== 0 "Civil War Brings our Nation to its Knees ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has had the country flag "had_civil_war" for at least 365 days
+* Does not have the country flag civil_war_knees_event
+* Any owned province:
+** Controlled by 0 "Rebels
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Sets the country flag civil_war_knees_event
+
+'''Option: 0 "There is nothing we can do.:'''
+
+* Every owned province:
+** Limited to:
+*** The province is not the capital of the country
+*** Has core on our country
+** add_local_autonomy = 15
+
+'''Option: 1 "Do whatever is needed to restore order.:'''
+
+* Changes administrative power stored by -100
+* Adds 10 legitimacy
+* add_horde_unity = 10
+* add_mandate_large_effect = yes
+
+'''Option: 1 "Surely we can bribe off some of our opponents.:'''
+
+* Modifies treasury by -0.25 years worth of income
+* Changes prestige by -25
+* Adds 5 legitimacy
+* add_horde_unity = 5
+* add_mandate_effect = yes
+
+=== 1 "The Chaos of the Civil War Multiplies ===
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 1 "We shall fight them in battle!:'''
+
+* AI chance:
+** Base chance of 20
+* Changes stability by -1
+* Random owned province:
+** Limited to:
+*** Has core on our country
+** Spawns 1 revolt size of pretender rebels
+
+'''Option: 1 "Grant concessions, we cannot risk losing their support.:'''
+
+* AI chance:
+** Base chance of 80
+* Modifies treasury by -0.25 years worth of income
+* Changes prestige by -25
+* Adds 5 legitimacy
+* add_horde_unity = 5
+* add_mandate_effect = yes
+
+=== 1 "The Opposition Factions ===
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Offer the moderates concessions.:'''
+
+* Changes administrative power stored by -75
+* Changes diplomatic power stored by -75
+* Sets the country flag favoured_faction
+* Adds 5 legitimacy
+* add_horde_unity = 5
+* add_mandate_effect = yes
+
+'''Option: 0 "Don't support any faction.:'''
+
+* Changes stability by -1
+
+=== 0 "Faction Requests Financial Aid ===
+
+'''Trigger:'''
+
+* Has the country flag favoured_faction
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "Lend support.:'''
+
+* Modifies treasury by -0.5 years worth of income
+* Adds 5 legitimacy
+* add_horde_unity = 5
+* add_mandate_effect = yes
+
+'''Option: 0 "Ignore their pleas.:'''
+
+* Changes prestige by -10
+* Adds -5 legitimacy
+* add_horde_unity = -5
+* reduce_mandate_effect = yes
+* AI chance:
+** Base chance of 0
+
+=== 1 "Dissentions among our Supporters ===
+
+'''Trigger:'''
+
+* Has the country flag favoured_faction
+* Any owned province:
+** The province has a different culture than its owner
+** has_owner_accepted_culture_false = no
+** The province is not the capital of the country
+** local_autonomy_false = 75
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province has a different culture than its owner
+**** has_owner_accepted_culture_false = no
+**** The province is not the capital of the country
+**** local_autonomy_false = 75
+*** save_event_target_as = rebel_province
+
+'''Option: 1 "We don't need his support.:'''
+
+* event_target:rebel_province:
+** Spawns 1 revolt size of pretender rebels
+* Adds 5 legitimacy
+* add_horde_unity = 5
+* add_mandate_effect = yes
+
+'''Option: 1 "Give in to his demands.:'''
+
+* event_target:rebel_province:
+** add_local_autonomy = 50
+* Changes prestige by -10
+
+=== 1 "Civil War Becomes Total War ===
+
+'''Trigger:'''
+
+* Does not have the country flag total_war_peak
+* At least 20% of provinces are in revolt
+
+'''Immediate effects:'''
+
+* Sets the country flag total_war_peak
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: 0 "We can't do anything about it.:'''
+
+* Adds -5 legitimacy
+* add_horde_unity = -5
+* reduce_mandate_effect = yes
+* Every core province:
+** Limited to:
+*** The province is not the capital of the country
+*** Has core on our country
+** add_local_autonomy = 15
+
+'''Option: 0 "Try to suppress the worst spots.:'''
+
+* Changes administrative power stored by -100
+* Changes diplomatic power stored by -100
+* Changes military power stored by -100
+* Adds 5 legitimacy
+* add_horde_unity = 5
+* add_mandate_effect = yes
+
+=== 1 "Dominant Faction Emerges ===
+
+'''Trigger:'''
+
+* Has the country flag total_war_peak
+* Has the country flag favoured_faction
+* Does not have the country flag dominant_faction
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Sets the country flag dominant_faction
+
+'''Option: 1 "Fight it out with them.:'''
+
+* Random owned province:
+** Limited to:
+*** Has core on our country
+** Spawns 1 revolt size of pretender rebels
+
+'''Option: 0 "Negotiate a settlement between all major factions.:'''
+
+* Modifies treasury by -0.50 years worth of income
+* Adds 5 legitimacy
+* add_horde_unity = 5
+* add_mandate_effect = yes

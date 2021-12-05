@@ -1,0 +1,1102 @@
+
+=== title = church_estate_events.1.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* Is in the 0 "Christian religion group
+* estate_influence:
+** estate = estate_church
+** influence = 25
+* estate_influence:
+** estate_false = estate_church
+** influence_false = 75
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DEMANDED_CHURCH_MONEY
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+* Any of the following:
+** All of the following:
+*** Is at war
+*** War score lower than least 25
+** is_in_deficit = yes
+** Has at least 5 active loans
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.1.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* Changes Patriarch authority by -10%
+* Changes Papal Influence by -10
+* Modifies treasury by 0.35 years worth of income
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DEMANDED_CHURCH_MONEY
+** influence = -10
+** Lasting 9125 days
+
+'''Option: church_estate_events.1.b:'''
+
+* Changes prestige by 5
+* Changes piety by 10%
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 10
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+** influence = 10
+** Lasting 9125 days
+
+=== title = church_estate_events.101.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* Follows the 0 "Hindu religion
+* estate_influence:
+** estate = estate_church
+** influence = 25
+* estate_influence:
+** estate_false = estate_church
+** influence_false = 75
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DEMANDED_CHURCH_MONEY
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+* Any of the following:
+** All of the following:
+*** Is at war
+*** War score lower than least 25
+** is_in_deficit = yes
+** Has at least 5 active loans
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.1.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* Modifies treasury by 0.35 years worth of income
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DEMANDED_CHURCH_MONEY
+** influence = -10
+** Lasting 9125 days
+
+'''Option: church_estate_events.1.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* Changes prestige by 5
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 10
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+** influence = 10
+** Lasting 9125 days
+
+=== title = church_estate_events.102.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* Is in the 0 "Pagan religion group
+* estate_influence:
+** estate = estate_church
+** influence = 25
+* estate_influence:
+** estate_false = estate_church
+** influence_false = 75
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DEMANDED_CHURCH_MONEY
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+* Any of the following:
+** All of the following:
+*** Is at war
+*** War score lower than least 25
+** is_in_deficit = yes
+** Has at least 5 active loans
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.1.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_doom = 5
+* add_authority = -10
+* Modifies treasury by 0.35 years worth of income
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DEMANDED_CHURCH_MONEY
+** influence = -10
+** Lasting 9125 days
+
+'''Option: church_estate_events.1.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* Changes prestige by 5
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 10
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+** influence = 10
+** Lasting 9125 days
+
+=== title = church_estate_events.103.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* Is in the 0 "Muslim religion group
+* estate_influence:
+** estate = estate_church
+** influence = 25
+* estate_influence:
+** estate_false = estate_church
+** influence_false = 75
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DEMANDED_CHURCH_MONEY
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+* Any of the following:
+** All of the following:
+*** Is at war
+*** War score lower than least 25
+** is_in_deficit = yes
+** Has at least 5 active loans
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.1.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* Modifies treasury by 0.35 years worth of income
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DEMANDED_CHURCH_MONEY
+** influence = -10
+** Lasting 9125 days
+
+'''Option: church_estate_events.1.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* Changes prestige by 5
+* Changes piety by -10%
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 10
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+** influence = 10
+** Lasting 9125 days
+
+=== title = church_estate_events.104.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* Is not in 0 "Muslim's religion group
+* Is not in 0 "Christian's religion group
+* Is not in 0 "Pagan's religion group
+* Does not follow the 0 "Hindu religion
+* Does not follow the 0 "Theravada religion
+* Does not follow the 0 "Mahayana religion
+* Does not follow the 0 "Vajrayana religion
+* estate_influence:
+** estate = estate_church
+** influence = 25
+* estate_influence:
+** estate_false = estate_church
+** influence_false = 75
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DEMANDED_CHURCH_MONEY
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+* Any of the following:
+** All of the following:
+*** Is at war
+*** War score lower than least 25
+** is_in_deficit = yes
+** Has at least 5 active loans
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.1.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* Modifies treasury by 0.35 years worth of income
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DEMANDED_CHURCH_MONEY
+** influence = -10
+** Lasting 9125 days
+
+'''Option: church_estate_events.1.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* Changes prestige by 5
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 10
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+** influence = 10
+** Lasting 9125 days
+
+=== title = church_estate_events.105.t ===
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* Any of the following:
+** Follows the 0 "Theravada religion
+** Follows the 0 "Mahayana religion
+** Follows the 0 "Vajrayana religion
+* estate_influence:
+** estate = estate_church
+** influence = 25
+* estate_influence:
+** estate_false = estate_church
+** influence_false = 75
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DEMANDED_CHURCH_MONEY
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+* Any of the following:
+** All of the following:
+*** Is at war
+*** War score lower than least 25
+** is_in_deficit = yes
+** Has at least 5 active loans
+* Cannot fire randomly
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.1.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_karma = -10
+* Modifies treasury by 0.35 years worth of income
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DEMANDED_CHURCH_MONEY
+** influence = -10
+** Lasting 9125 days
+
+'''Option: church_estate_events.1.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* Changes prestige by 5
+* add_karma = 10
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 10
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_DIDNT_DEMAND_CHURCH_MONEY
+** influence = 10
+** Lasting 9125 days
+
+=== title = church_estate_events.2.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_CHURCH_ADVANCE
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_CHURCH_ADVANCE_20
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_CHURCH_DECLINE
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.2.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_CHURCH_ADVANCE
+** influence = 10
+** Lasting 5475 days
+
+=== title = church_estate_events.3.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_CHURCH_ADVANCE
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_CHURCH_ADVANCE_20
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_CHURCH_DECLINE
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.3.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_CHURCH_DECLINE
+** influence = -10
+** Lasting 5475 days
+
+=== title = church_estate_events.4.t ===
+* Trigger:
+** has_estate = estate_burghers
+* desc = church_estate_events.4.d
+* Trigger:
+** has_estate = estate_vaisyas
+* desc = church_estate_events.4.d.2
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* Any of the following:
+** All of the following:
+*** has_estate = estate_burghers
+*** estate_territory:
+**** estate = estate_burghers
+**** territory = 1
+** All of the following:
+*** has_estate = estate_vaisyas
+*** estate_territory:
+**** estate = estate_vaisyas
+**** territory = 1
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_TITHES_DEFENDED
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_TITHES_UNDERMINED
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.4.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+** Multiplies value by 0.5:
+*** has_estate = estate_burghers
+*** estate_loyalty:
+**** estate_false = estate_burghers
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** has_estate = estate_burghers
+*** estate_influence:
+**** estate = estate_burghers
+**** influence = 60
+** Multiplies value by 0.5:
+*** has_estate = estate_vaisyas
+*** estate_loyalty:
+**** estate_false = estate_vaisyas
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** has_estate = estate_vaisyas
+*** estate_influence:
+**** estate = estate_vaisyas
+**** influence = 60
+* Modifies treasury by 0.2 years worth of income
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+*** Any owned province:
+**** local_autonomy = 25
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+** Random owned province:
+*** Limited to:
+**** local_autonomy = 25
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 10
+***** province_trade_power = 5
+*** add_local_autonomy = -25
+* If:
+** Limited to:
+*** has_estate = estate_vaisyas
+*** Any owned province:
+**** local_autonomy = 25
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 7
+***** province_trade_power = 5
+** Random owned province:
+*** Limited to:
+**** local_autonomy = 25
+**** Any of the following:
+***** The owner of the province:
+****** Has the republic government type
+***** development = 7
+***** province_trade_power = 5
+*** add_local_autonomy = -25
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 15
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = -15
+* If:
+** Limited to:
+*** has_estate = estate_vaisyas
+** add_estate_loyalty:
+*** estate = estate_vaisyas
+*** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_TITHES_DEFENDED
+** influence = 10
+** Lasting 5475 days
+* If:
+** Limited to:
+*** has_estate = estate_burghers
+** add_estate_influence_modifier:
+*** estate = estate_burghers
+*** desc = EST_VAL_TITHES_DEFENDED
+*** influence = -10
+*** Lasting 5475 days
+* If:
+** Limited to:
+*** has_estate = estate_vaisyas
+** add_estate_influence_modifier:
+*** estate = estate_vaisyas
+*** desc = EST_VAL_TITHES_DEFENDED
+*** influence = -10
+*** Lasting 5475 days
+
+'''Option: church_estate_events.4.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_TITHES_UNDERMINED
+** influence = -10
+** Lasting 5475 days
+
+=== title = church_estate_events.5.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* estate_loyalty:
+** estate_false = estate_church
+** loyalty_false = 30
+* Any owned province:
+** Follows our country's religion
+** The province is not the capital of the country
+** yes is a city
+* estate_territory:
+** estate = estate_church
+** territory = 10
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag peasant_clergy_revolt
+***** value_false = estate
+***** estate_false = estate_church
+**** Any owned province:
+***** Follows our country's religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag peasant_clergy_revolt
+**** check_reducing_estate_revolt_size_trigger:
+***** FLAG = peasant_clergy_revolt
+*** Random owned province:
+**** Limited to:
+***** Follows our country's religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag peasant_clergy_revolt
+**** Sets the province flag peasant_clergy_revolt
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.5.a:'''
+
+* Changes stability by -1
+* If:
+** Limited to:
+*** Any owned province:
+**** Has core on our country
+** Every owned province:
+*** Limited to:
+**** Has the province flag peasant_clergy_revolt
+*** Removes the province flag peasant_clergy_revolt
+*** Spawns revolt of size 1 of 0 "Peasant rebels
+
+=== title = church_estate_events.6.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* estate_influence:
+** estate = estate_church
+** influence = 70
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_ACCEPTED_HOLY_LAW
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_REJECTED_HOLY_LAW
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.6.a:'''
+
+* AI chance:
+** Base chance of 25
+* Adds the modifier "religious_court_life" for 15 years:
+** +15% stability cost modifier
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_ACCEPTED_HOLY_LAW
+** influence = 10
+** Lasting 5475 days
+
+'''Option: church_estate_events.6.b:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.2:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* Changes stability by -1
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -20
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_REJECTED_HOLY_LAW
+** influence = -10
+** Lasting 5475 days
+
+=== title = church_estate_events.7.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* estate_loyalty:
+** estate = estate_church
+** loyalty = 70
+* estate_influence:
+** estate = estate_church
+** influence = 70
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** Stability is lower than 3
+*** One of the following will happen:
+**** 65 relative chance:
+***** Sets the country flag loyalty_to_the_crown
+**** 35 relative chance:
+***** Sets the country flag efficient_administration
+** If:
+*** Limited to:
+**** Stability is at least 3
+*** Sets the country flag loyalty_to_the_crown
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.7.a:'''
+
+* trigger_switch:
+** on_trigger = has_country_flag
+** loyalty_to_the_crown:
+*** Adds 15 legitimacy
+*** add_horde_unity = 15
+*** Changes republican tradition by 700%
+*** add_devotion = 7
+*** add_authority = 15
+*** Changes piety by 15%
+*** Changes Papal Influence by 10
+*** Changes Patriarch authority by 10%
+*** Removes the country flag loyalty_to_the_crown
+** efficient_administration:
+*** add_stability_or_adm_power = yes
+*** Removes the country flag efficient_administration
+
+=== title = church_estate_events.8.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* has_estate = estate_nobles
+* crown_land_share = 10
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_CHURCH_PROPERTIES_DEFENDED
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_LAND_THEFT
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.8.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_nobles
+**** influence = 60
+* scaled_estate_church_land_share_effect = yes
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 15
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_CHURCH_PROPERTIES_DEFENDED
+** influence = 10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_CHURCH_PROPERTIES_DEFENDED
+** influence = -10
+** Lasting 5475 days
+
+'''Option: church_estate_events.8.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_nobles
+**** influence = 60
+* scaled_estate_nobles_land_share_effect = yes
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_LAND_THEFT
+** influence = -10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_LAND_THEFT
+** influence = 10
+** Lasting 5475 days
+
+'''Option: church_estate_events.8.c:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 45
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_nobles
+**** influence = 60
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_estate_loyalty:
+** estate = estate_nobles
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_LAND_THEFT
+** influence = -10
+** Lasting 5475 days
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_LAND_THEFT
+** influence = -10
+** Lasting 5475 days
+
+=== title = church_estate_events.9.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* has_estate = estate_nobles
+* Does not follow the 0 "Confucian religion
+* Any owned province:
+** Does not follow the religion of its owner
+** yes is a city
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_FOUGHT_SYNCRETISM
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_SYNCRETISM
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.9.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 60
+* Adds the modifier "campaign_against_syncretism" for 15 years:
+** +1 tolerance of the true faith
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_FOUGHT_SYNCRETISM
+** influence = 10
+** Lasting 5475 days
+* reduce_estate_dhimmi_loyalty_effect = yes
+
+'''Option: church_estate_events.9.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 65
+* Adds the modifier "missionary_syncretism" for 15 years:
+** +1% global missionary strength
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_SYNCRETISM
+** influence = -10
+** Lasting 5475 days
+* add_estate_dhimmi_loyalty_effect = yes
+
+=== title = church_estate_events.10.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_church
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_INDEPENDENT_CHURCH
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_MEDDLING_IN_CHURCH_MATTERS
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: church_estate_events.10.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 65
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_INDEPENDENT_CHURCH
+** influence = 10
+** Lasting 5475 days
+
+'''Option: church_estate_events.10.b:'''
+
+* Modifies treasury by -0.25 years worth of income
+* Changes prestige by -10
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 65
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 10
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_MEDDLING_IN_CHURCH_MATTERS
+** influence = -10
+** Lasting 5475 days
+
+=== title = church_estate_events.11.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: church_estate_events.11.a:'''
+

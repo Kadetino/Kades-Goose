@@ -1,0 +1,330 @@
+** is_triggered_only = yes
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag had_ambrosian_republic
+**** change_government_to_republic = yes
+**** add_government_reform = 0 "Ambrosian Republic
+** Option: 0 "For St. Ambrose:
+*** AI chance:
+**** Base chance of 90
+*** Tooltip:
+**** Changes government type to republic
+**** add_government_reform = 0 "Ambrosian Republic
+*** Changes republican tradition by 500%
+*** Changes stability by -2
+*** Every neighbor country:
+**** Limited to:
+***** Is not a vassal
+***** Has the monarchy government type
+***** Follows the 0 "Catholic religion
+**** Adds the opinion modifier "0 "Against St. Ambrose Republic" towards our country
+**** If:
+***** Limited to:
+****** Has the monarchy government type
+****** has_reform_false = 0 "Elective Monarchy
+***** Gives the 0 "Government Form War casus belli against 0 "Milan
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** Is in regency
+***** Gets the country event:
+****** ID is 700
+* Gets the country event:
+** ID is flavor_mlo.2
+** title = 0 "Guelph-Ghibelline Feud in Milano
+** desc = 0 "Internal dissent is prominent in Milan. The populace is severely divided between various factions. Guelph aristocrats being elected over Ghibellines weakens the Republic and makes it less democratic. However, some stability is needed!
+** picture = DEBATE_REPUBLICAN_eventPicture
+** is_triggered_only = yes
+** Trigger:
+*** Country is 0 "Milan
+*** has_reform = 0 "Ambrosian Republic
+*** Republican tradition is less than 75
+** Option: 0 "Side with the Guelph:
+*** Changes republican tradition by -1000%
+*** Changes stability by 1
+*** Random owned province:
+**** Limited to:
+***** Region is italy_region
+**** add_unrest = 10
+** Option: 0 "Favor the Ghibelline:
+*** Changes republican tradition by 1000%
+*** Changes stability by -1
+*** Random owned province:
+**** Limited to:
+***** Region is italy_region
+**** add_unrest = 10
+* Gets the country event:
+** ID is flavor_mlo.3
+** title = 0 "The Ospedale Maggiore
+** desc = 2 "On [Root.Monarch.GetTitle] [Root.Monarch.GetName]'s request, the renowned architect Antonio Filarete has drawn up plans for the new Ca'Granda Hospital, which once complete will be one of the first community hospitals in Italy. Dedicated to the people of Annunciata (who have been hesitant to recognize the [Root.Monarch.GetTitle]'s authority), it shall be built in the new, fashionable Renaissance style.
+** picture = UNIVERSITY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Milan
+*** Year is at least 1456
+*** Owns 0 "Milan
+*** Is not at war
+*** Year is less than 1470
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Let it be built!:
+*** Changes republican tradition by 1000%
+*** add_stability_or_adm_power = yes
+*** Adds 10 legitimacy
+*** 0 "Milan:
+**** Changes base tax by 1
+**** add_base_manpower = 1
+* Gets the country event:
+** ID is flavor_mlo.4
+** title = 0 "The Treaty of Lodi
+** desc = 1 "Our diplomats have negotiated a peace between ourselves, Naples, Florence and Venice! Putting an end to the long struggles between Milan and Venice, it sets up a balance of power in northern Italy including the four great states of Italy. With luck, it will provide us with the security to consolidate our position.
+** picture = DIPLOMACY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Milan
+*** Year is at least 1450
+*** Is not at war
+*** Has at least 3 provinces
+*** Year is less than 1490
+*** 0 "Naples:
+**** Is not at war
+**** Has at least 3 provinces
+*** 0 "Venice:
+**** Is not at war
+**** Has at least 3 provinces
+*** 0 "Florence:
+**** Is not at war
+**** Has at least 3 provinces
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Peace in our time!:
+*** AI chance:
+**** Base chance of 90
+*** 0 "Naples:
+**** Adds the opinion modifier "0 "The Treaty of Lodi" towards our country
+*** 0 "Venice:
+**** Adds the opinion modifier "0 "The Treaty of Lodi" towards our country
+*** 0 "Florence:
+**** Adds the opinion modifier "0 "The Treaty of Lodi" towards our country
+*** Hidden effect:
+**** 0 "Naples:
+***** Gets the country event:
+****** ID is flavor_mlo.5
+**** 0 "Venice:
+***** Gets the country event:
+****** ID is flavor_mlo.5
+**** 0 "Florence:
+***** Gets the country event:
+****** ID is flavor_mlo.5
+** Option: 0 "This will get in the way of our ambitions...:
+*** Changes military power stored by 10
+* Gets the country event:
+** ID is flavor_mlo.5
+** title = 0 "The Treaty of Lodi
+** desc = 1 "The Milanese have agreed to sign a peace treaty between themselves, Naples, Florence and Venice! Putting an end to the long struggles between Milan and Venice, it sets up a balance of power in northern Italy including the four great states of Italy. With luck, it will provide us with the security to consolidate our position.
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Peace in our time!:
+*** 0 "Naples:
+**** Adds the opinion modifier "0 "The Treaty of Lodi" towards our country
+*** 0 "Florence:
+**** Adds the opinion modifier "0 "The Treaty of Lodi" towards our country
+*** 0 "Venice:
+**** Adds the opinion modifier "0 "The Treaty of Lodi" towards our country
+*** 0 "Milan:
+**** Adds the opinion modifier "0 "The Treaty of Lodi" towards our country
+* Gets the country event:
+** ID is flavor_mlo.6
+** title = 0 "Niccolò Machiavelli
+** desc = 0 "Niccolò Machiavelli was one of the most important writers during the renaissance, while also serving as diplomat for the Florentine Republic. He is mostly remembered for being the founder of modern political science, but also wrote comedies and poetry.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Tuscany
+**** Country is 0 "Florence
+*** Year is at least 1490
+*** The advisor with the id 796 does not exist
+*** Has the republic government type
+*** Owns 0 "Firenze
+*** Year is less than 1515
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Immediate effects:
+*** Sets the country flag we_have_macchiavelli
+** Option: 0 "Maybe he will write a book for us:
+*** AI chance:
+**** Base chance of 90
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Creates an advisor of the 0 "Philosopher type:
+**** Culture is 0 "Tuscan
+**** Named "Niccolò Machiavelli"
+**** discount = yes
+**** In the province 0 "Firenze
+**** With a skill level of 2
+*** Changes prestige by 20
+** Option: 0 "He will serve as a statesman:
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Creates an advisor of the 0 "Statesman type:
+**** Named "Niccolò Machiavelli"
+**** Culture is 0 "Tuscan
+**** discount = yes
+**** In the province 0 "Firenze
+**** With a skill level of 2
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_mlo.7
+** title = 0 "Machiavelli publishes a masterpiece!
+** desc = 0 "The Great son of Florence has published a book called 'The Prince'. It includes a lot on governing politics, not just focusing on the hereditary princes, but also on the possibilities for new princes. It explains how to retain power and how to successfully rule conquered lands. The ends justify the means.
+** picture = ADVISOR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Tuscany
+**** Country is 0 "Florence
+*** Year is at least 1513
+*** Year is less than 1530
+*** Any of the following:
+**** Employs the advisor with the id 796
+**** Has the country flag we_have_macchiavelli
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "This tells us everything:
+*** Changes republican tradition by 1000%
+*** add_stability_or_adm_power = yes
+*** Changes prestige by 10
+*** Adds 10 legitimacy
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** 0 "Milan:
+******* Legitimacy is at least 80
+******* Has the monarchy government type
+***** 0 "Milan:
+****** Gets the country event:
+******* ID is flavor_mlo.8
+******* Base mean time to happen of 5 days
+******* Randomized by 8
+* Gets the country event:
+** ID is flavor_mlo.8
+** title = 0 "Praise from Machiavelli
+** desc = 0 "Our great duke is mentioned several times in his book 'The Prince', and generally praised for his ability to hold his country, and as a warning to not rely on mercenary troops.
+** picture = ADVISOR_eventPicture
+** is_triggered_only = yes
+** Option: 0 "We are doing something right:
+*** Changes prestige by 25
+*** Changes diplomatic power stored by 50
+* Gets the country event:
+** ID is flavor_mlo.9
+** title = 0 "Leonardo da Vinci
+** desc = 0 "Da Vinci was an Italian painter, draftsman, sculptor, architect and engineer whose genius perhaps more than that of any figure epitomized the Renaissance humanist ideal. His 'Last Supper' and 'Mona Lisa' are among the most widely popular and influential paintings of the Renaissance. His notebooks reveal a spirit of scientific inquiry and a mechanical inventiveness that were centuries ahead of their time.
+** picture = PAINTER_ARTIST_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Year is at least 1497
+*** The advisor with the id 790 does not exist
+*** Owns 0 "Milan
+*** Year is less than 1500
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "A true renaissance man!:
+*** Creates an advisor of the 0 "Natural Scientist type:
+**** Named "Leonardo da Vinci"
+**** Culture is 0 "Tuscan
+**** In the province 0 "Milan
+**** discount = yes
+**** With a skill level of 3
+*** Changes diplomatic power stored by 50
+*** Changes military power stored by 50
+*** Changes administrative power stored by 50
+* Gets the country event:
+** ID is flavor_mlo.10
+** title = 0 "The center of fashion
+** desc = 0 "The city of Milan became a center of fashion during late middle ages, with the making of luxury goods so important that other languages used the word for the city itself to describe fine wares. In the early 16th century, over 20,000 workers were employed in the silk industry, working hard at making the court the most splendid in Italy.
+** picture = COURT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Milan
+*** Year is at least 1500
+*** Owns 0 "Milan
+*** Year is less than 1600
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: 0 "This looks good...:
+*** Changes administrative power stored by 50
+*** 0 "Milan:
+**** Changes base tax by 1
+* Gets the country event:
+** ID is flavor_mlo.11
+** title = 0 "French Invasion of Italy
+** desc = 0 "When the French invaded Italy in 1495, they first got repulsed at the Battle of Fornovo by the Milanese, but they came back in 1498. The French took Milan, but the Duke managed to escape. In February 1500 Duke Ludovico returned with an army of Swiss mercenaries, and engaged the French who were sieging Novara. Since both sides employed Swiss mercenaries, they refused to fight each other and the French captured the duke, winning the war.
+** picture = BATTLE_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Milan
+*** Year is at least 1490
+*** At war with 0 "France
+*** Owns 0 "Milan
+*** Any owned province:
+**** Controlled by 0 "France
+*** Year is less than 1600
+*** Has less than 0 "France provinces
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Option: 0 "Maybe these pikes will save us?:
+*** Adds the modifier "0 "Relying on Swiss Mercenaries" for 6 months:
+**** -33% mercenary maintenance
+* namespace = new_flavour_mlo
+* Gets the province event:
+** ID is new_flavour_mlo.15
+** title = new_flavour_mlo.15.name
+** desc = new_flavour_mlo.15.desc
+** picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+** is_triggered_only = yes
+** goto = 4740
+** Immediate effects:
+*** Hidden effect:
+**** The owner of the province:
+***** set_saved_name:
+****** Named "mlo_silk_guy"
+****** scope = this
+** Option: new_flavour_mlo.15.a:
+*** goto = 4740
+*** The owner of the province:
+**** Changes diplomatic power stored by -100
+*** add_base_production = 2
+*** Changes trade goods produced to 0 "Silk
+*** AI chance:
+**** Base chance of 1
+** Option: new_flavour_mlo.15.b:
+*** The owner of the province:
+**** If:
+***** Limited to:
+****** Monthly income is less than 15 ducats
+***** Creates an advisor of the 0 "Natural Scientist type:
+****** Named "mlo_silk_guy"
+****** With a skill level of 1
+****** discount = yes
+**** else_if:
+***** Limited to:
+****** Monthly income is less than 25 ducats
+***** Creates an advisor of the 0 "Natural Scientist type:
+****** Named "mlo_silk_guy"
+****** With a skill level of 2
+****** discount = yes
+**** else:
+***** Creates an advisor of the 0 "Natural Scientist type:
+****** Named "mlo_silk_guy"
+****** With a skill level of 3
+****** discount = yes
+*** AI chance:
+**** Base chance of 0
+** after:
+*** The owner of the province:
+**** clear_saved_name = mlo_silk_guy

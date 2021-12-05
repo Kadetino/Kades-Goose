@@ -1,0 +1,1742 @@
+******** Trigger:
+********* Follows the tengri_pagan_reformed religion
+********* has_secondary_religion = yes
+********* Has the DLC The Cossacks
+********* Does not have the country modifier "tengri_clergy_conflicts"
+********* Has at least 12 provinces
+********* Any owned province:
+********** Follows the secondary religion
+******** Mean time to happen
+********* Base mean time to happen of 460 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Follows the secondary religion
+*********** Sets the province flag tengri_vs_clergy
+********** Random owned province:
+*********** Limited to:
+************ Follows the secondary religion
+************ Does not have the province flag tengri_vs_clergy
+*********** Sets the province flag tengri_vs_clergy
+********** Random owned province:
+*********** Limited to:
+************ Follows the secondary religion
+************ Does not have the province flag tengri_vs_clergy
+*********** Sets the province flag tengri_vs_clergy
+********** Random owned province:
+*********** Limited to:
+************ Follows the secondary religion
+************ Does not have the province flag tengri_vs_clergy
+*********** Sets the province flag tengri_vs_clergy
+********** Random owned province:
+*********** Limited to:
+************ Follows the religion of its owner
+*********** Sets the province flag tengri_vs_clergy
+********** Random owned province:
+*********** Limited to:
+************ Follows the religion of its owner
+************ Does not have the province flag tengri_vs_clergy
+*********** Sets the province flag tengri_vs_clergy
+********** Random owned province:
+*********** Limited to:
+************ Follows the religion of its owner
+************ Does not have the province flag tengri_vs_clergy
+*********** Sets the province flag tengri_vs_clergy
+********** Random owned province:
+*********** Limited to:
+************ Follows the religion of its owner
+************ Does not have the province flag tengri_vs_clergy
+*********** Sets the province flag tengri_vs_clergy
+******** Option: tengri_events.1.a:
+********* Every owned province:
+********** Limited to:
+*********** Has the province flag tengri_vs_clergy
+*********** Follows the secondary religion
+********** Adds the modifier "tengri_insincere_leadership" until the end of the campaign:
+*********** local_unrest = 4
+*********** -20% provincial tax income
+*********** secondary_religion = yes
+********** Removes the province flag tengri_vs_clergy
+********* Every owned province:
+********** Limited to:
+*********** Has the province flag tengri_vs_clergy
+*********** Does not follow the secondary religion
+********** Removes the province flag tengri_vs_clergy
+******** Option: tengri_events.1.b:
+********* Every owned province:
+********** Limited to:
+*********** Has the province flag tengri_vs_clergy
+*********** Follows the religion of its owner
+********** Adds the modifier "tengri_abandoning_the_old_ways" until the end of the campaign:
+*********** local_unrest = 4
+*********** -20% provincial tax income
+********** Removes the province flag tengri_vs_clergy
+********* Every owned province:
+********** Limited to:
+*********** Has the province flag tengri_vs_clergy
+*********** Follows the secondary religion
+********** Removes the province flag tengri_vs_clergy
+******** Option: tengri_events.1.c:
+********* Adds the modifier "tengri_clergy_conflicts" for 10 years:
+********** -1 tolerance of the true faith
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is tengri_events.2
+******** title = tengri_events.2.t
+******** desc = tengri_events.2.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Follows the tengri_pagan_reformed religion
+********* has_secondary_religion = yes
+********* Has the DLC The Cossacks
+********* Is not at war
+********* Any neighbor country:
+********** Does not follow the tengri_pagan_reformed religion
+********** Follows the secondary religion
+********** Has an opinion of at least 75 with our country
+********* has_ruler_flag_false = tengri_exchanged_ideas
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+********* Multiplies value by 0.9:
+********** Has completed the 0 "Innovative Ideas idea group
+********* Multiplies value by 0.9:
+********** secondary_religion = 0 "Confucian
+******** Option: tengri_events.2.a:
+********* set_ruler_flag = tengri_exchanged_ideas
+********* One of the following will happen:
+********** 33 relative chance:
+*********** Changes administrative power stored by 40
+********** 33 relative chance:
+*********** Changes diplomatic power stored by 40
+********** 33 relative chance:
+*********** Changes military power stored by 40
+******* Gets the country event:
+******** ID is tengri_events.3
+******** title = tengri_events.3.t
+******** desc = tengri_events.3.d
+******** picture = FAT_WARRIORS_eventPicture
+******** Trigger:
+********* Follows the tengri_pagan_reformed religion
+********* has_secondary_religion = yes
+********* Has the DLC The Cossacks
+********* Less than 25 army tradition
+********* Does not have the country modifier "tengri_settled_warriors"
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: tengri_events.3.a:
+********* Adds the modifier "tengri_settled_warriors" for 10 years:
+********** -10% land morale
+******** Option: tengri_events.3.b:
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is tengri_events.4
+******** title = tengri_events.4.t
+******** desc = tengri_events.4.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Follows the tengri_pagan_reformed religion
+********* has_secondary_religion = yes
+********* Has the DLC The Cossacks
+********* Any neighbor country:
+********** Follows the secondary religion
+********** }
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.4.a:
+********* Every neighbor country:
+********** Limited to:
+*********** Follows the secondary religion
+*********** }
+********** Adds the opinion modifier "tengri_closer_ties" towards our country
+******* Gets the country event:
+******** ID is tengri_events.5
+******** title = tengri_events.5.t
+******** desc = tengri_events.5.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* has_secondary_religion = yes
+********* Does not have the country modifier "tengri_shamans_spurned"
+********* Any owned province:
+********** Follows the secondary religion
+********** Does not have the province modifier "tengri_local_plight"
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: tengri_events.5.a:
+********* Random owned province:
+********** Limited to:
+*********** Follows the secondary religion
+*********** Does not have the province modifier "tengri_local_plight"
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+************ Does not follow the tengri_pagan_reformed religion
+*********** Adds the modifier "tengri_local_plight" until the end of the campaign:
+************ local_unrest = 4
+************ -20% provincial tax income
+******** Option: tengri_events.5.b:
+********* Adds the modifier "tengri_shamans_spurned" for 10 years:
+********** horde_unity = -0.25
+********** Legitimacy is at least -0.25
+********** Republican tradition is at least -0.125
+********** devotion = -0.25
+********** Follows the yes religion
+******* Gets the country event:
+******** ID is tengri_events.6
+******** title = tengri_events.6.t
+******** desc = tengri_events.6.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* has_secondary_religion = yes
+********* Any owned province:
+********** Does not have the province modifier "tengri_religious_influx"
+********** Any of the following:
+*********** Follows the secondary religion
+*********** Any bordering province:
+************ Follows the secondary religion
+******** Mean time to happen
+********* Base mean time to happen of 500 months
+******** Option: tengri_events.6.a:
+********* Trigger:
+********** Any owned province:
+*********** Follows the secondary religion
+*********** Does not have the province modifier "tengri_religious_influx"
+********* Random owned province:
+********** Limited to:
+*********** Follows the secondary religion
+*********** Does not have the province modifier "tengri_religious_influx"
+********** Changes base tax by 1
+******** Option: tengri_events.6.b:
+********* Trigger:
+********** Any owned province:
+*********** Does not follow the secondary religion
+*********** Does not have the province modifier "tengri_religious_influx"
+*********** Any bordering province:
+************ Follows the secondary religion
+********* Random owned province:
+********** Limited to:
+*********** Does not follow the secondary religion
+*********** Does not have the province modifier "tengri_religious_influx"
+*********** Any bordering province:
+************ Follows the secondary religion
+********** change_to_secondary_religion = yes
+********** Adds the modifier "tengri_religious_influx" until the end of the campaign:
+*********** -0.1 #Stays even if you Switch favored faith% missionary strength
+*********** +15% provincial tax income
+******* Gets the province event:
+******** ID is tengri_events.7
+******** title = tengri_events.7.t
+******** desc = tengri_events.7.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* The owner of the province:
+********** has_secondary_religion = yes
+********** Follows the tengri_pagan_reformed religion
+******** Mean time to happen
+********* Base mean time to happen of 500 months
+********* Multiplies value by 0.35:
+********** Has the province modifier "tengri_influx_of_monks"
+********* Multiplies value by 0.7:
+********** Has the province modifier "hindufication"
+********* Multiplies value by 0.7:
+********** Does not have the province modifier "tengri_influx_of_monks"
+********** The owner of the province:
+*********** Has the country modifier "tengri_monks_in_capital"
+******** Option: tengri_events.7.a:
+********* change_to_secondary_religion = yes
+******* Gets the country event:
+******** ID is tengri_events.8
+******** title = tengri_events.8.t
+******** desc = tengri_events.8.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* has_secondary_religion = yes
+********* The dominant religion is secondary
+********* Any of the following:
+********** Does not have the country flag tengri_religion_coup
+********** Has had the country flag "tengri_religion_coup" for at least 21900 days
+******** Immediate effects:
+********* Sets the country flag tengri_religion_coup
+******** Mean time to happen
+********* Base mean time to happen of 500 months
+********* Multiplies value by 0.7:
+********** }
+********* Multiplies value by 0.6:
+********** }
+******** Option: tengri_events.8.a:
+********* AI chance:
+********** Base chance of 90
+********* change_to_secondary_religion = yes
+******** Option: tengri_events.8.b:
+********* AI chance:
+********** Base chance of 10
+********* Changes stability by -3
+******* Gets the country event:
+******** ID is tengri_events.9
+******** title = tengri_events.9.t
+******** desc = tengri_events.9.d
+******** picture = MIRACLE_MONK_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* has_secondary_religion = yes
+********* secondary_religion = 0 "Ibadi
+********* Does not have the country modifier "tengri_ibadi_scholars"
+******** Mean time to happen
+********* Base mean time to happen of 500 months
+******** Option: tengri_events.9.a:
+********* Changes administrative power stored by -50
+********* Adds the modifier "tengri_ibadi_scholars" for 20 years:
+********** +1 tolerance of the true faith
+********** Legitimacy is at least 0.5
+********** devotion = 0.5
+********** horde_unity = 0.5
+********** Republican tradition is at least 0.25
+******** Option: tengri_events.9.b:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is tengri_events.10
+******** title = tengri_events.10.t
+******** desc = tengri_events.10.d
+******** picture = MIRACLE_MONK_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* has_secondary_religion = yes
+********* Has at least 10 provinces
+********* Any of the following:
+********** secondary_religion = 0 "Sunni
+********** secondary_religion = 0 "Shia
+********* Does not have the country modifier "tengri_sufi_teacher"
+******** Mean time to happen
+********* Base mean time to happen of 460 months
+******** Option: tengri_events.10.a:
+********* Random owned province:
+********** Limited to:
+*********** Does not follow the secondary religion
+********** change_to_secondary_religion = yes
+********* Random owned province:
+********** Limited to:
+*********** Does not follow the secondary religion
+********** change_to_secondary_religion = yes
+********* Adds the modifier "tengri_sufi_teacher" for 10 years:
+********** devotion = 0.5
+********** Legitimacy is at least 0.5
+********** horde_unity = 0.5
+********** +15% stability cost modifier
+******** Option: tengri_events.10.b:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is tengri_events.11
+******** title = tengri_events.11.t
+******** desc = tengri_events.11.d
+******** picture = MIRACLE_MONK_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* has_secondary_religion = yes
+********* has_reform_false = 0 "Celestial Empire
+********* Any of the following:
+********** secondary_religion = 0 "Sunni
+********** secondary_religion = 0 "Shia
+********** secondary_religion = 0 "Ibadi
+********* Does not have the country modifier "tengri_qadi"
+********* Does not have the country modifier "tengri_stood_up_for_yassa"
+********* Any of the following:
+********** All of the following:
+*********** legitimacy_or_horde_unity_false = 80
+*********** Has the monarchy government type
+********** All of the following:
+*********** devotion_false = 70
+*********** Has the theocracy government type
+******** Mean time to happen
+********* Base mean time to happen of 460 months
+******** Option: tengri_events.11.a:
+********* Adds the modifier "tengri_qadi" for 10 years:
+********** global_autonomy = -0.05
+********** +15% stability cost modifier
+******** Option: tengri_events.11.b:
+********* If:
+********** Limited to:
+*********** has_reform = 0 "Steppe Nomads
+********** Adds the modifier "tengri_stood_up_for_yassa" for 10 years:
+*********** horde_unity = 0.5
+*********** global_autonomy = 0.02
+********* Changes prestige by -10
+********* Adds 10 legitimacy
+********* add_horde_unity = 10
+********* add_devotion = 5
+********* Changes republican tradition by 500%
+******* Gets the country event:
+******** ID is tengri_events.12
+******** title = tengri_events.12.t
+******** desc = tengri_events.12.d
+******** picture = CHURCH_ESTATE_2_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Any of the following:
+********** secondary_religion = 0 "Sunni
+********** secondary_religion = 0 "Shia
+********** secondary_religion = 0 "Ibadi
+********* Has at least 8 provinces where all of the following is true:
+********** Follows the secondary religion
+********* Does not have the ruler modifier tengri_devout_muslim
+********* has_ruler_flag_false = tengri_muslim_ruler_questioned
+******** Immediate effects:
+********* set_ruler_flag = tengri_muslim_ruler_questioned
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.75:
+********** Has at least 18 provinces where all of the following is true:
+*********** Follows the secondary religion
+******** Option: tengri_events.12.a:
+********* AI chance:
+********** Base chance of 10
+********* Adds the ruler modifier "tengri_devout_muslim" until the ruler's death:
+********** horde_unity = -0.5
+********** Legitimacy is at least -0.5
+********** Republican tradition is at least -0.25
+********** devotion = -0.25
+********** +1 diplomatic reputation
+********** Trade efficiency is at least 10%
+******** Option: tengri_events.12.b:
+********* AI chance:
+********** Base chance of 90
+********** Multiplies value by 0:
+*********** The dominant religion is secondary
+********* Adds 10 legitimacy
+********* add_horde_unity = 10
+********* add_devotion = 5
+********* Changes republican tradition by 500%
+********* Hidden effect:
+********** Every owned province:
+*********** Limited to:
+************ Follows the secondary religion
+*********** Adds the modifier "tengri_ruler_questioned" until the end of the campaign:
+************ local_unrest = 5
+******* Gets the country event:
+******** ID is tengri_events.13
+******** title = tengri_events.13.t
+******** desc = tengri_events.13.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Any of the following:
+********** secondary_religion = 0 "Sunni
+********** secondary_religion = 0 "Shia
+********** secondary_religion = 0 "Ibadi
+********* Any owned province:
+********** Is in the 0 "Muslim religion group
+********* Does not have the ruler modifier tengri_devout_muslim
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: tengri_events.13.a:
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is tengri_events.14
+******** title = tengri_events.14.t
+******** desc = tengri_events.14.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Any of the following:
+********** secondary_religion = 0 "Sunni
+********** secondary_religion = 0 "Shia
+********** secondary_religion = 0 "Ibadi
+********* Any known country:
+********** At war with our country
+********** Is not in 0 "Muslim's religion group
+********* Does not have the country modifier "tengri_jihad"
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.14.a:
+********* Adds the modifier "tengri_jihad" for 10 years:
+********** +10% land morale
+******* Gets the country event:
+******** ID is tengri_events.15
+******** title = tengri_events.15.t
+******** desc = tengri_events.15.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Any of the following:
+********** secondary_religion = 0 "Sunni
+********** secondary_religion = 0 "Shia
+********** secondary_religion = 0 "Ibadi
+********* Has at least 5 provinces
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Sets the province flag tengri_city_vs_muslims_conflict
+******** Option: tengri_events.15.a:
+********* AI chance:
+********** Base chance of 10
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag tengri_city_vs_muslims_conflict
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+*********** Adds the modifier "tengri_growing_cities" until the end of the campaign:
+************ local_development_cost = -0.1
+************ +10% production efficiency
+*********** add_unrest = 3
+********** Randomized by 
+*********** Acquisition chance:
+*********** Spawns revolt of size 1 of 0 "Noble rebels
+******** Option: tengri_events.15.b:
+********* AI chance:
+********** Base chance of 90
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag tengri_city_vs_muslims_conflict
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+*********** Adds the modifier "tengri_strengthened_local_clans" until the end of the campaign:
+************ +25% manpower modifier
+*********** add_unrest = 3
+********** Randomized by 
+*********** Acquisition chance:
+*********** Spawns revolt of size 1 of 0 "Peasant rebels
+******* Gets the country event:
+******** ID is tengri_events.16
+******** title = tengri_events.16.t
+******** desc = tengri_events.16.d
+******** picture = MIRACLE_MONK_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Sunni
+********* Does not have the country flag khojas_established
+********* Has the monarchy government type
+********* has_reform_false = 0 "Celestial Empire
+********* Year is at least 1510
+********* Does not have the ruler modifier support_of_the_khojas
+********* Does not have the country flag end_of_khojas
+********* Has at least 8 provinces
+********* Any owned province:
+********** Has a base tax of at least 3
+********** The province is not the capital of the country
+******** Mean time to happen
+********* Base mean time to happen of 1000 months
+********* Multiplies value by 0.9:
+********** Has the country modifier "tengri_sufi_teacher"
+********* Multiplies value by 0.9:
+********** Has the ruler modifier tengri_devout_muslim
+******** Option: tengri_events.16.a:
+********* AI chance:
+********** Base chance of 5
+********* Sets the country flag khojas_established
+********* Hidden effect:
+********** Changes the variable khojas_retained by 1
+********* Random owned province:
+********** Limited to:
+*********** Has a base tax of at least 3
+*********** The province is not the capital of the country
+********** Changes base tax by -2
+********* Adds the ruler modifier "support_of_the_khojas" until the ruler's death:
+********** Legitimacy is at least 1
+********** horde_unity = 1
+********** +15% stability cost modifier
+******** Option: tengri_events.16.b:
+********* AI chance:
+********** Base chance of 95
+********* Hidden effect:
+********** Sets the country flag end_of_khojas
+********* Changes prestige by 15
+******* Gets the country event:
+******** ID is tengri_events.17
+******** title = tengri_events.17.t
+******** desc = tengri_events.17.d
+******** picture = MIRACLE_MONK_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* has_reform_false = 0 "Celestial Empire
+********* secondary_religion = 0 "Sunni
+********* Has the monarchy government type
+********* Has at least 2 provinces
+********* Has the country flag khojas_established
+********* Does not have the country flag end_of_khojas
+******** is_triggered_only = yes
+******** Option: tengri_events.17.a:
+********* Hidden effect:
+********** Changes the variable khojas_retained by 1
+********* Adds the ruler modifier "support_of_the_khojas" until the ruler's death:
+********** Legitimacy is at least 1
+********** horde_unity = 1
+********** +15% stability cost modifier
+******** Option: tengri_events.17.b:
+********* Hidden effect:
+********** Changes the variable khojas_retained by -1
+********* Changes stability by -1
+******* Gets the country event:
+******** ID is tengri_events.18
+******** title = tengri_events.18.t
+******** desc = tengri_events.18.d
+******** picture = MIRACLE_MONK_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* has_reform_false = 0 "Celestial Empire
+********* secondary_religion = 0 "Sunni
+********* Has the monarchy government type
+********* Has at least 2 provinces
+********* The variable khojas_retained is equal or higher than 3
+********* Has the country flag khojas_established
+********* Does not have the country flag end_of_khojas
+********* Has the ruler modifier support_of_the_khojas
+******** Mean time to happen
+********* Base mean time to happen of 180 months
+********* Multiplies value by 8.0:
+********** The variable khojas_retained is lower than 5
+********* Multiplies value by 0.9:
+********** The variable khojas_retained is equal or higher than 7
+********* Multiplies value by 0.8:
+********** The variable khojas_retained is equal or higher than 10
+********* Multiplies value by 0.7:
+********** The variable khojas_retained is equal or higher than 13
+********* Multiplies value by 0.7:
+********** The variable khojas_retained is equal or higher than 16
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag end_of_khojas
+******** Option: tengri_events.18.a:
+********* AI chance:
+********** Base chance of 95
+********* If:
+********** Limited to:
+*********** Does not have the theocracy government type
+********** change_government_to_theocracy = yes
+********* Changes stability by -5
+********* Kills the heir of the country
+********** allow_new_heir_false = no
+********* Changes religion to 0 "Sunni
+********* If:
+********** Limited to:
+*********** Technology group is 0 "Nomadic
+********** Changes technology group to 0 "Muslim
+********** Switch to new country's idea group
+********* Spawns a ruler:
+********** Changes ruler's diplomatic skill by 3
+********** Changes ruler's administrative skill by 3
+********** Changes ruler's military skill by 2
+********** Follows the 0 "Sunni religion
+********* If:
+********** Limited to:
+*********** has_states_general_mechanic = yes
+********** change_statists_vs_orangists = 1
+******** Option: tengri_events.18.b:
+********* AI chance:
+********** Base chance of 5
+********* Changes stability by -3
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+********** Spawns revolt of size 3 of 0 "Religious rebels
+********* Random owned province:
+********** Limited to:
+*********** The province is the capital of the country
+********** Spawns revolt of size 3 of 0 "Religious rebels
+******* Gets the country event:
+******** ID is tengri_events.19
+******** title = tengri_events.19.t
+******** desc = tengri_events.19.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Shia
+********* Has at least 3 provinces
+********* Does not have the country modifier "tengri_shiite_immigration"
+********* Any owned province:
+********** Does not have the province modifier "0 "Religious Zeal"
+********** The province is not the capital of the country
+********* Any owned province:
+********** The province is the capital of the country
+********** Does not have the province modifier "tengri_shiite_settled_in_capital"
+******** Mean time to happen
+********* Base mean time to happen of 460 months
+********* Multiplies value by 0.9:
+********** Any of the following:
+*********** 0 "Persia does not exist
+*********** 0 "Persia:
+************ Does not follow the 0 "Shia religion
+******** Option: tengri_events.19.a:
+********* AI chance:
+********** Base chance of 95
+********* Random owned province:
+********** Limited to:
+*********** The province is the capital of the country
+********** Adds the modifier "tengri_shiite_settled_in_capital" until the end of the campaign:
+*********** development_cost = -0.1
+*********** +10% stability cost modifier
+********* One of the following will happen:
+********** 33 relative chance:
+*********** Random owned province:
+************ Limited to:
+************* The province is the capital of the country
+************ Changes base tax by 1
+********** 33 relative chance:
+*********** Random owned province:
+************ Limited to:
+************* The province is the capital of the country
+************ add_base_manpower = 1
+********** 33 relative chance:
+*********** Random owned province:
+************ Limited to:
+************* The province is the capital of the country
+************ add_base_production = 1
+******** Option: tengri_events.19.b:
+********* AI chance:
+********** Base chance of 5
+********* Adds the modifier "tengri_shiite_immigration" for 10 years:
+********** +5% manpower recovery speed
+********** +10% stability cost modifier
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Does not follow the 0 "Shia religion
+*********** Does not have the province modifier "0 "Religious Zeal"
+********** Changes religion to 0 "Shia
+******** Option: tengri_events.19.c:
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is tengri_events.20
+******** title = tengri_events.20.t
+******** desc = tengri_events.20.d
+******** picture = MIRACLE_MONK_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Vajrayana
+********* Does not have the country modifier "tengri_monks_in_capital"
+********* Any owned province:
+********** Does not follow the 0 "Vajrayana religion
+********** Does not have the province modifier "tengri_influx_of_monks"
+********** The province is not the capital of the country
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.20.a:
+********* Random owned province:
+********** Limited to:
+*********** Does not follow the 0 "Vajrayana religion
+*********** Does not have the province modifier "tengri_influx_of_monks"
+*********** The province is not the capital of the country
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+*********** Adds the modifier "tengri_influx_of_monks" until the end of the campaign:
+************ local_development_cost = -0.1
+************ local_unrest = 4 #Tensions
+******** Option: tengri_events.20.b:
+********* Adds the modifier "tengri_monks_in_capital" for 10 years:
+********** +1 diplomatic reputation
+******** Option: tengri_events.20.c:
+********* Changes prestige by -5
+********* Every neighbor country:
+********** Limited to:
+*********** Follows the 0 "Vajrayana religion
+********** Adds the opinion modifier "tengri_turned_away_monks" towards our country
+******* Gets the country event:
+******** ID is tengri_events.21
+******** title = tengri_events.21.t
+******** desc = tengri_events.21.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Vajrayana
+********* Any known country:
+********** Follows the 0 "Vajrayana religion
+********** tech_difference = 3
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.21.a:
+********* AI chance:
+********** Base chance of 75
+********** Multiplies value by 0:
+*********** legitimacy_or_horde_unity_false = 70
+********* Changes administrative power stored by 25
+******** Option: tengri_events.21.b:
+********* AI chance:
+********** Base chance of 25
+********* add_mandate_effect = yes
+********* Adds 5 legitimacy
+********* add_horde_unity = 5
+********* add_devotion = 3
+********* Changes republican tradition by 300%
+******* Gets the province event:
+******** ID is tengri_events.22
+******** title = tengri_events.22.t
+******** desc = tengri_events.22.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* The province is not the capital of the country
+********* The owner of the province:
+********** secondary_religion = 0 "Vajrayana
+********** Follows the tengri_pagan_reformed religion
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 460 months
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Has the country modifier "tengri_monks_in_capital"
+******** Option: tengri_events.22.a:
+********* Changes religion to 0 "Vajrayana
+******** Option: tengri_events.22.b:
+********* Spawns revolt of size 1 of 0 "Noble rebels
+******* Gets the province event:
+******** ID is tengri_events.23
+******** title = tengri_events.23.t
+******** desc = tengri_events.23.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Does not follow the 0 "Vajrayana religion
+********* The province is not the capital of the country
+********* The owner of the province:
+********** secondary_religion = 0 "Vajrayana
+********** Follows the tengri_pagan_reformed religion
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.23.a:
+********* Spawns revolt of size 1 of tengri_pagan_reformed_rebels rebels
+******* Gets the country event:
+******** ID is tengri_events.24
+******** title = tengri_events.24.t
+******** desc = tengri_events.24.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Vajrayana
+********* Does not have the country modifier "tengri_religious_pilgrimages"
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: tengri_events.24.a:
+********* Adds the modifier "tengri_religious_pilgrimages" for 10 years:
+********** -10% administrative technology cost
+******* Gets the country event:
+******** ID is tengri_events.25
+******** title = tengri_events.25.t
+******** desc = tengri_events.25.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Any of the following:
+********** secondary_religion = 0 "Theravada
+********** secondary_religion = 0 "Mahayana
+********* Any owned province:
+********** Does not have the province modifier "tengri_monastic_order"
+********** Does not follow the 0 "Theravada religion
+********** Does not follow the 0 "Mahayana religion
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Does not have the province flag monastic_order_tengri
+************ Does not have the province modifier "tengri_monastic_order"
+************ Does not follow the 0 "Theravada religion
+************ Does not follow the 0 "Mahayana religion
+*********** Sets the province flag monastic_order_tengri
+******** Option: tengri_events.25.a:
+********* Changes stability by -1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag monastic_order_tengri
+********** Removes the province flag monastic_order_tengri
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+*********** Adds the modifier "tengri_monastic_order" until the end of the campaign:
+************ local_development_cost = -0.15
+************ +15% production efficiency
+******** Option: tengri_events.25.b:
+********* Adds 5 legitimacy
+********* add_horde_unity = 5
+********* add_devotion = 3
+********* Changes republican tradition by 300%
+******* Gets the country event:
+******** ID is tengri_events.26
+******** title = tengri_events.26.t
+******** desc = tengri_events.26.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Theravada
+********* Does not have the country modifier "tengri_pali_legal_traditions"
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.26.a:
+********* Adds -5 legitimacy
+********* add_horde_unity = -5
+********* add_devotion = -5
+********* Changes republican tradition by -500%
+********* Adds the modifier "tengri_pali_legal_traditions" for 10 years:
+********** global_autonomy = -0.05
+******** Option: tengri_events.26.b:
+********* Adds 5 legitimacy
+********* add_horde_unity = 5
+********* add_devotion = 3
+********* Changes republican tradition by 300%
+******* Gets the country event:
+******** ID is tengri_events.27
+******** title = tengri_events.27.t
+******** desc = tengri_events.27.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Mahayana
+********* Any owned province:
+********** Does not follow the secondary religion
+********** Any of the following:
+*********** Follows the tengri_pagan_reformed religion
+*********** Any bordering province:
+************ Follows the secondary religion
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: tengri_events.27.a:
+********* Random owned province:
+********** Limited to:
+*********** Does not follow the secondary religion
+*********** Any of the following:
+************ Follows the tengri_pagan_reformed religion
+************ Any bordering province:
+************* Follows the secondary religion
+********** Changes religion to 0 "Mahayana
+********** Changes base tax by 1
+********** Adds the modifier "0 "Religious Zeal" for 12.33 years:
+*********** -100% missionary strength
+******* Gets the country event:
+******** ID is tengri_events.30
+******** title = tengri_events.30.t
+******** desc = tengri_events.30.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Confucian
+********* Is not at war
+********* Does not have the country modifier "tengri_confucian_nobles"
+******** Mean time to happen
+********* Base mean time to happen of 450 months
+******** Option: tengri_events.30.a:
+********* Adds the modifier "tengri_confucian_nobles" for 10 years:
+********** -10% technology cost
+******** Option: tengri_events.30.b:
+********* add_corruption = -1.5
+********* Trigger:
+********** corruption = 0.1
+******** Option: tengri_events.30.c:
+********* Random owned province:
+********** Limited to:
+*********** Controlled by our country
+********** Changes base tax by 1
+********** add_base_production = 1
+******* Gets the country event:
+******** ID is tengri_events.31
+******** title = tengri_events.31.t
+******** desc = tengri_events.31.d
+******** picture = FAT_WARRIORS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Confucian
+********* Does not have the country modifier "tengri_traditionalists_strengthened"
+********* Does not have the country modifier "tengri_confucian_titles"
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+********* Multiplies value by 0.95:
+********** Has the country modifier "tengri_confucian_nobles"
+******** Option: tengri_events.31.a:
+********* Changes administrative power stored by -25
+********* Adds the modifier "tengri_traditionalists_strengthened" for 10 years:
+********** +15% stability cost modifier
+******** Option: tengri_events.31.b:
+********* Changes military power stored by -25
+********* Adds the modifier "tengri_confucian_titles" for 10 years:
+********** -0.5 army tradition
+******* Gets the country event:
+******** ID is tengri_events.32
+******** title = tengri_events.32.t
+******** desc = tengri_events.32.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Confucian
+********* Does not have the country modifier "tengri_confucian_elites_alienated"
+********* Does not have the country modifier "tengri_traditional_elites_alienated"
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: tengri_events.32.a:
+********* Adds the modifier "tengri_confucian_elites_alienated" for 10 years:
+********** -10% global tax modifier
+********** +10% global manpower modifier
+******** Option: tengri_events.32.b:
+********* Adds the modifier "tengri_traditional_elites_alienated" for 10 years:
+********** -10% land morale
+********** +10% global tax modifier
+******* Gets the country event:
+******** ID is tengri_events.33
+******** title = tengri_events.33.t
+******** desc = tengri_events.33.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Confucian
+********* heir_adm_false = 5
+********* heir_mil_false = 5
+********* Heir is at least 6 years old
+********* Heir is less than 15 years old
+********* has_ruler_flag_false = tengri_confucian_heir_education
+******** Mean time to happen
+********* Base mean time to happen of 160 months
+******** Option: tengri_events.33.a:
+********* Changes administrative power stored by -40
+********* change_heir_adm = 1
+********* set_ruler_flag = tengri_confucian_heir_education
+******** Option: tengri_events.33.b:
+********* Changes military power stored by -40
+********* change_heir_mil = 1
+********* set_ruler_flag = tengri_confucian_heir_education
+******** Option: tengri_events.33.c:
+********* Changes prestige by -5
+********* set_ruler_flag = tengri_confucian_heir_education
+******* Gets the country event:
+******** ID is tengri_events.34
+******** title = tengri_events.34.t
+******** desc = tengri_events.34.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Confucian
+********* Overextension is at least 25%
+********* Has at least 15 provinces
+********* Does not have the country modifier "tengri_confucian_administrators"
+********* Any known country:
+********** Follows the 0 "Confucian religion
+********** is_free_or_tributary_trigger = yes
+******** Mean time to happen
+********* Base mean time to happen of 320 months
+********* Multiplies value by 0.9:
+********** Any neighbor country:
+*********** Follows the 0 "Confucian religion
+******** Option: tengri_events.34.a:
+********* Modifies treasury by -0.5 years worth of income
+********* Adds the modifier "tengri_confucian_administrators" for 10 years:
+********** -5% core-creation cost modifier
+********** -10% global tax modifier
+******** Option: tengri_events.34.b:
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is tengri_events.35
+******** title = tengri_events.35.t
+******** desc = tengri_events.35.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Shinto
+********* Does not have the ruler modifier tengri_tea_ceremony
+********* Does not have the ruler modifier spread_of_tengri_tea_ceremony
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.35.a:
+********* Every known country:
+********** Limited to:
+*********** Follows the 0 "Shinto religion
+********** Adds the opinion modifier "opinion_tengri_tea_ceremony" towards our country
+********* Adds the ruler modifier "tengri_tea_ceremony" until the ruler's death:
+********** +1 diplomatic reputation
+******** Option: tengri_events.35.b:
+********* Adds the ruler modifier "spread_of_tengri_tea_ceremony" until the ruler's death:
+********** Trade efficiency is at least 10%
+******* Gets the country event:
+******** ID is tengri_events.36
+******** title = tengri_events.36.t
+******** desc = tengri_events.36.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Shinto
+********* has_reform_false = siberian_tribe
+******** Mean time to happen
+********* Base mean time to happen of 460 months
+******** Option: tengri_events.36.a:
+********* Changes prestige by -10
+******** Option: tengri_events.36.b:
+********* add_horde_unity = -10
+********* Adds -10 legitimacy
+********* add_devotion = -5
+********* Changes republican tradition by -500%
+******* Gets the country event:
+******** ID is tengri_events.37
+******** title = tengri_events.37.t
+******** desc = tengri_events.37.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Shinto
+********* Does not have the country modifier "tengri_japanese_swordsmithing"
+********* Does not have the country modifier "tengri_bow_and_arrow_defended"
+********* Any owned province:
+********** Produces 0 "Iron
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.37.a:
+********* Changes stability by -1
+********* Adds the modifier "tengri_japanese_swordsmithing" for 10 years:
+********** +5% infantry power
+******** Option: tengri_events.37.b:
+********* Changes prestige by -15
+********* Adds the modifier "tengri_bow_and_arrow_defended" for 10 years:
+********** +5% land morale
+******* Gets the country event:
+******** ID is tengri_events.38
+******** title = tengri_events.38.t
+******** desc = tengri_events.38.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Coptic
+********* Any owned province:
+********** Has no core on owner
+********** Is not constructing 0 "Core
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: tengri_events.38.a:
+********* add_horde_unity = -10
+********* Adds -10 legitimacy
+********* add_devotion = -5
+********* Changes republican tradition by -500%
+********* Random owned province:
+********** Limited to:
+*********** Has no core on owner
+*********** Is not constructing 0 "Core
+********** Changes religion to 0 "Coptic
+********** Adds core on owner
+******** Option: tengri_events.38.b:
+********* Adds 5 legitimacy
+********* add_horde_unity = 5
+********* add_devotion = 3
+********* Changes republican tradition by 300%
+******* Gets the country event:
+******** ID is tengri_events.39
+******** title = tengri_events.39.t
+******** desc = tengri_events.39.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Catholic
+********* 0 "The Papal State exists
+********* Not at war with 0 "The Papal State
+********* has_reform = 0 "Steppe Nomads
+******** Mean time to happen
+********* Base mean time to happen of 460 months
+******** Option: tengri_events.39.a:
+********* AI chance:
+********** Base chance of 1
+********* Changes prestige by 10
+********* 0 "The Papal State:
+********** Adds the opinion modifier "tengri_pope_spurned" towards our country
+******** Option: tengri_events.39.b:
+********* AI chance:
+********** Base chance of 1
+********** Multiplies value by 0:
+*********** horde_unity_false = 50
+********* Changes administrative power stored by 15
+********* Changes diplomatic power stored by 15
+********* Changes military power stored by 15
+********* add_horde_unity = -35
+******* Gets the country event:
+******** ID is tengri_events.40
+******** title = tengri_events.40.t
+******** desc = tengri_events.40.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Any of the following:
+********** secondary_religion = 0 "Protestant
+********** secondary_religion = 0 "Orthodox
+********** secondary_religion = 0 "Reformed
+********** secondary_religion = 0 "Coptic
+********** secondary_religion = 0 "Catholic
+********* Any owned province:
+********** Is not in 0 "Christian's religion group
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.40.a:
+********* Changes prestige by 10
+********* Random owned province:
+********** Limited to:
+*********** Is not in 0 "Christian's religion group
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+************ Is not in 0 "Christian's religion group
+*********** Adds the modifier "tengri_christian_mission" until the end of the campaign:
+************ local_unrest = 4
+******** Option: tengri_events.40.b:
+********* Changes prestige by -10
+********* Random known country:
+********** Limited to:
+*********** Follows the secondary religion
+********** Adds the opinion modifier "tengri_turned_away_mission" towards our country
+******** Option: tengri_events.40.c:
+********* Trigger:
+********** Any owned province:
+*********** Does not follow the secondary religion
+*********** Does not follow the owner religion
+*********** Does not have the province modifier "tengri_christian_mission"
+********* Changes prestige by -10
+********* Random owned province:
+********** Limited to:
+*********** Does not follow the secondary religion
+*********** Does not follow the owner religion
+********** area:
+*********** Limited to:
+************ The province is owned by our country
+************ Does not follow the secondary religion
+************ Does not follow the owner religion
+*********** Adds the modifier "tengri_christian_mission" until the end of the campaign:
+************ local_unrest = 4
+******* Gets the province event:
+******** ID is tengri_events.41
+******** title = tengri_events.41.t
+******** desc = tengri_events.41.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Has the province modifier "tengri_christian_mission"
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+********* Multiplies value by 0.01:
+********** Follows the secondary religion
+******** Option: tengri_events.41.a:
+********* Removes the country modifier "tengri_christian_mission"
+********* If:
+********** Limited to:
+*********** Does not follow the secondary religion
+********** change_to_secondary_religion = yes
+******* Gets the province event:
+******** ID is tengri_events.42
+******** title = tengri_events.42.t
+******** desc = tengri_events.42.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Does not follow the secondary religion
+********* Follows the tengri_pagan_reformed religion
+********* Has the province modifier "tengri_christian_mission"
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.42.a:
+********* Removes the country modifier "tengri_christian_mission"
+******** Option: tengri_events.42.b:
+********* add_unrest = 4
+******* Gets the country event:
+******** ID is tengri_events.43
+******** title = tengri_events.43.t
+******** desc = tengri_events.43.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Any of the following:
+********** secondary_religion = 0 "Protestant
+********** secondary_religion = 0 "Orthodox
+********** secondary_religion = 0 "Reformed
+********** secondary_religion = 0 "Coptic
+********** secondary_religion = 0 "Catholic
+********* Any subject country:
+********** Is in the 0 "Christian religion group
+******** Mean time to happen
+********* Base mean time to happen of 720 months
+******** Option: tengri_events.43.a:
+********* Random subject country:
+********** Limited to:
+*********** Is in the 0 "Christian religion group
+********** Adds the opinion modifier "tengri_syncretic_fears" towards our country
+******** Option: tengri_events.43.b:
+********* Changes diplomatic power stored by -25
+******* Gets the country event:
+******** ID is tengri_events.44
+******** title = tengri_events.44.t
+******** desc = tengri_events.44.d
+******** picture = MIRACLE_MONK_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Any of the following:
+********** secondary_religion = 0 "Protestant
+********** secondary_religion = 0 "Orthodox
+********** secondary_religion = 0 "Reformed
+********** secondary_religion = 0 "Coptic
+********** secondary_religion = 0 "Catholic
+********* Stability is lower than 3
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.44.a:
+********* Random owned province:
+********** Limited to:
+*********** Follows the tengri_pagan_reformed religion
+********** change_to_secondary_religion = yes
+********* add_stability_or_adm_power = yes
+******** Option: tengri_events.44.b:
+********* Trigger:
+********** Has the monarchy government type
+********** Has the ruler modifier tengri_devout_christian_ruler
+********* add_horde_unity = -10
+********* Adds -10 legitimacy
+********* add_devotion = -5
+********* Changes republican tradition by -500%
+********* Adds the ruler modifier "tengri_personal_confessor" until the ruler's death:
+********** +1 prestige
+********** -10% stability cost modifier
+******* Gets the country event:
+******** ID is tengri_events.45
+******** title = tengri_events.45.t
+******** desc = tengri_events.45.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Ruler is male
+********* Any of the following:
+********** secondary_religion = 0 "Protestant
+********** secondary_religion = 0 "Orthodox
+********** secondary_religion = 0 "Reformed
+********** secondary_religion = 0 "Coptic
+********** secondary_religion = 0 "Catholic
+********* The dominant religion is secondary
+********* Any of the following:
+********** Does not have the country flag tengri_christian_devout_court
+********** Has had the country flag "tengri_christian_devout_court" for at least 26280 days
+******** Mean time to happen
+********* Base mean time to happen of 560 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag tengri_christian_devout_court
+******** Option: tengri_events.45.a:
+********* AI chance:
+********** Base chance of 95
+********* Adds the ruler modifier "tengri_devout_christian_ruler" until the ruler's death:
+********** +1 prestige
+********** +1 diplomatic reputation
+********** horde_unity = -0.5
+********** Legitimacy is at least -0.5
+********** devotion = -0.3
+********** Republican tradition is at least -0.3
+********** -25% chance of getting an heir
+******** Option: tengri_events.45.b:
+********* AI chance:
+********** Base chance of 5
+********* Hidden effect:
+********** Every owned province:
+*********** Limited to:
+************ Follows the secondary religion
+*********** Adds the modifier "tengri_unchristian_values" until the end of the campaign:
+************ local_unrest = 6
+******* Gets the country event:
+******** ID is tengri_events.46
+******** title = tengri_events.46.t
+******** desc = tengri_events.46.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Hindu
+********* Does not have the country modifier "tengri_support_of_brahmins"
+********* Does not have the country modifier "tengri_support_of_shamans"
+********* Does not have the country modifier "tengri_hindu_conflict"
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.46.a:
+********* Adds the modifier "tengri_support_of_brahmins" for 10 years:
+********** -10% global manpower modifier
+******** Option: tengri_events.46.b:
+********* Adds the modifier "tengri_support_of_shamans" for 10 years:
+********** -10% global tax modifier
+******** Option: tengri_events.46.c:
+********* Adds the modifier "tengri_hindu_conflict" for 10 years:
+********** +2 global unrest
+******* Gets the country event:
+******** ID is tengri_events.47
+******** title = tengri_events.47.t
+******** desc = tengri_events.47.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Hindu
+********* Does not have the country modifier "tengri_hindu_syncretism"
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.47.a:
+********* Adds the modifier "tengri_hindu_syncretism" for 20 years:
+********** +1 tolerance of heathens
+********** +25% religious unity
+******* Gets the province event:
+******** ID is tengri_events.48
+******** title = tengri_events.48.t
+******** desc = tengri_events.48.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** is_mtth_scaled_to_size = 1
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Does not have the province modifier "hindufication"
+********* The owner of the province:
+********** Follows the tengri_pagan_reformed religion
+********** secondary_religion = 0 "Hindu
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.48.a:
+********* Adds the modifier "hindufication" until the end of the campaign:
+********** local_unrest = -2
+********** development_cost = -0.1
+******* Gets the country event:
+******** ID is tengri_events.49
+******** title = tengri_events.49.t
+******** desc = tengri_events.49.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = jewish
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: tengri_events.49.a:
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Master of Mint type:
+********** Follows the jewish religion
+********** With a skill level of 2
+********** discount = yes
+********* Creates an advisor of the 0 "Treasurer type:
+********** Follows the jewish religion
+********** With a skill level of 3
+********** discount = yes
+******** Option: tengri_events.49.b:
+********* Changes national manpower by 1.5 years worth of men
+******* Gets the country event:
+******** ID is tengri_events.50
+******** title = tengri_events.50.t
+******** desc = tengri_events.50.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = zoroastrian
+********* Does not have the country modifier "zoroastrian_traders"
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: tengri_events.50.a:
+********* Adds the modifier "zoroastrian_traders" for 20 years:
+********** Trade efficiency is at least 10%
+******** Option: tengri_events.50.b:
+********* Random owned province:
+********** Limited to:
+*********** The province is not the capital of the country
+*********** Does not follow the zoroastrian religion
+********** Changes religion to zoroastrian
+********** Changes base tax by 1
+********** add_base_production = 1
+********** add_base_manpower = 1
+******* Gets the country event:
+******** ID is tengri_events.51
+******** title = tengri_events.51.t
+******** desc = tengri_events.51.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Animist
+********* Does not have the country modifier "tengri_animist_pantheon"
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.51.a:
+********* Adds the modifier "tengri_animist_pantheon" for 10 years:
+********** +1 tolerance of heathens
+******* Gets the country event:
+******** ID is tengri_events.52
+******** title = tengri_events.52.t
+******** desc = tengri_events.52.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* Any of the following:
+********** secondary_religion = 0 "Fetishist
+********** secondary_religion = 0 "Totemist
+********* Any of the following:
+********** All of the following:
+*********** Stability is lower than 3
+*********** Is not at war
+********** All of the following:
+*********** 1 war exhaustion
+*********** Is at war
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.52.a:
+********* Trigger:
+********** Is at war
+********* Changes war exhaustion by -2
+******** Option: tengri_events.52.b:
+********* Trigger:
+********** Is not at war
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is tengri_events.53
+******** title = tengri_events.53.t
+******** desc = tengri_events.53.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Nahuatl
+********* vassal = 1
+******** Immediate effects:
+********* Hidden effect:
+********** Random subject country:
+*********** Sets the country flag tengri_nahautl_raids
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.53.a:
+********* Random subject country:
+********** Adds the opinion modifier "tengri_nahuatl_extradition" towards our country
+********** Removes the country flag tengri_nahautl_raids
+******** Option: tengri_events.53.b:
+********* Changes army tradition by 10
+********* Random subject country:
+********** Adds the opinion modifier "tengri_nahuatl_sacrifices" towards our country
+********** Removes the country flag tengri_nahautl_raids
+******* Gets the country event:
+******** ID is tengri_events.54
+******** title = tengri_events.54.t
+******** desc = tengri_events.54.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Nahuatl
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.54.a:
+********* add_horde_unity = -10
+********* Adds -10 legitimacy
+********* add_devotion = -5
+********* Changes republican tradition by -500%
+******** Option: tengri_events.54.b:
+********* Changes prestige by -15
+******* Gets the province event:
+******** ID is tengri_events.55
+******** title = tengri_events.55.t
+******** desc = tengri_events.55.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* The owner of the province:
+********** Follows the tengri_pagan_reformed religion
+********** secondary_religion = 0 "Inti
+********* Does not follow the tengri_pagan_reformed religion
+********* Does not follow the 0 "Inti religion
+********* nationalism = 5
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** is_mtth_scaled_to_size = 1
+******** Option: tengri_events.55.a:
+********* add_nationalism = -8
+******** Option: tengri_events.55.b:
+********* The owner of the province:
+********** Changes prestige by 10
+******* Gets the country event:
+******** ID is tengri_events.56
+******** title = tengri_events.56.t
+******** desc = tengri_events.56.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Mayan
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.56.a:
+********* Changes prestige by 10
+******** Option: tengri_events.56.b:
+********* Adds 5 legitimacy
+********* add_horde_unity = 5
+********* add_devotion = 3
+********* Changes republican tradition by 300%
+******* Gets the country event:
+******** ID is tengri_events.57
+******** title = tengri_events.57.t
+******** desc = tengri_events.57.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Protestant
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.57.a:
+********* add_horde_unity = 10
+********* Adds 10 legitimacy
+********* add_devotion = 10
+********* Changes republican tradition by 500%
+******* Gets the country event:
+******** ID is tengri_events.58
+******** title = tengri_events.58.t
+******** desc = tengri_events.58.d
+******** picture = SENCRATIC_ALTER_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Reformed
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.58.a:
+********* Modifies treasury by 0.1 years worth of income
+******** Option: tengri_events.58.b:
+********* add_horde_unity = 10
+********* Adds 10 legitimacy
+********* add_devotion = 10
+********* Changes republican tradition by 500%
+******* Gets the province event:
+******** ID is tengri_events.59
+******** title = tengri_events.59.t
+******** desc = tengri_events.59.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* The owner of the province:
+********** Follows the tengri_pagan_reformed religion
+********** secondary_religion = 0 "Orthodox
+********* Borders an uncolonized province
+********* The owner of the province:
+********** Has less than 2 colonies
+******** Mean time to happen
+********* Base mean time to happen of 380 months
+******** is_mtth_scaled_to_size = 1
+******** Option: tengri_events.59.a:
+********* Random uncolonized bordering province:
+********** Founds a colony
+********** Changes religion to 0 "Orthodox
+******** Option: tengri_events.59.b:
+********* Random uncolonized bordering province:
+********** Changes base tax by 1
+********** Changes religion to 0 "Orthodox
+******* Gets the country event:
+******** ID is tengri_events.60
+******** title = tengri_events.60.t
+******** desc = tengri_events.60.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Sunni
+********* has_ruler_flag_false = tengri_rich_merchant_arrived
+******** Mean time to happen
+********* Base mean time to happen of 400 months
+******** Option: tengri_events.60.a:
+********* set_ruler_flag = tengri_rich_merchant_arrived
+********* add_meritocracy_effect = yes
+********* Creates an advisor of the 0 "Trader type:
+********** Follows the 0 "Sunni religion
+********** With a skill level of 2
+********** discount = yes
+******* Gets the country event:
+******** ID is tengri_events.61
+******** title = tengri_events.61.t
+******** desc = tengri_events.61.d
+******** picture = MIRACLE_MONK_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Sunni
+********* Has the monarchy government type
+********* Has an heir
+******** Mean time to happen
+********* Base mean time to happen of 700 months
+******** Option: tengri_events.61.a:
+********* add_horde_unity = -10
+********* One of the following will happen:
+********** 20 relative chance:
+*********** Kills the heir of the country
+********** 80 relative chance:
+*********** Changes prestige by 5
+******** Option: tengri_events.61.b:
+********* One of the following will happen:
+********** 50 relative chance:
+*********** Kills the heir of the country
+********** 50 relative chance:
+*********** Changes prestige by 5
+******* Gets the country event:
+******** ID is tengri_events.62
+******** title = tengri_events.62.t
+******** desc = tengri_events.62.d
+******** picture = RELIGIOUS_MIGRANTS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Follows the tengri_pagan_reformed religion
+********* secondary_religion = 0 "Sunni
+********* Is at war
+******** Mean time to happen
+********* Base mean time to happen of 360 months
+******** Option: tengri_events.62.a:
+********* Modifies treasury by -0.15 years worth of income
+******** Option: tengri_events.62.b:
+********* Changes prestige by -10
+******* Gets the country event:
+******** ID is tengri_events.63
+******** title = tengri_events.63.t
+******** desc = tengri_events.63.d
+******** picture = ANGRY_SHAMANS_eventPicture
+******** Trigger:
+********* Has the DLC The Cossacks
+********* Has the country flag khojas_established
+********* Does not have the country flag end_of_khojas
+********* Does not have the ruler modifier support_of_the_khojas
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+******** Option: tengri_events.63.a:
+********* add_horde_unity = -5
+********* Adds -5 legitimacy
+********* add_devotion = -3
+********* Changes republican tradition by -300%
+******** Option: tengri_events.63.b:
+********* Changes prestige by -10

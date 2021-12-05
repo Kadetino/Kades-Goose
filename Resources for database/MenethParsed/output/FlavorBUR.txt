@@ -1,0 +1,651 @@
+
+=== 1 "The Lowlands Revolt! ===
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Sets the global flag dutch_revolt
+* Sets the country flag dutch_revolt_target
+
+'''Option: 0 "Suppress the rebels!:'''
+
+* Changes stability by -2
+* Random owned province:
+** Limited to:
+*** Region is low_countries_region
+*** Any of the following:
+**** Culture is 0 "Dutch
+**** Culture is frisian
+**** Culture is 0 "Flemish
+** Spawns revolt of size 3 of 0 "Separatists rebels
+** Sets the province flag ned_rebels_start_flag
+* Random owned province:
+** Limited to:
+*** Does not have the province flag ned_rebels_start_flag
+*** Region is low_countries_region
+*** Any of the following:
+**** Culture is 0 "Dutch
+**** Culture is frisian
+**** Culture is 0 "Flemish
+** Spawns revolt of size 3 of 0 "Separatists rebels
+** Sets the province flag ned_rebels_start_flag
+** Sets the province flag dutch_revolt
+* Hidden effect:
+** low_countries_region:
+*** Limited to:
+**** The province is owned by our country
+**** Any of the following:
+***** Culture is 0 "Dutch
+***** Culture is frisian
+***** Culture is 0 "Flemish
+***** Does not follow our country's religion
+*** Adds the modifier "dutch_revolt_modifier" until the end of the campaign:
+**** local_unrest = 10
+
+=== 1 "[dutch_rebels_target.GetName] Revolts! ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any owned province:
+** Region is low_countries_region
+** Not controlled by 0 "Rebels
+** Does not have the province flag dutch_revolt
+** Does not have the province flag no_dutch_revolt
+** Any of the following:
+*** Culture is frisian
+*** Culture is 0 "Dutch
+*** Culture is 0 "Flemish
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Region is low_countries_region
+**** Not controlled by 0 "Rebels
+**** Does not have the province flag dutch_revolt
+**** Does not have the province flag no_dutch_revolt
+**** Any of the following:
+***** Culture is frisian
+***** Culture is 0 "Dutch
+***** Culture is 0 "Flemish
+*** save_event_target_as = dutch_rebels_target
+
+'''Option: 0 "Suppress the rebels!:'''
+
+* AI chance:
+** Base chance of 100
+* event_target:dutch_rebels_target:
+** Sets the province flag dutch_revolt
+** Spawns revolt of size 1 of 0 "Separatists rebels
+
+'''Option: 0 "Give local concessions:'''
+
+* AI chance:
+** Base chance of 0
+* event_target:dutch_rebels_target:
+** add_local_autonomy = 100
+** Sets the province flag no_dutch_revolt
+
+=== 0 "Netherlands Declare Independence! ===
+* Cannot fire randomly
+* Can only fire once
+
+'''Trigger:'''
+
+* 0 "Netherlands does not exist
+* is_free_or_tributary_trigger = yes
+* Has at least 5 provinces where all of the following is true:
+** Any of the following:
+*** Controlled by 0 "Rebels
+*** local_autonomy = 90
+** Any of the following:
+*** Culture is 0 "Dutch
+*** Culture is 0 "Flemish
+*** Culture is frisian
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Region is low_countries_region
+**** Any of the following:
+***** Culture is 0 "Dutch
+***** Culture is 0 "Flemish
+***** Culture is frisian
+***** Has core on 0 "Netherlands
+**** The province is not the capital of the country
+*** Discovers the country 0 "Netherlands
+*** Gives 0 "Netherlands core on the province
+*** clear_rebels = yes
+** Release 0 "Netherlands as a vassal
+** 0 "Netherlands:
+*** Changes government type to republic
+*** add_government_reform = 0 "Dutch Republic
+** Every owned province:
+*** Limited to:
+**** Region is low_countries_region
+*** Adds claim to 0 "Netherlands
+
+'''Option: 0 "How dare they?!:'''
+
+* 0 "Netherlands:
+** Declares war on 0 "Independence using the our country casus belli
+* Hidden effect:
+** 0 "Netherlands:
+*** Gets the country event:
+**** ID is flavor_bur.11
+**** Base mean time to happen of 1 days
+** Every country:
+*** Limited to:
+**** Country is not our country
+**** Country is not 0 "Netherlands
+**** Any owned province:
+***** Region is low_countries_region
+*** Gets the country event:
+**** ID is flavor_bur.12
+**** Base mean time to happen of 10 days
+** If:
+*** Limited to:
+**** 0 "Netherlands:
+***** Is part of the Holy Roman Empire
+**** Has the DLC Emperor
+*** Every enemy country:
+**** Limited to:
+***** Isn't the Holy Roman Emperor
+**** Gets the country event:
+***** ID is flavor_bur.20
+***** Base mean time to happen of 1 days
+** else:
+*** Every enemy country:
+**** Gets the country event:
+***** ID is flavor_bur.20
+***** Base mean time to happen of 1 days
+** If:
+*** Limited to:
+**** Isn't the Holy Roman Emperor
+**** 0 "Netherlands:
+***** Is part of the Holy Roman Empire
+**** Has the DLC Emperor
+*** set_imperial_incident = incident_dutch_revolt
+
+=== 0 "Dutch Mobilization ===
+* Cannot fire randomly
+
+'''Option: 0 "Excellent:'''
+
+* 0 "Netherlands:
+** Capital:
+*** build_to_forcelimit:
+**** Spawns an infantry unit in 0.6
+**** Spawns a cavalry unit in 0.3
+**** artillery = 0.1
+** Random owned province:
+*** Limited to:
+**** Is coastal
+*** build_to_forcelimit:
+**** Spawns a heavy ship in 0.3
+**** Spawns a light ship in 0.3
+**** transport = 0.2
+
+=== 0 "Dutch Claims ===
+* Cannot fire randomly
+
+'''Option: 0 "How dare they?!:'''
+
+* Every owned province:
+** Limited to:
+*** Region is low_countries_region
+** Adds claim to 0 "Netherlands
+
+=== 0 "[Root.GetName] joins the Republic ===
+
+'''Trigger:'''
+
+* Is AI controlled
+* Wasn't player controlled
+* Country is not 0 "Netherlands
+* 0 "Netherlands:
+** Country exists
+** Is AI controlled
+** Wasn't player controlled
+** Has no truce with our country
+** Is not a vassal
+* is_free_or_tributary_trigger = yes
+* Is not at war
+* Has less than 5 provinces
+* Any owned province:
+** Region is low_countries_region
+* Any of the following:
+** Primary culture is 0 "Dutch
+** Primary culture is 0 "Flemish
+** Primary culture is frisian
+* Does not have the country flag state_joined_netherlands
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 12 months
+
+'''Option: 0 "A wise choice:'''
+
+* 0 "Netherlands:
+** Gets the country event:
+*** ID is flavor_bur.17
+*** Base mean time to happen of 1 days
+* Sets the country flag state_joined_netherlands
+
+=== 0 "[From.GetName] Join the Republic ===
+* Cannot fire randomly
+
+'''Option: 0 "Excellent!:'''
+
+* Our country:
+** Every owned province:
+*** Gives 0 "Netherlands core on the province
+* Inherit our country
+* Modifies treasury by 3 years worth of income
+* Changes national manpower by 3 years worth of men
+* add_yearly_sailors = 3
+
+=== 0 "Dutch Nobility demands General Estates ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Burgundy
+** Country is LOT
+* Is not at war
+* 0 "Netherlands does not exist
+* current_age = 0 "Age of Reformation
+* Any of the following:
+** Primary culture is not 0 "Dutch
+** Primary culture is not frisian
+** Primary culture is not 0 "Flemish
+* Does not have the global flag dutch_revolt
+* num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with:
+** value = 5
+** The owner of the province:
+*** Any of the following:
+**** Primary culture is 0 "Dutch
+**** Primary culture is frisian
+**** Primary culture is 0 "Flemish
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 120 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** Any country:
+***** Is not AI controlled
+***** Any of the following:
+****** Primary culture is 0 "Dutch
+****** Primary culture is frisian
+****** Primary culture is 0 "Flemish
+***** Is a vassal of our country
+*** Random country:
+**** Limited to:
+***** Is not AI controlled
+***** Any of the following:
+****** Primary culture is 0 "Dutch
+****** Primary culture is frisian
+****** Primary culture is 0 "Flemish
+***** Is a vassal of our country
+**** save_event_target_as = dutch_unification_country
+** else:
+*** Random country:
+**** Limited to:
+***** Any of the following:
+****** Primary culture is 0 "Dutch
+****** Primary culture is frisian
+****** Primary culture is 0 "Flemish
+***** Is a vassal of our country
+**** save_event_target_as = dutch_unification_country
+
+'''Option: 1 "We will grant them no concessions.:'''
+
+* AI chance:
+** Base chance of 25
+* low_countries_region:
+** Limited to:
+*** The province is owned by our country
+** add_unrest = 10
+* Every country:
+** Limited to:
+*** Any of the following:
+**** Primary culture is 0 "Dutch
+**** Primary culture is frisian
+**** Primary culture is 0 "Flemish
+*** Is a vassal of our country
+** Adds 15 liberty desire
+* Sets the country flag harsh_dutch
+
+'''Option: 1 "An agreeable proposal.:'''
+
+* AI chance:
+** Base chance of 75
+* Sets the country flag bur_dutch_integration
+* Hidden effect:
+** low_countries_region:
+*** Limited to:
+**** The owner of the province:
+***** Is a vassal of our country
+***** Any of the following:
+****** Primary culture is 0 "Dutch
+****** Primary culture is frisian
+****** Primary culture is 0 "Flemish
+*** Cedes province to event_target:dutch_unification_country
+*** Gives 0 "Netherlands core on the province
+* event_target:dutch_unification_country:
+** Changes country to 0 "Netherlands
+** Hidden effect:
+*** swap_non_generic_missions = yes
+*** If:
+**** Limited to:
+***** has_custom_ideas_false = no
+***** Does not have the idea group 0 "Dutch Ideas
+**** Gets the country event:
+***** ID is ideagroups.1
+
+=== 0 "The Count of Charolais and the Edict of Blood ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Burgundy
+* 0 "Netherlands does not exist
+* Has the country flag harsh_dutch
+* Owns 0 "Antwerpen
+* Owns 1 "Amsterdam
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 60 months
+
+'''Option: 0 "No Concessions:'''
+
+* low_countries_region:
+** Limited to:
+*** The province is owned by 0 "Burgundy
+** add_unrest = 5
+
+'''Option: 0 "Don't introduce that Consumption Tax:'''
+
+* Adds -50 legitimacy
+* Changes prestige by -100
+
+=== 0 "The Count of Maçon and the Union of Arras ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Burgundy
+* Follows the 0 "Catholic religion
+* Has the country flag harsh_dutch
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 60 months
+
+'''Option: 0 "Sign the Union of Arras:'''
+
+* low_countries_region:
+** Limited to:
+*** The province is owned by 0 "Burgundy
+*** Does not follow the 0 "Catholic religion
+** add_unrest = 2
+** add_local_autonomy = 10
+* Adds -50 legitimacy
+* Changes prestige by -50
+
+'''Option: 0 "No Concessions:'''
+
+* low_countries_region:
+** Limited to:
+*** The province is owned by 0 "Burgundy
+*** Does not follow the 0 "Catholic religion
+** add_unrest = 10
+
+=== 0 "Netherlands Defies [From.GetAdjective] Oppressors! ===
+* Cannot fire randomly
+
+'''Option: 0 "We must show them our support!:'''
+
+* create_alliance = 0 "Netherlands
+* join_all_offensive_wars_of = 0 "Netherlands
+* set_ai_attitude:
+** Affecting 0 "Netherlands
+** attitude = 0 "Friendly
+* 0 "Netherlands:
+** Adds the opinion modifier "0 "Supported our Independence" towards our country
+
+'''Option: 0 "This is not our war.:'''
+
+* Changes prestige by -10
+
+=== 0 "Mary Takes Control of the Kingdom ===
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** Any of the following:
+***** Heir is male
+***** Is in regency
+*** Spawns a ruler:
+**** Named "Marie"
+**** Ruler's dynasty is de Bourgogne
+**** Culture is 0 "Burgundian
+**** age = 20
+**** Legitimacy of 95
+**** Ruler is female
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+**** Hidden effect:
+***** add_ruler_personality_ancestor:
+****** Named "kind_hearted"
+
+'''Option: 0 "Issue the Privilege and settle this.:'''
+
+* AI chance:
+** Base chance of 100
+* Every subject country:
+** Limited to:
+*** Capital:
+**** Any of the following:
+***** Region is france_region
+***** Culture group is 0 "French
+***** Culture is 0 "Dutch
+***** Culture is 0 "Flemish
+***** Is part of the Holy Roman Empire
+** Adds 25 liberty desire
+
+'''Option: 0 "If they will not cooperate then we are better off abandoning them.:'''
+
+* AI chance:
+** Base chance of 0
+* Every subject country:
+** Limited to:
+*** Is AI controlled
+*** Capital:
+**** Any of the following:
+***** Region is france_region
+***** Culture group is 0 "French
+***** Culture is 0 "Dutch
+***** Culture is 0 "Flemish
+***** Is part of the Holy Roman Empire
+** 0 "Burgundy:
+*** Release PREV from vassalage
+** If:
+*** Limited to:
+**** Has the monarchy government type
+**** has_reform_false = 0 "Celestial Empire
+*** Randomized by 
+**** Acquisition chance:
+**** Changes government type to republic
+**** add_government_reform = merchants_reform
+** If:
+*** Limited to:
+**** Has the monarchy government type
+**** has_reform_false = 0 "Celestial Empire
+*** Randomized by 
+**** Acquisition chance:
+**** Changes government type to republic
+
+=== title = new_flavour_bur.1.name ===
+* Cannot fire randomly
+
+'''Option: new_flavour_bur.1.A:'''
+
+* If:
+** Limited to:
+*** Does not have the 0 "Holy War casus belli against 0 "Ottomans
+** Gives the cb_crusade_pheasants casus belli against 0 "Ottomans
+
+=== title = new_flavour_bur.1.name ===
+* Cannot fire randomly
+
+'''Option: new_flavour_bur.2.A:'''
+
+* If:
+** Limited to:
+*** Does not have the 0 "Holy War casus belli against 0 "Ottomans
+** Gives the cb_crusade_pheasants casus belli against 0 "Ottomans
+
+=== title = new_flavour_bur.3.name ===
+* Cannot fire randomly
+
+'''Option: new_flavour_bur.3.A:'''
+
+
+=== title = new_flavour_bur.4.name ===
+* Trigger:
+** Follows the 0 "Catholic religion
+** is_excommunicated_false = no
+** 0 "The Papal State exists
+** 0 "The Papal State:
+*** Has an opinion of at least -10 with our country
+* desc = new_flavour_bur.4.desc.pope
+* Trigger:
+** Any of the following:
+*** Does not follow the 0 "Catholic religion
+*** is_excommunicated = yes
+*** 0 "The Papal State does not exist
+*** 0 "The Papal State:
+**** Has an opinion of less than -10 with our country
+* desc = new_flavour_bur.4.desc.nopope
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** Any of the following:
+***** Does not follow the 0 "Catholic religion
+***** is_excommunicated = yes
+***** 0 "The Papal State does not exist
+***** 0 "The Papal State:
+****** Has an opinion of less than -10 with our country
+*** set_saved_name:
+**** Named "bur_bishop_name"
+
+'''Option: new_flavour_bur.4.A:'''
+
+* Changes country to LOT
+* If:
+** Limited to:
+*** government_rank_false = 2
+** set_government_rank = 2
+* Changes prestige by 20
+* If:
+** Limited to:
+*** has_custom_ideas_false = no
+** Gets the country event:
+*** ID is ideagroups.1
+* swap_non_generic_missions = yes
+* AI chance:
+** Base chance of 1
+
+'''Option: new_flavour_bur.4.B:'''
+
+* Changes prestige by 20
+* AI chance:
+** Base chance of 0
+
+=== title = new_flavour_bur.5.name ===
+* Cannot fire randomly
+
+'''Option: new_flavour_bur.5.A:'''
+
+* Adds the modifier "bur_prestigious_duchy_mod" for the rest of the campaign:
+
+=== title = new_flavour_bur.6.name ===
+* Cannot fire randomly
+
+'''Option: new_flavour_bur.6.A:'''
+
+* Tooltip:
+** ile_de_france_area:
+*** Limited to:
+**** Has no core on our country
+**** is_permanent_claim_false = our country
+*** add_permanent_claim = our country
+** champagne_area:
+*** Limited to:
+**** Has no core on our country
+**** is_permanent_claim_false = our country
+*** add_permanent_claim = our country
+** orleans_area:
+*** Limited to:
+**** Has no core on our country
+**** is_permanent_claim_false = our country
+*** add_permanent_claim = our country
+** Every subject country:
+*** Limited to:
+**** Capital:
+***** Region is france_region
+*** Adds 50 liberty desire
+* Adds the opinion modifier "opinion_bur_rebellious_burgundy" towards our country
+
+=== title = new_flavour_bur.7.name ===
+* Cannot fire randomly
+* Can only fire once
+
+'''Option: new_flavour_bur.7.A:'''
+
+* from:
+* Every subject country:
+** Limited to:
+*** Capital:
+**** Region is france_region
+** Sets the country flag FRA_vassal_to_be_given_to_BUR
+* Every country:
+** Limited to:
+*** Has the country flag FRA_vassal_to_be_given_to_BUR
+** Hidden effect:
+*** Removes the country flag FRA_vassal_to_be_given_to_BUR
+*** ROOT:
+**** Release prev from vassalage
+*** Our country:
+**** Vassalizes prev
+* Hidden effect:
+** If:
+*** Limited to:
+**** Has the opinion modifier opinion_bur_rebellious_burgundy with our country
+*** remove_opinion:
+**** Affecting our country
+* Adds the opinion modifier "opinion_bur_usurpers_of_france" towards our country

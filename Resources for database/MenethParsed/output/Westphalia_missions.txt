@@ -1,0 +1,20 @@
+******** is_triggered_only = yes
+******** Option: westphalian_mission_events.1.a:
+********* AI chance:
+********** Base chance of 100
+********* 0 "Westfalen:
+********** move_capital_effect = yes
+********** add_nationalism = -100
+********** Changes culture to our country
+********** Changes religion to our country
+********** Changes base tax by 2
+********** add_base_production = 2
+********** add_base_manpower = 1
+********** Adds the modifier "westfalen_capital_modifier" until the end of the campaign:
+******** Option: westphalian_mission_events.1.b:
+********* AI chance:
+********** Base chance of 10
+********* 0 "Westfalen:
+********** Changes base tax by 2
+********** add_base_production = 1
+********** add_base_manpower = 1

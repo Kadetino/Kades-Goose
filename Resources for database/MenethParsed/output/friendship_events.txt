@@ -1,0 +1,20 @@
+******** Trigger:
+********* Is a historical friend of our country
+******** Immediate effects:
+********* Our country:
+********** Hidden effect:
+*********** Gets the country event:
+************ ID is friendship_events.2
+******** is_triggered_only = yes
+******** Option: friendship_events.1.a:
+********* remove_historical_friend = our country
+******* Gets the country event:
+******** ID is friendship_events.2
+******** title = friendship_events.2.t
+******** desc = friendship_events.2.d
+******** picture = RELIGION_eventPicture
+******** Trigger:
+********* Is a historical friend of our country
+******** is_triggered_only = yes
+******** Option: friendship_events.2.a:
+********* remove_historical_friend = our country

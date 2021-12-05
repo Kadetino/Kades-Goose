@@ -1,0 +1,878 @@
+******** Trigger:
+********* Any of the following:
+********** Follows the 0 "Animist religion
+********** Follows the 0 "Fetishist religion
+********** Follows the 0 "Totemist religion
+********* The owner of the province:
+********** Does not have the country flag honor_ancestors_catholic
+********** Any of the following:
+*********** Follows the 0 "Animist religion
+*********** Follows the 0 "Fetishist religion
+*********** Follows the 0 "Totemist religion
+********** Any neighbor country:
+*********** Follows the 0 "Catholic religion
+*********** Has an opinion of at least 100 with our country
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.75:
+********** The owner of the province:
+*********** Culture group is not the same as our country
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has the 0 "Theologian advisor
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Any neighbor country:
+************ Any of the following:
+************* Follows the 0 "Protestant religion
+************* Follows the 0 "Sunni religion
+************* Follows the 0 "Shia religion
+************ Has an opinion of at least 100 with our country
+******** Option: 0 "Convert religion!:
+********* AI chance:
+********** Base chance of 30
+********* Changes religion to 0 "Catholic
+******** Option: 0 "Honor the beliefs of our ancestors.:
+********* AI chance:
+********** Base chance of 70
+********* The owner of the province:
+********** add_stability_or_adm_power = yes
+********** Sets the country flag honor_ancestors_catholic
+******* Gets the province event:
+******** ID is 5002
+******** title = 0 "Christian Influences
+******** desc = 0 "Close contact with settlers, traders and missionaries has influenced our population to such an extent that they are gradually giving up their old religious faith and are converting their customs and beliefs.
+******** picture = RELIGIOUS_CONVERSION_eventPicture
+******** goto = our country
+******** Trigger:
+********* Any of the following:
+********** Follows the 0 "Animist religion
+********** Follows the 0 "Fetishist religion
+********** Follows the 0 "Totemist religion
+********* The owner of the province:
+********** Does not have the country flag honor_ancestors_protestant
+********** Any of the following:
+*********** Follows the 0 "Animist religion
+*********** Follows the 0 "Fetishist religion
+*********** Follows the 0 "Totemist religion
+********** Any neighbor country:
+*********** Follows the 0 "Protestant religion
+*********** Has an opinion of at least 100 with our country
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.75:
+********** The owner of the province:
+*********** Culture group is not the same as our country
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has the 0 "Theologian advisor
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Any neighbor country:
+************ Any of the following:
+************* Follows the 0 "Catholic religion
+************* Follows the 0 "Sunni religion
+************* Follows the 0 "Shia religion
+************ Has an opinion of at least 100 with our country
+******** Option: 0 "Convert religion!:
+********* AI chance:
+********** Base chance of 30
+********* Changes religion to 0 "Protestant
+******** Option: 0 "Honor the beliefs of our ancestors.:
+********* AI chance:
+********** Base chance of 70
+********* The owner of the province:
+********** add_stability_or_adm_power = yes
+********** Sets the country flag honor_ancestors_protestant
+******* Gets the province event:
+******** ID is 5003
+******** title = 0 "Muslim Influences
+******** desc = 0 "Close contact with settlers, traders and missionaries has influenced our population to such an extent that they are gradually giving up their old religious faith and are converting their customs and beliefs.
+******** picture = PRAYING_eventPicture
+******** goto = our country
+******** Trigger:
+********* Any of the following:
+********** Follows the 0 "Animist religion
+********** Follows the 0 "Fetishist religion
+********** Follows the 0 "Totemist religion
+********* The owner of the province:
+********** Does not have the country flag honor_ancestors_sunni
+********** Any of the following:
+*********** Follows the 0 "Animist religion
+*********** Follows the 0 "Fetishist religion
+*********** Follows the 0 "Totemist religion
+********** Any neighbor country:
+*********** Follows the 0 "Sunni religion
+*********** Has an opinion of at least 100 with our country
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.75:
+********** The owner of the province:
+*********** Culture group is not the same as our country
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has the 0 "Theologian advisor
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Any neighbor country:
+************ Any of the following:
+************* Follows the 0 "Protestant religion
+************* Follows the 0 "Catholic religion
+************* Follows the 0 "Shia religion
+************ Has an opinion of at least 100 with our country
+******** Option: 0 "Convert religion:
+********* AI chance:
+********** Base chance of 30
+********* Changes religion to 0 "Sunni
+******** Option: 0 "Honor the beliefs of our ancestors:
+********* AI chance:
+********** Base chance of 70
+********* The owner of the province:
+********** add_stability_or_adm_power = yes
+********** Sets the country flag honor_ancestors_sunni
+******* Gets the province event:
+******** ID is 5004
+******** title = 0 "Muslim Influences
+******** desc = 0 "Close contact with settlers, traders and missionaries has influenced our population to such an extent that they are gradually giving up their old religious faith and are converting their customs and beliefs.
+******** picture = PRAYING_eventPicture
+******** goto = our country
+******** Trigger:
+********* Any of the following:
+********** Follows the 0 "Animist religion
+********** Follows the 0 "Fetishist religion
+********** Follows the 0 "Totemist religion
+********* The owner of the province:
+********** Does not have the country flag honor_ancestors_shiite
+********** Any of the following:
+*********** Follows the 0 "Animist religion
+*********** Follows the 0 "Fetishist religion
+*********** Follows the 0 "Totemist religion
+********** Any neighbor country:
+*********** Follows the 0 "Shia religion
+*********** Has an opinion of at least 100 with our country
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.75:
+********** The owner of the province:
+*********** Culture group is not the same as our country
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has the 0 "Theologian advisor
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Any neighbor country:
+************ Any of the following:
+************* Follows the 0 "Protestant religion
+************* Follows the 0 "Sunni religion
+************* Follows the 0 "Catholic religion
+************ Has an opinion of at least 100 with our country
+******** Option: 0 "Convert religion:
+********* AI chance:
+********** Base chance of 30
+********* Changes religion to 0 "Shia
+******** Option: 0 "Honor the beliefs of our ancestors:
+********* AI chance:
+********** Base chance of 70
+********* The owner of the province:
+********** add_stability_or_adm_power = yes
+********** Sets the country flag honor_ancestors_shiite
+******* Gets the province event:
+******** ID is 5057
+******** title = 0 "Fortification Effort
+******** desc = 1 "A permanent matter of regal attention, fortification of the realm is an expensive but vital business. Claiming to be situated in a position of great strategic importance, our local authorities in [Root.GetName] are demanding funding for the renovation of the province's forts.
+******** picture = FORT_eventPicture
+******** goto = our country
+******** Trigger:
+********* fort_level = 1
+********* The owner of the province:
+********** Ruler's military skill is at least 4
+********** Military technology is at least 8
+********** Has at least 100 ducats in the treasury
+********* Does not have the province modifier "0 "Improved Fortifications"
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Has a Military Engineer with a skill of at least 3
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Does not have a 0 "Military Engineer advisor
+******** Option: 0 "It's of the utmost importance.:
+********* AI chance:
+********** Base chance of 55
+********* Adds the modifier "0 "Improved Fortifications" until the end of the campaign:
+********** +10% local defensiveness
+********* The owner of the province:
+********** Changes treasury by -50 ducats
+******** Option: 0 "It's too expensive.:
+********* AI chance:
+********** Base chance of 45
+********* The owner of the province:
+********** Changes prestige by -1
+******* Gets the province event:
+******** ID is 5062
+******** title = 0 "Regulation of the Medical Profession
+******** desc = 1 "Our local authorities in [Root.GetName] have made joint cause with the province's intelligentsia to expand the number of doctors and midwives in the region. They have begun to pay greater attention to regulating and supervising the training of medical professionals at universities, hoping that this will help reduce the influence of superstition in the practice of medicine over time.
+******** picture = PLAGUE_eventPicture
+******** goto = our country
+******** Trigger:
+********* The owner of the province:
+********** Has at least 6 Innovative ideas
+********** Ruler's administrative skill is at least 3
+********* Any of the following:
+********** Has the 0 "University building
+********** development = 20
+********* Does not have the province modifier "0 "Medical Evolution"
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 700 months
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Is a lucky nation
+******** Option: 0 "Our research will benefit population growth.:
+********* AI chance:
+********** Base chance of 55
+********* Adds the modifier "0 "Medical Evolution" until the end of the campaign:
+********** local_development_cost = -0.15
+******** Option: 0 "There is still room for improvement.:
+********* AI chance:
+********** Base chance of 45
+********* The owner of the province:
+********** Changes administrative power stored by 15
+********* highlight = yes
+********* Trigger:
+********** The owner of the province:
+*********** ruler_has_personality_ancestor:
+************ Named "scholar"
+********* area:
+********** Option: 0 "Medical Evolution:
+********** Adds the modifier "" until the end of the campaign:
+******* Gets the province event:
+******** ID is 5073
+******** title = 0 "New Land Claimed
+******** desc:
+********* desc = 1 "Our authorities in [Root.GetName] have managed to open up new land for our people by clearing a dense forest that previously made a large area of land inhospitable for settlement. These newly cleared areas will surely lead to a population boom there.
+********* Trigger:
+********** Any of the following:
+*********** has_terrain = 0 "Forest
+*********** has_terrain = 0 "Hills
+*********** has_terrain = 0 "Woods
+*********** has_terrain = 0 "Jungle
+******** desc:
+********* desc = event.5073.2
+********* Trigger:
+********** Any of the following:
+*********** has_terrain = 0 "Grasslands
+*********** has_terrain = 0 "Farmlands
+******** picture = CITY_DEVELOPMENT_eventPicture
+******** goto = our country
+******** Trigger:
+********* Does not have the province flag new_land
+********* Any of the following:
+********** has_terrain = 0 "Farmlands
+********** has_terrain = 0 "Forest
+********** has_terrain = 0 "Hills
+********** has_terrain = 0 "Woods
+********** has_terrain = 0 "Grasslands
+********** has_terrain = 0 "Jungle
+********* The owner of the province:
+********** Any of the following:
+*********** Has at least 1 conquistadors
+*********** Has at least 1 explorers
+********** Ruler's administrative skill is at least 3
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Ruler's administrative skill is at least 5
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Is a lucky nation
+******** is_mtth_scaled_to_size = 1
+******** Immediate effects:
+********* Sets the province flag new_land
+******** Option: 0 "Increase Tax Income.:
+********* Changes base tax by 1
+******** Option: 0 "Increase Production:
+********* add_base_production = 1
+******** Option: 0 "Increase Manpower.:
+********* add_base_manpower = 1
+********* highlight = yes
+********* Trigger:
+********** The owner of the province:
+*********** ruler_has_personality_ancestor:
+************ Named "industrious"
+********* add_base_production = 1
+********* Changes base tax by 1
+********* highlight = yes
+********* Trigger:
+********** The owner of the province:
+*********** ruler_has_personality_ancestor:
+************ Named "entrepreneur"
+********* add_base_production = 1
+********* add_base_manpower = 1
+********* highlight = yes
+********* Trigger:
+********** The owner of the province:
+*********** ruler_has_personality_ancestor:
+************ Named "expansionist"
+********* add_base_manpower = 1
+********* Changes base tax by 1
+******* Gets the province event:
+******** ID is 5087
+******** title = 0 "Boundary Dispute
+******** desc = 1 "The lack of good maps or tools to create accurate maps has helped our cause in the border region of [claim_province.GetAreaName]. Our local authorities have been able to make use of certain ambiguities to make a convincing case that [claim_province.GetName] should in fact belong to [Root.Owner.GetUsableName], rather than to [claim_province.Owner.GetUsableName]. Should we press these claims, or would it be better to let them slide?
+******** picture = BATTLE_eventPicture
+******** goto = claim_province
+******** Trigger:
+********* The owner of the province:
+********** is_free_or_tributary_trigger = yes
+********* Any bordering province:
+********** The province is not owned by our country
+********** Has no core on our country
+********** The province is not claimed by our country
+********** The province is not owned by 0 "The Papal State
+********** Has been discovered by our country
+********** The province is not the capital of the country
+********** The owner of the province:
+*********** Is not a vassal of our country
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 10:
+********** Any bordering province:
+*********** The province is not owned by our country
+*********** Has no core on our country
+*********** The province is not claimed by our country
+*********** The province is not owned by 0 "The Papal State
+*********** Has been discovered by our country
+*********** The province is not the capital of the country
+*********** The owner of the province:
+************ Is not a vassal of our country
+************ Any of the following:
+************* Is a historical friend of our country
+************* Is allied with our country
+********* Multiplies value by 0.9:
+********** Any bordering province:
+*********** The province is not owned by our country
+*********** Has no core on our country
+*********** The province is not claimed by our country
+*********** The province is not owned by 0 "The Papal State
+*********** Has been discovered by our country
+*********** The province is not the capital of the country
+*********** The owner of the province:
+************ Is not a vassal of our country
+************ Any of the following:
+************* Is a historical rival of our country
+************* Considers our country a rival
+************* Has an opinion of less than -100 with our country
+********* Multiplies value by 1.1:
+********** The owner of the province:
+*********** Ruler's diplomatic skill is less than 1
+********* Multiplies value by 1.1:
+********** The owner of the province:
+*********** Ruler's diplomatic skill is less than 3
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Ruler's diplomatic skill is at least 5
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Ruler's diplomatic skill is at least 6
+******** Immediate effects:
+********* Hidden effect:
+********** Random bordering province:
+*********** Limited to:
+************ The province is not owned by our country
+************ Has no core on our country
+************ The province is not claimed by our country
+************ The province is not owned by 0 "The Papal State
+************ Has been discovered by our country
+************ The province is not the capital of the country
+************ The owner of the province:
+************* Is not a vassal of our country
+*********** save_event_target_as = claim_province
+******** is_mtth_scaled_to_size = 1
+******** Option: 1 "Press the issue.:
+********* event_target:claim_province:
+********** Adds claim to our country
+********** The owner of the province:
+*********** Gives the 0 "Diplomatic Insult casus belli against our country
+*********** Adds the opinion modifier "0 "Pressed issue over borders" towards our country
+******** Option: 1 "Settle the issue.:
+********* The owner of the province:
+********** Changes prestige by -5
+******* Gets the province event:
+******** ID is 6016
+******** title = 0 "Buddhist Influences
+******** desc = 0 "Close contact with settlers, traders and missionaries has influenced our population to such an extent that they are gradually giving up their old religious faith and are converting their customs and beliefs.
+******** picture = BUDDHA_eventPicture
+******** goto = our country
+******** Trigger:
+********* Any of the following:
+********** Follows the 0 "Animist religion
+********** Follows the 0 "Fetishist religion
+********** Follows the 0 "Totemist religion
+********* The owner of the province:
+********** Does not have the country flag honor_ancestors_buddhism
+********** Any of the following:
+*********** Follows the 0 "Animist religion
+*********** Follows the 0 "Fetishist religion
+*********** Follows the 0 "Totemist religion
+********** Any of the following:
+*********** Any neighbor country:
+************ Follows the 0 "Mahayana religion
+************ Has an opinion of at least 100 with our country
+*********** Any neighbor country:
+************ Follows the 0 "Theravada religion
+************ Has an opinion of at least 100 with our country
+*********** Any neighbor country:
+************ Follows the 0 "Vajrayana religion
+************ Has an opinion of at least 100 with our country
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Culture group is not the same as our country
+********* Multiplies value by 1.5:
+********** The owner of the province:
+*********** Has the 0 "Theologian advisor
+******** Option: 0 "Convert to Vajrayana Buddhism:
+********* Trigger:
+********** The owner of the province:
+*********** Any neighbor country:
+************ Follows the 0 "Vajrayana religion
+************ Has an opinion of at least 100 with our country
+********* AI chance:
+********** Base chance of 30
+********* Changes religion to 0 "Vajrayana
+******** Option: 0 "Convert to Theravada Buddhism:
+********* Trigger:
+********** The owner of the province:
+*********** Any neighbor country:
+************ Follows the 0 "Theravada religion
+************ Has an opinion of at least 100 with our country
+********* AI chance:
+********** Base chance of 30
+********* Changes religion to 0 "Theravada
+******** Option: 0 "Convert to Mahayana Buddhism:
+********* Trigger:
+********** The owner of the province:
+*********** Any neighbor country:
+************ Follows the 0 "Mahayana religion
+************ Has an opinion of at least 100 with our country
+********* AI chance:
+********** Base chance of 30
+********* Changes religion to 0 "Mahayana
+******** Option: 0 "Honor the beliefs of our ancestors:
+********* AI chance:
+********** Base chance of 70
+********* The owner of the province:
+********** add_stability_or_adm_power = yes
+********** Sets the country flag honor_ancestors_buddhism
+******* Gets the province event:
+******** ID is 6032
+******** title = 0 "Boundary Dispute
+******** desc = 0 "The province of [claim_province.GetName] has been a disputed border region between us and [claim_province.Owner.GetUsableName] for quite some time, but there really shouldn't be any question about its loyalty, considering the religious ties between us and its local population. Bearing in mind the way the rest of that God-forsaken country is run at the moment, it's highly unlikely that they will be able to organize any serious defense if we decide to press the matter further.
+******** picture = COURT_eventPicture
+******** goto = claim_province
+******** Trigger:
+********* The owner of the province:
+********** Follows our country's religion
+********* The owner of the province:
+********** Is not a vassal
+********* Any bordering province:
+********** The province is not owned by our country
+********** Has no core on our country
+********** The province is not claimed by our country
+********** Follows our country's religion
+********** The owner of the province:
+*********** Is in our country's religion group
+*********** Does not follow our country's religion
+*********** Any of the following:
+************ Ruler's administrative skill is less than 2
+************ Ruler's diplomatic skill is less than 2
+************ Ruler's military skill is less than 2
+********** The owner of the province:
+*********** Is not a vassal of our country
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 10:
+********** The owner of the province:
+*********** Is a historical friend of our country
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Is a historical rival of our country
+********* Multiplies value by 1.2:
+********** The owner of the province:
+*********** Ruler's diplomatic skill is less than 1
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Is a lucky nation
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Is the defender of the faith
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Ruler's diplomatic skill is at least 5
+******** is_mtth_scaled_to_size = 1
+******** Immediate effects:
+********* Hidden effect:
+********** Random bordering province:
+*********** Limited to:
+************ The province is not owned by our country
+************ Has no core on our country
+************ The province is not claimed by our country
+************ Follows our country's religion
+************ The owner of the province:
+************* Is in our country's religion group
+************* Does not follow our country's religion
+************* Any of the following:
+************** Ruler's administrative skill is less than 2
+************** Ruler's diplomatic skill is less than 2
+************** Ruler's military skill is less than 2
+************ The owner of the province:
+************* Is not a vassal of our country
+*********** save_event_target_as = claim_province
+******** Option: 0 "Protect our Faith.:
+********* AI chance:
+********** Base chance of 55
+********* event_target:claim_province:
+********** Adds claim to our country
+********** The owner of the province:
+*********** Gives the 0 "Diplomatic Insult casus belli against our country
+*********** Adds the opinion modifier "0 "Protected Faith in borders" towards our country
+******** Option: 0 "Settle the issue peacefully.:
+********* AI chance:
+********** Base chance of 0
+********* The owner of the province:
+********** Changes stability by -1
+******* Gets the province event:
+******** ID is 6033
+******** title = 0 "Boundary Dispute
+******** desc = 0 "The province of [claim_province.GetName] has been a disputed border region between us and [claim_province.Owner.GetUsableName] for quite some time, but there really shouldn't be any question about its loyalty, considering the cultural ties between us and the local population. Bearing in mind the way the rest of that God-forsaken country is run at the moment, it's highly unlikely that they will be able to organize any serious defense if we decide to press the matter further.
+******** picture = DIPLOMACY_eventPicture
+******** goto = claim_province
+******** Trigger:
+********* The owner of the province:
+********** Culture group is the same as our country
+********* The owner of the province:
+********** Is not a vassal
+********* Any bordering province:
+********** The province is not owned by our country
+********** Has no core on our country
+********** The province is not claimed by our country
+********** Culture group is the same as our country
+********** The owner of the province:
+*********** Primary culture is not the same as in our country
+*********** Does not accept the primary culture of our country
+*********** Culture group is not the same as our country
+*********** Any of the following:
+************ Ruler's administrative skill is less than 2
+************ Ruler's diplomatic skill is less than 2
+************ Ruler's military skill is less than 2
+********** The owner of the province:
+*********** Is not a vassal of our country
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+********* Multiplies value by 10:
+********** The owner of the province:
+*********** Is a historical friend of our country
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Is a historical rival of our country
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Ruler's diplomatic skill is less than 1
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has the idea 0 "Humanist Tolerance
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Is a lucky nation
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Ruler's diplomatic skill is at least 5
+******** Immediate effects:
+********* Hidden effect:
+********** Random bordering province:
+*********** Limited to:
+************ The province is not owned by our country
+************ Has no core on our country
+************ The province is not claimed by our country
+************ Culture group is the same as our country
+************ The owner of the province:
+************* Primary culture is not the same as in our country
+************* Does not accept the primary culture of our country
+************* Culture group is not the same as our country
+************* Any of the following:
+************** Ruler's administrative skill is less than 2
+************** Ruler's diplomatic skill is less than 2
+************** Ruler's military skill is less than 2
+************ The owner of the province:
+************* Is not a vassal of our country
+*********** save_event_target_as = claim_province
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Press the issue.:
+********* AI chance:
+********** Base chance of 55
+********* event_target:claim_province:
+********** Adds claim to our country
+********** The owner of the province:
+*********** Gives the 0 "Diplomatic Insult casus belli against our country
+*********** Adds the opinion modifier "0 "Pressed issue over borders" towards our country
+******** Option: 0 "Settle the issue peacefully.:
+********* AI chance:
+********** Base chance of 0
+********* The owner of the province:
+********** Changes stability by -1
+******* Gets the province event:
+******** ID is 746
+******** title = 0 "$PROVINCENAME$ Defects.
+******** desc = 0 "The local authorities in $PROVINCENAME$ have no problem adapting to the new rules and laws of the occupier. Now, due to the disastrous progress of this war, they have already accepted the foregone conclusion of their transfer at the peace table, and have defected.
+******** picture = DIPLOMACY_eventPicture
+******** goto = our country
+******** Trigger:
+********* Always false
+********* The owner of the province:
+********** 15 war exhaustion
+********** Is at war
+********** War score lower than least -10
+********* The province is not the capital of the country
+********* Any of the following:
+********** All of the following:
+*********** The province has a different culture than its owner
+*********** Culture is controller
+********** Province controller:
+*********** Is nomadic
+********* Has a garrison of at least 1000
+********* The province is nto under siege
+********* Not controlled by owner
+********* Province controller:
+********** Country is not 0 "Rebels
+********* Province controller:
+********** Country is not 0 "Natives
+********* Province controller:
+********** Country is not 0 "Pirates
+********* Province controller:
+********** Less than 5 war exhaustion
+********* yes is a city
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 5.0:
+********** The owner of the province:
+*********** Is a lucky nation
+********* Multiplies value by 0.8:
+********** Does not follow the religion of its owner
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** 0 prestige
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** -50 prestige
+********* Multiplies value by 0.8:
+********** The owner of the province:
+*********** Stability is lower than 0
+********* Multiplies value by 2.0:
+********** Province controller:
+*********** Is nomadic
+******** Option: 0 "We should sign a peace!:
+******* Gets the province event:
+******** ID is 757
+******** title = 0 "$PROVINCENAME$ Revolts!
+******** desc = 1 "The loyal subjects of $COUNTRY$ have long carried the enormous burden of the [Root.Owner.GetRulerTitleOrRegency]'s constant wars without complaint. Those days are now over...\n\nSince [Root.Owner.GetRulerOrRegency] doesn't seem to listen to reason, the people of $PROVINCENAME$ have decided to try saber rattling!
+******** picture = ANGRY_MOB_eventPicture
+******** goto = our country
+******** Trigger:
+********* The owner of the province:
+********** num_of_rebel_controlled_provinces_false = 3
+********* The owner of the province:
+********** Overextension is at least 101%
+********* The owner of the province:
+********** 6 war exhaustion
+********* Not controlled by 0 "Rebels
+********* yes is a city
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+********* Multiplies value by 5.0:
+********** The owner of the province:
+*********** Is a lucky nation
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has less than 5 provinces
+********* Multiplies value by 2.0:
+********** The owner of the province:
+*********** Has less than 10 provinces
+********* Multiplies value by 0.85:
+********** The owner of the province:
+*********** 10 war exhaustion
+********* Multiplies value by 0.85:
+********** The owner of the province:
+*********** 15 war exhaustion
+******** Option: 0 "That I hear...:
+********* One of the following will happen:
+********** 30 relative chance:
+*********** Spawns revolt of size 2 of 0 "Noble rebels
+********** 20 relative chance:
+*********** Spawns revolt of size 3 of 0 "Noble rebels
+********** 30 relative chance:
+*********** Spawns revolt of size 2 of 0 "Peasant rebels
+********** 20 relative chance:
+*********** Spawns revolt of size 3 of 0 "Peasant rebels
+******* Gets the province event:
+******** ID is 758
+******** title = 0 "We have been chosen!
+******** desc = 0 "Good news, my $MONARCHTITLE$! The Emperor has bestowed the great honor of hosting this year's assembly of the Reichstag upon us.\n\nThis will greatly increase our prestige in the empire. May all delegates gasp in awe as they enter our glorious capital $PROVINCECAPITAL$!
+******** picture = HRE_eventPicture
+******** goto = our country
+******** Trigger:
+********* The province is the capital of the country
+********* Is part of the Holy Roman Empire
+********* The owner of the province:
+********** Is not at war
+********** Isn't the Holy Roman Emperor
+********** Stability is at least 2
+********** Holy Roman Emperor:
+*********** Has no truce with our country
+*********** Has an opinion of at least 50 with our country
+********** Is not the lesser partner in a union
+********** Is not a vassal
+******** Mean time to happen
+********* Base mean time to happen of 240 months
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Is a lucky nation
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** has_reform_false = 0 "Steppe Nomads
+*********** Legitimacy is at least 100
+********* Multiplies value by 0.9:
+********** The owner of the province:
+*********** Stability is at least 3
+******** Option: 0 "Excellent!:
+********* The owner of the province:
+********** Changes prestige by 10
+******* Gets the province event:
+******** ID is 949
+******** title = 0 "$PROVINCENAME$ Defects.
+******** desc = 0 "The local authorities in $PROVINCENAME$ have no problem adapting to the new rules and laws of the occupier. Now, due to the disastrous progress of this war, they have already accepted the foregone conclusion of their transfer at the peace table, and have defected.
+******** picture = HORDE_ON_HORSEBACK_eventPicture
+******** goto = our country
+******** Trigger:
+********* Always false
+********* Not controlled by owner
+********* The owner of the province:
+********** has_reform_false = 0 "Steppe Nomads
+********* Province controller:
+********** has_reform = 0 "Steppe Nomads
+********* Any bordering province:
+********** Controlled by owner
+********** The owner of the province:
+*********** has_reform = 0 "Steppe Nomads
+********* The owner of the province:
+********** 5 war exhaustion
+********* Has a garrison of at least 1000
+********* The province is nto under siege
+******** Mean time to happen
+********* Base mean time to happen of 300 months
+********* Multiplies value by 5.0:
+********** The owner of the province:
+*********** Is a lucky nation
+********* Multiplies value by 0.8:
+********** Does not follow the religion of its owner
+******** Option: 0 "We should sign a peace!:
+******* Gets the province event:
+******** ID is 6331
+******** title = 0 "People sampling new religions
+******** desc = 0 "Our policy of encouraging innovation and free thinking has led to our people taking a more relaxed attitude to the state religion.
+******** picture = RELIGION_eventPicture
+******** goto = our country
+******** Trigger:
+********* The owner of the province:
+********** Has the idea group 0 "Humanist Ideas
+********** Does not have the country modifier "0 "Increased Narrow-minded"
+********* Does not have the province modifier "0 "Heresy"
+********* Follows our country's religion
+********* Any bordering province:
+********** Does not follow our country's religion
+********** Is in our country's religion group
+******** Mean time to happen
+********* Base mean time to happen of 600 months
+******** is_mtth_scaled_to_size = 1
+******** Option: 0 "Let them.:
+********* Adds the modifier "0 "Heresy" until the end of the campaign:
+********** -40% manpower modifier
+********** local_unrest = 2
+********** -33% provincial tax income
+********** local_autonomy = 0.05
+******** Option: 0 "Reverse course.:
+********* The owner of the province:
+********** Adds the modifier "0 "Increased Narrow-minded" for 10 years:
+*********** +5% technology cost
+*********** +1% global missionary strength
+******* Gets the province event:
+******** ID is 9471
+******** title = 0 "Tensions along the $PROVINCENAME$ border
+******** desc = 1 "Borders are organic things, changing and mutating with the seasons, and with the fortunes of the latest conqueror passing by. Historians will, perhaps, say that the events that transpired in $PROVINCENAME$ in the year $YEAR$, were inevitable. 'As $PROVINCENAME$ continued to flourish under the benevolent rule of $COUNTRY$, the yokels on the other side of the border were bound to get jealous.' Perhaps they will be less fair to us. Either way, tensions in $PROVINCENAME$ have given our rivals in [neighbour_country.GetUsableName] a Casus Belli against us.
+******** picture = LAND_MILITARY_eventPicture
+******** goto = our country
+******** Trigger:
+********* The province is not the capital of the country
+********* Any bordering province:
+********** The province is not owned by our country
+********** The owner of the province:
+*********** Not at war with our country
+*********** Has no truce with our country
+*********** Considers our country a rival
+*********** is_free_or_tributary_trigger = yes
+*********** Has no core on our country
+*********** The province is not claimed by our country
+********** Any of the following:
+*********** The owner of the province:
+************ Is not part of the Holy Roman Empire
+*********** ROOT:
+************ The owner of the province:
+************* Is not part of the Holy Roman Empire
+******** is_mtth_scaled_to_size = 1
+******** Mean time to happen
+********* Base mean time to happen of 800 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random bordering province:
+*********** Limited to:
+************ The province is not owned by our country
+************ The owner of the province:
+************* Not at war with our country
+************* Has no truce with our country
+************* Considers our country a rival
+************* is_free_or_tributary_trigger = yes
+************* Has no core on our country
+************* The province is not claimed by our country
+************ Any of the following:
+************* The owner of the province:
+************** Is not part of the Holy Roman Empire
+************* ROOT:
+************** The owner of the province:
+*************** Is not part of the Holy Roman Empire
+*********** The owner of the province:
+************ save_event_target_as = neighbour_country
+******** Option: 0 "All is as it must be.:
+********* event_target:neighbour_country:
+********** Tooltip:
+*********** Adds claim to our country
+********** Hidden effect:
+*********** Gets the country event:
+************ ID is 6436
+******* Gets the country event:
+******** ID is 6436
+******** title = 0 "Border Tensions
+******** desc = 1 "Borders are porous and ever-changing, shifting with the fortunes of the latest conqueror passing by. Historians will, perhaps, blame us for the events that have transpired recently in [From.GetName]: 'As [From.GetName] continued to flourish under the benevolent rule of [From.Owner.GetName], the yokels on the other side of the border were bound to get jealous,' they may say. Or perhaps they will favor us, and declare our protests at the [From.Owner.GetAdjective] occupation of the province to be well-founded. Either way, tensions in [From.GetName] have given us a claim to the province.
+******** picture = LAND_MILITARY_eventPicture
+******** goto = our country
+******** is_triggered_only = yes
+******** Option: 0 "Splendid.:
+********* Adds claim to our country

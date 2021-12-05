@@ -1,0 +1,485 @@
+
+=== title = estate_privileges_and_agendas_events.1.name ===
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Has core on our country
+*** Sets the province flag elective_monarchy_rebellion1
+** Random owned province:
+*** Limited to:
+**** Has core on our country
+**** Does not have the province flag elective_monarchy_rebellion1
+*** Sets the province flag elective_monarchy_rebellion2
+** Random owned province:
+*** Limited to:
+**** Has core on our country
+**** Does not have the province flag elective_monarchy_rebellion1
+**** Does not have the province flag elective_monarchy_rebellion2
+*** Sets the province flag elective_monarchy_rebellion3
+
+'''Option: estate_privileges_and_agendas_events.1.A:'''
+
+* Changes prestige by -10
+
+'''Option: estate_privileges_and_agendas_events.1.B:'''
+
+* remove_government_reform = 0 "Elective Monarchy
+* remove_heir:
+* add_absolutism = 10
+* Hidden effect:
+** Adds the modifier "recently_repealed_elective_monarchy_timer" for 10 years:
+*** No effects
+* Random owned province:
+** Limited to:
+*** Has the province flag elective_monarchy_rebellion1
+** Spawns 3 revolt size of noble rebels
+* If:
+** Limited to:
+*** Has at least 8 provinces
+** Random owned province:
+*** Limited to:
+**** Has the province flag elective_monarchy_rebellion2
+*** Spawns 2 revolt size of noble rebels
+* If:
+** Limited to:
+*** Has at least 15 provinces
+** Random owned province:
+*** Limited to:
+**** Has the province flag elective_monarchy_rebellion3
+*** Spawns 1 revolt size of noble rebels
+
+=== title = estate_privileges_and_agendas_events.2.name ===
+
+'''Trigger:'''
+
+* crown_land_share_false = 11
+* Any of the following:
+** All of the following:
+*** Has the monarchy government type
+*** has_estate = estate_nobles
+*** num_of_estate_privileges:
+**** estate_false = estate_nobles
+**** value_false = 4
+** All of the following:
+*** Has the republic government type
+*** has_estate = estate_burghers
+*** num_of_estate_privileges:
+**** estate_false = estate_burghers
+**** value_false = 4
+** All of the following:
+*** Has the theocracy government type
+*** has_estate = estate_church
+*** num_of_estate_privileges:
+**** estate_false = estate_church
+**** value_false = 4
+** All of the following:
+*** Follows the 0 "Hindu religion
+*** has_estate = estate_brahmins
+*** num_of_estate_privileges:
+**** estate_false = estate_brahmins
+**** value_false = 4
+* has_estate_privilege_false = estate_brahmins_statutory_rights
+* has_estate_privilege_false = estate_nobles_statutory_rights
+* has_estate_privilege_false = estate_burghers_statutory_rights
+* has_estate_privilege_false = estate_church_statutory_rights
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 128 months
+* Multiplies value by 0.5:
+** crown_land_share_false = 6
+* Multiplies value by 0.5:
+** crown_land_share_false = 4
+* Multiplies value by 0.5:
+** crown_land_share_false = 2
+* Multiplies value by 0.5:
+** crown_land_share_false = 1
+
+'''Option: estate_privileges_and_agendas_events.2.a:'''
+
+* If:
+** Limited to:
+*** Follows the 0 "Hindu religion
+*** has_estate = estate_brahmins
+** set_estate_privilege = estate_brahmins_statutory_rights
+* else_if:
+** Limited to:
+*** Has the monarchy government type
+** set_estate_privilege = estate_nobles_statutory_rights
+* else_if:
+** Limited to:
+*** Has the republic government type
+** set_estate_privilege = estate_burghers_statutory_rights
+* else_if:
+** Limited to:
+*** Has the theocracy government type
+** set_estate_privilege = estate_church_statutory_rights
+
+'''Option: estate_privileges_and_agendas_events.2.b:'''
+
+
+=== title = estate_privileges_and_agendas_events.3.name ===
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** pick_random_estate_if_present:
+*** flag = present_agenda
+*** estate_action = generate_estate_agenda
+** pick_random_estate_if_present:
+*** flag = present_agenda
+*** estate_action = generate_estate_agenda
+** pick_random_estate_if_present:
+*** flag = present_agenda
+*** estate_action = generate_estate_agenda
+
+'''Option: estate_privileges_and_agendas_events.3.a:'''
+
+* Trigger:
+** Has the country flag estate_brahmins_present_agenda
+* start_estate_agenda = estate_brahmins
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_brahmins
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_brahmins
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_brahmins
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_brahmins
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_brahmins
+**** higher_than_influence_false = no
+
+'''Option: estate_privileges_and_agendas_events.3.b:'''
+
+* Trigger:
+** Has the country flag estate_church_present_agenda
+* start_estate_agenda = estate_church
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_church
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_church
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_church
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_church
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_church
+**** higher_than_influence_false = no
+
+'''Option: estate_privileges_and_agendas_events.3.c:'''
+
+* Trigger:
+** Has the country flag estate_maratha_present_agenda
+* start_estate_agenda = estate_maratha
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_maratha
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_maratha
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_maratha
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_maratha
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_maratha
+**** higher_than_influence_false = no
+
+'''Option: estate_privileges_and_agendas_events.3.k:'''
+
+* Trigger:
+** Has the country flag estate_rajput_present_agenda
+* start_estate_agenda = estate_rajput
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_rajput
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_rajput
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_rajput
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_rajput
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_rajput
+**** higher_than_influence_false = no
+
+'''Option: estate_privileges_and_agendas_events.3.d:'''
+
+* Trigger:
+** Has the country flag estate_nobles_present_agenda
+* start_estate_agenda = estate_nobles
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_nobles
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_nobles
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_nobles
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_nobles
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_nobles
+**** higher_than_influence_false = no
+
+'''Option: estate_privileges_and_agendas_events.3.e:'''
+
+* Trigger:
+** Has the country flag estate_burghers_present_agenda
+* start_estate_agenda = estate_burghers
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_burghers
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_burghers
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_burghers
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_burghers
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_burghers
+**** higher_than_influence_false = no
+
+'''Option: estate_privileges_and_agendas_events.3.j:'''
+
+* Trigger:
+** Has the country flag estate_jains_present_agenda
+* start_estate_agenda = estate_jains
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_jains
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_jains
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_jains
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_jains
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_jains
+**** higher_than_influence_false = no
+
+'''Option: estate_privileges_and_agendas_events.3.f:'''
+
+* Trigger:
+** Has the country flag estate_vaisyas_present_agenda
+* start_estate_agenda = estate_vaisyas
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_vaisyas
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_vaisyas
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_vaisyas
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_vaisyas
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_vaisyas
+**** higher_than_influence_false = no
+
+'''Option: estate_privileges_and_agendas_events.3.g:'''
+
+* Trigger:
+** Has the country flag estate_cossacks_present_agenda
+* start_estate_agenda = estate_cossacks
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_cossacks
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_cossacks
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_cossacks
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_cossacks
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_cossacks
+**** higher_than_influence_false = no
+
+'''Option: estate_privileges_and_agendas_events.3.h:'''
+
+* Trigger:
+** Has the country flag estate_nomadic_tribes_present_agenda
+* start_estate_agenda = estate_nomadic_tribes
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_nomadic_tribes
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_nomadic_tribes
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_nomadic_tribes
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_nomadic_tribes
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_nomadic_tribes
+**** higher_than_influence_false = no
+
+'''Option: estate_privileges_and_agendas_events.3.i:'''
+
+* Trigger:
+** Has the country flag estate_dhimmi_present_agenda
+* start_estate_agenda = estate_dhimmi
+* AI chance:
+** Base chance of 1
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** loyalty_false = 30
+**** estate_false = estate_dhimmi
+** Multiplies value by 2:
+*** estate_loyalty:
+**** loyalty_false = 20
+**** estate_false = estate_dhimmi
+** Multiplies value by 1.5:
+*** estate_influence:
+**** influence = 70
+**** estate = estate_dhimmi
+** Multiplies value by 2:
+*** is_absolutism_active = yes
+*** num_of_estate_privileges:
+**** estate = estate_dhimmi
+**** value = 1
+*** estate_loyalty:
+**** estate = estate_dhimmi
+**** higher_than_influence_false = no
+
+=== title = estate_privileges_and_agendas_events.4.name ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** has_estate_privilege = estate_nobles_supremacy_over_crown
+** has_estate_privilege = estate_brahmins_supremacy_over_crown
+* has_any_active_estate_agenda_false = yes
+
+'''Immediate effects:'''
+
+* Gets the country event:
+** ID is estate_privileges_and_agendas_events.3
+
+'''Option: estate_privileges_and_agendas_events.4.a:'''
+
+
+=== title = estate_privileges_and_agendas_events.5.name ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate_privilege = estate_burghers_tropical_nation
+
+'''Immediate effects:'''
+
+* Every owned province:
+** Limited to:
+*** has_climate = 0 "Tropical
+*** Does not have the province modifier "estate_burghers_tropical_mod"
+** Adds the modifier "estate_burghers_tropical_mod" until the end of the campaign:
+*** +10 colonial growth
+*** local_development_cost = -0.05
+
+'''Option: estate_privileges_and_agendas_events.4.a:'''
+

@@ -1,0 +1,380 @@
+** Trigger:
+*** Country is 0 "Majapahit
+*** Year is less than 1500
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: majapahit.1.a:
+*** AI chance:
+**** Base chance of 0
+*** Creates a general:
+**** Named "Damarwulan"
+**** 4 skill in shock
+**** 2 skill in fire
+**** 3 skill in manuever
+**** 0 skill in siege
+*** Hidden effect:
+**** Sets the country flag maj_damarwulan
+**** Sets the variable DamarwulanWinVariable to 0
+** Option: majapahit.1.b:
+*** AI chance:
+**** Base chance of 1
+*** Adds 10 legitimacy
+* Gets the country event:
+** ID is majapahit.2
+** title = majapahit.2.t
+** desc = majapahit.2.d
+** picture = NUSANTARA_WAR_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+*** Trigger:
+**** Has the country flag maj_damarwulan
+**** Any of the following:
+***** 0 "Khmer army tradition
+***** All of the following:
+****** mekong_area:
+******* The owner of the province:
+******** Less than our country army tradition
+****** angkor_area:
+******* The owner of the province:
+******** Less than our country army tradition
+****** cambodia_area:
+******* The owner of the province:
+******** Less than our country army tradition
+**** Is not in regency
+**** has_consort_false = no
+**** Ruler is female
+** Option: majapahit.2.a:
+*** Changes stability by 1
+*** Adds 25 legitimacy
+*** define_consort:
+**** Named "Damarwulan"
+**** country_of_origin = our country
+**** Follows our country's religion
+**** Culture is the same as our country
+**** Ruler's administrative skill is at least 4
+**** Ruler's diplomatic skill is at least 4
+**** Ruler's military skill is at least 5
+** Option: majapahit.2.b:
+*** Trigger:
+**** Has no heir
+**** Has the monarchy government type
+*** Changes stability by 1
+*** Adds 25 legitimacy
+*** Spawns an heir:
+**** Ruler's dynasty is our country
+**** Legitimacy of 100
+** Option: majapahit.2.c:
+*** Changes stability by 1
+*** Adds 25 legitimacy
+*** Changes prestige by 10
+* Gets the country event:
+** ID is majapahit.3
+** title = majapahit.3.t
+** desc = majapahit.3.d
+** picture = CIVIL_WAR_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** major = yes
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag maj_disaster_start
+** Option: majapahit.3.a:
+*** Changes stability by -5
+*** Adds -50 legitimacy
+*** Changes the heir's legitimacy by -50
+*** Sets the country flag majapahit_disaster_flag
+* Gets the country event:
+** ID is majapahit.4
+** title = majapahit.4.t
+** desc = majapahit.4.d
+** picture = NUSANTARA_THRONE_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** major = yes
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag had_fall_of_majapahit
+** Option: majapahit.4.a:
+*** Changes stability by 1
+* Gets the country event:
+** ID is majapahit.5
+** title = majapahit.5.t
+** desc = majapahit.5.d
+** picture = CIVIL_WAR_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** major = yes
+** Trigger:
+*** Does not have the country flag maj_no_more_bad_religion_events
+*** 0 "Demak does not exist
+*** Legitimacy is less than 75
+*** 0 "Demak:
+**** Follows the 0 "Sunni religion
+**** The province is owned by our country
+*** Has at least 4 provinces where all of the following is true:
+**** Follows the 0 "Sunni religion
+**** Region is indonesia_region
+** Immediate effects:
+*** Hidden effect:
+**** 0 "Demak:
+***** set_saved_name:
+****** Named "demak_sultan"
+**** 0 "Demak:
+***** Gives 0 "Demak core on the province
+**** If:
+***** Limited to:
+****** 4792::
+******* The province is owned by our country
+***** 4792::
+****** Gives 0 "Demak core on the province
+**** If:
+***** Limited to:
+****** 4793::
+******* The province is owned by our country
+***** 4793::
+****** Gives 0 "Demak core on the province
+**** If:
+***** Limited to:
+****** 1 "Pekalongan:
+******* The province is owned by our country
+***** 1 "Pekalongan:
+****** Gives 0 "Demak core on the province
+**** Release 0 "Demak as a vassal
+**** 0 "Demak:
+***** Changes religion to 0 "Sunni
+***** Changes government type to monarchy
+***** add_government_reform = mandala_reform
+***** Spawns a ruler:
+****** Named "demak_sultan"
+****** Ruler's dynasty is our country
+****** Legitimacy of 95
+**** add_truce_with = 0 "Demak
+** Option: majapahit.5.a:
+*** Every owned province:
+**** Limited to:
+***** Region is indonesia_region
+**** Adds claim to 0 "Demak
+*** Hidden effect:
+**** 0 "Demak:
+***** Capital:
+****** build_to_forcelimit:
+******* Spawns an infantry unit in 0.6
+******* Spawns a cavalry unit in 0.3
+******* artillery = 0.1
+***** Random owned province:
+****** Limited to:
+******* Is coastal
+****** build_to_forcelimit:
+******* Spawns a galley in 0.5
+******* Spawns a light ship in 0.2
+******* transport = 0.2
+* Gets the country event:
+** ID is majapahit.6
+** title = majapahit.6.t
+** desc = majapahit.6.d
+** picture = CIVIL_WAR_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** major = yes
+** Trigger:
+*** Legitimacy is less than 75
+*** Does not have the country flag maj_no_more_bad_religion_events
+*** 0 "Mataram does not exist
+*** 1 "Kotagede:
+**** Follows the 0 "Sunni religion
+**** The province is owned by our country
+*** Has at least 4 provinces where all of the following is true:
+**** Follows the 0 "Sunni religion
+**** Region is indonesia_region
+** Immediate effects:
+*** Hidden effect:
+**** 1 "Kotagede:
+***** Gives 0 "Mataram core on the province
+**** If:
+***** Limited to:
+****** 0 "Karta:
+******* The province is owned by our country
+***** 0 "Karta:
+****** Gives 0 "Mataram core on the province
+**** If:
+***** Limited to:
+****** 0 "Kediri:
+******* The province is owned by our country
+***** 0 "Kediri:
+****** Gives 0 "Mataram core on the province
+**** If:
+***** Limited to:
+****** 4793::
+******* The province is owned by our country
+***** 4793::
+****** Gives 0 "Mataram core on the province
+**** Release 0 "Mataram as a vassal
+**** 0 "Mataram:
+***** Changes religion to 0 "Sunni
+***** Changes government type to monarchy
+***** add_government_reform = mandala_reform
+**** add_truce_with = 0 "Mataram
+** Option: majapahit.5.a:
+*** Every owned province:
+**** Limited to:
+***** Region is indonesia_region
+**** Adds claim to 0 "Mataram
+*** Hidden effect:
+**** 0 "Mataram:
+***** Capital:
+****** build_to_forcelimit:
+******* Spawns an infantry unit in 0.6
+******* Spawns a cavalry unit in 0.3
+******* artillery = 0.1
+***** Random owned province:
+****** Limited to:
+******* Is coastal
+****** build_to_forcelimit:
+******* Spawns a galley in 0.5
+******* Spawns a light ship in 0.2
+******* transport = 0.2
+* Gets the country event:
+** ID is majapahit.7
+** title = majapahit.7.t
+** desc = majapahit.7.d
+** picture:
+*** Trigger:
+**** Has the DLC Star and Crescent
+*** picture = CONQUEST_eventPicture
+** picture:
+*** Trigger:
+**** Does not have the DLC Star and Crescent
+*** picture = TRADEGOODS_eventPicture
+** is_triggered_only = yes
+** Trigger:
+*** Does not have the country flag maj_no_more_subject_liberty
+*** Any subject country:
+**** Liberty desire is at least 50
+**** Is AI controlled
+**** Has no truce with our country
+**** ROOT:
+***** Has no truce with PREV
+** Immediate effects:
+*** Hidden effect:
+**** Random subject country:
+***** Limited to:
+****** is_subject_of_type = tributary_state
+****** Liberty desire is at least 50
+****** Is AI controlled
+***** save_event_target_as = maj_tributary_country
+** Option: majapahit.7.a:
+*** AI chance:
+**** Base chance of 1
+*** If:
+**** Limited to:
+***** event_target:maj_tributary_country:
+****** Liberty desire is at least 75
+**** event_target:maj_tributary_country:
+***** grant_independence = yes
+*** else:
+**** event_target:maj_tributary_country:
+***** Adds 15 liberty desire
+** Option: majapahit.7.b:
+*** Trigger:
+**** event_target:maj_tributary_country:
+***** Liberty desire is less than 80
+*** AI chance:
+**** Base chance of 0
+*** Adds -10 legitimacy
+*** event_target:maj_tributary_country:
+**** Adds -5 liberty desire
+* Gets the country event:
+** ID is majapahit.8
+** title = majapahit.8.t
+** desc = majapahit.8.d
+** picture = NUSANTARA_THRONE_eventPicture
+** is_triggered_only = yes
+** Trigger:
+*** has_disaster = fall_of_majapahit
+*** Does not have the country flag maj_no_more_pretenders
+*** Any owned province:
+**** Region is indonesia_region
+**** Controlled by our country
+** Immediate effects:
+*** Hidden effect:
+**** set_saved_name:
+***** Named "maj_pretender"
+**** Random owned province:
+***** Limited to:
+****** Region is indonesia_region
+****** Controlled by our country
+***** save_event_target_as = maj_pretender_province
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+**** Sets the country flag maj_pretender_event
+** Option: majapahit.8.a:
+*** Tooltip:
+**** event_target:maj_pretender_province:
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+* Gets the country event:
+** ID is majapahit.9
+** title = majapahit.9.t
+** desc = majapahit.9.d
+** picture = MERCHANTS_TALKING_eventPicture
+** is_triggered_only = yes
+** fire_only_once = yes
+** Trigger:
+*** Has had the country flag "majapahit_disaster_flag" for at least 1825 days
+** Option: majapahit.9.a:
+*** AI chance:
+**** Base chance of 1
+*** Changes treasury by 500 ducats
+*** Adds -100% mercantilism
+*** Sets the country flag maj_accepted_muslim_help
+*** If:
+**** Limited to:
+***** 0 "Demak:
+****** The province is owned by our country
+****** Does not follow the 0 "Sunni religion
+**** 0 "Demak:
+***** Changes religion to 0 "Sunni
+** Option: majapahit.9.b:
+*** AI chance:
+**** Base chance of 0
+*** Adds 100% mercantilism
+*** Adds the modifier "maj_harmed_trade_relations" for 20 years:
+**** -25% trade power
+**** -1 diplomatic reputation
+* Gets the country event:
+** ID is majapahit.10
+** title = majapahit.10.t
+** desc = majapahit.10.d
+** picture:
+*** Trigger:
+**** Has the DLC Star and Crescent
+*** picture = PIETY_eventPicture
+** picture:
+*** Trigger:
+**** Does not have the DLC Star and Crescent
+*** picture = RELIGION_eventPicture
+** is_triggered_only = yes
+** Trigger:
+*** Any of the following:
+**** Follows the 0 "Sunni religion
+**** Does not have the country flag maj_no_more_bad_religion_events
+*** Has the country flag maj_accepted_muslim_help
+*** Any owned province:
+**** Region is indonesia_region
+**** Does not follow the 0 "Sunni religion
+**** Any of the following:
+***** Is coastal
+***** Any bordering province:
+****** Follows the 0 "Sunni religion
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** Region is indonesia_region
+****** Does not follow the 0 "Sunni religion
+****** Any of the following:
+******* Is coastal
+******* Any bordering province:
+******** Follows the 0 "Sunni religion
+***** save_event_target_as = maj_sunni_province
+** Option: majapahit.10.a:
+*** event_target:maj_sunni_province:
+**** Changes religion to 0 "Sunni

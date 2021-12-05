@@ -1,0 +1,898 @@
+
+=== 0 "Japan Discovered! ===
+
+'''Trigger:'''
+
+* Does not have the global flag japan_has_encountered_the_west
+* Technology group is 0 "Western
+* Any of the following:
+** Follows the 0 "Reformed religion
+** Follows the 0 "Catholic religion
+** Follows the 0 "Protestant religion
+** Follows the anglican religion
+** Follows the hussite religion
+* japan_region:
+** Has been discovered by our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 12 months
+
+'''Option: 0 "An Age of Wonders!:'''
+
+* Changes prestige by 10
+* Sets the global flag japan_has_encountered_the_west
+
+=== 0 "Kyoto Discovered! ===
+
+'''Trigger:'''
+
+* Technology group is 0 "Western
+* 0 "Kyoto:
+** Has not been discovered by our country
+* Does not have the country flag japan_discovered
+* japan_region:
+** Has been discovered by our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 months
+
+'''Immediate effects:'''
+
+* Sets the country flag japan_discovered
+
+'''Option: 0 "Excellent!:'''
+
+* Discovers the 0 "Kyoto province
+
+=== 0 "Christian Pater ===
+
+'''Trigger:'''
+
+* Does not have the global flag japan_is_closed
+* has_reform = 0 "Daimyo
+* Has the global flag japan_has_encountered_the_west
+* Any known country:
+** Technology group is 0 "Western
+** Is in the 0 "Christian religion group
+* Does not have the country flag jap_christian_pater_flag
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.9:
+** Has at least 4 Innovative ideas
+* Multiplies value by 0.9:
+** Has at least 6 Innovative ideas
+* Multiplies value by 0.9:
+** Has at least 7 Innovative ideas
+* Multiplies value by 0.8:
+** Has the country modifier "0 "Western Embassy Mission"
+
+'''Immediate effects:'''
+
+* Sets the country flag jap_christian_pater_flag
+
+'''Option: 0 "I see no harm in that!:'''
+
+* AI chance:
+** Base chance of 25
+** Multiplies value by 0:
+**** No owned province:
+***** Is coastal
+* Random owned province:
+** Limited to:
+*** Does not follow the 0 "Catholic religion
+*** Does not have the province modifier "0 "Christian Mission"
+** Adds the modifier "0 "Christian Mission" until the end of the campaign:
+*** local_unrest = 4
+*** -3% administrative technology cost
+
+'''Option: 0 "I think we can do without strange new creeds.:'''
+
+* AI chance:
+** Base chance of 75
+* Changes administrative power stored by -20
+* Changes prestige by 2
+
+=== 0 "Christian Converts ===
+* Province event
+
+'''Trigger:'''
+
+* Does not have the global flag japan_is_closed
+* Has the province modifier "0 "Christian Mission"
+* The owner of the province:
+** has_reform = 0 "Daimyo
+* Has the global flag japan_has_encountered_the_west
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Has at least 4 Innovative ideas
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Has at least 6 Innovative ideas
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Has at least 7 Innovative ideas
+
+'''Option: 0 "We have little choice but to accept this change.:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** The owner of the province:
+***** No owned province:
+****** Follows the 0 "Catholic religion
+* Changes religion to 0 "Catholic
+* Removes the country modifier "0 "Christian Mission"
+
+'''Option: 0 "We will not tolerate this abandonment of tradition.:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0:
+*** Any of the following:
+**** The owner of the province:
+***** num_of_rebel_controlled_provinces = 1
+**** The owner of the province:
+***** Stability is lower than 0
+* Spawns revolt of size 2 of 0 "Religious rebels
+* Removes the country modifier "0 "Christian Mission"
+
+=== 0 "Kirishitan Tensions ===
+* Province event
+
+'''Trigger:'''
+
+* Follows the 0 "Catholic religion
+* Culture group is japanese_g
+* Can spawn the 0 "Religious rebel type
+* The owner of the province:
+** Follows the 0 "Shinto religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 2000 months
+* Multiplies value by 0.9:
+** unrest = 2
+* Multiplies value by 0.8:
+** unrest = 4
+* Multiplies value by 0.8:
+** unrest = 8
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Has the idea 0 "Deus Vult
+* Multiplies value by 1.4:
+** Has the global flag japan_is_closed
+
+'''Option: 0 "Blast!:'''
+
+* One of the following will happen:
+** 90 relative chance:
+*** Spawns revolt of size 2 of 0 "Religious rebels
+** 10 relative chance:
+*** Changes religion to 0 "Shinto
+*** Spawns revolt of size 1 of 0 "Religious rebels
+
+=== 0 "Red Seal Ship Returns ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Does not have the global flag japan_is_closed
+* Does not have the country modifier "jap_red_ship_timer"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 700 months
+* Multiplies value by 0.8:
+** Has the idea 0 "Merchant Adventures
+* Multiplies value by 0.8:
+** Mercantilism is at least 5000%
+* Multiplies value by 0.8:
+** Mercantilism is at least 7000%
+* Multiplies value by 0.8:
+** Mercantilism is at least 9000%
+* Multiplies value by 0.9:
+** Has the idea 0 "Grand Navy
+* Multiplies value by 0.9:
+** Has the 0 "Trader advisor
+* Multiplies value by 1.2:
+** Mercantilism is less than 5000%
+* Multiplies value by 1.2:
+** Mercantilism is less than 3000%
+* Multiplies value by 1.2:
+** Mercantilism is less than 1000%
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_red_ship_timer" for 5 years:
+*** No effects
+
+'''Option: 0 "Excellent! What can we learn from this?:'''
+
+* One of the following will happen:
+** 20 relative chance:
+*** Changes diplomatic power stored by 20
+*** Changes army tradition by 5
+** 20 relative chance:
+*** Changes military power stored by 20
+*** Changes administrative power stored by 30
+** 20 relative chance:
+*** Changes administrative power stored by 30
+*** Changes diplomatic power stored by 10
+** 20 relative chance:
+*** Modifies treasury by 0.5 years worth of income
+
+=== 0 "Western Embassy Returns! ===
+
+'''Trigger:'''
+
+* Has the country modifier "0 "Western Embassy Mission"
+* Any owned province:
+** Follows the 0 "Shinto religion
+* Does not follow the 0 "Catholic religion
+* Does not have the global flag japan_is_closed
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 500 months
+* Multiplies value by 0.9:
+** Ruler's diplomatic skill is at least 1
+* Multiplies value by 0.9:
+** Ruler's diplomatic skill is at least 2
+* Multiplies value by 0.9:
+** Ruler's diplomatic skill is at least 3
+
+'''Option: 0 "Tell me more of their ideas!:'''
+
+* Changes administrative power stored by 20
+* Changes diplomatic power stored by 20
+* Random owned province:
+** Limited to:
+*** Follows the 0 "Shinto religion
+** Changes religion to 0 "Catholic
+* Removes the country modifier "0 "Western Embassy Mission"
+
+'''Option: 0 "Tell me more of their people!:'''
+
+* Every country:
+** Limited to:
+*** Has the country flag japan_discovered
+*** Technology group is 0 "Western
+** Adds the opinion modifier "0 "Discovered Japan" towards our country
+* Changes prestige by 5
+* Changes diplomatic power stored by 20
+* Removes the country modifier "0 "Western Embassy Mission"
+
+=== 0 "Fumi-e in $PROVINCENAME$ ===
+* Province event
+
+'''Trigger:'''
+
+* Follows the 0 "Catholic religion
+* The owner of the province:
+** Follows the 0 "Shinto religion
+** Does not have the country modifier "jap_kirishitan_harrassed_timer"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 600 months
+* Multiplies value by 0.5:
+** Has the global flag japan_is_closed
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** The owner of the province:
+*** Adds the modifier "jap_kirishitan_harrassed_timer" for 5 years:
+**** No effects
+
+'''Option: 0 "Interesting development.:'''
+
+* Spawns revolt of size 1 of 0 "Religious rebels
+* Changes religion to 0 "Shinto
+
+=== 0 "Tempura Introduced ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Has the global flag japan_has_encountered_the_west
+* Does not have the global flag japan_is_closed
+* Does not have the country modifier "jap_tempura_timer"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+* Multiplies value by 0.8:
+** Has at least 4 Innovative ideas
+* Multiplies value by 0.8:
+** Has at least 6 Innovative ideas
+* Multiplies value by 1.5:
+** Has less than 4 Innovative ideas
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_tempura_timer" for 5 years:
+*** No effects
+
+'''Option: 0 "Let us make it a tradition!:'''
+
+* Changes prestige by 5
+
+'''Option: 0 "Let us sell it far and wide!:'''
+
+* Modifies treasury by 0.1 years worth of income
+
+=== 0 "A Batch of Western Arquebuses ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Has the global flag japan_has_encountered_the_west
+* Does not have the global flag japan_is_closed
+* Any known country:
+** Technology group is 0 "Western
+* Does not have the country modifier "0 "A Batch of Western Arquebuses"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 500 months
+* Multiplies value by 0.9:
+** Has at least 4 Innovative ideas
+* Multiplies value by 0.9:
+** Has at least 6 Innovative ideas
+
+'''Option: 0 "Naturally we want the weapons.:'''
+
+* Adds the modifier "0 "A Batch of Western Arquebuses" for 20 years:
+** +5% discipline
+** -10% military technology cost
+* Modifies treasury by -0.5 years worth of income
+
+'''Option: 0 "The old ways are better.:'''
+
+* Changes prestige by 5
+
+=== 0 "Kabuki Theater ===
+
+'''Trigger:'''
+
+* Year is at least 1600
+* has_reform = 0 "Daimyo
+* Does not have the country modifier "jap_kabuki_timer"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+* Multiplies value by 0.6:
+** Has the idea 0 "Patron of the Arts
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_kabuki_timer" for 5 years:
+*** No effects
+
+'''Option: 0 "Send them far afield!:'''
+
+* Modifies treasury by 0.2 years worth of income
+* Changes prestige by 5
+* Adds 5 legitimacy
+
+'''Option: 0 "This man is needed in the court!:'''
+
+* Creates an advisor of the 0 "Artist type:
+** discount = yes
+** With a skill level of 2
+
+=== 0 "Ronin Offers His Service ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Does not have the country modifier "jap_ronin_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_ronin_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.9:
+** 10 army tradition
+* Multiplies value by 0.9:
+** 20 army tradition
+* Multiplies value by 0.9:
+** 30 army tradition
+* Multiplies value by 1.5:
+** 8 war exhaustion
+
+'''Option: 0 "His talents will blossom at our court!:'''
+
+* Modifies treasury by -0.2 years worth of income
+* One of the following will happen:
+** 10 relative chance:
+*** Creates a 0 "Statesman advisor
+** 10 relative chance:
+*** Creates a 0 "Army Reformer advisor
+** 10 relative chance:
+*** Creates a 0 "Spymaster advisor
+
+'''Option: 0 "We do have a garrison somewhere in need of a captain.:'''
+
+* Changes army tradition by 5
+
+'''Option: 0 "We have no need of brigands and wayfarers.:'''
+
+* Modifies treasury by 0.1 years worth of income
+
+=== 0 "Nogaku Performance ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Does not have the country modifier "jap_nogaku_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_nogaku_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 350 months
+* Multiplies value by 0.9:
+** Stability is at least 1
+* Multiplies value by 1.5:
+** Stability is lower than 0
+
+'''Option: 0 "Make it a part of our cultural heritage!:'''
+
+* Changes prestige by 10
+
+'''Option: 0 "We are truly a patron of the arts.:'''
+
+* Trigger:
+** Is not the lesser partner in a union
+* Adds 10 legitimacy
+
+=== 0 "Karesansui Garden ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+** No owned province:
+*** Has the province modifier "0 "Karesansui' Garden"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.8:
+** Has the 0 "Artist advisor
+* Multiplies value by 0.8:
+** Has the idea 0 "Patron of the Arts
+
+'''Option: 0 "Of course we must have one!:'''
+
+* Random owned province:
+** Adds the modifier "0 "Karesansui' Garden" until the end of the campaign:
+*** +0.5 prestige
+*** local_unrest = -1
+* Modifies treasury by -0.5 years worth of income
+
+'''Option: 0 "I do not think that this is the time.:'''
+
+* Changes prestige by -5
+
+=== 0 "Loyal Samurai ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* 10 army tradition
+* Does not have the country modifier "jap_loyal_samurai_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_loyal_samurai_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.9:
+** Stability is at least 1
+* Multiplies value by 0.9:
+** Stability is at least 2
+* Multiplies value by 0.9:
+** 20 army tradition
+* Multiplies value by 1.5:
+** Stability is lower than 0
+
+'''Option: 0 "Naturally we shall reward them!:'''
+
+* Adds 5 legitimacy
+* Changes prestige by 5
+* Modifies treasury by -0.25 years worth of income
+
+'''Option: 0 "We have nothing to spare at the moment.:'''
+
+* Adds -5 legitimacy
+* Changes prestige by -5
+
+=== 0 "Traveling Monk ===
+
+'''Trigger:'''
+
+* Has less than 2 provinces
+* Follows the 0 "Shinto religion
+* Does not have the country modifier "jap_monk_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_monk_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.8:
+** Has less than 4 Innovative ideas
+* Multiplies value by 0.8:
+** Has less than 2 Innovative ideas
+
+'''Option: 0 "Naturally we shall aid this traveler!:'''
+
+* Modifies treasury by -0.25 years worth of income
+* Changes prestige by 10
+
+'''Option: 0 "Off with you, beggar!:'''
+
+* Changes administrative power stored by -25
+
+=== 0 "Visiting a Shrine ===
+
+'''Trigger:'''
+
+* Follows the 0 "Shinto religion
+* Does not have the country modifier "jap_shrine_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_shrine_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.8:
+** Has less than 2 Innovative ideas
+* Multiplies value by 1.5:
+** Stability is lower than 0
+
+'''Option: 0 "No, not this year. We must work on our Han!:'''
+
+* Changes administrative power stored by 50
+* Changes prestige by -10
+* Adds -10 legitimacy
+
+'''Option: 0 "Yes, it is time:'''
+
+* Modifies treasury by -0.1 years worth of income
+* Changes prestige by 10
+
+=== 0 "Cherry Blossom Festival ===
+
+'''Trigger:'''
+
+* Follows the 0 "Shinto religion
+* It is the 0. month of the year or later
+* It is before the 5. month of the year
+* Does not have the country modifier "jap_hanami_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_hanami_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 1.5:
+** Stability is lower than 0
+
+'''Option: 0 "A proof of our good policies these last years:'''
+
+* Changes administrative power stored by 25
+* Changes prestige by 5
+
+'''Option: 0 "An omen of good things to come!:'''
+
+* Modifies treasury by 0.5 years worth of income
+
+=== 0 "1000 Koku Tax ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Does not have the country modifier "jap_koku_tax_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_koku_tax_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.8:
+** Stability is at least 1
+* Multiplies value by 0.9:
+** Stability is at least 2
+* Multiplies value by 0.9:
+** Stability is at least 3
+* Multiplies value by 1.5:
+** Stability is lower than 0
+
+'''Option: 0 "We insist that he pay!:'''
+
+* Modifies treasury by 1 years worth of income
+* Changes administrative power stored by -50
+* Changes prestige by -5
+
+'''Option: 0 "We shall forgive part of the debt.:'''
+
+* Modifies treasury by 0.5 years worth of income
+* Changes administrative power stored by -50
+* Changes prestige by 5
+
+'''Option: 0 "Forget the money.:'''
+
+* Changes prestige by -5
+
+=== 0 "Death of a Geisha ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Does not have the country modifier "jap_geisha_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_geisha_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.9:
+** Stability is lower than 0
+* Multiplies value by 0.9:
+** Stability is lower than -1
+* Multiplies value by 0.9:
+** Stability is lower than -2
+* Multiplies value by 1.5:
+** Stability is at least 1
+* Multiplies value by 1.5:
+** Has the idea 0 "Patron of the Arts
+
+'''Option: 0 "We mourn her passing.:'''
+
+* Changes administrative power stored by -25
+* Changes prestige by 5
+
+'''Option: 0 "A dead courtesan? I can't be bothered.:'''
+
+* Changes prestige by -10
+
+=== 0 "The Sharpness of The Tanto ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Has an heir
+* Stability is lower than -2
+* 0 prestige
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 650 months
+* Multiplies value by 0.8:
+** -10 prestige
+* Multiplies value by 0.8:
+** Legitimacy is less than 70
+* Multiplies value by 0.8:
+** Legitimacy is less than 50
+
+'''Option: 0 "Compose a beautiful death poem.:'''
+
+* Kills the ruler of the country
+* Changes stability by 3
+* Changes prestige by 10
+* Adds 10 legitimacy
+
+'''Option: 0 "We just need some more time.:'''
+
+* Adds -10 legitimacy
+* Changes prestige by -10
+
+=== 0 "Unruly Daimyo ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Legitimacy is less than 60
+* Any known country:
+** A vassal of our country
+* Does not have the country modifier "jap_unruly_daimyo_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_unruly_daimyo_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 650 months
+* Multiplies value by 0.8:
+** Legitimacy is less than 50
+* Multiplies value by 0.8:
+** Legitimacy is less than 40
+* Multiplies value by 1.5:
+** Stability is at least 1
+
+'''Option: 0 "Accept their demands.:'''
+
+* Adds the modifier "0 "Increased Decentralization" for 10 years:
+** global_autonomy = 0.05
+** -1 global unrest
+* Changes prestige by -5
+
+'''Option: 0 "Hang them high.:'''
+
+* Random owned province:
+** Spawns 2 revolt size of noble rebels
+* Random owned province:
+** Spawns 1 revolt size of noble rebels
+* Adds 5 legitimacy
+* Changes prestige by 5
+
+=== 0 "Koku Reform ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Inflation is less than 10
+* Does not have the country modifier "jap_koku_reform_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_koku_reform_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.9:
+** Inflation is less than 15
+* Multiplies value by 0.9:
+** Inflation is less than 20
+* Multiplies value by 0.9:
+** Inflation is less than 25
+* Multiplies value by 1.5:
+** Stability is at least 1
+* Multiplies value by 1.5:
+** Stability is at least 2
+
+'''Option: 0 "Appoint a special commissioner.:'''
+
+* Creates a 0 "Master of Mint advisor
+* Modifies treasury by 0.4 years worth of income
+
+'''Option: 0 "Order provinces to submit updated records.:'''
+
+* Changes inflation by -4
+* Adds the modifier "0 "Increased Centralization" for 10 years:
+** global_autonomy = -0.05
+** +1 global unrest
+
+=== 0 "Rangaku Books ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Has the global flag japan_has_encountered_the_west
+* Any known country:
+** Technology group is 0 "Western
+** Is in the 0 "Christian religion group
+* Does not have the global flag japan_is_closed
+* Does not have the country modifier "jap_rangaku_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_rangaku_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 550 months
+* Multiplies value by 0.5:
+** Year is at least 1700
+* Multiplies value by 0.8:
+** Has at least 4 Innovative ideas
+* Multiplies value by 0.8:
+** Has at least 6 Innovative ideas
+* Multiplies value by 1.5:
+** Mercantilism is less than 5000%
+* Multiplies value by 1.5:
+** Mercantilism is less than 3000%
+
+'''Option: 0 "Sold!:'''
+
+* Adds the modifier "0 "Increased Free Trade" for 10 years:
+** Trade efficiency is at least 10%
+** -10% global spy defence
+** global_institution_spread = 0.2
+* Changes stability by -1
+* Changes military power stored by 40
+* Changes administrative power stored by 40
+* Modifies treasury by -0.3 years worth of income
+
+'''Option: 0 "Just window-shopping, thank you!:'''
+
+* Changes diplomatic power stored by 25
+* Changes administrative power stored by 10
+* Changes prestige by 5
+
+=== 0 "Rice Crop Fails ===
+
+'''Trigger:'''
+
+* has_reform = 0 "Daimyo
+* Does not have the country modifier "jap_rice_fail_timer"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Adds the modifier "jap_rice_fail_timer" for 5 years:
+*** No effects
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+* Multiplies value by 0.8:
+** Stability is lower than -2
+* Multiplies value by 0.8:
+** Stability is lower than -1
+* Multiplies value by 1.5:
+** Stability is at least 1
+
+'''Option: 0 "We have nothing to spare!:'''
+
+* Changes stability by -1
+
+'''Option: 0 "We must avert this catastrophe!:'''
+
+* Modifies treasury by -1 years worth of income

@@ -1,0 +1,1887 @@
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1781
+******** Mean time to happen
+********* Base mean time to happen of 100 months
+******** Option: 0 "Discuss Import Duties:
+********* Gets the country event:
+********** ID is usa_dlc.2
+******** Option: 0 "Discuss slavery in the Northwest Ordinance:
+********* Trigger:
+********** Any owned province:
+*********** Any of the following:
+************ Region is great_lakes_region
+************ Region is canada_region
+********* Gets the country event:
+********** ID is usa_dlc.3
+******* Gets the country event:
+******** ID is usa_dlc.2
+******** title = 0 "Import Duties
+******** desc = 0 "The War of Independence against the British left the country in serious debt, with the federal debt a total of 40 million dollar of which eight million dollars owed to the French and Dutch. The Congress has twice proposed to lay a 5% duty on imports in order to pay the interest and principal of the debt, but it needs the consent of all thirteen states to add this to the Articles of Confederation.
+******** picture = TEA_PARTY_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag import_duty_flag
+******** Option: 0 "Accept the 5% duty on imports:
+********* Changes inflation by -2
+********* Modifies treasury by -0.2 years worth of income
+********* If:
+********** Limited to:
+*********** Does not have the country flag northwest_ordinance_flag
+*********** Any owned province:
+************ Any of the following:
+************* Region is great_lakes_region
+************* Region is canada_region
+********** Gets the country event:
+*********** ID is usa_dlc.3
+******** Option: 0 "Reject the proposed amendment:
+********* Changes inflation by 2
+********* Modifies treasury by 1 years worth of income
+********* If:
+********** Limited to:
+*********** Does not have the country flag northwest_ordinance_flag
+*********** Any owned province:
+************ Any of the following:
+************* Region is great_lakes_region
+************* Region is canada_region
+********** Gets the country event:
+*********** ID is usa_dlc.3
+******* Gets the country event:
+******** ID is usa_dlc.3
+******** title = 0 "Northwest Ordinance
+******** desc = 0 "The Northwest Ordinance creates the Northwest Territory, from lands south of the Great Lakes, north and west of the Ohio River, and east of the Mississippi River. This is the most important piece of legislation passed by members of the Continental Congresses other than the Declaration of Independence. The Northwest Ordinance established the precedent by which the federal government would be sovereign and expand westward across North America with the admission of new states, rather than with the expansion of existing states and their established sovereignty under the Articles of Confederation.\n\nThe Congress has proposed that 'There shall be neither slavery nor involuntary servitude in the said territory.', which has caused uproar among the members of the Congress. What shall it be, shall slavery be prohibited in the Northwest Territory according to the Northwest Ordinance or not?
+******** picture = CONGRESS_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag northwest_ordinance_flag
+******** Option: 0 "Prohibit slavery!:
+********* Every owned province:
+********** Limited to:
+*********** Any of the following:
+************ Region is canada_region
+************ Region is great_lakes_region
+********** Adds the modifier "0 "Slavery Prohibited in the Northwest Ordinance" until the end of the campaign:
+*********** local_unrest = 1
+*********** +1% provincial tax income
+********* If:
+********** Limited to:
+*********** Does not have the country flag import_duty_flag
+********** Gets the country event:
+*********** ID is usa_dlc.2
+******** Option: 0 "Let them decide for themselves:
+********* Every owned province:
+********** Limited to:
+*********** Any of the following:
+************ Region is canada_region
+************ Region is great_lakes_region
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+********* If:
+********** Limited to:
+*********** Does not have the country flag import_duty_flag
+********** Gets the country event:
+*********** ID is usa_dlc.2
+******* Gets the country event:
+******** ID is usa_dlc.4
+******** title = 0 "Articles of Confederation
+******** desc = 0 "The Thirteen States that established the United States as a confederation of sovereign states have approved a version of the Articles of Confederation and sent to the states for them to ratify. It has provided domestic and international legitimacy for the Continental Congress to direct the American Revolutionary War, conduct diplomacy with Europe and deal with territorial issues and Indian relations even though it is not yet ratified. There has been long debates on issues such as sovereignty, the exact powers to be given the confederate government, whether to have a judiciary, and voting procedures during the drafting of the Articles.
+******** picture = CONSTITUTION_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Year is at least 1781
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Has the country flag import_duty_flag
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Option: 0 "Ratify the Articles:
+********* Adds the modifier "0 "Articles of Confederation" for the rest of the campaign:
+********** +2 prestige
+******* Gets the country event:
+******** ID is usa_dlc.5
+******** title = 0 "Declaration of American Independence
+******** desc = 0 "Thomas Paine, the English-American political activist, author, political theorist and revolutionary who inspired the Patriots to declare independence from Britain, argued in the first edition of 'Common Sense' that USA needed a formal declaration of American Independence. Without a Declaration of Independence, USA is considered outlaws by the European nations, rebels against a legitimate monarch, and to transform us into a legitimate nation we need international recognition for our cause and foreign allies to support it. The Declaration of Independence is a statement that announces that the Thirteen States regards themselves as independent states and no longer part of the British Empire.
+******** picture = DECLARATION_INDEPENDENCE_eventPicture
+******** major = yes
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** All of the following:
+*********** Country is 1 "United States
+*********** Culture group is 0 "British
+********** All of the following:
+*********** Is a former colonial nation
+*********** Capital:
+************ In the colonial region 0 "Colonial Eastern America
+************ Has core on our country
+*********** Culture group is 0 "British
+*********** 1 "United States does not exist
+********* 0 "Great Britain exists
+********* Has a truce with 0 "Great Britain
+********* Does not have the country flag usa_declaration_independence_flag
+******** Mean time to happen
+********* Base mean time to happen of 12 months
+******** Immediate effects:
+********* Hidden effect:
+********** Sets the country flag usa_declaration_independence_flag
+******** Option: 0 "Sign the Declaration of Independence:
+********* Changes administrative power stored by 50
+********* Changes diplomatic power stored by 50
+********* Random known country:
+********** Limited to:
+*********** Capital:
+************ In the continent 0 "Europe
+*********** Is in the 0 "Christian religion group
+*********** Not at war with our country
+*********** Has an opinion of at least 20 with our country
+********** Gets the country event:
+*********** ID is usa_dlc.6
+******* Gets the country event:
+******** ID is usa_dlc.6
+******** title = 0 "American Independence
+******** desc = 0 "The Thirteen States of America has declared their independence from the British Empire by signing the United States Declaration of Independence. This was done to transform the Thirteen States into a legitimate nation and to give the USA the international recognition needed to gain support and allies for their cause. Should we formally recognize the new country and accept their Declaration of Independence, with a possibility to anger Great Britain but gaining gratitude from a young nation?
+******** picture = DECLARATION_INDEPENDENCE_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Recognize USA as an independent nation!:
+********* AI chance:
+********** Base chance of 75
+********* Random country:
+********** Limited to:
+*********** Has the country flag usa_declaration_independence_flag
+********** Sets the country flag yay_independence_flag
+********** Gets the country event:
+*********** ID is usa_dlc.7
+********** Tooltip:
+*********** Adds the opinion modifier "0 "USA Independence Acknowledged" towards our country
+********* 0 "Great Britain:
+********** Adds the opinion modifier "0 "Displeased" towards our country
+******** Option: 0 "USA will never be an independent nation!:
+********* AI chance:
+********** Base chance of 25
+********* Random country:
+********** Limited to:
+*********** Has the country flag usa_declaration_independence_flag
+********** Sets the country flag nay_independence_flag
+********** Gets the country event:
+*********** ID is usa_dlc.7
+********** Tooltip:
+*********** Adds the opinion modifier "0 "Rejected USA Independence" towards our country
+********* 0 "Great Britain:
+********** Adds the opinion modifier "0 "Pleased" towards our country
+******* Gets the country event:
+******** ID is usa_dlc.7
+******** title = 0 "American Independence
+******** desc = 0 "Our Declaration of Independence from Great Britain was followed with great interest by countries in Europe, and [From.GetName] has sent an ambassador to talk with the leaders of the Congress.
+******** picture = DECLARATION_INDEPENDENCE_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "The ambassador acknowledged our independence!:
+********* Trigger:
+********** Has the country flag yay_independence_flag
+********* Removes the country flag yay_independence_flag
+********* Sets the country flag independence_acknowledged_flag
+********* Adds the opinion modifier "0 "USA Independence Acknowledged" towards our country
+******** Option: 0 "The ambassador refused to acknowledge our independence!:
+********* Trigger:
+********** Has the country flag nay_independence_flag
+********* Removes the country flag nay_independence_flag
+********* Adds the opinion modifier "0 "Rejected USA Independence" towards our country
+******* Gets the country event:
+******** ID is usa_dlc.10
+******** title = 0 "Constitutional Convention
+******** desc = 0 "The Constitutional Convention is addressing problems in governing the USA, as operating under the Articles of Confederation has proven problematic. The Confederation government is inadequate for managing the various conflicts that has risen among the states, and as it is dependent on the Thirteen States for money but has no taxation powers, it lack funds to deal with the increasing debt from the War of Independence. There was a proposal to modify the Articles of Confederation but it was decided it would be better to create a new government than fix the existing one. The issues that will be discussed are the government form, composition and election of the Senate, how to elect the President, the slavery issue, to abolish the slave trade or not and what offenses should be impeachable among many others.
+******** picture = CONSTITUTION_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* is_free_or_tributary_trigger = yes
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* has_reform_false = 0 "Celestial Empire
+********* Year is at least 1787
+********* Has the country modifier "0 "Articles of Confederation"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "First issue: USA's government form:
+********* Changes prestige by 5
+********* Gets the country event:
+********** ID is usa_dlc.11
+******* Gets the country event:
+******** ID is usa_dlc.11
+******** title = 0 "Government Form
+******** desc = 0 "The first issue discussed for the new Constitution was the government form. The composition and election of the Senate, how to divide the executive power, between three persons or invest the power into a single President, how to elect the President and how long his term was to be and whether he could stand for re-election.\n\nThe three suggested government forms were 'American Republic', 'American Federation' and 'Constitutional Monarchy'.
+******** picture = CONSTITUTION_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* is_revolutionary_false = no
+******** Immediate effects:
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is usa_dlc.12
+*********** Base mean time to happen of 365 days
+******** Option: 0 "American Republic:
+********* Changes government type to republic
+********* add_government_reform = 0 "American Republic
+******** Option: 0 "Federal Republic:
+********* Changes government type to republic
+********* add_government_reform = 0 "Federal Republic
+******** Option: 0 "Constitutional Monarchy:
+********* Changes government type to monarchy
+********* add_government_reform = parliamentary_reform
+******* Gets the country event:
+******** ID is usa_dlc.12
+******** title = 0 "The Slave Trade
+******** desc = 0 "The second issue was about the slave trade. Slavery is widespread in the states and twenty-five of the Convention's fifty-five delegates owns slaves, with slaves comprised about one-fifth of the population of the states. The Southern states own the majority of slaves and the agrarian economy is based on slave labor. Many of the Southern delegates are unwilling to accept any proposals that might threaten the institution. The slave trade was discussed, a new fugitive slave clause that would require slaves who escaped to another state to be returned to the owner in the state from which they escaped and if the slave trade should be abolished.\n\nThe Southern states are against the abolition of slave trade, should we risk their wrath or should we let it be?
+******** picture = CONSTITUTION_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is usa_dlc.13
+*********** Base mean time to happen of 365 days
+******** Option: 0 "Abolish it:
+********* Adds the modifier "0 "Abolish Slavery" for the rest of the campaign:
+********** -5% global tax modifier
+********** -5% stability cost modifier
+******** Option: 0 "Let it be:
+********* Every owned province:
+********** Limited to:
+*********** Does not have the province modifier "0 "Slavery Prohibited in the Northwest Ordinance"
+********** Adds the modifier "0 "Slavery in USA" until the end of the campaign:
+*********** local_unrest = 1
+*********** +10% production efficiency
+******* Gets the country event:
+******** ID is usa_dlc.13
+******** title = 0 "Impeachable Offenses
+******** desc = 0 "The third issue discussed was which offenses should be impeachable and how the laws should be written. A rather harsh law, where death penalty is issued for murderers and long prison sentences for other offenses, was suggested. Some of the delegates sought endorsement for a medium law, with prison sentences and fines being the primary punishments. There were those that thought that each state should be able to set their own laws for offenses, and suggested mild laws that each state could build upon. Mild laws, with short prison sentences and hefty fines, were another suggestion.\n\nWhat should the Thirteen States vote for?
+******** picture = CONSTITUTION_eventPicture
+******** is_triggered_only = yes
+******** Immediate effects:
+********* Hidden effect:
+********** Gets the country event:
+*********** ID is usa_dlc.14
+*********** Base mean time to happen of 365 days
+******** Option: 0 "Harsh Laws:
+********* Adds the modifier "0 "Harsh Laws" for the rest of the campaign:
+********** +1 global unrest
+******** Option: 0 "Medium Laws:
+********* Adds the modifier "0 "Medium Laws" for the rest of the campaign:
+********** +10% land morale
+********** -10% global spy defence
+******** Option: 0 "State Laws:
+********* Adds the modifier "0 "State Laws" for the rest of the campaign:
+********** -2.5% discipline
+********** -1 global unrest
+******** Option: 0 "Mild Laws:
+********* Adds the modifier "0 "Mild Laws" for the rest of the campaign:
+********** -10% land morale
+********** -1 global unrest
+******* Gets the country event:
+******** ID is usa_dlc.14
+******** title = 0 "The Constitution of the United States
+******** desc = 0 "The Constitution of the United States is the supreme law of the United States of America, with the first three Articles of the Constitution establishing the rules and separate powers of the three branches of the federal government. The three branches are a legislature held by the bicameral Congress, an executive branch led by the President, and a federal judiciary headed by the Supreme Court. The last four Articles frame the principle of federalism. The Tenth Amendment confirms its federal characteristics.
+******** picture = CONSTITUTION_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Adopt the Constitution:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+********* Changes military power stored by 100
+******* Gets the country event:
+******** ID is usa_dlc.20
+******** title = 0 "Supply weapons to American Indians
+******** desc = 0 "Our colonies in North America have declared independence from us and are fighting the natives for more land. We could supply the Indians with weapons to try and block further American expansion...
+******** picture = INDIAN_WARS_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Country is 0 "Great Britain
+********* Not at war with 1 "United States
+********* Is not allied with 1 "United States
+********* Not junior union partner under 1 "United States
+********* Not senior union partner over 1 "United States
+********* Any known country:
+********** Capital:
+*********** In the continent 0 "North America
+********** Any of the following:
+*********** Culture group is 0 "Eskaleut
+*********** Culture group is 0 "Central Algonquian
+*********** Culture group is 0 "Eastern Algonquian
+*********** Culture group is 0 "Iroquoian
+*********** Culture group is 0 "Siouan
+*********** Culture group is 0 "Muskogean
+*********** Culture group is 0 "Sonoran
+********** At war with 1 "United States
+********** Does not have the country modifier "0 "Weapons from Great Britain"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Supply them:
+********* Random known country:
+********** Limited to:
+*********** Capital:
+************ In the continent 0 "North America
+*********** Any of the following:
+************ Culture group is 0 "Eskaleut
+************ Culture group is 0 "Central Algonquian
+************ Culture group is 0 "Eastern Algonquian
+************ Culture group is 0 "Iroquoian
+************ Culture group is 0 "Siouan
+************ Culture group is 0 "Muskogean
+************ Culture group is 0 "Sonoran
+*********** At war with 1 "United States
+********** Gets the country event:
+*********** ID is usa_dlc.21
+********** Tooltip:
+*********** Adds the opinion modifier "0 "Supplied us with weapons" towards our country
+*********** Adds the modifier "0 "Weapons from Great Britain" for 10 years:
+************ -10% technology cost
+************ +15% global manpower modifier
+********* Tooltip:
+********** 1 "United States:
+*********** Adds the opinion modifier "0 "Supplied Indians with Weapons" towards our country
+******** Option: 0 "Not worth it:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is usa_dlc.21
+******** title = 0 "Great Britain offers weapons
+******** desc = 0 "Great Britain has offered to supply us with weapons to help us in our war against USA.
+******** picture = INDIAN_WARS_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Good:
+********* 1 "United States:
+********** Gets the country event:
+*********** ID is usa_dlc.22
+********* 0 "Great Britain:
+********** Adds the opinion modifier "0 "Supplied us with weapons" towards our country
+********* Adds the modifier "0 "Weapons from Great Britain" for 10 years:
+********** -10% technology cost
+********** +15% global manpower modifier
+******* Gets the country event:
+******** ID is usa_dlc.22
+******** title = 0 "Indians supplied with weapons from Great Britain
+******** desc = 0 "Our war against the natives of America has become increasingly difficult. After some investigating, we have found proof of British merchants and government agents supplying our enemies with weapons in hopes of blocking further American expansion.
+******** picture = INDIAN_WARS_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Bastards!:
+********* Adds the opinion modifier "0 "Supplied Indians with Weapons" towards 0 "Great Britain
+******* Gets the country event:
+******** ID is usa_dlc.25
+******** title = 0 "Benjamin Franklin
+******** desc = 0 "'The First American', a title earned by the polymath Benjamin Franklin for his campaigning for colonial unity and in many ways exemplifying the emerging American nation, is one of the founding fathers of the United States. During his years as an advisor to USA he has fundamentally defined the American ethos, a marriage of the practical values of thrift, hard work, education, community spirit, self-governing institutions, and opposition to authoritarianism both political and religious, with the scientific and tolerant values of the Enlightenment. Without Franklin's endless work and energy, the United States of America would be a lesser nation.
+******** picture = ECONOMY_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1770
+********* Year is less than 1790
+********* Employs the advisor with the id 71
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "That is true:
+********* Changes diplomatic power stored by 200
+******* Gets the country event:
+******** ID is usa_dlc.26
+******** title = 0 "Fur Trade
+******** desc = 0 "The natives of North America has always traded and sold animal furs, and the Europeans colonizing America started participating in the trade from the beginning of their arrival. The British established trading post early and it has become one of the main economic ventures in North America. The fur trade in USA has gotten a set-back in recent years, and although Europe is screaming for furs the supply from USA is steadily lessening. If we would be able to capitalizing on this trade and remove the British stranglehold over it, our nation would flourish.
+******** picture = FUR_TRADE_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Any owned province:
+********** Produces 0 "Fur
+********** No owned province:
+*********** Produces 0 "Fur
+*********** Has the province modifier "0 "North American Fur Trade"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Kickstart the fur trade:
+********* Modifies treasury by -0.2 years worth of income
+********* Every owned province:
+********** Limited to:
+*********** Produces 0 "Fur
+********** Adds the modifier "0 "North American Fur Trade" until the end of the campaign:
+*********** +20% trade goods output
+******** Option: 0 "Nah:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is usa_dlc.27
+******** title = 0 "Cultural assimilation of Native Americans
+******** desc = 0 "George Washington and Henry Knox have formulated a policy to encourage the assimilation of Native Americans and transform their culture to European-American culture. Education is the primary method in the acculturation process for minorities and the immigrants from Europe has caused a growing public support for education to encourage a standard set of cultural values and practices for the majority of citizens to share. The six-point plan for civilization as formulated by George Washington:\n1. impartial justice toward Native Americans\n2. regulated buying of Native American lands\n3. promotion of commerce\n4. promotion of experiments to civilize or improve Native American society\n5. presidential authority to give presents\n6. punishing those who violated Native American rights.
+******** picture = NATIVE_AMERICANS_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1790
+********* Does not have the country modifier "0 "Cultural Assimilation of Native Americans"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Adopt Washington's ideas and start the assimilation:
+********* Adds the modifier "0 "Cultural Assimilation of Native Americans" for the rest of the campaign:
+********** +2 global unrest
+********** +10 global settler increase
+******** Option: 0 "Leave the natives be:
+********* Changes diplomatic power stored by -10
+******* Gets the country event:
+******** ID is usa_dlc.28
+******** title = 0 "American Academy of Arts and Sciences
+******** desc = 0 "John Adams, John Hancock and James Bowdoin are only a few of the scholar-patriots that have founded the new American Academy of Arts and Sciences. Its Charter of Incorporation states its purpose as such: 'to cultivate every art and science which may tend to advance the interest, honor, dignity, and happiness of a free, independent, and virtuous people.' To have the United States of America sponsoring the academy would greatly increase the amount of work and prizes that could be done and awarded to those found eligible as a recognition of their inventions, ideas and work.
+******** picture = LIBERUM_VETO_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1780
+********* Does not have the country modifier "0 "American Academy of Arts and Sciences"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Sponsor the academy:
+********* Modifies treasury by -0.25 years worth of income
+********* Adds the modifier "0 "American Academy of Arts and Sciences" for 20 years:
+********** -10% idea cost
+******** Option: 0 "Ignore it:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is usa_dlc.29
+******** title = 0 "Union Fire Company
+******** desc = 0 "Nicknamed 'Benjamin Franklin's Bucket Brigade', the Union Fire Company is a volunteer fire department formed in 1736 after Franklin and other had pointed out the need for a more effective handling of fires in a couple of publications in the 'Pennsylvania Gazette'. The company is limited to thirty members who meet eight times a year. Together with the 'Hand in Hand Fire & Life Insurance Society', the Union Fire Company bought a fire bell in 1752 which they placed on Fourth Street. When the bell rings it can be heard throughout the city. To stop fire, the Company uses buckets, ladders and two hooks but they have plans on buying a fire hose. As the Company is a bit short on funds at the moment and the members have already paid their fees, a grant from the government would be appreciated and the bigger the grant, the longer the fire hose.
+******** picture = LIBERUM_VETO_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1791
+********* Owns 1 "Sakimauchheening
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "80 feet would be long enough:
+********* Modifies treasury by -0.1 years worth of income
+********* 1 "Sakimauchheening:
+********** add_base_manpower = 5
+******** Option: 0 "100 feet at least!:
+********* Modifies treasury by -0.2 years worth of income
+********* 1 "Sakimauchheening:
+********** add_base_manpower = 7
+******** Option: 0 "150 feet is necessary!:
+********* Modifies treasury by -0.4 years worth of income
+********* 1 "Sakimauchheening:
+********** add_base_manpower = 10
+******** Option: 0 "We do not need it:
+********* Changes prestige by -5
+******* Gets the country event:
+******** ID is usa_dlc.30
+******** title = 0 "Treaty of Amity and Commerce
+******** desc = 0 "The Prussian Prime Minister, Count Karl-Wilhelm Finck von Finckenstein, and the United States Ambassador to France, Thomas Jefferson, have presented the government of USA with a Treaty of Amity and Commerce between the Kingdom of Prussia and the United States of America which will establish a commercial alliance between the two countries. If this treaty is signed, it will promote free trade and commerce.\n\nThe main provisions of the treaty are as follows:\nPeace and friendship between the Kingdom of Prussia and the U.S.\nMutual Most Favored Nation status with regard to commerce and navigation\nMutual protection of all vessels and cargo when in U.S. or Prussian jurisdiction\nMutual right for citizens of one country to hold land in other's territory\nMutual right to search a ship of the other's coming out of an enemy port for contraband\nMutual right to trade with enemy states of the other as long as those goods are not contraband\nIf the two nations become enemies, nine months protection of merchant ships in enemy territory\nUnconditional humane custody for war prisoner\nMutual right to have Consuls, Vice Consuls, Agents, and Commissaries of one nation in the other's ports.
+******** picture = DIPLOMACY_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* 0 "Prussia exists
+********* Year is at least 1780
+********* 0 "Prussia:
+********** Is AI controlled
+********** Has an opinion of at least 50 with our country
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Sign the treaty:
+********* Adds 700% mercantilism
+********* 0 "Prussia:
+********** Adds 700% mercantilism
+********** Adds the opinion modifier "0 "Treaty of Amity and Commerce" towards our country
+********* 0 "Great Britain:
+********** Adds the opinion modifier "0 "Disgruntled" towards our country
+******** Option: 0 "Maybe later:
+********* 0 "Prussia:
+********** Adds the opinion modifier "0 "Disappointed" towards our country
+********* 0 "Great Britain:
+********** Adds the opinion modifier "0 "Pleased" towards our country
+******* Gets the country event:
+******** ID is usa_dlc.31
+******** title = 0 "Dunlap Broadside
+******** desc = 0 "Copies of the Declaration of Independence are printed and spread throughout the colonies under the supervision of the same committee who wrote the document. The 29-year-old Irish immigrant Dunlap was given the job and spent the night of July 4 setting type, correcting it and running off the broadside sheets. The Commander-in-Chief of the Continental Army George Washington directed that the troops would have the Declaration read to them.
+******** picture = REFORM_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Has the country flag usa_declaration_independence_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Make sure everyone can read it:
+********* Adds the modifier "0 "Dunlap Broadside" for 20 years:
+********** -2 global unrest
+******* Gets the country event:
+******** ID is usa_dlc.32
+******** title = 0 "Nonintercourse Act
+******** desc = 0 "'No sale of lands made by any Indians, or any nation or tribe of Indians within the United States, shall be valid to any person or persons, or to any state, whether having the right of pre-emption to such lands or not, unless the same shall be made and duly executed at some public treaty, held under the authority of the United States.'\n\nTo regulate commerce between Native Americans and non-Indians, an act called the 'Nonintercourse Act' has been proposed.
+******** picture = NATIVE_AMERICANS_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1790
+********* Does not have the country modifier "0 "Indian Trade and Intercourse Act"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Pass the Nonintercourse Act:
+********* Adds the modifier "0 "Indian Trade and Intercourse Act" for 50 years:
+********** +2 global unrest
+********** Trade efficiency is at least 10%
+******** Option: 0 "Reject the Act:
+********* Adds the modifier "0 "Indian Trade" for 50 years:
+********** +2 global unrest
+********** Trade efficiency is at least 10%
+******* Gets the country event:
+******** ID is usa_dlc.33
+******** title = 0 "Whiskey Rebellion
+******** desc = 0 "Alexander Hamilton, the treasury secretary, has established a new tax as part of his program to increase central government power and to fund his policy of assuming the war debt of those states which had failed to pay. The farmers who use their leftover grain and corn in the form of whiskey as a medium of exchange are forced to pay a new tax, and many resists this. They contend that they are fighting for the principles of the American Revolution, in particular against taxation without local representation, while we the government maintains that the taxes are the legal expression of the taxation powers of Congress.\nThe resistance developed into a rebellion when a marshal arrived in western Pennsylvania to serve writs to distillers who had not paid the excise. 500 armed men attacked the fortified home of tax inspector General John Neville. George Washington managed to quell the rebellion but the resistance against the tax is still strong.
+******** picture = ANGRY_MOB_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1794
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has core on owner
+*********** Sets the province flag whiskey_rebellion_flag1
+********** Random owned province:
+*********** Limited to:
+************ Does not have the province flag whiskey_rebellion_flag1
+*********** Sets the province flag whiskey_rebellion_flag2
+********** Random owned province:
+*********** Limited to:
+************ Does not have the province flag whiskey_rebellion_flag1
+************ Does not have the province flag whiskey_rebellion_flag2
+*********** Sets the province flag whiskey_rebellion_flag3
+******** Option: 0 "Keep the act:
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag whiskey_rebellion_flag1
+********** Removes the province flag whiskey_rebellion_flag1
+********** Changes base tax by 1
+********** Spawns revolt of size 2 of 0 "Peasant rebels
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag whiskey_rebellion_flag2
+********** Removes the province flag whiskey_rebellion_flag2
+********** Spawns revolt of size 2 of 0 "Peasant rebels
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag whiskey_rebellion_flag3
+********** Removes the province flag whiskey_rebellion_flag3
+********** Spawns revolt of size 2 of 0 "Peasant rebels
+******** Option: 0 "Amend the act:
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag whiskey_rebellion_flag1
+********** Removes the province flag whiskey_rebellion_flag1
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag whiskey_rebellion_flag2
+********** Removes the province flag whiskey_rebellion_flag2
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag whiskey_rebellion_flag3
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+******* Gets the country event:
+******** ID is usa_dlc.34
+******** title = 0 "Boston Post Road
+******** desc = 0 "The roads has been used for as long as any can remember, the Upper Post Road for example was called the Pequot Path by native Americans and some of these trails were at time as narrow as two feet. The Boston Post Road is to be a road through Manhattan, Connecticut, Narragansett and Massachusetts, using some of the old native trails to deliver mail transported by post riders. Plenty of organization needs to be done, mileposts to be measured and routes established.\nWho would be the best to sort this out, the administration, the army or the diplomatic corps?
+******** picture = REFORM_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Owns 1 "Manahahttan
+********* Owns 0 "Nipmuc
+********* Owns 0 "Narraganset
+********* Owns 1 "Massachusett
+********* Owns 1 "Quiripi
+********* Owns 1 "Pequot
+********* Owns 0 "Wampanoag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "The administration should organize it:
+********* Changes administrative power stored by 20
+******** Option: 0 "Let the army organize it:
+********* Changes military power stored by 20
+********* Changes army tradition by 10
+******** Option: 0 "The diplomatic corps will sort it out:
+********* Changes diplomatic power stored by 40
+******* Gets the country event:
+******** ID is usa_dlc.35
+******** title = 0 "American Philosophical Society
+******** desc = 0 "The society was founded by Benjamin Franklin and John Bartram in 1743, lapsed into inactivity in 1746 but was revived in 1769 and united with the American Society for Promoting Useful Knowledge under the name 'American Philosophical Society Held at Philadelphia for Promoting Useful Knowledge'. It maintains a standing committee on American Improvements and one of its latest projects was to study the prospects of a canal to connect the Chesapeake Bay and the Delaware River.\nThe Society is looking into establishing a price for achievement in the field of navigation, astronomy, or natural philosophy. The scientist Jean-Hyacinthe Magellan has offered a grant to the President of the Society, Benjamin Franklin, in order to establish the Magellanic Premium but the society could always do with more money...
+******** picture = LIBERUM_VETO_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Country is 1 "United States
+********* Not at war with 0 "Great Britain
+********* Owns 0 "Unami
+********* Does not have the country modifier "0 "American Philosophical Society"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Sounds impressive, let's sponsor it:
+********* Adds the modifier "0 "American Philosophical Society" for 20 years:
+********** -20% idea cost
+********* Modifies treasury by -0.25 years worth of income
+******** Option: 0 "Find a less expensive way to support it:
+********* Changes administrative power stored by -20
+********* Changes prestige by 10
+******** Option: 0 "Ignore it:
+******* Gets the country event:
+******** ID is usa_dlc.36
+******** title = 0 "Evacuation Day
+******** desc = 0 "The British troops in New York - the last vestige of British authority in the United States - departed Manhattan on November 25. The Continental Army led by George Washington marched triumphantly through the city and the last shot of the war was shot, by a British gunner firing a cannon at the jeering crowds gathered on the shore of Staten Island. The shot fell well short of the shore and the people shouted in triumph.
+******** picture = BATTLE_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Country is 1 "United States
+********* Year is at least 1783
+********* It is the 10. month of the year or later
+********* Has a truce with 0 "Great Britain
+********* 0 "Great Britain:
+*********** No owned province:
+************ Has core on 1 "United States
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Finally!:
+********* Changes prestige by 20
+********* Sets the country flag evacuation_day
+******* Gets the country event:
+******** ID is usa_dlc.37
+******** title = 0 "Massachusetts Humane Society
+******** desc = 0 "Boston citizens, concerned about the needless deaths resulting from shipwrecks and drownings, has founded the Massachusetts Humane Society in order to save lives. Publishing procedures for dealing with victims of shipwreck and other water-related accidents was the first lifesaving activity the Society did, with instructions on where to find lifesaving equipment and shelters which the Society had placed on the islands and coast of Massachusetts Bay.
+******** picture = ELECTION_REPUBLICAN_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Owns 1 "Massachusett
+********* Year is at least 1786
+********* Does not have the country modifier "0 "Massachusetts Humane Society"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "This is something we need to promote and sponsor!:
+********* Adds the modifier "0 "Massachusetts Humane Society" for 20 years:
+********** +10% global manpower modifier
+********* Changes administrative power stored by -20
+******** Option: 0 "They do well on their own, no help needed from us:
+********* Changes administrative power stored by 10
+******* Gets the country event:
+******** ID is usa_dlc.38
+******** title = 0 "Committee of Safety
+******** desc = 0 "From the Sons of Liberty groups grew many Committees of Safety, to discuss and spread awareness of the concerns of the time, and consisted of every male adult in the community. The local militias are under the control of the committees and the committees keep watch on the distrusted royal government of Great Britain. John Hancock has suggested that these Committees of Safety, which has been the operating government of all the colonies until the Confederation Congress, will keep control over the militia and be given power to call out mandatory militia, with penalties for failing to respond to a call-up, and provide means of defense.
+******** picture = CONSTITUTION_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Has the country flag usa_declaration_independence_flag
+********* Does not have the country modifier "0 "Committee of Safety"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Keep the Committees of Safety:
+********* Adds the modifier "0 "Committee of Safety" for 10 years:
+********** +10% land morale
+********* Modifies treasury by -0.1 years worth of income
+******** Option: 0 "They have done their part in the revolution:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is usa_dlc.39
+******** title = 0 "Liberty pole
+******** desc = 0 "The truce with Great Britain is being celebrated all over the country with liberty poles, tall wooden poles planted in the ground and surmounted by a Phrygian cap. It was used during the War of Independence by the Sons of Liberty as a symbol of dissent against Great Britain. In New York City, the Sons of Liberty erected liberty poles which were periodically destroyed by the royal authorities, a struggle which was often violent and raged for 10 years. Now, a liberty pole in New York City has been crowned with a gilt vane bearing the single word, 'Liberty'.
+******** picture = REFORM_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Country is 1 "United States
+********* Has a truce with 0 "Great Britain
+********* Has the country flag evacuation_day
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Perfect!:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is usa_dlc.40
+******** title = 0 "Great Fire of New York
+******** desc = 0 "The British forces occupying Manhattan are desperately trying to quench the fire that is slowly engulfing New York. The fire supposedly started in the Fighting Cocks Tavern, near Whitehall Slip, according to John Joseph Henry who saw the fire start from aboard the HMS Pearl, where he was held prisoner. The dry weather and strong winds are making the flames spread north and west, the tightly packed homes and business are easily overtaken by the flames. Seeking refuge from the fire, residents pour into the streets. In the grassy town commons the refugees feel safe enough to turn around and see what damage the fire has brought upon their city.
+******** picture = GREAT_FIRE_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1776
+********* Year is less than 1800
+********* At war with 0 "Great Britain
+********* 1 "Manahahttan:
+********** Any of the following:
+*********** The province is owned by our country
+*********** Controlled by 0 "Great Britain
+********** Any of the following:
+*********** The province is owned by 0 "Great Britain
+*********** Controlled by our country
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Help them in any way possible:
+********* Changes administrative power stored by -50
+******** Option: 0 "Leave it to the British forces:
+********* 1 "Manahahttan:
+********** Adds the modifier "0 "The Great Fire of New York" until the end of the campaign:
+*********** -10% manpower modifier
+*********** -10% provincial tax income
+*********** -10% trade goods output
+*********** local_unrest = -1
+******* Gets the country event:
+******** ID is usa_dlc.41
+******** title = 0 "Lewis and Clark Expedition
+******** desc = 0 "Captain Meriwether Lewis and his close friend Second Lieutenant William Clark are proposing an American expedition to cross the Western portion of America, to find the most direct and practicable water communication across the continent. Together with a small group of volunteers, the two men will cross the continent and explore the Missouri River, to find if the Columbia, Oregon, Colorado or any other river may offer a waterway across this continent for the purpose of commerce.
+******** picture = EXPLORERS_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1800
+********* Any of the following:
+********** great_plains_region:
+*********** Has not been discovered by our country
+********** cascadia_region:
+*********** Has not been discovered by our country
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Fund their expedition:
+********* Modifies treasury by -0.3 years worth of income
+********* If:
+********** Limited to:
+*********** great_plains_region:
+************ Has not been discovered by our country
+********** great_plains_region:
+*********** Discovers the country our country
+********* If:
+********** Limited to:
+*********** cascadia_region:
+************ Has not been discovered by our country
+********** cascadia_region:
+*********** Discovers the country our country
+******** Option: 0 "They need more preparation:
+********* Changes prestige by 5
+******* Gets the country event:
+******** ID is usa_dlc.42
+******** title = 0 "First Bank of the United States
+******** desc = 0 "The Secretary of the Treasury, Alexander Hamilton, has proposed three major financial innovations. The first is a national bank, which Hamilton argues is most important in order to reach the three goals he has set for the United States:\nEstablish financial order, clarity and precedence in and of the newly formed United States.\nEstablish credit—both in country and overseas—for the new nation.\nTo resolve the issue of the fiat currency, issued by the Continental Congress immediately prior to and during the United States Revolutionary War — the 'Continental'.
+******** picture = ECONOMY_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Country is 1 "United States
+********* Year is at least 1790
+********* Not at war with 0 "Great Britain
+********* Does not have the country modifier "0 "First Bank of USA"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Follow Hamilton's advice and charter the central bank:
+********* Adds the modifier "0 "First Bank of USA" for the rest of the campaign:
+********** +10% global tax modifier
+********** -2 interest
+******** Option: 0 "Find another way to reach Hamilton's goals:
+********* Changes administrative power stored by 50
+******* Gets the country event:
+******** ID is usa_dlc.43
+******** title = 0 "Women in the American Revolution
+******** desc = 0 "The Homespun Movement urges women to weave and spin their own cloth to provide clothes for their families instead of wearing or purchasing clothing made of imported British material. During the Independence War, the movement was a form of resistance against Great Britain. The denouncement of silks, satins, and other luxuries in favor of homespun clothing sent a strong message of unity against supposed British oppression. The Continental Army, led by George Washington, was provided with clothing and blankets by the Homespun Movement.\nThe Edenton Tea Party was fifty-one women in Edenton, North Carolina who signed an agreement officially agreeing to boycott tea and other English products and sent it to British newspapers. There have been many examples of women and their efforts to free the United States from the British suppression, and today we honor and thank them for their support and struggle.
+******** picture = ELECTION_REPUBLICAN_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Country is 1 "United States
+********* Not at war with 0 "Great Britain
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Hurray for the women of America!:
+********* Changes prestige by 10
+********* Changes administrative power stored by 50
+********* Changes diplomatic power stored by 50
+********* Changes military power stored by 50
+******* Gets the country event:
+******** ID is usa_dlc.44
+******** title = 0 "The Invention of the Cotton Gin
+******** desc = 0 "A new machine which separates cotton fibers from their seeds in a quick and easy way is currently being tested. The Cotton gin is a wooden drum with small wire hooks that pulls the cotton fibers through a mesh to separate the seeds from the cotton while brushes removes the loose cotton lint to prevent jams. A patent is pending and Eli Whitney, the inventor, claims that his machine can produce up to 25 kilo of cleaned cotton, daily, and he is trying to find more places where he can test his machine.
+******** picture = COLONIZATION_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1794
+********* Year is less than 1825
+********* Any owned province:
+********** Produces 0 "Cotton
+********** No owned province:
+*********** Has the province modifier "0 "Cotton Gin"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Produces 0 "Cotton
+*********** Sets the province flag cotton_gin_flag1
+********** Random owned province:
+*********** Limited to:
+************ Produces 0 "Cotton
+************ Does not have the province flag cotton_gin_flag1
+*********** Sets the province flag cotton_gin_flag2
+********** Random owned province:
+*********** Limited to:
+************ Produces 0 "Cotton
+************ Does not have the province flag cotton_gin_flag1
+************ Does not have the province flag cotton_gin_flag2
+*********** Sets the province flag cotton_gin_flag3
+******** Option: 0 "Purchase a couple of machines off him:
+********* Modifies treasury by -0.25 years worth of income
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag cotton_gin_flag1
+********** Removes the province flag cotton_gin_flag1
+********** Adds the modifier "0 "Cotton Gin" until the end of the campaign:
+*********** +20% trade goods output
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag cotton_gin_flag2
+********** Removes the province flag cotton_gin_flag2
+********** Adds the modifier "0 "Cotton Gin" until the end of the campaign:
+*********** +20% trade goods output
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag cotton_gin_flag3
+********** Removes the province flag cotton_gin_flag3
+********** Adds the modifier "0 "Cotton Gin" until the end of the campaign:
+*********** +20% trade goods output
+******** Option: 0 "Help him through the patent process:
+********* Changes administrative power stored by 25
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has the province flag cotton_gin_flag1
+*********** Removes the province flag cotton_gin_flag1
+********** Random owned province:
+*********** Limited to:
+************ Has the province flag cotton_gin_flag2
+*********** Removes the province flag cotton_gin_flag2
+********** Random owned province:
+*********** Limited to:
+************ Has the province flag cotton_gin_flag3
+*********** Removes the province flag cotton_gin_flag3
+******* Gets the country event:
+******** ID is usa_dlc.45
+******** title = 0 "United States Mint
+******** desc = 0 "The United States Congress is debating whether or not the Coinage Act should be passed. A Mint would be established and the coinage of USA would be regulated. The silver dollar is the suggested unit of money and a decimal system for the U.S currency is being created. A Director, an Assayer, a Chief Coiner, an Engraver and a Treasurer, are suggested as officers of the U.S. Mint.
+******** picture = ECONOMY_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1792
+********* Does not have the country modifier "0 "U.S Mint"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Establish the Mint and pass the Coinage Act:
+********* Adds the modifier "0 "U.S Mint" for 20 years:
+********** +10% global tax modifier
+********** -0.25 interest
+******** Option: 0 "We'll get to this later:
+********* Changes administrative power stored by 20
+********* Changes diplomatic power stored by 20
+******* Gets the country event:
+******** ID is usa_dlc.46
+******** title = 0 "Tecumseh
+******** desc = 0 "The Native Americans in the Old Northwest has created Tecumseh's Confederacy, which includes several thousand warriors under the leadership of Shawnee leader Tecumseh. Tenskwatawa, a religious and political leader and brother of Tecumseh, is known as The Prophet and the Confederacy is formed around his teachings. The two Lenape religious leaders Neolin and Scattamek, who had predicted a coming apocalypse in which the white men would be overthrown by supernatural powers, has greatly influenced Tenskwatawa and he now urges Indians to reject the ways of the whites, like liquor, Europeans style clothing, and firearms. His brother Tecumseh is outraged by the continued loss of land to the Americans and together they call for the tribes to refrain from ceding any more lands to the United States. Many different Native American tribes are brought together by the two brothers and their goal has just been realized. A pan-tribal confederacy powerful enough to counter and resist the United States has been created.
+******** picture = INDIAN_WARS_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Always false
+********* Has the DLC American Dream
+********* Country is 1 "United States
+********* Not at war with 0 "Great Britain
+********* Any known country:
+********** Capital:
+*********** In the continent 0 "North America
+********** Any of the following:
+*********** Culture group is 0 "Eskaleut
+*********** Culture group is 0 "Central Algonquian
+*********** Culture group is 0 "Eastern Algonquian
+*********** Culture group is 0 "Iroquoian
+*********** Culture group is 0 "Siouan
+*********** Culture group is 0 "Muskogean
+*********** Culture group is 0 "Sonoran
+********** At war with our country
+********** Is AI controlled
+********** Is not in a coalition
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "We will defeat them, just as we defeated the British!:
+********* Every known country:
+********** Limited to:
+*********** Country is not 1 "United States
+*********** Capital:
+************ In the continent 0 "North America
+*********** Any of the following:
+************ Culture group is 0 "Eskaleut
+************ Culture group is 0 "Central Algonquian
+************ Culture group is 0 "Eastern Algonquian
+************ Culture group is 0 "Iroquoian
+************ Culture group is 0 "Siouan
+************ Culture group is 0 "Muskogean
+************ Culture group is 0 "Sonoran
+*********** At war with our country
+*********** Is AI controlled
+*********** Is not in a coalition
+************ No known country:
+************* Capital:
+************** In the continent 0 "North America
+************* Any of the following:
+************** Culture group is 0 "Eskaleut
+************** Culture group is 0 "Central Algonquian
+************** Culture group is 0 "Eastern Algonquian
+************** Culture group is 0 "Iroquoian
+************** Culture group is 0 "Siouan
+************** Culture group is 0 "Muskogean
+************** Culture group is 0 "Sonoran
+************* At war with PREV
+************* Is AI controlled
+************* Is not in a coalition
+********** Forms a coalition against 1 "United States
+******* Gets the country event:
+******** ID is usa_dlc.47
+******** title = 0 "Shays' Rebellion
+******** desc = 0 "The post-war economic depression brought about financial difficulties, a credit squeeze caused by a lack of hard currency and fiscally harsh government policies to solve the state's debt problems. Many war veterans have protested against this and shut down county courts to stop the judicial hearings for tax and debt collection. The farmers have no hard currency to pay for goods and the merchants has refused to extend lines of credit to them, which has led to some losing their land and other possessions when they are unable to fulfill their debt and tax obligations. This has led to strong resentments against tax collectors and the courts, where creditors obtained and enforced judgments against debtors, and where tax collectors obtained judgments authorizing property seizures. A militia has been raised as a private army, to begin organizing an armed force. Amending the Articles of Confederation would ease the pressure on these farmers and give them some means to provide for themselves...
+******** picture = ANGRY_MOB_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1780
+********* Has less than 100 ducats in the treasury
+********* Has at least 2 active loans
+********* Has the country modifier "0 "Articles of Confederation"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has core on owner
+*********** Sets the province flag shays_rebellion_flag1
+********** Random owned province:
+*********** Limited to:
+************ Does not have the province flag shays_rebellion_flag1
+*********** Sets the province flag shays_rebellion_flag2
+********** Random owned province:
+*********** Limited to:
+************ Does not have the province flag shays_rebellion_flag1
+************ Does not have the province flag shays_rebellion_flag2
+*********** Sets the province flag shays_rebellion_flag3
+******** Option: 0 "We do not negotiate with rebels!:
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag shays_rebellion_flag1
+********** Removes the province flag shays_rebellion_flag1
+********** Spawns revolt of size 2 of 0 "Peasant rebels
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag shays_rebellion_flag2
+********** Removes the province flag shays_rebellion_flag2
+********** Spawns revolt of size 2 of 0 "Peasant rebels
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag shays_rebellion_flag3
+********** Removes the province flag shays_rebellion_flag3
+********** Spawns revolt of size 2 of 0 "Peasant rebels
+******** Option: 0 "Amend the Articles:
+********* Removes the country modifier "0 "Articles of Confederation"
+********* Adds the modifier "0 "New Articles of Confederation" for the rest of the campaign:
+********** +1 prestige
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag shays_rebellion_flag1
+********** Removes the province flag shays_rebellion_flag1
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag shays_rebellion_flag2
+********** Removes the province flag shays_rebellion_flag2
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag shays_rebellion_flag3
+********** Removes the province flag shays_rebellion_flag3
+********** Adds the modifier "0 "Rebellious People" until the end of the campaign:
+*********** local_unrest = 5
+******* Gets the country event:
+******** ID is usa_dlc.48
+******** title = 0 "USA: An Independent Nation
+******** desc = 0 "John Adams is good friend with Joan van der Capellen tot den Pol, the Dutch Patriot leader, who is an advocate of the American cause. He voted against borrowing the British King George III the Scotch Brigade to be deployed in the war with the American Republic and has continued to dedicate himself to the American War of Independence. His influence could be used to convince the States General to recognize the United States as an independent nation.
+******** picture = DIPLOMACY_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Has the country flag usa_declaration_independence_flag
+********* Year is less than 1784
+********* Not at war with 0 "Netherlands
+********* Does not have the country flag independence_acknowledged_flag
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Removes the country flag independence_acknowledged_flag
+******** Option: 0 "Let him try:
+********* 0 "Netherlands:
+********** Gets the country event:
+*********** ID is usa_dlc.49
+********* Changes diplomatic power stored by -10
+******** Option: 0 "We do not need their approval:
+********* Changes prestige by 10
+******* Gets the country event:
+******** ID is usa_dlc.49
+******** title = 0 "USA: An Independent Nation
+******** desc = 0 "Joan van der Capellen tot den Pol, the Dutch Patriot leader, is trying to convince the States General to recognize USA as an independent nation. He has always been an advocate of the American cause and voted against borrowing the British King George III the Scotch Brigade to be deployed in the war with the American Republic. He regards the American struggle as an example for Dutch patriots and recognizing them as an independent nation would be a great step forward for the Dutch nation.
+******** picture = DIPLOMACY_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Accept USA as an Independent Nation:
+********* AI chance:
+********** Base chance of 80
+********* Random country:
+********** Limited to:
+*********** Has the country flag usa_declaration_independence_flag
+********** Gets the country event:
+*********** ID is usa_dlc.50
+********** Adds the opinion modifier "0 "Acknowledged Independence" from our country
+********* 0 "Great Britain:
+********** Adds the opinion modifier "0 "Disgruntled" from our country
+******** Option: 0 "Reject their claim:
+********* Random country:
+********** Limited to:
+*********** Has the country flag usa_declaration_independence_flag
+********** Gets the country event:
+*********** ID is usa_dlc.51
+********** Adds the opinion modifier "0 "Disgruntled" from our country
+********* 0 "Great Britain:
+********** Adds the opinion modifier "0 "Pleased" from our country
+******* Gets the country event:
+******** ID is usa_dlc.50
+******** title = 0 "USA: An Independent Nation
+******** desc = 0 "With the help and influences of Joan van der Capellen tot den Pol, John Adams has managed to secure [From.GetName] recognition of the United States as an independent government at The Hague.
+******** picture = DIPLOMACY_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Fantastic!:
+********* Tooltip:
+********** Adds the opinion modifier "0 "Acknowledged Independence" from our country
+******* Gets the country event:
+******** ID is usa_dlc.51
+******** title = 0 "USA: An Independent Nation
+******** desc = 0 "[From.GetName] has rejected USA's claim of independence despite Joan van der Capellen tot den Pol's influences and John Adams hard work.
+******** picture = DIPLOMACY_eventPicture
+******** is_triggered_only = yes
+******** Option: 0 "Those bastards!:
+********* Tooltip:
+********** Adds the opinion modifier "0 "Disgruntled" from our country
+******* Gets the country event:
+******** ID is usa_dlc.52
+******** title = 0 "New York Manumission Society
+******** desc = 0 "The battle against the slave trade and towards the emancipation of all the slaves in the country is being fought by white, wealthy and influential men who have founded the New York Manumission Society. They will not rest until slave trade has been abolished, in the mean time they have founded the African Free School for the poor and orphaned children of slaves and free people of color. John Jay is one of the leaders, who has drafted a state law to abolish slavery and although the draft failed, he has set the abolition movement running. Boycotts against New York merchants and newspaper owners involved in the slave trade have been organized and a special committee of militants visits newspaper offices to warn publishers against accepting advertisements for the purchase or sale of slaves is terrorizing the newspapers.
+******** picture = CONGRESS_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1785
+********* northeast_america_region:
+********** The province is owned by our country
+********* Has at least 16 provinces
+********* Any owned province:
+********** Has the province modifier "0 "Slavery in USA"
+********** No owned province:
+*********** Has the province modifier "0 "Protest against the Manumission Society"
+********** No owned province:
+*********** Has the province modifier "0 "Manumission Society"
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Region is not northeast_america_region
+*********** Sets the province flag manumission_flag1
+********** Random owned province:
+*********** Limited to:
+************ Region is not northeast_america_region
+************ Does not have the province flag manumission_flag1
+*********** Sets the province flag manumission_flag2
+********** Random owned province:
+*********** Limited to:
+************ Region is not northeast_america_region
+************ Does not have the province flag manumission_flag1
+************ Does not have the province flag manumission_flag2
+*********** Sets the province flag manumission_flag3
+********** Random owned province:
+*********** Limited to:
+************ Region is not northeast_america_region
+************ Does not have the province flag manumission_flag1
+************ Does not have the province flag manumission_flag2
+************ Does not have the province flag manumission_flag3
+*********** Sets the province flag manumission_flag4
+********** Random owned province:
+*********** Limited to:
+************ Region is not northeast_america_region
+************ Does not have the province flag manumission_flag1
+************ Does not have the province flag manumission_flag2
+************ Does not have the province flag manumission_flag3
+************ Does not have the province flag manumission_flag4
+*********** Sets the province flag manumission_flag5
+********** Random owned province:
+*********** Limited to:
+************ Region is not northeast_america_region
+************ Does not have the province flag manumission_flag1
+************ Does not have the province flag manumission_flag2
+************ Does not have the province flag manumission_flag3
+************ Does not have the province flag manumission_flag4
+************ Does not have the province flag manumission_flag5
+*********** Sets the province flag manumission_flag6
+********** Random owned province:
+*********** Limited to:
+************ Region is not northeast_america_region
+************ Does not have the province flag manumission_flag1
+************ Does not have the province flag manumission_flag2
+************ Does not have the province flag manumission_flag3
+************ Does not have the province flag manumission_flag4
+************ Does not have the province flag manumission_flag5
+************ Does not have the province flag manumission_flag6
+*********** Sets the province flag manumission_flag7
+********** Random owned province:
+*********** Limited to:
+************ Region is not northeast_america_region
+************ Does not have the province flag manumission_flag1
+************ Does not have the province flag manumission_flag2
+************ Does not have the province flag manumission_flag3
+************ Does not have the province flag manumission_flag4
+************ Does not have the province flag manumission_flag5
+************ Does not have the province flag manumission_flag6
+************ Does not have the province flag manumission_flag7
+*********** Sets the province flag manumission_flag8
+******** Option: 0 "Allow them to continue their work:
+********* Changes diplomatic power stored by 100
+********* Every owned province:
+********** Limited to:
+*********** Region is northeast_america_region
+********** Adds the modifier "0 "Protest against the Manumission Society" until the end of the campaign:
+*********** local_unrest = 1
+******** Option: 0 "Stop them immediately!:
+********* 1 "Manahahttan:
+********** Changes base tax by 2
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag manumission_flag1
+********** Removes the province flag manumission_flag1
+********** Adds the modifier "0 "Manumission Society" until the end of the campaign:
+*********** local_unrest = 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag manumission_flag2
+********** Removes the province flag manumission_flag2
+********** Adds the modifier "0 "Manumission Society" until the end of the campaign:
+*********** local_unrest = 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag manumission_flag3
+********** Removes the province flag manumission_flag3
+********** Adds the modifier "0 "Manumission Society" until the end of the campaign:
+*********** local_unrest = 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag manumission_flag4
+********** Removes the province flag manumission_flag4
+********** Adds the modifier "0 "Manumission Society" until the end of the campaign:
+*********** local_unrest = 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag manumission_flag5
+********** Removes the province flag manumission_flag5
+********** Adds the modifier "0 "Manumission Society" until the end of the campaign:
+*********** local_unrest = 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag manumission_flag6
+********** Removes the province flag manumission_flag6
+********** Adds the modifier "0 "Manumission Society" until the end of the campaign:
+*********** local_unrest = 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag manumission_flag7
+********** Removes the province flag manumission_flag7
+********** Adds the modifier "0 "Manumission Society" until the end of the campaign:
+*********** local_unrest = 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag manumission_flag8
+********** Removes the province flag manumission_flag8
+********** Adds the modifier "0 "Manumission Society" until the end of the campaign:
+*********** local_unrest = 1
+******* Gets the country event:
+******** ID is usa_dlc.60
+******** title = 0 "The Creation of the Continental Army
+******** desc = 0 "On May 10, 1775 representatives from all thirteen colonies met in Philadelphia deciding to create a national army, The Continental Army, under the leadership of the Cavalier George Washington of Virginia. This was a very important for the young Nation as the Professional Army was the first stepping stone to recognition from the Old World. The form of the army was though hotly debated. How will you choose, Sire?
+******** picture = MILITARY_CAMP_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Is at war
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1773
+********* Year is less than 1820
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Raise Professional Army:
+********* Creates a general at  extra army tradition
+********** tradition = 50
+********* Changes military power stored by 100
+********* Changes army tradition by 20
+******** Option: 0 "Raise Provincial Militias:
+********* Changes national manpower reserves by 20 years worth
+********* Changes military power stored by 50
+********* Changes army tradition by 10
+******** Option: 0 "Call for Volunteers:
+********* Changes administrative power stored by 20
+********* Changes national manpower reserves by 10 years worth
+******* Gets the country event:
+******** ID is usa_dlc.61
+******** title = 0 "The Congress' Printing Machine
+******** desc = 0 "In 1779 the Military situation was severe, but the economic situation was even worse. The Congress was not yet an efficient vehicle of governance and members of it let the printing press run freely. The money was needed, but the effect was a growing inflation. The usage of the printing press was a collective decision the body of men responsible could have decided differently. How will you decide, Sire?
+******** picture = ECONOMY_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Is at war
+********* Year is at least 1779
+********* Year is less than 1820
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Print more money:
+********* Changes inflation by 2
+********* Changes treasury by 500 ducats
+********* Changes administrative power stored by -50
+******** Option: 0 "Use with constrain:
+********* Changes inflation by 1
+********* Changes treasury by 100 ducats
+********* Changes administrative power stored by -25
+******** Option: 0 "Stop immediately:
+********* Changes inflation by -1
+********* Changes treasury by -50 ducats
+********* Changes administrative power stored by 25
+******* Gets the country event:
+******** ID is usa_dlc.62
+******** title = 0 "US. Presidential Election of 1796
+******** desc = 0 "Campaign and the Issues, 1796: Federalist flocked under the banner of John Adams, who vowed to reinforce Washington's Strong Government. Jefferson and the Anti-Federalists opposed the growing government and rode the wave of popular fears of insidious royalism. Adams supporters retaliated by condemning the French Revolution as Monocracy, the former cherished by the Anti-Federalists. The Anti-Federalists on the other hand still viewed England as the principal enemy and said that Adams was going to pay lip service to Her Majesty's Government. Washington's support and the New Englanders effort to stop Alexander Hamilton from sabotaging Adams campaign gave Adams a marginal electoral victory, 71-68. How will the Spirit of America choose this time?
+******** picture = ELECTION_REPUBLICAN_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1796
+********* Year is less than 1797
+********* Ruler's name is not John Adams
+********* Ruler's name is not Thomas Jefferson
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "John Adams:
+********* Adds the opinion modifier "0 "Displeased" towards 0 "France
+********* Adds the opinion modifier "0 "Correct Ruler" towards 0 "Great Britain
+********* Spawns a ruler:
+********** Named "John Adams"
+********** Ruler's administrative skill is at least 5
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 2
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "incorruptible"
+******** Option: 0 "Thomas Jefferson:
+********* Adds the opinion modifier "0 "Displeased" towards 0 "Great Britain
+********* Adds the opinion modifier "0 "Correct Ruler" towards 0 "France
+********* Spawns a ruler:
+********** Named "Thomas Jefferson"
+********** Ruler's administrative skill is at least 5
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "lawgiver"
+******* Gets the country event:
+******** ID is usa_dlc.63
+******** title = 0 "Federal Taxes on Property
+******** desc = 0 "In July 1798 President Adams approved legislation levying federal taxes on property. This had consequences. The most obvious was the Fries Rebellion of 1799, a group of armed Pennsylvanians resisted tax assessors and collectors. But it also created a great debate of the limits of power of government that never ended, but continues up to this day and beyond. However, depending on the political position of the President and the representatives in Congress a different legislation package could have been approved. How will you choose, Mr. President?
+******** picture = ECONOMY_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1799
+********* Year is less than 1800
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has core on owner
+************ In the continent 0 "North America
+*********** Sets the province flag federal_taxes_flag1
+********** Random owned province:
+*********** Limited to:
+************ Has core on owner
+************ In the continent 0 "North America
+************ Does not have the province flag federal_taxes_flag1
+*********** Sets the province flag federal_taxes_flag2
+********** Random owned province:
+*********** Limited to:
+************ Has core on owner
+************ In the continent 0 "North America
+************ Does not have the province flag federal_taxes_flag1
+************ Does not have the province flag federal_taxes_flag2
+*********** Sets the province flag federal_taxes_flag3
+******** Option: 0 "Limited Federal Taxation Rights:
+********* Changes administrative power stored by -20
+********* Changes diplomatic power stored by -20
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag federal_taxes_flag1
+********** Changes base tax by 1
+********** Removes the province flag federal_taxes_flag1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag federal_taxes_flag2
+********** Removes the province flag federal_taxes_flag2
+********** Changes base tax by 1
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has the province flag federal_taxes_flag3
+*********** Removes the province flag federal_taxes_flag3
+******** Option: 0 "No Federal Taxation Rights:
+********* Changes administrative power stored by 100
+********* Changes diplomatic power stored by 100
+******** Option: 0 "Unlimited Federal Taxation Rights:
+********* Changes administrative power stored by -40
+********* Changes diplomatic power stored by -40
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag federal_taxes_flag1
+********** Changes base tax by 1
+********** Removes the province flag federal_taxes_flag1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag federal_taxes_flag2
+********** Removes the province flag federal_taxes_flag2
+********** Changes base tax by 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag federal_taxes_flag3
+********** Removes the province flag federal_taxes_flag3
+********** Changes base tax by 1
+******* Gets the country event:
+******** ID is usa_dlc.64
+******** title = 0 "US. Presidential Election of 1800
+******** desc = 0 "Campaign and the Issues, 1800: The Federalists urged voters to choose God - and a religious President (Adams) over Jefferson - and no God. Initially the Federalists monopolized the media thanks to the Sedition Act that outlawed most opposition as treason. Though this Act was also the rallying point of the Anti-Federalists, or the Republicans, as they were now called as James Madison had written the controversial Virginia and Kentucky Resolution in 1798-1799 which declared the Sedition Act unconstitutional. At a late stage the majority in New York changed and the new electoral votes changed the balance into the favor of Jefferson. However as the nominally vice presidential candidate Aaron Burr got the same number of electoral votes as the Jefferson, Burr later forced the issue to a vote in the House which was eventually won by Jefferson. The Electoral Votes: Jefferson 73, Burr 73, Adams 65. How will the Spirit of America choose this time?
+******** picture = ELECTION_REPUBLICAN_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Year is at least 1800
+********* Year is less than 1801
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Ruler's name is not Thomas Jefferson
+********* Ruler's name is not Aaron Burr
+********* Ruler's name is not John Adams
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Thomas Jefferson:
+********* Changes administrative power stored by 20
+********* Spawns a ruler:
+********** Named "Thomas Jefferson"
+********** Ruler's administrative skill is at least 5
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 3
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "lawgiver"
+******** Option: 0 "Aaron Burr:
+********* Changes diplomatic power stored by 40
+********* Spawns a ruler:
+********** Named "Aaron Burr"
+********** Ruler's administrative skill is at least 3
+********** Ruler's diplomatic skill is at least 6
+********** Ruler's military skill is at least 3
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "entrepreneur"
+******** Option: 0 "John Adams:
+********* Changes military power stored by 40
+********* Spawns a ruler:
+********** Named "John Adams"
+********** Ruler's administrative skill is at least 5
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's military skill is at least 2
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "incorruptible"
+******* Gets the country event:
+******** ID is usa_dlc.65
+******** title = 0 "The Louisiana Purchase
+******** desc = 0 "In 1803 Napoleon of France was hard pressed for cash as he was set on a dream of European hegemony. He therefore offered the Louisiana Territory, a vast region between the Mississippi and the Rockies against a lump sum of 15 million dollars. The President and the Senate agreed and the United States nearly doubled its size. Sire, you would only get the province that France presently owns for a lump sum of 1000 ducats. How will you choose, Mr. President?
+******** picture = DIPLOMACY_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* 0 "France:
+********** Is AI controlled
+********* 0 "Colonial Louisiana:
+********** Any of the following:
+*********** The province is owned by 0 "France
+*********** The owner of the province:
+************ is_colonial_nation_of = 0 "France
+********** Any bordering province:
+*********** The province is owned by our country
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Accept Offer:
+********* Changes treasury by -1000 ducats
+********* Adds the opinion modifier "0 "Sold us Louisiana" towards 0 "France
+********* Every province in the world:
+********** Limited to:
+*********** In the colonial region 0 "Colonial Louisiana
+*********** Any of the following:
+************ The province is owned by 0 "France
+************ The owner of the province:
+************* is_colonial_nation_of = 0 "France
+********** The owner of the province:
+*********** Removes core on PREV
+********** Gives our country core on the province
+********** Cedes province to our country
+********* AI chance:
+********** Base chance of 100
+********** Multiplies value by 0:
+*********** Any of the following:
+************ Is bankrupt
+************ is_in_large_debt = yes
+************ All of the following:
+************* Has less than 500 ducats in the treasury
+************* Monthly income is less than 10 ducats
+************ All of the following:
+************* Has less than 250 ducats in the treasury
+************* Monthly income is less than 20 ducats
+******** Option: 0 "Decline Offer:
+********* Adds the opinion modifier "0 "Disappointed" towards 0 "France
+********* AI chance:
+********** Base chance of 1
+******* Gets the country event:
+******** ID is usa_dlc.66
+******** title = 0 "US. Presidential Election of 1804
+******** desc = 0 "Campaign and the Issues, 1804: President Jefferson handily checked a feeble challenge from the dying Federalist Party. The Party had been severely damaged by a radical group within called the Essex Junta, which had tried in vain to enlist some eastern seaboard states to secede from the union forming a New England Confederacy free of Jeffersonian Democracy. Among the elites of the country many still supported the Federalists and Pinckney, but the masses were discouraged by the behavior of the Junta. The Biggest Issue was the Louisiana Purchase as Federalists feared that more immigrants (Jefferson-supporters that is) would break the balance of power at the expense of the Federalists. Thus Jefferson made significant inroads in once solidly Federalist New England and victory was his. Electoral Votes: Jefferson 162, Pinckney 14. How will the Spirit of America choose this time?
+******** picture = ELECTION_REPUBLICAN_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1804
+********* Year is less than 1805
+********* Ruler's name is not Thomas Jefferson
+********* Ruler's name is not Charles Pinckney
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Thomas Jefferson:
+********* Adds 500% mercantilism
+********* Spawns a ruler:
+********** Named "Thomas Jefferson"
+********** Ruler's diplomatic skill is at least 4
+********** Ruler's administrative skill is at least 5
+********** Ruler's military skill is at least 3
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "lawgiver"
+******** Option: 0 "Charles Pinckney:
+********* Adds -500% mercantilism
+********* Spawns a ruler:
+********** Named "Charles Pinckney"
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's administrative skill is at least 4
+********** Ruler's military skill is at least 5
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "fierce_negotiator"
+******* Gets the country event:
+******** ID is usa_dlc.67
+******** title = 0 "US. Presidential Election of 1808
+******** desc = 0 "Campaign and the Issues, 1808: As Thomas Jefferson retired he endorsed James Madison as his successor. Madison was only vulnerable to one issue - The Embargo. As Secretary of State he had been handled the Embargo which was both retaliation against French and British disrespect and a policy of Protectionism. The Embargo was very unpopular in both camps, thus the Federalists once again revitalized under Charles Pinckney and Free-Trade Republicans threatened to support the republican vice presidential candidate George Clinton. The Free-Trade threat never materialized and although Pinckney did well he could not compete with the popularity of former President Jefferson. Jefferson was instrumental in urging fellows and foes alike to stand behind Madison and thus securing his victory. Electoral Vote: Madison 122, Pinckney 47, Clinton 6. How will the Spirit of America choose this time?
+******** picture = ELECTION_REPUBLICAN_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1808
+********* Year is less than 1809
+********* Ruler's name is not James Madison
+********* Ruler's name is not Charles Pinckney
+********* Ruler's name is not George Clinton
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "James Madison:
+********* Adds 500% mercantilism
+********* Spawns a ruler:
+********** Named "James Madison"
+********** Ruler's diplomatic skill is at least 5
+********** Ruler's administrative skill is at least 5
+********** Ruler's military skill is at least 3
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "righteous"
+******** Option: 0 "Charles Pinckney:
+********* Adds -500% mercantilism
+********* Spawns a ruler:
+********** Named "Charles Pinckney"
+********** Ruler's diplomatic skill is at least 3
+********** Ruler's administrative skill is at least 4
+********** Ruler's military skill is at least 5
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "fierce_negotiator"
+******** Option: 0 "George Clinton:
+********* Adds -500% mercantilism
+********* Spawns a ruler:
+********** Named "George Clinton"
+********** Ruler's diplomatic skill is at least 5
+********** Ruler's administrative skill is at least 3
+********** Ruler's military skill is at least 4
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "benevolent"
+******* Gets the country event:
+******** ID is usa_dlc.68
+******** title = 0 "Hawks and Doves of 1812
+******** desc = 0 "During the years up to the War of 1812 the British had never respected the independence of the United States de facto. Great Britain disrespected US neutral rights at sea and impressed American seamen and confiscated the goods of her ships at sea. She also encouraged and supported Indian Unrest in the West. This together with the fact that some American gentlemen like Henry Clay and John C. Calhoun lobbied aggressively for war in an effort to exploit the opportunity to seize Canada made it hard for the President in International affairs. The Nation was though badly divided and when the President asked the Congress for a declaration of war (June1) the South and the West voted for and New England against. The war was not a great success for the United States military and the White House was bombarded by the Royal Navy. Only the Battle of New Orleans in 1815 was considered a victory. The war ended in a status quo peace, but it could very well have ended differently. Who will you choose Mr. President?
+******** picture = DIPLOMACY_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Year is at least 1812
+********* Year is less than 1813
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Not at war with 0 "Great Britain
+********* Has no truce with 0 "Great Britain
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Support War hawks:
+********* Gives the 0 "Diplomatic Insult casus belli against 0 "Great Britain
+********* Adds the opinion modifier "0 "War Hawks" towards 0 "Great Britain
+********* Changes administrative power stored by -10
+******** Option: 0 "Support Doves:
+********* Adds the opinion modifier "0 "Doves" towards 0 "Great Britain
+********* Changes stability by 2
+********* Changes diplomatic power stored by 20
+******* Gets the country event:
+******** ID is usa_dlc.69
+******** title = 0 "US. Presidential Election of 1812
+******** desc = 0 "Campaign and the Issues, 1812: The War of 1812 dominated the campaign. Because the United States suffered early defeats in the West, DeWitt Clinton's supporters blasted the president for incompetence in directing the war effort, a war that Federalists denounced as groundless. Madison's campaigners defended the war as necessary to establish American neutral rights. Madison was not that popular, but two things turned against Clinton. First, Clinton tried to appeal to hawks and doves alike making his position non-credible. Second, Madison was a president at war and people rallied to his defense. Electoral Votes: Madison 128, Clinton 89. How will the Spirit of America choose this time?
+******** picture = ELECTION_REPUBLICAN_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1812
+********* Year is less than 1813
+********* Ruler's name is not James Madison
+********* Ruler's name is not DeWitt Clinton
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "James Madison:
+********* Adds the opinion modifier "0 "Disappointed" towards 0 "Great Britain
+********* add_stability_or_adm_power = yes
+********* Adds 500% mercantilism
+********* Spawns a ruler:
+********** Named "James Madison"
+********** Ruler's diplomatic skill is at least 5
+********** Ruler's administrative skill is at least 5
+********** Ruler's military skill is at least 3
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "righteous"
+******** Option: 0 "DeWitt Clinton:
+********* Adds the opinion modifier "0 "Displeased" towards 0 "Great Britain
+********* Changes stability by -1
+********* Adds -500% mercantilism
+********* Spawns a ruler:
+********** Named "DeWitt Clinton"
+********** Ruler's administrative skill is at least 4
+********** Ruler's diplomatic skill is at least 6
+********** Ruler's military skill is at least 3
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "architectural_visionary"
+******* Gets the country event:
+******** ID is usa_dlc.70
+******** title = 0 "US. Presidential Election of 1816
+******** desc = 0 "Campaign and the Issues, 1816: There were no big issues. James Monroe was supported by two popular former presidents, Jefferson and Madison, and Monroe was a skilled tactician doing very little campaigning. The election was a sure thing all from the beginning as there were in fact only one efficient party, the Republicans. The Federalists existed, but was trashed from opposing the War of 1812 and had its voters in the New England area. Its organization and form was old and obsolete and it did not even officially nominate a candidate. It though supported Rufus King who put up only token opposition against the republican juggernaut. The Republicans was on the other hand an all-American movement with strong bases in New York, Virginia and in the South from which it campaign with skill and effect. Four republican presidential terms in a row had strengthened the party proportionally to the decline of the Federalists. James Monroe won a walk-over even if it was not as superior as his victory in 1820 where he grabbed all electors but one. Electoral Votes: Monroe 183, King 34. How will the Spirit of America choose this time?
+******** picture = ELECTION_REPUBLICAN_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1816
+********* Year is less than 1817
+********* Ruler's name is not James Monroe
+********* Ruler's name is not Rufus King
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "James Monroe:
+********* Adds 500% mercantilism
+********* Changes stability by 2
+********* Spawns a ruler:
+********** Named "James Monroe"
+********** Ruler's diplomatic skill is at least 5
+********** Ruler's administrative skill is at least 6
+********** Ruler's military skill is at least 3
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "incorruptible"
+******** Option: 0 "Rufus King:
+********* Adds -500% mercantilism
+********* Adds the opinion modifier "0 "Pleased" towards 0 "Great Britain
+********* Spawns a ruler:
+********** Named "Rufus King"
+********** Ruler's diplomatic skill is at least 5
+********** Ruler's administrative skill is at least 6
+********** Ruler's military skill is at least 5
+********* If:
+********** Limited to:
+*********** Has the DLC Rights of Man
+********** Hidden effect:
+*********** add_ruler_personality_ancestor:
+************ Named "charismatic_negotiator"
+******* Gets the country event:
+******** ID is usa_dlc.71
+******** title = 0 "Adams-Onís Treaty
+******** desc = 0 "During the First Seminole War (1817-1818) US forces had attacked Seminole Indians and fugitive slaves in Florida that had raided Georgia and massacred residents. To root out the problem General Andrew Jackson burnt villages and overthrew the Spanish governor. This episode convinced the Spanish government that the United States was capable of seizing Florida at will. This belief grew so strong that the Spanish government offered Florida to the United Sates for a lump sum of money. The agreement was finalized by U.S. Secretary of State John Quincy Adams and Spanish Minister Luis de Onis. Mr. President, should we heed the offer?
+******** picture = CONGRESS_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Country is 1 "United States
+********* 0 "Spain:
+********** Is AI controlled
+********* Any province in the world:
+********** In the colonial region 0 "Colonial Eastern America
+********** Any of the following:
+*********** The province is owned by 0 "Spain
+*********** The owner of the province:
+************ is_colonial_nation_of = 0 "Spain
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Option: 0 "Accept Offer:
+********* Adds the opinion modifier "0 "Bought Florida" from 0 "Spain
+********* Every province in the world:
+********** Limited to:
+*********** In the colonial region 0 "Colonial Eastern America
+*********** Any of the following:
+************ The province is owned by 0 "Spain
+************ The owner of the province:
+************* is_colonial_nation_of = 0 "Spain
+********** The owner of the province:
+*********** Removes core on PREV
+********** Gives our country core on the province
+********** Cedes province to our country
+******** Option: 0 "Decline Offer:
+********* Adds the opinion modifier "0 "Displeased" from 0 "Spain
+******* Gets the country event:
+******** ID is usa_dlc.72
+******** title = 0 "The Economic Dependency on Great Britain is broken
+******** desc = 0 "After the second war with Great Britain, The War of 1812, the United States' economic dependency on Great Britain had finally come to an end. Domestic industry, filled the vacuum created by a suspension of trade with Europe, emerged from the war a vital, expanding force in the economy. America had taken its first steps in the evolution from a largely agrarian nation into an industrial giant.
+******** picture = TEA_PARTY_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* Has the DLC American Dream
+********* Any of the following:
+********** Country is 1 "United States
+********** Has the country flag usa_declaration_independence_flag
+********* Year is at least 1812
+********* Year is less than 1815
+********* Is at war
+******** Mean time to happen
+********* Base mean time to happen of 200 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Has core on owner
+*********** Sets the province flag dependency_flag1
+********** Random owned province:
+*********** Limited to:
+************ Has core on owner
+************ Does not have the province flag dependency_flag1
+*********** Sets the province flag dependency_flag2
+********** Random owned province:
+*********** Limited to:
+************ Has core on owner
+************ Does not have the province flag dependency_flag1
+************ Does not have the province flag dependency_flag2
+*********** Sets the province flag dependency_flag3
+******** Option: 0 "At last!:
+********* Random owned province:
+********** Limited to:
+*********** The province is the capital of the country
+********** Changes base tax by 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag dependency_flag1
+********** Removes the province flag dependency_flag1
+********** Changes base tax by 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag dependency_flag2
+********** Removes the province flag dependency_flag2
+********** Changes base tax by 1
+********* Random owned province:
+********** Limited to:
+*********** Has the province flag dependency_flag3
+********** Removes the province flag dependency_flag3
+********** Changes base tax by 1
+******* Gets the country event:
+******** ID is usa_dlc.100
+******** title = 0 "More Buns for the People
+******** desc = 0 "People have been complaining about the buns they are buying. They want the all-inclusive bun, with spices, toppings and lovely flavor but for the same price as the regular bun without all the nice, tasty things.
+******** picture = COMET_SIGHTED_eventPicture
+******** fire_only_once = yes
+******** Trigger:
+********* 100 prestige
+********* Any of the following:
+********** Has the DLC American Dream
+********** Has the DLC Star and Crescent
+******** Mean time to happen
+********* Base mean time to happen of 500000 months
+******** Option: 0 "Give them buns!:
+********* Changes prestige by 5
+******** Option: 0 "Buns for all!:
+********* Changes administrative power stored by 5
+******** Option: 0 "No bun for you!:
+********* Changes diplomatic power stored by 5
+******** Option: 0 "My preciousss bunss!:
+********* Changes military power stored by 5

@@ -1,0 +1,153 @@
+** is_triggered_only = yes
+** major = yes
+** Trigger:
+*** Country is 0 "Lan Xang
+*** Has the DLC Leviathan
+*** 0 "Champasak does not exist
+*** 4839::
+**** The province is owned by our country
+**** Controlled by 0 "Rebels
+**** has_rebel_faction = 0 "Pretender
+*** 0 "Pretender rebels have are spawned in the country
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** Any of the following:
+******* Owns core province 0 "Vientiane
+******* Owns core province 0 "Luang Prabang
+***** Sets the country flag champassak_flag
+***** Every owned province:
+****** Limited to:
+******* Any of the following:
+******** area = champasak_area
+******** area = khorat_area
+****** Gives 0 "Champasak core on the province
+****** clear_rebels = yes
+***** Release 0 "Champasak as a vassal
+***** 0 "Champasak:
+****** Changes government type to monarchy
+****** add_government_reform = mandala_reform
+****** Spawns a ruler:
+******* Ruler's dynasty is our country
+** Option: flavor_lxa.1.a:
+*** Changes stability by -1
+*** Changes prestige by -25
+*** If:
+**** Limited to:
+***** Has the country flag champassak_flag
+**** Hidden effect:
+***** 0 "Champasak:
+****** Capital:
+******* build_to_forcelimit:
+******** Spawns an infantry unit in 0.6
+******** Spawns a cavalry unit in 0.3
+******** artillery = 0.1
+*** else:
+**** Changes country to 0 "Champasak
+* Gets the country event:
+** ID is flavor_lxa.2
+** title = flavor_lxa.2.t
+** desc = flavor_lxa.2.d
+** picture = NUSANTARA_WAR_eventPicture
+** is_triggered_only = yes
+** major = yes
+** Trigger:
+*** Country is 0 "Lan Xang
+*** Has the DLC Leviathan
+*** 0 "Vientiane does not exist
+*** 0 "Vientiane:
+**** The province is owned by our country
+**** Controlled by 0 "Rebels
+**** has_rebel_faction = 0 "Pretender
+*** 0 "Pretender rebels have are spawned in the country
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** Any of the following:
+******* Owns core province 4839
+******* Owns core province 0 "Luang Prabang
+***** Sets the country flag vientiane_flag
+***** Every owned province:
+****** Limited to:
+******* Any of the following:
+******** area = vientiane_area
+******** area = khorat_area
+****** Gives 0 "Vientiane core on the province
+****** clear_rebels = yes
+***** Release 0 "Vientiane as a vassal
+***** 0 "Vientiane:
+****** Changes government type to monarchy
+****** add_government_reform = mandala_reform
+****** Spawns a ruler:
+******* Ruler's dynasty is our country
+** Option: flavor_lxa.1.a:
+*** Changes stability by -1
+*** Changes prestige by -25
+*** If:
+**** Limited to:
+***** Has the country flag vientiane_flag
+**** Hidden effect:
+***** 0 "Vientiane:
+****** Capital:
+******* build_to_forcelimit:
+******** Spawns an infantry unit in 0.6
+******** Spawns a cavalry unit in 0.3
+******** artillery = 0.1
+*** else:
+**** Changes country to 0 "Vientiane
+* Gets the country event:
+** ID is flavor_lxa.3
+** title = flavor_lxa.3.t
+** desc = flavor_lxa.3.d
+** picture = NUSANTARA_WAR_eventPicture
+** is_triggered_only = yes
+** major = yes
+** Trigger:
+*** Country is 0 "Lan Xang
+*** Has the DLC Leviathan
+*** Any of the following:
+**** All of the following:
+***** 0 "Luang Prabang does not exist
+***** 0 "Luang Prabang:
+****** The province is owned by our country
+****** Controlled by 0 "Rebels
+****** has_rebel_faction = 0 "Pretender
+***** 0 "Pretender rebels have are spawned in the country
+**** Does not own core province 4839
+**** Does not own core province 0 "Vientiane
+** Immediate effects:
+*** Hidden effect:
+**** If:
+***** Limited to:
+****** Any of the following:
+******* Owns core province 4839
+******* Owns core province 0 "Vientiane
+***** Sets the country flag luang_prabang_flag
+***** Every owned province:
+****** Limited to:
+******* area = north_laos_area
+****** Gives 0 "Luang Prabang core on the province
+****** clear_rebels = yes
+***** Release 0 "Luang Prabang as a vassal
+***** 0 "Luang Prabang:
+****** Changes government type to monarchy
+****** add_government_reform = mandala_reform
+****** Spawns a ruler:
+******* Ruler's dynasty is our country
+** Option: flavor_lxa.1.a:
+*** Changes stability by -1
+*** Changes prestige by -25
+*** If:
+**** Limited to:
+***** Has the country flag luang_prabang_flag
+**** Hidden effect:
+***** 0 "Luang Prabang:
+****** Capital:
+******* build_to_forcelimit:
+******** Spawns an infantry unit in 0.6
+******** Spawns a cavalry unit in 0.3
+******** artillery = 0.1
+*** else:
+**** Changes country to 0 "Luang Prabang

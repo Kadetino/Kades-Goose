@@ -1,0 +1,88 @@
+** is_triggered_only = yes
+** Trigger:
+*** Country is 0 "Khmer
+** Option: khmer.1.a:
+*** Changes stability by -2
+*** Changes prestige by -25
+* Gets the country event:
+** ID is khmer.2
+** title = khmer.2.t
+** desc = khmer.2.d
+** picture = CITY_VIEW_eventPicture
+** is_triggered_only = yes
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag had_dark_age
+** Option: khmer.2.a:
+*** Changes stability by 1
+* Gets the country event:
+** ID is khmer.3
+** title = khmer.3.t
+** desc = khmer.3.d
+** picture = BUDDHA_eventPicture
+** is_triggered_only = yes
+** Option: khmer.3.a:
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** Follows the 0 "Hindu religion
+*** If:
+**** Limited to:
+***** Follows the 0 "Theravada religion
+**** Changes prestige by 10
+*** else:
+**** Changes religion to 0 "Theravada
+**** Changes stability by -1
+*** set_estate_privilege = estate_church_brahmins_at_court
+*** Every owned province:
+**** Limited to:
+***** Region is indo_china_region
+***** Follows the 0 "Hindu religion
+**** Changes religion to our country
+** Option: khmer.3.b:
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** Does not follow the 0 "Hindu religion
+*** If:
+**** Limited to:
+***** Does not follow the 0 "Hindu religion
+**** Changes religion to 0 "Hindu
+**** Changes stability by -1
+*** else:
+**** Changes prestige by 10
+*** If:
+**** Limited to:
+***** Has the DLC Wealth of Nations
+***** Follows the 0 "Hindu religion
+*** If:
+**** Limited to:
+***** Capital:
+****** Does not follow the 0 "Hindu religion
+**** Capital:
+***** Changes religion to 0 "Hindu
+*** Random owned province:
+**** Limited to:
+***** Region is indo_china_region
+***** Does not follow the 0 "Hindu religion
+**** Changes religion to 0 "Hindu
+*** Random owned province:
+**** Limited to:
+***** Region is indo_china_region
+***** Does not follow the 0 "Hindu religion
+**** Changes religion to 0 "Hindu
+** Option: khmer.3.c:
+*** AI chance:
+**** Base chance of 0
+*** If:
+**** Limited to:
+***** Does not follow the 0 "Mahayana religion
+**** Changes religion to 0 "Mahayana
+*** else:
+**** Changes prestige by 10
+*** If:
+**** Limited to:
+***** Capital:
+****** Does not follow the 0 "Mahayana religion
+**** Capital:
+***** Changes religion to 0 "Mahayana

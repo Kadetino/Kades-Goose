@@ -1,0 +1,423 @@
+** Trigger:
+*** Country is 0 "Songhai
+*** Owns 0 "Timbuktu
+*** Has less than 0 piety
+*** 0 "Timbuktu:
+**** Has no core on 0 "Songhai
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Give up my alcohol and my parties with my Animist friends? Never!:
+*** Changes piety by -50%
+*** 0 "Timbuktu:
+**** Spawns 2 revolt size of pretender rebels
+** Option: 0 "Pray five times a day, you say? Well, I'm sure I can fit that into my schedule.:
+*** Changes prestige by -5
+*** Changes piety by 50%
+* Gets the country event:
+** ID is flavor_son.2
+** title = 0 "Golden Age in Timbuktu
+** desc = 0 "Askia the Great opened religious schools and astronomical observatories. He encouraged trade and established an efficiency bureaucracy. He was gifted in administration and responsible for the administration of justice. He had canals built to enhance agriculture and subdued his enemies.
+** picture = muslimgfx_CITY_DEVELOPMENT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Songhai
+*** Owns 0 "Timbuktu
+*** Has core on 0 "Timbuktu
+*** Any of the following:
+**** has_ruler_flag = son_askia_the_great
+**** All of the following:
+***** Ruler's administrative skill is at least 3
+***** Ruler's diplomatic skill is at least 3
+***** Ruler's military skill is at least 3
+*** Is in the 0 "Muslim religion group
+** Mean time to happen
+*** Base mean time to happen of 100 months
+*** Multiplies value by 0.1:
+**** has_ruler_flag = son_askia_the_great
+** Option: 0 "This will last forever...:
+*** Adds the ruler modifier "0 "Golden age of Timbuktu" until the ruler's death:
+**** -10% technology cost
+**** -10% idea cost
+**** +300% available advisors
+*** add_innovativeness_big_effect = yes
+* Gets the country event:
+** ID is flavor_son.3
+** title = 0 "Tarikh al-Sudan
+** desc = 0 "The most important chronicle of the Songhai Empire, Tarikh al-Sudan, was written around 1655 by in Abd al-Rahman al-Sadi. It gives brief histories about the early history of Mali, Songhai and Tuareg, but the main part of the chronicle depicts the history of the 15th and 16th century Songhai. It also contains biographies of scholars and holymen of Djenne & Timbuktu.
+** picture = BIG_BOOK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Songhai
+*** Year is at least 1625
+*** Year is less than 1660
+*** Is in the 0 "Muslim religion group
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Good news!:
+*** Changes prestige by 25
+*** add_stability_or_adm_power = yes
+*** Adds 25 legitimacy
+* Gets the country event:
+** ID is flavor_son.4
+** title = flavor_son.4.t
+** desc = flavor_son.4.d
+** picture = ASKIA_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Songhai
+*** Year is at least 1480
+*** Year is less than 1525
+*** Any of the following:
+**** All of the following:
+***** Ruler's administrative skill is less than 3
+***** Ruler's diplomatic skill is less than 3
+***** Ruler's military skill is less than 3
+**** Ruler's dynasty is Sonni
+**** Legitimacy is less than 50
+** Mean time to happen
+*** Base mean time to happen of 200 months
+*** Multiplies value by 0.1:
+**** Year is at least 1490
+** Option: flavor_son.4.a:
+*** Changes stability by -1
+*** Spawns a ruler:
+**** Named "Muhammad"
+**** Ruler's dynasty is Askia
+**** min_age = 25
+**** max_age = 40
+**** Legitimacy of 75
+**** Ruler's administrative skill is at least 6
+**** Ruler's diplomatic skill is at least 3
+**** Ruler's military skill is at least 6
+**** Culture is soninke
+**** Follows the 0 "Sunni religion
+*** Hidden effect:
+**** define_ruler_to_general:
+***** 3 skill in fire
+***** 4 manuever skill in shock
+***** 1 trait skill in siege
+**** set_ruler_flag = son_askia_the_great
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Any of the following:
+****** Ruler's administrative skill is at least 5
+****** Ruler's diplomatic skill is at least 5
+****** Ruler's military skill is at least 5
+** Option: flavor_son.4.b:
+*** Capital:
+**** Spawns revolt of size 0 "Sunni of 0 "Pretender rebels
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Ruler's administrative skill is less than 5
+***** Ruler's diplomatic skill is less than 5
+***** Ruler's military skill is less than 5
+* Gets the country event:
+** ID is flavor_son.5
+** title = flavor_son.5.t
+** desc = flavor_son.5.d
+** picture = MUSLIM_PAGAN_DISPUTE_eventPicture
+** is_triggered_only = yes
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag son_had_focus_event
+** Option: flavor_son.5.a:
+*** Hidden effect:
+**** Sets the country flag son_islamtic_focus
+**** Removes the country flag son_tolderance_focus
+*** add_estate_loyalty:
+**** estate = estate_church
+**** loyalty = 10
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = -10
+*** add_estate_loyalty:
+**** estate = estate_dhimmi
+**** loyalty = -10
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 10:
+***** has_ruler_flag = son_askia_the_great
+**** Multiplies value by 0:
+***** Has the idea group 0 "Humanist Ideas
+**** Multiplies value by 2:
+***** Has the idea group 0 "Religious Ideas
+** Option: flavor_son.5.b:
+*** Hidden effect:
+**** Sets the country flag son_tolderance_focus
+**** Removes the country flag son_islamtic_focus
+*** add_estate_loyalty:
+**** estate = estate_church
+**** loyalty = -10
+*** add_estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 10
+*** add_estate_loyalty:
+**** estate = estate_dhimmi
+**** loyalty = 10
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0.1:
+***** has_ruler_flag = son_askia_the_great
+**** Multiplies value by 0:
+***** Has the idea group 0 "Religious Ideas
+**** Multiplies value by 2:
+***** Has the idea group 0 "Humanist Ideas
+** after:
+*** swap_non_generic_missions = yes
+* Gets the country event:
+** ID is flavor_son.6
+** title = flavor_son.6.t
+** desc = flavor_son.6.d
+** picture = SONGHAI_RULER_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Songhai
+*** Year is at least 1450
+*** Ruler's administrative skill is less than 3
+*** Ruler's military skill is less than 5
+*** ruler_age = 40
+*** Year is less than 1480
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: flavor_son.6.a:
+*** Spawns a ruler:
+**** Named "Alî Ber"
+**** Ruler's dynasty is Sonni
+**** Legitimacy of 80
+**** Ruler's administrative skill is at least 4
+**** Ruler's diplomatic skill is at least 2
+**** Ruler's military skill is at least 6
+**** age = 15
+*** Hidden effect:
+**** define_ruler_to_general:
+***** 4 skill in fire
+***** 3 skill in shock
+***** 3 skill in manuever
+***** 1 skill in siege
+**** Changes piety by -40%
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_son.6.b:
+*** Changes prestige by 20
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_son.7
+** title = flavor_son.7.t
+** desc = flavor_son.7.d
+** picture = ASKIA_eventPicture
+** major = yes
+** is_triggered_only = yes
+** Option: flavor_son.7.a:
+*** Changes stability by -2
+*** If:
+**** Limited to:
+***** government_rank = 3
+**** set_government_rank = 2
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_son.8
+** title = flavor_son.8.t
+** desc = flavor_son.8.d
+** picture = TUAREG_OTTOMAN_eventPicture
+** is_triggered_only = yes
+** Option: flavor_son.8.a:
+*** Adds the ruler modifier "son_professional_songhaian_army" until the ruler's death:
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_son.8.b:
+*** Changes military power stored by 200
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_son.10
+** title = flavor_son.10.t
+** desc = flavor_son.10.d
+** picture = AFRICAN_BATTLE_eventPicture
+** goto = 1134
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: flavor_son.10.a:
+*** Ends any wars with our country with a white peace
+*** Creates a royal marriage with our country
+*** Vassalizes our country
+*** If:
+**** Limited to:
+***** Has the DLC Rights of Man
+***** has_reform_false = 0 "Iqta
+**** define_consort:
+***** Culture is bozo
+***** Follows the 0 "Sunni religion
+***** Ruler is female
+***** country_of_origin = our country
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_son.10.b:
+*** Changes prestige by 10
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_son.11
+** title = flavor_son.11.t
+** desc = flavor_son.11.d
+** picture = MOSQUE_eventPicture
+** is_triggered_only = yes
+** Option: flavor_son.11.a:
+*** Changes piety by 33%
+*** Adds the ruler modifier "son_embrace_legalism" until the ruler's death:
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_son.11.b:
+*** Changes piety by -33%
+*** Adds the ruler modifier "son_embrace_mysticism" until the ruler's death:
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_son.12
+** title = flavor_son.12.t
+** desc = flavor_son.12.d
+** picture = FETISHIST_FIRE_eventPicture
+** is_triggered_only = yes
+** Option: flavor_son.12.a:
+*** Hidden effect:
+**** Adds the modifier "son_fetishism_as_secondary_religion" for the rest of the campaign:
+**** Every owned province:
+***** Limited to:
+****** Follows the 0 "Fetishist religion
+***** Adds the modifier "son_fetishism_as_secondary_religion_province" until the end of the campaign:
+*** AI chance:
+**** Base chance of 1
+** Option: flavor_son.12.b:
+*** Changes religion to 0 "Fetishist
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** Follows the 0 "Sunni religion
+***** Changes religion to 0 "Fetishist
+*** enable_cult_for_heirs_mission = yes
+*** unlock_cult = islam_cult
+*** AI chance:
+**** Base chance of 0
+* Gets the country event:
+** ID is flavor_son.13
+** title = flavor_son.13.t
+** desc = flavor_son.13.d
+** picture = AFRICAN_BATTLE_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Immediate effects:
+*** Kills the ruler of the country
+** Option: flavor_son.13.a:
+*** Tooltip:
+**** Ends any wars with 0 "Songhai with a white peace
+**** Creates a royal marriage with 0 "Songhai
+**** 0 "Songhai:
+***** Vassalizes 0 "Jenné
+*** Hidden effect:
+**** 0 "Songhai:
+***** Gets the country event:
+****** ID is flavor_son.10
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** war_score_against:
+****** Affecting 0 "Songhai
+****** value = 30
+** Option: flavor_son.13.b:
+*** Changes prestige by 15
+*** Changes war exhaustion by 1
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** war_score_against:
+****** who_false = 0 "Songhai
+****** value_false = 30
+* Gets the country event:
+** ID is flavor_son.14
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** fire_only_once = yes
+** is_triggered_only = yes
+** hidden = yes
+** Trigger:
+*** Country is 0 "Songhai
+*** At war with 0 "Jenné
+*** Ruler is male
+*** 0 "Jenné:
+**** Ruler is male
+**** is_free_or_tributary_trigger = yes
+*** Our country:
+**** The province is owned by 0 "Jenné
+**** is_capital_of = 0 "Jenné
+**** Province is 0 "Jenne
+*** Has the DLC Origins
+*** 0 "Jenné:
+**** Gets the country event:
+***** ID is flavor_son.13
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_son.100
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** hidden = yes
+** Trigger:
+*** Has the country modifier "son_salt_cloth_trader"
+*** Any owned province:
+**** Any of the following:
+***** Produces 0 "Cloth
+***** Produces 0 "Salt
+**** Does not have the province modifier "son_salt_cloth_production"
+** Mean time to happen
+*** Base mean time to happen of 1 days
+*** Every owned province:
+**** Limited to:
+***** Any of the following:
+****** Produces 0 "Cloth
+****** Produces 0 "Salt
+***** Does not have the province modifier "son_salt_cloth_production"
+**** Option: son_salt_cloth_production:
+**** Adds the modifier "" until the end of the campaign:
+*** AI chance:
+**** Base chance of 1
+* Gets the country event:
+** ID is flavor_son.101
+** title = 0 "none
+** desc = 0 "none
+** picture = 0 "none
+** hidden = yes
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Does not have the country modifier "son_salt_cloth_trader"
+***** Any owned province:
+****** Has the province modifier "son_salt_cloth_production"
+**** All of the following:
+***** Has the country modifier "son_salt_cloth_trader"
+***** Any owned province:
+****** Has the province modifier "son_salt_cloth_production"
+****** Does not produce 0 "Cloth
+****** Does not produce 0 "Salt
+** Mean time to happen
+*** Base mean time to happen of 1 days
+*** If:
+**** Limited to:
+***** Has the country modifier "son_salt_cloth_trader"
+**** Every owned province:
+***** Limited to:
+****** Has the province modifier "son_salt_cloth_production"
+****** Does not produce 0 "Cloth
+****** Does not produce 0 "Salt
+***** Removes the country modifier "son_salt_cloth_production"
+*** else:
+**** Every owned province:
+***** Limited to:
+****** Has the province modifier "son_salt_cloth_production"
+***** Removes the country modifier "son_salt_cloth_production"
+*** AI chance:
+**** Base chance of 1

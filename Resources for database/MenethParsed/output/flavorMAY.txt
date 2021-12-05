@@ -1,0 +1,181 @@
+** Trigger:
+*** Any of the following:
+**** Country is 0 "Maya
+**** Country is 0 "Kiche
+**** Country is 0 "Itza
+**** Country is 0 "Xiu
+**** Country is 0 "Cocomes
+*** Is in the 0 "Christian religion group
+*** Any owned province:
+**** Is not in 0 "Christian's religion group
+*** Does not have the country modifier "0 "Popol Vuh"
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: 0 "Go ahead.:
+*** Adds the modifier "0 "Popol Vuh" for 10 years:
+**** +3 tolerance of heathens
+** Option: 0 "No, it is a waste of time.:
+*** Changes prestige by 5
+*** Changes Papal Influence by 2
+* Gets the country event:
+** ID is flavor_may.2
+** title = 0 "League of Mayapan
+** desc = 0 "The confederation of several Maya states crumbled and fell during the 15th century, fragmenting the Yucatán region into several petty states. The largest ones were the Itza, the Xiu, the Cocomes and the K'iche'. This former alliance was formed after the fall of Chichen Itzá and might not have been entirely voluntary. Mercenaries were hired to enforce the alliance and the nobles of the tribes were forced to live inside the walls of Mayapan to make sure their kingdoms remained loyal. The league began to disintegrate in 1175 but it was not until the middle of the 15th century when a war between the Uxmal and Cocom created segregation and uprisings which lead to its complete collapse.
+** picture = CIVIL_WAR_eventPicture
+** Trigger:
+*** Follows the 0 "Mayan religion
+*** Does not have the country flag may_league_mayapan_flag
+** Mean time to happen
+*** Base mean time to happen of 22 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag may_league_mayapan_flag
+** Option: 0 "We are stronger alone.:
+*** Changes prestige by 10
+*** Every country:
+**** Limited to:
+***** Follows the 0 "Mayan religion
+***** Country is not our country
+**** Adds the opinion modifier "0 "Stronger Alone" towards our country
+** Option: 0 "It was a mistake to let it crumble...:
+*** Every country:
+**** Limited to:
+***** Follows the 0 "Mayan religion
+***** Country is not our country
+**** Adds the opinion modifier "0 "League of Mayapan" towards our country
+* Gets the country event:
+** ID is flavor_may.3
+** title = 0 "Aj Kan Ek' and the Prophecy
+** desc = 0 "When the Spanish conquistador Hernán Cortes visited us, he left behind a lame horse that sadly died despite us treating it as a deity and feeding it poultry, meat and flowers. Hernán Cortes often spoke of the greatness of his religion and what it had brought his country.
+** picture = RELIGIOUS_TURMOIL_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Follows the 0 "Mayan religion
+*** Does not follow the 0 "Catholic religion
+*** Has discovered 0 "Spain
+*** 0 "Spain:
+**** Follows the 0 "Catholic religion
+**** Has discovered our country
+**** Any owned province:
+***** Any of the following:
+****** Region is carribeans_region
+****** Region is colombia_region
+** Mean time to happen
+*** Base mean time to happen of 32 months
+** Option: 0 "Let us embrace his religion!:
+*** Changes religion to 0 "Catholic
+*** Changes stability by -1
+*** 0 "Spain:
+**** Adds the opinion modifier "0 "Converters" towards our country
+**** Gets the country event:
+***** ID is flavor_may.4
+***** Base mean time to happen of 7 days
+***** Tooltip:
+** Option: 0 "We are satisfied with our religion.:
+*** Changes prestige by 5
+*** Sets the country flag may_kan_ek_flag
+* Gets the country event:
+** ID is flavor_may.4
+** title = 0 "Failing Prophecy
+** desc = 0 "The Aj Kan Ek', ruler of a small country in South America, said that according to ancient Itza prophecy it is not yet time for them to convert to Christianity. But thankfully, they have finally accepted the $COUNTRY_RELIGION$ faith. This was mostly due to the diligence of our missionaries in our colonies overseas.
+** picture = RELIGION_eventPicture
+** is_triggered_only = yes
+** Option: 0 "Splendid!:
+*** Changes prestige by 10
+*** Changes Papal Influence by 2
+* Gets the country event:
+** ID is flavor_may.5
+** title = 0 "The Franciscan Friars
+** desc = 0 "The horse that Hernán Cortes gave to us and which we made into a statue did not please our guests Juan de Orbita and Bartolome de Fuensalida. Orbita destroyed our statue and it was only the eloquence of Fuensalida that saved their lives. Our priests were hostile and jealous of the missionaries even before they destroyed our statue, and told them that according to an ancient Itza prophecy it is not yet time for us to convert to Christianity.
+** picture = RELIGIOUS_CONVERSION_eventPicture
+** Trigger:
+*** Follows the 0 "Mayan religion
+*** Does not have the country flag may_franciscan_friars_flag
+*** 0 "Spain:
+**** Follows the 0 "Catholic religion
+**** Any of the following:
+***** Any owned province:
+****** Any bordering province:
+******* The owner of the province:
+******** Follows the 0 "Mayan religion
+***** ROOT:
+****** Has had the country flag "may_kan_ek_flag" for at least 7300 days
+** Mean time to happen
+*** Base mean time to happen of 32 months
+** Option: 0 "The priests are wrong, we should seize this opportunity!:
+*** Sets the country flag may_franciscan_friars_flag
+*** Changes religion to 0 "Catholic
+*** Changes stability by -1
+*** 0 "Spain:
+**** Adds the opinion modifier "0 "Converters" towards our country
+**** Gets the country event:
+***** ID is flavor_may.4
+***** Base mean time to happen of 7 days
+***** Tooltip:
+** Option: 0 "It is not yet time for us to convert to another religion.:
+*** Changes prestige by 10
+*** Sets the country flag may_franciscan_friars_flag
+* Gets the country event:
+** ID is flavor_may.6
+** title = 0 "Maya Sacrifice
+** desc = 0 "A Franciscan friar by the name of Diego Delgado and eighty Christianized Maya has reached our capital. Delgado had joined a Captain Francisco de Mirones who was on his way to assault us but the friar thought the captain excessively cruel and therefore left the army. The captain and his soldiers have already been dealt with; they were slaughtered by our own. We have seized Diego Delgado and his followers and are awaiting your orders. Should we sacrifice them to the Maya gods, or let them go?
+** picture = RELIGIOUS_TURMOIL_eventPicture
+** Trigger:
+*** Does not have the country flag maya_sacrifice_flag
+*** Follows the 0 "Mayan religion
+*** At war with 0 "Spain
+*** 0 "Spain:
+**** Follows the 0 "Catholic religion
+**** Any of the following:
+***** Any owned province:
+****** Any bordering province:
+******* The owner of the province:
+******** Follows the 0 "Mayan religion
+***** ROOT:
+****** Has had the country flag "may_kan_ek_flag" for at least 7300 days
+** Mean time to happen
+*** Base mean time to happen of 32 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag maya_sacrifice_flag
+** Option: 0 "Let them go and embrace Christianity!:
+*** Changes religion to 0 "Catholic
+*** Changes stability by -1
+*** 0 "Spain:
+**** Adds the opinion modifier "0 "Converters" towards our country
+**** Gets the country event:
+***** ID is flavor_may.4
+***** Base mean time to happen of 7 days
+***** Tooltip:
+** Option: 0 "Sacrifice them as an example to all!:
+*** Changes prestige by 10
+*** Tooltip:
+**** Random owned province:
+***** Limited to:
+****** Any of the following:
+******* Is coastal
+******* Any bordering province:
+******** The province is owned by 0 "Spain
+***** Adds claim to 0 "Spain
+*** 0 "Spain:
+**** Gets the country event:
+***** ID is flavor_may.7
+***** Base mean time to happen of 7 days
+***** Tooltip:
+* Gets the country event:
+** ID is flavor_may.7
+** title = 0 "The Maya Sacrifice
+** desc = 0 "The Franciscan friar Diego Delgado and eighty Christianized Maya have been sacrificed by $FROM_COUNTRY$. They mock us and our God with their shameful rites!
+** picture = RELIGION_eventPicture
+** is_triggered_only = yes
+** Option: 0 "How dare they!:
+*** Changes prestige by 10
+*** Changes Papal Influence by 2
+*** Our country:
+**** Random owned province:
+***** Limited to:
+****** Any of the following:
+******* Is coastal
+******* Any bordering province:
+******** The province is owned by 0 "Spain
+***** Adds claim to 0 "Spain

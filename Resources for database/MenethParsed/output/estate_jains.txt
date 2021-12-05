@@ -1,0 +1,742 @@
+
+=== title = jains_estate_events.1.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: jains_estate_events.1.a:'''
+
+
+=== title = jains_estate_events.2.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_jains
+* has_estate_influence_modifier:
+** estate_false = estate_jains
+** modifier_false = EST_VAL_JAINS_ADVANCE
+* has_estate_influence_modifier:
+** estate_false = estate_jains
+** modifier_false = EST_VAL_JAINS_DECLINE
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: jains_estate_events.1.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAINS_ADVANCE
+** influence = 10
+** Lasting 5475 days
+
+=== title = jains_estate_events.3.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_jains
+* has_estate_influence_modifier:
+** estate_false = estate_jains
+** modifier_false = EST_VAL_JAINS_ADVANCE
+* has_estate_influence_modifier:
+** estate_false = estate_jains
+** modifier_false = EST_VAL_JAINS_DECLINE
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: jains_estate_events.1.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAINS_DECLINE
+** influence = -10
+** Lasting 5475 days
+
+=== title = jains_estate_events.4.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_jains
+* estate_loyalty:
+** estate_false = estate_jains
+** loyalty_false = 30
+* Does not have the country modifier "0 "Jain Resistance"
+* estate_territory:
+** estate = estate_jains
+** territory = 1
+* Any owned province:
+** Does not have the province modifier "0 "Passive Resistance"
+** Any of the following:
+*** Is in the 0 "Dharmic religion group
+*** Follows the 0 "Theravada religion
+*** Follows the 0 "Vajrayana religion
+*** Follows the 0 "Mahayana religion
+** The province is not the capital of the country
+** yes is a city
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag jain_passive_resistance
+***** value_false = estate
+***** estate_false = estate_jains
+**** Any owned province:
+***** Does not have the province modifier "0 "Passive Resistance"
+***** Any of the following:
+****** Is in the 0 "Dharmic religion group
+****** Follows the 0 "Theravada religion
+****** Follows the 0 "Vajrayana religion
+****** Follows the 0 "Mahayana religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag jain_passive_resistance
+*** Random owned province:
+**** Limited to:
+***** Does not have the province modifier "0 "Passive Resistance"
+***** Any of the following:
+****** Is in the 0 "Dharmic religion group
+****** Follows the 0 "Theravada religion
+****** Follows the 0 "Vajrayana religion
+****** Follows the 0 "Mahayana religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag jain_passive_resistance
+**** Sets the province flag jain_passive_resistance
+
+'''Option: jains_estate_events.4.a:'''
+
+* Adds the modifier "0 "Jain Resistance" for 15 years:
+** +2 interest
+** yearly_corruption = 0.02
+* Every owned province:
+** Limited to:
+*** Has the province flag jain_passive_resistance
+** Adds the modifier "0 "Passive Resistance" until the end of the campaign:
+*** -33% provincial tax income
+*** -33% production efficiency
+*** province_trade_power_modifier = -0.33
+
+=== title = jains_estate_events.5.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_jains
+* has_estate = estate_vaisyas
+* has_estate_influence_modifier:
+** estate_false = estate_jains
+** modifier_false = EST_VAL_JAINS_PAYMENT
+* has_estate_influence_modifier:
+** estate_false = estate_jains
+** modifier_false = EST_VAL_JAINS_PAYMENT_DENIED
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: jains_estate_events.5.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_jains
+**** loyalty_false = 40
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_jains
+**** influence = 70
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_vaisyas
+**** loyalty_false = 50
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_vaisyas
+**** influence = 80
+* Adds the modifier "0 "Guild Debt" for 15 years:
+** -10% production efficiency
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAINS_PAYMENT
+** influence = 15
+** Lasting 5475 days
+* add_estate_loyalty:
+** estate = estate_vaisyas
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_vaisyas
+** desc = EST_VAL_JAINS_PAYMENT
+** influence = -15
+** Lasting 5475 days
+
+'''Option: jains_estate_events.5.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_jains
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_jains
+**** influence = 70
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_vaisyas
+**** loyalty_false = 50
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_vaisyas
+**** influence = 80
+* Adds the modifier "0 "Jain Debts Forgiven" for 15 years:
+** +1 interest
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAINS_PAYMENT_DENIED
+** influence = -15
+** Lasting 5475 days
+* add_estate_loyalty:
+** estate = estate_vaisyas
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_vaisyas
+** desc = EST_VAL_JAINS_PAYMENT_DENIED
+** influence = 15
+** Lasting 5475 days
+
+'''Option: jains_estate_events.5.c:'''
+
+* AI chance:
+** Base chance of 100
+** Multiplies value by 0:
+*** Has less than 1.5 years worth of income
+* Modifies treasury by -1 years worth of income
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAINS_PAYMENT
+** influence = 5
+** Lasting 5475 days
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = 15
+* add_estate_loyalty:
+** estate = estate_vaisyas
+** loyalty = 15
+
+=== title = jains_estate_events.6.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_jains
+* has_estate = estate_brahmins
+* Follows the 0 "Hindu religion
+* Does not have the country modifier "0 "Jain Bankers Preferred"
+* Does not have the country modifier "0 "Brahmin Bankers Preferred"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: jains_estate_events.6.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_jains
+**** influence = 70
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 70
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_jains
+**** loyalty_false = 55
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 50
+* Adds the modifier "0 "Jain Bankers Preferred" for 15 years:
+** -0.5 interest
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAINS_PREFERRED_BANKERS
+** influence = 15
+** Lasting 5475 days
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_JAINS_PREFERRED_BANKERS
+** influence = -15
+** Lasting 5475 days
+
+'''Option: jains_estate_events.6.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 70
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_jains
+**** influence = 70
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 55
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_jains
+**** loyalty_false = 50
+* Adds the modifier "0 "Brahmin Bankers Preferred" for 15 years:
+** -10% stability cost modifier
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = -15
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_BRAHMINS_PREFERRED_BANKERS
+** influence = -15
+** Lasting 5475 days
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_BRAHMINS_PREFERRED_BANKERS
+** influence = 15
+** Lasting 5475 days
+
+=== title = jains_estate_events.7.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_jains
+* estate_loyalty:
+** estate = estate_jains
+** loyalty = 60
+* estate_influence:
+** estate = estate_jains
+** influence = 60
+* Does not have the country modifier "0 "Jains in Administration"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: jains_estate_events.7.a:'''
+
+* Changes administrative power stored by 50
+* Modifies treasury by 0.5 years worth of income
+* Adds the modifier "0 "Jains in Administration" for 20 years:
+** -0.5 interest
+** yearly_corruption = -0.02
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAIN_ADMINISTRATION
+** influence = 10
+** Lasting 7300 days
+
+=== title = jains_estate_events.8.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_jains
+** No owned province:
+*** Has the province modifier "0 "Paryushana"
+** No owned province:
+*** Has the province modifier "0 "Suppression of Jain Festivals"
+* Any owned province:
+** is_territory_false = no
+** Any of the following:
+*** Is in the 0 "Dharmic religion group
+*** Follows the 0 "Theravada religion
+*** Follows the 0 "Vajrayana religion
+*** Follows the 0 "Mahayana religion
+** The province is not the capital of the country
+** yes is a city
+* estate_territory:
+** estate = estate_jains
+** territory = 1
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag paryushana_prov_flag
+***** value_false = estate
+***** estate_false = estate_jains
+**** Any owned province:
+***** is_territory_false = no
+***** Any of the following:
+****** Is in the 0 "Dharmic religion group
+****** Follows the 0 "Theravada religion
+****** Follows the 0 "Vajrayana religion
+****** Follows the 0 "Mahayana religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag paryushana_prov_flag
+*** Random owned province:
+**** Limited to:
+***** is_territory_false = no
+***** Any of the following:
+****** Is in the 0 "Dharmic religion group
+****** Follows the 0 "Theravada religion
+****** Follows the 0 "Vajrayana religion
+****** Follows the 0 "Mahayana religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag paryushana_prov_flag
+**** Sets the province flag paryushana_prov_flag
+
+'''Option: jains_estate_events.8.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0:
+*** Has less than 0.6 years worth of income
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_jains
+**** loyalty_false = 40
+** Multiplies value by 0.5:
+*** has_estate = estate_church
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+* Modifies treasury by -0.5 years worth of income
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = 15
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_loyalty:
+*** estate = estate_church
+*** loyalty = -10
+* Every owned province:
+** Limited to:
+*** Has the province flag paryushana_prov_flag
+** Adds the modifier "0 "Paryushana" until the end of the campaign:
+*** local_unrest = -3
+*** local_state_maintenance_modifier = -0.2
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Has the province flag paryushana_prov_flag
+*** Removes the province flag paryushana_prov_flag
+
+'''Option: jains_estate_events.8.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_jains
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** has_estate = estate_church
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 40
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = -15
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_loyalty:
+*** estate = estate_church
+*** loyalty = 10
+* Every owned province:
+** Limited to:
+*** Has the province flag paryushana_prov_flag
+** Adds the modifier "0 "Suppression of Jain Festivals" until the end of the campaign:
+*** local_unrest = 3
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Has the province flag paryushana_prov_flag
+*** Removes the province flag paryushana_prov_flag
+
+=== title = jains_estate_events.9.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_jains
+* has_estate = estate_church
+* Is in the 0 "Muslim religion group
+* Does not have the country modifier "0 "Defended Jain Theism"
+* Does not have the country modifier "0 "Denounced Jains as Kafirs"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: jains_estate_events.9.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_jains
+**** loyalty_false = 40
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_jains
+**** influence = 80
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 80
+** Multiplies value by 0.8:
+*** has_estate = estate_brahmins
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 40
+* Changes piety by -15%
+* Adds the modifier "0 "Defended Jain Theism" for 20 years:
+** +1 tolerance of heathens
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = 10
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAINS_ARE_THEISTS
+** influence = 10
+** Lasting 7300 days
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_JAINS_ARE_THEISTS
+** influence = -10
+** Lasting 7300 days
+* If:
+** Limited to:
+*** has_estate = estate_brahmins
+** add_estate_loyalty:
+*** estate = estate_brahmins
+*** loyalty = -10
+
+'''Option: jains_estate_events.9.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_jains
+**** loyalty_false = 40
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_jains
+**** influence = 80
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 80
+** Multiplies value by 1.2:
+*** has_estate = estate_brahmins
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 40
+* Changes piety by 15%
+* Adds the modifier "0 "Denounced Jains as Kafirs" for 20 years:
+** +1 tolerance of the true faith
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = -20
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAINS_ARE_KHAFIRS
+** influence = -10
+** Lasting 7300 days
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_JAINS_ARE_KHAFIRS
+** influence = 10
+** Lasting 7300 days
+* If:
+** Limited to:
+*** has_estate = estate_brahmins
+** add_estate_loyalty:
+*** estate = estate_brahmins
+*** loyalty = 10
+
+=== title = jains_estate_events.10.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_jains
+* estate_influence:
+** estate = estate_jains
+** influence = 70
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_JAIN_RELIGIOUS_CONCESSIONS
+** estate_false = estate_jains
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_JAIN_RELIGIOUS_CONCESSIONS_DENIED
+** estate_false = estate_jains
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: jains_estate_events.10.a:'''
+
+* AI chance:
+** Base chance of 0
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAIN_RELIGIOUS_CONCESSIONS
+** influence = 20
+** Lasting 7300 days
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = 20
+* If:
+** Limited to:
+*** has_estate = estate_brahmins
+** add_estate_loyalty:
+*** estate = estate_brahmins
+*** loyalty = -20
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_loyalty:
+*** estate = estate_church
+*** loyalty = -20
+* Adds the modifier "0 "Jain Religious Concessions" for 20 years:
+** -1 tolerance of the true faith
+** -1 tolerance of heathens
+
+'''Option: jains_estate_events.10.b:'''
+
+* AI chance:
+** Base chance of 1
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAIN_RELIGIOUS_CONCESSIONS_DENIED
+** influence = -20
+** Lasting 7300 days
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = -20
+* If:
+** Limited to:
+*** has_estate = estate_brahmins
+** add_estate_loyalty:
+*** estate = estate_brahmins
+*** loyalty = 10
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_loyalty:
+*** estate = estate_church
+*** loyalty = 10
+
+=== title = jains_estate_events.11.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_jains
+* estate_influence:
+** estate = estate_jains
+** influence = 70
+* Does not have the country modifier "0 "Brahmin Peshwa"
+* Does not have the country modifier "0 "Brahmin Peshwa"
+* Is not in regency
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_JAIN_PESHWA
+** estate_false = estate_jains
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_JAIN_PESHWA_REFUSED
+** estate_false = estate_jains
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** set_saved_name:
+*** Named "jain_advisor"
+*** scope = our country
+
+'''Option: jains_estate_events.11.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_jains
+**** influence = 70
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAIN_PESHWA
+** influence = 20
+** Lasting 7300 days
+* Adds the modifier "0 "Jain Peshwa" for 20 years:
+** -10% land maintenance
+** +10% global tax modifier
+** development_cost = -0.05
+
+'''Option: jains_estate_events.11.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_jains
+**** loyalty_false = 50
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_jains
+**** influence = 80
+* add_estate_loyalty:
+** estate = estate_jains
+** loyalty = -10
+* add_estate_influence_modifier:
+** estate = estate_jains
+** desc = EST_VAL_JAIN_PESHWA_REFUSED
+** influence = -10
+** Lasting 7300 days

@@ -1,0 +1,898 @@
+
+=== title = brahmins_estate_events.1.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: brahmins_estate_events.1.a:'''
+
+
+=== title = brahmins_estate_events.2.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* estate_influence:
+** estate = estate_brahmins
+** influence = 70
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_ACCEPTED_BRAHMIN_AUTHORITY
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_REJECTED_BRAHMIN_AUTHORITY
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: brahmins_estate_events.2.a:'''
+
+* AI chance:
+** Base chance of 25
+* Adds the modifier "religious_court_life" for 15 years:
+** +15% stability cost modifier
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_ACCEPTED_BRAHMIN_AUTHORITY
+** influence = 10
+** Lasting 5475 days
+
+'''Option: brahmins_estate_events.2.b:'''
+
+* AI chance:
+** Base chance of 75
+** Multiplies value by 0.2:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 45
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 60
+* Changes stability by -1
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = -20
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_REJECTED_BRAHMIN_AUTHORITY
+** influence = -10
+** Lasting 5475 days
+
+=== title = brahmins_estate_events.3.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* estate_loyalty:
+** estate = estate_brahmins
+** loyalty = 70
+* estate_influence:
+** estate = estate_brahmins
+** influence = 70
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: brahmins_estate_events.3.a:'''
+
+* add_stability_or_adm_power = yes
+
+=== title = brahmins_estate_events.4.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_BRAHMIN_ADVANCE
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_BRAHMIN_DECLINE
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: brahmins_estate_events.4.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_BRAHMIN_ADVANCE
+** influence = 10
+** Lasting 5475 days
+
+=== title = brahmins_estate_events.5.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_BRAHMIN_ADVANCE
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_BRAHMIN_DECLINE
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: brahmins_estate_events.5.a:'''
+
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_BRAHMIN_DECLINE
+** influence = -10
+** Lasting 5475 days
+
+=== title = brahmins_estate_events.6.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* estate_loyalty:
+** estate_false = estate_brahmins
+** loyalty_false = 30
+* Any owned province:
+** Follows the 0 "Hindu religion
+** The province is not the capital of the country
+** yes is a city
+* estate_territory:
+** estate = estate_brahmins
+** territory = 10
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag peasant_brahmins_revolt
+***** value_false = estate
+***** estate_false = estate_brahmins
+**** Any owned province:
+***** Follows the 0 "Hindu religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag peasant_brahmins_revolt
+**** check_reducing_estate_revolt_size_trigger:
+***** FLAG = peasant_brahmins_revolt
+*** Random owned province:
+**** Limited to:
+***** Follows the 0 "Hindu religion
+***** The province is not the capital of the country
+***** yes is a city
+***** Does not have the province flag peasant_brahmins_revolt
+**** Sets the province flag peasant_brahmins_revolt
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: brahmins_estate_events.6.a:'''
+
+* Changes stability by -1
+* If:
+** Limited to:
+*** Any owned province:
+**** Follows the 0 "Hindu religion
+** Every owned province:
+*** Limited to:
+**** Has the province flag peasant_brahmins_revolt
+*** Removes the province flag peasant_brahmins_revolt
+*** Spawns revolt of size 1 of 0 "Peasant rebels
+
+=== title = brahmins_estate_events.7.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* has_estate = estate_vaisyas
+* estate_influence:
+** estate = estate_brahmins
+** influence = 55
+* Any owned province:
+** province_trade_power = 3
+** development = 10
+** yes is a city
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_BRAHMIN_TRADE
+** estate_false = estate_brahmins
+* has_estate_influence_modifier:
+** modifier_false = EST_VAL_BRAHMIN_TRADE_STOPPED
+** estate_false = estate_vaisyas
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** province_trade_power = 3
+**** development = 10
+**** yes is a city
+*** save_event_target_as = brahmin_trade_province
+
+'''Option: brahmins_estate_events.7.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 80
+** Multiplies value by 0.8:
+*** estate_loyalty:
+**** estate_false = estate_vaisyas
+**** loyalty_false = 30
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_BRAHMIN_TRADE
+** influence = 10
+** Lasting 5475 days
+* add_estate_loyalty:
+** estate = estate_vaisyas
+** loyalty = -10
+* scaled_estate_brahmins_land_share_effect = yes
+* event_target:brahmin_trade_province:
+** Adds the modifier "0 "Brahmins Alienating Merchants" until the end of the campaign:
+*** province_trade_power_modifier = -0.33
+*** local_development_cost = 0.1
+
+'''Option: brahmins_estate_events.7.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.5:
+*** estate_influence:
+**** estate = estate_vaisyas
+**** influence = 80
+** Multiplies value by 0.8:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 30
+* add_estate_influence_modifier:
+** estate = estate_vaisyas
+** desc = EST_VAL_BRAHMIN_TRADE_STOPPED
+** influence = 10
+** Lasting 5475 days
+* scaled_estate_vaisyas_land_share_effect = yes
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = -10
+* event_target:brahmin_trade_province:
+** Adds the modifier "0 "Attracting Muslim Merchants" until the end of the campaign:
+*** province_trade_power_modifier = 0.33
+*** local_development_cost = -0.1
+
+=== title = brahmins_estate_events.8.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* estate_influence:
+** estate = estate_brahmins
+** influence = 40
+* Technology group is 0 "Indian
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_BRAHMIN_PESHWA
+* has_estate_influence_modifier:
+** estate_false = estate_vaisyas
+** modifier_false = EST_VAL_VAISYA_PESHWA
+* has_estate_influence_modifier:
+** estate_false = estate_nobles
+** modifier_false = EST_VAL_NOBLE_PESHWA
+* Does not have the country modifier "0 "Jain Peshwa"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 2:
+** Does not follow the 0 "Hindu religion
+
+'''Option: brahmins_estate_events.8.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 70
+** Multiplies value by 1.5:
+*** has_estate = estate_nobles
+*** Does not follow the 0 "Hindu religion
+*** estate_loyalty:
+**** estate = estate_nobles
+**** loyalty = 30
+** Multiplies value by 1.5:
+*** has_estate = estate_church
+*** Does not follow the 0 "Hindu religion
+*** estate_loyalty:
+**** estate = estate_church
+**** loyalty = 30
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_BRAHMIN_PESHWA
+** influence = 15
+** Lasting 7300 days
+* If:
+** Limited to:
+*** Follows the 0 "Hindu religion
+** Adds the modifier "0 "Brahmin Peshwa" for 20 years:
+*** Follows the yes religion
+*** +1% global missionary strength
+*** -5% stability cost modifier
+*** +1 tolerance of the true faith
+*** -1 tolerance of heretics
+*** -1 tolerance of heathens
+* else:
+** Adds the modifier "0 "Brahmin Peshwa" for 20 years:
+*** Follows the yes religion
+*** +20% religious unity
+*** -5% stability cost modifier
+*** -1 tolerance of the true faith
+*** +1 tolerance of heathens
+* If:
+** Limited to:
+*** Does not follow the 0 "Hindu religion
+*** has_estate = estate_nobles
+** add_estate_loyalty:
+*** estate = estate_nobles
+*** loyalty = -10
+* If:
+** Limited to:
+*** Does not follow the 0 "Hindu religion
+*** has_estate = estate_church
+** add_estate_loyalty:
+*** estate = estate_church
+*** loyalty = -15
+
+'''Option: brahmins_estate_events.8.b:'''
+
+* Trigger:
+** has_estate = estate_nobles
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_nobles
+**** influence = 70
+* Changes prestige by 10
+* Adds 10 legitimacy
+* add_estate_influence_modifier:
+** estate = estate_nobles
+** desc = EST_VAL_NOBLE_PESHWA
+** influence = 15
+** Lasting 7300 days
+* Trigger:
+** has_estate = estate_vaisyas
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_vaisyas
+**** influence = 70
+
+'''Option: brahmins_estate_events.8.c:'''
+
+* Adds 200% mercantilism
+* add_estate_influence_modifier:
+** estate = estate_vaisyas
+** desc = EST_VAL_VAISYA_PESHWA
+** influence = 15
+** Lasting 7300 days
+
+=== title = brahmins_estate_events.9.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* estate_territory:
+** estate = estate_brahmins
+** territory = 1
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_BRAHMIN_ORTHODOXY
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_NONBRAHMIN_MOVEMENTS
+* Any owned province:
+** Follows the 0 "Hindu religion
+** yes is a city
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: brahmins_estate_events.9.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 80
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 30
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = 15
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** influence = 10
+** desc = EST_VAL_BRAHMIN_ORTHODOXY
+** Lasting 5475 days
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag add_brahmin_orthodoxy_enforced
+***** value_false = estate
+***** estate_false = estate_brahmins
+**** Any owned province:
+***** Follows the 0 "Hindu religion
+***** yes is a city
+***** Does not have the province flag add_brahmin_orthodoxy_enforced
+*** Random owned province:
+**** Limited to:
+***** Follows the 0 "Hindu religion
+***** yes is a city
+***** Does not have the province flag add_brahmin_orthodoxy_enforced
+**** Adds the modifier "0 "Brahmin Orthodoxy Enforced" until the end of the campaign:
+***** local_unrest = 5
+***** local_autonomy = -0.05
+**** Sets the province flag add_brahmin_orthodoxy_enforced
+
+'''Option: brahmins_estate_events.9.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 80
+** Multiplies value by 0.2:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 55
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** influence = -10
+** desc = EST_VAL_NONBRAHMIN_MOVEMENTS
+** Lasting 5475 days
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = -15
+* Hidden effect:
+** while:
+*** Limited to:
+**** development_in_provinces:
+***** Does not have the province flag add_nonbrahmin_movements
+***** value_false = estate
+***** estate_false = estate_brahmins
+**** Any owned province:
+***** Follows the 0 "Hindu religion
+***** yes is a city
+***** Does not have the province flag add_nonbrahmin_movements
+*** Random owned province:
+**** Limited to:
+***** Follows the 0 "Hindu religion
+***** yes is a city
+***** Does not have the province flag add_nonbrahmin_movements
+**** Adds the modifier "0 "Non-Brahmin Religious Movements" until the end of the campaign:
+***** local_unrest = -5
+***** local_autonomy = 0.05
+**** Sets the province flag add_nonbrahmin_movements
+
+=== title = brahmins_estate_events.10.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* Any of the following:
+** All of the following:
+*** has_estate = estate_rajput
+*** estate_loyalty:
+**** estate_false = estate_rajput
+**** loyalty_false = 30
+*** estate_territory:
+**** estate = estate_rajput
+**** territory = 5
+*** Any owned province:
+**** Follows the 0 "Hindu religion
+**** fort_level = 2
+** All of the following:
+*** has_estate = estate_maratha
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 30
+*** estate_territory:
+**** estate = estate_maratha
+**** territory = 5
+*** Any owned province:
+**** Follows the 0 "Hindu religion
+**** fort_level = 2
+** All of the following:
+*** has_estate = estate_nobles
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 30
+*** estate_territory:
+**** estate = estate_nobles
+**** territory = 5
+*** Any owned province:
+**** Follows the 0 "Hindu religion
+**** fort_level = 2
+* estate_loyalty:
+** estate = estate_brahmins
+** loyalty = 30
+** No owned province:
+*** Has the province modifier "0 "Brahmin Control of the Fort"
+** No owned province:
+*** Has the province modifier "0 "Noble Retention of the Fort"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** has_estate = estate_rajput
+**** estate_loyalty:
+***** estate_false = estate_rajput
+***** loyalty_false = 30
+**** Any owned province:
+***** The province is not the capital of the country
+***** fort_level = 2
+***** Follows the 0 "Hindu religion
+*** Random owned province:
+**** Limited to:
+***** The province is not the capital of the country
+***** fort_level = 2
+***** Follows the 0 "Hindu religion
+**** Sets the province flag brahmin_fort_flag
+**** save_event_target_as = brahmin_fort_province
+** If:
+*** Limited to:
+**** has_estate = estate_maratha
+**** estate_loyalty:
+***** estate_false = estate_maratha
+***** loyalty_false = 30
+**** Any owned province:
+***** The province is not the capital of the country
+***** fort_level = 2
+***** Follows the 0 "Hindu religion
+***** No owned province:
+****** Has the province flag brahmin_fort_flag
+*** Random owned province:
+**** Limited to:
+***** The province is not the capital of the country
+***** fort_level = 2
+***** Follows the 0 "Hindu religion
+**** Sets the province flag brahmin_fort_flag
+**** save_event_target_as = brahmin_fort_province
+** If:
+*** Limited to:
+**** has_estate = estate_nobles
+**** estate_loyalty:
+***** estate_false = estate_nobles
+***** loyalty_false = 30
+**** Any owned province:
+***** Follows the 0 "Hindu religion
+***** The province is not the capital of the country
+***** fort_level = 2
+***** No owned province:
+****** Has the province flag brahmin_fort_flag
+*** Random owned province:
+**** Limited to:
+***** The province is not the capital of the country
+***** fort_level = 2
+***** Follows the 0 "Hindu religion
+**** Sets the province flag brahmin_fort_flag
+**** save_event_target_as = brahmin_fort_province
+
+'''Option: brahmins_estate_events.10.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 80
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 30
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = 10
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_BRAHMIN_FORT
+** influence = 10
+** Lasting 7300 days
+* If:
+** Limited to:
+*** has_estate = estate_rajput
+** scaled_estate_rajput_negative_land_share_effect = yes
+* If:
+** Limited to:
+*** has_estate = estate_nobles
+** scaled_estate_nobles_negative_land_share_effect = yes
+* If:
+** Limited to:
+*** has_estate = estate_maratha
+** scaled_estate_maratha_negative_land_share_effect = yes
+* scaled_estate_brahmins_land_share_effect = yes
+* event_target:brahmin_fort_province:
+** Adds the modifier "0 "Brahmin Control of the Fort" until the end of the campaign:
+*** -20% local defensiveness
+*** local_unrest = -3
+* Hidden effect:
+** Every owned province:
+*** Removes the province flag brahmin_fort_flag
+
+'''Option: brahmins_estate_events.10.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** has_estate = estate_rajput
+*** estate_loyalty:
+**** estate_false = estate_rajput
+**** loyalty_false = 30
+** Multiplies value by 1.5:
+*** has_estate = estate_maratha
+*** estate_loyalty:
+**** estate_false = estate_maratha
+**** loyalty_false = 30
+** Multiplies value by 1.5:
+*** has_estate = estate_nobles
+*** estate_loyalty:
+**** estate_false = estate_nobles
+**** loyalty_false = 30
+* If:
+** Limited to:
+*** has_estate = estate_rajput
+*** estate_territory:
+**** estate = estate_rajput
+**** territory = 5
+*** estate_territory:
+**** estate_false = estate_nobles
+**** territory_false = 5
+** add_estate_loyalty:
+*** estate = estate_rajput
+*** loyalty = 10
+* else_if:
+** Limited to:
+*** has_estate = estate_rajput
+*** estate_territory:
+**** estate = estate_rajput
+**** territory = 5
+*** estate_territory:
+**** estate = estate_nobles
+**** territory = 5
+** add_estate_loyalty:
+*** estate = estate_rajput
+*** loyalty = 5
+* If:
+** Limited to:
+*** has_estate = estate_maratha
+*** estate_territory:
+**** estate = estate_maratha
+**** territory = 5
+*** estate_territory:
+**** estate_false = estate_nobles
+**** territory_false = 5
+** add_estate_loyalty:
+*** estate = estate_maratha
+*** loyalty = 10
+* else_if:
+** Limited to:
+*** has_estate = estate_maratha
+*** estate_territory:
+**** estate = estate_maratha
+**** territory = 5
+*** estate_territory:
+**** estate = estate_nobles
+**** territory = 5
+** add_estate_loyalty:
+*** estate = estate_maratha
+*** loyalty = 5
+* If:
+** Limited to:
+*** has_estate = estate_nobles
+*** estate_territory:
+**** estate = estate_nobles
+**** territory = 5
+*** estate_territory:
+**** estate_false = estate_maratha
+**** territory_false = 5
+*** estate_territory:
+**** estate_false = estate_rajput
+**** territory_false = 5
+** add_estate_loyalty:
+*** estate = estate_nobles
+*** loyalty = 10
+* else_if:
+** Limited to:
+*** has_estate = estate_nobles
+*** Any of the following:
+**** estate_territory:
+***** estate = estate_maratha
+***** territory = 5
+**** estate_territory:
+***** estate = estate_rajput
+***** territory = 5
+*** estate_territory:
+**** estate = estate_nobles
+**** territory = 5
+** add_estate_loyalty:
+*** estate = estate_nobles
+*** loyalty = 5
+* event_target:brahmin_fort_province:
+** Adds the modifier "0 "Noble Retention of the Fort" until the end of the campaign:
+*** +20% local defensiveness
+*** local_unrest = 3
+* Hidden effect:
+** Every owned province:
+*** Removes the province flag brahmin_fort_flag
+
+=== title = brahmins_estate_events.11.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_estate = estate_brahmins
+* has_estate = estate_church
+* Is in the 0 "Muslim religion group
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_BRAHMIN_MUSLIM_GOV
+* has_estate_influence_modifier:
+** estate_false = estate_church
+** modifier_false = EST_VAL_NO_BRAHMIN_MUSLIM_GOV
+* has_estate_influence_modifier:
+** estate_false = estate_brahmins
+** modifier_false = EST_VAL_BRAHMINS_MIDDLEGROUND
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: brahmins_estate_events.11.a:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 30
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 70
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 50
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = 20
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_BRAHMIN_MUSLIM_GOV
+** influence = 15
+** Lasting 7300 days
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = -20
+
+'''Option: brahmins_estate_events.11.b:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.2:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 30
+** Multiplies value by 1.5:
+*** estate_influence:
+**** estate = estate_brahmins
+**** influence = 80
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 30
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = -10
+* add_estate_influence_modifier:
+** estate = estate_brahmins
+** desc = EST_VAL_BRAHMINS_MIDDLEGROUND
+** influence = -10
+** Lasting 7300 days
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 10
+
+'''Option: brahmins_estate_events.11.c:'''
+
+* AI chance:
+** Base chance of 50
+** Multiplies value by 1.5:
+*** estate_loyalty:
+**** estate_false = estate_church
+**** loyalty_false = 30
+** Multiplies value by 0.2:
+*** estate_influence:
+**** estate = estate_church
+**** influence = 70
+** Multiplies value by 0.5:
+*** estate_loyalty:
+**** estate_false = estate_brahmins
+**** loyalty_false = 50
+* add_estate_loyalty:
+** estate = estate_church
+** loyalty = 20
+* add_estate_influence_modifier:
+** estate = estate_church
+** desc = EST_VAL_NO_BRAHMIN_MUSLIM_GOV
+** influence = 15
+** Lasting 7300 days
+* add_estate_loyalty:
+** estate = estate_brahmins
+** loyalty = -20
+* If:
+** Limited to:
+*** estate_territory:
+**** estate_false = estate_brahmins
+**** territory_false = 5
+** Hidden effect:
+*** Every owned province:
+**** Limited to:
+***** Follows the 0 "Hindu religion
+**** add_unrest = 2
+* If:
+** Limited to:
+*** estate_territory:
+**** estate = estate_brahmins
+**** territory = 5
+*** estate_territory:
+**** estate_false = estate_brahmins
+**** territory_false = 25
+** Hidden effect:
+*** Every owned province:
+**** Limited to:
+***** Follows the 0 "Hindu religion
+**** add_unrest = 4
+* If:
+** Limited to:
+*** estate_territory:
+**** estate = estate_brahmins
+**** territory = 25
+** Hidden effect:
+*** Every owned province:
+**** Limited to:
+***** Follows the 0 "Hindu religion
+**** add_unrest = 5

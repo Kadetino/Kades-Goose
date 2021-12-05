@@ -1,0 +1,116 @@
+******** Trigger:
+********* The Papacy is enabled
+********* Country is 0 "Mainz
+********* Country exists
+********* Is an elector in the Holy Roman Empire
+********* has_reform = leading_clergy_reform
+********* Does not have the country flag happened_763
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Immediate effects:
+********* Sets the country flag happened_763
+******** Option: 0 "It's all in God's hands.:
+********* Adds the modifier "0 "Legatus Natus" for the rest of the campaign:
+********** +0.5 prestige
+********** +1 Papal influence per year
+********** #Not religion = yes as it's revoked via event.
+******* Gets the country event:
+******** ID is 764
+******** title = 0 "Title of Legatus Natus Lost
+******** desc = 0 "Our standings in the Empire and with the Pope have declined lately. The Pope no longer seems to have confidence in us upholding our role as his delegate in the empire and has most unfortunately decided to relieve us of the title.
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* The Papacy is enabled
+********* Has the country modifier "0 "Legatus Natus"
+********* Any of the following:
+********** All of the following:
+*********** Any of the following:
+************ -10 prestige
+************ devotion_false = 10
+*********** Has an opinion lower than 100 of 0 "The Papal State
+********** Has an opinion lower than 0 of 0 "The Papal State
+******** Mean time to happen
+********* Base mean time to happen of 24 months
+********* Multiplies value by 1.5:
+********** 20 Papal influence per year
+********* Multiplies value by 2:
+********** 35 Papal influence per year
+********* Multiplies value by 0.5:
+********** Has an opinion lower than 50 of 0 "The Papal State
+********* Multiplies value by 0.5:
+********** Has an opinion lower than 0 of 0 "The Papal State
+******** Option: 0 "I guess it was in my hands after all...:
+********* Changes prestige by -5
+********* Removes the country modifier "0 "Legatus Natus"
+********* Sets the country flag legatus_natus_lost
+********* Sets the global flag no_legatus_natus
+******* Gets the country event:
+******** ID is 765
+******** title = 0 "Envoy from the Pope
+******** desc = 0 "Good news! We have been selected by the Pope to hold the prestigious title of §WLegatus Natus§! - his representative north of the Alps - after the former holder fell from grace.
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* The Papacy is enabled
+********* Has the global flag no_legatus_natus
+********* Capital:
+********** Is part of the Holy Roman Empire
+********* Isn't the Holy Roman Emperor
+********* Follows the 0 "Catholic religion
+********* has_reform = leading_clergy_reform
+********* 10 prestige
+********* Has an opinion of at least 100 of 0 "The Papal State
+********* Does not have the country flag legatus_natus_declined
+******** Mean time to happen
+********* Base mean time to happen of 48 months
+********* Multiplies value by 0.8:
+********** 20 Papal influence per year
+********* Multiplies value by 0.7:
+********** 35 Papal influence per year
+********* Multiplies value by 0.8:
+********** Has an opinion of at least 150 of 0 "The Papal State
+********* Multiplies value by 0.7:
+********** Has an opinion of at least 200 of 0 "The Papal State
+********* Multiplies value by 0.7:
+********** Is an elector in the Holy Roman Empire
+******** Immediate effects:
+********* Removes the global flag no_legatus_natus
+******** Option: 0 "Is that a crepuscular ray shining in?:
+********* Adds the modifier "0 "Legatus Natus" for the rest of the campaign:
+********** +0.5 prestige
+********** +1 Papal influence per year
+********** #Not religion = yes as it's revoked via event.
+********* Every country:
+********** Limited to:
+*********** Has the country flag legatus_natus_declined
+********** Removes the country flag legatus_natus_declined
+********* Every country:
+********** Limited to:
+*********** Has the country flag legatus_natus_lost
+********** Removes the country flag legatus_natus_lost
+********* AI chance:
+********** Base chance of 100
+******** Option: 0 "We must graciously decline.:
+********* Adds the opinion modifier "0 "Declined Legatus Natus" from 0 "The Papal State
+********* Sets the country flag legatus_natus_declined
+********* Sets the global flag no_legatus_natus
+********* AI chance:
+********** Base chance of 0
+******* Gets the country event:
+******** ID is 964
+******** title = 0 "Position as Legatus Natus Revoked
+******** desc = 0 "The prestigious position as §WLegatus Natus§! can only be held by a Catholic bishop in the Holy Roman Empire. As we no longer meet this requirement, the Pope has revoked the title.
+******** picture = POPE_PREACHING_eventPicture
+******** Trigger:
+********* Has the country modifier "0 "Legatus Natus"
+********* Any of the following:
+********** Capital:
+*********** Is not part of the Holy Roman Empire
+********** has_reform_false = leading_clergy_reform
+********** Does not follow the 0 "Catholic religion
+********** The Papacy is not enabled
+********** Country does not exist
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: 0 "Most unfortunate.:
+********* Removes the country modifier "0 "Legatus Natus"
+********* Sets the global flag no_legatus_natus

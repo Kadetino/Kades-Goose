@@ -1,0 +1,72 @@
+********* Trigger:
+********** Has the DLC Emperor
+********* picture = ITALIAN_wars_eventPicture
+******** picture:
+********* Trigger:
+********** Does not have the DLC Emperor
+********* picture = MILITARY_CAMP_eventPicture
+******** desc = italian_wars.1.d
+******** major = yes
+******** fire_only_once = yes
+******** Trigger:
+********* current_age = 0 "Age of Discovery
+********* Culture group is 0 "Latin
+********* Capital:
+********** Region is italy_region
+********* Is not a vassal
+********* Any country:
+********** At war with our country
+********** Is in the 0 "Christian religion group
+********** Culture group is not 0 "Latin
+********** Capital:
+*********** Region is not italy_region
+********** total_development = 150
+********** Any of the following:
+*********** is_in_war:
+************ attacker_leader = our country
+************ defender_leader = THIS
+*********** is_in_war:
+************ defender_leader = our country
+************ attacker_leader = THIS
+******** Mean time to happen
+********* Base mean time to happen of 3 months
+******** Immediate effects:
+********* Hidden effect:
+********** Random country:
+*********** Limited to:
+************ At war with our country
+************ Is in the 0 "Christian religion group
+************ Culture group is not 0 "Latin
+************ Capital:
+************* Region is not italy_region
+************ total_development = 150
+************ Any of the following:
+************* is_in_war:
+************** attacker_leader = our country
+************* is_in_war:
+************** defender_leader = our country
+*********** save_event_target_as = major_power
+******** Option: italian_wars.1.a:
+********* Sets the global flag italian_wars_global_flag
+******* Gets the country event:
+******** ID is italian_wars.2
+******** title = italian_wars.2.t
+******** picture:
+********* Trigger:
+********** Has the DLC Emperor
+********* picture = ITALIAN_wars_eventPicture
+******** picture:
+********* Trigger:
+********** Does not have the DLC Emperor
+********* picture = MILITARY_CAMP_eventPicture
+******** desc = italian_wars.2.d
+******** major = yes
+******** fire_only_once = yes
+******** Trigger:
+********* Any owned province:
+********** Region is italy_region
+********* Has had the global flag "italian_wars_global_flag" for at least 18250 days
+******** Mean time to happen
+********* Base mean time to happen of 1 months
+******** Option: italian_wars.2.a:
+********* Removes the global flag italian_wars_global_flag

@@ -1,0 +1,148 @@
+** Trigger:
+*** Country is 0 "The Knights
+*** Year is at least 1483
+*** 0 "The Papal State exists
+*** Year is less than 1503
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Hostage to Papacy for gold:
+*** Changes Papal Influence by 5
+*** add_devotion = 5
+*** Modifies treasury by 1 years worth of income
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Captured the Ottoman Sultan's brother" towards our country
+** Option: 0 "Hostage to Hungary for gold:
+*** Trigger:
+**** 0 "Hungary exists
+*** Modifies treasury by 2 years worth of income
+*** 0 "Hungary:
+**** Adds the opinion modifier "0 "Captured the Ottoman Sultan's brother" towards our country
+** Option: 0 "Hostage to Venice for gold:
+*** Trigger:
+**** 0 "Venice exists
+*** Modifies treasury by 2 years worth of income
+*** 0 "Venice:
+**** Adds the opinion modifier "0 "Captured the Ottoman Sultan's brother" towards our country
+* Gets the country event:
+** ID is flavor_kni.3
+** title = 0 "The Great Carrack of Alexandria
+** desc = 0 "The small but proficient fleet of the Knights was the scourge of Muslims for hundreds of years. Keeping the waters clear of enemy privateers as well as capturing trade ships of the Muslims, kept the coffers on Rhodos full and Muslim sailors in terror. One of the most famous events was the capturing of the Great Carrack from Alexandria in 1569, filled with enormous riches.
+** picture = SHIP_SAILING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "The Knights
+*** Year is at least 1550
+*** Year is less than 1600
+*** 0 "Alexandria:
+**** The province is owned by 0 "Ottomans
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Praise the lord!!:
+*** Modifies treasury by 2 years worth of income
+*** 0 "Ottomans:
+**** Adds the opinion modifier "0 "Captured the Great Carrack of Alexandria" towards our country
+* Gets the country event:
+** ID is flavor_kni.4
+** title = 0 "Gabriele Tadini de Martinengo
+** desc = 0 "Martinengo was the best fortification engineer of Europe. He was authorized to improve the fortresses on Rhodes. In 1521, when he had worked for a couple of months he was so enamored with the Knights and their ideals that he kneeled in front of the Grand Master and begged him to make him a Knight. The Grand master accepted him into the brotherhood and he fought bravely, dying in battle of Rhodes in 1522.
+** picture = FORT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "The Knights
+*** Year is at least 1500
+*** Year is less than 1550
+*** Any owned province:
+**** The province is the capital of the country
+**** The province is nto under siege
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Improve our defenses:
+*** Random owned province:
+**** Limited to:
+***** The province is the capital of the country
+**** Adds the modifier "0 "Gabriele Tadino da Martinengo" until the end of the campaign:
+***** +25% local defensiveness
+* Gets the country event:
+** ID is flavor_kni.5
+** title = 0 "Jean Parisot de la Valette
+** desc = 0 "After it was acquired by the Knights, Malta became as strong a fortress as Rhodes had been. Under Grand Master Jean Parisot de La Valette, they 1565 successfully withstood an Ottoman siege consisting of 180 ships and close to 50.000 men against only 9000 defenders for six months, before the invader was forced to leave. The new capital city of Valletta became a town of splendid palaces and unparalleled fortifications. Growing in power and wealth owing mainly to their maritime raiding adventures against the Turks.
+** picture = FORT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "The Knights
+*** Year is at least 1520
+*** Year is less than 1568
+*** Owns 0 "Malta
+*** 0 "Malta:
+**** The province is nto under siege
+** Mean time to happen
+*** Base mean time to happen of 200 months
+** Option: 0 "Improve defenses:
+*** 0 "Malta:
+**** Adds the modifier "0 "Jean Parisot de la Valette" until the end of the campaign:
+***** +25% local defensiveness
+* Gets the country event:
+** ID is flavor_kni.100
+** title = 0 "The Knights of St. John of Jerusalem
+** desc = 0 "Being driven from the island of Rhodes by the Turks, the knights wandered homeless until in 1530 Holy Roman Emperor Charles V conferred upon them the sovereignty of the island of Malta and the port city of Tripoli.
+** picture = RELIGION_eventPicture
+** Trigger:
+*** Any of the following:
+**** All of the following:
+***** Has the country flag kni_malta_mision_flag
+***** Does not have the country flag KNIGHT_WANTS_MALTA_MISSION
+**** All of the following:
+***** Owns 0 "Malta
+***** Has at least 2 provinces
+***** Capital:
+****** Province is not 0 "Malta
+***** is_free_or_tributary_trigger = yes
+***** Is not at war
+***** Does not have the country flag KNIGHT_WANTS_MALTA
+***** Does not have the country flag knights_formed_jerusalem
+***** Follows the 0 "Catholic religion
+***** 0 "The Knights does not exist
+***** Does not own 0 "Rhodes
+***** 0 "Rhodes:
+****** The owner of the province:
+******* Is in the 0 "Muslim religion group
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Immediate effects:
+*** Hidden effect:
+**** Sets the global flag knights_malta_event_flag
+**** Sets the country flag KNIGHT_WANTS_MALTA
+**** If:
+***** Limited to:
+****** Has the country flag kni_malta_mision_flag
+***** Sets the country flag KNIGHT_WANTS_MALTA_MISSION
+** Option: 0 "Give Malta to the Knights of St. John:
+*** AI chance:
+**** Base chance of 50
+*** add_stability_or_adm_power = yes
+*** If:
+**** Limited to:
+***** Does not have the country flag KNIGHT_WANTS_MALTA_MISSION
+**** 0 "Malta:
+***** Removes core on our country
+***** Cedes province to 0 "The Knights
+***** Gives 0 "The Knights core on the province
+**** 0 "The Knights:
+***** Adds the opinion modifier "0 "Ceded Malta" towards our country
+***** adopt_reform_progress = our country
+***** Hidden effect:
+****** Changes religion to 0 "Catholic
+*** else:
+**** 0 "Malta:
+***** Removes core on our country
+***** Cedes province to our country
+***** Gives our country core on the province
+**** Our country:
+***** Adds the opinion modifier "0 "Ceded Malta" towards our country
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Ceded Malta to The Knights" towards our country
+** Option: 0 "Don't give them anything:
+*** AI chance:
+**** Base chance of 0
+*** 0 "The Papal State:
+**** Adds the opinion modifier "0 "Refused Ceding Malta to The Knights" towards our country

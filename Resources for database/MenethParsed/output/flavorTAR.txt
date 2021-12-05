@@ -1,0 +1,40 @@
+** Trigger:
+*** Country is 0 "Tarascan
+*** Year is at least 1444
+*** Year is less than 1455
+*** 0 "Patzcuaro:
+**** The owner of the province:
+***** Country is our country
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: 0 "Improve our capital Tzintzuntzan.:
+*** Changes administrative power stored by -50
+*** Adds the modifier "0 "Tzintzuntzan" for 10 years:
+**** global_autonomy = -0.2
+**** +10% fort defence
+** Option: 0 "Do nothing.:
+*** Changes prestige by -5
+* Gets the country event:
+** ID is flavor_tar.2
+** title = 0 "Princess Erendira
+** desc = 0 "Princess Erendira has just returned after leading a war on the Spanish. Her hatred of the Spanish conquerors began even before some Spanish warriors found and murdered her father in his sleep. When the Spaniards came to Tarascan, Princess Erendira stole a horse after killing its owner, a Spanish horseman. She then taught others how to use horses. Her presence here will greatly increase morale, or you can recruit her as a general.
+** picture = HORDE_ON_HORSEBACK_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Tarascan
+*** At war with 0 "Spain
+*** Any owned province:
+**** Controlled by 0 "Spain
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: 0 "Recruit her as a general.:
+*** Creates a general:
+**** Named "Princess Erendira"
+**** 2 skill in shock
+**** 3 skill in fire
+**** 3 skill in manuever
+**** 2 skill in siege
+**** Ruler is female
+** Option: 0 "Use her to increase the morale of our soldiers.:
+*** Adds the modifier "0 "Princess Erendira" for 2 years:
+**** +5% land morale

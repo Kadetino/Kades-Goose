@@ -1,0 +1,116 @@
+** Trigger:
+*** Year is at least 1640
+*** Year is less than 1677
+*** Culture is fulani
+*** In the continent 0 "Africa
+*** Does not have the province flag ful_marabout_happened
+*** The owner of the province:
+**** Any of the following:
+***** Does not follow the 0 "Sunni religion
+***** Has less than -0.3 piety
+** Mean time to happen
+*** Base mean time to happen of 360 months
+*** Multiplies value by 0.5:
+**** Year is at least 1660
+*** Multiplies value by 0.5:
+**** Year is at least 1670
+*** Multiplies value by 0.7:
+**** The owner of the province:
+***** Is in the 0 "Christian religion group
+** Option: flavor_ful.1.a:
+*** AI chance:
+**** Base chance of 1
+*** If:
+**** Limited to:
+***** Does not follow the 0 "Sunni religion
+**** Changes religion to 0 "Sunni
+*** Sets the province flag ful_marabout_happened
+*** Adds the modifier "ful_marabout_wars" until the end of the campaign:
+**** local_unrest = 3
+**** -8% missionary strength
+* Gets the country event:
+** ID is flavor_ful.2
+** title = flavor_ful.2.t
+** desc = flavor_ful.2.d
+** picture = RELIGIOUS_TURMOIL_eventPicture
+** Trigger:
+*** Year is at least 1680
+*** Does not have the country flag fulani_jihad_happened
+*** Capital:
+**** Any of the following:
+***** area = cap_verde_area
+***** area = tekrur_area
+***** area = manding_area
+***** area = baghena_area
+***** area = niger_bend_area
+***** area = dendi_area
+***** area = massina_area
+***** area = jenne_area
+*** Any of the following:
+**** Primary culture is fulani
+**** Any owned province:
+***** Culture is fulani
+***** Follows the 0 "Sunni religion
+*** Any of the following:
+**** Has less than -0.35 piety
+**** Is in the 0 "Pagan religion group
+** Immediate effects:
+*** Sets the country flag fulani_jihad_state
+*** Sets the country flag fulani_jihad_happened
+** Mean time to happen
+*** Base mean time to happen of 405 months
+*** Multiplies value by 0.5:
+**** Any owned province:
+***** Culture is fulani
+***** Follows the 0 "Sunni religion
+** Option: flavor_ful.2.a:
+*** AI chance:
+**** Base chance of 1
+*** Trigger:
+**** Any of the following:
+***** Primary culture is fulani
+***** Primary culture is soninke
+***** Primary culture is 0 "Senegambian
+***** Primary culture is bambara
+*** Changes piety by -50%
+*** Random owned province:
+**** Spawns revolt of size 2 of 0 "Religious rebels
+*** If:
+**** Limited to:
+***** Does not follow the 0 "Sunni religion
+**** Changes religion to 0 "Sunni
+*** Spawns a ruler:
+**** Ruler's military skill is at least 5
+**** age = 28
+**** Legitimacy of 65
+*** If:
+**** Limited to:
+***** has_states_general_mechanic = yes
+**** change_statists_vs_orangists = 1
+*** Changes stability by -5
+*** Switch to new country's idea group
+** Option: flavor_ful.2.b:
+*** AI chance:
+**** Base chance of 1
+**** Multiplies value by 0:
+***** Any of the following:
+****** Primary culture is fulani
+****** Primary culture is soninke
+*** Random owned province:
+**** Spawns revolt of size 3 of 0 "Religious rebels
+*** Removes the country flag fulani_jihad_state
+* Gets the country event:
+** ID is flavor_ful.3
+** title = flavor_ful.3.t
+** desc = flavor_ful.3.d
+** picture = RELIGIOUS_CONVERSION_eventPicture
+** Trigger:
+*** Has the country flag fulani_jihad_state
+*** Does not follow the 0 "Sunni religion
+*** Country is not 0 "Sokoto
+** Immediate effects:
+*** Removes the country flag fulani_jihad_state
+** Mean time to happen
+*** Base mean time to happen of 1 months
+** Option: flavor_ful.3.a:
+*** Switch to new country's idea group

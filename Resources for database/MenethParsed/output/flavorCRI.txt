@@ -1,0 +1,440 @@
+
+=== 0 "Succession in the Crimean Khanate ===
+* Cannot fire randomly
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Crimea
+* 0 "Ottomans exists
+* is_free_or_tributary_trigger = yes
+* Is not at war
+* 0 "Ottomans:
+** Has at least our country provinces
+** is_free_or_tributary_trigger = yes
+** Has at least 1 ports
+* Does not have the global flag death_of_haji_giray
+
+'''Immediate effects:'''
+
+* Sets the global flag death_of_haji_giray
+
+'''Option: 0 "We must seek Ottoman Protection:'''
+
+* Trigger:
+** Not at war with 0 "Ottomans
+* AI chance:
+** Base chance of 35
+** Multiplies value by 1.5:
+*** 0 "Ottomans:
+**** Has at least 40 provinces
+** Multiplies value by 0.8:
+*** Has at least 12 provinces
+** Multiplies value by 0.8:
+*** Has at least 15 provinces
+** Multiplies value by 0.25:
+*** Has at least 22 provinces
+** Multiplies value by 0.1:
+*** Has at least 30 provinces
+** Multiplies value by 0:
+*** Has at least 0 "Ottomans provinces
+** Multiplies value by 1.1:
+*** crimea_region:
+**** The province is owned by 0 "Ottomans
+** Multiplies value by 0:
+*** 0 "Ottomans:
+**** Has less than 5 provinces
+** Multiplies value by 0:
+*** anatolia_region:
+**** The province is not owned by 0 "Ottomans
+* If:
+** Limited to:
+*** Is in regency
+*** Has no heir
+** Spawns a ruler:
+*** Named "Mengli"
+*** Ruler's dynasty is Giray
+*** age = 33
+*** Legitimacy of 75
+** If:
+*** Limited to:
+**** has_states_general_mechanic = yes
+*** change_statists_vs_orangists = 1
+** If:
+*** Limited to:
+**** Has the DLC Rights of Man
+*** Hidden effect:
+**** add_ruler_personality_ancestor:
+***** Named "conqueror"
+* If:
+** Limited to:
+*** Is in regency
+*** Has an heir
+** Kills the heir of the country
+*** allow_new_heir_false = no
+** Spawns a ruler:
+*** Named "Mengli"
+*** Ruler's dynasty is Giray
+*** age = 33
+*** Legitimacy of 75
+** If:
+*** Limited to:
+**** has_states_general_mechanic = yes
+*** change_statists_vs_orangists = 1
+** If:
+*** Limited to:
+**** Has the DLC Rights of Man
+*** Hidden effect:
+**** add_ruler_personality_ancestor:
+***** Named "conqueror"
+* 0 "Ottomans:
+** Gets the country event:
+*** ID is flavor_cri.2
+*** Base mean time to happen of 5 days
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+** Spawns revolt of size 1 of 0 "Pretender rebels
+
+'''Option: 0 "We will be better off without Ottoman involvement.:'''
+
+* AI chance:
+** Base chance of 65
+** Multiplies value by 1.5:
+*** 0 "Ottomans:
+**** Has less than 5 provinces
+** Multiplies value by 1.5:
+*** 0 "Ottomans:
+**** Has less than 10 provinces
+** Multiplies value by 1.5:
+*** anatolia_region:
+**** The province is not owned by 0 "Ottomans
+** Multiplies value by 1.5:
+*** 0 "Ottomans:
+**** Is at war
+* If:
+** Limited to:
+*** Is in regency
+*** Has no heir
+** Spawns a ruler:
+*** Named "Nur Devlet"
+*** Ruler's dynasty is Giray
+*** age = 33
+** If:
+*** Limited to:
+**** has_states_general_mechanic = yes
+*** change_statists_vs_orangists = 1
+** If:
+*** Limited to:
+**** Has the DLC Rights of Man
+*** Hidden effect:
+**** add_ruler_personality_ancestor:
+***** Named "inspiring_leader"
+* If:
+** Limited to:
+*** Is in regency
+*** Has an heir
+** Kills the heir of the country
+*** allow_new_heir_false = no
+** Spawns a ruler:
+*** Named "Nur Devlet"
+*** Ruler's dynasty is Giray
+*** age = 33
+*** Legitimacy of 75
+** If:
+*** Limited to:
+**** has_states_general_mechanic = yes
+*** change_statists_vs_orangists = 1
+** If:
+*** Limited to:
+**** Has the DLC Rights of Man
+*** Hidden effect:
+**** add_ruler_personality_ancestor:
+***** Named "inspiring_leader"
+* 0 "Ottomans:
+** Gets the country event:
+*** ID is flavor_cri.3
+*** Base mean time to happen of 5 days
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+** Spawns revolt of size 1 of 0 "Pretender rebels
+
+=== 0 "Fate of the Crimean Khanate ===
+* Cannot fire randomly
+* Can only fire once
+
+'''Option: 0 "Let us help this new found friend!:'''
+
+* AI chance:
+** Base chance of 100
+* Tooltip:
+** create_march = 0 "Crimea
+* 0 "Crimea:
+** Gets the country event:
+*** ID is flavor_cri.4
+* Changes diplomatic power stored by -50
+* Changes military power stored by -50
+* Changes administrative power stored by -50
+* If:
+** Limited to:
+*** 0 "Caffa:
+**** The province is not owned by 0 "Ottomans
+**** The province is not owned by 0 "Crimea
+** 0 "Caffa:
+*** Adds claim to 0 "Ottomans
+* If:
+** Limited to:
+*** 0 "Azov:
+**** The province is not owned by 0 "Ottomans
+**** The province is not owned by 0 "Crimea
+** 0 "Azov:
+*** Adds claim to 0 "Ottomans
+* If:
+** Limited to:
+*** 0 "Theodoro:
+**** The province is not owned by 0 "Ottomans
+**** The province is not owned by 0 "Crimea
+** 0 "Theodoro:
+*** Adds claim to 0 "Ottomans
+* If:
+** Limited to:
+*** 0 "Matrega:
+**** The province is not owned by 0 "Ottomans
+**** The province is not owned by 0 "Crimea
+** 0 "Matrega:
+*** Adds claim to 0 "Ottomans
+* If:
+** Limited to:
+*** 0 "Caffa:
+**** The province is owned by 0 "Crimea
+**** The province is not the capital of the country
+** 0 "Caffa:
+*** Cedes province to 0 "Ottomans
+*** Gives 0 "Ottomans core on the province
+* If:
+** Limited to:
+*** 0 "Azov:
+**** The province is owned by 0 "Crimea
+**** The province is not the capital of the country
+** 0 "Azov:
+*** Cedes province to 0 "Ottomans
+*** Gives 0 "Ottomans core on the province
+* If:
+** Limited to:
+*** 0 "Theodoro:
+**** The province is owned by 0 "Crimea
+**** The province is not the capital of the country
+** 0 "Theodoro:
+*** Cedes province to 0 "Ottomans
+*** Gives 0 "Ottomans core on the province
+* If:
+** Limited to:
+*** 0 "Matrega:
+**** The province is owned by 0 "Crimea
+**** The province is not the capital of the country
+** 0 "Matrega:
+*** Cedes province to 0 "Ottomans
+*** Gives 0 "Ottomans core on the province
+
+'''Option: 0 "Let us not risk upsetting the balance of power in the area.:'''
+
+* AI chance:
+** Base chance of 0
+* 0 "Crimea:
+** Gets the country event:
+*** ID is flavor_cri.5
+** Adds the opinion modifier "0 "Refused to Help in Succession Struggle" towards 0 "Ottomans
+* Every known country:
+** Limited to:
+*** Is a neighbor of 0 "Crimea
+** Adds the opinion modifier "0 "Stayed Clear of Crimean Succession" towards 0 "Ottomans
+
+=== 0 "Fate of the Crimean Khanate ===
+* Cannot fire randomly
+* Can only fire once
+
+'''Option: 0 "Let us help this new found friend!:'''
+
+* AI chance:
+** Base chance of 90
+* Gives the 0 "Subjugation casus belli against 0 "Crimea
+* Sets the country flag ottoman_promise_to_crimea
+* If:
+** Limited to:
+*** 0 "Caffa:
+**** The province is not owned by 0 "Ottomans
+**** The province is not owned by 0 "Crimea
+** 0 "Caffa:
+*** Adds claim to 0 "Ottomans
+* If:
+** Limited to:
+*** 0 "Azov:
+**** The province is not owned by 0 "Ottomans
+**** The province is not owned by 0 "Crimea
+** 0 "Azov:
+*** Adds claim to 0 "Ottomans
+* If:
+** Limited to:
+*** 0 "Theodoro:
+**** The province is not owned by 0 "Ottomans
+**** The province is not owned by 0 "Crimea
+** 0 "Theodoro:
+*** Adds claim to 0 "Ottomans
+* If:
+** Limited to:
+*** 0 "Matrega:
+**** The province is not owned by 0 "Ottomans
+**** The province is not owned by 0 "Crimea
+** 0 "Matrega:
+*** Adds claim to 0 "Ottomans
+
+'''Option: 0 "Let us not risk upsetting the balance of power in the area.:'''
+
+* AI chance:
+** Base chance of 10
+** Multiplies value by 0:
+*** Any of the following:
+**** Owns 0 "Caffa
+**** Owns 0 "Azov
+**** Owns 0 "Theodoro
+**** Owns 0 "Matrega
+* 0 "Crimea:
+** Adds the opinion modifier "0 "Stayed Clear of Crimean Succession" towards 0 "Ottomans
+* Every known country:
+** Limited to:
+*** Is a neighbor of 0 "Crimea
+** Adds the opinion modifier "0 "Stayed Clear of Crimean Succession" towards 0 "Ottomans
+
+=== 0 "The [From.Monarch.GetTitle] Accepts ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Option: 0 "We have now tied our fate to theirs.:'''
+
+* Adds 30 legitimacy
+* add_horde_unity = 30
+* Modifies treasury by 0.5 years worth of income
+* Changes military power stored by 50
+* Changes diplomatic power stored by 50
+* Changes administrative power stored by 50
+* 0 "Ottomans:
+** create_march = 0 "Crimea
+* Adds the opinion modifier "0 "Supported Winner of Crimean Succession Struggle" towards 0 "Ottomans
+
+=== 0 "The [From.Monarch.GetTitle] Refuses ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Option: 0 "And so we stand alone.:'''
+
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+** Spawns revolt of size 1 of 0 "Pretender rebels
+
+=== 0 "Installation of Mengli Giray ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* 0 "Ottomans:
+** Has the country flag ottoman_promise_to_crimea
+** } 
+* Country is 0 "Crimea
+* Is a vassal of 0 "Ottomans
+
+'''Option: 0 "And so our fate is now tied to theirs.:'''
+
+* AI chance:
+** Base chance of 100
+* Spawns a ruler:
+** Named "Mengli"
+** Ruler's dynasty is Giray
+** age = 33
+** Legitimacy of 75
+* If:
+** Limited to:
+*** has_states_general_mechanic = yes
+** change_statists_vs_orangists = 1
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+** Hidden effect:
+*** add_ruler_personality_ancestor:
+**** Named "conqueror"
+* Adds the opinion modifier "0 "Installed Ruler" towards 0 "Ottomans
+* 0 "Ottomans:
+** create_march = 0 "Crimea
+** Hidden effect:
+*** Gets the country event:
+**** ID is flavor_cri.7
+* If:
+** Limited to:
+*** 0 "Caffa:
+**** The province is owned by 0 "Crimea
+**** The province is not the capital of the country
+** 0 "Caffa:
+*** Cedes province to 0 "Ottomans
+*** Gives 0 "Ottomans core on the province
+* If:
+** Limited to:
+*** 0 "Azov:
+**** The province is owned by 0 "Crimea
+**** The province is not the capital of the country
+** 0 "Azov:
+*** Cedes province to 0 "Ottomans
+*** Gives 0 "Ottomans core on the province
+* If:
+** Limited to:
+*** 0 "Theodoro:
+**** The province is owned by 0 "Crimea
+**** The province is not the capital of the country
+** 0 "Theodoro:
+*** Cedes province to 0 "Ottomans
+*** Gives 0 "Ottomans core on the province
+* If:
+** Limited to:
+*** 0 "Matrega:
+**** The province is owned by 0 "Crimea
+**** The province is not the capital of the country
+** 0 "Matrega:
+*** Cedes province to 0 "Ottomans
+*** Gives 0 "Ottomans core on the province
+
+=== 0 "Installation of Mengli Giray ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Option: 0 "And so their fate is now tied to ours.:'''
+
+
+=== 0 "The Restoration of the Il-Khanate ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Option: 0 "Appoint a subordinate Khan.:'''
+
+* persia_region:
+** Limited to:
+*** The province is owned by our country
+** Gives 0 "Ilkhanate core on the province
+** Removes core on our country
+* Release 0 "Ilkhanate as a vassal
+* create_march = 0 "Ilkhanate
+* 0 "Ilkhanate:
+** Changes government type to monarchy
+** Change the primary culture to be same same as our country's culture
+** Changes religion to our country
+** Spawns a ruler:
+*** Ruler's dynasty is our country
+*** Culture is the same as our country
+*** Follows our country's religion
+
+'''Option: 0 "We can rule Persia on our own.:'''
+
+* 0 "Soltanieh:
+** Changes base tax by 2
+** add_base_manpower = 2
+** add_base_production = 2

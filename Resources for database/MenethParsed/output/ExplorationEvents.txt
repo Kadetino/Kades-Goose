@@ -1,0 +1,482 @@
+
+=== title = exploration_events.1.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Native hostilty is at least 5
+* Is uncolonized
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.1.a:'''
+
+* Our country:
+** Modifies treasury by 0.05 years worth of income
+* Changes hostility of natives by -1
+
+'''Option: exploration_events.1.b:'''
+
+* Our country:
+** Modifies treasury by 0.1 years worth of income
+* Changes hostility of natives by 1
+
+=== title = exploration_events.2.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Native hostilty is at least 5
+* Is uncolonized
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.2.a:'''
+
+* Our country:
+** Modifies treasury by -0.05 years worth of income
+* Changes hostility of natives by -1
+
+'''Option: exploration_events.2.b:'''
+
+* Our country:
+** Changes prestige by 5
+* Changes hostility of natives by 1
+
+=== title = exploration_events.3.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is colonized
+* The owner of the province:
+** Any of the following:
+*** Technology group is 0 "West African
+*** Technology group is 0 "North American
+*** Technology group is 0 "Mesoamerican
+*** Technology group is 0 "South American
+*** Technology group is 0 "Andean
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* The owner of the province:
+** save_event_target_as = tribal_nation
+
+'''Option: exploration_events.3.a:'''
+
+* Our country:
+** Changes prestige by -5
+* The owner of the province:
+** Adds the opinion modifier "opinion_worship" towards our country
+
+'''Option: exploration_events.3.b:'''
+
+* The owner of the province:
+** Adds the opinion modifier "disturbed_ritual" towards our country
+
+=== title = exploration_events.4.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is uncolonized
+* Has a base tax lower than 8
+* Does not have the province flag base_tax_changed
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.4.a:'''
+
+* Changes base tax by 1
+* Sets the province flag base_tax_changed
+
+=== title = exploration_events.5.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Year is at least 1492
+* Is colonized
+* The owner of the province:
+** Any of the following:
+*** Technology group is 0 "West African
+*** Technology group is 0 "North American
+*** Technology group is 0 "Mesoamerican
+*** Technology group is 0 "South American
+*** Technology group is 0 "Andean
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.5.a:'''
+
+* Our country:
+** Changes treasury by 50 ducats
+* The owner of the province:
+** Adds the opinion modifier "angry_natives" towards our country
+
+'''Option: exploration_events.5.b:'''
+
+* The owner of the province:
+** Adds the opinion modifier "friendly_natives" towards our country
+
+=== title = exploration_events.6.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is uncolonized
+* Has a base tax of at least 3
+* Does not have the province flag base_tax_changed
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.6.a:'''
+
+* Changes base tax by -1
+* Sets the province flag base_tax_changed
+
+=== title = exploration_events.7.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Is uncolonized
+* Native hostilty is at least 5
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.7.a:'''
+
+* Changes hostility of natives by -5
+
+=== title = exploration_events.8.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is colonized
+* The owner of the province:
+** Any of the following:
+*** Technology group is 0 "West African
+*** Technology group is 0 "North American
+*** Technology group is 0 "Mesoamerican
+*** Technology group is 0 "South American
+*** Technology group is 0 "Andean
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.8.a:'''
+
+* Our country:
+** Changes diplomatic power stored by 50
+
+'''Option: exploration_events.8.b:'''
+
+* Our country:
+** Changes military power stored by 50
+* The owner of the province:
+** Adds the opinion modifier "angry_natives" towards our country
+
+=== title = exploration_events.9.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is uncolonized
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.9.a:'''
+
+* Our country:
+** Changes diplomatic power stored by -25
+* Changes hostility of natives by -2
+
+'''Option: exploration_events.9.b:'''
+
+* Our country:
+** Changes prestige by 10
+* Changes hostility of natives by 2
+
+=== title = exploration_events.10.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is uncolonized
+* has_terrain = 0 "Jungle
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.10.a:'''
+
+* Our country:
+** Modifies treasury by -0.25 years worth of income
+** Changes diplomatic power stored by 50
+
+'''Option: exploration_events.10.b:'''
+
+* Our country:
+** Modifies treasury by 0.25 years worth of income
+* Changes hostility of natives by 1
+* Changes ferocity of natives by 1
+
+=== title = exploration_events.11.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is uncolonized
+* Any of the following:
+** Native ferocity is at least 5
+** Native hostilty is at least 5
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Kills military leader: 
+
+'''Option: exploration_events.11.a:'''
+
+
+=== title = exploration_events.12.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is uncolonized
+* Our country:
+** Is not in 0 "Muslim's religion group
+** Does not have the country modifier "drunken_explorer"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.12.a:'''
+
+* Our country:
+** Adds the modifier "drunken_explorer" for 5 years:
+*** -0.25 prestige
+
+=== title = exploration_events.13.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is uncolonized
+* Any of the following:
+** Region is peru_region
+** Region is upper_peru_region
+** Region is la_plata_region
+** Region is south_africa_region
+** Region is australia_region
+** Region is oceanea_region
+* has_climate = 0 "Arctic
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.13.a:'''
+
+* Our country:
+** Changes prestige by 5
+
+'''Option: exploration_events.13.b:'''
+
+* Our country:
+** Changes administrative power stored by 50
+
+=== title = exploration_events.14.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is colonized
+* The owner of the province:
+** Any of the following:
+*** Technology group is 0 "West African
+*** Technology group is 0 "North American
+*** Technology group is 0 "Mesoamerican
+*** Technology group is 0 "South American
+*** Technology group is 0 "Andean
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: exploration_events.14.a:'''
+
+* Our country:
+** Creates an explorer at  extra naval tradition
+*** tradition = 10
+*** Culture is the same as our country
+*** Ruler is female
+
+'''Option: exploration_events.14.b:'''
+
+* Our country:
+** Changes administrative power stored by 50
+
+=== title = exploration_events.15.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Is colonized
+* The owner of the province:
+** Any of the following:
+*** Technology group is 0 "West African
+*** Technology group is 0 "North American
+*** Technology group is 0 "Mesoamerican
+*** Technology group is 0 "South American
+*** Technology group is 0 "Andean
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Kills military leader: 
+
+'''Option: exploration_events.15.a:'''
+
+
+=== title = exploration_events.16.t ===
+* Cannot fire randomly
+* Trigger:
+** Capital:
+*** In the continent 0 "Europe
+** Country is not 0 "Ottomans
+* desc = exploration_events.16.d
+* Trigger:
+** Culture group is not 0 "Chinese
+** Country is not 0 "Ottomans
+** Capital:
+*** Region is not japan_region
+*** Any of the following:
+**** In the continent 0 "Oceania
+**** In the continent 0 "Asia
+* desc = exploration_events.18.d
+* Trigger:
+** Capital:
+*** In the continent 0 "Africa
+** Country is not 0 "Ottomans
+* desc = exploration_events.19.d
+* Trigger:
+** Capital:
+*** Not in the continent 0 "Europe
+*** Not in the continent 0 "Asia
+*** Not in the continent 0 "Africa
+*** Not in the continent 0 "Oceania
+* desc = exploration_events.20.d
+* Trigger:
+** Culture group is 0 "Chinese
+** Capital:
+*** In the continent 0 "Asia
+** Country is not 0 "Ottomans
+* desc = exploration_events.21.d
+* Trigger:
+** Country is 0 "Ottomans
+** Any of the following:
+*** Capital:
+**** In the continent 0 "Europe
+*** Capital:
+**** In the continent 0 "Asia
+*** Capital:
+**** In the continent 0 "Africa
+* desc = exploration_events.22.d
+* Trigger:
+** Capital:
+*** Region is japan_region
+* desc = exploration_events.23.d
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Does not have the global flag circumnavigation_completed
+* Does not have the country flag circumnavigation_first
+
+'''Immediate effects:'''
+
+* Sets the global flag circumnavigation_completed
+* Sets the country flag circumnavigation_first
+
+'''Option: exploration_events.16.a:'''
+
+* Changes prestige by 100
+* Changes navy tradition by 40
+
+=== title = exploration_events.17.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC El Dorado
+* Has the global flag circumnavigation_completed
+* Does not have the country flag circumnavigation_done
+
+'''Immediate effects:'''
+
+* Sets the country flag circumnavigation_done
+
+'''Option: exploration_events.17.a:'''
+
+* Changes prestige by 10
+* Changes navy tradition by 10

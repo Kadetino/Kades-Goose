@@ -1,0 +1,26 @@
+** Immediate effects:
+*** Hidden effect:
+**** Random owned province:
+***** Limited to:
+****** The province is not the capital of the country
+****** Does not produce 0 "Gold
+****** Any of the following:
+******* area = banjar_area
+******* area = brunei_area
+******* area = kalimantan_area
+***** save_event_target_as = lfa_gold_province
+** Trigger:
+*** Country is 0 "Lanfang
+*** Any owned province:
+**** The province is not the capital of the country
+**** Any of the following:
+***** area = banjar_area
+***** area = brunei_area
+***** area = kalimantan_area
+**** Does not produce 0 "Gold
+*** Has the idea lfa_improved_mining_techniques
+** Mean time to happen
+*** Base mean time to happen of 1 days
+** Option: flavor_lfa.1.a:
+*** event_target:lfa_gold_province:
+**** Changes trade goods produced to 0 "Gold

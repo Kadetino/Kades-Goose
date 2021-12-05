@@ -1,0 +1,170 @@
+
+=== 0 "Border Friction ===
+
+'''Trigger:'''
+
+* Has at least 1 allies
+* Any ally:
+** Any owned province:
+*** The province is claimed by our country
+*** is_permanent_claim_false = our country
+*** Any of the following:
+**** Any bordering province:
+***** The province is owned by our country
+**** 0 "Sea Zone:
+***** Any bordering province:
+****** The province is owned by our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+* Multiplies value by 1.2:
+** Has the 0 "Statesman advisor
+* Multiplies value by 0.95:
+** Has an opinion of less than 100 with our country
+* Multiplies value by 0.95:
+** Has an opinion of less than 50 with our country
+* Multiplies value by 0.95:
+** Has an opinion of less than 0 with our country
+* Multiplies value by 1.05:
+** Has an opinion of at least 100 with our country
+* Multiplies value by 1.05:
+** Has an opinion of at least 150 with our country
+* Multiplies value by 1.05:
+** Has an opinion of at least 200 with our country
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random country:
+*** Limited to:
+**** Is allied with our country
+**** Any owned province:
+***** The province is claimed by our country
+***** is_permanent_claim_false = our country
+*** save_event_target_as = border_claim_country
+*** Random owned province:
+**** Limited to:
+***** The province is claimed by our country
+***** is_permanent_claim_false = our country
+***** Any of the following:
+****** Any bordering province:
+******* The province is owned by our country
+****** 0 "Sea Zone:
+******* Any bordering province:
+******** The province is owned by our country
+**** save_event_target_as = border_claim_province
+
+'''Option: 0 "Perhaps a policy change is in order...:'''
+
+* event_target:border_claim_country:
+** Adds the opinion modifier "0 "Irritated over Claims" towards our country
+
+'''Option: 0 "Put a positive spin on things!:'''
+
+* AI chance:
+** Base chance of 0
+* Changes diplomatic power stored by -25
+
+'''Option: 0 "Revoke the claim.:'''
+
+* AI chance:
+** Base chance of 0
+* Changes prestige by -5
+* event_target:border_claim_province:
+** Removes claim on our country
+
+=== 0 "Border Friction ===
+
+'''Trigger:'''
+
+* has_institution = enlightenment
+* Is not AI controlled
+* Is not at war
+* Is not a vassal
+* Less than 4 war exhaustion
+* Manpower are at least 95% of maximum
+* Stability is at least -2
+* Any of the following:
+** Is not in regency
+** has_consort_regency = yes
+* Any country:
+** Any owned province:
+*** The province is claimed by our country
+*** is_permanent_claim_false = our country
+*** Any of the following:
+**** Any bordering province:
+***** The province is owned by our country
+**** 0 "Sea Zone:
+***** Any bordering province:
+****** The province is owned by our country
+** Is not a vassal of our country
+** Has no truce with our country
+** Is not allied with our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 240 months
+* Multiplies value by 1.2:
+** Has the 0 "Statesman advisor
+* Multiplies value by 0.95:
+** Has an opinion of less than 100 with our country
+* Multiplies value by 0.95:
+** Has an opinion of less than 50 with our country
+* Multiplies value by 0.95:
+** Has an opinion of less than 0 with our country
+* Multiplies value by 1.05:
+** Has an opinion of at least 100 with our country
+* Multiplies value by 1.05:
+** Has an opinion of at least 150 with our country
+* Multiplies value by 1.05:
+** Has an opinion of at least 200 with our country
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random country:
+*** Limited to:
+**** Any owned province:
+***** The province is claimed by our country
+***** is_permanent_claim_false = our country
+***** Any of the following:
+****** Any bordering province:
+******* The province is owned by our country
+****** 0 "Sea Zone:
+******* Any bordering province:
+******** The province is owned by our country
+**** Has no truce with our country
+**** Is not a vassal of our country
+**** Is not allied with our country
+*** save_event_target_as = border_claim_country
+*** Random owned province:
+**** Limited to:
+***** The province is claimed by our country
+***** is_permanent_claim_false = our country
+***** Any of the following:
+****** Any bordering province:
+******* The province is owned by our country
+****** 0 "Sea Zone:
+******* Any bordering province:
+******** The province is owned by our country
+**** save_event_target_as = border_claim_province
+
+'''Option: 0 "Perhaps a policy change is in order...:'''
+
+* event_target:border_claim_country:
+** Adds the opinion modifier "0 "Irritated over Claims" towards our country
+
+'''Option: 0 "Put a positive spin on things!:'''
+
+* AI chance:
+** Base chance of 0
+* Changes diplomatic power stored by -100
+
+'''Option: 0 "Revoke the claim.:'''
+
+* AI chance:
+** Base chance of 0
+* Changes prestige by -5
+* event_target:border_claim_province:
+** Removes claim on our country

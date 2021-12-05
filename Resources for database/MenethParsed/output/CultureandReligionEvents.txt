@@ -1,0 +1,2477 @@
+
+=== 0 "[Root.Heir.GetName] and the [Root.given_teacher_culture.GetCultureName] people. ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = INVENTION_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = HEIR_AND_FOREIGN_ADVISOR_eventPicture
+
+'''Trigger:'''
+
+* Has an heir
+* Is not in regency
+* has_consort_regency_false = no
+* has_reform_false = 0 "Elective Monarchy
+* Heir is at least 13 years old
+* Heir is less than 25 years old
+* employed_advisor:
+** category = 0 "Administrative
+* Any owned province:
+** The owner of the province:
+*** employed_advisor:
+**** category = 0 "Administrative
+**** Culture is PREV
+* employed_advisor:
+** category_false = 0 "Administrative
+** Culture is not the same as our country
+* variable_arithmetic_trigger:
+** export_to_variable:
+*** variable_name = cultural_heir_culture
+*** value = heir_culture
+** export_to_variable:
+*** variable_name = teacher_culture
+*** value = adm_advisor_culture
+** export_to_variable:
+*** variable_name = parent_culture
+*** value = ruler_culture
+** variable_arithmetic_trigger:
+*** is_variable_equal:
+**** which_false = cultural_heir_culture
+**** which_false = teacher_culture
+** is_variable_equal:
+*** which = cultural_heir_culture
+*** which = parent_culture
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** export_to_variable:
+*** variable_name = given_teacher_culture
+*** value = adm_advisor_culture
+** set_saved_name:
+*** Named "capital_noble"
+*** scope = our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 800 months
+* Multiplies value by 0.8:
+** heir_has_personality_ancestor:
+*** Named "well_connected"
+* Multiplies value by 0.8:
+** heir_has_personality_ancestor:
+*** Named "free_thinker"
+* Multiplies value by 0.8:
+** heir_has_personality_ancestor:
+*** Named "tolerant"
+* Multiplies value by 0.8:
+** heir_has_personality = babbling_buffoon_personality
+* Multiplies value by 0.8:
+** heir_has_personality = naive_personality
+* Multiplies value by 0.8:
+** heir_has_personality = loose_lips_personality
+* Multiplies value by 1.2:
+** heir_has_personality = careful_personality
+* Multiplies value by 1.2:
+** heir_has_personality_ancestor:
+*** Named "zealot"
+* Multiplies value by 1.2:
+** heir_has_personality = malevolent_personality
+
+'''Option: 0 "Best let [Root.capital_noble.GetName] guide our young [Root.Heir.GetTitle] instead.:'''
+
+* remove_advisor_by_category = 0 "Administrative
+* Changes administrative power stored by -50
+* Creates an advisor of the 0 "Statesman type:
+** With a skill level of 2
+** discount = yes
+
+'''Option: 0 "[Root.Heir.GetName] has our blessing in this.:'''
+
+* set_heir_culture = variable:given_teacher_culture
+* Changes the heir's legitimacy by -25
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Culture is variable:FROM:given_teacher_culture
+*** Adds the modifier "0 "The Heir is our Heir" until the end of the campaign:
+**** local_unrest = -3
+
+=== 0 "[Root.GetRulerOrRegency] and the [Root.Culture.GetName] people ===
+* Trigger:
+** Is in regency
+* picture = DEBATE_REPUBLICAN_eventPicture
+* Trigger:
+** Is not in regency
+** Does not have the DLC Cradle of Civilization
+* picture = ACCUSATION_eventPicture
+* Trigger:
+** Is not in regency
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Trigger:
+** Is not in regency
+** has_reform_false = 0 "Mamluk Government
+** ruler_culture_false = our country
+** ruler_religion = our country
+** Any owned province:
+*** Culture is variable:From:new_ruler_culture
+* Trigger:
+** Is not in regency
+** has_reform_false = 0 "Mamluk Government
+** ruler_culture_false = our country
+** ruler_religion = our country
+*** No owned province:
+**** Culture is variable:From:new_ruler_culture
+* Trigger:
+** Is not in regency
+** has_reform_false = 0 "Mamluk Government
+** ruler_culture = our country
+** ruler_religion_false = our country
+** Is not in variable:new_ruler_religion's religion group
+* Trigger:
+** Is not in regency
+** has_reform_false = 0 "Mamluk Government
+** ruler_culture = our country
+** ruler_religion_false = our country
+** Is in the variable:new_ruler_religion religion group
+* Trigger:
+** Is not in regency
+** has_reform_false = 0 "Mamluk Government
+** ruler_culture_false = our country
+** ruler_religion_false = our country
+* Trigger:
+** Any of the following:
+*** Is in regency
+*** has_reform = 0 "Mamluk Government
+*** All of the following:
+**** ruler_culture = our country
+**** ruler_religion = our country
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Removes the country flag had_culture_religion_reaction_event_flag
+** One of the following will happen:
+*** 15 relative chance:
+**** Sets the country flag strong_effect
+*** 35 relative chance:
+**** Sets the country flag medium_effect
+*** 50 relative chance:
+**** Sets the country flag small_effect
+** export_to_variable:
+*** variable_name = new_ruler_culture
+*** value = ruler_culture
+** export_to_variable:
+*** variable_name = new_ruler_religion
+*** value = ruler_religion
+** set_saved_name:
+*** Named "rebel_preacher"
+*** scope = our country
+
+'''Option: 0 "They will learn to love me in time.:'''
+
+* Trigger:
+** Is not in regency
+** has_reform_false = 0 "Mamluk Government
+** ruler_culture_false = our country
+** ruler_religion = our country
+* If:
+** Limited to:
+*** calc_true_if:
+**** all_known_country:
+***** Primary culture is variable:From:new_ruler_culture
+**** 8 will be built
+** Hidden effect:
+*** Every known country:
+**** Limited to:
+***** Primary culture is variable:From:new_ruler_culture
+**** Adds the opinion modifier "0 "Ruler of our Culture" towards our country
+* else:
+** Every known country:
+*** Limited to:
+**** Primary culture is variable:From:new_ruler_culture
+*** Adds the opinion modifier "0 "Ruler of our Culture" towards our country
+* trigger_switch:
+** on_trigger = has_country_flag
+** medium_effect:
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** The province has the same culture as its owner
+***** Adds the modifier "0 "Foreigner on the Throne" until the end of the campaign:
+****** local_unrest = 2
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Culture is variable:FROM:new_ruler_culture
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Culture is variable:FROM:new_ruler_culture
+****** Adds the modifier "0 "Local Support for Ruler" until the end of the campaign:
+******* local_unrest = -2
+*** else_if:
+**** Limited to:
+***** Monthly income is at least 30 ducats
+**** Creates an advisor of the 0 "Master Recruiter type:
+***** With a skill level of 3
+***** discount = yes
+***** Culture is variable:new_ruler_culture
+*** else:
+**** Creates an advisor of the 0 "Master Recruiter type:
+***** With a skill level of 2
+***** discount = yes
+***** Culture is variable:new_ruler_culture
+*** Removes the country flag medium_effect
+** small_effect:
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** The province has the same culture as its owner
+***** Adds the modifier "0 "Foreigner on the Throne" until the end of the campaign:
+****** local_unrest = 2
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Culture is variable:FROM:new_ruler_culture
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Culture is variable:FROM:new_ruler_culture
+****** Adds the modifier "0 "Local Support for Ruler" until the end of the campaign:
+******* local_unrest = -2
+*** else_if:
+**** Limited to:
+***** Monthly income is at least 30 ducats
+**** Creates an advisor of the 0 "Master Recruiter type:
+***** With a skill level of 2
+***** discount = yes
+***** Culture is variable:new_ruler_culture
+*** else:
+**** Creates an advisor of the 0 "Master Recruiter type:
+***** With a skill level of 1
+***** discount = yes
+***** Culture is variable:new_ruler_culture
+*** Removes the country flag small_effect
+** strong_effect:
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** The province has the same culture as its owner
+***** Adds the modifier "0 "Foreigner on the Throne" until the end of the campaign:
+****** local_unrest = 2
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Culture is variable:FROM:new_ruler_culture
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Culture is variable:FROM:new_ruler_culture
+****** Adds the modifier "0 "Local Support for Ruler" until the end of the campaign:
+******* local_unrest = -2
+*** else_if:
+**** Limited to:
+***** Monthly income is at least 30 ducats
+**** Creates an advisor of the 0 "Grand Captain type:
+***** With a skill level of 3
+***** discount = yes
+***** Culture is variable:new_ruler_culture
+*** else:
+**** Creates an advisor of the 0 "Grand Captain type:
+***** With a skill level of 2
+***** discount = yes
+***** Culture is variable:new_ruler_culture
+*** Removes the country flag strong_effect
+
+'''Option: 0 "They will learn to love me in time.:'''
+
+* Trigger:
+** Is not in regency
+** has_reform_false = 0 "Mamluk Government
+** ruler_culture = our country
+** ruler_religion_false = our country
+** Is not in variable:new_ruler_religion's religion group
+* If:
+** Limited to:
+*** calc_true_if:
+**** all_known_country:
+***** Follows the variable:From:new_ruler_religion religion
+**** 8 will be built
+** Hidden effect:
+*** Every known country:
+**** Limited to:
+***** Follows the variable:From:new_ruler_religion religion
+**** Adds the opinion modifier "0 "Ruler of our Religion" towards our country
+* else:
+** Every known country:
+*** Limited to:
+**** Follows the variable:From:new_ruler_religion religion
+*** Adds the opinion modifier "0 "Ruler of our Religion" towards our country
+* trigger_switch:
+** on_trigger = has_country_flag
+** medium_effect:
+*** If:
+**** Limited to:
+***** Monthly income is at least 30 ducats
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 3
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** else:
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 2
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** Follows the religion of its owner
+***** Adds the modifier "0 "Heathen In Power" until the end of the campaign:
+****** local_unrest = 5
+****** -5% missionary strength
+*** Random owned province:
+**** Limited to:
+***** Follows the religion of its owner
+**** Spawns revolt of size 1 of 0 "Religious rebels
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Follows the variable:FROM:new_ruler_religion religion
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Follows the variable:FROM:new_ruler_religion religion
+****** Adds the modifier "0 "Support for Ruler" until the end of the campaign:
+******* local_unrest = -3
+******* -5% missionary strength
+*** Removes the country flag medium_effect
+** small_effect:
+*** If:
+**** Limited to:
+***** Monthly income is at least 30 ducats
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 3
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** else:
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 2
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** Random owned province:
+**** Limited to:
+***** Follows the religion of its owner
+**** Spawns revolt of size 1 of 0 "Religious rebels
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** Follows the religion of its owner
+***** Adds the modifier "0 "Heathen In Power" until the end of the campaign:
+****** local_unrest = 5
+****** -5% missionary strength
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Follows the variable:FROM:new_ruler_religion religion
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Follows the variable:FROM:new_ruler_religion religion
+****** Adds the modifier "0 "Support for Ruler" until the end of the campaign:
+******* local_unrest = -3
+******* -5% missionary strength
+*** Removes the country flag small_effect
+** strong_effect:
+*** If:
+**** Limited to:
+***** Monthly income is at least 30 ducats
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 2
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** else:
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 1
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** Random owned province:
+**** Limited to:
+***** Follows the religion of its owner
+**** Spawns revolt of size 2 of 0 "Religious rebels
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** Follows the religion of its owner
+***** Adds the modifier "0 "Heathen In Power" until the end of the campaign:
+****** local_unrest = 5
+****** -5% missionary strength
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Follows the variable:FROM:new_ruler_religion religion
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Follows the variable:FROM:new_ruler_religion religion
+****** Adds the modifier "0 "Support for Ruler" until the end of the campaign:
+******* local_unrest = -3
+******* -5% missionary strength
+*** Removes the country flag strong_effect
+
+'''Option: 0 "They will learn to love me in time.:'''
+
+* Trigger:
+** Is not in regency
+** has_reform_false = 0 "Mamluk Government
+** ruler_culture = our country
+** ruler_religion_false = our country
+** Is in the variable:new_ruler_religion religion group
+* If:
+** Limited to:
+*** calc_true_if:
+**** all_known_country:
+***** Follows the variable:From:new_ruler_religion religion
+**** 8 will be built
+** Hidden effect:
+*** Every known country:
+**** Limited to:
+***** Follows the variable:From:new_ruler_religion religion
+**** Adds the opinion modifier "0 "Ruler of our Religion" towards our country
+* else:
+** Every known country:
+*** Limited to:
+**** Follows the variable:From:new_ruler_religion religion
+*** Adds the opinion modifier "0 "Ruler of our Religion" towards our country
+* trigger_switch:
+** on_trigger = has_country_flag
+** medium_effect:
+*** If:
+**** Limited to:
+***** Monthly income is at least 30 ducats
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 3
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** else:
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 2
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** Follows the religion of its owner
+***** Adds the modifier "0 "Heretic In Power" until the end of the campaign:
+****** local_unrest = 3
+****** -5% missionary strength
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Follows the variable:FROM:new_ruler_religion religion
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Follows the variable:FROM:new_ruler_religion religion
+****** Adds the modifier "0 "Support for Ruler" until the end of the campaign:
+******* local_unrest = -3
+******* -5% missionary strength
+*** Removes the country flag medium_effect
+** small_effect:
+*** If:
+**** Limited to:
+***** Monthly income is at least 30 ducats
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 3
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** else:
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 2
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** Follows the religion of its owner
+***** Adds the modifier "0 "Heretic In Power" until the end of the campaign:
+****** local_unrest = 3
+****** -5% missionary strength
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Follows the variable:FROM:new_ruler_religion religion
+**** Every owned province:
+***** Limited to:
+****** Follows the variable:FROM:new_ruler_religion religion
+***** Hidden effect:
+****** Adds the modifier "0 "Support for Ruler" until the end of the campaign:
+******* local_unrest = -3
+******* -5% missionary strength
+*** Removes the country flag small_effect
+** strong_effect:
+*** If:
+**** Limited to:
+***** Monthly income is at least 30 ducats
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 2
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** else:
+**** Creates an advisor of the 0 "Theologian type:
+***** With a skill level of 1
+***** discount = yes
+***** Follows the variable:new_ruler_religion religion
+*** Random owned province:
+**** Limited to:
+***** Follows the religion of its owner
+**** Spawns revolt of size 1 of 0 "Religious rebels
+*** Hidden effect:
+**** Every owned province:
+***** Limited to:
+****** Follows the religion of its owner
+***** Adds the modifier "0 "Heretic In Power" until the end of the campaign:
+****** local_unrest = 3
+****** -5% missionary strength
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Follows the variable:FROM:new_ruler_religion religion
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Follows the variable:FROM:new_ruler_religion religion
+****** Adds the modifier "0 "Support for Ruler" until the end of the campaign:
+******* local_unrest = -3
+******* -5% missionary strength
+*** Removes the country flag strong_effect
+
+'''Option: 0 "They will learn to love me in time.:'''
+
+* Trigger:
+** Is not in regency
+** has_reform_false = 0 "Mamluk Government
+** ruler_culture_false = our country
+** ruler_religion_false = our country
+* If:
+** Limited to:
+*** calc_true_if:
+**** all_known_country:
+***** Any of the following:
+****** Follows the variable:From:new_ruler_religion religion
+****** Primary culture is variable:From:new_ruler_culture
+**** 8 will be built
+** Hidden effect:
+*** Every known country:
+**** Limited to:
+***** Follows the variable:From:new_ruler_religion religion
+**** Adds the opinion modifier "0 "Ruler of our Religion" towards our country
+*** Every known country:
+**** Limited to:
+***** Primary culture is variable:From:new_ruler_culture
+**** Adds the opinion modifier "0 "Ruler of our Culture" towards our country
+* else:
+** Every known country:
+*** Limited to:
+**** Follows the variable:From:new_ruler_religion religion
+*** Adds the opinion modifier "0 "Ruler of our Religion" towards our country
+** Every known country:
+*** Limited to:
+**** Primary culture is variable:From:new_ruler_culture
+*** Adds the opinion modifier "0 "Ruler of our Culture" towards our country
+* trigger_switch:
+** on_trigger = has_country_flag
+** medium_effect:
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Follows the religion of its owner
+****** The province has the same culture as its owner
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Follows the religion of its owner
+******* The province has the same culture as its owner
+****** Adds the modifier "0 "Opposition to Alien Ruler" until the end of the campaign:
+******* local_unrest = 5
+******* -5% missionary strength
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Any of the following:
+******* All of the following:
+******** Follows the religion of its owner
+******** The province has a different culture than its owner
+******* All of the following:
+******** Does not follow the religion of its owner
+******** The province has the same culture as its owner
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Any of the following:
+******** All of the following:
+********* Follows the religion of its owner
+********* The province has a different culture than its owner
+******** All of the following:
+********* Does not follow the religion of its owner
+********* The province has the same culture as its owner
+****** Adds the modifier "0 "Opposition to Alien Ruler" until the end of the campaign:
+******* local_unrest = 5
+******* -5% missionary strength
+*** Removes the country flag medium_effect
+** small_effect:
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Follows the religion of its owner
+****** The province has the same culture as its owner
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Follows the religion of its owner
+******* The province has the same culture as its owner
+****** Adds the modifier "0 "Opposition to Alien Ruler" until the end of the campaign:
+******* local_unrest = 5
+******* -5% missionary strength
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Any of the following:
+******* All of the following:
+******** Follows the religion of its owner
+******** The province has a different culture than its owner
+******* All of the following:
+******** Does not follow the religion of its owner
+******** The province has the same culture as its owner
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Any of the following:
+******** All of the following:
+********* Follows the religion of its owner
+********* The province has a different culture than its owner
+******** All of the following:
+********* Does not follow the religion of its owner
+********* The province has the same culture as its owner
+****** Adds the modifier "0 "Opposition to Alien Ruler" until the end of the campaign:
+******* local_unrest = 5
+******* -5% missionary strength
+*** Removes the country flag small_effect
+** strong_effect:
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Follows the religion of its owner
+****** The province has the same culture as its owner
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Follows the religion of its owner
+******* The province has the same culture as its owner
+****** Adds the modifier "0 "Opposition to Alien Ruler" until the end of the campaign:
+******* local_unrest = 5
+******* -5% missionary strength
+*** If:
+**** Limited to:
+***** Any owned province:
+****** Any of the following:
+******* All of the following:
+******** Follows the religion of its owner
+******** The province has a different culture than its owner
+******* All of the following:
+******** Does not follow the religion of its owner
+******** The province has the same culture as its owner
+**** Hidden effect:
+***** Every owned province:
+****** Limited to:
+******* Any of the following:
+******** All of the following:
+********* Follows the religion of its owner
+********* The province has a different culture than its owner
+******** All of the following:
+********* Does not follow the religion of its owner
+********* The province has the same culture as its owner
+****** Adds the modifier "0 "Opposition to Alien Ruler" until the end of the campaign:
+******* local_unrest = 5
+******* -5% missionary strength
+*** If:
+**** Limited to:
+***** Any owned province:
+****** is_state = yes
+****** Any of the following:
+******* The province has the same culture as its owner
+******* Follows the religion of its owner
+**** Random owned province:
+***** Limited to:
+****** The owner of the province:
+******* Has the monarchy government type
+****** The owner of the province:
+******* has_reform_false = ottoman_government
+****** is_state = yes
+****** Any of the following:
+******* The province has the same culture as its owner
+******* Follows the religion of its owner
+***** Spawns revolt of size 2 of 0 "Pretender rebels
+*** Removes the country flag strong_effect
+
+'''Option: 0 "Order will be restored.:'''
+
+* Trigger:
+** Any of the following:
+*** Is in regency
+*** has_reform = 0 "Mamluk Government
+*** All of the following:
+**** ruler_culture = our country
+**** ruler_religion = our country
+* add_stability_or_adm_power = yes
+
+=== 0 "The Faith of [Root.Monarch.GetName] ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* ruler_religion_false = our country
+* Does not have the ruler modifier 0 "Increased Tolerance of Heretics
+* Does not have the ruler modifier 0 "Suppressing Personal Faith
+* Is in the new_variable:ruler_religion religion group
+* Any owned province:
+** Follows the religion of its owner
+** The province is not the capital of the country
+** is_reformation_center_false = no
+** is_religious_center_province_false = yes
+** Does not have the province modifier "0 "Religious Center"
+** Does not have the province modifier "0 "Religious Zeal"
+** Does not have the province modifier "0 "Suppressed Religious Minority"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** export_to_variable:
+*** variable_name = new_ruler_religion
+*** value = ruler_religion
+** Random owned province:
+*** Limited to:
+**** Follows the religion of its owner
+**** The province is not the capital of the country
+**** is_reformation_center_false = no
+**** is_religious_center_province_false = yes
+**** Does not have the province modifier "0 "Religious Center"
+**** Does not have the province modifier "0 "Religious Zeal"
+**** Does not have the province modifier "0 "Suppressed Religious Minority"
+*** save_event_target_as = conversion_province
+
+'''Option: 0 "Wonderful!:'''
+
+* AI chance:
+** Base chance of 10
+* Adds the ruler modifier "0 "Increased Tolerance of Heretics" until the ruler's death:
+** +1 tolerance of heretics
+** -2% global heretic missionary strength
+* event_target:conversion_province:
+** Changes religion to variable:From:new_ruler_religion
+** Adds the modifier "0 "Religious Zeal" until the end of the campaign:
+*** -100% missionary strength
+
+'''Option: 0 "We must attempt to stem the subversive powers of the [Root.Monarch.GetTitle].:'''
+
+* AI chance:
+** Base chance of 90
+* Adds the ruler modifier "0 "Suppressing Personal Faith" until the ruler's death:
+** Legitimacy is at least 0.5
+** Follows the yes religion
+* event_target:conversion_province:
+** Adds the modifier "0 "Suppressed Religious Minority" until the end of the campaign:
+*** local_unrest = 3
+
+=== 0 "A Bad Influence ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* ruler_religion_false = our country
+* Is in the new_variable:ruler_religion religion group
+* Has at least 3 provinces
+* Any owned province:
+** Follows the new_variable:FROM:ruler_religion religion
+** tolerance_to_this_false = 0
+* Any owned province:
+** is_state = yes
+** The province is not the capital of the country
+** is_in_capital_area = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 1.5:
+** Has the ruler modifier 0 "Increased Tolerance of Heretics
+* Multiplies value by 1.25:
+** Any owned province:
+*** Follows the new_variable:FROM:ruler_religion religion
+*** tolerance_to_this_false = -2
+* Multiplies value by 2:
+** Has at least 0.5 piety
+* Multiplies value by 1.5:
+** Has at least 0.01 piety
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** set_saved_name:
+*** Named "noblezealot"
+*** scope = our country
+** Random owned province:
+*** Limited to:
+**** is_state = yes
+**** The province is not the capital of the country
+**** is_in_capital_area = yes
+*** save_event_target_as = rebel_province
+** Random owned province:
+*** Limited to:
+**** is_state = yes
+**** The province is not the capital of the country
+**** Any of the following:
+***** The province has the same culture as its owner
+***** Follows the religion of its owner
+**** is_in_capital_area = yes
+*** save_event_target_as = rebel_province
+** Random owned province:
+*** Limited to:
+**** is_state = yes
+**** The province is not the capital of the country
+**** Follows the religion of its owner
+**** is_in_capital_area = yes
+*** save_event_target_as = rebel_province
+** Random owned province:
+*** Limited to:
+**** is_state = yes
+**** The province is not the capital of the country
+**** The province has the same culture as its owner
+**** Follows the religion of its owner
+**** is_in_capital_area = yes
+*** save_event_target_as = rebel_province
+
+'''Option: 0 "Traitors must die.:'''
+
+* Changes piety by -25%
+* add_church_power = -15
+* add_fervor = -15
+* Changes Patriarch authority by -15%
+* add_karma = -15
+* add_authority = -10
+* Adds -10 legitimacy
+* Changes Papal Influence by -10
+* event_target:rebel_province:
+** If:
+*** Limited to:
+**** Follows our country's religion
+*** Spawns revolt of size 1 of 0 "Religious rebels
+** else:
+*** Spawns revolt of size our country of 0 "Pretender rebels
+
+=== 0 "A Heathen [Root.Monarch.GetTitle] ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* ruler_religion_false = our country
+* Is not in new_variable:ruler_religion's religion group
+* Has at least 3 provinces
+* Any owned province:
+** Follows the new_variable:FROM:ruler_religion religion
+** tolerance_to_this_false = 0
+** No owned province:
+*** Has the province modifier "0 "Religious Tensions"
+* Any owned province:
+** is_state = yes
+** The province is not the capital of the country
+** is_in_capital_area = yes
+** Any of the following:
+*** Follows the new_variable:FROM:ruler_religion religion
+*** Follows the religion of its owner
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+* Multiplies value by 2:
+** Has at least 0.5 piety
+* Multiplies value by 1.5:
+** Has at least 0.01 piety
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** set_saved_name:
+*** Named "antimonarchistpriest"
+*** scope = our country
+** export_to_variable:
+*** variable_name = heathen_ruler
+*** value = ruler_religion
+** Random owned province:
+*** Limited to:
+**** is_state = yes
+**** The province is not the capital of the country
+**** is_in_capital_area = yes
+**** Any of the following:
+***** Follows the new_variable:FROM:ruler_religion religion
+***** Follows the religion of its owner
+**** Does not have the province modifier "0 "Religious Tensions"
+*** save_event_target_as = rebelprovince
+
+'''Option: 0 "Extensive use of force is only fitting.:'''
+
+* event_target:rebelprovince:
+** If:
+*** Limited to:
+**** Follows our country's religion
+*** Spawns revolt of size 1 of 0 "Religious rebels
+** else:
+*** Spawns revolt of size 1 of 0 "Pretender rebels
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "0 "Religious Tensions" until the end of the campaign:
+**** local_unrest = 4
+
+'''Option: 0 "Let us not escalate the situation.:'''
+
+* Changes diplomatic power stored by -25
+* event_target:rebelprovince:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "0 "Religious Tensions" until the end of the campaign:
+**** local_unrest = 4
+
+=== 0 "The [Root.new_monarch_religion.GetReligionGroupName] court of [Root.Monarch.GetName] ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = GOOD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* ruler_religion_false = our country
+* Is not in regency
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** save_event_target_as = advisor_origin
+** Random country:
+*** Limited to:
+**** Follows the new_variable:FROM:ruler_religion religion
+*** save_event_target_as = advisor_origin
+** set_saved_name:
+*** Named "advisor_attracted_by_ruler"
+*** scope = event_target:advisor_origin
+** export_to_variable:
+*** variable_name = new_monarch_religion
+*** value = ruler_religion
+** One of the following will happen:
+*** 33 relative chance:
+**** Sets the country flag philosopher_flag
+*** 33 relative chance:
+**** Sets the country flag master_of_mint_flag
+*** 33 relative chance:
+**** Sets the country flag recruitmaster_flag
+
+'''Option: 0 "Come one come all!:'''
+
+* trigger_switch:
+** on_trigger = has_country_flag
+** philosopher_flag:
+*** If:
+**** Limited to:
+***** Monthly income is less than 30 ducats
+**** Creates an advisor of the 0 "Philosopher type:
+***** Named "advisor_attracted_by_ruler"
+***** Follows the new_variable:ruler_religion religion
+***** With a skill level of 2
+***** discount = yes
+*** else:
+**** Creates an advisor of the 0 "Philosopher type:
+***** Named "advisor_attracted_by_ruler"
+***** Follows the new_variable:ruler_religion religion
+***** With a skill level of 3
+***** discount = yes
+** master_of_mint_flag:
+*** If:
+**** Limited to:
+***** Monthly income is less than 30 ducats
+**** Creates an advisor of the 0 "Master of Mint type:
+***** Named "advisor_attracted_by_ruler"
+***** Follows the new_variable:ruler_religion religion
+***** With a skill level of 2
+***** discount = yes
+*** else:
+**** Creates an advisor of the 0 "Master of Mint type:
+***** Named "advisor_attracted_by_ruler"
+***** Follows the new_variable:ruler_religion religion
+***** With a skill level of 3
+***** discount = yes
+** recruitmaster_flag:
+*** If:
+**** Limited to:
+***** Monthly income is less than 30 ducats
+**** Creates an advisor of the 0 "Master Recruiter type:
+***** Named "advisor_attracted_by_ruler"
+***** Follows the new_variable:ruler_religion religion
+***** With a skill level of 2
+***** discount = yes
+*** else:
+**** Creates an advisor of the 0 "Master Recruiter type:
+***** Named "advisor_attracted_by_ruler"
+***** Follows the new_variable:ruler_religion religion
+***** With a skill level of 3
+***** discount = yes
+
+'''Option: 0 "Their talents are needed in our [Root.new_monarch_religion.GetReligionName] Provinces:'''
+
+* Trigger:
+** Any owned province:
+*** Follows the new_variable:From:ruler_religion religion
+*** is_state = yes
+*** The province is not the capital of the country
+* trigger_switch:
+** on_trigger = has_country_flag
+** philosopher_flag:
+*** Random owned province:
+**** Limited to:
+***** Follows the new_variable:From:ruler_religion religion
+***** is_state = yes
+***** The province is not the capital of the country
+**** Changes base tax by 1
+** master_of_mint_flag:
+*** Random owned province:
+**** Limited to:
+***** Follows the new_variable:From:ruler_religion religion
+***** is_state = yes
+***** The province is not the capital of the country
+**** add_base_production = 1
+** recruitmaster_flag:
+*** Random owned province:
+**** Limited to:
+***** Follows the new_variable:From:ruler_religion religion
+***** is_state = yes
+***** The province is not the capital of the country
+**** add_base_manpower = 1
+* trigger_switch:
+** on_trigger = has_country_flag
+** philosopher_flag:
+*** Removes the country flag philosopher_flag
+** master_of_mint_flag:
+*** Removes the country flag master_of_mint_flag
+** recruitmaster_flag:
+*** Removes the country flag recruitmaster_flag
+* Sets the variable new_monarch_religion to -1
+
+=== 0 "The Competition for the [Root.Monarch.GetTitle]'s Favors ===
+* Trigger:
+** employed_advisor:
+*** category = 0 "Administrative
+*** Culture is the same as our country
+* desc = 0 "It is no secret that [Root.Monarch.GetName] hold the [Root.new_monarch_culture.GetCultureName] people dear to [Root.Monarch.GetHerHis] heart and that [Root.Monarch.GetSheHe] speaks the [Root.Culture.GetName] language with a distinct [Root.new_monarch_culture.GetCultureName] accent.\n[Root.Monarch.GetName] even surrounds [Root.Monarch.GetHerselfHimself] with [Root.new_monarch_culture.GetCultureName] advisors and courtiers, something that has not gone unnoticed by the old [Root.Culture.GetName] families in our country. Our court [Root.Adm_Advisor.GetTitle], an old champion of traditional [Root.Culture.GetName] values, has increasingly come to be at odds with [Root.Monarch.GetName]'s policies and is now about to withdraw from the Royal Council.
+* Trigger:
+** employed_advisor:
+*** category = 0 "Diplomatic
+*** Culture is the same as our country
+** employed_advisor:
+*** category_false = 0 "Administrative
+*** Culture is not the same as our country
+* desc = 0 "It is no secret that [Root.Monarch.GetTitle] hold the [Root.new_monarch_culture.GetCultureName] people dear to [Root.Monarch.GetHerHis] heart and that [Root.Monarch.GetSheHe] speaks the [Root.Culture.GetName] language with a distinct [Root.new_monarch_culture.GetCultureName] accent.\n[Root.Monarch.GetName] even surrounds [Root.Monarch.GetHerselfHimself] with [Root.new_monarch_culture.GetCultureName] advisors and courtiers, something that has not gone unnoticed by the old [Root.Culture.GetName] families in our country. Our court [Root.Dip_Advisor.GetTitle], an old champion of traditional [Root.Culture.GetName] values, has increasingly come to be at odds with [Root.Monarch.GetName]'s policies and is now about to withdraw from the Royal Council.
+* Trigger:
+** employed_advisor:
+*** category = 0 "Military
+*** Culture is the same as our country
+** employed_advisor:
+*** category_false = 0 "Administrative
+*** Culture is not the same as our country
+** employed_advisor:
+*** category_false = 0 "Diplomatic
+*** Culture is not the same as our country
+* desc = 0 "It is no secret that [Root.Monarch.GetTitle] hold the [Root.new_monarch_culture.GetCultureName] people dear to [Root.Monarch.GetHerHis] heart and that [Root.Monarch.GetSheHe] speaks the [Root.Culture.GetName] language with a distinct [Root.new_monarch_culture.GetCultureName] accent.\n[Root.Monarch.GetName] even surrounds [Root.Monarch.GetHerselfHimself] with [Root.new_monarch_culture.GetCultureName] advisors and courtiers, something that has not gone unnoticed by the old [Root.Culture.GetName] families in our country. Our court [Root.Mil_Advisor.GetTitle], an old champion of traditional [Root.Culture.GetName] values, has increasingly come to be at odds with [Root.Monarch.GetName]'s policies and is now about to withdraw from the Royal Council.
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* ruler_culture_false = our country
+* has_reform_false = 0 "Mamluk Government
+* Accepts the new_variable:ruler_culture culture
+* Is not in regency
+* employed_advisor:
+** Culture is the same as our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** export_to_variable:
+*** variable_name = new_monarch_culture
+*** value = ruler_culture
+
+'''Option: 0 "We must try to remedy this situation.:'''
+
+* Changes administrative power stored by -35
+* Adds 5 legitimacy
+
+'''Option: 0 "There is nothing we can do.:'''
+
+* Adds -10 legitimacy
+* If:
+** Limited to:
+*** employed_advisor:
+**** Culture is the same as our country
+**** category = 0 "Administrative
+** remove_advisor_by_category = 0 "Administrative
+* else_if:
+** Limited to:
+*** employed_advisor:
+**** Culture is the same as our country
+**** category = 0 "Diplomatic
+** remove_advisor_by_category = 0 "Diplomatic
+* else:
+** remove_advisor_by_category = 0 "Military
+
+=== 0 "Favoritism in [Root.Capital.GetCapitalName] ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_reform_false = 0 "Mamluk Government
+* ruler_culture_false = our country
+* Does not accept the new_variable:ruler_culture culture
+* Is not in regency
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** export_to_variable:
+*** variable_name = new_monarch_culture
+*** value = ruler_culture
+
+'''Option: 0 "There is no such favoritism.:'''
+
+* reduce_legitimacy_small_effect = yes
+* If:
+** Limited to:
+*** Has the DLC Mandate of Heaven
+*** is_emperor_of_china = yes
+** add_meritocracy = -10
+
+'''Option: 0 "We must be seen to make some amends.:'''
+
+* Changes diplomatic power stored by -15
+
+=== 0 "Friends Abroad ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = GOOD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_reform_false = 0 "Mamluk Government
+* ruler_culture_false = our country
+* Does not accept the new_variable:ruler_culture culture
+* Is not in regency
+* Any known country:
+** Primary culture is new_variable:FROM:ruler_culture
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** export_to_variable:
+*** variable_name = new_monarch_culture
+*** value = ruler_culture
+** Random known country:
+*** Limited to:
+**** Primary culture is new_variable:FROM:ruler_culture
+**** tech_difference = 6
+*** save_event_target_as = advanced_country
+
+'''Option: 0 "One can never have too many friends.:'''
+
+* Every known country:
+** Limited to:
+*** Primary culture is new_variable:FROM:ruler_culture
+** Adds the opinion modifier "0 "Ruler of our Culture" towards our country
+
+'''Option: 0 "Let us study the ways of the [advanced_country.GetAdjective] [advanced_country.GovernmentName].:'''
+
+* Trigger:
+** has_saved_event_target = advanced_country
+** Does not have the ruler modifier 0 "Learning from Culturally Close Countries
+* Adds the ruler modifier "0 "Learning from Culturally Close Countries" until the ruler's death:
+** -5% technology cost
+
+=== 0 "Intrigues in [Root.Capital.GetCapitalName] ===
+* Trigger:
+** employed_advisor:
+*** category = 0 "Administrative
+** Primary culture is not new_variable:adm_advisor_culture
+* desc = 0 "A [Root.other_advisor_culture.GetCultureName] official, [Root.Adm_Advisor.GetName]'s rise to high office has angered many of those closest to [Root.Monarch.GetName]. [Root.prominent_noble.GetName], a member of one of the oldest [Root.Culture.GetName] families in our country, has approached our monarch demanding that we relieve [Root.Adm_Advisor.GetName] of [Root.Adm_Advisor.GetHerHis] position.
+* Trigger:
+** All of the following:
+*** employed_advisor:
+**** category_false = 0 "Administrative
+**** Primary culture is not new_variable:adm_advisor_culture
+** employed_advisor:
+*** category = 0 "Diplomatic
+** Primary culture is not new_variable:dip_advisor_culture
+* desc = 0 "A [Root.other_advisor_culture.GetCultureName] official, [Root.Dip_Advisor.GetName]'s rise to high office has not been easy and has angered many of those closest to [Root.Monarch.GetName]. [Root.prominent_noble.GetName], a member of one of the oldest [Root.Culture.GetName] families in our country, has approached our monarch demanding that we relieve [Root.Dip_Advisor.GetName] of [Root.Dip_Advisor.GetHerHis] position.
+* Trigger:
+** All of the following:
+*** employed_advisor:
+**** category_false = 0 "Administrative
+**** Primary culture is not new_variable:adm_advisor_culture
+** All of the following:
+*** employed_advisor:
+**** category_false = 0 "Diplomatic
+**** Primary culture is not new_variable:dip_advisor_culture
+** employed_advisor:
+*** category = 0 "Military
+** Primary culture is not new_variable:mil_advisor_culture
+* desc = 0 "A [Root.other_advisor_culture.GetCultureName] official, [Root.Mil_Advisor.GetName]'s rise to high office has not been easy and has angered many of those closest to [Root.Monarch.GetName]. [Root.prominent_noble.GetName], a member of one of the oldest [Root.Culture.GetName] families in our country, has approached our monarch demanding that we relieve [Root.Mil_Advisor.GetName] of [Root.Mil_Advisor.GetHerHis] position.
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** All of the following:
+*** employed_advisor:
+**** category = 0 "Administrative
+*** employed_advisor:
+**** category_false = 0 "Administrative
+**** Culture is not the same as our country
+** All of the following:
+*** employed_advisor:
+**** category = 0 "Diplomatic
+*** employed_advisor:
+**** category_false = 0 "Diplomatic
+**** Culture is not the same as our country
+** All of the following:
+*** employed_advisor:
+**** category = 0 "Military
+*** employed_advisor:
+**** category_false = 0 "Military
+**** Culture is not the same as our country
+* Is not in regency
+* legitimacy_equivalent = 10
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** employed_advisor:
+***** category = 0 "Administrative
+**** employed_advisor:
+***** category_false = 0 "Administrative
+***** Culture is not the same as our country
+*** export_to_variable:
+**** variable_name = other_advisor_culture
+**** value = adm_advisor_culture
+** else_if:
+*** Limited to:
+**** employed_advisor:
+***** category = 0 "Diplomatic
+**** employed_advisor:
+***** category_false = 0 "Diplomatic
+***** Culture is not the same as our country
+*** export_to_variable:
+**** variable_name = other_advisor_culture
+**** value = dip_advisor_culture
+** else:
+*** export_to_variable:
+**** variable_name = other_advisor_culture
+**** value = mil_advisor_culture
+** set_saved_name:
+*** Named "prominent_noble"
+*** scope = our country
+
+'''Option: 0 "We must listen to the [Root.GetNoblesReplacementForOtherGovernments] of the Realm.:'''
+
+* If:
+** Limited to:
+*** employed_advisor:
+**** category = 0 "Administrative
+*** employed_advisor:
+**** category_false = 0 "Administrative
+**** Culture is not the same as our country
+** remove_advisor_by_category = 0 "Administrative
+** Changes administrative power stored by -50
+** Creates an advisor of the 0 "Treasurer type:
+*** Named "prominent_noble"
+*** Culture is the same as our country
+*** With a skill level of 2
+* else_if:
+** Limited to:
+*** employed_advisor:
+**** category = 0 "Diplomatic
+*** employed_advisor:
+**** category_false = 0 "Diplomatic
+**** Culture is not the same as our country
+** remove_advisor_by_category = 0 "Diplomatic
+** Changes diplomatic power stored by -50
+** Creates an advisor of the 0 "Naval Reformer type:
+*** Named "prominent_noble"
+*** Culture is the same as our country
+*** With a skill level of 2
+* else:
+** remove_advisor_by_category = 0 "Military
+** Changes military power stored by -50
+** Creates an advisor of the 0 "Quartermaster type:
+*** Named "prominent_noble"
+*** Culture is the same as our country
+*** With a skill level of 2
+
+'''Option: 0 "Preposterous!:'''
+
+* reduce_legitimacy_medium_effect = yes
+* If:
+** Limited to:
+*** Has the DLC Mandate of Heaven
+*** has_reform = 0 "Celestial Empire
+** Changes prestige by -10
+
+=== 0 "Rising support among the [Root.other_advisor_culture.GetCultureName] Population ===
+* Trigger:
+** employed_advisor:
+*** category = 0 "Administrative
+** Primary culture is not new_variable:adm_advisor_culture
+** Any owned province:
+*** Culture is new_variable:From:adm_advisor_culture
+* desc = 0 "As a leading figure of the [Root.other_advisor_culture.GetCultureName] community, [Root.Adm_Advisor.GetName] has both good insights and a strong influence far beyond the council which [Root.Adm_Advisor.GetSheHe] is part of in [Root.Capital.GetCapitalName]. A fact that [Root.Adm_Advisor.GetSheHe] has used to our advantage, strongly increasing the popular support for both our [Root.GovernmentName] and the [Root.Culture.GetName] people that rules it.
+* Trigger:
+** Any of the following:
+*** employed_advisor:
+**** category_false = 0 "Administrative
+*** Primary culture is new_variable:adm_advisor_culture
+** employed_advisor:
+*** category = 0 "Diplomatic
+** Primary culture is not new_variable:dip_advisor_culture
+** Any owned province:
+*** Culture is new_variable:From:dip_advisor_culture
+* desc = 0 "As a leading figure of the [Root.other_advisor_culture.GetCultureName] community, [Root.Dip_Advisor.GetName] has both good insights and a strong influence far beyond the council which [Root.Dip_Advisor.GetSheHe] is part of in [Root.Capital.GetCapitalName]. A fact that [Root.Dip_Advisor.GetSheHe] has used to our advantage, strongly increasing the popular support for both our [Root.GovernmentName] and the [Root.Culture.GetName] people that rules it.
+* Trigger:
+** Any of the following:
+*** employed_advisor:
+**** category_false = 0 "Administrative
+*** Primary culture is new_variable:adm_advisor_culture
+** Any of the following:
+*** employed_advisor:
+**** category_false = 0 "Diplomatic
+*** Primary culture is new_variable:dip_advisor_culture
+** employed_advisor:
+*** category = 0 "Military
+** Primary culture is not new_variable:mil_advisor_culture
+** Any owned province:
+*** Culture is new_variable:From:mil_advisor_culture
+* desc = 0 "As a leading figure of the [Root.other_advisor_culture.GetCultureName] community, [Root.Mil_Advisor.GetName] has both good insights and a strong influence far beyond the council which [Root.Mil_Advisor.GetSheHe] is part of in [Root.Capital.GetCapitalName]. A fact that [Root.Mil_Advisor.GetSheHe] has used to our advantage, strongly increasing the popular support for both our [Root.GovernmentName] and the [Root.Culture.GetName] people that rules it.
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = GOOD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Any of the following:
+** All of the following:
+*** employed_advisor:
+**** category = 0 "Administrative
+*** employed_advisor:
+**** category_false = 0 "Administrative
+**** Culture is not the same as our country
+** All of the following:
+*** employed_advisor:
+**** category = 0 "Diplomatic
+*** employed_advisor:
+**** category_false = 0 "Diplomatic
+**** Culture is not the same as our country
+** All of the following:
+*** employed_advisor:
+**** category = 0 "Military
+*** employed_advisor:
+**** category_false = 0 "Military
+**** Culture is not the same as our country
+* If:
+** Limited to:
+*** employed_advisor:
+**** category = 0 "Administrative
+*** employed_advisor:
+**** category_false = 0 "Administrative
+**** Culture is not the same as our country
+** Any owned province:
+*** Culture is new_variable:From:adm_advisor_culture
+*** Does not have the province modifier "0 "Support for the Government"
+* If:
+** Limited to:
+*** Any of the following:
+**** employed_advisor:
+***** category_false = 0 "Administrative
+**** employed_advisor:
+***** category = 0 "Administrative
+***** Culture is the same as our country
+*** employed_advisor:
+**** category = 0 "Diplomatic
+*** employed_advisor:
+**** category_false = 0 "Diplomatic
+**** Culture is not the same as our country
+** Any owned province:
+*** Culture is new_variable:From:dip_advisor_culture
+*** Does not have the province modifier "0 "Support for the Government"
+* If:
+** Limited to:
+*** Any of the following:
+**** employed_advisor:
+***** category_false = 0 "Administrative
+**** employed_advisor:
+***** category = 0 "Administrative
+***** Culture is the same as our country
+*** Any of the following:
+**** employed_advisor:
+***** category_false = 0 "Diplomatic
+**** employed_advisor:
+***** category = 0 "Diplomatic
+***** Culture is the same as our country
+*** employed_advisor:
+**** category = 0 "Military
+*** employed_advisor:
+**** category_false = 0 "Military
+**** Culture is not the same as our country
+** Any owned province:
+*** Culture is new_variable:From:mil_advisor_culture
+*** Does not have the province modifier "0 "Support for the Government"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** employed_advisor:
+***** category = 0 "Administrative
+**** employed_advisor:
+***** category_false = 0 "Administrative
+***** Culture is not the same as our country
+**** Any owned province:
+***** Culture is new_variable:From:adm_advisor_culture
+*** export_to_variable:
+**** variable_name = other_advisor_culture
+**** value = adm_advisor_culture
+** else_if:
+*** Limited to:
+**** employed_advisor:
+***** category = 0 "Diplomatic
+**** employed_advisor:
+***** category_false = 0 "Diplomatic
+***** Culture is not the same as our country
+**** Any owned province:
+***** Culture is new_variable:From:dip_advisor_culture
+*** export_to_variable:
+**** variable_name = other_advisor_culture
+**** value = dip_advisor_culture
+** else:
+*** export_to_variable:
+**** variable_name = other_advisor_culture
+**** value = mil_advisor_culture
+
+'''Option: 0 "Great.:'''
+
+* If:
+** Limited to:
+*** calc_true_if:
+**** Every owned province:
+***** Culture is variable:From:other_advisor_culture
+***** Does not have the province modifier "0 "Support for the Government"
+**** 6 will be built
+** Hidden effect:
+*** Every owned province:
+**** Limited to:
+***** Culture is variable:From:other_advisor_culture
+***** Does not have the province modifier "0 "Support for the Government"
+**** Adds the modifier "0 "Support for the Government" until the end of the campaign:
+***** local_unrest = -2
+***** +10% production efficiency
+* else:
+** Every owned province:
+*** Limited to:
+**** Culture is variable:From:other_advisor_culture
+**** Does not have the province modifier "0 "Support for the Government"
+*** Adds the modifier "0 "Support for the Government" until the end of the campaign:
+**** local_unrest = -2
+**** +10% production efficiency
+
+=== 0 "The [Root.other_advisor_religion.GetReligionName] Minister ===
+* Trigger:
+** employed_advisor:
+*** category = 0 "Administrative
+*** Follows the heretic religion
+* desc = 0 "The [Root.other_advisor_religion.GetReligionName] faithful have watched the rise of our [Root.Adm_Advisor.GetTitle] [Root.Adm_Advisor.GetName] with both interest and enthusiasm. To many [Root.Adm_Advisor.GetSheHe] has become proof that it is possible for someone to do well within the [Root.GetAdjective] state despite not belonging to the state religion.
+* Trigger:
+** employed_advisor:
+*** category_false = 0 "Administrative
+*** Does not follow the heretic religion
+** employed_advisor:
+*** category = 0 "Diplomatic
+*** Follows the heretic religion
+* desc = 0 "The [Root.other_advisor_religion.GetReligionName] faithful have watched the rise of our [Root.Dip_Advisor.GetTitle] [Root.Dip_Advisor.GetName] with both interest and enthusiasm. To many [Root.Dip_Advisor.GetSheHe] has become proof that it is possible for someone to do well within the [Root.GetAdjective] state despite not belonging to the state religion.
+* Trigger:
+** employed_advisor:
+*** category_false = 0 "Administrative
+*** Does not follow the heretic religion
+** employed_advisor:
+*** category_false = 0 "Diplomatic
+*** Does not follow the heretic religion
+** employed_advisor:
+*** category = 0 "Military
+*** Follows the heretic religion
+* desc = 0 "The [Root.other_advisor_religion.GetReligionName] faithful have watched the rise of our [Root.Mil_Advisor.GetTitle] [Root.Mil_Advisor.GetName] with both interest and enthusiasm. To many [Root.Mil_Advisor.GetSheHe] has become proof that it is possible for someone to do well within the [Root.GetAdjective] state despite not belonging to the state religion.
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = GOOD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* employed_advisor:
+** Follows the heretic religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** employed_advisor:
+***** category = 0 "Administrative
+***** Follows the heretic religion
+*** export_to_variable:
+**** variable_name = other_advisor_religion
+**** value = adm_advisor_religion
+*** Sets the country flag adm_advisor_heretic
+** else_if:
+*** Limited to:
+**** employed_advisor:
+***** category_false = 0 "Administrative
+***** Does not follow the heretic religion
+**** employed_advisor:
+***** category = 0 "Diplomatic
+***** Follows the heretic religion
+*** export_to_variable:
+**** variable_name = other_advisor_religion
+**** value = dip_advisor_religion
+*** Sets the country flag dip_advisor_heretic
+** else:
+*** export_to_variable:
+**** variable_name = other_advisor_religion
+**** value = mil_advisor_religion
+*** Sets the country flag mil_advisor_heretic
+
+'''Option: 0 "One day you might all rise to be like [Root.Adm_Advisor.GetName].:'''
+
+* Trigger:
+** Has the country flag adm_advisor_heretic
+* add_stability_or_adm_power = yes
+
+'''Option: 0 "One day you might all rise to be like [Root.Dip_Advisor.GetName].:'''
+
+* Trigger:
+** Has the country flag dip_advisor_heretic
+* add_stability_or_adm_power = yes
+
+'''Option: 0 "One day you might all rise to be like [Root.Mil_Advisor.GetName].:'''
+
+* Trigger:
+** Has the country flag mil_advisor_heretic
+* add_stability_or_adm_power = yes
+* trigger_switch:
+** on_trigger = has_country_flag
+** adm_advisor_heretic:
+*** Removes the country flag adm_advisor_heretic
+** dip_advisor_heretic:
+*** Removes the country flag dip_advisor_heretic
+** mil_advisor_heretic:
+*** Removes the country flag mil_advisor_heretic
+
+=== 0 "Heathens in High Places ===
+* Trigger:
+** employed_advisor:
+*** category = 0 "Administrative
+*** Follows the heathen religion
+* desc = 0 "The clergy have long objected to our use of heathen in high positions. When [Root.Adm_Advisor.GetName] was made [Root.Adm_Advisor.GetTitle] they objected loudly, and their objections have not grown any less adamant over time. Some leading religious scholars, both at home and abroad, are now denouncing the [Root.GovernmentName] for its blatant favoritism of non-[Root.Religion.GetGroupName] officials.
+* Trigger:
+** employed_advisor:
+*** category_false = 0 "Administrative
+*** Does not follow the heathen religion
+** employed_advisor:
+*** category = 0 "Diplomatic
+*** Follows the heathen religion
+* desc = 0 "The clergy have long objected to our use of heathen in high positions. When [Root.Dip_Advisor.GetName] was made [Root.Dip_Advisor.GetTitle] they objected loudly, and their objections have not grown any less adamant over time. Some leading religious scholars, both at home and abroad, are now denouncing the [Root.GovernmentName] for its blatant favoritism of non-[Root.Religion.GetGroupName] officials.
+* Trigger:
+** employed_advisor:
+*** category_false = 0 "Administrative
+*** Does not follow the heathen religion
+** employed_advisor:
+*** category_false = 0 "Diplomatic
+*** Does not follow the heathen religion
+** employed_advisor:
+*** category = 0 "Military
+*** Follows the heathen religion
+* desc = 0 "The clergy have long objected to our use of heathen in high positions. When [Root.Mil_Advisor.GetName] was made [Root.Mil_Advisor.GetTitle] they objected loudly, and their objections have not grown any less adamant over time. Some leading religious scholars, both at home and abroad, are now denouncing the [Root.GovernmentName] for its blatant favoritism of non-[Root.Religion.GetGroupName] officials.
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* employed_advisor:
+** Follows the heathen religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** employed_advisor:
+***** category = 0 "Administrative
+***** Follows the heathen religion
+*** export_to_variable:
+**** variable_name = other_advisor_religion
+**** value = adm_advisor_religion
+*** Sets the country flag adm_advisor_heathen
+** else_if:
+*** Limited to:
+**** employed_advisor:
+***** category_false = 0 "Administrative
+***** Does not follow the heathen religion
+**** employed_advisor:
+***** category = 0 "Diplomatic
+***** Follows the heathen religion
+*** export_to_variable:
+**** variable_name = other_advisor_religion
+**** value = dip_advisor_religion
+*** Sets the country flag dip_advisor_heathen
+** else:
+*** export_to_variable:
+**** variable_name = other_advisor_religion
+**** value = mil_advisor_religion
+*** Sets the country flag mil_advisor_heathen
+
+'''Option: 0 "It is time we let [Root.Adm_Advisor.GetName] go.:'''
+
+* Trigger:
+** Has the country flag adm_advisor_heathen
+* remove_advisor_by_category = 0 "Administrative
+* Changes administrative power stored by -25
+
+'''Option: 0 "It is time we let [Root.Dip_Advisor.GetName] go.:'''
+
+* Trigger:
+** Has the country flag dip_advisor_heathen
+* remove_advisor_by_category = 0 "Diplomatic
+* Changes diplomatic power stored by -25
+
+'''Option: 0 "It is time we let [Root.Mil_Advisor.GetName] go.:'''
+
+* Trigger:
+** Has the country flag mil_advisor_heathen
+* remove_advisor_by_category = 0 "Military
+* Changes military power stored by -25
+
+'''Option: 0 "We do not bow to the demands of petty dilettantes.:'''
+
+* If:
+** Limited to:
+*** calc_true_if:
+**** all_known_country:
+***** Is in our country's religion group
+**** 12 will be built
+** Hidden effect:
+*** Every known country:
+**** Limited to:
+***** Is in our country's religion group
+**** Adds the opinion modifier "0 "Heathen Tendencies" towards our country
+* else:
+** Every known country:
+*** Limited to:
+**** Is in our country's religion group
+*** Adds the opinion modifier "0 "Heathen Tendencies" towards our country
+* trigger_switch:
+** on_trigger = has_country_flag
+** adm_advisor_heathen:
+*** Removes the country flag adm_advisor_heathen
+** dip_advisor_heathen:
+*** Removes the country flag dip_advisor_heathen
+** mil_advisor_heathen:
+*** Removes the country flag mil_advisor_heathen
+
+=== 0 "Influence in the Cabinet ===
+* Trigger:
+** employed_advisor:
+*** category = 0 "Administrative
+*** Follows the heretic religion
+* desc = 0 "Many of the faithful [Root.Religion.GetName] of [Root.GetName] see our [Root.Adm_Advisor.GetTitle], [Root.Adm_Advisor.GetName], as a threat to the theological purity of the government. It is feared that through [Root.Adm_Advisor.GetHerHis] influence [Root.Monarch.GetName] will be convinced to favor the [Root.other_advisor_religion.GetReligionName] in government or indeed that [Root.Adm_Advisor.GetSheHe] might turn the [Root.Monarch.GetTitle] [Root.Monarch.GetHerselfHimself] away from the true faith.
+* Trigger:
+** employed_advisor:
+*** category_false = 0 "Administrative
+*** Does not follow the heretic religion
+** employed_advisor:
+*** category = 0 "Diplomatic
+*** Follows the heretic religion
+* desc = 0 "Many of the faithful [Root.Religion.GetName] of [Root.GetName] see our [Root.Dip_Advisor.GetTitle], [Root.Dip_Advisor.GetName], as a threat to the theological purity of the government. It is feared that through [Root.Dip_Advisor.GetHerHis] influence [Root.Monarch.GetName] will be convinced to favor the [Root.other_advisor_religion.GetReligionName] in government or indeed that [Root.Dip_Advisor.GetSheHe] might turn the [Root.Monarch.GetTitle] [Root.Monarch.GetHerselfHimself] away from the true faith.
+* Trigger:
+** employed_advisor:
+*** category_false = 0 "Administrative
+*** Does not follow the heretic religion
+** employed_advisor:
+*** category_false = 0 "Diplomatic
+*** Does not follow the heretic religion
+** employed_advisor:
+*** category = 0 "Military
+*** Follows the heretic religion
+* desc = 0 "Many of the faithful [Root.Religion.GetName] of [Root.GetName] see our [Root.Mil_Advisor.GetTitle], [Root.Mil_Advisor.GetName], as a threat to the theological purity of the government. It is feared that through [Root.Mil_Advisor.GetHerHis] influence [Root.Monarch.GetName] will be convinced to favor the [Root.other_advisor_religion.GetReligionName] in government or indeed that [Root.Mil_Advisor.GetSheHe] might turn the [Root.Monarch.GetTitle] [Root.Monarch.GetHerselfHimself] away from the true faith.
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* employed_advisor:
+** Follows the heretic religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** If:
+*** Limited to:
+**** employed_advisor:
+***** category = 0 "Administrative
+***** Follows the heretic religion
+*** export_to_variable:
+**** variable_name = other_advisor_religion
+**** value = adm_advisor_religion
+*** Sets the country flag adm_advisor_heretic
+** else_if:
+*** Limited to:
+**** employed_advisor:
+***** category_false = 0 "Administrative
+***** Does not follow the heretic religion
+**** employed_advisor:
+***** category = 0 "Diplomatic
+***** Follows the heretic religion
+*** export_to_variable:
+**** variable_name = other_advisor_religion
+**** value = dip_advisor_religion
+*** Sets the country flag dip_advisor_heretic
+** else:
+*** export_to_variable:
+**** variable_name = other_advisor_religion
+**** value = mil_advisor_religion
+*** Sets the country flag mil_advisor_heretic
+
+'''Option: 0 "It is time we let [Root.Adm_Advisor.GetName] go.:'''
+
+* Trigger:
+** Has the country flag adm_advisor_heretic
+* remove_advisor_by_category = 0 "Administrative
+* Changes administrative power stored by -25
+* add_estate_church_loyalty_effect = yes
+
+'''Option: 0 "It is time we let [Root.Dip_Advisor.GetName] go.:'''
+
+* Trigger:
+** Has the country flag dip_advisor_heretic
+* remove_advisor_by_category = 0 "Diplomatic
+* Changes diplomatic power stored by -25
+* add_estate_church_loyalty_effect = yes
+
+'''Option: 0 "It is time we let [Root.Mil_Advisor.GetName] go.:'''
+
+* Trigger:
+** Has the country flag mil_advisor_heretic
+* remove_advisor_by_category = 0 "Military
+* Changes military power stored by -25
+* add_estate_church_loyalty_effect = yes
+
+'''Option: 0 "Preposterous.:'''
+
+* reduce_estate_church_loyalty_effect = yes
+* Adds -5 legitimacy
+* Changes prestige by -5
+* trigger_switch:
+** on_trigger = has_country_flag
+** adm_advisor_heretic:
+*** Removes the country flag adm_advisor_heretic
+** dip_advisor_heretic:
+*** Removes the country flag dip_advisor_heretic
+** mil_advisor_heretic:
+*** Removes the country flag mil_advisor_heretic
+
+=== 0 "[Root.foreign_leader.GetName] and the [foreign_culture_province.Culture.GetName] People ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = GOOD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Stability is at least 1
+* Any owned province:
+** The province has a different culture than its owner
+** has_owner_accepted_culture_false = no
+** Does not have the province modifier "0 "Influential Powerholder"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province has a different culture than its owner
+**** has_owner_accepted_culture_false = no
+**** Does not have the province modifier "0 "Influential Powerholder"
+*** save_event_target_as = foreign_culture_province
+*** Random country with provinces cored by this nation:
+**** Limited to:
+***** Country is not our country
+**** save_event_target_as = foreign_tag
+** If:
+*** Limited to:
+**** has_saved_event_target = foreign_tag
+*** set_saved_name:
+**** Named "foreign_leader"
+**** scope = event_target:foreign_tag
+** else:
+*** set_saved_name:
+**** Named "foreign_leader"
+**** scope = our country
+
+'''Option: 0 "[Root.foreign_leader.GetName] will be a welcome addition to the cabinet.:'''
+
+* Changes prestige by -10
+* If:
+** Limited to:
+*** Monthly income is less than 30 ducats
+** Creates an advisor of the 0 "Statesman type:
+*** discount = yes
+*** Culture is event_target:foreign_culture_province
+*** Follows the event_target:foreign_culture_province religion
+* else:
+** Creates an advisor of the 0 "Statesman type:
+*** discount = yes
+*** Culture is event_target:foreign_culture_province
+*** Follows the event_target:foreign_culture_province religion
+
+'''Option: 0 "He serves us better as a local leader of our [foreign_culture_province.Culture.GetName] subjects.:'''
+
+* event_target:foreign_culture_province:
+** area:
+*** Limited to:
+**** Does not have the province modifier "0 "Influential Powerholder"
+**** The province is owned by our country
+*** Adds the modifier "0 "Influential Powerholder" until the end of the campaign:
+**** state_maintenance_modifier = -0.1
+**** +10% manpower modifier
+**** +10% provincial tax income
+**** local_development_cost = -0.1
+
+=== 0 "A Rising Star? ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = GOOD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = HEIR_AND_FOREIGN_ADVISOR_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Stability is at least 1
+* Any owned province:
+** Is not in our country's religion group
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** set_saved_name:
+*** Named "rising_star_advisor"
+*** scope = our country
+** Random owned province:
+*** Limited to:
+**** Is not in our country's religion group
+*** save_event_target_as = wrong_religion_province
+** One of the following will happen:
+*** 25 relative chance:
+**** Sets the country flag trader_flag
+*** 25 relative chance:
+**** Sets the country flag spymaster_flag
+*** 25 relative chance:
+**** Sets the country flag recruitmaster_flag
+*** 25 relative chance:
+**** Sets the country flag treasurer_flag
+
+'''Option: 0 "Let us make an exception for the good of the country.:'''
+
+* Changes prestige by -5
+* trigger_switch:
+** on_trigger = has_country_flag
+** trader_flag:
+*** If:
+**** Limited to:
+***** Monthly income is less than 30 ducats
+**** Creates an advisor of the 0 "Trader type:
+***** discount = yes
+***** Follows the event_target:wrong_religion_province religion
+*** else:
+**** Creates an advisor of the 0 "Trader type:
+***** discount = yes
+***** Follows the event_target:wrong_religion_province religion
+** spymaster_flag:
+*** If:
+**** Limited to:
+***** Monthly income is less than 30 ducats
+**** Creates an advisor of the 0 "Spymaster type:
+***** discount = yes
+***** Follows the event_target:wrong_religion_province religion
+*** else:
+**** Creates an advisor of the 0 "Spymaster type:
+***** discount = yes
+***** Follows the event_target:wrong_religion_province religion
+** recruitmaster_flag:
+*** If:
+**** Limited to:
+***** Monthly income is less than 30 ducats
+**** Creates an advisor of the 0 "Master Recruiter type:
+***** discount = yes
+***** Follows the event_target:wrong_religion_province religion
+*** else:
+**** Creates an advisor of the 0 "Master Recruiter type:
+***** discount = yes
+***** Follows the event_target:wrong_religion_province religion
+** treasurer_flag:
+*** If:
+**** Limited to:
+***** Monthly income is less than 30 ducats
+**** Creates an advisor of the 0 "Treasurer type:
+***** discount = yes
+***** Follows the event_target:wrong_religion_province religion
+*** else:
+**** Creates an advisor of the 0 "Treasurer type:
+***** discount = yes
+***** Follows the event_target:wrong_religion_province religion
+
+'''Option: 0 "A remarkable individual, but we all have our place in life.:'''
+
+* Changes prestige by 10
+* trigger_switch:
+** on_trigger = has_country_flag
+** trader_flag:
+*** Removes the country flag trader_flag
+** spymaster_flag:
+*** Removes the country flag spymaster_flag
+** recruitmaster_flag:
+*** Removes the country flag recruitmaster_flag
+** treasurer_flag:
+*** Removes the country flag treasurer_flag
+
+=== 0 "Rising Tensions among the [wrong_culture_province.Culture.GetName] People ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Stability is lower than 0
+* Any owned province:
+** The province has a different culture than its owner
+** Culture group is not the same as our country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province has a different culture than its owner
+**** Culture group is not the same as our country
+*** save_event_target_as = wrong_culture_province
+
+'''Option: 0 "We have ministers who can communicate with these Barbarians.:'''
+
+* Trigger:
+** employed_advisor:
+*** Culture is event_target:wrong_culture_province
+* If:
+** Limited to:
+*** employed_advisor:
+**** category = 0 "Administrative
+**** Culture is event_target:wrong_culture_province
+** Changes administrative power stored by -10
+* else_if:
+** Limited to:
+*** employed_advisor:
+**** category = 0 "Diplomatic
+** Changes diplomatic power stored by -10
+* else:
+** Changes military power stored by -10
+
+'''Option: 0 "[Root.Monarch.GetName] [Root.Monarch.GetHerselfHimself] might be able to sway them.:'''
+
+* Trigger:
+** ruler_culture = event_target:wrong_culture_province
+* Changes prestige by -5
+
+'''Option: 0 "[Root.Heir.GetName] has always had a way with these people.:'''
+
+* Trigger:
+** heir_culture = event_target:wrong_culture_province
+** ruler_culture_false = event_target:wrong_culture_province
+* Changes prestige by -5
+
+'''Option: 0 "Perhaps [Root.Consort.GetName] can convince them of our good will?:'''
+
+* Trigger:
+** consort_culture = event_target:wrong_culture_province
+** heir_culture_false = event_target:wrong_culture_province
+** ruler_culture_false = event_target:wrong_culture_province
+* Changes prestige by -5
+
+'''Option: 0 "Best send in soldiers before this escalates.:'''
+
+* event_target:wrong_culture_province:
+** Spawns revolt of size 2 of 0 "Separatists rebels
+
+'''Option: 0 "Perhaps some tax exemptions could ease their burden.:'''
+
+* Modifies treasury by -0.15 years worth of income
+
+=== 0 "[Root.potential_heir_religion.GetReligionName] [Root.Heir.GetTitle]? ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the monarchy government type
+* Has an heir
+* Heir is at least 15 years old
+* heir_religion_false = our country
+* Is in the new_variable:heir_religion religion group
+* has_heir_flag_false = 0 "Legitimacy Questioned
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** set_saved_name:
+*** Named "leading_religious_person"
+*** scope = our country
+** export_to_variable:
+*** variable_name = potential_heir_religion
+*** value = heir_religion
+** set_heir_flag = 0 "Legitimacy Questioned
+
+'''Option: 0 "It is time to have a talk with [Root.Heir.GetName]:'''
+
+* set_heir_religion = our country
+* If:
+** Limited to:
+*** heir_dip = 2
+** change_heir_dip = -1
+* else_if:
+** Limited to:
+*** heir_mil = 2
+** change_heir_mil = -1
+* else_if:
+** Limited to:
+*** heir_adm = 2
+** change_heir_adm = -1
+* else:
+** Changes diplomatic power stored by -50
+
+'''Option: 0 "Last I looked [Root.leading_religious_person.GetName] was not the [Root.Monarch.GetTitle] of this country.:'''
+
+* Changes the heir's legitimacy by -15
+
+=== 0 "The Faith of [Root.Heir.GetName] ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the monarchy government type
+* Has an heir
+* Heir is at least 15 years old
+* heir_religion_false = our country
+* Is not in new_variable:heir_religion's religion group
+* has_heir_flag_false = 0 "Legitimacy Questioned
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** export_to_variable:
+*** variable_name = potential_heir_religion
+*** value = heir_religion
+** set_heir_flag = 0 "Legitimacy Questioned
+
+'''Option: 0 "What harm could come of this?:'''
+
+* Changes the heir's legitimacy by -25
+
+'''Option: 0 "This is something [Root.Heir.GetSheHe] will have to keep to [Root.Heir.GetHerselfHimself].:'''
+
+* set_heir_religion = our country
+* If:
+** Limited to:
+*** heir_dip = 2
+** change_heir_dip = -1
+* else_if:
+** Limited to:
+*** heir_mil = 2
+** change_heir_mil = -1
+* else_if:
+** Limited to:
+*** heir_adm = 2
+** change_heir_adm = -1
+* else:
+** Changes diplomatic power stored by -50
+
+=== 0 "The Succession of [Root.Monarch.GetName] ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the monarchy government type
+* Is not in regency
+* Has no heir
+* has_reform_false = ottoman_government
+* has_reform_false = 0 "Mamluk Government
+* has_reform_false = states_general_reform
+* Is not the lesser partner in a union
+* has_government_attribute = heir
+* Any owned province:
+** The province has a different culture than its owner
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province has a different culture than its owner
+*** save_event_target_as = family_holdings
+** If:
+*** Limited to:
+**** Any country:
+***** Primary culture is event_target:family_holdings
+*** Random country:
+**** Limited to:
+***** Primary culture is event_target:family_holdings
+**** save_event_target_as = good_name_list
+*** set_saved_name:
+**** Named "young_heir"
+**** scope = event_target:good_name_list
+** else:
+*** set_saved_name:
+**** Named "young_heir"
+**** scope = our country
+** set_heir_flag = 0 "Legitimacy Questioned
+
+'''Option: 0 "A capital idea!:'''
+
+* Spawns an heir:
+** age = 20
+** Named "young_heir"
+** Ruler's dynasty is our country
+** Culture is event_target:family_holdings
+** Legitimacy of 75
+
+'''Option: 0 "We will never see a [family_holdings.Culture.GetName] noble on our throne.:'''
+
+* Adds 5 legitimacy
+
+=== 0 "A Question of Faith ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_ruler_flag_false = faith_question
+* Has the monarchy government type
+* ruler_religion_false = our country
+* Legitimacy is at least 90
+* Stability is at least 2
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** set_ruler_flag = faith_question
+** export_to_variable:
+*** variable_name = new_monarch_religion
+*** value = ruler_religion
+
+'''Option: 0 "[Root.Capital.GetCapitalName] shall be a [Root.new_monarch_religion.GetReligionName] city.:'''
+
+* AI chance:
+** Base chance of 5
+** Multiplies value by 5:
+*** The dominant religion is new_variable:ruler_religion
+* Changes religion to new_variable:ruler_religion
+* Changes stability by -4
+* Adds -30 legitimacy
+
+'''Option: 0 "We could never take such a risk.:'''
+
+* AI chance:
+** Base chance of 95
+* Changes prestige by 10
+
+=== 0 "The Court of [Root.Monarch.GetName] ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = BAD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_ruler_flag_false = culture_question
+* Has the monarchy government type
+* ruler_culture_false = our country
+* heir_culture = new_variable:ruler_culture
+* Legitimacy is at least 90
+* Stability is at least 2
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** set_ruler_flag = culture_question
+** export_to_variable:
+*** variable_name = new_monarch_culture
+*** value = ruler_culture
+
+'''Option: 0 "The time has come indeed.:'''
+
+* AI chance:
+** Base chance of 5
+** Multiplies value by 5:
+*** The dominant culture is the same as in new_variable:ruler_culture
+* If:
+** Limited to:
+*** Does not accept the new_variable:ruler_culture culture
+*** Culture group is not new_variable:ruler_culture
+** Changes stability by -3
+** Adds -30 legitimacy
+* else:
+** Changes stability by -2
+** Adds -15 legitimacy
+* Change the primary culture to new_variable:ruler_culture
+
+'''Option: 0 "We could never dishonor the legacy of our ancestors.:'''
+
+* AI chance:
+** Base chance of 95
+* Changes prestige by 10
+
+=== 0 "[Root.new_monarch_culture.GetCultureName] Migration ===
+* Trigger:
+** Does not have the DLC Cradle of Civilization
+* picture = GOOD_WITH_MONARCH_eventPicture
+* Trigger:
+** Has the DLC Cradle of Civilization
+* picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the monarchy government type
+* ruler_culture_false = our country
+* heir_culture = new_variable:ruler_culture
+* Legitimacy is at least 90
+* Stability is at least 2
+* Any known country:
+** Primary culture is new_variable:From:ruler_culture
+** Has a royal marriage with our country
+* Any owned province:
+** The province has the same culture as its owner
+** is_state = yes
+** The province is not the capital of the country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** export_to_variable:
+*** variable_name = new_monarch_culture
+*** value = ruler_culture
+** Random owned province:
+*** Limited to:
+**** The province has the same culture as its owner
+**** is_state = yes
+**** The province is not the capital of the country
+*** save_event_target_as = cultural_migration_province
+
+'''Option: 0 "Let us welcome our countrymen.:'''
+
+* AI chance:
+** Base chance of 5
+* event_target:cultural_migration_province:
+** Changes culture to new_variable:From:ruler_culture
+** add_base_production = 1
+
+'''Option: 0 "Let us spread them out a bit among our people.:'''
+
+* AI chance:
+** Base chance of 95
+* Changes prestige by 10

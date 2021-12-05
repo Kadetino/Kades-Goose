@@ -1,0 +1,3887 @@
+
+=== title = fetishist_flavor.1.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.1.a:'''
+
+* unlock_cult = yemoja_cult
+
+=== title = fetishist_flavor.2.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.2.a:'''
+
+* unlock_cult = roog_cult
+
+=== title = fetishist_flavor.3.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.3.a:'''
+
+* unlock_cult = nyame_cult
+
+=== title = fetishist_flavor.4.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = yemoja_cult
+* Is not in regency
+* Has an heir
+* ruler_age = 19
+* Capital:
+** Does not have the province modifier "decisive_ruler"
+** Does not have the province modifier "nonchalant_ruler"
+* Trigger:
+** has_adopted_cult = yemoja_cult
+* desc = fetishist_flavor.4.d.a
+* Trigger:
+* desc = fetishist_flavor.4.d.b
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+
+'''Option: fetishist_flavor.4.a:'''
+
+* Kills the heir of the country
+* Adds the ruler modifier "decisive_ruler" until the ruler's death:
+** +5% infantry power
+** Legitimacy is at least 0.5
+* Trigger:
+** Heir is less than 15 years old
+
+'''Option: fetishist_flavor.4.b:'''
+
+* Adds the ruler modifier "nonchalant_ruler" until the ruler's death:
+** devotion = -0.1
+** Legitimacy is at least -0.1
+* Trigger:
+** Heir is less than 15 years old
+
+'''Option: fetishist_flavor.4.c:'''
+
+* Kills the heir of the country
+* Adds the ruler modifier "decisive_ruler" until the ruler's death:
+** +5% infantry power
+** Legitimacy is at least 0.5
+* Trigger:
+** Heir is at least 15 years old
+
+'''Option: fetishist_flavor.4.d:'''
+
+* Adds the ruler modifier "nonchalant_ruler" until the ruler's death:
+** devotion = -0.1
+** Legitimacy is at least -0.1
+* Trigger:
+** Heir is at least 15 years old
+
+=== title = fetishist_flavor.5.t ===
+
+'''Trigger:'''
+
+* Any of the following:
+** has_adopted_cult = yemoja_cult
+** has_adopted_cult = roog_cult
+** has_adopted_cult = nyame_cult
+* Is not in regency
+* ruler_age = 15
+* Any neighbor country:
+** Not at war with our country
+** Is not allied with our country
+** Has an opinion of less than 50 with our country
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random neighbor country:
+*** Limited to:
+**** Not at war with our country
+**** Is not allied with our country
+**** Has an opinion of less than 50 with our country
+*** save_event_target_as = nonchalant_neighbor
+** set_ruler_flag = upset_by_tragically_killed_cousin
+* Trigger:
+** has_adopted_cult = yemoja_cult
+* desc = fetishist_flavor.5.d.a
+* Trigger:
+** has_adopted_cult = roog_cult
+* desc = fetishist_flavor.5.d.b
+* Trigger:
+** has_adopted_cult = nyame_cult
+* desc = fetishist_flavor.5.d.c
+* Trigger:
+** has_adopted_cult_false = yemoja_cult
+** has_adopted_cult_false = roog_cult
+** has_adopted_cult_false = nyame_cult
+* desc = fetishist_flavor.5.d.d
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+
+'''Option: fetishist_flavor.5.a:'''
+
+* AI chance:
+** Base chance of 20
+* Changes treasury by -35 ducats
+* Changes diplomatic power stored by 60
+* Gets the country event:
+** ID is fetishist_flavor.7
+** Base mean time to happen of 20 days
+* event_target:nonchalant_neighbor:
+** Adds the opinion modifier "0 "Approves of Diplomacy" towards our country
+* Trigger:
+** Any of the following:
+*** has_adopted_cult = yemoja_cult
+*** has_adopted_cult = roog_cult
+*** has_adopted_cult = nyame_cult
+
+'''Option: fetishist_flavor.5.b:'''
+
+* AI chance:
+** Base chance of 80
+* Adds the opinion modifier "0 "Disapproves of Threats" towards event_target:nonchalant_neighbor
+* Gives the 0 "Diplomatic Insult casus belli against event_target:nonchalant_neighbor
+* event_target:nonchalant_neighbor:
+** Gets the country event:
+*** ID is fetishist_flavor.6
+*** Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.5.c:'''
+
+* event_target:nonchalant_neighbor:
+** Adds the opinion modifier "0 "Approves of Diplomacy" towards our country
+
+=== title = fetishist_flavor.6.t ===
+* Cannot fire randomly
+* Trigger:
+** Any of the following:
+*** has_adopted_cult = yemoja_cult
+*** has_adopted_cult = roog_cult
+*** has_adopted_cult = nyame_cult
+* desc = fetishist_flavor.6.d.a
+* Trigger:
+** has_adopted_cult_false = yemoja_cult
+** has_adopted_cult_false = roog_cult
+** has_adopted_cult_false = nyame_cult
+* desc = fetishist_flavor.6.d.b
+
+'''Option: fetishist_flavor.6.a:'''
+
+* Tooltip:
+** Our country:
+*** Gives the 0 "Diplomatic Insult casus belli against our country
+* Trigger:
+** has_adopted_cult = our country
+
+'''Option: fetishist_flavor.6.b:'''
+
+* Tooltip:
+** Our country:
+*** Gives the 0 "Diplomatic Insult casus belli against our country
+* Trigger:
+** Follows our country's religion
+** has_adopted_cult_false = our country
+
+'''Option: fetishist_flavor.6.c:'''
+
+* Tooltip:
+** Our country:
+*** Gives the 0 "Diplomatic Insult casus belli against our country
+* Trigger:
+** Does not follow our country's religion
+
+=== title = fetishist_flavor.7.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_ruler_flag = upset_by_tragically_killed_cousin
+* Trigger:
+** has_adopted_cult = yemoja_cult
+* desc = fetishist_flavor.7.d.a
+* Trigger:
+** has_adopted_cult = roog_cult
+* desc = fetishist_flavor.7.d.b
+* Trigger:
+** has_adopted_cult = nyame_cult
+* desc = fetishist_flavor.7.d.c
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** One of the following will happen:
+*** 20 relative chance:
+**** Sets the country flag fantastic_ceremony
+*** 80 relative chance:
+**** Sets the country flag ok_ceremony
+
+'''Option: fetishist_flavor.7.a:'''
+
+* trigger_switch:
+** on_trigger = has_country_flag
+** fantastic_ceremony:
+*** Changes prestige by 10
+*** Removes the country flag fantastic_ceremony
+** ok_ceremony:
+*** Adds the modifier "serenity_of_faith" for 5 years:
+**** +5% land morale
+**** -20% recruitment time
+*** Removes the country flag ok_ceremony
+
+=== title = fetishist_flavor.8.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = nyame_cult
+* Any owned province:
+** The province is not the capital of the country
+** Follows the owner religion
+** Does not have the province modifier "the_will_of_tano"
+** Does not have the province modifier "the_whim_of_anansi"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** Follows the owner religion
+**** Does not have the province modifier "the_will_of_tano"
+**** Does not have the province modifier "the_whim_of_anansi"
+*** save_event_target_as = tormented_province
+* Trigger:
+** has_adopted_cult = nyame_cult
+* desc = fetishist_flavor.8.d.a
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+
+'''Option: fetishist_flavor.8.a:'''
+
+* AI chance:
+** Base chance of 20
+* Changes administrative power stored by 30
+* One of the following will happen:
+** 20 relative chance:
+*** event_target:tormented_province:
+**** Adds the modifier "the_will_of_tano" until the end of the campaign:
+***** +10% manpower modifier
+***** +10% local defensiveness
+** 80 relative chance:
+
+'''Option: fetishist_flavor.8.b:'''
+
+* AI chance:
+** Base chance of 80
+* Changes treasury by -20 ducats
+* One of the following will happen:
+** 60 relative chance:
+*** event_target:tormented_province:
+**** Adds the modifier "the_whim_of_anansi" until the end of the campaign:
+***** +10% provincial tax income
+***** +10% production efficiency
+** 40 relative chance:
+
+=== title = fetishist_flavor.9.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = roog_cult
+* Any owned province:
+** Does not follow the owner religion
+** Does not have the province modifier "presence_of_the_ancestors"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Does not follow the owner religion
+**** Does not have the province modifier "presence_of_the_ancestors"
+*** save_event_target_as = heathen_province
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+* Multiplies value by 0.9:
+** Has the idea group 0 "Religious Ideas
+
+'''Option: fetishist_flavor.9.a:'''
+
+* Changes diplomatic power stored by 30
+* event_target:heathen_province:
+** Adds the modifier "presence_of_the_ancestors" until the end of the campaign:
+*** +2% missionary strength
+
+=== title = fetishist_flavor.11.t ===
+
+'''Immediate effects:'''
+
+* Random neighbor country:
+** Limited to:
+*** Does not follow the 0 "Fetishist religion
+*** Is allied with our country
+*** Any of the following:
+**** All of the following:
+***** Is in the 0 "Eastern religion group
+***** ROOT:
+****** has_unlocked_cult_false = buddhism_cult
+**** All of the following:
+***** Is in the 0 "Dharmic religion group
+***** ROOT:
+****** has_unlocked_cult_false = dharmic_cult
+**** All of the following:
+***** Is in the 0 "Christian religion group
+***** ROOT:
+****** has_unlocked_cult_false = christianity_cult
+**** All of the following:
+***** Is in the 0 "Muslim religion group
+***** ROOT:
+****** has_unlocked_cult_false = islam_cult
+**** All of the following:
+***** Follows the norse_pagan_reformed religion
+***** ROOT:
+****** has_unlocked_cult_false = norse_cult
+**** All of the following:
+***** Follows the zoroastrian religion
+***** ROOT:
+****** has_unlocked_cult_false = zoroastrian_cult
+**** All of the following:
+***** Follows the jewish religion
+***** ROOT:
+****** has_unlocked_cult_false = jewish_cult
+**** All of the following:
+***** Follows the 0 "Nahuatl religion
+***** ROOT:
+****** has_unlocked_cult_false = south_central_american_cult
+**** All of the following:
+***** Follows the 0 "Mayan religion
+***** ROOT:
+****** has_unlocked_cult_false = south_central_american_cult
+** If:
+*** Limited to:
+**** Any of the following:
+***** Follows the 0 "Mayan religion
+***** Follows the 0 "Nahuatl religion
+**** ROOT:
+***** has_unlocked_cult_false = south_central_american_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.404
+** If:
+*** Limited to:
+**** Is in the 0 "Christian religion group
+**** ROOT:
+***** has_unlocked_cult_false = christianity_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.400
+** If:
+*** Limited to:
+**** Is in the 0 "Muslim religion group
+**** ROOT:
+***** has_unlocked_cult_false = islam_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.401
+** If:
+*** Limited to:
+**** Is in the 0 "Eastern religion group
+**** ROOT:
+***** has_unlocked_cult_false = buddhism_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.402
+** If:
+*** Limited to:
+**** Is in the 0 "Dharmic religion group
+**** ROOT:
+***** has_unlocked_cult_false = dharmic_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.403
+** If:
+*** Limited to:
+**** Follows the norse_pagan_reformed religion
+**** ROOT:
+***** has_unlocked_cult_false = norse_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.405
+** If:
+*** Limited to:
+**** Follows the jewish religion
+**** ROOT:
+***** has_unlocked_cult_false = jewish_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.406
+** If:
+*** Limited to:
+**** Follows the zoroastrian religion
+**** ROOT:
+***** has_unlocked_cult_false = zoroastrian_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.407
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* Any neighbor country:
+** Does not follow the 0 "Fetishist religion
+** Is allied with our country
+** Any of the following:
+*** All of the following:
+**** Is in the 0 "Eastern religion group
+**** ROOT:
+***** has_unlocked_cult_false = buddhism_cult
+*** All of the following:
+**** Is in the 0 "Dharmic religion group
+**** ROOT:
+***** has_unlocked_cult_false = dharmic_cult
+*** All of the following:
+**** Is in the 0 "Christian religion group
+**** ROOT:
+***** has_unlocked_cult_false = christianity_cult
+*** All of the following:
+**** Is in the 0 "Muslim religion group
+**** ROOT:
+***** has_unlocked_cult_false = islam_cult
+*** All of the following:
+**** Follows the norse_pagan_reformed religion
+**** ROOT:
+***** has_unlocked_cult_false = norse_cult
+*** All of the following:
+**** Follows the zoroastrian religion
+**** ROOT:
+***** has_unlocked_cult_false = zoroastrian_cult
+*** All of the following:
+**** Follows the jewish religion
+**** ROOT:
+***** has_unlocked_cult_false = jewish_cult
+*** All of the following:
+**** Follows the 0 "Nahuatl religion
+**** ROOT:
+***** has_unlocked_cult_false = south_central_american_cult
+*** All of the following:
+**** Follows the 0 "Mayan religion
+**** ROOT:
+***** has_unlocked_cult_false = south_central_american_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.11.t:'''
+
+
+=== title = fetishist_flavor.1.t ===
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* has_unlocked_cult_false = yemoja_cult
+* Any neighbor country:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = yemoja_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.1.a:'''
+
+* unlock_cult = yemoja_cult
+
+=== title = fetishist_flavor.2.t ===
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* has_unlocked_cult_false = roog_cult
+* Any neighbor country:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = roog_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.2.a:'''
+
+* unlock_cult = roog_cult
+
+=== title = fetishist_flavor.3.t ===
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* has_unlocked_cult_false = nyame_cult
+* Any neighbor country:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = nyame_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.3.a:'''
+
+* unlock_cult = nyame_cult
+
+=== title = fetishist_flavor.101.t ===
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* has_unlocked_cult_false = cwezi_cult
+* Any neighbor country:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = cwezi_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.101.a:'''
+
+* unlock_cult = cwezi_cult
+
+=== title = fetishist_flavor.102.t ===
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* has_unlocked_cult_false = central_african_ancestor_cult
+* Any neighbor country:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = central_african_ancestor_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.102.a:'''
+
+* unlock_cult = central_african_ancestor_cult
+
+=== title = fetishist_flavor.103.t ===
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* has_unlocked_cult_false = mwari_cult
+* Any neighbor country:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = mwari_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.103.a:'''
+
+* unlock_cult = mwari_cult
+
+=== title = fetishist_flavor.201.t ===
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* has_unlocked_cult_false = enkai_cult
+* Any neighbor country:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = enkai_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.201.a:'''
+
+* unlock_cult = enkai_cult
+
+=== title = fetishist_flavor.202.t ===
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* has_unlocked_cult_false = waaq_cult
+* Any neighbor country:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = waaq_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.202.a:'''
+
+* unlock_cult = waaq_cult
+
+=== title = fetishist_flavor.203.t ===
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* has_unlocked_cult_false = zanahary_cult
+* Any neighbor country:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = zanahary_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.203.a:'''
+
+* unlock_cult = zanahary_cult
+
+=== title = fetishist_flavor.21.t ===
+
+'''Immediate effects:'''
+
+* Random owned province:
+** Limited to:
+*** Does not follow the 0 "Fetishist religion
+*** Any of the following:
+**** All of the following:
+***** Is in the 0 "Eastern religion group
+***** ROOT:
+****** has_unlocked_cult_false = buddhism_cult
+**** All of the following:
+***** Is in the 0 "Dharmic religion group
+***** ROOT:
+****** has_unlocked_cult_false = dharmic_cult
+**** All of the following:
+***** Is in the 0 "Christian religion group
+***** ROOT:
+****** has_unlocked_cult_false = christianity_cult
+**** All of the following:
+***** Is in the 0 "Muslim religion group
+***** ROOT:
+****** has_unlocked_cult_false = islam_cult
+**** All of the following:
+***** Follows the norse_pagan_reformed religion
+***** ROOT:
+****** has_unlocked_cult_false = norse_cult
+**** All of the following:
+***** Follows the zoroastrian religion
+***** ROOT:
+****** has_unlocked_cult_false = zoroastrian_cult
+**** All of the following:
+***** Follows the jewish religion
+***** ROOT:
+****** has_unlocked_cult_false = jewish_cult
+**** All of the following:
+***** Follows the 0 "Nahuatl religion
+***** ROOT:
+****** has_unlocked_cult_false = south_central_american_cult
+**** All of the following:
+***** Follows the 0 "Mayan religion
+***** ROOT:
+****** has_unlocked_cult_false = south_central_american_cult
+** If:
+*** Limited to:
+**** Any of the following:
+***** Follows the 0 "Mayan religion
+***** Follows the 0 "Nahuatl religion
+**** ROOT:
+***** has_unlocked_cult_false = south_central_american_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.404
+** If:
+*** Limited to:
+**** Is in the 0 "Christian religion group
+**** ROOT:
+***** has_unlocked_cult_false = christianity_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.400
+** If:
+*** Limited to:
+**** Is in the 0 "Muslim religion group
+**** ROOT:
+***** has_unlocked_cult_false = islam_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.401
+** If:
+*** Limited to:
+**** Is in the 0 "Eastern religion group
+**** ROOT:
+***** has_unlocked_cult_false = buddhism_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.402
+** If:
+*** Limited to:
+**** Is in the 0 "Dharmic religion group
+**** ROOT:
+***** has_unlocked_cult_false = dharmic_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.403
+** If:
+*** Limited to:
+**** Follows the norse_pagan_reformed religion
+**** ROOT:
+***** has_unlocked_cult_false = norse_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.405
+** If:
+*** Limited to:
+**** Follows the jewish religion
+**** ROOT:
+***** has_unlocked_cult_false = jewish_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.406
+** If:
+*** Limited to:
+**** Follows the zoroastrian religion
+**** ROOT:
+***** has_unlocked_cult_false = zoroastrian_cult
+*** ROOT:
+**** Gets the country event:
+***** ID is fetishist_flavor.407
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* Any owned province:
+** Does not follow the 0 "Fetishist religion
+** Any of the following:
+*** All of the following:
+**** Is in the 0 "Eastern religion group
+**** ROOT:
+***** has_unlocked_cult_false = buddhism_cult
+*** All of the following:
+**** Is in the 0 "Dharmic religion group
+**** ROOT:
+***** has_unlocked_cult_false = dharmic_cult
+*** All of the following:
+**** Is in the 0 "Christian religion group
+**** ROOT:
+***** has_unlocked_cult_false = christianity_cult
+*** All of the following:
+**** Is in the 0 "Muslim religion group
+**** ROOT:
+***** has_unlocked_cult_false = islam_cult
+*** All of the following:
+**** Follows the norse_pagan_reformed religion
+**** ROOT:
+***** has_unlocked_cult_false = norse_cult
+*** All of the following:
+**** Follows the zoroastrian religion
+**** ROOT:
+***** has_unlocked_cult_false = zoroastrian_cult
+*** All of the following:
+**** Follows the jewish religion
+**** ROOT:
+***** has_unlocked_cult_false = jewish_cult
+*** All of the following:
+**** Follows the 0 "Nahuatl religion
+**** ROOT:
+***** has_unlocked_cult_false = south_central_american_cult
+*** All of the following:
+**** Follows the 0 "Mayan religion
+**** ROOT:
+***** has_unlocked_cult_false = south_central_american_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: fetishist_flavor.21.t:'''
+
+
+=== title = fetishist_flavor.101.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.101.a:'''
+
+* unlock_cult = cwezi_cult
+
+=== title = fetishist_flavor.102.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.102.a:'''
+
+* unlock_cult = central_african_ancestor_cult
+
+=== title = fetishist_flavor.103.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.103.a:'''
+
+* unlock_cult = mwari_cult
+
+=== title = fetishist_flavor.130.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* has_adopted_cult = central_african_ancestor_cult
+* Does not have the ruler modifier ancestral_support
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.130.a:'''
+
+* Adds the ruler modifier "ancestral_support" until the ruler's death:
+** -10% stability cost modifier
+
+'''Option: fetishist_flavor.130.b:'''
+
+* Adds 10 legitimacy
+* Changes republican tradition by 250%
+* add_horde_unity = 5
+* add_devotion = 5
+
+=== title = fetishist_flavor.131.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* has_adopted_cult = central_african_ancestor_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.131.a:'''
+
+* Changes administrative power stored by -25
+* Changes diplomatic power stored by -25
+* Adds the ruler modifier "ancestral_shrine_caretaker" until the ruler's death:
+** -2 global unrest
+** -5% global tax modifier
+
+'''Option: fetishist_flavor.131.b:'''
+
+* Changes prestige by -10
+
+=== title = fetishist_flavor.132.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* has_adopted_cult = central_african_ancestor_cult
+* Has the ruler modifier ancestral_shrine_caretaker
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.132.a:'''
+
+* Changes administrative power stored by -25
+* Modifies treasury by -0.1 years worth of income
+
+'''Option: fetishist_flavor.132.b:'''
+
+* Changes prestige by -10
+* Changes stability by -1
+* Removes the country modifier "ancestral_shrine_caretaker"
+
+=== title = fetishist_flavor.133.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* has_adopted_cult = central_african_ancestor_cult
+* Year is at least 1500
+* has_ruler_flag_false = had_ancestor_deified
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.133.a:'''
+
+* add_stability_or_adm_power = yes
+* set_ruler_flag = had_ancestor_deified
+
+=== title = fetishist_flavor.150.t ===
+* Province event
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* The province is not the capital of the country
+* The owner of the province:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = mwari_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+* Multiplies value by 0.8:
+** Does not follow the 0 "Fetishist religion
+
+'''Option: fetishist_flavor.150.a:'''
+
+* Trigger:
+** Follows the 0 "Fetishist religion
+* Adds the modifier "enforced_mwari_orthodoxy" until the end of the campaign:
+** local_autonomy = -0.1
+** local_unrest = 1
+
+'''Option: fetishist_flavor.150.b:'''
+
+* Adds the modifier "religious_leniency" until the end of the campaign:
+** local_unrest = -3
+
+'''Option: fetishist_flavor.150.c:'''
+
+* Trigger:
+** Does not follow the 0 "Fetishist religion
+* Adds the modifier "mwari_forced_conversions_of_heathens" until the end of the campaign:
+** local_unrest = 2
+** +1% missionary strength
+
+=== title = fetishist_flavor.151.t ===
+* Province event
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* local_autonomy = 50
+* is_state = yes
+* The owner of the province:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = mwari_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.151.a:'''
+
+* add_local_autonomy = -15
+
+=== title = fetishist_flavor.152.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* has_adopted_cult = mwari_cult
+* Any owned province:
+** is_looted = yes
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** is_looted = yes
+*** save_event_target_as = wrath_of_mwari
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.152.a:'''
+
+* Changes stability by -1
+
+=== title = fetishist_flavor.153.t ===
+* Province event
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* The owner of the province:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = mwari_cult
+** Any of the following:
+*** All of the following:
+**** Has the monarchy government type
+**** Legitimacy is less than 80
+*** All of the following:
+**** Has the republic government type
+**** Republican tradition is less than 75
+*** All of the following:
+**** has_reform = 0 "Steppe Nomads
+**** Legitimacy is less than 80
+**** horde_unity_false = 75
+*** All of the following:
+**** Has the theocracy government type
+**** devotion_false = 80
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.153.a:'''
+
+* Spawns revolt of size 1 of 0 "Pretender rebels
+
+=== title = fetishist_flavor.154.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* has_adopted_cult = mwari_cult
+* Has at least 5 provinces
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.154.a:'''
+
+* Adds the modifier "firexit" for 10 years:
+** global_autonomy = 0.03
+** -1 global unrest
+
+'''Option: fetishist_flavor.154.b:'''
+
+* Adds the modifier "forced_mwari_adherence" for 10 years:
+** +1 global unrest
+** global_autonomy = -0.02
+
+=== title = fetishist_flavor.170.t ===
+* Province event
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* Does not have the province modifier "fertility_concerns"
+* The owner of the province:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = cwezi_cult
+* is_in_capital_area = yes
+* The province is not the capital of the country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.170.a:'''
+
+* area:
+** Limited to:
+*** The province is owned by our country
+*** The province is not the capital of the country
+** Adds the modifier "fertility_concerns" until the end of the campaign:
+*** -10% production efficiency
+*** local_development_cost = 0.1
+*** -10% manpower modifier
+
+'''Option: fetishist_flavor.170.b:'''
+
+* The owner of the province:
+** Adds -5 legitimacy
+** Changes republican tradition by -250%
+** add_horde_unity = -5
+** add_devotion = -5
+* Hidden effect:
+** One of the following will happen:
+*** 70 relative chance:
+**** Gets the province event:
+***** ID is fetishist_flavor.171
+*** 30 relative chance:
+**** Gets the province event:
+***** ID is fetishist_flavor.172
+
+'''Option: fetishist_flavor.170.c:'''
+
+* Trigger:
+** The owner of the province:
+*** Ruler is male
+*** has_consort = yes
+* The owner of the province:
+** kill_consort = yes
+** Adds 10 legitimacy
+** Changes republican tradition by 500%
+** add_horde_unity = 10
+** add_devotion = 10
+** Changes prestige by 10
+
+=== title = fetishist_flavor.171.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.171.a:'''
+
+
+=== title = fetishist_flavor.172.t ===
+* Province event
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.172.a:'''
+
+* area:
+** Limited to:
+*** The province is owned by our country
+** Adds the modifier "fertility_concerns" until the end of the campaign:
+*** -10% production efficiency
+*** local_development_cost = 0.1
+*** -10% manpower modifier
+
+=== title = fetishist_flavor.173.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* has_adopted_cult = cwezi_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** is_state = yes
+**** local_autonomy = 50
+*** Sets the province flag itinerant_sorceress_effect
+** Random owned province:
+*** Limited to:
+**** is_state = yes
+**** local_autonomy = 50
+**** Does not have the province flag itinerant_sorceress_effect
+*** Sets the province flag itinerant_sorceress_effect
+
+'''Option: fetishist_flavor.173.a:'''
+
+* Modifies treasury by -0.05 years worth of income
+* Changes prestige by 5
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Has the province flag itinerant_sorceress_effect
+*** Removes the province flag itinerant_sorceress_effect
+
+'''Option: fetishist_flavor.173.b:'''
+
+* Trigger:
+** Any owned province:
+*** is_state = yes
+*** local_autonomy = 50
+* Every owned province:
+** Limited to:
+*** Has the province flag itinerant_sorceress_effect
+** add_local_autonomy = -50
+** Removes the province flag itinerant_sorceress_effect
+* Changes administrative power stored by -25
+
+'''Option: fetishist_flavor.173.c:'''
+
+* Trigger:
+** Stability is lower than 3
+* Changes diplomatic power stored by -75
+* add_stability_or_adm_power = yes
+* Hidden effect:
+** Every owned province:
+*** Limited to:
+**** Has the province flag itinerant_sorceress_effect
+*** Removes the province flag itinerant_sorceress_effect
+
+=== title = fetishist_flavor.174.t ===
+* Trigger:
+** has_adopted_cult = cwezi_cult
+* desc = fetishist_flavor.174.da
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* has_adopted_cult = cwezi_cult
+* Stability is lower than 3
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.174.a:'''
+
+* Changes stability by -1
+
+'''Option: fetishist_flavor.174.b:'''
+
+* Changes administrative power stored by -25
+* Adds -10 legitimacy
+* Changes republican tradition by -500%
+* add_horde_unity = -10
+* add_devotion = -10
+* Changes prestige by -10
+
+=== title = fetishist_flavor.175.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* has_adopted_cult = cwezi_cult
+* Any owned province:
+** The province is not the capital of the country
+** Does not have the province modifier "shrine_with_privileges"
+** Does not have the province modifier "local_demagogue"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+*** save_event_target_as = shrine_with_demands
+
+'''Option: fetishist_flavor.175.a:'''
+
+* Modifies treasury by -0.5 years worth of income
+* Changes prestige by 10
+* event_target:shrine_with_demands:
+** Changes base tax by 1
+** Adds the modifier "shrine_with_privileges" until the end of the campaign:
+*** -20% provincial tax income
+*** local_autonomy = 0.05
+
+'''Option: fetishist_flavor.175.b:'''
+
+* Changes prestige by -10
+* event_target:shrine_with_demands:
+** Adds the modifier "local_demagogue" until the end of the campaign:
+*** local_unrest = 4
+
+=== title = fetishist_flavor.201.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.201.a:'''
+
+* unlock_cult = enkai_cult
+
+=== title = fetishist_flavor.202.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.202.a:'''
+
+* unlock_cult = waaq_cult
+
+=== title = fetishist_flavor.203.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.203.a:'''
+
+* unlock_cult = zanahary_cult
+
+=== title = fetishist_flavor.204.t ===
+* Trigger:
+** has_adopted_cult = waaq_cult
+* desc = fetishist_flavor.204.d.a
+* Trigger:
+** has_adopted_cult = yemoja_cult
+* desc = fetishist_flavor.204.d.b
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* It is before the 4. month of the year
+* Any owned province:
+** Does not have the province modifier "rains_of_fertility"
+** Does not have the province modifier "barren_lands"
+* Any of the following:
+** has_adopted_cult = waaq_cult
+** has_adopted_cult = yemoja_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 500 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Produces 0 "Grain
+**** Does not have the province modifier "rains_of_fertility"
+**** Does not have the province modifier "barren_lands"
+*** save_event_target_as = rain_province
+** If:
+*** Limited to:
+**** has_saved_event_target_false = rain_province
+*** Random owned province:
+**** Limited to:
+***** Does not have the province modifier "rains_of_fertility"
+***** Does not have the province modifier "barren_lands"
+**** save_event_target_as = rain_province
+
+'''Option: fetishist_flavor.204.a:'''
+
+* Changes administrative power stored by -20
+* Sets the country flag rain_prayers
+* Hidden effect:
+** One of the following will happen:
+*** 67 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.205
+***** Base mean time to happen of 90 days
+*** 33 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.206
+***** Base mean time to happen of 90 days
+* Trigger:
+** has_adopted_cult = waaq_cult
+
+'''Option: fetishist_flavor.204.b:'''
+
+* Changes administrative power stored by -20
+* Sets the country flag rain_prayers
+* Hidden effect:
+** One of the following will happen:
+*** 67 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.205
+***** Base mean time to happen of 90 days
+*** 33 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.206
+***** Base mean time to happen of 90 days
+* Trigger:
+** has_adopted_cult = yemoja_cult
+
+'''Option: fetishist_flavor.204.c:'''
+
+* Hidden effect:
+** One of the following will happen:
+*** 33 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.205
+***** Base mean time to happen of 90 days
+*** 67 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.206
+***** Base mean time to happen of 90 days
+
+=== title = fetishist_flavor.205.t ===
+* Trigger:
+** Has the country flag rain_prayers
+** has_adopted_cult = waaq_cult
+* desc = fetishist_flavor.205.d.a
+* Trigger:
+** Does not have the country flag rain_prayers
+*** } has_adopted_cult = waaq_cult
+* desc = fetishist_flavor.205.d.b
+* Trigger:
+** Has the country flag rain_prayers
+** has_adopted_cult = yemoja_cult
+* desc = fetishist_flavor.205.d.c
+* Trigger:
+** Does not have the country flag rain_prayers
+*** } has_adopted_cult = yemoja_cult
+* desc = fetishist_flavor.205.d.d
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.205.a:'''
+
+* Removes the country flag rain_prayers
+* event_target:rain_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "rains_of_fertility" until the end of the campaign:
+**** +15% production efficiency
+* Trigger:
+** has_adopted_cult = waaq_cult
+
+'''Option: fetishist_flavor.205.b:'''
+
+* Removes the country flag rain_prayers
+* event_target:rain_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "rains_of_fertility" until the end of the campaign:
+**** +15% production efficiency
+* Trigger:
+** has_adopted_cult = yemoja_cult
+
+=== title = fetishist_flavor.206.t ===
+* Trigger:
+** Has the country flag rain_prayers
+** has_adopted_cult = waaq_cult
+* desc = fetishist_flavor.206.d.a
+* Trigger:
+** Does not have the country flag rain_prayers
+*** } has_adopted_cult = waaq_cult
+* desc = fetishist_flavor.206.d.b
+* Trigger:
+** Has the country flag rain_prayers
+** has_adopted_cult = yemoja_cult
+* desc = fetishist_flavor.206.d.c
+* Trigger:
+** Does not have the country flag rain_prayers
+*** } has_adopted_cult = yemoja_cult
+* desc = fetishist_flavor.206.d.d
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.206.a:'''
+
+* Removes the country flag rain_prayers
+* event_target:rain_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "barren_lands" until the end of the campaign:
+**** -10% production efficiency
+* Trigger:
+** has_adopted_cult = waaq_cult
+
+'''Option: fetishist_flavor.206.b:'''
+
+* Removes the country flag rain_prayers
+* event_target:rain_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "barren_lands" until the end of the campaign:
+**** -10% production efficiency
+* Trigger:
+** has_adopted_cult = yemoja_cult
+
+=== title = fetishist_flavor.207.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = enkai_cult
+* Has the DLC Rights of Man
+* Does not have the country modifier "bold_warriors"
+* Does not have the country modifier "disciplined_warriors"
+* Manpower are less than 80% of maximum
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Option: fetishist_flavor.207.a:'''
+
+* Changes national manpower by 1 years worth of men
+* Adds the modifier "bold_warriors" for 10 years:
+** +5% land morale
+
+'''Option: fetishist_flavor.207.b:'''
+
+* Changes national manpower by 1 years worth of men
+* Adds the modifier "disciplined_warriors" for 10 years:
+** +2.5% discipline
+
+=== title = fetishist_flavor.208.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = enkai_cult
+* Has the DLC Rights of Man
+* Any owned province:
+** Follows the 0 "Fetishist religion
+** Does not have the province modifier "god_is_black"
+** Does not have the province modifier "god_is_red"
+** Does not have the province modifier "forced_sacrifice"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Follows the 0 "Fetishist religion
+**** Does not have the province modifier "god_is_black"
+**** Does not have the province modifier "god_is_red"
+*** save_event_target_as = drought_province
+
+'''Option: fetishist_flavor.208.a:'''
+
+* event_target:drought_province:
+** area:
+*** Adds the modifier "god_is_red" until the end of the campaign:
+**** -10% production efficiency
+*** Adds the modifier "forced_sacrifice" until the end of the campaign:
+**** local_unrest = 3
+* Hidden effect:
+** One of the following will happen:
+*** 67 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.209
+***** Base mean time to happen of 9 days
+*** 33 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.210
+***** Base mean time to happen of 9 days
+
+'''Option: fetishist_flavor.208.b:'''
+
+* event_target:drought_province:
+** area:
+*** Adds the modifier "god_is_red" until the end of the campaign:
+**** -10% production efficiency
+* Hidden effect:
+** One of the following will happen:
+*** 33 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.209
+***** Base mean time to happen of 9 days
+*** 67 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.210
+***** Base mean time to happen of 9 days
+
+=== title = fetishist_flavor.209.t ===
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.209.a:'''
+
+* event_target:drought_province:
+** area:
+*** Removes the country modifier "god_is_red"
+*** Adds the modifier "god_is_black" until the end of the campaign:
+**** +15% production efficiency
+
+=== title = fetishist_flavor.210.t ===
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.210.a:'''
+
+
+=== title = fetishist_flavor.301.t ===
+
+'''Trigger:'''
+
+* Any of the following:
+** has_adopted_cult = zanahary_cult
+** has_adopted_cult = central_african_ancestor_cult
+* Has the DLC Rights of Man
+* Does not have the country flag lost_ancestral_lands
+* Does not have the country flag has_ancestral_lands
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Capital:
+*** save_event_target_as = ancestral_lands
+** Capital:
+*** Random bordering province:
+**** Limited to:
+***** area = PREV
+***** The province is owned by our country
+**** save_event_target_as = ancestral_lands
+
+'''Option: fetishist_flavor.301.a:'''
+
+* Sets the country flag has_ancestral_lands
+* event_target:ancestral_lands:
+** Adds the modifier "ancestral_tomb" until the end of the campaign:
+*** Legitimacy is at least 1
+*** horde_unity = 1
+*** Republican tradition is at least 0.5
+*** devotion = 0.5
+*** local_autonomy = 0.08
+
+=== title = fetishist_flavor.302.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* has_adopted_cult_false = zanahary_cult
+* has_adopted_cult_false = central_african_ancestor_cult
+* Has the country flag has_ancestral_lands
+* Has the DLC Rights of Man
+* Any owned province:
+** Any of the following:
+*** Has the province modifier "ancestral_tomb"
+*** Has the province modifier "grand_ancestral_tomb"
+*** Has the province modifier "crumbling_ancestral_tomb"
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** Has the province modifier "ancestral_tomb"
+***** Has the province modifier "grand_ancestral_tomb"
+***** Has the province modifier "crumbling_ancestral_tomb"
+*** save_event_target_as = ancestral_lands
+
+'''Option: fetishist_flavor.302.a:'''
+
+* Removes the country flag has_ancestral_lands
+* event_target:ancestral_lands:
+** Removes the country modifier "ancestral_tomb"
+** Removes the country modifier "grand_ancestral_tomb"
+** Removes the country modifier "crumbling_ancestral_tomb"
+
+=== title = fetishist_flavor.303.t ===
+
+'''Trigger:'''
+
+* Any of the following:
+** has_adopted_cult = zanahary_cult
+** has_adopted_cult = central_african_ancestor_cult
+* Has the DLC Rights of Man
+* Has the country flag has_ancestral_lands
+** No owned province:
+*** Any of the following:
+**** Has the province modifier "ancestral_tomb"
+**** Has the province modifier "grand_ancestral_tomb"
+**** Has the province modifier "crumbling_ancestral_tomb"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 2 months
+
+'''Option: fetishist_flavor.303.a:'''
+
+* Removes the country flag has_ancestral_lands
+* Sets the country flag lost_ancestral_lands
+* Adds -10 legitimacy
+* add_horde_unity = -10
+* Changes republican tradition by -1000%
+* add_devotion = -5
+* Changes prestige by -15
+
+=== title = fetishist_flavor.304.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the country flag lost_ancestral_lands
+* Has the DLC Rights of Man
+* Any of the following:
+** has_adopted_cult = zanahary_cult
+** has_adopted_cult = central_african_ancestor_cult
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Capital:
+*** save_event_target_as = ancestral_lands
+** Capital:
+*** Random bordering province:
+**** Limited to:
+***** area = PREV
+***** The province is owned by our country
+**** save_event_target_as = ancestral_lands
+
+'''Option: fetishist_flavor.304.a:'''
+
+* Removes the country flag lost_ancestral_lands
+* Sets the country flag has_ancestral_lands
+* If:
+** Limited to:
+*** Monthly income is at least 20 ducats
+** Modifies treasury by -1 years worth of income
+* If:
+** Limited to:
+*** Monthly income is less than 20 ducats
+** Changes treasury by -250 ducats
+* Changes prestige by 15
+* event_target:ancestral_lands:
+** Adds the modifier "ancestral_tomb" until the end of the campaign:
+*** Legitimacy is at least 1
+*** horde_unity = 1
+*** Republican tradition is at least 0.5
+*** devotion = 0.5
+*** local_autonomy = 0.08
+
+'''Option: fetishist_flavor.304.b:'''
+
+* Adds -5 legitimacy
+* add_horde_unity = -5
+* Changes republican tradition by -500%
+* add_devotion = -3
+* Changes prestige by -10
+
+=== title = fetishist_flavor.310.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = zanahary_cult
+* Has the DLC Rights of Man
+* Any owned province:
+** Any of the following:
+*** Has the province modifier "ancestral_tomb"
+*** Has the province modifier "crumbling_ancestral_tomb"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Any of the following:
+***** Has the province modifier "ancestral_tomb"
+***** Has the province modifier "grand_ancestral_tomb"
+***** Has the province modifier "crumbling_ancestral_tomb"
+*** save_event_target_as = ancestral_lands
+
+'''Option: fetishist_flavor.310.a:'''
+
+* If:
+** Limited to:
+*** Monthly income is at least 20 ducats
+** Modifies treasury by -1 years worth of income
+* If:
+** Limited to:
+*** Monthly income is less than 20 ducats
+** Changes treasury by -250 ducats
+* event_target:ancestral_lands:
+** Adds the modifier "grand_ancestral_tomb" until the end of the campaign:
+*** Legitimacy is at least 1
+*** horde_unity = 1
+*** Republican tradition is at least 0.5
+*** devotion = 0.5
+*** local_autonomy = 0.08
+** Hidden effect:
+*** Removes the country modifier "crumbling_ancestral_tomb"
+*** Removes the country modifier "ancestral_tomb"
+* Hidden effect:
+** Gets the country event:
+*** ID is fetishist_flavor.311
+*** Base mean time to happen of 5474 days
+
+'''Option: fetishist_flavor.310.b:'''
+
+* If:
+** Limited to:
+*** Monthly income is at least 20 ducats
+** Modifies treasury by -0.4 years worth of income
+* If:
+** Limited to:
+*** Monthly income is less than 20 ducats
+** Changes treasury by -100 ducats
+* event_target:ancestral_lands:
+** If:
+*** Limited to:
+**** Has the province modifier "crumbling_ancestral_tomb"
+*** Adds the modifier "ancestral_tomb" until the end of the campaign:
+**** Legitimacy is at least 1
+**** horde_unity = 1
+**** Republican tradition is at least 0.5
+**** devotion = 0.5
+**** local_autonomy = 0.08
+*** Hidden effect:
+**** Removes the country modifier "crumbling_ancestral_tomb"
+
+'''Option: fetishist_flavor.310.c:'''
+
+* event_target:ancestral_lands:
+** Adds the modifier "crumbling_ancestral_tomb" until the end of the campaign:
+*** Legitimacy is at least -0.25
+*** horde_unity = -0.25
+*** Republican tradition is at least -0.1
+*** devotion = -0.1
+** Hidden effect:
+*** Removes the country modifier "ancestral_tomb"
+
+=== title = fetishist_flavor.311.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* event_target:ancestral_lands:
+** Has the province modifier "grand_ancestral_tomb"
+* Has the DLC Rights of Man
+
+'''Option: fetishist_flavor.311.a:'''
+
+* event_target:ancestral_lands:
+** Adds the modifier "ancestral_tomb" until the end of the campaign:
+*** Legitimacy is at least 1
+*** horde_unity = 1
+*** Republican tradition is at least 0.5
+*** devotion = 0.5
+*** local_autonomy = 0.08
+** Hidden effect:
+*** Removes the country modifier "grand_ancestral_tomb"
+
+=== title = fetishist_flavor.312.t ===
+* Trigger:
+** has_adopted_cult = waaq_cult
+* desc = fetishist_flavor.312.d.a
+
+'''Trigger:'''
+
+* has_adopted_cult = waaq_cult
+* Has the DLC Rights of Man
+* Any owned province:
+** The province is not the capital of the country
+** is_state = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** The province is not the capital of the country
+**** is_state = yes
+*** save_event_target_as = earthquake_province
+** Random neighbor country:
+*** Limited to:
+**** Follows our country's religion
+**** has_unlocked_cult_false = our country
+*** save_event_target_as = earthquake_infidel
+** Random neighbor country:
+*** Limited to:
+**** Does not follow our country's religion
+*** save_event_target_as = earthquake_infidel
+* Trigger:
+** has_saved_event_target = earthquake_infidel
+
+'''Option: fetishist_flavor.312.a:'''
+
+* Gives the 0 "Diplomatic Insult casus belli against event_target:earthquake_infidel
+* event_target:earthquake_infidel:
+** Adds the opinion modifier "opinion_insulted_by_accusation" towards our country
+* event_target:earthquake_province:
+** Adds the modifier "hit_by_earthquake" until the end of the campaign:
+*** -15% manpower modifier
+*** -15% provincial tax income
+*** -15% production efficiency
+* Trigger:
+** Any owned province:
+*** Does not follow the religion of its owner
+
+'''Option: fetishist_flavor.312.b:'''
+
+* Adds the modifier "persecuting_infidels" for 15 years:
+** -0.5 tolerance of heathens
+** -0.5 tolerance of heathens
+** +5% global missionary strength
+* event_target:earthquake_province:
+** Adds the modifier "hit_by_earthquake" until the end of the campaign:
+*** -15% manpower modifier
+*** -15% provincial tax income
+*** -15% production efficiency
+
+'''Option: fetishist_flavor.312.c:'''
+
+* If:
+** Limited to:
+*** Monthly income is at least 20 ducats
+** Modifies treasury by -0.2 years worth of income
+* If:
+** Limited to:
+*** Monthly income is less than 20 ducats
+** Changes treasury by -50 ducats
+* event_target:earthquake_province:
+** Adds the modifier "rebuilding_efforts" until the end of the campaign:
+*** local_build_cost = -0.2
+*** local_development_cost = -0.1
+** Adds the modifier "hit_by_earthquake" until the end of the campaign:
+*** -15% manpower modifier
+*** -15% provincial tax income
+*** -15% production efficiency
+
+'''Option: fetishist_flavor.312.d:'''
+
+* Adds the ruler modifier "devout_ruler" until the ruler's death:
+** +1 tolerance of the true faith
+* Changes administrative power stored by -100
+* event_target:earthquake_province:
+** Adds the modifier "hit_by_earthquake" until the end of the campaign:
+*** -15% manpower modifier
+*** -15% provincial tax income
+*** -15% production efficiency
+
+=== title = fetishist_flavor.400.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.400.a:'''
+
+* unlock_cult = christianity_cult
+
+=== title = fetishist_flavor.401.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.401.a:'''
+
+* unlock_cult = islam_cult
+
+=== title = fetishist_flavor.402.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.402.a:'''
+
+* unlock_cult = buddhism_cult
+
+=== title = fetishist_flavor.403.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.403.a:'''
+
+* unlock_cult = dharmic_cult
+
+=== title = fetishist_flavor.404.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.404.a:'''
+
+* unlock_cult = south_central_american_cult
+
+=== title = fetishist_flavor.405.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.405.a:'''
+
+* unlock_cult = norse_cult
+
+=== title = fetishist_flavor.406.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.406.a:'''
+
+* unlock_cult = jewish_cult
+
+=== title = fetishist_flavor.407.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 1 days
+
+'''Option: fetishist_flavor.407.a:'''
+
+* unlock_cult = zoroastrian_cult
+
+=== title = fetishist_flavor.408.t ===
+* Trigger:
+** Ruler is male
+* desc = fetishist_flavor.408.d.a
+* Trigger:
+** Ruler is female
+* desc = fetishist_flavor.408.d.b
+
+'''Trigger:'''
+
+* has_adopted_cult = norse_cult
+* Has no heir
+* Has the DLC Rights of Man
+* Any of the following:
+** Ruler is male
+** All of the following:
+*** Ruler is female
+*** ruler_age_false = 39
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 450 months
+
+'''Option: fetishist_flavor.408.a:'''
+
+* If:
+** Limited to:
+*** Monthly income is at least 20 ducats
+** Modifies treasury by -0.2 years worth of income
+* If:
+** Limited to:
+*** Monthly income is less than 20 ducats
+** Changes treasury by -50 ducats
+* Hidden effect:
+** One of the following will happen:
+*** 60 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.409
+***** Base mean time to happen of 268 days
+*** 40 relative chance:
+**** Gets the country event:
+***** ID is fetishist_flavor.410
+***** Base mean time to happen of 90 days
+
+'''Option: fetishist_flavor.408.b:'''
+
+* Adds the modifier "displeased_the_wotan" for 10 years:
+** -1 tolerance of the true faith
+
+=== title = fetishist_flavor.409.t ===
+* Trigger:
+** Ruler is male
+* desc = fetishist_flavor.409.d.a
+* Trigger:
+** Ruler is female
+* desc = fetishist_flavor.409.d.b
+
+'''Trigger:'''
+
+* Has no heir
+* has_government_attribute = heir
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.409.a:'''
+
+* Changes prestige by 10
+* Spawns an heir:
+** Ruler's administrative skill is at least 4
+** Follows the norse_pagan_reformed religion
+** Ruler is female
+** age = 0
+** Named "Hnoss"
+** Ruler's dynasty is our country
+
+'''Option: fetishist_flavor.409.b:'''
+
+* Changes prestige by 10
+* Spawns an heir:
+** Ruler's military skill is at least 4
+** Ruler is female
+** age = 0
+** Named "Gersemi"
+** Follows the norse_pagan_reformed religion
+** Ruler's dynasty is our country
+
+=== title = fetishist_flavor.410.t ===
+* Trigger:
+** Ruler is male
+* desc = fetishist_flavor.410.d.a
+* Trigger:
+** Ruler is female
+* desc = fetishist_flavor.410.d.b
+
+'''Trigger:'''
+
+* Has no heir
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.410.a:'''
+
+* Changes prestige by -10
+* Changes stability by -1
+
+=== title = fetishist_flavor.411.t ===
+
+'''Trigger:'''
+
+* Any country:
+** At war with our country
+** has_adopted_cult_false = norse_cult
+* Has the DLC Rights of Man
+* has_adopted_cult = norse_cult
+* Does not have the country modifier "displeased_the_wotan"
+* Does not have the country modifier "freyjas_chosen"
+* Does not have the country modifier "greed_of_freyja"
+* Does not have the country modifier "beloved_diplomats"
+* Does not have the country modifier "scorned_diplomats"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random country:
+*** Limited to:
+**** At war with our country
+**** has_adopted_cult_false = norse_cult
+*** save_event_target_as = freyja_enemy
+
+'''Option: fetishist_flavor.411.a:'''
+
+* One of the following will happen:
+** 67 relative chance:
+*** Hidden effect:
+**** Gets the country event:
+***** ID is fetishist_flavor.412
+***** Base mean time to happen of 30 days
+** 33 relative chance:
+*** Hidden effect:
+**** Gets the country event:
+***** ID is fetishist_flavor.413
+***** Base mean time to happen of 30 days
+
+'''Option: fetishist_flavor.411.b:'''
+
+* One of the following will happen:
+** 67 relative chance:
+*** Hidden effect:
+**** Gets the country event:
+***** ID is fetishist_flavor.414
+***** Base mean time to happen of 30 days
+** 33 relative chance:
+*** Hidden effect:
+**** Gets the country event:
+***** ID is fetishist_flavor.415
+***** Base mean time to happen of 30 days
+
+'''Option: fetishist_flavor.411.c:'''
+
+* Adds the modifier "displeased_the_wotan" for 10 years:
+** -1 tolerance of the true faith
+
+=== title = fetishist_flavor.412.t ===
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.412.a:'''
+
+* Adds the modifier "freyjas_chosen" for 5 years:
+** +2.5% discipline
+
+=== title = fetishist_flavor.413.t ===
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.413.a:'''
+
+* Adds the modifier "greed_of_freyja" for 5 years:
+** -2.5% discipline
+
+=== title = fetishist_flavor.414.t ===
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.414.a:'''
+
+* Adds the modifier "beloved_diplomats" for 10 years:
+** +10% improve relation modifier
+
+=== title = fetishist_flavor.415.t ===
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.413.a:'''
+
+* Adds the modifier "scorned_diplomats" for 10 years:
+** -10% improve relation modifier
+
+=== title = fetishist_flavor.416.t ===
+* Trigger:
+** Has the DLC Common Sense
+* picture = BUDDHISM_GOOD_eventPicture
+* Trigger:
+** Does not have the DLC Common Sense
+* picture = POPE_PREACHING_eventPicture
+
+'''Trigger:'''
+
+* has_adopted_cult = buddhism_cult
+* Has the DLC Rights of Man
+* Any owned province:
+** Does not have the province modifier "doing_no_harm"
+** Does not have the province modifier "forced_conscription"
+** Follows the 0 "Fetishist religion
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Does not have the province modifier "doing_no_harm"
+**** Does not have the province modifier "forced_conscription"
+*** save_event_target_as = no_killing_province
+
+'''Option: fetishist_flavor.416.a:'''
+
+* event_target:no_killing_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "doing_no_harm" until the end of the campaign:
+**** -25% manpower modifier
+
+'''Option: fetishist_flavor.416.b:'''
+
+* event_target:no_killing_province:
+** area:
+*** Limited to:
+**** The province is owned by our country
+*** Adds the modifier "forced_conscription" until the end of the campaign:
+**** regiment_recruit_speed = 0.2
+**** local_unrest = 2
+
+=== title = fetishist_flavor.417.t ===
+* Trigger:
+** Has the DLC Common Sense
+* picture = BUDDHISM_GOOD_eventPicture
+* Trigger:
+** Does not have the DLC Common Sense
+* picture = POPE_PREACHING_eventPicture
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* has_adopted_cult = buddhism_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Option: fetishist_flavor.417.a:'''
+
+* Changes prestige by 10
+* Adds 10 legitimacy
+
+'''Option: fetishist_flavor.417.b:'''
+
+* Adds the ruler modifier "selfless_ruler" until the ruler's death:
+** +0.5 tolerance of the true faith
+
+=== title = fetishist_flavor.418.t ===
+* Province event
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* The province is not the capital of the country
+* The owner of the province:
+** has_adopted_cult = jewish_cult
+* Does not have the province flag fetishist_jewish_immigrants
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 600 months
+* Multiplies value by 0.9:
+** Any bordering province:
+*** Follows the jewish religion
+
+'''Option: fetishist_flavor.418.a:'''
+
+* Changes religion to jewish
+* Changes base tax by 1
+* Adds the modifier "jewish_immigrants" until the end of the campaign:
+** -1% missionary strength
+* Hidden effect:
+** Gets the province event:
+*** ID is fetishist_flavor.419
+*** Base mean time to happen of 1 days
+* Sets the province flag fetishist_jewish_immigrants
+
+'''Option: fetishist_flavor.418.b:'''
+
+* The owner of the province:
+** Changes prestige by 5
+
+=== title = fetishist_flavor.419.t ===
+* Province event
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the jewish religion
+* The owner of the province:
+** has_adopted_cult = jewish_cult
+
+'''Option: fetishist_flavor.419.a:'''
+
+* The owner of the province:
+** add_meritocracy_effect = yes
+** If:
+*** Limited to:
+**** Monthly income is at least 25 ducats
+*** Creates an advisor of the 0 "Trader type:
+**** Follows the jewish religion
+**** With a skill level of 3
+**** discount = yes
+** If:
+*** Limited to:
+**** Monthly income is less than 25 ducats
+*** Creates an advisor of the 0 "Trader type:
+**** Follows the jewish religion
+**** With a skill level of 2
+**** discount = yes
+** Adds the modifier "blasphemous_advisor" for 10 years:
+*** -0.5 tolerance of the true faith
+
+'''Option: fetishist_flavor.419.b:'''
+
+* Adds the modifier "dissatisfied_jews" until the end of the campaign:
+** local_unrest = 3
+
+=== title = fetishist_flavor.420.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* Follows the 0 "Fetishist religion
+* has_adopted_cult = jewish_cult
+* Any of the following:
+** Has the 0 "Artist advisor
+** Has the 0 "Inquisitor advisor
+** Has the 0 "Master of Mint advisor
+** Has the 0 "Natural Scientist advisor
+** Has the 0 "Philosopher advisor
+** Has the 0 "Theologian advisor
+** Has the 0 "Treasurer advisor
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 400 months
+
+'''Option: fetishist_flavor.420.a:'''
+
+* Changes administrative power stored by -40
+* reduce_meritocracy_effect = yes
+* If:
+** Limited to:
+*** Has the 0 "Artist advisor
+** Removes the 0 "Artist advisor
+* If:
+** Limited to:
+*** Has the 0 "Inquisitor advisor
+** Removes the 0 "Inquisitor advisor
+* If:
+** Limited to:
+*** Has the 0 "Master of Mint advisor
+** Removes the 0 "Master of Mint advisor
+* If:
+** Limited to:
+*** Has the 0 "Natural Scientist advisor
+** Removes the 0 "Natural Scientist advisor
+* If:
+** Limited to:
+*** Has the 0 "Philosopher advisor
+** Removes the 0 "Philosopher advisor
+* If:
+** Limited to:
+*** Has the 0 "Theologian advisor
+** Removes the 0 "Theologian advisor
+* If:
+** Limited to:
+*** Has the 0 "Treasurer advisor
+** Removes the 0 "Treasurer advisor
+
+'''Option: fetishist_flavor.420.b:'''
+
+* Adds the modifier "blasphemous_advisor" for 10 years:
+** -0.5 tolerance of the true faith
+
+=== title = fetishist_flavor.450.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = christianity_cult
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* Any neighbor country:
+** Is in the 0 "Christian religion group
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 380 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random neighbor country:
+*** Limited to:
+**** Is in the 0 "Christian religion group
+*** save_event_target_as = christian_neighbor
+
+'''Option: fetishist_flavor.450.a:'''
+
+* event_target:christian_neighbor:
+** Adds the opinion modifier "christian_unorthodoxy" towards our country
+
+'''Option: fetishist_flavor.450.b:'''
+
+* Changes diplomatic power stored by -50
+
+=== title = fetishist_flavor.451.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = christianity_cult
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* Any known country:
+** Is in the 0 "Christian religion group
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 380 months
+
+'''Option: fetishist_flavor.451.a:'''
+
+* Hidden effect:
+** Every known country:
+*** Limited to:
+**** Is in the 0 "Christian religion group
+*** Adds the opinion modifier "christian_brotherhood" towards our country
+
+=== title = fetishist_flavor.452.t ===
+* Province event
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* The province is not the capital of the country
+* The owner of the province:
+** has_adopted_cult = christianity_cult
+** Follows the 0 "Fetishist religion
+** Any known country:
+*** Is in the 0 "Christian religion group
+*** Has at least 5 provinces
+*** Has at least 1 ports
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** The owner of the province:
+*** Random known country:
+**** Limited to:
+***** Is in the 0 "Christian religion group
+***** Has at least 5 provinces
+***** Has at least 1 ports
+**** save_event_target_as = christian_missionary_origin
+
+'''Option: fetishist_flavor.452.a:'''
+
+* Changes religion to event_target:christian_missionary_origin
+* Adds the modifier "christian_mission_fetishism" until the end of the campaign:
+** local_development_cost = -0.1
+** +10% manpower modifier
+
+'''Option: fetishist_flavor.452.b:'''
+
+* event_target:christian_missionary_origin:
+** Adds the opinion modifier "christian_unorthodoxy" towards our country
+
+=== title = fetishist_flavor.455.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = islam_cult
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* Does not have the ruler modifier qadi_in_fetishist_lands
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 500 months
+
+'''Option: fetishist_flavor.455.a:'''
+
+* Adds the ruler modifier "qadi_in_fetishist_lands" until the ruler's death:
+** -5% administrative technology cost
+** +0.5 prestige
+
+'''Option: fetishist_flavor.455.b:'''
+
+* Changes prestige by 10
+
+=== title = fetishist_flavor.456.t ===
+* Province event
+
+'''Trigger:'''
+
+* The owner of the province:
+** has_adopted_cult = islam_cult
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* Does not have the province modifier "shirazi_merchant_presence"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 380 months
+
+'''Option: fetishist_flavor.456.a:'''
+
+* Adds the modifier "shirazi_merchant_presence" until the end of the campaign:
+** +500% provincial trade power
+** province_trade_power_modifier = 0.25
+
+=== title = fetishist_flavor.457.t ===
+* Province event
+
+'''Trigger:'''
+
+* Is in the 0 "Muslim religion group
+* The owner of the province:
+** Follows the 0 "Fetishist religion
+** has_adopted_cult = islam_cult
+* Has the DLC Rights of Man
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.457.a:'''
+
+* The owner of the province:
+** Changes administrative power stored by -25
+
+'''Option: fetishist_flavor.457.b:'''
+
+* If:
+** Limited to:
+*** Can spawn the 0 "Religious rebel type
+** Spawns revolt of size 1 of 0 "Religious rebels
+* If:
+** Limited to:
+*** Can spawn the 0 "Religious rebel type
+** Spawns revolt of size 1 of 0 "Religious rebels
+* If:
+** Limited to:
+*** Can spawn the 0 "Religious rebel type
+** Spawns revolt of size 1 of 0 "Religious rebels
+
+=== title = fetishist_flavor.458.t ===
+* Province event
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* The owner of the province:
+** has_adopted_cult = islam_cult
+** Any known country:
+*** Is in the 0 "Muslim religion group
+*** Has at least 3 provinces
+*** Has at least 1 ports
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** The owner of the province:
+*** Random known country:
+**** Limited to:
+***** Is in the 0 "Muslim religion group
+***** Has at least 3 provinces
+***** Has at least 1 ports
+**** save_event_target_as = muslim_missionary_origin
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 600 months
+* Multiplies value by 0.8:
+** Has the province modifier "shirazi_merchant_presence"
+* Multiplies value by 0.9:
+** The owner of the province:
+*** Has the ruler modifier qadi_in_fetishist_lands
+* Multiplies value by 0.9:
+** Any bordering province:
+*** Is in the 0 "Muslim religion group
+
+'''Option: fetishist_flavor.458.a:'''
+
+* Changes religion to event_target:muslim_missionary_origin
+
+=== title = fetishist_flavor.460.t ===
+* Province event
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* The province is not the capital of the country
+* Does not have the province modifier "zoroastrian_migration_into_africa"
+* The owner of the province:
+** has_adopted_cult = zoroastrian_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 600 months
+* Multiplies value by 0.9:
+** Any bordering province:
+*** Follows the zoroastrian religion
+
+'''Option: fetishist_flavor.460.a:'''
+
+* Changes religion to zoroastrian
+* Adds the modifier "zoroastrian_migration_into_africa" until the end of the campaign:
+** local_development_cost = -0.15
+** -1% missionary strength
+
+'''Option: fetishist_flavor.460.b:'''
+
+* The owner of the province:
+** Changes prestige by 5
+
+=== title = fetishist_flavor.461.t ===
+* Province event
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* The province is not the capital of the country
+* Does not have the province modifier "zoroastrian_unrest"
+* The owner of the province:
+** has_adopted_cult = zoroastrian_cult
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 460 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** One of the following will happen:
+*** 60 relative chance:
+**** Sets the province flag fetishist_zoroastrian_unrest
+*** 40 relative chance:
+**** Sets the province flag fetishist_reaction
+
+'''Option: fetishist_flavor.461.a:'''
+
+* trigger_switch:
+** on_trigger = has_province_flag
+** fetishist_zoroastrian_unrest:
+*** Adds the modifier "zoroastrian_unrest" until the end of the campaign:
+**** local_unrest = 4
+*** Removes the province flag fetishist_zoroastrian_unrest
+** fetishist_reaction:
+*** Spawns revolt of size 1 of 0 "Religious rebels
+*** Removes the province flag fetishist_reaction
+
+=== title = fetishist_flavor.500.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = south_central_american_cult
+* Is not in regency
+* Has the DLC Rights of Man
+* had_recent_war_false = 2
+* Does not have the ruler modifier warrior_of_the_sun
+** No owned province:
+*** Has the province modifier "observatory_building"
+* Any owned province:
+** Does not have the province modifier "rioting_workers"
+** is_state = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 250 months
+
+'''Option: fetishist_flavor.500.a:'''
+
+* AI chance:
+** Base chance of 40
+* Changes treasury by -50 ducats
+* Changes administrative power stored by -50
+* One of the following will happen:
+** 65 relative chance:
+*** Gets the country event:
+**** ID is fetishist_flavor.501
+**** Base mean time to happen of 65 days
+** 35 relative chance:
+*** Gets the country event:
+**** ID is fetishist_flavor.503
+**** Base mean time to happen of 65 days
+
+'''Option: fetishist_flavor.500.b:'''
+
+* AI chance:
+** Base chance of 60
+* Changes military power stored by -50
+* One of the following will happen:
+** 70 relative chance:
+*** Gets the country event:
+**** ID is fetishist_flavor.502
+**** Base mean time to happen of 25 days
+** 30 relative chance:
+*** Gets the country event:
+**** ID is fetishist_flavor.504
+**** Base mean time to happen of 25 days
+
+=== title = fetishist_flavor.501.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = south_central_american_cult
+* Has the DLC Rights of Man
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.501.a:'''
+
+* Random owned province:
+** Limited to:
+*** Does not have the province modifier "observatory_building"
+*** is_state = yes
+** Adds the modifier "observatory_building" until the end of the campaign:
+*** -10% administrative technology cost
+*** -10% diplomatic technology cost
+
+=== title = fetishist_flavor.502.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = south_central_american_cult
+* Has the DLC Rights of Man
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.502.a:'''
+
+* Changes military power stored by 100
+* Adds the ruler modifier "warrior_of_the_sun" until the ruler's death:
+** +2% discipline
+
+=== title = fetishist_flavor.503.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = south_central_american_cult
+* Has the DLC Rights of Man
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.503.a:'''
+
+* Random owned province:
+** Limited to:
+*** Does not have the province modifier "rioting_workers"
+** Adds the modifier "rioting_workers" until the end of the campaign:
+*** -10% manpower modifier
+*** -10% production efficiency
+*** local_unrest = 2
+
+=== title = fetishist_flavor.504.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = south_central_american_cult
+* Has the DLC Rights of Man
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.504.a:'''
+
+* Changes ruler's military skill by -1
+* Changes ruler's diplomatic skill by -1
+
+=== title = fetishist_flavor.505.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = south_central_american_cult
+* Has the DLC Rights of Man
+* Any owned province:
+** Does not have the province modifier "artisan_of_gold"
+** Follows the religion of its owner
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 350 months
+
+'''Option: fetishist_flavor.505.a:'''
+
+* Changes prestige by 15
+* Random owned province:
+** Limited to:
+*** Does not have the province modifier "artisan_of_gold"
+*** Follows the owner religion
+** Adds the modifier "artisan_of_gold" until the end of the campaign:
+*** +10% provincial tax income
+
+=== title = fetishist_flavor.506.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* has_adopted_cult = south_central_american_cult
+* Is not in regency
+* Any owned province:
+** Does not have the province modifier "in_honor_of_the_sun_god"
+** Does not have the province modifier "distrust_of_the_elders"
+** Does not have the province modifier "blessed_rains"
+** is_state = yes
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random owned province:
+*** Limited to:
+**** Does not have the province modifier "in_honor_of_the_sun_god"
+**** Does not have the province modifier "distrust_of_the_elders"
+**** Does not have the province modifier "blessed_rains"
+**** Follows the owner religion
+**** is_state = yes
+*** save_event_target_as = worried_province
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 360 months
+
+'''Option: fetishist_flavor.506.a:'''
+
+* AI chance:
+** Base chance of 60
+** Multiplies value by 0:
+*** ruler_has_personality = kind_hearted_personality
+* Changes administrative power stored by -15
+* One of the following will happen:
+** 60 relative chance:
+*** Gets the country event:
+**** ID is fetishist_flavor.507
+**** Base mean time to happen of 40 days
+** 40 relative chance:
+*** Gets the country event:
+**** ID is fetishist_flavor.508
+**** Base mean time to happen of 40 days
+
+'''Option: fetishist_flavor.506.b:'''
+
+* AI chance:
+** Base chance of 40
+
+=== title = fetishist_flavor.507.t ===
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.507.a:'''
+
+* Changes prestige by 15
+* event_target:worried_province:
+** Adds the modifier "blessed_rains" until the end of the campaign:
+*** +20% production efficiency
+
+'''Option: fetishist_flavor.507.b:'''
+
+* Changes prestige by 15
+* event_target:worried_province:
+** Adds the modifier "in_honor_of_the_sun_god" until the end of the campaign:
+*** -10% manpower modifier
+*** +10% land morale
+
+=== title = fetishist_flavor.508.t ===
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.508.a:'''
+
+* Changes prestige by -10
+* event_target:worried_province:
+** Adds the modifier "distrust_of_the_elders" until the end of the campaign:
+*** -10% production efficiency
+*** local_unrest = 1
+
+=== title = fetishist_flavor.510.t ===
+
+'''Trigger:'''
+
+* Has the DLC Rights of Man
+* has_adopted_cult = dharmic_cult
+* Does not have the country modifier "selfless_guru"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 350 months
+
+'''Option: fetishist_flavor.510.a:'''
+
+* add_meritocracy_effect = yes
+* Creates an advisor of the 0 "Philosopher type:
+** discount = yes
+
+'''Option: fetishist_flavor.510.b:'''
+
+* Adds the modifier "selfless_guru" for 10 years:
+** -1 global unrest
+
+=== title = fetishist_flavor.511.t ===
+
+'''Trigger:'''
+
+* has_adopted_cult = dharmic_cult
+* Has the DLC Rights of Man
+* Any neighbor country:
+** Is in the 0 "Dharmic religion group
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random neighbor country:
+*** Limited to:
+**** Is in the 0 "Dharmic religion group
+*** save_event_target_as = dharmic_neighbor
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 350 months
+
+'''Option: fetishist_flavor.511.a:'''
+
+* Changes administrative power stored by -15
+* event_target:dharmic_neighbor:
+** Adds the opinion modifier "dharmic_imitators" towards our country
+
+=== title = fetishist_flavor.600.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+* Has the country flag enabled_cult_for_heirs
+* num_of_unlocked_cults = 1
+
+'''Option: fetishist_flavor.600.a:'''
+
+* Trigger:
+** has_unlocked_cult = yemoja_cult
+* Adds the modifier "junior_yemoja_cult" for the rest of the campaign:
+** -7.5% naval maintenance
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.b:'''
+
+* Trigger:
+** has_unlocked_cult = roog_cult
+* Adds the modifier "junior_roog_cult" for the rest of the campaign:
+** -7.5% land attrition
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.c:'''
+
+* Trigger:
+** has_unlocked_cult = nyame_cult
+* Adds the modifier "junior_nyame_cult" for the rest of the campaign:
+** +0.5 diplomatic reputation
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.d:'''
+
+* Trigger:
+** has_unlocked_cult = cwezi_cult
+* Adds the modifier "junior_cwezi_cult" for the rest of the campaign:
+** +10% improve relation modifier
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Diplomat
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.e:'''
+
+* Trigger:
+** has_unlocked_cult = central_african_ancestor_cult
+* Adds the modifier "junior_central_african_ancestor_cult" for the rest of the campaign:
+** +1 tolerance of the true faith
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.f:'''
+
+* Trigger:
+** has_unlocked_cult = mwari_cult
+* Adds the modifier "junior_mwari_cult" for the rest of the campaign:
+** +1.2% discipline
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.g:'''
+
+* Trigger:
+** has_unlocked_cult = enkai_cult
+* Adds the modifier "junior_enkai_cult" for the rest of the campaign:
+** +7.5% manpower recovery speed
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.h:'''
+
+* Trigger:
+** has_unlocked_cult = waaq_cult
+* Adds the modifier "junior_waaq_cult" for the rest of the campaign:
+** -1 global unrest
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Diplomat
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.i:'''
+
+* Trigger:
+** has_unlocked_cult = zanahary_cult
+* Adds the modifier "junior_zanahary_cult" for the rest of the campaign:
+** -0.03 war exhaustion
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.j:'''
+
+* Trigger:
+** has_unlocked_cult = christianity_cult
+* Adds the modifier "junior_christianity_cult" for the rest of the campaign:
+** +12.5% domestic trade power
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.k:'''
+
+* Trigger:
+** has_unlocked_cult = islam_cult
+* Adds the modifier "junior_islam_cult" for the rest of the campaign:
+** global_institution_spread = 0.05
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.l:'''
+
+* Trigger:
+** has_unlocked_cult = buddhism_cult
+* Adds the modifier "junior_buddhism_cult" for the rest of the campaign:
+** development_cost = -0.05
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.m:'''
+
+* Trigger:
+** has_unlocked_cult = dharmic_cult
+* Adds the modifier "junior_dharmic_cult" for the rest of the campaign:
+** global_trade_goods_size_modifier = 0.05
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.n:'''
+
+* Trigger:
+** has_unlocked_cult = south_central_american_cult
+* Adds the modifier "junior_south_central_american_cult" for the rest of the campaign:
+** +5% land morale
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.o:'''
+
+* Trigger:
+** has_unlocked_cult = norse_cult
+* Adds the modifier "junior_norse_cult" for the rest of the campaign:
+** +1 tolerance of heathens
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.p:'''
+
+* Trigger:
+** has_unlocked_cult = jewish_cult
+* Adds the modifier "junior_jewish_cult" for the rest of the campaign:
+** -5% advisor cost
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.600.q:'''
+
+* Trigger:
+** has_unlocked_cult = zoroastrian_cult
+* Adds the modifier "junior_zoroastrian_cult" for the rest of the campaign:
+** +1 merchants
+** Follows the yes religion
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+=== title = fetishist_flavor.601.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+
+'''Option: fetishist_flavor.601.a:'''
+
+* Trigger:
+** has_unlocked_cult_false = yemoja_cult
+* unlock_cult = yemoja_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.b:'''
+
+* Trigger:
+** has_unlocked_cult_false = roog_cult
+* unlock_cult = roog_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.c:'''
+
+* Trigger:
+** has_unlocked_cult_false = nyame_cult
+* unlock_cult = nyame_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.d:'''
+
+* Trigger:
+** has_unlocked_cult_false = cwezi_cult
+* unlock_cult = cwezi_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Diplomat
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.e:'''
+
+* Trigger:
+** has_unlocked_cult_false = central_african_ancestor_cult
+* unlock_cult = central_african_ancestor_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.f:'''
+
+* Trigger:
+** has_unlocked_cult_false = mwari_cult
+* unlock_cult = mwari_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.g:'''
+
+* Trigger:
+** has_unlocked_cult_false = enkai_cult
+* unlock_cult = enkai_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.h:'''
+
+* Trigger:
+** has_unlocked_cult_false = waaq_cult
+* unlock_cult = waaq_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Diplomat
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.i:'''
+
+* Trigger:
+** has_unlocked_cult_false = zanahary_cult
+* unlock_cult = zanahary_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.j:'''
+
+* Trigger:
+** has_unlocked_cult_false = christianity_cult
+** Any known country:
+*** Any of the following:
+**** has_unlocked_cult = christianity_cult
+**** Is in the 0 "Christian religion group
+* unlock_cult = christianity_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.k:'''
+
+* Trigger:
+** has_unlocked_cult_false = islam_cult
+** Any known country:
+*** Any of the following:
+**** has_unlocked_cult = islam_cult
+**** Is in the 0 "Muslim religion group
+* unlock_cult = islam_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.l:'''
+
+* Trigger:
+** has_unlocked_cult_false = buddhism_cult
+** Any known country:
+*** Any of the following:
+**** has_unlocked_cult = buddhism_cult
+**** Is in the 0 "Eastern religion group
+* unlock_cult = buddhism_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.m:'''
+
+* Trigger:
+** has_unlocked_cult_false = dharmic_cult
+** Any known country:
+*** Any of the following:
+**** has_unlocked_cult = dharmic_cult
+**** Is in the 0 "Dharmic religion group
+* unlock_cult = dharmic_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.n:'''
+
+* Trigger:
+** has_unlocked_cult_false = south_central_american_cult
+** Any known country:
+*** Any of the following:
+**** has_unlocked_cult = south_central_american_cult
+**** Follows the 0 "Nahuatl religion
+**** Follows the 0 "Inti religion
+**** Follows the 0 "Mayan religion
+* unlock_cult = south_central_american_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.o:'''
+
+* Trigger:
+** has_unlocked_cult_false = norse_cult
+** Any known country:
+*** Any of the following:
+**** has_unlocked_cult = norse_cult
+**** Follows the norse_pagan_reformed religion
+* unlock_cult = norse_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.p:'''
+
+* Trigger:
+** has_unlocked_cult_false = jewish_cult
+** Any known country:
+*** Any of the following:
+**** has_unlocked_cult = jewish_cult
+**** Follows the jewish religion
+* unlock_cult = jewish_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.q:'''
+
+* Trigger:
+** has_unlocked_cult_false = zoroastrian_cult
+** Any known country:
+*** Any of the following:
+**** has_unlocked_cult = zoroastrian_cult
+**** Follows the zoroastrian religion
+* unlock_cult = zoroastrian_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.601.r:'''
+
+* Hidden effect:
+** Sets the country flag can_choose_to_unlock_a_cult
+* AI chance:
+** Base chance of 0
+
+=== title = fetishist_flavor.602.t ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Follows the 0 "Fetishist religion
+* Has the DLC Rights of Man
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Removes the country flag has_selected_a_primary_cult
+
+'''Option: fetishist_flavor.602.a:'''
+
+* Trigger:
+** has_unlocked_cult = yemoja_cult
+** has_primary_cult:
+*** cult_false = yemoja_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = yemoja_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.b:'''
+
+* Trigger:
+** has_unlocked_cult = roog_cult
+** has_primary_cult:
+*** cult_false = roog_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = roog_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.c:'''
+
+* Trigger:
+** has_unlocked_cult = nyame_cult
+** has_primary_cult:
+*** cult_false = nyame_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = nyame_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.d:'''
+
+* Trigger:
+** has_unlocked_cult = cwezi_cult
+** has_primary_cult:
+*** cult_false = cwezi_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = cwezi_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Diplomat
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.e:'''
+
+* Trigger:
+** has_unlocked_cult = central_african_ancestor_cult
+** has_primary_cult:
+*** cult_false = central_african_ancestor_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = central_african_ancestor_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.f:'''
+
+* Trigger:
+** has_unlocked_cult = mwari_cult
+** has_primary_cult:
+*** cult_false = mwari_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = mwari_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.g:'''
+
+* Trigger:
+** has_unlocked_cult = enkai_cult
+** has_primary_cult:
+*** cult_false = enkai_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = enkai_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.h:'''
+
+* Trigger:
+** has_unlocked_cult = waaq_cult
+** has_primary_cult:
+*** cult_false = waaq_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = waaq_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Diplomat
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.i:'''
+
+* Trigger:
+** has_unlocked_cult = zanahary_cult
+** has_primary_cult:
+*** cult_false = zanahary_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = zanahary_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.j:'''
+
+* Trigger:
+** has_unlocked_cult = christianity_cult
+** has_primary_cult:
+*** cult_false = christianity_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = christianity_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.k:'''
+
+* Trigger:
+** has_unlocked_cult = islam_cult
+** has_primary_cult:
+*** cult_false = islam_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = islam_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.l:'''
+
+* Trigger:
+** has_unlocked_cult = buddhism_cult
+** has_primary_cult:
+*** cult_false = buddhism_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = buddhism_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Balanced
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.m:'''
+
+* Trigger:
+** has_unlocked_cult = dharmic_cult
+** has_primary_cult:
+*** cult_false = dharmic_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = dharmic_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.n:'''
+
+* Trigger:
+** has_unlocked_cult = south_central_american_cult
+** has_primary_cult:
+*** cult_false = south_central_american_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = south_central_american_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Militarist
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.o:'''
+
+* Trigger:
+** has_unlocked_cult = norse_cult
+** has_primary_cult:
+*** cult_false = norse_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = norse_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.p:'''
+
+* Trigger:
+** has_unlocked_cult = jewish_cult
+** has_primary_cult:
+*** cult_false = jewish_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = jewish_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+'''Option: fetishist_flavor.602.q:'''
+
+* Trigger:
+** has_unlocked_cult = zoroastrian_cult
+** has_primary_cult:
+*** cult_false = zoroastrian_cult
+* clear_previous_primary_cults = yes
+* select_primary_cult:
+** cult = zoroastrian_cult
+* AI chance:
+** Base chance of 10
+*** personality = 0 "Administrator
+** Multiplies value by 2:
+
+=== title = "fetishist_flavor.603.t" ===
+* Cannot fire randomly
+
+'''Option: fetishist_flavor.603.a:'''
+
+* Trigger:
+** has_unlocked_cult = yemoja_cult
+** has_adopted_cult_false = yemoja_cult
+* change_cult = yemoja_cult
+
+'''Option: fetishist_flavor.603.b:'''
+
+* Trigger:
+** has_unlocked_cult = roog_cult
+** has_adopted_cult_false = roog_cult
+* change_cult = roog_cult
+
+'''Option: fetishist_flavor.603.c:'''
+
+* Trigger:
+** has_unlocked_cult = nyame_cult
+** has_adopted_cult_false = nyame_cult
+* change_cult = nyame_cult
+
+'''Option: fetishist_flavor.603.d:'''
+
+* Trigger:
+** has_unlocked_cult = cwezi_cult
+** has_adopted_cult_false = cwezi_cult
+* change_cult = cwezi_cult
+
+'''Option: fetishist_flavor.603.e:'''
+
+* Trigger:
+** has_unlocked_cult = central_african_ancestor_cult
+** has_adopted_cult_false = central_african_ancestor_cult
+* change_cult = central_african_ancestor_cult
+
+'''Option: fetishist_flavor.603.f:'''
+
+* Trigger:
+** has_unlocked_cult = mwari_cult
+** has_adopted_cult_false = mwari_cult
+* change_cult = mwari_cult
+
+'''Option: fetishist_flavor.603.g:'''
+
+* Trigger:
+** has_unlocked_cult = enkai_cult
+** has_adopted_cult_false = enkai_cult
+* change_cult = enkai_cult
+
+'''Option: fetishist_flavor.603.h:'''
+
+* Trigger:
+** has_unlocked_cult = waaq_cult
+** has_adopted_cult_false = waaq_cult
+* change_cult = waaq_cult
+
+'''Option: fetishist_flavor.603.i:'''
+
+* Trigger:
+** has_unlocked_cult = zanahary_cult
+** has_adopted_cult_false = zanahary_cult
+* change_cult = zanahary_cult
+
+'''Option: fetishist_flavor.603.j:'''
+
+* Trigger:
+** has_unlocked_cult = christianity_cult
+** has_adopted_cult_false = christianity_cult
+* change_cult = christianity_cult
+
+'''Option: fetishist_flavor.603.k:'''
+
+* Trigger:
+** has_unlocked_cult = islam_cult
+** has_adopted_cult_false = islam_cult
+* change_cult = islam_cult
+
+'''Option: fetishist_flavor.603.l:'''
+
+* Trigger:
+** has_unlocked_cult = buddhism_cult
+** has_adopted_cult_false = buddhism_cult
+* change_cult = buddhism_cult
+
+'''Option: fetishist_flavor.603.m:'''
+
+* Trigger:
+** has_unlocked_cult = dharmic_cult
+** has_adopted_cult_false = dharmic_cult
+* change_cult = dharmic_cult
+
+'''Option: fetishist_flavor.603.n:'''
+
+* Trigger:
+** has_unlocked_cult = south_central_american_cult
+** has_adopted_cult_false = south_central_american_cult
+* change_cult = south_central_american_cult
+
+'''Option: fetishist_flavor.603.o:'''
+
+* Trigger:
+** has_unlocked_cult = norse_cult
+** has_adopted_cult_false = norse_cult
+* change_cult = norse_cult
+
+'''Option: fetishist_flavor.603.p:'''
+
+* Trigger:
+** has_unlocked_cult = jewish_cult
+** has_adopted_cult_false = jewish_cult
+* change_cult = jewish_cult
+
+'''Option: fetishist_flavor.603.q:'''
+
+* Trigger:
+** has_unlocked_cult = zoroastrian_cult
+** has_adopted_cult_false = zoroastrian_cult
+* change_cult = zoroastrian_cult
+
+'''Option: fetishist_flavor.603.r:'''
+

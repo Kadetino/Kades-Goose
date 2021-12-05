@@ -1,0 +1,265 @@
+** Trigger:
+*** Year is at least 1460
+*** Year is less than 1500
+*** Country is 0 "Teutonic Order
+*** Does not have the country flag pru_confederation_curtailed
+*** has_estate_privilege_false = estate_burghers_prussian_confederation
+*** Has the country flag pru_confederation_flag
+*** Is not a vassal
+*** 0 "Poland exists
+*** Is a neighbor of 0 "Poland
+*** Is not at war
+*** Is not allied with 0 "Poland
+*** 0 "Poland:
+**** Is not a vassal
+*** 0 "Poland:
+**** Has at least 10 provinces
+*** Has at least 5 provinces
+*** Any of the following:
+**** 0 "Danzig does not exist
+**** 0 "Danzig:
+***** Is a vassal of our country
+*** Any of the following:
+**** All of the following:
+***** Owns 0 "Danzig
+***** Controls the province 0 "Danzig
+**** 0 "Danzig:
+***** Owns 0 "Danzig
+***** Controls the province 0 "Danzig
+** Mean time to happen
+*** Base mean time to happen of 6 months
+*** Multiplies value by 0.1:
+**** Year is at least 1466
+** Immediate effects:
+*** Hidden effect:
+**** Sets the country flag pru_confederation_happened
+**** If:
+***** Limited to:
+****** estate_influence:
+******* estate = estate_burghers
+******* influence = 40
+***** Random owned province:
+****** Limited to:
+******* The province is not the capital of the country
+******* Has no core on 0 "Danzig
+******* Any of the following:
+******** area = east_prussia_area
+******** area = west_prussia_area
+******* Any bordering province:
+******** Has core on 0 "Danzig
+****** Gives 0 "Danzig core on the province
+**** If:
+***** Limited to:
+****** estate_influence:
+******* estate = estate_burghers
+******* influence = 50
+***** Random owned province:
+****** Limited to:
+******* The province is not the capital of the country
+******* Has no core on 0 "Danzig
+******* Any of the following:
+******** area = east_prussia_area
+******** area = west_prussia_area
+******* Any bordering province:
+******** Has core on 0 "Danzig
+****** Gives 0 "Danzig core on the province
+**** If:
+***** Limited to:
+****** estate_influence:
+******* estate = estate_burghers
+******* influence = 60
+***** Random owned province:
+****** Limited to:
+******* The province is not the capital of the country
+******* Has no core on 0 "Danzig
+******* Any of the following:
+******** area = east_prussia_area
+******** area = west_prussia_area
+******* Any bordering province:
+******** Has core on 0 "Danzig
+****** Gives 0 "Danzig core on the province
+**** If:
+***** Limited to:
+****** estate_influence:
+******* estate = estate_burghers
+******* influence = 70
+***** Random owned province:
+****** Limited to:
+******* The province is not the capital of the country
+******* Has no core on 0 "Danzig
+******* Any of the following:
+******** area = east_prussia_area
+******** area = west_prussia_area
+******* Any bordering province:
+******** Has core on 0 "Danzig
+****** Gives 0 "Danzig core on the province
+**** If:
+***** Limited to:
+****** estate_influence:
+******* estate = estate_burghers
+******* influence = 80
+***** Random owned province:
+****** Limited to:
+******* The province is not the capital of the country
+******* Has no core on 0 "Danzig
+******* Any of the following:
+******** area = east_prussia_area
+******** area = west_prussia_area
+******* Any bordering province:
+******** Has core on 0 "Danzig
+****** Gives 0 "Danzig core on the province
+**** If:
+***** Limited to:
+****** 0 "Danzig does not exist
+***** Release 0 "Danzig as a vassal
+***** 0 "Danzig:
+****** Changes government type to republic
+****** add_government_reform = oligarchy_reform
+****** adopt_reform_progress = our country
+**** else:
+***** Every owned province:
+****** Limited to:
+******* Has core on 0 "Danzig
+****** Cedes province to 0 "Danzig
+**** 0 "Danzig:
+***** Capital:
+****** build_to_forcelimit:
+******* Spawns an infantry unit in 0.6
+******* Spawns a cavalry unit in 0.3
+***** Random owned province:
+****** Limited to:
+******* Is coastal
+****** build_to_forcelimit:
+******* Spawns a galley in 0.3
+******* Spawns a light ship in 0.3
+******* transport = 0.2
+** Option: 0 "Kill every last traitor!:
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Any of the following:
+****** Is bankrupt
+****** 10 war exhaustion
+*** Declares war on 0 "Reconquest using the 0 "Danzig casus belli
+*** Hidden effect:
+**** 0 "Poland:
+***** Gets the country event:
+****** ID is flavor_teu.2
+**** 0 "Poland:
+***** create_guarantee = 0 "Danzig
+** Option: 0 "This is not a war we can win.:
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Any of the following:
+****** Is not bankrupt
+****** Less than 10 war exhaustion
+*** Changes stability by -1
+*** Changes prestige by -20
+* Gets the country event:
+** ID is flavor_teu.2
+** title = 0 "The Prussian Confederation Seeks Polish Support
+** desc = 0 "An organization calling itself the Prussian Confederation has risen up against the injustices of Teutonic rule, and have rallied an army in Danzig. We have previously given its members quiet assurances that we would support their cause should it come to open war. In exchange, the Confederation has agreed that the Prussian lands should be ruled by Poland after the tyrannical Knights have been expelled. We have much to gain from this arrangement, but we should be prepared for a bloody struggle.
+** picture = BATTLE_VISTULA_LAGOON_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** major = yes
+** Option: 0 "They shall have our full support. To battle!:
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Any of the following:
+****** Is bankrupt
+****** 10 war exhaustion
+*** Sets the country flag supported_prussian_confederation_flag
+*** Adds the opinion modifier "0 "Supported Prussian Confederation" towards 0 "Danzig
+*** 0 "Danzig:
+**** Adds the opinion modifier "0 "Supported Prussian Confederation" towards our country
+*** create_alliance = 0 "Danzig
+** Option: 0 "This is no business of ours.:
+*** AI chance:
+**** Base chance of 100
+**** Multiplies value by 0:
+***** Any of the following:
+****** Is not bankrupt
+****** Less than 10 war exhaustion
+*** Changes prestige by -10
+* Gets the country event:
+** ID is flavor_teu.3
+** title = 0 "The Peace of Thorn
+** desc = 0 "The war against the Teutonic Knights has finally come to an end. [Root.Monarch.GetName] sits at the peace table with the leaders of the Prussian Confederation and raises a glass to toast our mutual victory and future cooperation.\nThe treaty is signed quickly and with confidence; the rights and privileges of the Prussian townships, clergy, burghers, and knights shall be preserved, and the cause they fought for recognized as a just struggle against autocracy. Over time, the cities of the Confederation will be incorporated fully into the Crown of Poland.
+** picture = SEJM_eventPicture
+** fire_only_once = yes
+** is_triggered_only = yes
+** Option: 0 "Our rule shall be benevolent.:
+*** Vassalizes 0 "Danzig
+*** If:
+**** Limited to:
+***** 0 "Chelmno:
+****** The province is owned by 0 "Danzig
+****** Culture is 0 "Polish
+**** 0 "Chelmno:
+***** Cedes province to our country
+***** Gives our country core on the province
+***** Removes core on 0 "Danzig
+*** west_prussia_area:
+**** Limited to:
+***** is_permanent_claim_false = our country
+***** Has no core on our country
+***** is_permanent_claim_false = 0 "Danzig
+***** Has no core on 0 "Danzig
+**** add_permanent_claim = our country
+* Gets the country event:
+** ID is flavor_teu.4
+** title = 0 "The Prussian Confederation
+** desc = 0 "The Teutonic Order finds itself plagued with unrest and conspiracy. A new organization has appeared to challenge Teutonic rule, despite our recent outing of the Lizard League which sought to invite Poland to rule Kulm. Calling themselves the Prussian Confederation this union of burghers, knights, and noblemen declare that their purpose is to unite against injustice and arbitrary rule. If this treason were not enough, it is known that many among their number have Polish sympathies, and like their predecessors might attempt to invite Polish rule over Prussia if their influence is not curtailed. Worryingly, they have already found significant support among the burghers of West Prussia.
+** picture = SEJM_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Teutonic Order
+*** Year is less than 1450
+*** Does not have the country flag pru_confederation_flag
+** Mean time to happen
+*** Base mean time to happen of 1 days
+** Option: 0 "We must curtail these traitors.:
+*** Sets the country flag pru_confederation_flag
+*** add_estate_loyalty:
+**** estate = estate_burghers
+**** loyalty = -20
+*** add_estate_influence_modifier:
+**** estate = estate_burghers
+**** desc = 0 "The Prussian Confederation: §Y$VAL$%§!
+**** influence = 10
+**** Lasting 7300 days
+*** give_estate_land_share_gigantic:
+**** estate = estate_burghers
+* Gets the country event:
+** ID is flavor_teu.5
+** title = flavor_teu.5.t
+** desc = flavor_teu.5.d
+** picture = SEJM_eventPicture
+** Trigger:
+*** Year is at least 1460
+*** Year is less than 1500
+*** Country is 0 "Teutonic Order
+*** Does not have the country flag pru_confederation_curtailed
+*** Has the country flag pru_confederation_flag
+*** has_estate_privilege = estate_burghers_prussian_confederation
+*** Is not a vassal
+*** Is not at war
+*** 0 "Danzig does not exist
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: flavor_teu.5.a:
+*** Removes the country flag pru_confederation_flag
+*** Changes country to 0 "Danzig
+*** Changes government type to republic
+*** add_government_reform = oligarchy_reform
+*** remove_estate_privilege = estate_burghers_prussian_confederation
+*** Changes stability by -1
+*** Changes prestige by -25
+*** If:
+**** Limited to:
+***** has_custom_ideas_false = no
+**** Gets the country event:
+***** ID is ideagroups.1

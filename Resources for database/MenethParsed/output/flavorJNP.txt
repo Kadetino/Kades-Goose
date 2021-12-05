@@ -1,0 +1,223 @@
+** Trigger:
+*** Country is 0 "Jaunpur
+*** not:
+**** Year is at least 1448
+*** Does not own 0 "Delhi
+*** Is in the 0 "Muslim religion group
+*** 0 "Delhi exists
+** Mean time to happen
+*** Base mean time to happen of 6 months
+** Option: flavor_jnp.1.a:
+*** Adds the modifier "jnp_decline_of_delhi" for 10 years:
+**** -10% advisor cost
+* Gets the country event:
+** ID is flavor_jnp.2
+** title = flavor_jnp.2.t
+** desc = flavor_jnp.2.d
+** picture = FARMING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Jaunpur
+*** not:
+**** Year is at least 1520
+*** Is in the 0 "Muslim religion group
+*** Any of the following:
+**** Owns core province 0 "Etawah
+**** Owns core province 0 "Central Doab
+** Mean time to happen
+*** Base mean time to happen of 168 months
+** Option: flavor_jnp.2.a:
+*** Changes piety by -15%
+*** Adds the modifier "jnp_rajput_recruitment" for 10 years:
+**** -10% infantry cost
+** Option: flavor_jnp.2.b:
+*** add_stability_or_adm_power = yes
+*** Changes piety by 10%
+* Gets the country event:
+** ID is flavor_jnp.3
+** title = flavor_jnp.3.t
+** desc = flavor_jnp.3.d
+** picture = PRAYING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Jaunpur
+*** not:
+**** Year is at least 1518
+*** Is in the 0 "Muslim religion group
+*** Owns core province 0 "Varanasi
+** Mean time to happen
+*** Base mean time to happen of 222 months
+** Option: flavor_jnp.3.a:
+*** Changes piety by -15%
+*** Adds the modifier "jnp_kabir" for 10 years:
+**** +10% religious unity
+**** +1 prestige
+* Gets the country event:
+** ID is flavor_jnp.4
+** title = flavor_jnp.4.t
+** desc = flavor_jnp.4.d
+** picture = FORT_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Jaunpur
+*** not:
+**** Year is at least 1480
+*** Is in the 0 "Muslim religion group
+*** Owns core province 0 "Jaunpur
+*** 0 "Jaunpur:
+**** fort_level = 1
+** Mean time to happen
+*** Base mean time to happen of 108 months
+** Option: flavor_jnp.4.a:
+*** Modifies treasury by -0.15 years worth of income
+*** 0 "Jaunpur:
+**** Adds the modifier "jnp_jaunpur_qila" until the end of the campaign:
+***** +15% local defensiveness
+** Option: flavor_jnp.4.b:
+*** 0 "Jaunpur:
+**** Adds the modifier "0 "Improved Fortifications" until the end of the campaign:
+***** +10% local defensiveness
+* Gets the country event:
+** ID is flavor_jnp.5
+** title = flavor_jnp.5.t
+** desc = flavor_jnp.5.d
+** picture = GREAT_BUILDING_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Jaunpur
+*** not:
+**** Year is at least 1490
+*** Is in the 0 "Muslim religion group
+*** Owns core province 0 "Jaunpur
+** Mean time to happen
+*** Base mean time to happen of 138 months
+** Option: flavor_jnp.5.a:
+*** Modifies treasury by -0.05 years worth of income
+*** Changes prestige by 15
+*** Adds 10 legitimacy
+*** Changes piety by 10%
+** Option: flavor_jnp.5.b:
+*** Changes piety by 10%
+* Gets the country event:
+** ID is flavor_jnp.6
+** title = flavor_jnp.6.t
+** desc = flavor_jnp.6.d
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Jaunpur
+*** not:
+**** Year is at least 1564
+*** Is in the 0 "Muslim religion group
+*** Owns core province 0 "Varanasi
+** Mean time to happen
+*** Base mean time to happen of 360 months
+** Option: flavor_jnp.6.a:
+*** Adds the modifier "jnp_pilgrim_tax" for the rest of the campaign:
+**** +5% global tax modifier
+**** +1 global unrest
+**** Follows the yes religion
+** Option: flavor_jnp.6.b:
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_jnp.7
+** title = flavor_jnp.7.t
+** desc = flavor_jnp.7.d
+** picture = RELIGION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Jaunpur
+*** Is in the 0 "Muslim religion group
+*** Owns core province 0 "Jaunpur
+*** Owns core province 0 "Lower Doab
+*** Owns core province 0 "Etawah
+** Mean time to happen
+*** Base mean time to happen of 138 months
+** Option: flavor_jnp.7.a:
+*** Changes administrative power stored by -50
+*** Adds the modifier "jnp_sadak_e_azam" for the rest of the campaign:
+**** Trade efficiency is at least 5%
+** Option: flavor_jnp.7.b:
+*** Modifies treasury by 0.25 years worth of income
+*** Adds the modifier "jnp_sadak_e_azam" for 5 years:
+**** Trade efficiency is at least 5%
+* Gets the country event:
+** ID is flavor_jnp.8
+** title = flavor_jnp.8.t
+** desc = flavor_jnp.8.d
+** picture = ACCUSATION_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Jaunpur
+*** Year is less than 1455
+*** Is not a vassal
+*** Is in the 0 "Muslim religion group
+*** Does not own 0 "Kalpi
+*** 0 "Malwa exists
+*** 0 "Malwa:
+**** Is not a vassal
+**** Is in the 0 "Muslim religion group
+**** Is not allied with 0 "Jaunpur
+*** 0 "Bundelkhand:
+**** A vassal of 0 "Malwa
+**** Is a neighbor of 0 "Jaunpur
+** Mean time to happen
+*** Base mean time to happen of 33 months
+** Option: flavor_jnp.8.a:
+*** AI chance:
+**** Base chance of 50
+**** Multiplies value by 0:
+***** Is at war
+*** 0 "Malwa:
+**** Gets the country event:
+***** ID is flavor_jnp.9
+***** Base mean time to happen of 14 days
+** Option: flavor_jnp.8.b:
+*** AI chance:
+**** Base chance of 50
+*** Changes prestige by -5
+* Gets the country event:
+** ID is flavor_jnp.9
+** title = flavor_jnp.9.t
+** desc = flavor_jnp.9.d
+** picture = ACCUSATION_eventPicture
+** is_triggered_only = yes
+** Option: flavor_jnp.9.a:
+*** AI chance:
+**** Base chance of 50
+*** Release 0 "Bundelkhand from vassalage
+*** 0 "Jaunpur:
+**** Gets the country event:
+***** ID is flavor_jnp.10
+**** Adds the opinion modifier "0 "Eased Tension" towards 0 "Malwa
+*** Tooltip:
+**** 0 "Jaunpur:
+***** Gives the 0 "Diplomatic Insult casus belli against 0 "Bundelkhand
+** Option: flavor_jnp.9.b:
+*** AI chance:
+**** Base chance of 50
+**** Multiplies value by 0:
+***** Is at war
+*** 0 "Jaunpur:
+**** Gets the country event:
+***** ID is flavor_jnp.11
+**** Adds the opinion modifier "0 "Irritated" towards 0 "Malwa
+*** Tooltip:
+**** 0 "Jaunpur:
+***** Gives the 0 "Diplomatic Insult casus belli against 0 "Malwa
+* Gets the country event:
+** ID is flavor_jnp.10
+** title = flavor_jnp.10.t
+** desc = flavor_jnp.10.d
+** picture = DIPLOMACY_eventPicture
+** is_triggered_only = yes
+** Option: flavor_jnp.10.a:
+*** Gives the 0 "Diplomatic Insult casus belli against 0 "Bundelkhand
+* Gets the country event:
+** ID is flavor_jnp.11
+** title = flavor_jnp.11.t
+** desc = flavor_jnp.11.d
+** picture = BAD_WITH_MONARCH_eventPicture
+** is_triggered_only = yes
+** Option: flavor_jnp.11.a:
+*** Gives the 0 "Diplomatic Insult casus belli against 0 "Malwa

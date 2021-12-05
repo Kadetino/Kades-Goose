@@ -1,0 +1,190 @@
+** Trigger:
+*** Country is 0 "Malacca
+*** Ruler's name is Ibrahim
+*** Has an heir
+*** Year is less than 1450
+** Mean time to happen
+*** Base mean time to happen of 18 months
+** Option: flavor_mlc.1.a:
+*** Kills the ruler of the country
+*** set_ruler_flag = mlc_death_or_raja_ibrahim
+* Gets the country event:
+** ID is flavor_mlc.2
+** title = flavor_mlc.2.t
+** desc = flavor_mlc.2.d
+** picture = GOOD_WITH_MONARCH_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Malacca
+*** has_ruler_flag = mlc_death_or_raja_ibrahim
+** Mean time to happen
+*** Base mean time to happen of 45 months
+** Option: flavor_mlc.2.a:
+*** AI chance:
+**** Base chance of 90
+*** If:
+**** Limited to:
+***** has_completed_all_reforms_trigger_false = yes
+**** add_reform_progress_small_effect = yes
+*** Adds the modifier "mlc_tun_perak" for 10 years:
+**** -5% diplomatic technology cost
+**** -5% stability cost modifier
+** Option: flavor_mlc.2.b:
+*** AI chance:
+**** Base chance of 10
+*** Changes prestige by 15
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_mlc.3
+** title = flavor_mlc.3.t
+** desc = flavor_mlc.3.d
+** picture = NAVAL_MILITARY_eventPicture
+** Trigger:
+*** Country is 0 "Malacca
+*** Does not have the country modifier "mlc_piracy_controlled"
+*** Diplomatic technology is lower than 10
+** Mean time to happen
+*** Base mean time to happen of 180 months
+*** Multiplies value by 0.8:
+**** Any owned province:
+***** Any of the following:
+****** area = malaya_area
+****** area = malacca_area
+***** Has been discovered by 0 "Portugal
+** Option: flavor_mlc.3.a:
+*** Changes stability by -1
+*** Adds the modifier "mlc_piracy_controlled" for 10 years:
+**** Trade efficiency is at least 5%
+** Option: flavor_mlc.3.b:
+*** Modifies treasury by -0.15 years worth of income
+*** Adds the modifier "mlc_piracy_controlled" for 10 years:
+**** Trade efficiency is at least 5%
+* Gets the country event:
+** ID is flavor_mlc.4
+** title = flavor_mlc.4.t
+** desc = flavor_mlc.4.d
+** picture = CITY_VIEW_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Malacca
+*** Is in the 0 "Muslim religion group
+*** Year is at least 1460
+*** Year is less than 1500
+** Mean time to happen
+*** Base mean time to happen of 120 months
+** Option: flavor_mlc.4.a:
+*** Changes piety by 10%
+*** Adds the modifier "mlc_islamic_laws_enforced" for the rest of the campaign:
+**** Legitimacy is at least 0.5
+**** +0.5 prestige
+**** -1 tolerance of heathens
+**** +1 #Fear of Marginalisation among non-muslim groups global unrest
+**** Follows the yes religion
+** Option: flavor_mlc.4.b:
+*** Changes piety by -10%
+*** add_stability_or_adm_power = yes
+* Gets the country event:
+** ID is flavor_mlc.5
+** title = flavor_mlc.5.t
+** desc = flavor_mlc.5.d
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Malacca
+*** Year is at least 1450
+*** Year is less than 1500
+** Mean time to happen
+*** Base mean time to happen of 150 months
+*** Multiplies value by 0.8:
+**** Has the country modifier "mlc_tun_perak"
+** Option: flavor_mlc.5.a:
+*** Modifies treasury by -0.1 years worth of income
+*** Adds the modifier "mlc_economic_boom" for 10 years:
+**** Trade efficiency is at least 15%
+** Option: flavor_mlc.5.b:
+*** Modifies treasury by 0.1 years worth of income
+* Gets the country event:
+** ID is flavor_mlc.6
+** title = flavor_mlc.6.t
+** desc = flavor_mlc.6.d
+** picture = ECONOMY_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Malacca
+*** Year is at least 1460
+*** Year is less than 1480
+** Mean time to happen
+*** Base mean time to happen of 60 months
+** Option: flavor_mlc.6.a:
+*** Creates an admiral:
+**** Named "Hang Tuah"
+**** 5 skill in shock
+**** 3 skill in fire
+**** 3 skill in manuever
+* Gets the country event:
+** ID is flavor_mlc.7
+** title = flavor_mlc.7.t
+** desc = flavor_mlc.7.d
+** picture = HARBOUR_eventPicture
+** fire_only_once = yes
+** Trigger:
+*** Country is 0 "Malacca
+*** 0 "Portugal exists
+*** Any owned province:
+**** Any of the following:
+***** area = malaya_area
+***** area = malacca_area
+**** Has been discovered by 0 "Portugal
+** Mean time to happen
+*** Base mean time to happen of 12 months
+** Option: flavor_mlc.7.a:
+*** AI chance:
+**** Base chance of 0
+*** Changes stability by -1
+*** 0 "Portugal:
+**** Gives the 0 "Trade War casus belli against 0 "Malacca
+**** Gets the country event:
+***** ID is flavor_mlc.8
+** Option: flavor_mlc.7.b:
+*** AI chance:
+**** Base chance of 1
+*** 0 "Portugal:
+**** Gives the 0 "Trade War casus belli against 0 "Malacca
+**** Gets the country event:
+***** ID is flavor_mlc.8
+* Gets the country event:
+** ID is flavor_mlc.8
+** title = flavor_mlc.8.t
+** desc = flavor_mlc.8.d
+** picture = ANGRY_MOB_eventPicture
+** is_triggered_only = yes
+** Option: flavor_mlc.8.a:
+*** AI chance:
+**** Base chance of 10
+*** Tooltip:
+**** Gives the 0 "Trade War casus belli against 0 "Malacca
+* Gets the country event:
+** ID is flavor_mlc.9
+** title = flavor_mlc.9.t
+** desc = flavor_mlc.9.desc
+** picture = ANGRY_MOB_eventPicture
+** is_triggered_only = yes
+** Option: flavor_mlc.9.a:
+*** Trigger:
+**** Ruler's dynasty is Srivijaya
+*** override_country_name = SRIVIJAYA
+*** AI chance:
+**** Base chance of 1000
+** Option: flavor_mlc.9.b:
+*** Trigger:
+**** Primary culture is javanese
+*** override_country_name = MAJAPAHIT_EMPIRE
+*** AI chance:
+**** Base chance of 100
+** Option: flavor_mlc.9.c:
+*** override_country_name = NUSANTARA
+*** AI chance:
+**** Base chance of 5
+** Option: flavor_mlc.9.d:
+*** AI chance:
+**** Base chance of 1

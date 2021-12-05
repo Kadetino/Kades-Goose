@@ -1,0 +1,238 @@
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Third Rome
+********* uses_religious_icons = yes
+********* current_icon = 0 "Icon of Eleusa
+********* Is at war
+********* Any owned province:
+********** Follows the 0 "Orthodox religion
+********** Not controlled by our country
+********** Less than 1 units are present in the province
+********* Army is less than 80% of the force limit
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Orthodox religion
+************ Not controlled by our country
+************ Less than 1 units are present in the province
+*********** save_event_target_as = eleusa_church_province
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Orthodox religion
+************ The province has the same culture as its owner
+************ Not controlled by our country
+************ Less than 1 units are present in the province
+*********** save_event_target_as = eleusa_church_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: orthodox_icon_events.1.a:
+********* Adds 10 legitimacy
+********* add_devotion = 10
+********* add_horde_unity = 10
+********* Changes republican tradition by 500%
+********* Changes war exhaustion by -2
+********* event_target:eleusa_church_province:
+********** If:
+*********** Limited to:
+************ Not controlled by 0 "Rebels
+************ Not controlled by our country
+*********** Tooltip:
+************ Spawns an infantry unit belonging to our country
+************ Spawns an infantry unit belonging to our country
+*********** Hidden effect:
+************ Province controller:
+************* Gets the country event:
+************** ID is orthodox_icon_events.2
+*********** else:
+************ If:
+************* Limited to:
+************** Not controlled by our country
+************* Spawns an infantry unit belonging to our country
+************* Spawns an infantry unit belonging to our country
+******* Gets the country event:
+******** ID is orthodox_icon_events.2
+******** title = orthodox_icon_events.2.t
+******** desc = orthodox_icon_events.2.d
+******** picture = ORTHODOX_ICON_FLAG_eventPicture
+******** goto = eleusa_church_province
+******** is_triggered_only = yes
+******** Trigger:
+********* Country is not our country
+******** Option: orthodox_icon_events.2.a:
+********* event_target:eleusa_church_province:
+********** Spawns an infantry unit belonging to our country
+********** Spawns an infantry unit belonging to our country
+******* Gets the country event:
+******** ID is orthodox_icon_events.3
+******** title = orthodox_icon_events.3.t
+******** desc = orthodox_icon_events.3.d
+******** picture = ORTHODOX_ICON_FLAG_eventPicture
+******** goto = michael_icon_church_province
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Third Rome
+********* uses_religious_icons = yes
+********* current_icon = 0 "Icon of St. Michael
+********* Has at least 2 provinces
+********* Manpower are less than 90% of maximum
+********* Any owned province:
+********** Follows the 0 "Orthodox religion
+********** The province is not the capital of the country
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Orthodox religion
+************ The province is not the capital of the country
+*********** save_event_target_as = michael_icon_church_province
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Orthodox religion
+************ The province has the same culture as its owner
+************ The province is not the capital of the country
+*********** save_event_target_as = michael_icon_church_province
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Orthodox religion
+************ The province has the same culture as its owner
+************ base_manpower = 5
+************ The province is not the capital of the country
+*********** save_event_target_as = michael_icon_church_province
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+********* Multiplies value by 2:
+********** Is at war with a religious enemy
+******** Option: orthodox_icon_events.3.a:
+********* Changes national manpower by 1.5 years worth of men
+********* Changes Patriarch authority by 5%
+******* Gets the country event:
+******** ID is orthodox_icon_events.4
+******** title = orthodox_icon_events.4.t
+******** desc = orthodox_icon_events.4.d
+******** picture = ICONS_IN_CHURCH_eventPicture
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Third Rome
+********* uses_religious_icons = yes
+********* current_icon = 0 "Icon of Christ Pantocrator
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: orthodox_icon_events.4.a:
+********* add_stability_or_adm_power = yes
+******* Gets the country event:
+******** ID is orthodox_icon_events.5
+******** title = orthodox_icon_events.5.t
+******** desc = orthodox_icon_events.5.d
+******** picture = ICONS_IN_CHURCH_eventPicture
+******** goto = nicholas_icon_was_here
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Third Rome
+********* current_icon = 0 "Icon of St. Nicholas
+********* Follows the 0 "Orthodox religion
+********* Any country:
+********** Any of the following:
+*********** Is allied with our country
+*********** Has a royal marriage with our country
+*********** Has our country as a vassal
+********* Any owned province:
+********** Follows the religion of its owner
+******** Immediate effects:
+********* Hidden effect:
+********** Random known country:
+*********** Limited to:
+************ Any of the following:
+************* Is allied with our country
+************* Has a royal marriage with our country
+************* Has our country as a vassal
+*********** save_event_target_as = benevolent_if_distant_neighbor
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Orthodox religion
+*********** save_event_target_as = nicholas_icon_was_here
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Orthodox religion
+************ Has the 0 "Temple building
+*********** save_event_target_as = nicholas_icon_was_here
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Orthodox religion
+************ Has the 0 "Cathedral building
+*********** save_event_target_as = nicholas_icon_was_here
+********** set_saved_name:
+*********** Named "advisor_from_afar"
+*********** scope = event_target:benevolent_if_distant_neighbor
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: orthodox_icon_events.5.a:
+********* event_target:nicholas_icon_was_here:
+********** Adds the modifier "famous_icon" until the end of the campaign:
+*********** local_unrest = -4
+*********** local_development_cost = -0.05
+********* event_target:benevolent_if_distant_neighbor:
+********** Adds the opinion modifier "st_nicholas_icon_gratitude" towards our country
+******** Option: orthodox_icon_events.5.b:
+********* Creates an advisor of the 0 "Artist type:
+********** With a skill level of 2
+********** discount = yes
+********** Named "advisor_from_afar"
+********** Follows the 0 "Orthodox religion
+********** Culture is event_target:benevolent_if_distant_neighbor
+******** Option: orthodox_icon_events.5.c:
+********* Modifies treasury by 0.5 years worth of income
+******** after:
+********* clear_saved_name = advisor_from_afar
+******* Gets the country event:
+******** ID is orthodox_icon_events.6
+******** title = orthodox_icon_events.6.t
+******** desc = orthodox_icon_events.6.d
+******** picture = ICONS_IN_CHURCH_eventPicture
+******** goto = climacus_church_province
+******** is_triggered_only = yes
+******** Trigger:
+********* Has the DLC Third Rome
+********* uses_religious_icons = yes
+********* current_icon = 0 "Icon of St. John Climacus
+********* Has at least 2 provinces
+********* Any owned province:
+********** Follows the 0 "Orthodox religion
+********** The province is not the capital of the country
+******** Immediate effects:
+********* Hidden effect:
+********** Random owned province:
+*********** Limited to:
+************ Follows the 0 "Orthodox religion
+************ The province is not the capital of the country
+*********** save_event_target_as = climacus_church_province
+********** One of the following will happen:
+*********** 33 relative chance:
+************ Sets the country flag climacus_manpower
+*********** 33 relative chance:
+************ Sets the country flag climacus_tax
+*********** 33 relative chance:
+************ Sets the country flag climacus_production
+******** Mean time to happen
+********* Base mean time to happen of 1 days
+******** Option: orthodox_icon_events.6.a:
+********* Trigger:
+********** Has the country flag climacus_manpower
+********* Removes the country flag climacus_manpower
+********* Changes military power stored by 25
+********* event_target:climacus_church_province:
+********** add_base_manpower = 1
+******** Option: orthodox_icon_events.6.b:
+********* Trigger:
+********** Has the country flag climacus_tax
+********* Removes the country flag climacus_tax
+********* Changes administrative power stored by 25
+********* event_target:climacus_church_province:
+********** Changes base tax by 1
+******** Option: orthodox_icon_events.6.c:
+********* Trigger:
+********** Has the country flag climacus_production
+********* Removes the country flag climacus_production
+********* Changes diplomatic power stored by 25
+********* event_target:climacus_church_province:
+********** add_base_production = 1

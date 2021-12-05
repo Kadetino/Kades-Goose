@@ -1,0 +1,1480 @@
+
+=== 0 "The incorporation of Prussia into Brandenburg ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Brandenburg
+* Has the monarchy government type
+* 0 "Prussia:
+** Has the monarchy government type
+** Is AI controlled
+** Wasn't player controlled
+** num_of_subjects_false = 1
+** Has an opinion of at least 100 with 0 "Brandenburg
+** Not a vassal of 0 "Brandenburg
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 12 months
+
+'''Option: 0 "Ok:'''
+
+* 0 "Brandenburg:
+** Creates a union with 0 "Prussia
+
+=== 0 "Reform of the Brandenburg Army ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country flag brapru_army_reforms_1
+** All of the following:
+*** Does not have the DLC Emperor
+*** Country is 0 "Brandenburg
+*** Year is at least 1600
+*** Year is less than 1700
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Option: 0 "Army Reform:'''
+
+* Changes army tradition by 20
+* Changes military power stored by 150
+* add_army_professionalism = 0.02
+
+=== 0 "The Prussian African Trade Company ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Brandenburg
+** All of the following:
+*** Country is 0 "Prussia
+*** 0 "Brandenburg does not exist
+* Any active trade node:
+** has_merchant = PREV
+** Any province owned by a trade node member:
+*** Any of the following:
+**** Region is kongo_region
+**** Region is south_africa_region
+**** Region is guinea_region
+**** Region is niger_region
+**** Region is central_africa_region
+**** Region is east_africa_region
+**** Region is horn_of_africa_region
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Option: 0 "We will exploit this!:'''
+
+* Changes prestige by 5
+* Creates an explorer at  extra naval tradition
+** tradition = 5
+* Adds the modifier "0 "Prussian African Trade Company" for the rest of the campaign:
+** +5% trade steering
+
+=== 0 "Immanuel Kant ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Prussia
+* Year is at least 1781
+* Year is less than 1800
+* Has the country flag has_konigsberg_university
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 36 months
+
+'''Option: 0 "Ok:'''
+
+* Changes prestige by 10
+* Creates an advisor of the 0 "Philosopher type:
+** Culture is 0 "Prussian
+** Named "Immanuel Kant"
+** With a skill level of 3
+** discount = yes
+* add_innovativeness_big_effect = yes
+
+=== 0 "Frederick William's Absolutism ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country flag pru_absolutism_flag
+** All of the following:
+*** Does not have the DLC Emperor
+*** Country is 0 "Prussia
+*** Year is at least 1713
+*** Year is less than 1765
+*** Has the monarchy government type
+*** is_free_or_tributary_trigger = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 64 months
+
+'''Option: 0 "Ok:'''
+
+* If:
+** Limited to:
+*** has_completed_all_reforms_trigger_false = yes
+** add_reform_progress_small_effect = yes
+* Adds the modifier "0 "The Absolutism" for the rest of the campaign:
+** global_autonomy = -0.05
+** max_absolutism = 20
+
+=== 0 "The Great Prussian Military Reform ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country flag brapru_army_reforms_2
+** All of the following:
+*** Does not have the DLC Emperor
+*** Country is 0 "Prussia
+*** Year is at least 1700
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Option: 0 "Army Reform:'''
+
+* Changes army tradition by 20
+* add_army_professionalism = 0.05
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+** add_militarised_society = 20
+** Changes military power stored by 100
+* If:
+** Limited to:
+*** Does not have the DLC Rights of Man
+** Changes military power stored by 150
+
+=== 0 "The Enlightened Reforms of Frederick the Great ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Prussia
+* Year is at least 1700
+* Is not in regency
+* Any of the following:
+** Ruler's diplomatic skill is at least 6
+** Ruler's administrative skill is at least 6
+** Ruler's military skill is at least 6
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 12 months
+
+'''Option: 0 "Reforms of Enlightenment:'''
+
+* Adds the ruler modifier "0 "Prussian Reforms of Enlightenment" until the ruler's death:
+** -25% idea cost
+
+'''Option: 0 "No Change:'''
+
+* add_stability_or_adm_power = yes
+
+'''Option: 0 "Reforms of Reaction:'''
+
+* Changes stability by -1
+* Adds the ruler modifier "0 "Prussian Reforms of Reaction" until the ruler's death:
+** -25% technology cost
+
+=== 0 "Von Scharnhorst's and Von Stein's Reforms ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Prussia
+* 0 "Brandenburg does not exist
+* Year is at least 1800
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 30 months
+
+'''Option: 0 "Plebeian Mass Reform:'''
+
+* Changes diplomatic power stored by 50
+
+'''Option: 0 "Frederickian Elite Reform:'''
+
+* Changes administrative power stored by 50
+
+'''Option: 0 "Balanced Reform:'''
+
+* Changes military power stored by 50
+
+=== 0 "Berliner Unwille ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Brandenburg
+** Country is 0 "Prussia
+* Owns 0 "Berlin
+* Year is at least 1448
+* Year is less than 1475
+* Is not in regency
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 80 months
+
+'''Option: 0 "Ignore the rabble:'''
+
+* 0 "Berlin:
+** Spawns revolt of size 1
+
+'''Option: 0 "Listen to the people:'''
+
+* Adds the ruler modifier "0 "Berliner Unwille stopped" until the ruler's death:
+** +20% build cost
+
+=== 0 "The Sale of Indulgences ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Brandenburg
+* Year is at least 1480
+* Year is less than 1505
+* Follows the 0 "Catholic religion
+* Is not in regency
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 70 months
+
+'''Option: 0 "Sell Indulgences:'''
+
+* Adds the ruler modifier "0 "Sell Indulgences" until the ruler's death:
+** +10% global tax modifier
+* Adds 2% reform desire
+
+'''Option: 0 "Ignore it:'''
+
+* Changes Papal Influence by -1
+
+=== 0 "University of Königsberg ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country flag konigsberg_university_flag
+** All of the following:
+*** Does not have the DLC Emperor
+*** Any of the following:
+**** Country is 0 "Brandenburg
+**** Country is 0 "Prussia
+*** Owns 0 "Königsberg
+*** Year is at least 1540
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Sets the country flag has_konigsberg_university
+
+'''Option: 0 "Sponsor the University:'''
+
+* Modifies treasury by -0.25 years worth of income
+* Changes prestige by 5
+* Changes administrative power stored by 100
+
+'''Option: 0 "Do nothing:'''
+
+* Changes prestige by -1
+
+=== 0 "The Grain Tax ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Brandenburg
+* Year is at least 1545
+* Year is less than 1570
+* is_free_or_tributary_trigger = yes
+* Is not in regency
+* Inflation is less than 1
+* Has less than 3000 ducats in the treasury
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 50 months
+
+'''Option: 0 "Institute the Grain Tax:'''
+
+* Adds the ruler modifier "0 "Grain Tax" until the ruler's death:
+** +10% global tax modifier
+** +1 global unrest
+
+'''Option: 0 "Do nothing:'''
+
+* Changes inflation by 1
+
+=== 0 "Leonhard Thurneysser ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Year is at least 1550
+* Year is less than 1595
+* Country is 0 "Brandenburg
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 200 months
+
+'''Option: 0 "Hire him as an advisor:'''
+
+* Changes administrative power stored by 25
+* Creates an advisor of the 0 "Natural Scientist type:
+** Named "Leonhard Thurneysser"
+** Culture is 0 "Swiss
+** With a skill level of 2
+** discount = yes
+
+'''Option: 0 "We do not need him:'''
+
+* Changes prestige by 5
+
+=== 0 "Prutenic Tables ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Prussia
+* has_institution = printing_press
+* Year is less than 1580
+* Is not in regency
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 50 months
+
+'''Option: 0 "Finance the printing:'''
+
+* Modifies treasury by -0.5 years worth of income
+* Adds the ruler modifier "0 "Prutenic Tables" until the ruler's death:
+** -10% technology cost
+* add_innovativeness_small_effect = yes
+
+'''Option: 0 "Ignore the man:'''
+
+* Changes prestige by -5
+
+=== 0 "The Fate of Neumark ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Brandenburg
+* Has less than 4 active loans
+* Any of the following:
+** 0 "Neumark:
+*** The province is owned by 0 "Teutonic Order
+*** Controlled by 0 "Teutonic Order
+** 4747::
+*** The province is owned by 0 "Teutonic Order
+*** Controlled by 0 "Teutonic Order
+* 0 "Teutonic Order:
+** Does not own 0 "Kolberg
+** Does not own 0 "Poznan
+** Does not own 0 "Stettin
+** Does not own 0 "Notec
+** Does not own 1 "Wolgast
+** Does not own 0 "Stolp
+* Not at war with 0 "Teutonic Order
+* Year is less than 1466
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 44 months
+
+'''Option: 0 "Make the Grandmaster a generous offer.:'''
+
+* AI chance:
+** Base chance of 75
+* 0 "Teutonic Order:
+** Gets the country event:
+*** ID is flavor_brapru.16
+
+'''Option: 0 "We must conserve our funds.:'''
+
+* AI chance:
+** Base chance of 25
+* Changes prestige by -5
+
+=== 0 "The Fate of Neumark ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Option: 0 "Take their money!:'''
+
+* AI chance:
+** Base chance of 100
+* Tooltip:
+** 0 "Neumark:
+*** If:
+**** Limited to:
+***** The province is owned by 0 "Teutonic Order
+***** Controlled by 0 "Teutonic Order
+**** Cedes province to 0 "Brandenburg
+**** Gives 0 "Brandenburg core on the province
+**** Removes core on 0 "Teutonic Order
+** 4747::
+*** If:
+**** Limited to:
+***** The province is owned by 0 "Teutonic Order
+***** Controlled by 0 "Teutonic Order
+**** Cedes province to 0 "Brandenburg
+**** Gives 0 "Brandenburg core on the province
+**** Removes core on 0 "Teutonic Order
+* Changes treasury by 100 ducats
+* Our country:
+** Gets the country event:
+*** ID is flavor_brapru.17
+** Adds the opinion modifier "0 "Pawning of Neumark" towards our country
+
+'''Option: 0 "Neumark shall remain ours until the end of days.:'''
+
+* AI chance:
+** Base chance of 0
+* Our country:
+** Gets the country event:
+*** ID is flavor_brapru.18
+
+=== 0 "Treaty of Cölln ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Option: 0 "Excellent!:'''
+
+* 0 "Teutonic Order:
+** 0 "Neumark:
+*** If:
+**** Limited to:
+***** The province is owned by 0 "Teutonic Order
+***** Controlled by 0 "Teutonic Order
+**** Cedes province to 0 "Brandenburg
+**** Gives 0 "Brandenburg core on the province
+**** Removes core on 0 "Teutonic Order
+** 4747::
+*** If:
+**** Limited to:
+***** The province is owned by 0 "Teutonic Order
+***** Controlled by 0 "Teutonic Order
+**** Cedes province to 0 "Brandenburg
+**** Gives 0 "Brandenburg core on the province
+**** Removes core on 0 "Teutonic Order
+* Changes treasury by -100 ducats
+* Our country:
+** Adds the opinion modifier "0 "Pawning of Neumark" towards our country
+
+=== 0 "The Teutonic Order Declines ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Option: 0 "Most regrettable.:'''
+
+
+=== 0 "Hohenzollern Rule of Brandenburg ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Brandenburg
+* Ruler's dynasty is von Hohenzollern
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 3 months
+
+'''Option: 0 "We must build our own government institutions!:'''
+
+* AI chance:
+** Base chance of 100
+* Changes administrative power stored by -35
+* Adds the ruler modifier "0 "New Chancellery" until the ruler's death:
+** global_autonomy = -0.05
+** +1 global unrest
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_influence_modifier:
+*** estate = estate_church
+*** desc = EST_VAL_PRIVATE_CHANCELLERY
+*** influence = -10
+*** Lasting 9125 days
+** take_estate_land_share_small:
+*** estate = estate_church
+
+'''Option: 0 "Through bribery and nepotism we can ensure loyalty to the state.:'''
+
+* AI chance:
+** Base chance of 0
+* add_corruption = 1
+* If:
+** Limited to:
+*** has_estate = estate_church
+** add_estate_loyalty:
+*** estate = estate_church
+*** loyalty = 10
+** give_estate_land_share_small:
+*** estate = estate_church
+
+=== 0 "The Matter of Berlin ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country flag renovate_berlin_flag
+** All of the following:
+*** Does not have the DLC Emperor
+*** Any of the following:
+**** Country is 0 "Brandenburg
+**** Country is 0 "Prussia
+*** Capital is 0 "Berlin
+*** Year is at least 1650
+*** Year is less than 1710
+*** Administrative technology is at least 20
+*** Has at least 0.2 years worth of income
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 180 months
+
+'''Option: 0 "Let work commence!:'''
+
+* AI chance:
+** Base chance of 100
+* If:
+** Limited to:
+*** Does not have the country flag renovate_berlin_flag
+** Modifies treasury by -0.75 years worth of income
+* Sets the country flag pru_berlin_renovations_flag
+* 0 "Berlin:
+** Adds the modifier "0 "Renovations of Berlin" until the end of the campaign:
+*** -20% provincial tax income
+*** local_build_cost = -0.1
+*** local_development_cost = -0.15 #Nullifies Development Penalty from Forest Terrain
+
+'''Option: 0 "Why spend money on such superficial matters?:'''
+
+* Trigger:
+** Does not have the country flag renovate_berlin_flag
+* AI chance:
+** Base chance of 0
+* add_stability_or_adm_power = yes
+
+=== 0 "Unification of Berlin ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Has had the country flag "pru_berlin_renovations_flag" for at least 3650 days
+* Owns core province 0 "Berlin
+* 0 "Berlin:
+** Has the province modifier "0 "Renovations of Berlin"
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 48 months
+
+'''Option: 0 "Truly we have built a proper temple to the fame of the [Root.Monarch.Dynasty.GetName]s!:'''
+
+* Removes the country flag pru_berlin_renovations_flag
+* 0 "Berlin:
+** Changes province capital name to Berlin
+** Changes base tax by 2
+** add_base_production = 2
+** add_base_manpower = 2
+** Removes the country modifier "0 "Renovations of Berlin"
+** Adds the modifier "0 "Unification of Berlin" until the end of the campaign:
+*** +0.5 prestige
+*** local_build_cost = -0.1
+*** local_development_cost = -0.15 #Nullifies Development Penalty from Forest Terrain
+
+=== 0 "Unification of Berlin ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Country is 0 "Brandenburg
+* Ruler's name is Albrecht III Achilles
+* Has the country flag albrecht_achilles_flag
+* 0 "Ansbach:
+** Country exists
+** Ruler's name is Albrecht I Achilles
+
+'''Immediate effects:'''
+
+* Removes the country flag albrecht_achilles_flag
+* Hidden effect:
+** 0 "Ansbach:
+*** Gets the country event:
+**** ID is flavor_brapru.23
+
+'''Option: 0 "Truly we have built a proper temple to the fame of the [Root.Monarch.Dynasty.GetName]s!:'''
+
+
+=== 0 "Franconian Hohenzollerns ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Option: 0 "And so the lands of our family are reunited!:'''
+
+* AI chance:
+** Base chance of 100
+* Tooltip:
+** 0 "Brandenburg:
+*** Creates a union with 0 "Ansbach
+* 0 "Brandenburg:
+** Gets the country event:
+*** ID is flavor_brapru.24
+
+'''Option: 0 "Albrecht must leave the throne to another member of the Family.:'''
+
+* AI chance:
+** Base chance of 0
+* Spawns a ruler:
+** Ruler's dynasty is von Hohenzollern
+* If:
+** Limited to:
+*** has_states_general_mechanic = yes
+** change_statists_vs_orangists = 1
+
+=== 0 "Franconian Hohenzollerns ===
+* Can only fire once
+* Cannot fire randomly
+
+'''Option: 0 "And so the lands of our family are reunited!:'''
+
+* Creates a union with 0 "Ansbach
+* Hidden effect:
+** Gets the country event:
+*** ID is flavor_brapru.25
+*** Base mean time to happen of 1825 days
+
+=== 0 "Dispositio Achillea ===
+* Can only fire once
+* Cannot fire randomly
+* Trigger:
+** Any of the following:
+*** Senior union partner over 0 "Ansbach
+*** Senior union partner over BYT
+* desc = 1 "The Hohenzollern lands are now all in the hands of [Root.Monarch.GetName] but worried minds fear that they may be split and be divided once again in the future. Indeed the March of Brandenburg itself might be split among an overabundance of sons. It is clear that once strong lands such as Saxony or Thuringia have suffered hard from being parceled out to the many heirs of the principal title holders, something [Root.Monarch.GetName] would rather avoid. Indeed even at the Imperial court we have received worried warnings that we have not sufficiently protected our succession. An Electorate is expected to be indivisible.\n\nIf we are to protect the Brandenburg Electorate forever, however, we might well have to let go of the Franconian holdings of our dynasty to our younger sons.
+* Trigger:
+** Not senior union partner over 0 "Ansbach
+** Not senior union partner over BYT
+* desc = 0 "The lands of Brandenburg are now all in the hands of [Root.Monarch.GetName] but worried minds fear that the March of Brandenburg might be split among an overabundance of sons. It is clear that once strong lands such as Saxony or Thuringia have suffered hard from being parceled out to the many heirs of the principal title holders, something [Root.Monarch.GetName] would rather avoid. Indeed even at the Imperial court we have received worried warnings that we have not sufficiently protected our succession. An Electorate is expected to be indivisible.
+
+'''Trigger:'''
+
+* Country is 0 "Brandenburg
+* Is an elector in the Holy Roman Empire
+* Does not have the country flag albrecht_achilles_flag
+* Any of the following:
+** Ruler's name is not Albrecht III Achilles
+** Senior union partner over 0 "Ansbach
+
+'''Option: 0 "Brandenburg must be indivisible!:'''
+
+* AI chance:
+** Base chance of 50
+* Adds the modifier "0 "Dispositio Achillea" for the rest of the campaign:
+** +25% chance of getting an heir
+** -10% stability cost modifier
+* If:
+** Limited to:
+*** Senior union partner over 0 "Ansbach
+** Hidden effect:
+*** 0 "Ansbach:
+**** Breaks the union with 0 "Brandenburg
+**** Gets the country event:
+***** ID is flavor_brapru.251
+**** If:
+***** Limited to:
+****** has_states_general_mechanic = yes
+***** change_statists_vs_orangists = 1
+*** remove_casus_belli:
+**** target = 0 "Ansbach
+* If:
+** Limited to:
+*** Senior union partner over BYT
+** Hidden effect:
+*** BYT:
+**** Breaks the union with 0 "Brandenburg
+**** Gets the country event:
+***** ID is flavor_brapru.251
+**** If:
+***** Limited to:
+****** has_states_general_mechanic = yes
+***** change_statists_vs_orangists = 1
+*** remove_casus_belli:
+**** target = BYT
+
+'''Option: 0 "This is only a problem in families that don't stick together.:'''
+
+* AI chance:
+** Base chance of 50
+* If:
+** Limited to:
+*** Any of the following:
+**** Senior union partner over 0 "Ansbach
+**** Senior union partner over BYT
+** Changes stability by -1
+** Changes prestige by -10
+* If:
+** Limited to:
+*** Not senior union partner over 0 "Ansbach
+*** Not senior union partner over BYT
+** add_stability_or_adm_power = yes
+** Changes prestige by 10
+** Every known country:
+*** Limited to:
+**** Ruler's dynasty is our country
+*** Adds the opinion modifier "0 "Traditional Inheritance" towards our country
+* Holy Roman Emperor:
+** Adds the opinion modifier "0 "Insecure Electorate Succession" towards our country
+
+=== title = none ===
+* Cannot fire randomly
+
+'''Immediate effects:'''
+
+* Spawns a ruler:
+** Ruler's dynasty is von Hohenzollern
+
+=== 0 "A man of Law and Integrity ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Prussia
+** Country is 0 "Brandenburg
+* Year is at least 1740
+* Year is less than 1760
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 60 months
+
+'''Option: 0 "Hired!:'''
+
+* Sets the country flag hired_cocceji
+* If:
+** Limited to:
+*** has_completed_all_reforms_trigger_false = yes
+** add_reform_progress_small_effect = yes
+* Creates an advisor of the 0 "Statesman type:
+** Named "Samuel von Cocceji"
+** Culture is 0 "Rhenish
+** discount = yes
+** With a skill level of 3
+
+=== 0 "The [Root.GetAdjective] Legal System ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country flag pru_legal_reforms_flag
+** All of the following:
+*** Any of the following:
+**** Country is 0 "Prussia
+**** Country is 0 "Brandenburg
+*** Year is at least 1730
+*** Year is less than 1790
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 180 months
+* Multiplies value by 0.7:
+** Has the country flag hired_cocceji
+
+'''Option: 0 "Yes! Start in God's name!:'''
+
+* AI chance:
+** Base chance of 75
+* If:
+** Limited to:
+*** has_completed_all_reforms_trigger_false = yes
+** add_reform_progress_small_effect = yes
+* Changes stability by -1
+* Adds the modifier "0 "Unified Legal System" for the rest of the campaign:
+** -10% administrative technology cost
+
+'''Option: 0 "We have no time for legal Procedure and other formalities…:'''
+
+* AI chance:
+** Base chance of 25
+* Changes administrative power stored by 200
+
+=== 0 "Edict of Potsdam ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country flag pru_potsdam_flag
+** All of the following:
+*** Does not have the DLC Emperor
+*** Any of the following:
+**** Country is 0 "Prussia
+**** Country is 0 "Brandenburg
+*** Is not at war
+*** Year is at least 1650
+*** Year is less than 1700
+*** Any of the following:
+**** Follows the 0 "Protestant religion
+**** Follows the 0 "Reformed religion
+*** Has at least 3 provinces
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 150 months
+* Multiplies value by 0.6:
+** 0 "France:
+*** Has the country flag revoked_the_edict_of_nantes
+
+'''Option: 0 "Let it be known that they can settle in Brandenburg!:'''
+
+* AI chance:
+** Base chance of 75
+* Modifies treasury by -0.75 years worth of income
+* Changes stability by -2
+* Random owned province:
+** Limited to:
+*** Culture is owner
+*** The province is not the capital of the country
+*** Follows the religion of its owner
+** add_base_manpower = 1
+** Changes base tax by 1
+** add_base_production = 1
+** If:
+*** Limited to:
+**** The owner of the province:
+***** Follows the 0 "Protestant religion
+*** Changes religion to 0 "Reformed
+** If:
+*** Limited to:
+**** The owner of the province:
+***** Follows the 0 "Reformed religion
+*** Changes religion to 0 "Protestant
+* Capital:
+** add_base_manpower = 1
+** Changes base tax by 2
+** add_base_production = 2
+* Hidden effect:
+** Every known country:
+*** Limited to:
+**** Follows the 0 "Catholic religion
+**** Capital:
+***** In the continent 0 "Europe
+**** Does not have the country flag revoked_the_edict_of_nantes
+*** Adds the opinion modifier "0 "Edict of Potsdam" towards our country
+* Random country:
+** Limited to:
+*** Has the country flag revoked_the_edict_of_nantes
+** Adds the opinion modifier "0 "Received Huguenot Refugees" towards our country
+
+'''Option: 0 "We cannot afford to receive them.:'''
+
+* AI chance:
+** Base chance of 25
+* Changes administrative power stored by 200
+
+=== 0 "On War ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Has the country flag brapru_army_reforms_3
+** All of the following:
+*** Does not have the DLC Emperor
+*** Any of the following:
+**** Country is 0 "Prussia
+**** Country is 0 "Brandenburg
+*** Year is at least 1790
+*** has_mil_advisor = yes
+*** Is not in regency
+*** has_consort_regency_false = no
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 90 months
+
+'''Option: 0 "He is clearly a man of great thought – make him our advisor.:'''
+
+* AI chance:
+** Base chance of 80
+* Creates an advisor of the 0 "Army Reformer type:
+** Named "Carl von Clausewitz"
+** Culture is 0 "Saxon
+** With a skill level of 3
+** discount = yes
+
+'''Option: 0 "An experienced soldier? We want him in charge of our troops.:'''
+
+* AI chance:
+** Base chance of 10
+* Creates a general:
+** Named "Carl von Clausewitz"
+** 3 skill in shock
+** 4 skill in fire
+** 4 skill in manuever
+** 1 skill in siege
+
+'''Option: 0 "We have enough philosophers in our realm.:'''
+
+* AI chance:
+** Base chance of 10
+* add_stability_or_adm_power = yes
+
+=== 0 "The Burghers of Königsberg ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Brandenburg
+** Country is 0 "Prussia
+* Has the monarchy government type
+* Is not in regency
+* has_consort_regency_false = no
+* Owns 0 "Königsberg
+* Year is at least 1660
+* Any country:
+** Has an opinion lower than 0 of our country
+** Not at war with our country
+** Is not allied with our country
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** Random neighbor country:
+*** Limited to:
+**** Has an opinion lower than 0 of our country
+**** Not at war with our country
+**** Is not allied with our country
+*** save_event_target_as = some_neighbor_country
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 90 months
+
+'''Option: 0 "Let our regiments deal with this.:'''
+
+* 0 "Königsberg:
+** Spawns revolt of size 2 of 0 "Particularist rebels
+
+'''Option: 0 "We will have to make concessions.:'''
+
+* Every owned province:
+** Limited to:
+*** The province is not the capital of the country
+*** Any of the following:
+**** area = west_prussia_area
+**** area = east_prussia_area
+** add_local_autonomy = 25
+
+=== 0 "Without a Care ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Brandenburg
+** Country is 0 "Prussia
+* Owns 0 "Potsdam
+* Year is at least 1730
+* has_institution = enlightenment
+* Is not in regency
+* has_consort_regency_false = no
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 180 months
+
+'''Option: 0 "Let [Root.Monarch.GetName] have [Root.Monarch.GetHerHis] Sanssouci.:'''
+
+* AI chance:
+** Base chance of 100
+* Modifies treasury by -0.75 years worth of income
+* Sets the country flag pru_sanssouci_palace_flag
+* set_ruler_flag = pru_sanssouci_builder_flag
+* 0 "Potsdam:
+** Adds the modifier "0 "Construction of Sanssouci" until the end of the campaign:
+*** -50% provincial tax income
+* Hidden effect:
+** Gets the country event:
+*** ID is flavor_brapru.32
+*** Base mean time to happen of 731 days
+
+'''Option: 0 "The [Root.Monarch.GetTitle] already has a home in [Root.Capital.GetName].:'''
+
+* AI chance:
+** Base chance of 0
+* add_stability_or_adm_power = yes
+
+=== 0 "Sanssouci Palace ===
+* Cannot fire randomly
+
+'''Trigger:'''
+
+* Has the country flag pru_sanssouci_palace_flag
+* Owns 0 "Potsdam
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** 0 "Potsdam:
+*** save_event_target_as = potsdam_province
+* Trigger:
+** has_ruler_flag = pru_sanssouci_builder_flag
+* desc = 0 "The [Root.Monarch.GetTitle] has been jubilant ever since construction of [Root.Monarch.GetHerHis] summer palace was completed and [Root.Monarch.GetHerHis] vision realized. Provided that [Root.Monarch.GetName] is not busy with war, this is where [Root.Monarch.GetSheHe] will spend [Root.Monarch.GetHerHis] days from early May to the beginning of October, entertaining the brightest minds of our era, be it over political debate or philosophical discussion, to the delicate tones of the current popular music. The social elite of [Root.Country.GetName] are, and will remain, very impressed by the royal addition to [potsdam_province.GetName].
+* Trigger:
+** has_ruler_flag_false = pru_sanssouci_builder_flag
+* desc = 0 "The visionary ruler who set out to build Sanssouci sadly never got to experience the finished palace. If they could see it now however, they would surely have enjoyed the many gatherings now taking place there. The great philosophers and artists of our age will often be invited to spend time at this sophisticated refuge and the magnificent gardens surrounding the palace are bound to stand as a beacon of enlightened pastime for centuries.
+
+'''Option: 0 "Excellent.:'''
+
+* Changes prestige by 10
+* 0 "Potsdam:
+** Adds the modifier "0 "Sanssouci" until the end of the campaign:
+*** +200% available advisors
+*** -5% advisor cost
+* Removes the country flag pru_sanssouci_palace_flag
+* clr_ruler_flag = pru_sanssouci_builder_flag
+
+=== 0 "The [Root.GetName] Recess ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Brandenburg
+** Country is 0 "Prussia
+* Has the monarchy government type
+* Year is at least 1650
+* Year is less than 1700
+* Any of the following:
+** Is not in regency
+** has_consort_regency = yes
+* Has at least 6 provinces
+* Any of the following:
+** Army is at least 70% of the force limit
+** All of the following:
+*** Is the Holy Roman Emperor
+*** Army is at least 40% of the force limit
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 150 months
+
+'''Option: 0 "They shall dance to my tune or the devil will fetch me!:'''
+
+* AI chance:
+** Base chance of 100
+* Changes military power stored by -85
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+*** has_reform = 0 "Prussian Monarchy
+** add_militarised_society = 20
+* Adds the ruler modifier "0 "The Last Diet" until the ruler's death:
+** -10% land maintenance
+* If:
+** Limited to:
+*** has_estate = estate_nobles
+*** Has the monarchy government type
+** add_estate_loyalty:
+*** estate = estate_nobles
+*** loyalty = 10
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = -15
+* If:
+** Limited to:
+*** Any of the following:
+**** has_estate_false = estate_nobles
+**** Does not have the monarchy government type
+** Adds the ruler modifier "0 "Burgher Rights Trampled" until the ruler's death:
+*** +1 global unrest
+*** -10% production efficiency
+
+'''Option: 0 "Money talks, we need the support of the Burghers.:'''
+
+* AI chance:
+** Base chance of 0
+* Modifies treasury by -1 years worth of income
+* Adds the ruler modifier "0 "The Last Diet" until the ruler's death:
+** -10% land maintenance
+* If:
+** Limited to:
+*** has_estate = estate_nobles
+*** Has the monarchy government type
+** add_estate_loyalty:
+*** estate = estate_nobles
+*** loyalty = -15
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = 10
+* If:
+** Limited to:
+*** Any of the following:
+**** has_estate_false = estate_nobles
+**** Does not have the monarchy government type
+** Adds the ruler modifier "0 "Junkers Displeased" until the ruler's death:
+*** +1 global unrest
+*** -10% global tax modifier
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+*** has_reform = 0 "Prussian Monarchy
+** add_militarised_society = 10
+
+'''Option: 0 "We could never trample their ancient rights!:'''
+
+* AI chance:
+** Base chance of 0
+* Modifies treasury by -0.25 years worth of income
+* add_stability_or_adm_power = yes
+
+=== 0 "Canals to [berlin_province.GetCapitalName] ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Brandenburg
+** Country is 0 "Prussia
+* Has the monarchy government type
+* Owns 0 "Berlin
+* Is not at war
+* Year is at least 1500
+* Year is less than 1600
+* Any of the following:
+** Is not in regency
+** has_consort_regency = yes
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** 0 "Berlin:
+*** save_event_target_as = berlin_province
+
+'''Option: 0 "An additional investment is clearly in place.:'''
+
+* AI chance:
+** Base chance of 0
+* Modifies treasury by -1 years worth of income
+* 0 "Berlin:
+** Changes base tax by 1
+** add_base_production = 1
+
+'''Option: 0 "We should persuade the Nobility to aid us.:'''
+
+* Trigger:
+** Has the monarchy government type
+* AI chance:
+** Base chance of 0
+* If:
+** Limited to:
+*** Has the monarchy government type
+*** has_estate = estate_nobles
+** Changes diplomatic power stored by -85
+** add_estate_influence_modifier:
+*** estate = estate_nobles
+*** desc = EST_VAL_SAVED_A_PROJECT
+*** influence = 15
+*** Lasting 9125 days
+* If:
+** Limited to:
+*** has_estate_false = estate_nobles
+** Changes diplomatic power stored by -85
+** Changes administrative power stored by -15
+* 0 "Berlin:
+** Changes base tax by 1
+** add_base_production = 1
+
+'''Option: 0 "This is highly unfortunate.:'''
+
+* AI chance:
+** Base chance of 100
+* Changes prestige by -5
+
+=== 0 "Praxis Pietatis Melica ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Brandenburg
+* Owns 0 "Berlin
+* Follows the 0 "Protestant religion
+* Year is at least 1635
+* Year is less than 1700
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 195 months
+
+'''Option: 0 "Nun danket alle Gott.:'''
+
+* Changes prestige by 10
+* Creates an advisor of the 0 "Artist type:
+** Named "Johann Crüger"
+** With a skill level of 3
+** discount = yes
+
+=== 0 "An Army with a State ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Prussia
+* Has the monarchy government type
+* Ruler's military skill is at least 5
+* Year is at least 1700
+* Year is less than 1800
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 300 months
+
+'''Option: 0 "Prussia is an army with a state, not a state with an army.:'''
+
+* AI chance:
+** Base chance of 100
+* Changes stability by -1
+* add_army_professionalism = 0.05
+* If:
+** Limited to:
+*** Has the DLC Rights of Man
+** add_militarised_society = 40
+* If:
+** Limited to:
+*** Does not have the DLC Rights of Man
+** Changes military power stored by 100
+* Changes national manpower by 1 years worth of men
+
+'''Option: 0 "We cannot let military needs dictate the needs of the state!:'''
+
+* AI chance:
+** Base chance of 0
+* Modifies treasury by 1 years worth of income
+* add_stability_or_adm_power = yes
+
+=== 0 "Moses Mendelssohn ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Prussia
+* Year is at least 1730
+* Year is less than 1760
+
+'''Immediate effects:'''
+
+* Hidden effect:
+** 0 "Berlin:
+*** save_event_target_as = berlin_province
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 90 months
+
+'''Option: 0 "Such an asset!:'''
+
+* Creates an advisor of the 0 "Philosopher type:
+** Named "Moses Mendelssohn"
+** Culture is 0 "Saxon
+** Follows the jewish religion
+** With a skill level of 3
+** discount = yes
+* add_innovativeness_small_effect = yes
+
+=== 0 "Confiscation of the Ruppiner Land ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Prussia
+** Country is 0 "Brandenburg
+* Has the monarchy government type
+* Owns 0 "Ruppin
+* Year is at least 1500
+* Year is less than 1530
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 90 months
+
+'''Option: 0 "Our hold over this province has now solidified!:'''
+
+* 0 "Ruppin:
+** Changes base tax by 1
+** add_base_production = 1
+** add_base_manpower = 1
+
+=== 0 "Johannes Agricola ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Prussia
+** Country is 0 "Brandenburg
+* Has the monarchy government type
+* Follows the 0 "Protestant religion
+* Year is at least 1539
+* Year is less than 1560
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 63 months
+
+'''Option: 0 "Bring him here!:'''
+
+* Creates an advisor of the 0 "Theologian type:
+** With a skill level of 2
+** discount = yes
+* Changes administrative power stored by 25
+* If:
+** Limited to:
+*** Has the DLC Common Sense
+** add_church_power = 10
+* Every neighbor country:
+** Limited to:
+*** Follows the 0 "Protestant religion
+** Adds the opinion modifier "0 "Agricola's Reputation" towards our country
+
+'''Option: 0 "We cannot abide his reconciliatory views.:'''
+
+* Adds 15 legitimacy
+
+=== 0 "Resurgence of the Robber-Barons ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Any of the following:
+** Country is 0 "Prussia
+** Country is 0 "Brandenburg
+* Has at least 5 provinces
+* Has the monarchy government type
+* Year is at least 1500
+* Year is less than 1550
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 150 months
+
+'''Option: 0 "I never spilled the blood of noblemen, I only executed rogues, robbers and murders.:'''
+
+* Adds the modifier "0 "Robber Barons Crushed" for 30 years:
+** Legitimacy is at least 0.5
+** development_cost = -0.05
+* Random owned province:
+** Limited to:
+*** The province is not the capital of the country
+** Spawns revolt of size 1 of 0 "Noble rebels
+** Random bordering province:
+*** Limited to:
+**** The province is owned by our country
+**** The province is not the capital of the country
+*** Spawns revolt of size 1 of 0 "Noble rebels
+* If:
+** Limited to:
+*** has_estate = estate_nobles
+** add_estate_loyalty:
+*** estate = estate_nobles
+*** loyalty = -10
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = 10
+** take_estate_land_share_small:
+*** estate = estate_nobles
+** give_estate_land_share_small:
+*** estate = estate_burghers
+
+'''Option: 0 "We cannot risk angering the nobles.:'''
+
+* Adds the modifier "0 "Robber Baron Resurgence" for 15 years:
+** global_autonomy = 0.05
+** +1 global unrest
+* If:
+** Limited to:
+*** has_estate = estate_nobles
+** add_estate_loyalty:
+*** estate = estate_nobles
+*** loyalty = 10
+** add_estate_loyalty:
+*** estate = estate_burghers
+*** loyalty = -10
+** take_estate_land_share_small:
+*** estate = estate_burghers
+** give_estate_land_share_small:
+*** estate = estate_nobles
+
+=== 0 "Financial Prerogatives of the Kreditwerk ===
+* Can only fire once
+
+'''Trigger:'''
+
+* Country is 0 "Brandenburg
+* Has at least 5 provinces
+* Has the monarchy government type
+* Year is at least 1550
+* Year is less than 1600
+
+'''Mean time to happen'''
+
+* Base mean time to happen of 150 months
+* Multiplies value by 0.8:
+** Has at least 2 active loans
+
+'''Option: 0 "Make it so!:'''
+
+* AI chance:
+** Base chance of 50
+* Adds the ruler modifier "0 "Kreditwerk" until the ruler's death:
+** -1 interest
+** global_autonomy = 0.05
+
+'''Option: 0 "We cannot surrender our finances to these Noble Bankers...:'''
+
+* AI chance:
+** Base chance of 50
+* Modifies treasury by -0.75 years worth of income
