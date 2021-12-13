@@ -2,8 +2,10 @@ import discord
 import pytesseract
 import io
 import requests
+import random
 from discord.ext import commands
 from PIL import Image
+
 
 import config
 import database as db
@@ -42,15 +44,9 @@ async def extract(ctx, *img_urls):
                     event_name = f"Event name: {search_result[0]}"
                     if len(ctx.message.attachments) > 1:
                         event_name = f"{attach + 1}) {event_name}"
-                    temp = search_result[1].replace("Option", "\n*Option")
-                    temp = temp.replace("Base mean time to happen", "\n*Base mean time to happen")
-                    temp = temp.replace("*****", "\n     ")
-                    temp = temp.replace("****", "\n   ")
-                    temp = temp.replace("***", "\n  ")
-                    temp = temp.replace("**", "\n ")
-                    temp = temp.replace("*", "\n")
+                    
                     embedVar = discord.Embed(title=event_name, color=0x19ffe3)
-                    embedVar.add_field(name="Description", value=temp, inline=False)
+                    embedVar.add_field(name="Description", value=search_result[1], inline=False)
                     embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
                     await ctx.reply(embed=embedVar)
 
@@ -81,15 +77,8 @@ async def extract(ctx, *img_urls):
                     if len(img_urls) > 1:
                         event_name = f"{url + 1}) {event_name}"
 
-                    temp = search_result[1].replace("Option", "\n*Option")
-                    temp = temp.replace("Base mean time to happen", "\n*Base mean time to happen")
-                    temp = temp.replace("*****", "\n     ")
-                    temp = temp.replace("****", "\n   ")
-                    temp = temp.replace("***", "\n  ")
-                    temp = temp.replace("**", "\n ")
-                    temp = temp.replace("*", "\n")
                     embedVar = discord.Embed(title=event_name, color=0x19ffe3)
-                    embedVar.add_field(name="Description", value=temp, inline=False)
+                    embedVar.add_field(name="Description", value=search_result[1], inline=False)
                     embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
                     await ctx.reply(embed=embedVar)
 
@@ -115,15 +104,9 @@ async def findEvent(ctx, *args):
     if search_result:
         event_name = f"Event name: {search_result[0]}"
 
-        # Приведение описания в более читабельный вид
-        temp = search_result[1].replace("Option", "\n*Option")
-        temp = temp.replace("Base mean time to happen", "\n*Base mean time to happen")
-        for it in ["*****", "****", "***", "**", "*"]:
-            temp = temp.replace(it, "\n")
-
         # Отправка сообщения
         embedVar = discord.Embed(title=event_name, color=0x12ffe3)
-        embedVar.add_field(name="Description", value=temp, inline=False)
+        embedVar.add_field(name="Description", value=search_result[1], inline=False)
         embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
 
         await ctx.reply(embed=embedVar)
@@ -131,6 +114,16 @@ async def findEvent(ctx, *args):
     elif execution_flag:
         await ctx.reply(content=f"Couldn't find the event: \"{arg_event_name}\"")
 
+@bot.command(pass_context=True)
+async def randomEvent(ctx):
+    search_result = db.find_event(db.df['Event'][random.randint(0, len(db.df.index)-1)])
+    event_name = f"Event name: {search_result[0]}"
+    
+    # Отправка сообщения
+    embedVar = discord.Embed(title=event_name, color=0x12ffe3)
+    embedVar.add_field(name="Description", value=search_result[1], inline=False)
+    embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
+    await ctx.reply(embed=embedVar)
 
 @bot.command()
 @commands.is_owner()
