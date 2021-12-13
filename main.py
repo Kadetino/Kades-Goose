@@ -16,19 +16,6 @@ async def on_ready():
     print('Logged on as {0.user}!'.format(bot))
 
 
-@bot.command()
-async def send_Embed(ctx, event_name="NaN - Event Name", event_description="NaN",
-                     event_requirements="NaN", event_choices="NaN"):
-    """Embed Для отправки ивента, найденного в базе данных"""
-
-    embedVar = discord.Embed(title=event_name, color=0x19ffe3)
-    embedVar.add_field(name="Requirements", value=event_requirements, inline=False)
-    embedVar.add_field(name="Description", value=event_description, inline=False)
-    embedVar.add_field(name="Event Choices", value=event_choices, inline=False)
-    embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
-    await ctx.reply(embed=embedVar)
-
-
 @bot.command(pass_context=True)
 async def extract(ctx, *img_urls):
     # Получить изображение как вложенный файл
@@ -55,9 +42,15 @@ async def extract(ctx, *img_urls):
                     event_name = f"Event name: {search_result[0]}"
                     if(len(ctx.message.attachments)>1):
                         event_name = f"{attach+1}) {event_name}"
-
+                    temp = search_result[1].replace("Option", "\n*Option")
+                    temp = temp.replace("Base mean time to happen","\n*Base mean time to happen")
+                    temp = temp.replace("*****", "\n     ")
+                    temp = temp.replace("****", "\n   ")
+                    temp = temp.replace("***", "\n  ")
+                    temp = temp.replace("**", "\n ")
+                    temp = temp.replace("*", "\n")
                     embedVar = discord.Embed(title=event_name, color=0x19ffe3)
-                    embedVar.add_field(name="Description", value=search_result[1], inline=False)
+                    embedVar.add_field(name="Description", value=temp, inline=False)
                     embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
                     await ctx.reply(embed=embedVar)
 
@@ -89,19 +82,20 @@ async def extract(ctx, *img_urls):
                     if(len(img_urls)>1):
                         event_name = f"{url+1}) {event_name}"
 
-                    embedVar = discord.Embed(event_name, color=0x19ffe3)
-                    embedVar.add_field(name="Description", value=search_result[1], inline=False)
+                    temp = search_result[1].replace("Option", "\n*Option")
+                    temp = temp.replace("Base mean time to happen", "\n*Base mean time to happen")
+                    temp = temp.replace("*****", "\n     ")
+                    temp = temp.replace("****", "\n   ")
+                    temp = temp.replace("***", "\n  ")
+                    temp = temp.replace("**", "\n ")
+                    temp = temp.replace("*", "\n")
+                    embedVar = discord.Embed(title=event_name, color=0x19ffe3)
+                    embedVar.add_field(name="Description", value=temp, inline=False)
                     embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
                     await ctx.reply(embed=embedVar)
                 
                 else:
                     await ctx.message.channel.send("Couldn't find the event")
-
-# Если оставляем логирование, то лучше оформить как вложенный декоратор
-'''with open('log.txt', 'at') as log_file:
-    log_file.write("Message:" + ctx.message.content)
-    log_file.write("\nOutput:\n" + text + "\n------------------\n")
-'''
 
 
 @bot.command()
