@@ -6,6 +6,7 @@ from discord.ext import commands
 from PIL import Image
 
 import config
+import database as db
 
 bot = commands.Bot(command_prefix='--')
 
@@ -48,11 +49,20 @@ async def extract(ctx, *img_urls):
 
                 # Обработка текста
                 pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
-                text = "Result:\n" + pytesseract.image_to_string(img)
-                if(len(ctx.message.attachments)>1):
-                    text = f"{attach+1}) {text}"
 
-                await ctx.message.channel.send(text)
+                search_result = db.find_event(pytesseract.image_to_string(img))
+                if(search_result):
+                    event_name = f"Event name: {search_result[0]}"
+                    if(len(ctx.message.attachments)>1):
+                        event_name = f"{attach+1}) {event_name}"
+
+                    embedVar = discord.Embed(title=event_name, color=0x19ffe3)
+                    embedVar.add_field(name="Description", value=search_result[1], inline=False)
+                    embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
+                    await ctx.reply(embed=embedVar)
+
+                else:
+                    await ctx.message.channel.send("Couldn't find the event")
     
     # Получить изображение по ссылке
     else:
@@ -73,11 +83,19 @@ async def extract(ctx, *img_urls):
 
                 # Обработка текста
                 pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
-                text = "Result:\n" + pytesseract.image_to_string(img)
-                if(len(img_urls)>1):
-                    text = f"{url+1}) {text}"
+                search_result = db.find_event(pytesseract.image_to_string(img))
+                if(search_result):
+                    event_name = f"Event name: {search_result[0]}"
+                    if(len(img_urls)>1):
+                        event_name = f"{url+1}) {event_name}"
+
+                    embedVar = discord.Embed(event_name, color=0x19ffe3)
+                    embedVar.add_field(name="Description", value=search_result[1], inline=False)
+                    embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
+                    await ctx.reply(embed=embedVar)
                 
-                await ctx.message.channel.send(text)  
+                else:
+                    await ctx.message.channel.send("Couldn't find the event")
 
 # Если оставляем логирование, то лучше оформить как вложенный декоратор
 '''with open('log.txt', 'at') as log_file:
