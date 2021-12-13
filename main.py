@@ -29,46 +29,55 @@ async def send_Embed(ctx, event_name="NaN - Event Name", event_description="NaN"
 
 
 @bot.command(pass_context=True)
-async def extract_attach(ctx):
+async def extract(ctx, *img_urls):
     # Получить изображение как вложенный файл
-    try:
-        img_url = ctx.message.attachments[0]
-
-    except Exception:
-        await ctx.send('Error: no attached images')
-
-    else:
-        img = Image.open(io.BytesIO(await img_url.read()))
-
-        # Обработка текста
-        pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
-        text = pytesseract.image_to_string(img)
-
-        await ctx.message.channel.send(text)
-
-@bot.command(pass_context=True)
-async def extract_url(ctx, *img_urls):
-    # Получить изображение по ссылке
-    for url in img_urls:
-        try:
-            response = requests.get(url)
-        
-        except Exception:
-            current_output = ''
-            if(len(img_urls)>1):
-                current_output =  f"{img_urls.index(url)+1}) Error: can't recognize the photo" 
+    if(ctx.message.attachments):
+        for attach in range(len(ctx.message.attachments)):
+            try:
+                img_url = ctx.message.attachments[attach]
+            
+            except Exception:
+                current_output = 'Error: can\'t recognize attached file'
+                if(len(ctx.message.attachments)>1):
+                    current_output =  f'{attach+1}) Error: can\'t recognize attached file'
+                
+                await ctx.send(current_output)
+            
             else:
-                current_output = "Error: can't recognize the photo"
-            await ctx.send(current_output)
+                img = Image.open(io.BytesIO(await img_url.read()))
 
-        else:
-            img = Image.open(io.BytesIO(response.content))
+                # Обработка текста
+                pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
+                text = "Result:\n" + pytesseract.image_to_string(img)
+                if(len(ctx.message.attachments)>1):
+                    text = f"{attach+1}) {text}"
 
-            # Обработка текста
-            pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
-            text = pytesseract.image_to_string(img)
+                await ctx.message.channel.send(text)
+    
+    # Получить изображение по ссылке
+    else:
+        for url in range(len(img_urls)):
+            try:
+                response = requests.get(img_urls[url])
 
-            await ctx.message.channel.send(text)
+            except Exception:
+                current_output = ''
+                if(len(img_urls)>1):
+                    current_output =  f"{url+1}) Error: can't recognize the URL" 
+                else:
+                    current_output = "Error: can't recognize the URL"
+                await ctx.send(current_output)
+
+            else:
+                img = Image.open(io.BytesIO(response.content))
+
+                # Обработка текста
+                pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
+                text = "Result:\n" + pytesseract.image_to_string(img)
+                if(len(img_urls)>1):
+                    text = f"{url+1}) {text}"
+                
+                await ctx.message.channel.send(text)  
 
 # Если оставляем логирование, то лучше оформить как вложенный декоратор
 '''with open('log.txt', 'at') as log_file:
