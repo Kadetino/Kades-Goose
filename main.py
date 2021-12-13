@@ -19,14 +19,14 @@ async def on_ready():
 @bot.command(pass_context=True)
 async def extract(ctx, *img_urls):
     # Получить изображение как вложенный файл
-    if(ctx.message.attachments):
+    if ctx.message.attachments:
         for attach in range(len(ctx.message.attachments)):
             try:
                 img_url = ctx.message.attachments[attach]
             
             except Exception:
                 current_output = 'Error: can\'t recognize attached file'
-                if(len(ctx.message.attachments)>1):
+                if len(ctx.message.attachments)>1:
                     current_output =  f'{attach+1}) Error: can\'t recognize attached file'
                 
                 await ctx.send(current_output)
@@ -40,7 +40,7 @@ async def extract(ctx, *img_urls):
                 search_result = db.find_event(pytesseract.image_to_string(img))
                 if(search_result):
                     event_name = f"Event name: {search_result[0]}"
-                    if(len(ctx.message.attachments)>1):
+                    if len(ctx.message.attachments)>1:
                         event_name = f"{attach+1}) {event_name}"
                     temp = search_result[1].replace("Option", "\n*Option")
                     temp = temp.replace("Base mean time to happen","\n*Base mean time to happen")
@@ -65,7 +65,7 @@ async def extract(ctx, *img_urls):
 
             except Exception:
                 current_output = ''
-                if(len(img_urls)>1):
+                if len(img_urls)>1:
                     current_output =  f"{url+1}) Error: can't recognize the URL" 
                 else:
                     current_output = "Error: can't recognize the URL"
