@@ -8,7 +8,8 @@ from PIL import Image
 import config
 import database as db
 
-bot = commands.Bot(command_prefix='--')
+prefix = "--"
+bot = commands.Bot(command_prefix=prefix)
 
 
 @bot.event
@@ -94,6 +95,41 @@ async def extract(ctx, *img_urls):
 
                 else:
                     await ctx.message.channel.send("Couldn't find the event")
+
+
+@bot.command(pass_context=True)
+async def findEvent(ctx, *args):
+    """Функция для поиска события вручную"""
+    # Обработать название запрошенного события
+    execution_flag = True
+    if len(args) == 0:
+        await ctx.reply(content=f"No event names provided. Example usage: {prefix}findEvent event1 event2 ")
+        execution_flag = False
+    arg_event_name = ""
+    for i in args:
+        arg_event_name = arg_event_name + i + " "
+    arg_event_name = arg_event_name[:-1]
+
+    # Поиск события
+    search_result = db.find_event(arg_event_name)
+    if search_result:
+        event_name = f"Event name: {search_result[0]}"
+
+        # Приведение описания в более читабельный вид
+        temp = search_result[1].replace("Option", "\n*Option")
+        temp = temp.replace("Base mean time to happen", "\n*Base mean time to happen")
+        for it in ["*****", "****", "***", "**", "*"]:
+            temp = temp.replace(it, "\n")
+
+        # Отправка сообщения
+        embedVar = discord.Embed(title=event_name, color=0x12ffe3)
+        embedVar.add_field(name="Description", value=temp, inline=False)
+        embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
+
+        await ctx.reply(embed=embedVar)
+
+    elif execution_flag:
+        await ctx.reply(content=f"Couldn't find the event: \"{arg_event_name}\"")
 
 
 @bot.command()
