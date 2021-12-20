@@ -44,7 +44,11 @@ async def extract(ctx, *img_urls):
                     event_name = f"Event name: {search_result[0]}"
                     if len(ctx.message.attachments) > 1:
                         event_name = f"{attach + 1}) {event_name}"
-                    
+
+                    # Запись в файл, запоминающий названия последних найденных событий
+                    with open("searchEventLog.txt", "a") as eventLog:
+                        eventLog.write(event_name[12:] + "\n")
+
                     embedVar = discord.Embed(title=event_name, color=0x19ffe3)
                     embedVar.add_field(name="Description", value=search_result[1], inline=False)
                     embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
@@ -77,6 +81,10 @@ async def extract(ctx, *img_urls):
                     if len(img_urls) > 1:
                         event_name = f"{url + 1}) {event_name}"
 
+                    # Запись в файл, запоминающий названия последних найденных событий
+                    with open("searchEventLog.txt", "a") as eventLog:
+                        eventLog.write(event_name[12:] + "\n")
+
                     embedVar = discord.Embed(title=event_name, color=0x19ffe3)
                     embedVar.add_field(name="Description", value=search_result[1], inline=False)
                     embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
@@ -104,6 +112,10 @@ async def findEvent(ctx, *args):
     if search_result:
         event_name = f"Event name: {search_result[0]}"
 
+        # Запись в файл, запоминающий названия последних найденных событий
+        with open("searchEventLog.txt", "a") as eventLog:
+            eventLog.write(event_name[12:] + "\n")
+
         # Отправка сообщения
         embedVar = discord.Embed(title=event_name, color=0x12ffe3)
         embedVar.add_field(name="Description", value=search_result[1], inline=False)
@@ -113,6 +125,7 @@ async def findEvent(ctx, *args):
 
     elif execution_flag:
         await ctx.reply(content=f"Couldn't find the event: \"{arg_event_name}\"")
+
 
 @bot.command(pass_context=True)
 async def randomEvent(ctx):
@@ -124,6 +137,43 @@ async def randomEvent(ctx):
     embedVar.add_field(name="Description", value=search_result[1], inline=False)
     embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
     await ctx.reply(embed=embedVar)
+
+
+@bot.command(pass_context=True)
+async def recentEvents(ctx):
+    # Проверка на существование файла searchEventLog.txt
+    try:
+        with open("searchEventLog.txt", "r"):
+            pass
+    except FileNotFoundError: # Создание файла, если его нет
+        with open("searchEventLog.txt", "w"):
+            pass
+
+    # Получение названий из файла
+    with open("searchEventLog.txt", "r") as searchLog:
+        lines = searchLog.readlines()
+
+    # Проверка на наличие элементов
+    if len(lines) < 1:
+        await ctx.reply("No events available") # Неудача
+    else:
+        description = "" # то что пойдет на выход в эмбед
+        counter = 1 # для формирования нумерации в эмбеде
+
+        # Формирование описания эмбеда
+        for line in reversed(lines):
+            temp = f"{counter}. {line}\n" # Например: 1. The fifth of november\n
+            description += temp
+            counter += 1
+            if counter==11:
+                break
+
+        # Отправка сообщения
+        embedVar = discord.Embed(title="10 Most recent searched events",description=description, color=0x12ffe3)
+        embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
+
+        await ctx.reply(embed=embedVar)
+
 
 @bot.command()
 @commands.is_owner()
