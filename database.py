@@ -5,7 +5,7 @@ df = pd.read_csv('CSV bits\\data.csv')
 
 def find_event(image_output):
     for event_index in range(len(df.index)):
-        if df['Event'][event_index] in image_output:
+        if df['Event'][event_index].lower() in image_output.lower():
             # Приведение к читабельному виду
             temp = df['Description'][event_index]
             temp = temp.replace("Option", "\n*Option")
