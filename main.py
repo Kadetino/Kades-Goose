@@ -39,7 +39,7 @@ async def extract(ctx, *img_urls):
                 # Обработка текста
                 pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
 
-                search_result = db.find_event(pytesseract.image_to_string(img))
+                search_result = db.find_event(pytesseract.image_to_string(img, config='--psm 6'))
                 if search_result:
                     event_name = f"Event name: {search_result[0]}"
                     if len(ctx.message.attachments) > 1:
@@ -75,7 +75,7 @@ async def extract(ctx, *img_urls):
 
                 # Обработка текста
                 pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
-                search_result = db.find_event(pytesseract.image_to_string(img))
+                search_result = db.find_event(pytesseract.image_to_string(img, config='--psm 6'))
                 if search_result:
                     event_name = f"Event name: {search_result[0]}"
                     if len(img_urls) > 1:
