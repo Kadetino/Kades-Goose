@@ -178,6 +178,7 @@ async def recentEvents(ctx):
 
         await ctx.reply(embed=embedVar)
 
+
 @bot.command(pass_context=True)
 async def help(ctx):
     """Shows list and description of all available commands"""
@@ -186,13 +187,14 @@ async def help(ctx):
     embedVar.add_field(name=prefix+'extract', value='Shows the description of the game event based\
          on the data from the attached screenshot or the URL', inline=False)
     embedVar.add_field(name=prefix+'findEvent', value='Searches for event by the specified name', inline=False)
-    embedVar.add_field(name=prefix+'randomEvent', value='Generates a description for a random event\
+    embedVar.add_field(name=prefix+'randomEvent', value='Shows description of a random event\
          from the database', inline=False)
-    embedVar.add_field(name=prefix+'recentEvents', value='Shows the history of recent event requests', inline=False)
+    embedVar.add_field(name=prefix+'recentEvents', value='Shows the names of 10 most recent event searches', inline=False)
 
     embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
     
     await ctx.reply(embed=embedVar)
+
 
 @bot.command()
 @commands.is_owner()
