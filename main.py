@@ -12,6 +12,7 @@ import database as db
 
 prefix = "--"
 bot = commands.Bot(command_prefix=prefix)
+bot.remove_command('help')
 
 
 @bot.event
@@ -21,6 +22,7 @@ async def on_ready():
 
 @bot.command(pass_context=True)
 async def extract(ctx, *img_urls):
+    """Shows the description of the game event based on the data from the attached screenshot or the URL"""
     # Получить изображение как вложенный файл
     if ctx.message.attachments:
         for attach in range(len(ctx.message.attachments)):
@@ -96,7 +98,7 @@ async def extract(ctx, *img_urls):
 
 @bot.command(pass_context=True)
 async def findEvent(ctx, *args):
-    """Функция для поиска события вручную"""
+    """Searches for event by the specified name"""
     # Обработать название запрошенного события
     execution_flag = True
     if len(args) == 0:
@@ -129,6 +131,7 @@ async def findEvent(ctx, *args):
 
 @bot.command(pass_context=True)
 async def randomEvent(ctx):
+    """Generates a description for a random event from the database"""
     search_result = db.find_event(db.df['Event'][random.randint(0, len(db.df.index)-1)])
     event_name = f"Event name: {search_result[0]}"
     
@@ -141,6 +144,7 @@ async def randomEvent(ctx):
 
 @bot.command(pass_context=True)
 async def recentEvents(ctx):
+    """Shows the history of recent event requests"""
     # Проверка на существование файла searchEventLog.txt
     try:
         with open("searchEventLog.txt", "r"):
@@ -174,6 +178,21 @@ async def recentEvents(ctx):
 
         await ctx.reply(embed=embedVar)
 
+@bot.command(pass_context=True)
+async def help(ctx):
+    """Shows list and description of all available commands"""
+    embedVar = discord.Embed(title='Help', color=0x2faf49)
+
+    embedVar.add_field(name=prefix+'extract', value='Shows the description of the game event based\
+         on the data from the attached screenshot or the URL', inline=False)
+    embedVar.add_field(name=prefix+'findEvent', value='Searches for event by the specified name', inline=False)
+    embedVar.add_field(name=prefix+'randomEvent', value='Generates a description for a random event\
+         from the database', inline=False)
+    embedVar.add_field(name=prefix+'recentEvents', value='Shows the history of recent event requests', inline=False)
+
+    embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
+    
+    await ctx.reply(embed=embedVar)
 
 @bot.command()
 @commands.is_owner()
