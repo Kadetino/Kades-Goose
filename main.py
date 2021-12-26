@@ -41,7 +41,7 @@ async def extract(ctx, *img_urls):
                 # Обработка текста
                 pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
 
-                search_result = db.find_event(pytesseract.image_to_string(img, config='--psm 6'))
+                search_result = db.find_event(pytesseract.image_to_string(img, config='--psm 6'),ctx)
                 if search_result:
                     event_name = f"Event name: {search_result[0]}"
                     if len(ctx.message.attachments) > 1:
@@ -51,10 +51,7 @@ async def extract(ctx, *img_urls):
                     with open("searchEventLog.txt", "a") as eventLog:
                         eventLog.write(event_name[12:] + "\n")
 
-                    embedVar = discord.Embed(title=event_name, color=0x19ffe3)
-                    embedVar.add_field(name="Description", value=search_result[1], inline=False)
-                    embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
-                    await ctx.reply(embed=embedVar)
+                    await ctx.reply(embed=search_result[1])
 
                 else:
                     await ctx.message.channel.send("Couldn't find the event")
@@ -70,14 +67,14 @@ async def extract(ctx, *img_urls):
                     current_output = f"{url + 1}) Error: can't recognize the URL"
                 else:
                     current_output = "Error: can't recognize the URL"
-                await ctx.send(current_output)
+                await ctx.reply(current_output)
 
             else:
                 img = Image.open(io.BytesIO(response.content))
 
                 # Обработка текста
                 pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
-                search_result = db.find_event(pytesseract.image_to_string(img, config='--psm 6'))
+                search_result = db.find_event(pytesseract.image_to_string(img, config='--psm 6'),ctx)
                 if search_result:
                     event_name = f"Event name: {search_result[0]}"
                     if len(img_urls) > 1:
@@ -87,13 +84,10 @@ async def extract(ctx, *img_urls):
                     with open("searchEventLog.txt", "a") as eventLog:
                         eventLog.write(event_name[12:] + "\n")
 
-                    embedVar = discord.Embed(title=event_name, color=0x19ffe3)
-                    embedVar.add_field(name="Description", value=search_result[1], inline=False)
-                    embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
-                    await ctx.reply(embed=embedVar)
+                    await ctx.reply(embed=search_result[1])
 
                 else:
-                    await ctx.message.channel.send("Couldn't find the event")
+                    await ctx.reply("Couldn't find the event")
 
 
 @bot.command(pass_context=True)
@@ -107,10 +101,9 @@ async def findEvent(ctx, *args):
     arg_event_name = ""
     for i in args:
         arg_event_name = arg_event_name + i + " "
-    arg_event_name = arg_event_name[:-1]
 
     # Поиск события
-    search_result = db.find_event(arg_event_name)
+    search_result = db.find_event(arg_event_name,ctx)
     if search_result:
         event_name = f"Event name: {search_result[0]}"
 
@@ -118,12 +111,7 @@ async def findEvent(ctx, *args):
         with open("searchEventLog.txt", "a") as eventLog:
             eventLog.write(event_name[12:] + "\n")
 
-        # Отправка сообщения
-        embedVar = discord.Embed(title=event_name, color=0x12ffe3)
-        embedVar.add_field(name="Description", value=search_result[1], inline=False)
-        embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
-
-        await ctx.reply(embed=embedVar)
+        await ctx.reply(embed=search_result[1])
 
     elif execution_flag:
         await ctx.reply(content=f"Couldn't find the event: \"{arg_event_name}\"")
@@ -132,14 +120,9 @@ async def findEvent(ctx, *args):
 @bot.command(pass_context=True)
 async def randomEvent(ctx):
     """Generates a description for a random event from the database"""
-    search_result = db.find_event(db.df['Event'][random.randint(0, len(db.df.index)-1)])
-    event_name = f"Event name: {search_result[0]}"
-    
-    # Отправка сообщения
-    embedVar = discord.Embed(title=event_name, color=0x12ffe3)
-    embedVar.add_field(name="Description", value=search_result[1], inline=False)
-    embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
-    await ctx.reply(embed=embedVar)
+    search_result = db.find_event(db.df['Name of the event'][random.randint(0, len(db.df.index)-1)],ctx)
+
+    await ctx.reply(embed=search_result[1])
 
 
 @bot.command(pass_context=True)
