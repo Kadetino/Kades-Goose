@@ -93,28 +93,28 @@ async def extract(ctx, *img_urls):
 @bot.command(pass_context=True)
 async def findEvent(ctx, *args):
     """Searches for event by the specified name"""
-    # Обработать название запрошенного события
-    execution_flag = True
+    # Check whether event name was given
     if len(args) == 0:
-        await ctx.reply(content=f"No event names provided. Example usage: {prefix}findEvent event1 event2 ")
-        execution_flag = False
-    arg_event_name = ""
-    for i in args:
-        arg_event_name = arg_event_name + i + " "
+        await ctx.reply(content=f"No event names provided. Example usage: {prefix}findEvent Court of the Star Chamber")
+    else:
+        # Assembling event name from *args
+        arg_event_name = ""
+        for i in args:
+            arg_event_name = arg_event_name + i + " "
 
-    # Поиск события
-    search_result = db.find_event(arg_event_name,ctx)
-    if search_result:
-        event_name = f"Event name: {search_result[0]}"
+        # Event search
+        search_result = db.find_event(arg_event_name,ctx)
+        if search_result:
+            event_name = f"Event name: {search_result[0]}"
 
-        # Запись в файл, запоминающий названия последних найденных событий
-        with open("searchEventLog.txt", "a") as eventLog:
-            eventLog.write(event_name[12:] + "\n")
+            # to do
+            with open("searchEventLog.txt", "a") as eventLog:
+                eventLog.write(event_name[12:] + "\n")
 
-        await ctx.reply(embed=search_result[1])
+            await ctx.reply(embed=search_result[1])
 
-    elif execution_flag:
-        await ctx.reply(content=f"Couldn't find the event: \"{arg_event_name}\"")
+        else:
+            await ctx.reply(content=f"Couldn't find the event: \"{arg_event_name}\"")
 
 
 @bot.command(pass_context=True)
