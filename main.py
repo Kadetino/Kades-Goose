@@ -33,7 +33,7 @@ async def extract(ctx, *img_urls):
                 if len(ctx.message.attachments) > 1:
                     current_output = f'{attach + 1}) Error: can\'t recognize attached file'
 
-                await ctx.send(current_output)
+                await ctx.reply(current_output)
 
             else:
                 img = Image.open(io.BytesIO(await img_url.read()))
@@ -47,10 +47,9 @@ async def extract(ctx, *img_urls):
                     if len(ctx.message.attachments) > 1:
                         event_name = f"{attach + 1}) {event_name}"
 
-                    # Запись в файл, запоминающий названия последних найденных событий
-                    with open("searchEventLog.txt", "a") as eventLog:
-                        eventLog.write(event_name[12:] + "\n")
-
+                    # Remember event name
+                    db.log_event_name(search_result[0])
+                    # Send embed
                     await ctx.reply(embed=search_result[1])
 
                 else:
@@ -76,14 +75,9 @@ async def extract(ctx, *img_urls):
                 pytesseract.pytesseract.tesseract_cmd = config.tesseract_cmd_path
                 search_result = db.find_event(pytesseract.image_to_string(img, config='--psm 6'),ctx)
                 if search_result:
-                    event_name = f"Event name: {search_result[0]}"
-                    if len(img_urls) > 1:
-                        event_name = f"{url + 1}) {event_name}"
-
-                    # Запись в файл, запоминающий названия последних найденных событий
-                    with open("searchEventLog.txt", "a") as eventLog:
-                        eventLog.write(event_name[12:] + "\n")
-
+                    # Remember event name
+                    db.log_event_name(search_result[0])
+                    # Send embed
                     await ctx.reply(embed=search_result[1])
 
                 else:
@@ -105,12 +99,9 @@ async def findEvent(ctx, *args):
         # Event search
         search_result = db.find_event(arg_event_name,ctx)
         if search_result:
-            event_name = f"Event name: {search_result[0]}"
-
-            # to do
-            with open("searchEventLog.txt", "a") as eventLog:
-                eventLog.write(event_name[12:] + "\n")
-
+            # Remember event name
+            db.log_event_name(search_result[0])
+            # Send embed
             await ctx.reply(embed=search_result[1])
 
         else:

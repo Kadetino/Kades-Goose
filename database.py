@@ -34,3 +34,8 @@ def find_event(image_output, ctx):
 
             return event_name, event_embed
     return False
+
+
+def log_event_name(event_name):
+    with open("searchEventLog.txt", "a") as eventLog:
+        eventLog.write(event_name + "\n")
