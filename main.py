@@ -169,12 +169,4 @@ async def help(ctx):
     
     await ctx.reply(embed=embedVar)
 
-
-@bot.command()
-@commands.is_owner()
-async def shutdown(ctx):
-    """Выключить бота, используя Discord-чат"""
-    await ctx.bot.logout()
-
-
 bot.run(config.token)
