@@ -3,6 +3,9 @@ import pytesseract
 import io
 import requests
 import random
+import aiohttp
+import warnings
+import datetime
 from discord.ext import commands
 from PIL import Image
 
@@ -13,7 +16,8 @@ import database as db
 prefix = "--"
 bot = commands.Bot(command_prefix=prefix)
 bot.remove_command('help')
-
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+bot.session = aiohttp.ClientSession()
 
 @bot.event
 async def on_ready():
@@ -168,5 +172,42 @@ async def help(ctx):
     embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
     
     await ctx.reply(embed=embedVar)
+
+
+async def timeout_user(*, user_id: int, guild_id: int, until):
+    headers = {"Authorization": f"Bot {bot.http.token}"}
+    url = f"https://discord.com/api/v9/guilds/{guild_id}/members/{user_id}"
+    timeout = (datetime.datetime.utcnow() + datetime.timedelta(minutes=until)).isoformat()
+    json = {'communication_disabled_until': timeout}
+    async with bot.session.patch(url, json=json, headers=headers) as session:
+        if session.status in range(200, 299):
+           return True
+        return False
+
+
+# @bot.command()
+# async def timeout(ctx: commands.Context, member: discord.Member, until: int):
+#     handshake = await timeout_user(user_id=member.id, guild_id=ctx.guild.id, until=until)
+#     if handshake:
+#          return await ctx.send(f"Successfully timed out user for {until} minutes.")
+#     await ctx.send("Something went wrong")
+@bot.command()
+async def shootout(ctx: commands.Context, member: discord.Member):
+    target = random.randint(0, 2)
+
+    if member.id==231388394360537088 or member.id==912349700416479292: # Kade and Goose never lose
+        handshake = await timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=1)
+        await ctx.reply(f"{ctx.author} loses.")
+    elif target!=1:
+        handshake = await timeout_user(user_id=member.id, guild_id=ctx.guild.id, until=1)
+        await ctx.reply(f"{member} loses.")
+    else:
+        handshake = await timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=1)
+        await ctx.reply(f"{ctx.author} loses.")
+
+    if handshake:
+         print(f"Successfully timed out user for 1 minute.")
+    else:
+        print("Something went wrong")
 
 bot.run(config.token)
