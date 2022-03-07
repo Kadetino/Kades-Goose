@@ -142,5 +142,23 @@ class EventSearchCog(commands.Cog):
 
             await ctx.reply(embed=embedVar)
 
+    @commands.command(pass_context=True)
+    async def help(self, ctx):
+        """Shows list and description of all available commands"""
+        embedVar = discord.Embed(title='Help', color=0x2faf49)
+
+        embedVar.add_field(name=config.prefix + 'extract', value='Shows the description of the game event based\
+             on the data from the attached screenshot or the URL', inline=False)
+        embedVar.add_field(name=config.prefix + 'findEvent', value='Searches for event by the specified name',
+                           inline=False)
+        embedVar.add_field(name=config.prefix + 'randomEvent', value='Shows description of a random event\
+             from the database', inline=False)
+        embedVar.add_field(name=config.prefix + 'recentEvents',
+                           value='Shows the names of 10 most recent event searches', inline=False)
+
+        embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
+
+        await ctx.reply(embed=embedVar)
+
 def setup(bot):
     bot.add_cog(EventSearchCog(bot))

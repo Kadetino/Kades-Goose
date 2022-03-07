@@ -20,24 +20,33 @@ class FunCog(commands.Cog):
 
     @commands.command()
     async def shootout(self,ctx: commands.Context, member: discord.Member):
-        target = random.randint(0, 2)
+        success_chance = random.randint(0, 100)
+        critical_failure_chance = random.randint(0, 100)
+        default_punish_time = 5
+        critical_failure_punsih_time = 60
         protectedusers = [231388394360537088,912349700416479292]
 
         if member.id in protectedusers: # Kade and Goose never lose
             muted_user = ctx.author
-            handshake = await self.timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=1)
-        elif target!=1:
+            handshake = await self.timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=default_punish_time)
+            await ctx.reply(f"{muted_user} loses.")
+        elif success_chance<=66: # Attacker wins.
             muted_user = member
-            handshake = await self.timeout_user(user_id=member.id, guild_id=ctx.guild.id, until=1)
-        else:
+            handshake = await self.timeout_user(user_id=member.id, guild_id=ctx.guild.id, until=default_punish_time)
+            await ctx.reply(f"{muted_user} loses.")
+        else: # Attacker loses
             muted_user = ctx.author
-            handshake = await self.timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=1)
+            if critical_failure_chance<=95: # Critical failure check
+                handshake = await self.timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=default_punish_time)
+                await ctx.reply(f"{muted_user} loses.")
+            else:
+                handshake = await self.timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=critical_failure_punsih_time)
+                await ctx.reply(f"{muted_user} shotguns himself.")
 
-        await ctx.reply(f"{muted_user} loses.")
         if handshake:
-            print(f"shootout - Successfully timed out {muted_user} for 1 minute by {ctx.author}.")
+            print(f"{ctx.guild.name} - Successfully timed out {muted_user} in {ctx.author} vs {member} fight.")
         else:
-            print(f"shootout - Something went wrong: couldn't time out {muted_user}.")
+            print(f"{ctx.guild.name} - Something went wrong: couldn't time out {muted_user} in {ctx.author} vs {member} fight.")
 
 
 def setup(bot):
