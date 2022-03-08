@@ -31,10 +31,10 @@ class FunCog(commands.Cog):
             muted_user = ctx.author
             handshake = await self.timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=default_punish_time)
             await ctx.reply(f"{muted_user} loses.")
-        elif ctx.guild.id==429614832447127552 and ctx.channel.id!=797451484215640094:
+        elif ctx.guild.id==429614832447127552 and ctx.channel.id!=950455558320836678:
             muted_user = ctx.author
-            handshake = await self.timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=default_punish_time)
-            await ctx.reply(f"{muted_user} loses.<:JabkaJopoZashishatelnica:594112176482942976>")
+            handshake = await self.timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=1)
+            await ctx.reply(f"{muted_user} loses. <:JabkaJopoZashishatelnica:594112176482942976> Luck is increased in duel chat.")
         elif success_chance<=66 and voice_state_defender is None: # Attacker wins.
             muted_user = member
             handshake = await self.timeout_user(user_id=member.id, guild_id=ctx.guild.id, until=default_punish_time)
