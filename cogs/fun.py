@@ -25,18 +25,19 @@ class FunCog(commands.Cog):
         default_punish_time = 5
         critical_failure_punsih_time = 60
         protectedusers = [231388394360537088,912349700416479292]
+        voice_state_defender = member.voice
 
         if member.id in protectedusers: # Kade and Goose never lose
             muted_user = ctx.author
             handshake = await self.timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=default_punish_time)
             await ctx.reply(f"{muted_user} loses.")
-        elif success_chance<=66: # Attacker wins.
+        elif success_chance<=66 and voice_state_defender is None: # Attacker wins.
             muted_user = member
             handshake = await self.timeout_user(user_id=member.id, guild_id=ctx.guild.id, until=default_punish_time)
             await ctx.reply(f"{muted_user} loses.")
         else: # Attacker loses
             muted_user = ctx.author
-            if critical_failure_chance<=95: # Critical failure check
+            if critical_failure_chance<=97: # Critical failure check
                 handshake = await self.timeout_user(user_id=ctx.author.id, guild_id=ctx.guild.id, until=default_punish_time)
                 await ctx.reply(f"{muted_user} loses.")
             else:
