@@ -1,18 +1,19 @@
-import pandas as pd
 import discord
+import sqlite3 as sl
 
-df = pd.read_csv('CSV bits\\events.csv', sep=";")
-
+con = sl.connect('Goose.db')
 
 def find_event(image_output, ctx):
-    for event_index in range(len(df.index)):
-        if df['Name of the event'][event_index].lower() in image_output.lower():
+    with con:
+        sql_query=f'SELECT * FROM EU4EVENTS WHERE trim(event_name) LIKE "{image_output.strip()}"'
+        data = con.execute(sql_query).fetchall()
+        if len(data)!=0:
             # Event data
-            event_name = str(df['Name of the event'][event_index])
-            event_condition = str(df['Conditions'][event_index])
-            event_mtth = str(df['MTTH or IE'][event_index])
-            event_ie = str(df['IE or MTTH'][event_index])
-            event_choice = str(df['Choices'][event_index])
+            event_name = str(data[0][1])
+            event_condition = str(data[0][2])
+            event_mtth = str(data[0][3])
+            event_ie = str(data[0][4])
+            event_choice = str(data[0][5])
 
             # Making it readable
             event_choice = event_choice.replace("&&&&Option", "\n*Option")
@@ -33,7 +34,7 @@ def find_event(image_output, ctx):
             event_embed.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
 
             return event_name, event_embed
-    return False
+        return False
 
 
 def log_event_name(event_name):
