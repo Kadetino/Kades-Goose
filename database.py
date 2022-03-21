@@ -1,12 +1,14 @@
 import discord
 import sqlite3 as sl
 
-con = sl.connect('Goose.db')
+
 
 def find_event(image_output, ctx):
+    con = sl.connect('Goose.db')
     with con:
         sql_query=f'SELECT * FROM EU4EVENTS WHERE trim(event_name) LIKE "{image_output.strip()}"'
         data = con.execute(sql_query).fetchall()
+
         if len(data)==1:
             # Event data
             event_name = str(data[0][1]).strip()
@@ -33,6 +35,7 @@ def find_event(image_output, ctx):
             event_embed.add_field(name="Options", value=event_choice, inline=False)
             event_embed.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
 
+            con.close()
             return event_name, event_embed
         elif len(data)>1:
             description = ""
@@ -41,7 +44,9 @@ def find_event(image_output, ctx):
             # Making Discord embed
             event_embed = discord.Embed(title="Multiple events found",description=description, color=0x19ffe3)
 
+            con.close()
             return f"Multiple events found: {image_output.strip()}", event_embed
+        con.close()
         return False
 
 
