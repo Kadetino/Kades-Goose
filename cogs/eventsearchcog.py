@@ -142,6 +142,7 @@ class EventSearchCog(commands.Cog):
 
             await ctx.reply(embed=embedVar)
 
+    # Might need to rework
     @commands.command(pass_context=True)
     async def help(self, ctx):
         """Shows list and description of all available commands"""

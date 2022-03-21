@@ -7,9 +7,9 @@ def find_event(image_output, ctx):
     with con:
         sql_query=f'SELECT * FROM EU4EVENTS WHERE trim(event_name) LIKE "{image_output.strip()}"'
         data = con.execute(sql_query).fetchall()
-        if len(data)!=0:
+        if len(data)==1:
             # Event data
-            event_name = str(data[0][1])
+            event_name = str(data[0][1]).strip()
             event_condition = str(data[0][2])
             event_mtth = str(data[0][3])
             event_ie = str(data[0][4])
@@ -34,9 +34,17 @@ def find_event(image_output, ctx):
             event_embed.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
 
             return event_name, event_embed
+        elif len(data)>1:
+            description = ""
+            for row in data:
+                description+=f"`{str(row[1].strip())}` index: {row[0]}\n\n"
+            # Making Discord embed
+            event_embed = discord.Embed(title="Multiple events found",description=description, color=0x19ffe3)
+
+            return f"Multiple events found: {image_output.strip()}", event_embed
         return False
 
 
 def log_event_name(event_name):
-    with open("searchEventLog.txt", "a") as eventLog:
+    with open("logs/searchEventLog.txt", "a") as eventLog:
         eventLog.write(event_name + "\n")
