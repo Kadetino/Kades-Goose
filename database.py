@@ -1,20 +1,50 @@
-import pandas as pd
+import discord
+import sqlite3 as sl
 
-df = pd.read_csv('CSV bits\\data.csv')
+con = sl.connect('Goose.db')
+
+def find_event(image_output, ctx):
+    with con:
+        sql_query=f'SELECT * FROM EU4EVENTS WHERE trim(event_name) LIKE "{image_output.strip()}"'
+        data = con.execute(sql_query).fetchall()
+        if len(data)==1:
+            # Event data
+            event_name = str(data[0][1]).strip()
+            event_condition = str(data[0][2])
+            event_mtth = str(data[0][3])
+            event_ie = str(data[0][4])
+            event_choice = str(data[0][5])
+
+            # Making it readable
+            event_choice = event_choice.replace("&&&&Option", "\n*Option")
+            event_choice = event_choice.replace("\n*Option", "Option", 1)
+            stars = ["*****", "****", "***", "**", "*"]
+            for star in stars:
+                event_condition = event_condition.replace(star, "\n")
+                event_mtth = event_mtth.replace(star, "\n")
+                event_ie = event_ie.replace(star, "\n")
+                event_choice = event_choice.replace(star, "\n")
+
+            # Making Discord embed
+            event_embed = discord.Embed(title=event_name, color=0x19ffe3)
+            event_embed.add_field(name="Trigger", value=event_condition, inline=False)
+            event_embed.add_field(name="Mean time to happen", value=event_mtth, inline=False)
+            event_embed.add_field(name="Immediate effects", value=event_ie, inline=False)
+            event_embed.add_field(name="Options", value=event_choice, inline=False)
+            event_embed.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
+
+            return event_name, event_embed
+        elif len(data)>1:
+            description = ""
+            for row in data:
+                description+=f"`{str(row[1].strip())}` index: {row[0]}\n\n"
+            # Making Discord embed
+            event_embed = discord.Embed(title="Multiple events found",description=description, color=0x19ffe3)
+
+            return f"Multiple events found: {image_output.strip()}", event_embed
+        return False
 
 
-def find_event(image_output):
-    for event_index in range(len(df.index)):
-        if df['Event'][event_index].lower() in image_output.lower():
-            # Приведение к читабельному виду
-            temp = df['Description'][event_index]
-            temp = temp.replace("Option", "\n*Option")
-            temp = temp.replace("Base mean time to happen", "\n*Base mean time to happen")
-            temp = temp.replace("*****", "\n     ")
-            temp = temp.replace("****", "\n   ")
-            temp = temp.replace("***", "\n  ")
-            temp = temp.replace("**", "\n ")
-            temp = temp.replace("*", "\n")
-
-            return df['Event'][event_index], temp
-    return False
+def log_event_name(event_name):
+    with open("logs/searchEventLog.txt", "a") as eventLog:
+        eventLog.write(event_name + "\n")
