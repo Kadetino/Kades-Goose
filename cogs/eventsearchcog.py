@@ -7,12 +7,13 @@ import database as db
 from PIL import Image
 from discord.ext import commands
 import config
+import sqlite3 as sl
 
 class EventSearchCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, no_pm=True)
     async def extract(self, ctx, *img_urls):
         """Shows the description of the game event based on the data from the attached screenshot or the URL"""
         # Получить изображение как вложенный файл
@@ -75,7 +76,7 @@ class EventSearchCog(commands.Cog):
                     else:
                         await ctx.reply("Couldn't find the event")
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, no_pm=True)
     async def findEvent(self, ctx, *args):
         """Searches for event by the specified name"""
         # Check whether event name was given
@@ -99,14 +100,26 @@ class EventSearchCog(commands.Cog):
             else:
                 await ctx.reply(content=f"Couldn't find the event: \"{arg_event_name}\"")
 
-    @commands.command(pass_context=True)
+    # doesn't work with this db implementation
+
+    @commands.command(pass_context=True, no_pm=True)
     async def randomEvent(self, ctx):
         """Generates a description for a random event from the database"""
-        search_result = db.find_event(db.df['Name of the event'][random.randint(0, len(db.df.index) - 1)], ctx)
+        conn = sl.connect('Goose.db')
+        data = conn.execute("SELECT * FROM EU4EVENTS").fetchall()
+        conn.close()
+        names = []
+        for rows in data:
+            print(rows)
+            names.append(rows[1].strip())
+        for rows in names:
+            print(rows)
+        print(len(names))
+        search_result = db.find_event(names[random.randint(0, len(names) - 1)], ctx)
 
         await ctx.reply(embed=search_result[1])
 
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, no_pm=True)
     async def recentEvents(self, ctx):
         """Shows the history of recent event requests"""
         # Проверка на существование файла searchEventLog.txt
@@ -137,13 +150,13 @@ class EventSearchCog(commands.Cog):
                     break
 
             # Отправка сообщения
-            embedVar = discord.Embed(title="10 Most recent searched events", description=description, color=0x12ffe3)
-            embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
+            embed_var = discord.Embed(title="10 Most recent searched events", description=description, color=0x12ffe3)
+            embed_var.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
 
-            await ctx.reply(embed=embedVar)
+            await ctx.reply(embed=embed_var)
 
     # Might need to rework
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, no_pm=True)
     async def help(self, ctx):
         """Shows list and description of all available commands"""
         embedVar = discord.Embed(title='Help', color=0x2faf49)

@@ -11,6 +11,7 @@ class FunCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    cd_commands = 2 # Cooldown for commands
     async def timeout_user(self, *, user_id: int, guild_id: int, until):
         headers = {"Authorization": f"Bot {self.bot.http.token}"}
         url = f"https://discord.com/api/v9/guilds/{guild_id}/members/{user_id}"
@@ -22,7 +23,9 @@ class FunCog(commands.Cog):
             return False
 
 
-    @commands.command(pass_context=True, no_pm=True)
+    @commands.command(pass_context=True)
+    @commands.cooldown(1,cd_commands,commands.BucketType.guild)
+    @commands.guild_only()
     async def duel(self, ctx: commands.Context, member: discord.Member):
         # Init
         con = sl.connect('Goose.db')
@@ -36,7 +39,7 @@ class FunCog(commands.Cog):
         critical_failure_chance = random.randint(0, 100)
         # Timeout duration
         default_punish_time = 1
-        critical_failure_punish_time = 60
+        critical_failure_punish_time = 30
         # Other
         protectedusers = [231388394360537088,912349700416479292]
         # Voice check
@@ -82,7 +85,7 @@ class FunCog(commands.Cog):
         else:
             print(f"{ctx.guild.name} - Something went wrong: couldn't time out {muted_user} in {ctx.author} vs {member} fight.")
 
-        if not ctx.author.bot and not member.bot:
+        if not ctx.author.bot and not member.bot and member.id != ctx.author.id:
             con.execute("UPDATE DUELDATA SET loses = loses + 1 WHERE guild_id = ? AND user_id = ?",
                         (ctx.guild.id, muted_user.id))
             con.execute("UPDATE DUELDATA SET wins = wins + 1 WHERE guild_id = ? AND user_id = ?",
@@ -91,7 +94,9 @@ class FunCog(commands.Cog):
         con.commit()
         con.close()
 
-    @commands.command(pass_context=True, no_pm=True)
+    @commands.command(pass_context=True)
+    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
+    @commands.guild_only()
     async def duelOn(self, ctx):
         con = sl.connect('Goose.db')
         con.execute("INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,0)",
@@ -103,7 +108,9 @@ class FunCog(commands.Cog):
         return await ctx.message.add_reaction(u"\u2705")
 
 
-    @commands.command(pass_context=True, no_pm=True)
+    @commands.command(pass_context=True)
+    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
+    @commands.guild_only()
     async def duelOff(self, ctx):
         con = sl.connect('Goose.db')
         con.execute("INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,1)",
@@ -115,7 +122,9 @@ class FunCog(commands.Cog):
         return await ctx.message.add_reaction(u"\u2705")
 
 
-    @commands.command(pass_context=True, no_pm=True)
+    @commands.command(pass_context=True)
+    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
+    @commands.guild_only()
     async def duelstats(self, ctx, member: discord.Member = None):
         # Init
         con = sl.connect('Goose.db')
@@ -141,10 +150,13 @@ class FunCog(commands.Cog):
         except ZeroDivisionError:
             winrate = "NaN"
         # Rank
-        rank_selection = [(10,"Copper"), (20,"Bronze"), (30,"Silver"), (45,"Gold"), (60,"Platinum"), (80,"Platinum")]
+        rank_selection = [(10,"Copper"), (20,"Bronze"), (30,"Silver"), (45,"Gold"), (60,"Platinum"), (80,"Diamond")]
         rank = "NaN"
+        e = (wins + losses) * 0.1
+        if wins > losses:
+            e += wins - losses
         for i in rank_selection:
-            if wins-losses < i[0]:
+            if e < i[0]:
                 rank = i[1]
                 break
 
