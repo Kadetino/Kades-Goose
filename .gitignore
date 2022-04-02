@@ -3,11 +3,11 @@ searchEventLog.txt
 config.py
 logs/
 
-# Idea (Egor hates it)
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/*.iws
-.idea/
+## Idea (Egor hates it)
+#.idea/workspace.xml
+#.idea/tasks.xml
+#.idea/*.iws
+#.idea/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

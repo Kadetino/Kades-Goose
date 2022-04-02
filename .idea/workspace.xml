@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8dce8d25-0158-4690-9c53-d58ae4878dd0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="22mMsVl07qWtixBN1BIgs2YZx2x" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/config.py" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/paradox-reader-master/paradox-reader-master" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kadet\Documents\GitHub\EU4-Goose" />
+      <recent name="C:\Users\Kadet\Documents\GitHub\EU4-Goose\cogs" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="EU4 Goose" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\envs\Goose\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Kadet\Documents\GitHub\EU4-Goose\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8dce8d25-0158-4690-9c53-d58ae4878dd0" name="Changes" comment="" />
+      <created>1640438517100</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640438517100</updated>
+      <workItem from="1640438519020" duration="1261000" />
+      <workItem from="1640533478999" duration="503000" />
+      <workItem from="1640545501654" duration="143000" />
+      <workItem from="1640546956134" duration="291000" />
+      <workItem from="1640547268835" duration="2291000" />
+      <workItem from="1640549632933" duration="3553000" />
+      <workItem from="1641415257034" duration="533000" />
+      <workItem from="1641493208320" duration="1230000" />
+      <workItem from="1641659249912" duration="811000" />
+      <workItem from="1642090195075" duration="2055000" />
+      <workItem from="1642501784175" duration="596000" />
+      <workItem from="1643483924753" duration="17000" />
+      <workItem from="1644584986124" duration="331000" />
+      <workItem from="1645554524652" duration="1303000" />
+      <workItem from="1645631655625" duration="54000" />
+      <workItem from="1646307813168" duration="10610000" />
+      <workItem from="1646425132188" duration="1262000" />
+      <workItem from="1646485641669" duration="141000" />
+      <workItem from="1646489205376" duration="11329000" />
+      <workItem from="1646506407423" duration="280000" />
+      <workItem from="1646558920015" duration="682000" />
+      <workItem from="1646568055812" duration="401000" />
+      <workItem from="1646658829418" duration="978000" />
+      <workItem from="1646669325353" duration="1875000" />
+      <workItem from="1646731722482" duration="3181000" />
+      <workItem from="1646745008036" duration="321000" />
+      <workItem from="1647626414877" duration="1267000" />
+      <workItem from="1647627721472" duration="1724000" />
+      <workItem from="1647629709971" duration="4401000" />
+      <workItem from="1647870192353" duration="4436000" />
+      <workItem from="1647878541135" duration="5281000" />
+      <workItem from="1647887092012" duration="4118000" />
+      <workItem from="1647962349627" duration="5424000" />
+      <workItem from="1647969914852" duration="11176000" />
+      <workItem from="1648023029897" duration="7605000" />
+      <workItem from="1648033232027" duration="8524000" />
+      <workItem from="1648213126552" duration="7000" />
+      <workItem from="1648213189670" duration="8000" />
+      <workItem from="1648745711101" duration="14000" />
+      <workItem from="1648746080828" duration="1262000" />
+      <workItem from="1648760563218" duration="575000" />
+      <workItem from="1648761162436" duration="24000" />
+      <workItem from="1648806264117" duration="1119000" />
+      <workItem from="1648844388614" duration="81000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/EU4_Goose$bot.coverage" NAME="main Coverage Results" MODIFIED="1646504344723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EU4_Goose$main.coverage" NAME="main Coverage Results" MODIFIED="1648806312167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
