@@ -6,7 +6,7 @@ from dateutil import parser  # Epoch time converter
 import config  # Global settings
 
 
-class Lobby:
+class Lobby:  # needs to be in non-cog file or smth
     #######
     # Start: Lobby_start
     #######
