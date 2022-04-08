@@ -18,6 +18,29 @@ class EU4IdeasCog(commands.Cog):
         support_embed.add_field(name=f"`Metamask`", value="0xe2d321ebb477d14d2d38D97c9d2D39dC97A262Eb", inline=False)
         return await ctx.reply(embed=support_embed)
 
+    @commands.command()
+    @commands.is_owner()
+    async def shutdown(self, ctx: commands.Context):
+        """Stop the Goose"""
+        await ctx.reply("Shutting down, Master.")
+        return await ctx.bot.close()
+
+    @commands.command()
+    @commands.is_owner()
+    async def leave(self, ctx: commands.Context, guild_id: int):
+        """Leave the specified guild."""
+        await self.bot.get_guild(int(guild_id)).leave()
+        return await ctx.send(f"I left: {guild_id}")
+
+    @commands.command()
+    @commands.is_owner()
+    async def showguilds(self, ctx):
+        """List all guilds' bot is a part of."""
+        guild_embed = discord.Embed(title=f'{self.bot.user} Guilds', color=discord.Colour.gold())
+        for guild in self.bot.guilds:
+            guild_embed.add_field(name=f'`{guild.name}`', value=guild.id, inline=False)
+        return await ctx.reply(embed=guild_embed)
+
 
 def setup(bot):
     bot.add_cog(EU4IdeasCog(bot))
