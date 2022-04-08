@@ -7,7 +7,10 @@ import warnings  # For direct API requests - duel cog
 import config  # Global settings
 
 # Creating Bot
-bot = commands.Bot(command_prefix=config.prefix)
+intents = discord.Intents.default()  # all default enabled intents
+intents.members = True  # Enabling priviliged intent "Members"
+owners = [231388394360537088]
+bot = commands.Bot(command_prefix=commands.when_mentioned_or(config.prefix), owner_ids=set(owners), intents=intents)
 bot.remove_command('help')  # help command probably needs to be reworked
 
 # For Duels
@@ -19,6 +22,7 @@ bot.session = aiohttp.ClientSession()
 async def on_ready():
     print('Logged on as {0.user}!'.format(bot))
     await bot.change_presence(activity=discord.Game(name="Honk! Honk!"))
+
 
 # Load all cogs
 for cog_name in os.listdir("./cogs"):
