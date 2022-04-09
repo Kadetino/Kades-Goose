@@ -18,7 +18,7 @@ class eventCog(commands.Cog):
         server_embed = discord.Embed(title="New server!", description=f'Bot has been added to: {guild}', colour=discord.Colour.green())
         server_embed.set_thumbnail(url=guild.icon_url)
 
-        return await webhook.send(embed=server_embed)  # Executing webhook.
+        return await webhook.send(embed=server_embed, username="Goose Overseer")  # Executing webhook.
 
 
     @commands.Cog.listener()
@@ -30,7 +30,7 @@ class eventCog(commands.Cog):
         server_embed = discord.Embed(title="Farewell...", description=f'Bot has left: {guild}', colour=discord.Colour.red())
         server_embed.set_thumbnail(url=guild.icon_url)
 
-        return await webhook.send(embed=server_embed)  # Executing webhook.
+        return await webhook.send(embed=server_embed, username="Goose Overseer")  # Executing webhook.
 
 
 def setup(bot):
