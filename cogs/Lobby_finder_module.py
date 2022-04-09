@@ -12,9 +12,7 @@ class LobbyFinderModule(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    # TODO Scan for lobbies in servers where bot is not present and set is_active to "0" for those lobbies
     # TODO Commands to edit lobby information
-    # TODO Command to de-list lobby. Set is_active to "0"
     # TODO Introduce protecction against spammers. Possibly: long cooldown for each user / whitelist
     # TODO Command to report inappropriate lobby listing / blacklist. Webhook?
     # TODO Make more checks for correctness of input
@@ -79,7 +77,9 @@ class LobbyFinderModule(commands.Cog):
             return await ctx.reply("No active lobbies at the moment.")
         sql_connection.close()
         # Embed
-        active_lobbies_embed = discord.Embed(title="Active multiplayer lobbies.", colour=discord.Colour.dark_blue())
+        message = f'Try `{config.prefix}lobby "golden goose mp"` to find out more about specified lobby.'
+        active_lobbies_embed = discord.Embed(title="Active multiplayer lobbies.", description=message,
+                                             colour=discord.Colour.dark_blue())
         for lobby in data:
             short_desc = f"Hosted by: <@{lobby[2]}>\nStart: <t:{lobby[3]}:f>"
             active_lobbies_embed.add_field(name=f"`{lobby[1]}`", value=short_desc, inline=False)
@@ -111,6 +111,47 @@ class LobbyFinderModule(commands.Cog):
         retrieved_lobby_embed.set_thumbnail(url=self.bot.user.avatar_url)
 
         return await ctx.reply(embed=retrieved_lobby_embed)
+
+    @commands.command(pass_context=True)
+    @commands.cooldown(1, config.cd_commands, commands.BucketType.guild)
+    @commands.guild_only()
+    async def delist_lobby(self, ctx: commands.Context, lobby_name: str):
+        """Remove specified lobby from list of active lobbies."""
+        # Database info retrieval
+        sql_connection = sl.connect("Goose.db")
+        if len(data := sql_connection.execute(
+                f"SELECT * FROM MP_LOBBIES WHERE is_active = 1 AND lobby_name LIKE '{lobby_name}'").fetchall()) == 0:
+            return await ctx.reply(f"No lobbies with `{lobby_name}` name found.")
+        elif len(data) == 1:
+            data = data[0]
+        else:
+            return await ctx.reply("Error.")
+        # Removal itself - set is_active to 0
+        sql_connection.execute("UPDATE MP_LOBBIES SET is_active = 0 WHERE guild_id = ? AND lobby_name = ?",
+                               (data[0], data[1]))
+        sql_connection.commit()
+        sql_connection.close()
+
+        return await ctx.reply(f"Successfuly de-listed lobby `{data[1]}`.")
+
+    # @commands.command(pass_context=True)
+    # @commands.is_owner()
+    @commands.Cog.listener('on_guild_remove')
+    async def check_lobbies(self):
+        # Database info retrieval
+        sql_connection = sl.connect("Goose.db")
+        if len(data := sql_connection.execute(f"SELECT guild_id, lobby_name FROM MP_LOBBIES WHERE is_active = 1").fetchall()) == 0:
+            sql_connection.close()
+            return
+        # If guild is from other place than goose guilds - set is_active to 0
+        for guild in self.bot.guilds:
+            for entry_guild in data:
+                if entry_guild[0] != guild.id:
+                    sql_connection.execute("UPDATE MP_LOBBIES SET is_active = 0 WHERE guild_id = ? AND lobby_name = ?",
+                                           (entry_guild[0], entry_guild[1]))
+        sql_connection.commit()
+        sql_connection.close()
+        return
 
 
 def setup(bot):
