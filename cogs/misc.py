@@ -2,7 +2,7 @@ import discord  # Discord API wrapper
 from discord.ext import commands  # Discord BOT
 
 
-class EU4IdeasCog(commands.Cog):
+class utilityCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -23,6 +23,7 @@ class EU4IdeasCog(commands.Cog):
     async def shutdown(self, ctx: commands.Context):
         """Stop the Goose"""
         await ctx.reply("Shutting down, Master.")
+        await self.bot.session.close()
         return await ctx.bot.close()
 
     @commands.command()
@@ -30,7 +31,7 @@ class EU4IdeasCog(commands.Cog):
     async def leave(self, ctx: commands.Context, guild_id: int):
         """Leave the specified guild."""
         await self.bot.get_guild(int(guild_id)).leave()
-        return await ctx.send(f"I left: {guild_id}")
+        return await ctx.reply(f"I left: {guild_id}")
 
     @commands.command()
     @commands.is_owner()
@@ -43,4 +44,4 @@ class EU4IdeasCog(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(EU4IdeasCog(bot))
+    bot.add_cog(utilityCog(bot))
