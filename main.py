@@ -6,6 +6,8 @@ import warnings  # For direct API requests and webhooks
 
 import config  # Global settings
 
+# TODO update code to the latest discord.py version
+# TODO Documentation / proper help command
 # Creating Bot
 intents = discord.Intents.default()  # all default enabled intents
 intents.members = True  # Enabling priviliged intent "Members"

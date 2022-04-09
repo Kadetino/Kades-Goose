@@ -9,10 +9,14 @@ from discord.ext import commands
 import config
 import sqlite3 as sl
 
+
 class EventSearchCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    # TODO Revisit this forgotten place
+    # TODO Rework database == find better parser
+    # TODO Merge database.py into this file
     @commands.command(pass_context=True, no_pm=True)
     async def extract(self, ctx, *img_urls):
         """Shows the description of the game event based on the data from the attached screenshot or the URL"""
@@ -173,6 +177,7 @@ class EventSearchCog(commands.Cog):
         embedVar.set_footer(text="Requested by {0}".format(ctx.author), icon_url=ctx.author.avatar_url)
 
         await ctx.reply(embed=embedVar)
+
 
 def setup(bot):
     bot.add_cog(EventSearchCog(bot))

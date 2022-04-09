@@ -11,6 +11,9 @@ class DuelModule(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    # TODO Make better documentation/ help command
+    # TODO Make check for whether the user with incoming timeout already is timed out
+    # to prevent people from dodging long(critical) timeouts. Stats still should be edited.
     async def timeout_user(self, *, user_id: int, guild_id: int, until):
         """API request to timeout mentioned user in specific guild. Returns 'True' on success, 'False' on failure."""
 

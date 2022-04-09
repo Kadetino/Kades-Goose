@@ -9,6 +9,7 @@ class EU4IdeasModule(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    # TODO Documentation / usage examples / help command
     @commands.command(pass_context=True)
     @commands.cooldown(1, config.cd_commands, commands.BucketType.guild)
     @commands.guild_only()
