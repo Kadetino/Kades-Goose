@@ -14,6 +14,7 @@ class DuelModule(commands.Cog):
     # TODO Make better documentation/ help command
     # TODO Make check for whether the user with incoming timeout already is timed out
     # to prevent people from dodging long(critical) timeouts. Stats still should be edited.
+    # TODO make improvements to ranking system
     async def timeout_user(self, *, user_id: int, guild_id: int, until):
         """API request to timeout mentioned user in specific guild. Returns 'True' on success, 'False' on failure."""
 
@@ -203,6 +204,65 @@ class DuelModule(commands.Cog):
                         value=f"Duel stats for yourself or person of your choice.", inline=False)
         embed.add_field(name=f"`{config.prefix}duelOn`", value="Enable participation in duels.", inline=False)
         embed.add_field(name=f"`{config.prefix}duelOff`", value="Disable participation in duels.", inline=False)
+        return await ctx.reply(embed=embed)
+
+    @commands.command(name="duelboard", pass_context=True)
+    @commands.cooldown(1, config.cd_commands, commands.BucketType.guild)
+    @commands.guild_only()
+    async def top_duelists(self, ctx):
+        """Display top 10 duelists on this server. Sorted by winrate"""
+        # Init
+        con = sl.connect('Goose.db')
+        # Get data and close
+        data = con.execute(
+            f"select user_id, wins, loses from DUELDATA where guild_id = {ctx.guild.id} order by wins desc limit 10").fetchall()
+        con.close()
+        # Check if data is empty
+        if len(data) == 0:
+            return await ctx.reply("Nothing to show.")
+        # Calculate winrate
+        storage = []
+        for line in data:
+            # Check for ZeroDivisionError
+            try:
+                winrate = round(line[1] / line[2], 2)
+            except ZeroDivisionError:
+                winrate = 0
+            # Get user by his id
+            user = self.bot.get_user(line[0])
+            # If getting user failed
+            if user is None:
+                continue
+            # Adding value to storage
+            storage.append((f"{user.name}#{user.discriminator}", line[1], line[2], winrate))
+        # Sort storage for leaderboard
+        storage.sort(key=lambda y: y[3], reverse=True)
+        # Discord embed
+        embed = discord.Embed(title=f"Top 10 {ctx.guild.name} Duelists", colour=discord.Colour.gold())
+        for i in range(len(storage)):
+            # Check if m
+            if i == 10:
+                break
+
+            # Start adding fields
+            if i == 0:
+                embed.add_field(name=f":first_place: {storage[i][0]}",
+                                value=f"Wins: {storage[i][1]} | Losses: {storage[i][2]} | Winrate: {storage[i][3]}",
+                                inline=False)
+            elif i == 1:
+                embed.add_field(name=f":second_place: {storage[i][0]}",
+                                value=f"Wins: {storage[i][1]} | Losses: {storage[i][2]} | Winrate: {storage[i][3]}",
+                                inline=False)
+            elif i == 2:
+                embed.add_field(name=f":third_place: {storage[i][0]}",
+                                value=f"Wins: {storage[i][1]} | Losses: {storage[i][2]} | Winrate: {storage[i][3]}",
+                                inline=False)
+            else:
+                embed.add_field(name=f"`#{i + 1}` {storage[i][0]}",
+                                value=f"Wins: {storage[i][1]} | Losses: {storage[i][2]} | Winrate: {storage[i][3]}",
+                                inline=False)
+            embed.set_thumbnail(url=ctx.guild.icon_url)
+
         return await ctx.reply(embed=embed)
 
 
