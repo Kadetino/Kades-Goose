@@ -37,7 +37,7 @@ class utilityCog(commands.Cog):
     @commands.is_owner()
     async def showguilds(self, ctx):
         """List all guilds' bot is a part of."""
-        guild_embed = discord.Embed(title=f'{self.bot.user} Guilds', color=discord.Colour.gold())
+        guild_embed = discord.Embed(title=f'{self.bot.user} Guilds', description=f"Total: {len(self.bot.guilds)} guilds.", color=discord.Colour.gold())
         for guild in self.bot.guilds:
             guild_embed.add_field(name=f'`{guild.name}`', value=guild.id, inline=False)
         return await ctx.reply(embed=guild_embed)
