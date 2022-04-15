@@ -13,9 +13,7 @@ class LobbyFinderModule(commands.Cog):
         self.bot = bot
 
     # TODO Commands to edit lobby information
-    # TODO Introduce protecction against spammers. Possibly: long cooldown for each user / whitelist
     # TODO Command to report inappropriate lobby listing / blacklist. Webhook?
-    # TODO Make more checks for correctness of input
     # TODO Make documentation/ help command
     # TODO Check if everything is fine, if retrieving information by id (user_id, guild_id and it's not cached) is fine
 
@@ -28,20 +26,32 @@ class LobbyFinderModule(commands.Cog):
         # User-host name
         if author is None:
             author = ctx.author
+
         # Start date
         timezone = {"CET": tz.gettz('EU/Central')}  # not sure if it works
         epoch = parser.parse(lobby_start, tzinfos=timezone).timestamp()
+
         # Check if Discord invite link is valid
         match = re.search("(?:https?://)?discord(?:(?:app)?\.com/invite|\.gg)/?[a-zA-Z0-9]+/?", invite_link)
         if not match:
-            return await ctx.reply("Couldn't recognise discord invite. Try another invite link.")
+            return await ctx.reply(":warning: Couldn't recognise discord invite. Try another invite link.")
 
-        print("oops", invite_link[len(invite_link):invite_link.find("/", -1, 0):])
+        # Send warning if discord invite might be invalid
+        letters_after_invite = invite_link[invite_link.find("discord")::]
+        letters_after_invite = letters_after_invite[letters_after_invite.find("/") + 1::]
+        if len(letters_after_invite) < 10:
+            await ctx.reply(
+                ":warning: Warning: check your discord invite link. Your invite might have expiration timer.")
+        elif len(letters_after_invite) > 10:
+            await ctx.reply(":warning: Warning: check your discord invite link. Your invite might be invalid.")
+
         # Check whether number of players to start was passed
         if num_players <= 0:
             num_players = "Not specified"
+
         # Visibility
         visibility = "Local"
+
         # Embed
         lobby_embed = discord.Embed(title=lobby_name, colour=discord.Colour.dark_blue())
         lobby_embed.add_field(name=f"`Hosted by:`", value=f"<@{author.id}>")
@@ -60,14 +70,15 @@ class LobbyFinderModule(commands.Cog):
             "CREATE TABLE IF NOT EXISTS MP_LOBBIES(guild_id int, lobby_name str, host_name int, start_time_epoch int, discord_invite str, schedule str, minimum_players int, description str,author_id int,is_active int, global_visibility str, primary key (guild_id, lobby_name));")
 
         if len(sql_connection.execute(
-                f"SELECT * FROM MP_LOBBIES WHERE lobby_name = '{lobby_name}' AND is_active = 1").fetchall()) != 0:
-            return await ctx.reply("Multiplayer lobby with this name already exists. Try another name.")
+                f"SELECT * FROM MP_LOBBIES WHERE lobby_name = '{lobby_name}' AND is_active = 1 AND guild_id = {ctx.guild.id}").fetchall()) != 0:
+            return await ctx.reply(":warning: Multiplayer lobby with this name already exists. Try another name.")
         sql_connection.execute(
             "INSERT OR IGNORE INTO MP_LOBBIES (guild_id, lobby_name, host_name, start_time_epoch, discord_invite, schedule, minimum_players, description, author_id, is_active, global_visibility) VALUES (?,?,?,?,?,?,?,?,?,1,?)",
             (ctx.guild.id, lobby_name, author.id, epoch, invite_link, schedule, num_players, desc, ctx.author.id,
              "Local"))
         sql_connection.commit()
         sql_connection.close()
+
         # Webhook and reply
         webhook = Webhook.from_url(config.webhookMPLobbies, adapter=AsyncWebhookAdapter(
             self.bot.session))  # Initializing webhook with AsyncWebhookAdapter
@@ -154,7 +165,7 @@ class LobbyFinderModule(commands.Cog):
         return await ctx.reply(f"Successfuly de-listed lobby `{data[1]}`.")
 
     @commands.Cog.listener('on_guild_remove')
-    async def check_lobbies(self, ctx):
+    async def check_lobbies(self):
         """De-list any lobbies that exist in bot database which he is not a member of.
         Procc's on any on_guild_remove event"""
         # Database info retrieval
@@ -173,28 +184,35 @@ class LobbyFinderModule(commands.Cog):
         sql_connection.close()
         return
 
-    # @commands.command()
-    # @commands.is_owner()
-    # async def change_lobby_visibility(self, ctx: commands.Context, lobby_name: str, visibility_status: str):
-    #     """Change lobby visibility to Global."""
-    #     # Database info retrieval
-    #     sql_connection = sl.connect("Goose.db")
-    #     sql_connection.execute(
-    #         "CREATE TABLE IF NOT EXISTS MP_LOBBIES(guild_id int, lobby_name str, host_name int, start_time_epoch int, discord_invite str, schedule str, minimum_players int, description str,author_id int,is_active int, global_visibility str, primary key (guild_id, lobby_name));")
-    #     if len(data := sql_connection.execute(
-    #             f"SELECT * FROM MP_LOBBIES WHERE is_active = 1 AND lobby_name LIKE '{lobby_name}'").fetchall()) == 1:
-    #         data = data[0]
-    #     elif len(data) == 0:
-    #         return await ctx.reply(f"No lobbies with `{lobby_name}` name found.")
-    #     else:
-    #         return await ctx.reply("Error.")
-    #     # changing global_visibility
-    #     sql_connection.execute(f"UPDATE MP_LOBBIES SET global_visibility = '{visibility_status.lower().capitalize()}' WHERE guild_id = ? AND lobby_name = ?",
-    #                            (data[0], data[1]))
-    #     sql_connection.commit()
-    #     sql_connection.close()
-    #
-    #     return await ctx.reply(f"Successfuly de-listed lobby `{data[1]}`.")
+    @commands.command()
+    @commands.is_owner()
+    async def change_lobby_visibility(self, ctx: commands.Context, lobby_name: str, visibility_status: str,
+                                      guild_id: int):
+        """Change lobby visibility to Global."""
+        # Database info retrieval
+        sql_connection = sl.connect("Goose.db")
+        sql_connection.execute(
+            "CREATE TABLE IF NOT EXISTS MP_LOBBIES(guild_id int, lobby_name str, host_name int, start_time_epoch int, discord_invite str, schedule str, minimum_players int, description str,author_id int,is_active int, global_visibility str, primary key (guild_id, lobby_name));")
+        if len(data := sql_connection.execute(
+                f"SELECT * FROM MP_LOBBIES WHERE is_active = 1 AND lobby_name LIKE '{lobby_name}' AND guild_id = {guild_id}").fetchall()) == 1:
+            data = data[0]
+        elif len(data) == 0:
+            return await ctx.reply(f":warning: No lobbies with `{lobby_name}` name found.")
+        else:
+            return await ctx.reply("Error.")
+        # Check if visibility is either "Local" or "Global"
+        if visibility_status == "local" or visibility_status == "global":
+            visibility_status = visibility_status.capitalize()
+        elif visibility_status != "Global" and visibility_status != "Local":
+            return await ctx.reply(f":warning: Incorrect visibility_input: it should be either `Local` or `Global`.")
+        # changing global_visibility
+        sql_connection.execute(
+            f"UPDATE MP_LOBBIES SET global_visibility = '{visibility_status.lower().capitalize()}' WHERE guild_id = {guild_id} AND lobby_name = '{data[1]}'")
+        sql_connection.commit()
+        sql_connection.close()
+
+        return await ctx.reply(
+            f"Successfuly changed `{data[1]}` lobby visibility on `{self.bot.get_guild(guild_id).name}` to `{visibility_status}`.")
 
 
 def setup(bot):
