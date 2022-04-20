@@ -32,13 +32,13 @@ class DuelModule(commands.Cog):
     @commands.guild_only()
     async def duel(self, ctx: commands.Context, member: discord.Member):
         # Init
-        con = sl.connect('Goose.db')
-        con.execute(
-            "CREATE TABLE IF NOT EXISTS DUELDATA (guild_id int, user_id int, wins int, loses int, opt_out int, PRIMARY KEY (guild_id, user_id))")
-        con.execute("INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,0)",
-                    (ctx.guild.id, ctx.author.id))
-        con.execute("INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,0)",
-                    (ctx.guild.id, member.id))
+        sql_connection = sl.connect('Goose.db')
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,0)",
+            (ctx.guild.id, ctx.author.id))
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,0)",
+            (ctx.guild.id, member.id))
         # Chances
         success_chance = random.randint(0, 100)
         critical_failure_chance = random.randint(0, 100)
@@ -51,17 +51,17 @@ class DuelModule(commands.Cog):
         voice_state_defender = member.voice
         voice_state_attacker = ctx.author.voice
         if voice_state_attacker is not None or voice_state_defender is not None:
-            con.commit()
-            con.close()
+            sql_connection.commit()
+            sql_connection.close()
             return await ctx.reply(f"At least one of the duel participants is in voice chat.\n\nDuel cancelled.")
         # Both agreed to duel (generally speaking)
-        def_consent = con.execute("SELECT opt_out FROM DUELDATA WHERE guild_id = ? AND user_id = ?",
-                                  (ctx.guild.id, member.id)).fetchone()
-        atk_consent = con.execute("SELECT opt_out FROM DUELDATA WHERE guild_id = ? AND user_id = ?",
-                                  (ctx.guild.id, ctx.author.id)).fetchone()
+        def_consent = sql_connection.execute("SELECT opt_out FROM DUELDATA WHERE guild_id = ? AND user_id = ?",
+                                             (ctx.guild.id, member.id)).fetchone()
+        atk_consent = sql_connection.execute("SELECT opt_out FROM DUELDATA WHERE guild_id = ? AND user_id = ?",
+                                             (ctx.guild.id, ctx.author.id)).fetchone()
         if atk_consent[0] == 1 or def_consent[0] == 1:
-            con.commit()
-            con.close()
+            sql_connection.commit()
+            sql_connection.close()
             return await ctx.reply(
                 f"At least one of the duel participants refuses to duel.\n`{config.prefix}duelOn` to enable duels; `{config.prefix}duelOff` to forbid them.\n\nDuel cancelled.")
 
@@ -95,13 +95,13 @@ class DuelModule(commands.Cog):
                 f"{ctx.guild.name} - Something went wrong: couldn't time out {muted_user} in {ctx.author} vs {member} fight.")
 
         if not ctx.author.bot and not member.bot and member.id != ctx.author.id:
-            con.execute("UPDATE DUELDATA SET loses = loses + 1 WHERE guild_id = ? AND user_id = ?",
-                        (ctx.guild.id, muted_user.id))
-            con.execute("UPDATE DUELDATA SET wins = wins + 1 WHERE guild_id = ? AND user_id = ?",
-                        (ctx.guild.id, winner_user.id))
+            sql_connection.execute("UPDATE DUELDATA SET loses = loses + 1 WHERE guild_id = ? AND user_id = ?",
+                                   (ctx.guild.id, muted_user.id))
+            sql_connection.execute("UPDATE DUELDATA SET wins = wins + 1 WHERE guild_id = ? AND user_id = ?",
+                                   (ctx.guild.id, winner_user.id))
         # save changes
-        con.commit()
-        con.close()
+        sql_connection.commit()
+        sql_connection.close()
 
     @commands.command(pass_context=True)
     @commands.cooldown(1, config.cd_commands, commands.BucketType.guild)
@@ -267,4 +267,9 @@ class DuelModule(commands.Cog):
 
 
 def setup(bot):
+    sql_connection = sl.connect('Goose.db')
+    sql_connection.execute(
+        "CREATE TABLE IF NOT EXISTS DUELDATA (guild_id int, user_id int, wins int, loses int, opt_out int, PRIMARY KEY (guild_id, user_id))")
+    sql_connection.commit()
+    sql_connection.close()
     bot.add_cog(DuelModule(bot))
