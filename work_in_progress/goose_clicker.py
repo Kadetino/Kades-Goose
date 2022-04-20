@@ -3,13 +3,13 @@ from discord.ext import commands  # Discord BOT
 import sqlite3 as sl  # SQLite database
 import asyncio
 
+
 class clickerCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     @commands.Cog.listener('on_message')
-
-    async def on_mssessage(self,ctx):
+    async def on_mssessage(self, ctx):
         # if message.content.startswith('click'):
         if ctx.content.startswith('click'):
             return await ctx.reply("peepoopee")
@@ -21,10 +21,11 @@ class clickerCog(commands.Cog):
 
             member = message.author.id
 
-            #if member is None:
+            # if member is None:
             #    member = ctx.author
-            con.execute("INSERT OR IGNORE INTO CLICKER (guild_id, user_id, cookie_counter, upgrade1, last_access) VALUES (?,?,0,0,0)",
-                        (message.author.id.guild.id, member.id))
+            con.execute(
+                "INSERT OR IGNORE INTO CLICKER (guild_id, user_id, cookie_counter, upgrade1, last_access) VALUES (?,?,0,0,0)",
+                (message.author.id.guild.id, member.id))
             # Retrieve cookies
             data = con.execute("SELECT cookie_counter FROM CLICKER WHERE guild_id = ? AND user_id = ?",
                                (message.author.id.guild.id, member.id)).fetchone()
