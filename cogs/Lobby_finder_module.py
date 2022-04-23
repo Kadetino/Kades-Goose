@@ -2,6 +2,7 @@ import discord  # Discord API wrapper
 from discord.ext import commands  # Discord BOT
 from discord import Webhook, AsyncWebhookAdapter  # Importing discord.Webhook and discord.AsyncWebhookAdapter
 import sqlite3 as sl  # SQLite database
+import time  # Epoch time
 from dateutil import parser, tz  # Epoch time converter
 import re  # RegEx
 
@@ -16,10 +17,8 @@ class LobbyFinderModule(commands.Cog):
     # TODO Command to request changing visibility to global - maybe implement partial checking without human intervention
     # TODO Make documentation/ help command
     # TODO finish globby command and show of global mp lobbies
-    # TODO make embed show who created lobby. == add field
     # TODO make creating lobbies less painful
     # TODO Try breaking the code as malicious discord user
-    # TODO remove out-of-date lobbies (?more than 2 days ago?) (function that is triggered whenever lobby and globby?)
 
     @commands.command(pass_context=True)
     @commands.cooldown(1, cd_long_commands, commands.BucketType.user)
@@ -28,6 +27,9 @@ class LobbyFinderModule(commands.Cog):
                            invite_link: str = "No link.",
                            desc: str = "No data.", schedule: str = "No data.", num_players: int = -1,
                            author: discord.Member = None):
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
+
         # User-host name
         if author is None:
             author = ctx.author
@@ -35,6 +37,9 @@ class LobbyFinderModule(commands.Cog):
         # Start date
         timezone = {"CET": tz.gettz('EU/Central')}  # not sure if it works
         epoch = parser.parse(lobby_start, tzinfos=timezone).timestamp()
+        epoch_timestamp_right_now = int(time.time())
+        if epoch_timestamp_right_now > epoch:
+            return await ctx.reply(f":warning: You can't create lobbies in the past.")
 
         # Check if Discord invite link is valid
         # Discord invite links with more than 55 characters are extremely suspicious
@@ -83,6 +88,7 @@ class LobbyFinderModule(commands.Cog):
         lobby_embed.add_field(name="`Guild:`", value=self.bot.get_guild(ctx.guild.id).name)
         lobby_embed.add_field(name="`Schedule:`", value=schedule)
         lobby_embed.add_field(name="`Players to start:`", value=num_players)
+        lobby_embed.add_field(name="`Lobby created by:`", value=f"<@{ctx.author.id}>")
         lobby_embed.add_field(name="`Description:`", value=desc, inline=False)
         lobby_embed.set_thumbnail(url=self.bot.user.avatar_url)
 
@@ -110,6 +116,8 @@ class LobbyFinderModule(commands.Cog):
     @commands.guild_only()
     async def local_lobbies(self, ctx: commands.Context):
         """Send embed with information about all active lobbies at the moment."""
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
@@ -121,7 +129,7 @@ class LobbyFinderModule(commands.Cog):
         active_lobbies_embed = discord.Embed(title=f"{ctx.guild.name} lobbies.", description=message,
                                              colour=discord.Colour.dark_blue())
         for lobby in data:
-            short_desc = f"Hosted by: <@{lobby[2]}>\nStart: <t:{lobby[3]}:f>"
+            short_desc = f"Hosted by: <@{lobby[2]}>\nStart: <t:{lobby[3]}:f> | <t:{lobby[3]}:R>"
             active_lobbies_embed.add_field(name=f"`{lobby[1]}`", value=short_desc, inline=False)
         return await ctx.reply(embed=active_lobbies_embed)
 
@@ -130,6 +138,8 @@ class LobbyFinderModule(commands.Cog):
     @commands.guild_only()
     async def global_lobbies(self, ctx: commands.Context):
         """Send embed with information about all active global lobbies at the moment."""
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
@@ -141,7 +151,7 @@ class LobbyFinderModule(commands.Cog):
         active_lobbies_embed = discord.Embed(title=f"Global lobbies.", description=message,
                                              colour=discord.Colour.dark_blue())
         for lobby in data:
-            short_desc = f"Hosted by: <@{lobby[2]}>\nStart: <t:{lobby[3]}:f>"
+            short_desc = f"Hosted by: <@{lobby[2]}>\nStart: <t:{lobby[3]}:f> | <t:{lobby[3]}:R>"
             active_lobbies_embed.add_field(name=f"`{lobby[1]}`", value=short_desc, inline=False)
         return await ctx.reply(embed=active_lobbies_embed)
 
@@ -150,6 +160,8 @@ class LobbyFinderModule(commands.Cog):
     @commands.guild_only()
     async def lobby(self, ctx: commands.Context, lobby_name: str):
         """Send embed with information about specific lobby."""
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         sql_connection.execute(
@@ -170,6 +182,7 @@ class LobbyFinderModule(commands.Cog):
         retrieved_lobby_embed.add_field(name="`Guild:`", value=self.bot.get_guild(data[0]).name)
         retrieved_lobby_embed.add_field(name="`Schedule:`", value=data[5])
         retrieved_lobby_embed.add_field(name="`Players to start:`", value=data[6])
+        retrieved_lobby_embed.add_field(name="`Lobby created by:`", value=f"<@{data[8]}>")
         retrieved_lobby_embed.add_field(name="`Description:`", value=data[7], inline=False)
         retrieved_lobby_embed.set_thumbnail(url=self.bot.user.avatar_url)
 
@@ -180,6 +193,8 @@ class LobbyFinderModule(commands.Cog):
     @commands.guild_only()
     async def globby(self, ctx: commands.Context, lobby_name: str):
         """Send embed with information about specific global lobby."""
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         sql_connection.execute(
@@ -200,6 +215,7 @@ class LobbyFinderModule(commands.Cog):
         retrieved_lobby_embed.add_field(name="`Guild:`", value=self.bot.get_guild(data[0]).name)
         retrieved_lobby_embed.add_field(name="`Schedule:`", value=data[5])
         retrieved_lobby_embed.add_field(name="`Players to start:`", value=data[6])
+        retrieved_lobby_embed.add_field(name="`Lobby created by:`", value=f"<@{data[8]}>")
         retrieved_lobby_embed.add_field(name="`Description:`", value=data[7], inline=False)
         retrieved_lobby_embed.set_thumbnail(url=self.bot.user.avatar_url)
 
@@ -235,18 +251,19 @@ class LobbyFinderModule(commands.Cog):
 
     @commands.Cog.listener('on_guild_remove')
     async def check_lobbies(self):
-        """De-list any lobbies that exist in bot database which he is not a member of.
+        """De-list any lobbies that exist in bot database which are from the servers' bot is not a member of.
         Procc's on any on_guild_remove event"""
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
-                f"SELECT guild_id, lobby_name FROM MP_LOBBIES WHERE is_active = 1").fetchall()) == 0:
+                f"SELECT guild_id, lobby_name, start_time_epoch FROM MP_LOBBIES WHERE is_active = 1").fetchall()) == 0:
             sql_connection.close()
             return
-        # If guild is from other place than goose guilds - set is_active to 0
+        # If guild is from other place than goose guilds or older than 1 day - set is_active to 0
+        epoch_timestamp_right_now = int(time.time())
         for guild in self.bot.guilds:
             for entry_guild in data:
-                if entry_guild[0] != guild.id:
+                if entry_guild[0] != guild.id or epoch_timestamp_right_now >= entry_guild[2] + 1*24*3600:
                     sql_connection.execute("UPDATE MP_LOBBIES SET is_active = 0 WHERE guild_id = ? AND lobby_name = ?",
                                            (entry_guild[0], entry_guild[1]))
         sql_connection.commit()
@@ -507,6 +524,10 @@ class LobbyFinderModule(commands.Cog):
         # Processing input data
         timezone = {"CET": tz.gettz('EU/Central')}  # not sure if it works
         epoch = parser.parse(target_field, tzinfos=timezone).timestamp()
+        epoch_timestamp_right_now = int(time.time())
+        if epoch_timestamp_right_now > epoch:
+            sql_connection.close()
+            return await ctx.reply(f":warning: You can't create lobbies in the past.")
 
         sql_connection.execute(
             f"UPDATE MP_LOBBIES SET start_time_epoch = '{epoch}' WHERE guild_id = ? AND lobby_name = ?",
