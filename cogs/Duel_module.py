@@ -34,10 +34,10 @@ class DuelModule(commands.Cog):
         # Init
         sql_connection = sl.connect('Goose.db')
         sql_connection.execute(
-            "INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,0)",
+            "INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,1)",
             (ctx.guild.id, ctx.author.id))
         sql_connection.execute(
-            "INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,0)",
+            "INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,1)",
             (ctx.guild.id, member.id))
         # Chances
         success_chance = random.randint(0, 100)
@@ -111,7 +111,7 @@ class DuelModule(commands.Cog):
 
         # Connect
         con = sl.connect('Goose.db')
-        con.execute("INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,0)",
+        con.execute("INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,1)",
                     (ctx.guild.id, ctx.author.id))
         # Edit existing value
         con.execute("UPDATE DUELDATA SET opt_out = 0 WHERE guild_id = ? AND user_id = ?",
@@ -150,7 +150,7 @@ class DuelModule(commands.Cog):
         con = sl.connect('Goose.db')
         if member is None:
             member = ctx.author
-        con.execute("INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,0)",
+        con.execute("INSERT OR IGNORE INTO DUELDATA (guild_id, user_id, wins, loses, opt_out) VALUES (?,?,0,0,1)",
                     (ctx.guild.id, member.id))
         # Retrieve wins
         data = con.execute("SELECT wins FROM DUELDATA WHERE guild_id = ? AND user_id = ?",
