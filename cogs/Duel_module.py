@@ -4,7 +4,7 @@ import datetime  # until what time timeout lasts
 import sqlite3 as sl  # SQLite database
 import random  # percentages for duels
 
-import config  # Global settings
+from config import prefix, cd_commands  # Global settings
 
 
 class DuelModule(commands.Cog):
@@ -28,7 +28,7 @@ class DuelModule(commands.Cog):
             return False
 
     @commands.command(pass_context=True)
-    @commands.cooldown(1, config.cd_commands, commands.BucketType.guild)
+    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
     @commands.guild_only()
     async def duel(self, ctx: commands.Context, member: discord.Member):
         # Init
@@ -63,7 +63,7 @@ class DuelModule(commands.Cog):
             sql_connection.commit()
             sql_connection.close()
             return await ctx.reply(
-                f"At least one of the duel participants refuses to duel.\n`{config.prefix}duelOn` to enable duels; `{config.prefix}duelOff` to forbid them.\n\nDuel cancelled.")
+                f"At least one of the duel participants refuses to duel.\n`{prefix}duelOn` to enable duels; `{prefix}duelOff` to forbid them.\n\nDuel cancelled.")
 
         # Duel!
         if member.id in protectedusers:  # Kade and Goose never lose
@@ -104,9 +104,9 @@ class DuelModule(commands.Cog):
         sql_connection.close()
 
     @commands.command(pass_context=True)
-    @commands.cooldown(1, config.cd_commands, commands.BucketType.guild)
+    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
     @commands.guild_only()
-    async def duelOn(self, ctx):
+    async def duelOn(self, ctx: commands.Context):
         """Set 'opt_out' field in database to '0'. Enable participation in duels."""
 
         # Connect
@@ -123,9 +123,9 @@ class DuelModule(commands.Cog):
         return await ctx.message.add_reaction(u"\u2705")
 
     @commands.command(pass_context=True)
-    @commands.cooldown(1, config.cd_commands, commands.BucketType.guild)
+    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
     @commands.guild_only()
-    async def duelOff(self, ctx):
+    async def duelOff(self, ctx: commands.Context):
         """Set 'opt_out' field in database to '1'. Disable participation in duels."""
 
         # Connect
@@ -143,9 +143,9 @@ class DuelModule(commands.Cog):
         return await ctx.message.add_reaction(u"\u2705")
 
     @commands.command(pass_context=True)
-    @commands.cooldown(1, config.cd_commands, commands.BucketType.guild)
+    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
     @commands.guild_only()
-    async def duelstats(self, ctx, member: discord.Member = None):
+    async def duelstats(self, ctx: commands.Context, member: discord.Member = None):
         # Init
         con = sl.connect('Goose.db')
         if member is None:
@@ -195,21 +195,30 @@ class DuelModule(commands.Cog):
         await ctx.reply(embed=embed)
 
     @commands.command(pass_context=True)
-    @commands.cooldown(1, config.cd_commands, commands.BucketType.guild)
+    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
     @commands.guild_only()
-    async def duelHelp(self, ctx):
-        embed = discord.Embed(title="All commands for dueling", colour=discord.Colour.gold())
-        embed.add_field(name=f"`{config.prefix}duel @someone`", value=f"Duel person of your choice.", inline=False)
-        embed.add_field(name=f"`{config.prefix}duelstats @someone`",
-                        value=f"Duel stats for yourself or person of your choice.", inline=False)
-        embed.add_field(name=f"`{config.prefix}duelOn`", value="Enable participation in duels.", inline=False)
-        embed.add_field(name=f"`{config.prefix}duelOff`", value="Disable participation in duels.", inline=False)
+    async def duelHelp(self, ctx: commands.Context):
+        embed = discord.Embed(title="All commands for dueling",
+                              colour=discord.Colour.gold())
+        embed.add_field(name=f"`{prefix}duel @someone`",
+                        value=f"Duel person of your choice.",
+                        inline=False)
+        embed.add_field(name=f"`{prefix}duelstats @someone`",
+                        value=f"Duel stats for yourself or person of your choice.",
+                        inline=False)
+        embed.add_field(name=f"`{prefix}duelOn`",
+                        value="Enable participation in duels.",
+                        inline=False)
+        embed.add_field(name=f"`{prefix}duelOff`",
+                        value="Disable participation in duels.",
+                        inline=False)
+
         return await ctx.reply(embed=embed)
 
     @commands.command(name="duelboard", pass_context=True)
-    @commands.cooldown(1, config.cd_commands, commands.BucketType.guild)
+    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
     @commands.guild_only()
-    async def top_duelists(self, ctx):
+    async def top_duelists(self, ctx: commands.Context):
         """Display top 10 duelists on this server. Sorted by winrate"""
         # Init
         con = sl.connect('Goose.db')
@@ -261,7 +270,7 @@ class DuelModule(commands.Cog):
                 embed.add_field(name=f"`#{i + 1}` {storage[i][0]}",
                                 value=f"Wins: {storage[i][1]} | Losses: {storage[i][2]} | Winrate: {storage[i][3]}",
                                 inline=False)
-            embed.set_thumbnail(url=ctx.guild.icon_url)
+        embed.set_thumbnail(url=ctx.guild.icon_url)
 
         return await ctx.reply(embed=embed)
 
@@ -270,6 +279,5 @@ def setup(bot):
     sql_connection = sl.connect('Goose.db')
     sql_connection.execute(
         "CREATE TABLE IF NOT EXISTS DUELDATA (guild_id int, user_id int, wins int, loses int, opt_out int, PRIMARY KEY (guild_id, user_id))")
-    sql_connection.commit()
     sql_connection.close()
     bot.add_cog(DuelModule(bot))

@@ -13,12 +13,13 @@ class LobbyFinderModule(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    # TODO Command to report inappropriate lobby listing / blacklist. Webhook?
+    # TODO Command to report inappropriate lobby listing / blacklist.
     # TODO Command to request changing visibility to global - maybe implement partial checking without human intervention
     # TODO Make documentation/ help command
-    # TODO finish globby command and show of global mp lobbies
     # TODO make creating lobbies less painful
     # TODO Try breaking the code as malicious discord user
+    # TODO local_lobbies and global_lobbies: limit on how many lobbies are shown at the given moment.
+    # TODO you can't pass ' or " characters in strings. Feature or bug?
 
     @commands.command(pass_context=True)
     @commands.cooldown(1, cd_long_commands, commands.BucketType.user)
@@ -62,6 +63,7 @@ class LobbyFinderModule(commands.Cog):
             invite_link = "No link."
         else:
             invite_link = "No link."
+
         # Check whether number of players to start was passed
         if num_players <= 0:
             num_players = "Not specified"
@@ -95,7 +97,7 @@ class LobbyFinderModule(commands.Cog):
         # Save in database
         sql_connection = sl.connect("Goose.db")
         if len(sql_connection.execute(
-                f"SELECT * FROM MP_LOBBIES WHERE lobby_name = '{lobby_name}' AND is_active = 1 AND guild_id = {ctx.guild.id}").fetchall()) != 0:
+                f"SELECT * FROM MP_LOBBIES WHERE lobby_name LIKE '{lobby_name}' AND is_active = 1 AND guild_id = {ctx.guild.id}").fetchall()) != 0:
             return await ctx.reply(
                 ":warning: Multiplayer lobby with this name already exists. Try creating another lobby with different name.")
         sql_connection.execute(
@@ -118,19 +120,22 @@ class LobbyFinderModule(commands.Cog):
         """Send embed with information about all active lobbies at the moment."""
         # Remove outdated/invalid lobbies
         await self.check_lobbies()
+
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
                 f"SELECT * FROM MP_LOBBIES WHERE is_active = 1 AND guild_id= {ctx.guild.id}").fetchall()) == 0:
             return await ctx.reply(f"No local lobbies at the moment.")
         sql_connection.close()
+
         # Embed
-        message = f'Try something like `{prefix}lobby "golden goose mp"` to find out more about specified lobby.'
-        active_lobbies_embed = discord.Embed(title=f"{ctx.guild.name} lobbies.", description=message,
+        active_lobbies_embed = discord.Embed(title=f"{ctx.guild.name} lobbies.",
+                                             description=f'Try something like `{prefix}lobby "golden goose mp"` to find out more about specified lobby.',
                                              colour=discord.Colour.dark_blue())
         for lobby in data:
             short_desc = f"Hosted by: <@{lobby[2]}>\nStart: <t:{lobby[3]}:f> | <t:{lobby[3]}:R>"
             active_lobbies_embed.add_field(name=f"`{lobby[1]}`", value=short_desc, inline=False)
+
         return await ctx.reply(embed=active_lobbies_embed)
 
     @commands.command(pass_context=True)
@@ -140,19 +145,21 @@ class LobbyFinderModule(commands.Cog):
         """Send embed with information about all active global lobbies at the moment."""
         # Remove outdated/invalid lobbies
         await self.check_lobbies()
+
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
-                f"SELECT * FROM MP_LOBBIES WHERE is_active = 1 AND global_visibility = 'Global' AND guild_id= {ctx.guild.id}").fetchall()) == 0:
+                f"SELECT * FROM MP_LOBBIES WHERE is_active = 1 AND global_visibility = 'Global'").fetchall()) == 0:
             return await ctx.reply(f"No global lobbies at the moment.")
         sql_connection.close()
         # Embed
-        message = f'Try something like `{prefix}globby "golden goose mp"` to find out more about specified lobby.'
-        active_lobbies_embed = discord.Embed(title=f"Global lobbies.", description=message,
+        active_lobbies_embed = discord.Embed(title=f"Global lobbies.",
+                                             description=f'Try something like `{prefix}globby "golden goose mp"` to find out more about specified lobby.',
                                              colour=discord.Colour.dark_blue())
         for lobby in data:
-            short_desc = f"Hosted by: <@{lobby[2]}>\nStart: <t:{lobby[3]}:f> | <t:{lobby[3]}:R>"
+            short_desc = f"Hosted by: <@{lobby[2]}>\nStart: <t:{lobby[3]}:f> | <t:{lobby[3]}:R>\nGuild: {self.bot.get_guild(lobby[0]).name}"
             active_lobbies_embed.add_field(name=f"`{lobby[1]}`", value=short_desc, inline=False)
+
         return await ctx.reply(embed=active_lobbies_embed)
 
     @commands.command(pass_context=True)
@@ -162,10 +169,9 @@ class LobbyFinderModule(commands.Cog):
         """Send embed with information about specific lobby."""
         # Remove outdated/invalid lobbies
         await self.check_lobbies()
+
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
-        sql_connection.execute(
-            "CREATE TABLE IF NOT EXISTS MP_LOBBIES(guild_id int, lobby_name str, host_name int, start_time_epoch int, discord_invite str, schedule str, minimum_players int, description str,author_id int,is_active int, global_visibility str, primary key (guild_id, lobby_name));")
         if len(data := sql_connection.execute(
                 f"SELECT * FROM MP_LOBBIES WHERE is_active = 1 AND guild_id = {ctx.guild.id} AND lobby_name LIKE '{lobby_name}'").fetchall()) == 0:
             return await ctx.reply(f"No lobbies with `{lobby_name}` name found.")
@@ -195,12 +201,11 @@ class LobbyFinderModule(commands.Cog):
         """Send embed with information about specific global lobby."""
         # Remove outdated/invalid lobbies
         await self.check_lobbies()
+
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
-        sql_connection.execute(
-            "CREATE TABLE IF NOT EXISTS MP_LOBBIES(guild_id int, lobby_name str, host_name int, start_time_epoch int, discord_invite str, schedule str, minimum_players int, description str,author_id int,is_active int, global_visibility str, primary key (guild_id, lobby_name));")
         if len(data := sql_connection.execute(
-                f"SELECT * FROM MP_LOBBIES WHERE is_active = 1 AND guild_id = {ctx.guild.id} AND lobby_name LIKE '{lobby_name}'").fetchall()) == 0:
+                f"SELECT * FROM MP_LOBBIES WHERE is_active = 1 AND global_visibility = 'Global' AND lobby_name LIKE '{lobby_name}'").fetchall()) == 0:
             return await ctx.reply(f"No lobbies with `{lobby_name}` name found.")
         else:
             data = data[0]
@@ -241,6 +246,7 @@ class LobbyFinderModule(commands.Cog):
             return await ctx.reply(f"No lobbies with `{lobby_name}` name found.")
         else:
             return await ctx.reply("Error.")
+
         # Removal itself - set is_active to 0
         sql_connection.execute("UPDATE MP_LOBBIES SET is_active = 0 WHERE guild_id = ? AND lobby_name = ?",
                                (data[0], data[1]))
@@ -259,13 +265,15 @@ class LobbyFinderModule(commands.Cog):
                 f"SELECT guild_id, lobby_name, start_time_epoch FROM MP_LOBBIES WHERE is_active = 1").fetchall()) == 0:
             sql_connection.close()
             return
+
         # If guild is from other place than goose guilds or older than 1 day - set is_active to 0
         epoch_timestamp_right_now = int(time.time())
         for guild in self.bot.guilds:
             for entry_guild in data:
-                if entry_guild[0] != guild.id or epoch_timestamp_right_now >= entry_guild[2] + 1*24*3600:
+                if entry_guild[0] != guild.id or epoch_timestamp_right_now >= entry_guild[2] + 1 * 24 * 3600:
                     sql_connection.execute("UPDATE MP_LOBBIES SET is_active = 0 WHERE guild_id = ? AND lobby_name = ?",
                                            (entry_guild[0], entry_guild[1]))
+
         sql_connection.commit()
         sql_connection.close()
         return
@@ -306,10 +314,16 @@ class LobbyFinderModule(commands.Cog):
     @commands.cooldown(1, cd_commands, commands.BucketType.user)
     @commands.guild_only()
     async def edit_lobby_description(self, ctx: commands.Context, lobby_name: str = None, target_field: str = None):
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
+
         # Check if there was any input
-        if lobby_name is None and target_field is None:
+        if (lobby_name is None and target_field is None) or target_field == "":
             message = f"You can edit lobby description with this command.\n\nExample usage: `{prefix}edit_lobby_description \"golden goose\" \"my new description.\"`"
             return await ctx.reply(message)
+        elif target_field is None:
+            return
+
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
@@ -323,12 +337,14 @@ class LobbyFinderModule(commands.Cog):
             return await ctx.reply(f":warning: No lobbies with `{lobby_name}` name found.")
         else:
             return await ctx.reply(":warning: Error.")
+
         # Processing input data
-        if len(target_field) > 199 or target_field == "":
+        if len(target_field) > 199:
             return await ctx.reply(":warning: Error. Please, use less than 200 characters for schedule.")
         sql_connection.execute(
             f"UPDATE MP_LOBBIES SET description = '{target_field}' WHERE guild_id = ? AND lobby_name = ?",
             (data[0], data[1]))
+
         # Change global_visibilty to "Local" - because security reasons
         if data[10] == "Global":
             sql_connection.execute(
@@ -336,6 +352,7 @@ class LobbyFinderModule(commands.Cog):
                 (data[0], data[1]))
             await ctx.reply(
                 f":warning: Changed lobby visibility from `Global` to `Local` as security measure.\nPlease, request changing visibility again.")
+
         sql_connection.commit()
         sql_connection.close()
 
@@ -345,10 +362,16 @@ class LobbyFinderModule(commands.Cog):
     @commands.cooldown(1, cd_commands, commands.BucketType.user)
     @commands.guild_only()
     async def edit_lobby_schedule(self, ctx: commands.Context, lobby_name: str = None, target_field: str = None):
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
+
         # Check if there was any input
-        if lobby_name is None and target_field is None:
+        if (lobby_name is None and target_field is None) or target_field == "":
             message = f"You can edit lobby schedule description with this command.\n\nExample usage: `{prefix}edit_lobby_schedule \"golden goose\" \"Saturday: 20:00 - 23:00 CET\"`"
             return await ctx.reply(message)
+        elif target_field is None:
+            return
+
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
@@ -362,12 +385,14 @@ class LobbyFinderModule(commands.Cog):
             return await ctx.reply(f":warning: No lobbies with `{lobby_name}` name found.")
         else:
             return await ctx.reply(":warning: Error.")
+
         # Processing input data
-        if len(target_field) > 49 or target_field == "":
+        if len(target_field) > 49:
             return await ctx.reply(":warning: Error. Please, use less than 50 characters for schedule.")
         sql_connection.execute(
             f"UPDATE MP_LOBBIES SET schedule = '{target_field}' WHERE guild_id = ? AND lobby_name = ?",
             (data[0], data[1]))
+
         # Change global_visibilty to "Local" - because security reasons
         if data[10] == "Global":
             sql_connection.execute(
@@ -375,6 +400,7 @@ class LobbyFinderModule(commands.Cog):
                 (data[0], data[1]))
             await ctx.reply(
                 f":warning: Changed lobby visibility from `Global` to `Local` as security measure.\nPlease, request changing visibility again.")
+
         sql_connection.commit()
         sql_connection.close()
 
@@ -385,10 +411,16 @@ class LobbyFinderModule(commands.Cog):
     @commands.guild_only()
     async def edit_lobby_host(self, ctx: commands.Context, lobby_name: str = None,
                               target_member: discord.Member = None):
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
+
         # Check if there was any input
         if lobby_name is None and target_member is None:
             message = f"You can edit lobby host with this command.\n\nExample usage: `{prefix}edit_lobby_host \"golden goose\" @someone`"
             return await ctx.reply(message)
+        elif target_member is None:
+            return
+
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
@@ -402,12 +434,14 @@ class LobbyFinderModule(commands.Cog):
             return await ctx.reply(f":warning: No lobbies with `{lobby_name}` name found.")
         else:
             return await ctx.reply(":warning: Error.")
+
         # Processing input data
         if target_member.bot:
             return await ctx.reply(":warning: Error. Please, do not make bots responsible for lobbies.")
         sql_connection.execute(
             f"UPDATE MP_LOBBIES SET host_name = {target_member.id} WHERE guild_id = ? AND lobby_name = ?",
             (data[0], data[1]))
+
         sql_connection.commit()
         sql_connection.close()
 
@@ -417,10 +451,16 @@ class LobbyFinderModule(commands.Cog):
     @commands.cooldown(1, cd_commands, commands.BucketType.user)
     @commands.guild_only()
     async def edit_lobby_invite(self, ctx: commands.Context, lobby_name: str = None, target_field: str = None):
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
+
         # Check if there was any input
-        if lobby_name is None and target_field is None:
+        if (lobby_name is None and target_field is None) or target_field == "":
             message = f"You can edit lobby discord invite with this command.\n\nExample usage: `{prefix}edit_lobby_host \"golden goose\" mydiscordinvite`"
             return await ctx.reply(message)
+        elif target_field is None:
+            return
+
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
@@ -434,6 +474,7 @@ class LobbyFinderModule(commands.Cog):
             return await ctx.reply(f":warning: No lobbies with `{lobby_name}` name found.")
         else:
             return await ctx.reply(":warning: Error.")
+
         # Check if Discord invite link is valid
         if target_field is not None:
             # Discord invite links with more than 55 characters are extremely suspicious
@@ -458,24 +499,37 @@ class LobbyFinderModule(commands.Cog):
         else:
             return
 
+        # Change global_visibilty to "Local" - because security reasons
+        if data[10] == "Global":
+            sql_connection.execute(
+                "UPDATE MP_LOBBIES SET global_visibility = 'Local' WHERE guild_id = ? AND lobby_name = ?",
+                (data[0], data[1]))
+            await ctx.reply(
+                f":warning: Changed lobby visibility from `Global` to `Local` as security measure.\nPlease, request changing visibility again.")
+
         sql_connection.execute(
             f"UPDATE MP_LOBBIES SET discord_invite = '{target_field}' WHERE guild_id = ? AND lobby_name = ?",
             (data[0], data[1]))
+
         sql_connection.commit()
         sql_connection.close()
-        return await ctx.reply(f"Successfuly edited discord invite of `{data[1]}`.")
 
+        return await ctx.reply(f"Successfuly edited discord invite of `{data[1]}`.")
 
     @commands.command(pass_context=True)
     @commands.cooldown(1, cd_commands, commands.BucketType.user)
     @commands.guild_only()
     async def edit_lobby_players(self, ctx: commands.Context, lobby_name: str = None, target_field: int = None):
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
+
         # Check if there was any input
         if lobby_name is None and target_field is None:
             message = f"You can edit lobby `Players to start` field with this command.\n\nExample usage: `{prefix}edit_lobby_players \"golden goose\" 7`"
             return await ctx.reply(message)
         elif target_field is None:
             return
+
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
@@ -489,25 +543,35 @@ class LobbyFinderModule(commands.Cog):
             return await ctx.reply(f":warning: No lobbies with `{lobby_name}` name found.")
         else:
             return await ctx.reply(":warning: Error.")
+
         # Check if arguement is valid
         if target_field < 0:
             target_field = 0
+
         # Update
         sql_connection.execute(
             f"UPDATE MP_LOBBIES SET minimum_players = {target_field} WHERE guild_id = ? AND lobby_name = ?",
             (data[0], data[1]))
+
         sql_connection.commit()
         sql_connection.close()
+
         return await ctx.reply(f"Successfuly edited `Players to start` field of `{data[1]}`.")
 
     @commands.command(pass_context=True)
     @commands.cooldown(1, cd_commands, commands.BucketType.user)
     @commands.guild_only()
     async def edit_lobby_start(self, ctx: commands.Context, lobby_name: str = None, target_field: str = None):
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
+
         # Check if there was any input
-        if lobby_name is None and target_field is None:
+        if (lobby_name is None and target_field is None) or target_field == "":
             message = f"You can edit lobby start date with this command.\n\nExample usage: `{prefix}edit_lobby_start \"golden goose\" \"01-01-2021 17:00\"`"
             return await ctx.reply(message)
+        elif target_field is None:
+            return
+
         # Database info retrieval
         sql_connection = sl.connect("Goose.db")
         if len(data := sql_connection.execute(
@@ -521,6 +585,7 @@ class LobbyFinderModule(commands.Cog):
             return await ctx.reply(f":warning: No lobbies with `{lobby_name}` name found.")
         else:
             return await ctx.reply(":warning: Error.")
+
         # Processing input data
         timezone = {"CET": tz.gettz('EU/Central')}  # not sure if it works
         epoch = parser.parse(target_field, tzinfos=timezone).timestamp()
@@ -537,6 +602,57 @@ class LobbyFinderModule(commands.Cog):
         sql_connection.close()
 
         return await ctx.reply(f"Successfuly edited lobby start date of `{data[1]}`.")
+
+    @commands.command(pass_context=True)
+    @commands.cooldown(1, cd_commands, commands.BucketType.user)
+    @commands.guild_only()
+    async def edit_lobby_name(self, ctx: commands.Context, lobby_name: str = None, target_field: str = None):
+        # Remove outdated/invalid lobbies
+        await self.check_lobbies()
+
+        # Check if there was any input
+        if (lobby_name is None and target_field is None) or target_field == "":
+            message = f"You can edit lobby name with this command.\n\nExample usage: `{prefix}edit_lobby_start \"golden goose\" \"Crimson Goose\"`"
+            return await ctx.reply(message)
+        elif target_field is None:
+            return
+
+        # Database info retrieval
+        sql_connection = sl.connect("Goose.db")
+        if len(data := sql_connection.execute(
+                f"SELECT * FROM MP_LOBBIES WHERE is_active = 1 AND guild_id = {ctx.guild.id} AND lobby_name LIKE '{lobby_name}'").fetchall()) == 1:
+            data = data[0]  # Convert List to tuple
+            # Check if user has permissions to de-list this lobby: host, author or member with administator permissions
+            if data[2] != ctx.author.id and data[8] != ctx.author.id and not ctx.author.guild_permissions.administrator:
+                return await ctx.reply(
+                    f":warning: You are neither host nor creator of this lobby nor have `Administrator` permissions to edit `{lobby_name}` lobby.")
+        elif len(data) == 0:
+            return await ctx.reply(f":warning: No lobbies with `{lobby_name}` name found.")
+        else:
+            return await ctx.reply(":warning: Error.")
+
+        # Processing input data
+        if len(sql_connection.execute(
+                f"SELECT * FROM MP_LOBBIES WHERE lobby_name LIKE '{target_field}' AND is_active = 1 AND guild_id = {ctx.guild.id}").fetchall()) != 0:
+            return await ctx.reply(
+                ":warning: Multiplayer lobby with this name already exists.")
+
+        # Change global_visibilty to "Local" - because security reasons
+        if data[10] == "Global":
+            sql_connection.execute(
+                "UPDATE MP_LOBBIES SET global_visibility = 'Local' WHERE guild_id = ? AND lobby_name = ?",
+                (data[0], data[1]))
+            await ctx.reply(
+                f":warning: Changed lobby visibility from `Global` to `Local` as security measure.\nPlease, request changing visibility again.")
+
+        sql_connection.execute(
+            f"UPDATE MP_LOBBIES SET lobby_name = '{target_field}' WHERE guild_id = ? AND lobby_name = ?",
+            (data[0], data[1]))
+
+        sql_connection.commit()
+        sql_connection.close()
+
+        return await ctx.reply(f"Successfuly edited lobby name of `{data[1]}` to `{target_field}`.")
 
 
 def setup(bot):
