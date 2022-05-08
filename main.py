@@ -1,35 +1,56 @@
 import discord  # Discord API wrapper
 from discord.ext import commands  # Discord BOT
-import os  # add all Discord.py cogs from directory
 import aiohttp  # For direct API requests and webhooks
 import warnings  # For direct API requests and webhooks
 
-import config  # Global settings
+from config import token, prefix, application_id, owners  # Global settings
 
-# TODO update code to the latest discord.py version
+
 # TODO Documentation / proper help command
-# Creating Bot
-intents = discord.Intents.default()  # all default enabled intents
-intents.members = True  # Enabling priviliged intent "Members"
-owners = [231388394360537088]  # Kadetino
-bot = commands.Bot(command_prefix=commands.when_mentioned_or(config.prefix), owner_ids=set(owners), intents=intents)
-bot.remove_command('help')  # help command probably needs to be reworked
+class GooseBot(commands.Bot):
+
+    def __init__(self):
+        # Intents
+        intents = discord.Intents.default()
+        intents.message_content = True
+        intents.members = True
+        # Constructor
+        super().__init__(command_prefix=prefix, intents=intents, application_id=application_id,
+                         owner_ids=set(owners))
+        # Aiohttp
+        self.session = aiohttp.ClientSession()
+        # Cogs
+        self.initial_extensions = [
+            # "cogs.Lobby_finder_module",
+            # "cogs.event_module",
+            # "cogs.EU4Ideas_module",
+            "cogs.misc",
+            "cogs.peacock_economy"
+        ]
+
+    async def setup_hook(self):
+        # Cogs
+        for ext in self.initial_extensions:
+            await self.load_extension(ext)
+
+        # Slash commands
+        self.tree.copy_global_to(guild=discord.Object(id=950688544433778689))
+        await self.tree.sync(guild=discord.Object(id=950688544433778689))
+
+    async def close(self):
+        await super().close()
+        await self.session.close()
+
+    async def on_ready(self):
+        print('Logged on as {0.user}!'.format(bot))
+        await bot.change_presence(activity=discord.Game(name="Honk! Honk!"))
+
+
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+bot = GooseBot()
+bot.run(token)
+# bot.remove_command('help')  # help command probably needs to be reworked
 
 # For Duels and webhooks
-warnings.filterwarnings("ignore", category=DeprecationWarning)
-bot.session = aiohttp.ClientSession()
-
-
-@bot.event
-async def on_ready():
-    print('Logged on as {0.user}!'.format(bot))
-    await bot.change_presence(activity=discord.Game(name="Honk! Honk!"))
-
-
-# Load all cogs
-for cog_name in os.listdir("./cogs"):
-    if cog_name.endswith(".py"):
-        bot.load_extension(f"cogs.{cog_name[:-3:]}")
-
-# Run
-bot.run(config.token)
+# warnings.filterwarnings("ignore", category=DeprecationWarning)
+# bot.session = aiohttp.ClientSession()

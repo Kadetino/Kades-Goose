@@ -84,5 +84,5 @@ class EU4IdeasModule(commands.Cog):
         return await ctx.reply(embed=idea_embed)
 
 
-def setup(bot):
-    bot.add_cog(EU4IdeasModule(bot))
+async def setup(bot):
+    await bot.add_cog(EU4IdeasModule(bot))

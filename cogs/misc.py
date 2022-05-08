@@ -14,7 +14,7 @@ class utilityCog(commands.Cog):
 
         message = "If you like the bot, consider supporting us!"
         support_embed = discord.Embed(title="Support the Goose!", description=message, colour=discord.Colour.gold())
-        support_embed.add_field(name=f"`Ko-fi`", value="https://ko-fi.com/kadetino", inline=False)
+        # support_embed.add_field(name=f"`Ko-fi`", value="https://ko-fi.com/kadetino", inline=False)
         support_embed.add_field(name=f"`Metamask`", value="0xe2d321ebb477d14d2d38D97c9d2D39dC97A262Eb", inline=False)
         return await ctx.reply(embed=support_embed)
 
@@ -43,5 +43,5 @@ class utilityCog(commands.Cog):
         return await ctx.reply(embed=guild_embed)
 
 
-def setup(bot):
-    bot.add_cog(utilityCog(bot))
+async def setup(bot):
+    await bot.add_cog(utilityCog(bot))

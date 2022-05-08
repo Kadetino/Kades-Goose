@@ -1,14 +1,15 @@
-import datetime  # Timestamps in embeds
-
 import discord  # Discord API wrapper
+from discord import app_commands  # Slash commands
+from discord.app_commands import Choice  # Slash command choices
 from discord.ext import commands  # Discord BOT
 import sqlite3 as sl  # SQLite database
 from random import randint  # Random number generation for economy
 from config import prefix, cd_commands  # Global settings
 from time import time  # Epoch timestamp
+import datetime  # Timestamps in embeds
 
 
-class peacockEconomyCog(commands.Cog):
+class peacockEconomyCog(commands.GroupCog, name="economy"):
     def __init__(self, bot):
         self.bot = bot
 
@@ -61,21 +62,221 @@ class peacockEconomyCog(commands.Cog):
         sql_connection.commit()
         return sql_connection.close()
 
-    @commands.command(name="leaderboard", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def economyboard(self, ctx: commands.Context):
+    @app_commands.command(name="profile", description="Просмотреть профиль.")
+    @app_commands.describe(member="Пользователь, чей профиль вы хотите просмотреть.")
+    async def display_user_profile(self, ctx: discord.Interaction, member: discord.Member = None):
+        # Check if user argument was provided
+        if member is None:
+            member = ctx.user
+
+        # Database connection
+        sql_connection = sl.connect("Goose.db")
+
+        # Profile retrieval
+        data = sql_connection.execute(
+            f"SELECT cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {member.id}").fetchone()
+        sql_connection.close()
+
+        # Nothing found
+        if data is None:
+            return await ctx.response.send_message(f"<@{member.id}> не имеет профиля.", ephemeral=True)
+        else:
+            member_cookies = f"🦚 {data[0]}"
+            bank_info = f"🦚 {data[1]} из {data[2] * 400}"
+            upgrade_info = f"улучшение1: {data[3]}\n" \
+                           f"улучшение2: {data[4]}\n" \
+                           f"улучшение3: {data[5]}\n" \
+                           f"улучшение4: {data[6]}\n" \
+                           f"улучшение5: {data[7]}\n" \
+                           f"улучшение6: {data[8]}\n" \
+                           f"улучшение7: {data[9]}"
+            total_info = data[0] + data[1]
+            price = 500
+            for i in range(3, 10):
+                total_info += round(data[i] * price * 0.8)
+                price = price * 2 + 100
+            total_info = f"🦚 {total_info}"
+
+        # Reply embed
+        reply_embed = discord.Embed(title=f"Профиль {member.name}",
+                                    colour=discord.Colour.gold())
+        reply_embed.timestamp = datetime.datetime.utcnow()
+        reply_embed.set_thumbnail(url=member.avatar)
+        reply_embed.set_footer(text=f"{ctx.guild.name}",
+                               icon_url=ctx.guild.icon)
+        reply_embed.add_field(name=f"Кошелёк:", value=member_cookies, inline=False)
+        reply_embed.add_field(name=f"Банк:", value=bank_info, inline=False)
+        reply_embed.add_field(name=f"Улучшения:", value=upgrade_info, inline=False)
+        reply_embed.add_field(name=f"`Итого:`", value=total_info, inline=False)
+
+        return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+    @app_commands.command(name="daily", description="Получить ежедневный бонус.")
+    async def daily_bonus(self, ctx: discord.Interaction):
+        # Сonnecting database
+        sql_connection = sl.connect('Goose.db')
+
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, ctx.user.id))
+
+        # Check if there is message cooldown
+        last_daily_bonus_received_epoch = sql_connection.execute(
+            f"SELECT daily_bonus FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+            0]
+        epoch_timestamp_right_now = int(time())
+        if epoch_timestamp_right_now < last_daily_bonus_received_epoch + 24 * 3600:
+            # Close connection
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Бонус дня",
+                                        description=f"Вы уже получили свой ежедневный бонус. Вернитесь <t:{last_daily_bonus_received_epoch + 24 * 3600}:R>",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+        else:
+            # Update database
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET daily_bonus = {epoch_timestamp_right_now} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + 400 WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            sql_connection.commit()
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"💰 Бонус дня",
+                                        description=f"Вы получили ежедневную награду в 🦚 400.",
+                                        colour=discord.Colour.gold())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+    @app_commands.command(name="weekly", description="Получить еженедельный бонус.")
+    async def weekly_bonus(self, ctx: discord.Interaction):
+        # Connecting database
+        sql_connection = sl.connect('Goose.db')
+
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, ctx.user.id))
+
+        # Check if there is message cooldown
+        last_weekly_bonus_received_epoch = sql_connection.execute(
+            f"SELECT weekly_bonus FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+            0]
+        epoch_timestamp_right_now = int(time())
+        if epoch_timestamp_right_now < last_weekly_bonus_received_epoch + 7 * 24 * 3600:
+            # Close connection
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Бонус недели",
+                                        description=f"Вы уже получили свой еженедельный бонус. Вернитесь <t:{last_weekly_bonus_received_epoch + 7 * 24 * 3600}:R>",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+        else:
+            # Update database
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET weekly_bonus = {epoch_timestamp_right_now} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + 750 WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            sql_connection.commit()
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"💰 Бонус недели",
+                                        description=f"Вы получили еженедельную награду в 🦚 750.",
+                                        colour=discord.Colour.gold())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+    @app_commands.command(name="monthly", description="Получить ежемесячный бонус.")
+    async def monthly_bonus(self, ctx: discord.Interaction):
+        # Connecting database
+        sql_connection = sl.connect('Goose.db')
+
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, ctx.user.id))
+
+        # Check if there is message cooldown
+        last_weekly_bonus_received_epoch = sql_connection.execute(
+            f"SELECT monthly_bonus FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+            0]
+        epoch_timestamp_right_now = int(time())
+        if epoch_timestamp_right_now < last_weekly_bonus_received_epoch + 30 * 24 * 3600:
+            # Close connection
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Бонус месяца",
+                                        description=f"Вы уже получили свой ежемесячный бонус. Вернитесь <t:{last_weekly_bonus_received_epoch + 30 * 24 * 3600}:R>",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+        else:
+            # Update database
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET monthly_bonus = {epoch_timestamp_right_now} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + 1500 WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            sql_connection.commit()
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"💰 Бонус месяца>",
+                                        description=f"Вы получили еженедельную награду в 🦚 1500.",
+                                        colour=discord.Colour.gold())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+    @app_commands.command(name="leaderboard", description="Просмотреть таблицу лидеров.")
+    async def economyboard(self, ctx: discord.Interaction):
+        # TODO
         # Init
         sql_connection = sl.connect('Goose.db')
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, ctx.user.id))
 
         # Get data and close
         data = sql_connection.execute(
             f"select user_id, cookie_counter, cookie_jar_storage from ECONOMY where guild_id = {ctx.guild.id}").fetchall()
+        sql_connection.commit()
         sql_connection.close()
 
         # Check if data is empty
         if len(data) == 0:
-            return await ctx.reply("Nothing to show.")
+            return await ctx.response.send_message("Nothing to show.", ephemeral=True)
 
         # Calculate total amount of peacocks
         storage = []
@@ -98,8 +299,8 @@ class peacockEconomyCog(commands.Cog):
 
         # Author stats
         for i in range(len(storage)):
-            if storage[i][0] == str(ctx.author):
-                author_entry = f"Your position: `#{i + 1}` {ctx.author}: 🦚 {storage[i][1]}"
+            if storage[i][0] == str(ctx.user):
+                author_entry = f"Your position: `#{i + 1}` {ctx.user}: 🦚 {storage[i][1]}"
                 break
 
         # Discord embed
@@ -130,123 +331,569 @@ class peacockEconomyCog(commands.Cog):
                                 inline=False)
 
         # Embed: Icon and description on how it works
-        embed.set_thumbnail(url=ctx.guild.icon_url)
+        embed.set_thumbnail(url=ctx.guild.icon)
         embed.add_field(name=f"❓ How it works?",
                         value=f"You get 🦚 for your messages, `{prefix}daily`, `{prefix}weekly` or `{prefix}monthly`. Bonus points if you user 🦚 emoji in your messages!",
                         inline=False)
         embed.timestamp = datetime.datetime.utcnow()
-        embed.set_footer(text=f"{ctx.author}",
-                         icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f"{ctx.user}",
+                         icon_url=ctx.user.avatar)
 
-        return await ctx.reply(embed=embed)
+        return await ctx.response.send_message(embed=embed, ephemeral=False)
 
-    @commands.command(name="give", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def transfer_peacocks(self, ctx: commands.Context, target_member: discord.Member, target_amount: int):
+    @app_commands.command(name="give", description="Передать 🦚 другому пользователю. Комиссия 5% за перевод.")
+    @app_commands.describe(member="Пользователь, который получит от вас 🦚.",
+                           amount="Количество 🦚, которое вы переведёте.")
+    async def transfer_peacocks(self, ctx: discord.Interaction, member: discord.Member, amount: int):
         # Checks if target is valid member
-        if target_member.bot:  # Target is a bot
-            reply_embed = discord.Embed(title=f"❌ Invalid target",
-                                        description=f"Bots are not humans. (...yet)",
+        if member.bot:  # Target is a bot
+            reply_embed = discord.Embed(title=f"❌ Недопустимый пользователь",
+                                        description=f"Боты не люди.",
                                         colour=discord.Colour.red())
             reply_embed.timestamp = datetime.datetime.utcnow()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
-            return await ctx.reply(embed=reply_embed)
-        elif ctx.author.id == target_member.id:  # Target is yourself
-            reply_embed = discord.Embed(title=f"❌ Invalid target",
-                                        description=f"You mentioned yourself.",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+        elif ctx.user.id == member.id:  # Target is yourself
+            reply_embed = discord.Embed(title=f"❌ Недопустимый пользователь",
+                                        description=f"Вы не можете перевести самому себе.",
                                         colour=discord.Colour.red())
             reply_embed.timestamp = datetime.datetime.utcnow()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
-            return await ctx.reply(embed=reply_embed)
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
 
         # Connection to database and retrieving authors peacocks
         sql_connection = sl.connect('Goose.db')
         author_cookies = sql_connection.execute(
-            f"SELECT cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.author.id}").fetchone()[
+            f"SELECT cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
             0]
 
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, ctx.user.id))
+
         # Check if author has sufficien amount of peacocks
-        if author_cookies < round(target_amount * 1.05) + 1:  # He doesn't have enough
+        if author_cookies < round(amount * 1.05) + 1:  # He doesn't have enough
             # Reply embed
-            reply_embed = discord.Embed(title=f"❌ Not enough peacocks",
-                                        description=f"{ctx.author.name}#{ctx.author.discriminator}, you have inssufficient amount of peacocks to transfer.\nYou have 🦚 {author_cookies} and and there is 5% 🦚 commision fee",
+            reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                        description=f"<@{ctx.user.id}>, у вас недостаточно 🦚 для перевода другому человеку.\nВы имеете 🦚 {author_cookies} в кошельке.\nВам необходимо иметь сумму перевода и заплатить 5% от неё как комиссию.",
                                         colour=discord.Colour.red())
-            reply_embed.set_thumbnail(url=ctx.author.avatar_url)
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.timestamp = datetime.datetime.utcnow()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
+                                   icon_url=ctx.guild.icon)
 
             # Close connection and reply
             sql_connection.close()
 
-            return await ctx.reply(embed=reply_embed)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
         else:  # Author has enough
             # Reply embed
-            reply_embed = discord.Embed(title=f"💰 Successful transfer",
-                                        description=f"Successcully transfered 🦚 {target_amount} from {ctx.author.name}#{ctx.author.discriminator} to {target_member.name}#{target_member.discriminator}.\n\nCommission was 5% 🦚.",
+            reply_embed = discord.Embed(title=f"💰 Успешный перевод",
+                                        description=f"<@{member.id}> получил 🦚 {amount} от <@{ctx.user.id}>.\n\nКомиссия была 5% 🦚.",
                                         colour=discord.Colour.green())
-            reply_embed.set_thumbnail(url=ctx.author.avatar_url)
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.timestamp = datetime.datetime.utcnow()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
+                                   icon_url=ctx.guild.icon)
 
             # Add user to database if he wasn't there before
             sql_connection.execute(
                 "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
-                (ctx.guild.id, target_member.id))
+                (ctx.guild.id, member.id))
 
             # Update database
             sql_connection.execute(
-                f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {target_amount} WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
-            if round(target_amount * 0.05) == 0:
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {amount} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            if round(amount * 0.05) == 0:
                 sql_connection.execute(
                     f"UPDATE ECONOMY SET cookie_counter = cookie_counter - 1 WHERE guild_id = ? AND user_id = ?",
-                    (ctx.guild.id, ctx.author.id))
+                    (ctx.guild.id, ctx.user.id))
             else:
                 sql_connection.execute(
-                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {round(target_amount * 0.05)} WHERE guild_id = ? AND user_id = ?",
-                    (ctx.guild.id, ctx.author.id))
+                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {round(amount * 0.05)} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
             sql_connection.execute(
-                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + {target_amount} WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, target_member.id))
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + {amount} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, member.id))
             sql_connection.commit()
             sql_connection.close()
 
-            return await ctx.reply(embed=reply_embed)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
-    @commands.command(name="buy_upgrade", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def buy_upgrade(self, ctx: commands.Context, target_upgrade: str, target_quantity: int = 1):
-        # TODO
+    @app_commands.command(name="buy_upgrade", description="Купить одно улучшение за 🦚.")
+    @app_commands.describe(upgrade="Улучшение, которые вы купите за 🦚")
+    @app_commands.choices(upgrade=[
+        Choice(name='Список стоимости улучшений', value="help"),
+        Choice(name='Банк', value="bank"),
+        Choice(name='Улучшение1', value="upgrade1"),
+        Choice(name='Улучшение2', value="upgrade2"),
+        Choice(name='Улучшение3', value="upgrade3"),
+        Choice(name='Улучшение4', value="upgrade4"),
+        Choice(name='Улучшение5', value="upgrade5"),
+        Choice(name='Улучшение6', value="upgrade6"),
+        Choice(name='Улучшение7', value="upgrade7"),
+    ])
+    async def buy_upgrade(self, ctx: discord.Interaction, upgrade: str):
+        # Database connection
         sql_connection = sl.connect("Goose.db")
-        data = sql_connection.execute(
-            f"SELECT cookie_counter, cookie_jar_storage_level FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.author.id}").fetchone()
-        author_cookies = data[0]
-        bank_level = data[1]
-        if target_upgrade == "bank":
-            bank_level_price = 200 * 2 ** bank_level
-            if author_cookies < bank_level_price:
-                return await ctx.reply(
-                    f"❌ {ctx.author}, not enough 🦚 to buy bank level.\nYou have: 🦚 {author_cookies}\nBank level `{bank_level + 1}` price: 🦚 {bank_level_price}")
+
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, ctx.user.id))
+
+        # Upgrade - Bank
+        if upgrade == "bank":
+            # Info retrieval
+            data = sql_connection.execute(
+                f"SELECT cookie_counter, cookie_jar_storage_level FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+            author_cookies = data[0]
+            upgrade_level = data[1]
+
+            # Calculate price
+            upgrade_level_price = 200 * 2 ** upgrade_level
+
+            # Check if enough funds
+            if author_cookies < upgrade_level_price:  # Not enough funds
+                # Close
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                            description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень банка.\nВаш кошелёк: 🦚 {author_cookies}\nЦена банка уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+            # Enough funds
             else:
-                bank_level += 1
+                # Update database
+                upgrade_level += 1
                 sql_connection.execute(
-                    f"UPDATE ECONOMY SET cookie_jar_storage_level = {bank_level} WHERE guild_id = ? AND user_id = ?",
-                    (ctx.guild.id, ctx.author.id))
+                    f"UPDATE ECONOMY SET cookie_jar_storage_level = {upgrade_level} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
                 sql_connection.execute(
-                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {bank_level_price} WHERE guild_id = ? AND user_id = ?",
-                    (ctx.guild.id, ctx.author.id))
+                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {upgrade_level_price} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+
+                # Close
                 sql_connection.commit()
                 sql_connection.close()
-                return await ctx.reply(
-                    f"Successfuly bought: `Bank level {bank_level}` for 🦚 {bank_level_price}.\n{ctx.author} bank capacity is now 🦚 {bank_level * 400}.")
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"✅ Успешная покупка",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `Уровень банка {upgrade_level}` за 🦚 {upgrade_level_price}.\nВместимость банка <@{ctx.user.id}> теперь 🦚 {upgrade_level * 400}.",
+                                            colour=discord.Colour.green())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+        # Upgrade - upgrade1
+        elif upgrade == "upgrade1":
+            # Info retrieval
+            data = sql_connection.execute(
+                f"SELECT cookie_counter, upgrade1 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+            author_cookies = data[0]
+            upgrade_level = data[1]
+
+            # Calculate price
+            upgrade_level_price = 200 + upgrade_level * 30
+
+            # Check if enough funds
+            if author_cookies < upgrade_level_price:  # Not enough funds
+                # Close
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                            description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+            # Enough funds
+            else:
+                # Update database
+                upgrade_level += 1
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET upgrade1 = {upgrade_level} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {upgrade_level_price} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+
+                # Close
+                sql_connection.commit()
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"✅ Успешная покупка",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение1 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.green())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+        # Upgrade - upgrade2
+        elif upgrade == "upgrade2":
+            # Info retrieval
+            data = sql_connection.execute(
+                f"SELECT cookie_counter, upgrade2 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+            author_cookies = data[0]
+            upgrade_level = data[1]
+
+            # Calculate price
+            upgrade_level_price = 400 + upgrade_level * 60
+
+            # Check if enough funds
+            if author_cookies < upgrade_level_price:  # Not enough funds
+                # Close
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                            description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+            # Enough funds
+            else:
+                # Update database
+                upgrade_level += 1
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET upgrade2 = {upgrade_level} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {upgrade_level_price} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+
+                # Close
+                sql_connection.commit()
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"✅ Успешная покупка",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение2 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.green())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+        # Upgrade - upgrade3
+        elif upgrade == "upgrade3":
+            # Info retrieval
+            data = sql_connection.execute(
+                f"SELECT cookie_counter, upgrade3 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+            author_cookies = data[0]
+            upgrade_level = data[1]
+
+            # Calculate price
+            upgrade_level_price = 800 + upgrade_level * 90
+
+            # Check if enough funds
+            if author_cookies < upgrade_level_price:  # Not enough funds
+                # Close
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                            description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+            # Enough funds
+            else:
+                # Update database
+                upgrade_level += 1
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET upgrade3 = {upgrade_level} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {upgrade_level_price} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+
+                # Close
+                sql_connection.commit()
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"✅ Успешная покупка",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение3 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.green())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+        # Upgrade - upgrade4
+        elif upgrade == "upgrade4":
+            # Info retrieval
+            data = sql_connection.execute(
+                f"SELECT cookie_counter, upgrade4 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+            author_cookies = data[0]
+            upgrade_level = data[1]
+
+            # Calculate price
+            upgrade_level_price = 1600 + upgrade_level * 120
+
+            # Check if enough funds
+            if author_cookies < upgrade_level_price:  # Not enough funds
+                # Close
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                            description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+            # Enough funds
+            else:
+                # Update database
+                upgrade_level += 1
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET upgrade4 = {upgrade_level} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {upgrade_level_price} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+
+                # Close
+                sql_connection.commit()
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"✅ Успешная покупка",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение4 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.green())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+        # Upgrade - upgrade5
+        elif upgrade == "upgrade5":
+            # Info retrieval
+            data = sql_connection.execute(
+                f"SELECT cookie_counter, upgrade5 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+            author_cookies = data[0]
+            upgrade_level = data[1]
+
+            # Calculate price
+            upgrade_level_price = 3200 + upgrade_level * 150
+
+            # Check if enough funds
+            if author_cookies < upgrade_level_price:  # Not enough funds
+                # Close
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                            description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+            # Enough funds
+            else:
+                # Update database
+                upgrade_level += 1
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET upgrade5 = {upgrade_level} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {upgrade_level_price} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+
+                # Close
+                sql_connection.commit()
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"✅ Успешная покупка",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение5 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.green())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+        # Upgrade - upgrade6
+        elif upgrade == "upgrade6":
+            # Info retrieval
+            data = sql_connection.execute(
+                f"SELECT cookie_counter, upgrade6 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+            author_cookies = data[0]
+            upgrade_level = data[1]
+
+            # Calculate price
+            upgrade_level_price = 6400 + upgrade_level * 180
+
+            # Check if enough funds
+            if author_cookies < upgrade_level_price:  # Not enough funds
+                # Close
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                            description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+            # Enough funds
+            else:
+                # Update database
+                upgrade_level += 1
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET upgrade6 = {upgrade_level} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {upgrade_level_price} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+
+                # Close
+                sql_connection.commit()
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"✅ Успешная покупка",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение6 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.green())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+        # Upgrade - upgrade7
+        elif upgrade == "upgrade7":
+            # Info retrieval
+            data = sql_connection.execute(
+                f"SELECT cookie_counter, upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+            author_cookies = data[0]
+            upgrade_level = data[1]
+
+            # Calculate price
+            upgrade_level_price = 12800 + upgrade_level * 210
+
+            # Check if enough funds
+            if author_cookies < upgrade_level_price:  # Not enough funds
+                # Close
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                            description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+            # Enough funds
+            else:
+                # Update database
+                upgrade_level += 1
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET upgrade7 = {upgrade_level} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+                sql_connection.execute(
+                    f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {upgrade_level_price} WHERE guild_id = ? AND user_id = ?",
+                    (ctx.guild.id, ctx.user.id))
+
+                # Close
+                sql_connection.commit()
+                sql_connection.close()
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"✅ Успешная покупка",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение7 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            colour=discord.Colour.green())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+        # Upgrade - Help
+        elif upgrade == "help":
+            # Info retrieval
+            data = sql_connection.execute(
+                f"SELECT cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+            sql_connection.close()
+
+            # Calculate prices
+            price_bank = f"🦚 {200 * 2 ** (data[0]+1)}"
+            price_upg1 = f"🦚 {200 + (data[1]+1) * 30}"
+            price_upg2 = f"🦚 {400 + (data[2]+1) * 60}"
+            price_upg3 = f"🦚 {800 + (data[3]+1) * 90}"
+            price_upg4 = f"🦚 {1600 + (data[4]+1) * 120}"
+            price_upg5 = f"🦚 {3200 + (data[5]+1) * 150}"
+            price_upg6 = f"🦚 {6400 + (data[6]+1) * 180}"
+            price_upg7 = f"🦚 {12800 + (data[7]+1) * 210}"
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"Стоимость улучшений для {ctx.user}",
+                                        colour=discord.Colour.green())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            reply_embed.add_field(name=f"Цена банка `{data[0]+1}` уровня:", value=price_bank, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение1 `{data[1]+1}` уровня:", value=price_upg1, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение2 `{data[2]+1}` уровня:", value=price_upg2, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение3 `{data[3]+1}` уровня:", value=price_upg3, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение4 `{data[4]+1}` уровня:", value=price_upg4, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение5 `{data[5]+1}` уровня:", value=price_upg5, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение6 `{data[6]+1}` уровня:", value=price_upg6, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение7 `{data[7]+1}` уровня:", value=price_upg7, inline=False)
+
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+        # Error?
         else:
-            return
+            return await ctx.response.send_message("Error", ephemeral=True)
 
     @commands.command(name="sell_upgrade", pass_context=True)
     @commands.cooldown(1, cd_commands, commands.BucketType.guild)
@@ -255,19 +902,31 @@ class peacockEconomyCog(commands.Cog):
         # TODO
         return
 
-    @commands.command(name="steal", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def steal_peacocks(self, ctx: commands.Context, target_member: discord.Member):
-        # TODO
-        if ctx.author.id == target_member.id:  # Target is yourself
-            reply_embed = discord.Embed(title=f"❌ Invalid target",
-                                        description=f"You can't steal from yourself.",
+    @app_commands.command(name="steal", description="Украсть 🦚 из кошелька другого пользователя.")
+    @app_commands.describe(member="Пользователь, у которого вы хотите украсть 🦚.")
+    async def steal_peacocks(self, ctx: discord.Interaction, member: discord.Member):
+        # Check if target is valid
+        if ctx.user.id == member.id:  # Target is yourself
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Недопустимый пользователь",
+                                        description=f"Вы не можете украсть у самого себя.",
                                         colour=discord.Colour.red())
             reply_embed.timestamp = datetime.datetime.utcnow()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
-            return await ctx.reply(embed=reply_embed)
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+        elif member.bot:  # Target is bot
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Недопустимый пользователь",
+                                        description=f"Вы не можете украсть у бота.",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
 
         # Connection to database
         sql_connection = sl.connect('Goose.db')
@@ -275,298 +934,245 @@ class peacockEconomyCog(commands.Cog):
         # Add user to database if he wasn't there before
         sql_connection.execute(
             "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
-            (ctx.guild.id, target_member.id))
+            (ctx.guild.id, member.id))
 
         # Check if there is theft cooldown
         last_attempted_theft_epoch = sql_connection.execute(
-            f"SELECT last_theft_attempt FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.author.id}").fetchone()[0]
+            f"SELECT last_theft_attempt FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+            0]
         epoch_timestamp_right_now = int(time())
         if epoch_timestamp_right_now < last_attempted_theft_epoch + 10 * 60:  # There is a cooldown
+            # Close connection
             sql_connection.close()
-            return await ctx.reply(f"{ctx.author}, you have attempted theft before. Try again <t:{last_attempted_theft_epoch + 10 * 60}:R>")
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Попробуйте позже",
+                                        description=f"<@{ctx.user.id}>, вы уже попытались ограбить пользователя ранее. Попробуйте снова <t:{last_attempted_theft_epoch + 10 * 60}:R>",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
         else:  # There is no cooldown - set a new one
             # Get info from database
             target_cookies = sql_connection.execute(
-                f"SELECT cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {target_member.id}").fetchone()[
+                f"SELECT cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {member.id}").fetchone()[
                 0]
             author_cookies = sql_connection.execute(
-                f"SELECT cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.author.id}").fetchone()[
+                f"SELECT cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
                 0]
+
+            # Get percentages and cookies
             success_chance = randint(0, 100)
-            cookies_stolen = int(randint(5, 65)/100 * target_cookies)
-            cookies_lost_on_failure = int(randint(5, 15)/100 * author_cookies)
+            cookies_stolen = int(randint(5, 65) / 100 * target_cookies)
+            cookies_lost_on_failure = int(randint(5, 15) / 100 * author_cookies)
+
+            # Nothing to steal
             if cookies_stolen == 0:
+                # Close database
                 sql_connection.commit()
                 sql_connection.close()
-                return await ctx.reply(f"{target_member} has nothing to steal. Theft cooldown unaffected.")
-            # Update database
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Кошелёк {member.name} пуст",
+                                            description=f"<@{member.id}> не имеет 🦚 в кошельке.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+            # Update database - theft cooldown
             sql_connection.execute(
                 f"UPDATE ECONOMY SET last_theft_attempt = {epoch_timestamp_right_now} WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
+                (ctx.guild.id, ctx.user.id))
             sql_connection.commit()
-            # Theft
+
+            # Theft - success
             if success_chance >= 50:
+                # Update database
                 sql_connection.execute(
                     f"UPDATE ECONOMY SET cookie_counter = cookie_counter + {cookies_stolen} WHERE guild_id = ? AND user_id = ?",
-                    (ctx.guild.id, ctx.author.id))
+                    (ctx.guild.id, ctx.user.id))
                 sql_connection.execute(
                     f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {cookies_stolen} WHERE guild_id = ? AND user_id = ?",
-                    (ctx.guild.id, target_member.id))
+                    (ctx.guild.id, member.id))
                 sql_connection.commit()
                 sql_connection.close()
-                return await ctx.reply(f"{ctx.author} stole 🦚 {cookies_stolen} from {target_member}.")
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"🕵️ Успешное ограбление {member.name}",
+                                            description=f"<@{ctx.user.id}> украл 🦚 {cookies_stolen} у <@{member.id}>.",
+                                            colour=discord.Colour.green())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+            # Theft - Failure
             elif success_chance in range(20, 50):
+                # Close database
+                sql_connection.commit()
                 sql_connection.close()
-                return await ctx.reply(f"{ctx.author} was scared and didn't steal anything from {target_member}.")
+
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Неудачное ограбление {member.name}",
+                                            description=f"<@{ctx.user.id}> испугался и ничего не украл у <@{member.id}>.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+            # Theft - Critical failure
             else:
+                # Lose all cookies if less than
                 if author_cookies < cookies_lost_on_failure:
                     cookies_lost_on_failure = author_cookies
+
+                # Update database
                 sql_connection.execute(
                     f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {cookies_lost_on_failure} WHERE guild_id = ? AND user_id = ?",
-                    (ctx.guild.id, ctx.author.id))
+                    (ctx.guild.id, ctx.user.id))
+                # Close database
                 sql_connection.commit()
                 sql_connection.close()
-                return await ctx.reply(
-                    f"{ctx.author} heroic theft attempt was interrupted by ferocious Welsh Corgi.\n{ctx.author} lost 🦚 {cookies_lost_on_failure}.")
 
-    @commands.command(name="balance", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def display_user_profile(self, ctx: commands.Context, target_member: discord.Member = None):
-        # TODO
-        if target_member is None:
-            target_member = ctx.author
+                # Reply embed
+                reply_embed = discord.Embed(title=f"❌ Катастрофическое ограбление {member.name}",
+                                            description=f"Ограбление <@{ctx.user.id}> было предотвращено яростным вельш-корги.\n<@{ctx.user.id}> потерял 🦚 {cookies_lost_on_failure}.",
+                                            colour=discord.Colour.red())
+                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
+
+                return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+    @app_commands.command(name="deposit", description="Поместить 🦚 в банк.")
+    @app_commands.describe(amount="Количество 🦚, которое вы хотите положить в банк.")
+    async def save_peacocks_in_bank(self, ctx: discord.Interaction, amount: int):
+        # Database connection
         sql_connection = sl.connect("Goose.db")
+
+        # Information retrieval
         data = sql_connection.execute(
-                f"SELECT cookie_counter, cookie_jar_storage_level, cookie_jar_storage FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {target_member.id}").fetchone()
-        author_cookies = data[0]
-        bank_level = data[1]
-        bank_deposit = data[2]
-        sql_connection.close()
-        return await ctx.reply(
-            f"{target_member} has 🦚 {author_cookies} in their wallet and 🦚 {bank_deposit}/{bank_level * 400} in their bank.")
-
-    @commands.command(name="daily", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def daily_bonus(self, ctx: commands.Context):
-        # Checks and connecting database
-        if ctx.author.bot:
-            return
-        sql_connection = sl.connect('Goose.db')
-
-        # Add user to database if he wasn't there before
-        sql_connection.execute(
-            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
-            (ctx.guild.id, ctx.author.id))
-
-        # Check if there is message cooldown
-        last_daily_bonus_received_epoch = sql_connection.execute(
-            f"SELECT daily_bonus FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.author.id}").fetchone()[
-            0]
-        epoch_timestamp_right_now = int(time())
-        if epoch_timestamp_right_now < last_daily_bonus_received_epoch + 24 * 3600:
-            # Close connection
-            sql_connection.close()
-
-            # Reply embed
-            reply_embed = discord.Embed(title=f"❌ Daily bonus",
-                                        description=f"You have already claimed your daily bonus. Come back <t:{last_daily_bonus_received_epoch + 24 * 3600}:R>",
-                                        colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
-            reply_embed.set_thumbnail(url=ctx.author.avatar_url)
-            reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
-            return await ctx.reply(embed=reply_embed)
-        else:
-            # Update database
-            sql_connection.execute(
-                f"UPDATE ECONOMY SET daily_bonus = {epoch_timestamp_right_now} WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
-            sql_connection.execute(
-                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + 400 WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
-            sql_connection.commit()
-            sql_connection.close()
-
-            # Reply embed
-            reply_embed = discord.Embed(title=f"💰 Daily bonus",
-                                        description=f"You have claimed your daily 🦚 400 bonus.",
-                                        colour=discord.Colour.gold())
-            reply_embed.timestamp = datetime.datetime.utcnow()
-            reply_embed.set_thumbnail(url=ctx.author.avatar_url)
-            reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
-            return await ctx.reply(embed=reply_embed)
-
-    @commands.command(name="weekly", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def weekly_bonus(self, ctx: commands.Context):
-        # Checks and connecting database
-        if ctx.author.bot:
-            return
-        sql_connection = sl.connect('Goose.db')
-
-        # Add user to database if he wasn't there before
-        sql_connection.execute(
-            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
-            (ctx.guild.id, ctx.author.id))
-
-        # Check if there is message cooldown
-        last_weekly_bonus_received_epoch = sql_connection.execute(
-            f"SELECT weekly_bonus FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.author.id}").fetchone()[
-            0]
-        epoch_timestamp_right_now = int(time())
-        if epoch_timestamp_right_now < last_weekly_bonus_received_epoch + 7 * 24 * 3600:
-            # Close connection
-            sql_connection.close()
-
-            # Reply embed
-            reply_embed = discord.Embed(title=f"❌ Weekly bonus",
-                                        description=f"You have already claimed your weekly bonus. Come back <t:{last_weekly_bonus_received_epoch + 7 * 24 * 3600}:R>",
-                                        colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
-            reply_embed.set_thumbnail(url=ctx.author.avatar_url)
-            reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
-            return await ctx.reply(embed=reply_embed)
-        else:
-            # Update database
-            sql_connection.execute(
-                f"UPDATE ECONOMY SET weekly_bonus = {epoch_timestamp_right_now} WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
-            sql_connection.execute(
-                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + 750 WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
-            sql_connection.commit()
-            sql_connection.close()
-
-            # Reply embed
-            reply_embed = discord.Embed(title=f"💰 Weekly bonus",
-                                        description=f"You have claimed your weekly 🦚 750 bonus.",
-                                        colour=discord.Colour.gold())
-            reply_embed.timestamp = datetime.datetime.utcnow()
-            reply_embed.set_thumbnail(url=ctx.author.avatar_url)
-            reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
-            return await ctx.reply(embed=reply_embed)
-
-    @commands.command(name="monthly", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def monthly_bonus(self, ctx: commands.Context):
-        # Checks and connecting database
-        if ctx.author.bot:
-            return
-        sql_connection = sl.connect('Goose.db')
-
-        # Add user to database if he wasn't there before
-        sql_connection.execute(
-            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
-            (ctx.guild.id, ctx.author.id))
-
-        # Check if there is message cooldown
-        last_weekly_bonus_received_epoch = sql_connection.execute(
-            f"SELECT monthly_bonus FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.author.id}").fetchone()[
-            0]
-        epoch_timestamp_right_now = int(time())
-        if epoch_timestamp_right_now < last_weekly_bonus_received_epoch + 30 * 24 * 3600:
-            # Close connection
-            sql_connection.close()
-
-            # Reply embed
-            reply_embed = discord.Embed(title=f"❌ Monthly bonus",
-                                        description=f"You have already claimed your monthly bonus. Come back <t:{last_weekly_bonus_received_epoch + 30 * 24 * 3600}:R>",
-                                        colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
-            reply_embed.set_thumbnail(url=ctx.author.avatar_url)
-            reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
-            return await ctx.reply(embed=reply_embed)
-        else:
-            # Update database
-            sql_connection.execute(
-                f"UPDATE ECONOMY SET monthly_bonus = {epoch_timestamp_right_now} WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
-            sql_connection.execute(
-                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + 1500 WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
-            sql_connection.commit()
-            sql_connection.close()
-
-            # Reply embed
-            reply_embed = discord.Embed(title=f"💰 Monthly bonus",
-                                        description=f"You have claimed your monthly 🦚 1500 bonus.",
-                                        colour=discord.Colour.gold())
-            reply_embed.timestamp = datetime.datetime.utcnow()
-            reply_embed.set_thumbnail(url=ctx.author.avatar_url)
-            reply_embed.set_footer(text=f"{ctx.guild.name}",
-                                   icon_url=ctx.guild.icon_url)
-            return await ctx.reply(embed=reply_embed)
-
-    @commands.command(name="deposit", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def save_peacocks_in_bank(self, ctx: commands.Context, target_amount: int):
-        # TODO
-        sql_connection = sl.connect("Goose.db")
-        data = sql_connection.execute(
-            f"SELECT cookie_jar_storage, cookie_jar_storage_level, cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.author.id}").fetchone()
+            f"SELECT cookie_jar_storage, cookie_jar_storage_level, cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
         author_bank_cookies = data[0]
         author_bank_level = data[1]
         author_wallet = data[2]
-        if target_amount > author_wallet:
-            return await ctx.reply(
-                f"❌ {ctx.author}, you can't deposit 🦚 {target_amount} - you only have 🦚 {author_wallet} in your wallet.")
-        elif target_amount > author_bank_level * 400 - author_bank_cookies:
-            sql_connection.close()
-            return await ctx.reply(
-                f"❌ {ctx.author}, you can't deposit 🦚 {target_amount} - you only have space for 🦚 {author_bank_level * 400 - author_bank_cookies} in your bank.")
-        else:
-            sql_connection.execute(
-                f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {target_amount} WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
-            sql_connection.execute(
-                f"UPDATE ECONOMY SET cookie_jar_storage = cookie_jar_storage + {target_amount} WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
-            sql_connection.commit()
-            sql_connection.close()
-            return await ctx.reply(f"{ctx.author} made a deposit of 🦚 {target_amount} to their local bank.")
 
-    @commands.command(name="withdraw", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def withdraw_peacocks_from_bank(self, ctx: commands.Context, target_amount: int):
-        # TODO
-        sql_connection = sl.connect("Goose.db")
-        author_bank_cookies = sql_connection.execute(
-            f"SELECT cookie_jar_storage FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.author.id}").fetchone()[0]
-        if target_amount > author_bank_cookies:
+        # Target amount is more than you have in your wallet
+        if amount > author_wallet:
+            # Close
             sql_connection.close()
-            return await ctx.reply(f"❌ {ctx.author}, you can't withdraw 🦚 {target_amount} - you only have 🦚 {author_bank_cookies} in your bank.")
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                        description=f"<@{ctx.user.id}>, вы не можете положить 🦚 {amount} в банк - у вас всего 🦚 {author_wallet} в вашем кошельке.",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+        # Not enough space in bank
+        elif amount > author_bank_level * 400 - author_bank_cookies:
+            # Close
+            sql_connection.close()
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Недостаточно места в банке",
+                                        description=f"<@{ctx.user.id}>, вы не можете положить 🦚 {amount} в банк - у вас есть место только для 🦚 {author_bank_level * 400 - author_bank_cookies} в вашем банке.",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+        # Everything is fine
         else:
+            # Deposit
             sql_connection.execute(
-                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + {target_amount} WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {amount} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
             sql_connection.execute(
-                f"UPDATE ECONOMY SET cookie_jar_storage = cookie_jar_storage - {target_amount} WHERE guild_id = ? AND user_id = ?",
-                (ctx.guild.id, ctx.author.id))
+                f"UPDATE ECONOMY SET cookie_jar_storage = cookie_jar_storage + {amount} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
             sql_connection.commit()
+            # Close
             sql_connection.close()
-            return await ctx.reply(f"{ctx.author} withdrew 🦚 {target_amount} from their bank account.")
+            # Reply embed
+            reply_embed = discord.Embed(title=f"✅ Успешное пополнение банка",
+                                        description=f"<@{ctx.user.id}> положил 🦚 {amount} в банк.",
+                                        colour=discord.Colour.green())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+    @app_commands.command(name="withdraw", description="Забрать 🦚 из банка.")
+    @app_commands.describe(amount="Количество 🦚, которое вы хотите забрать из банка.")
+    async def withdraw_peacocks_from_bank(self, ctx: discord.Interaction, amount: int):
+        # Database connection
+        sql_connection = sl.connect("Goose.db")
+
+        # Information retrieval
+        author_bank_cookies = sql_connection.execute(
+            f"SELECT cookie_jar_storage FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+            0]
+
+        # More demanded than in bank
+        if amount > author_bank_cookies:
+            # Close
+            sql_connection.close()
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Недостаточно средств в банке",
+                                        description=f"<@{ctx.user.id}>, вы не можете забрать 🦚 {amount} - у вас всего 🦚 {author_bank_cookies} в банке.",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+        # Everything is fine
+        else:
+            # Database update
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + {amount} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_jar_storage = cookie_jar_storage - {amount} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            sql_connection.commit()
+            # Close
+            sql_connection.close()
+            # Reply embed
+            reply_embed = discord.Embed(title=f"✅ Успешное изъятие средств из банка",
+                                        description=f"<@{ctx.user.id}> забрал 🦚 {amount} из банка.",
+                                        colour=discord.Colour.green())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
     @commands.command(name="work", pass_context=True)
     @commands.cooldown(1, cd_commands, commands.BucketType.guild)
     @commands.guild_only()
-    async def work_on_plantations(self, ctx: commands.Context):
+    async def work(self, ctx: commands.Context):
         # TODO and maybe increase command cooldown. and include upgrade calculation here
         return
 
 
-def setup(bot):
+async def setup(bot):
     sql_connection = sl.connect('Goose.db')
     sql_connection.execute(
         f"CREATE TABLE IF NOT EXISTS ECONOMY (guild_id int, user_id int, cookie_counter int, cookie_jar_storage int, cookie_jar_storage_level int, upgrade1 int, upgrade2 int, upgrade3 int, upgrade4 int, upgrade5 int, upgrade6 int, upgrade7 int, last_access int, daily_bonus int, weekly_bonus int, monthly_bonus int, message_cooldown int, last_theft_attempt int, primary key (guild_id, user_id))")
     sql_connection.close()
-    bot.add_cog(peacockEconomyCog(bot))
+    await bot.add_cog(peacockEconomyCog(bot))

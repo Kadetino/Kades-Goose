@@ -270,14 +270,14 @@ class DuelModule(commands.Cog):
                 embed.add_field(name=f"`#{i + 1}` {storage[i][0]}",
                                 value=f"Wins: {storage[i][1]} | Losses: {storage[i][2]} | Winrate: {storage[i][3]}",
                                 inline=False)
-        embed.set_thumbnail(url=ctx.guild.icon_url)
+        embed.set_thumbnail(url=ctx.guild.icon)
 
         return await ctx.reply(embed=embed)
 
 
-def setup(bot):
+async def setup(bot):
     sql_connection = sl.connect('Goose.db')
     sql_connection.execute(
         "CREATE TABLE IF NOT EXISTS DUELDATA (guild_id int, user_id int, wins int, loses int, opt_out int, PRIMARY KEY (guild_id, user_id))")
     sql_connection.close()
-    bot.add_cog(DuelModule(bot))
+    await bot.add_cog(DuelModule(bot))

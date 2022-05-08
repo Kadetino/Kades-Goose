@@ -1,6 +1,6 @@
 import discord  # Discord API wrapper
 from discord.ext import commands  # Discord BOT
-from discord import Webhook, AsyncWebhookAdapter  # Importing discord.Webhook and discord.AsyncWebhookAdapter
+# from discord import Webhook, AsyncWebhookAdapter  # Importing discord.Webhook and discord.AsyncWebhookAdapter TODO
 import sqlite3 as sl  # SQLite database
 import time  # Epoch time
 from dateutil import parser, tz  # Epoch time converter
@@ -107,11 +107,11 @@ class LobbyFinderModule(commands.Cog):
         sql_connection.commit()
         sql_connection.close()
 
-        # Webhook and reply
-        webhook = Webhook.from_url(webhookMPLobbies, adapter=AsyncWebhookAdapter(
-            self.bot.session))  # Initializing webhook with AsyncWebhookAdapter
+        # # Webhook and reply TODO
+        # webhook = Webhook.from_url(webhookMPLobbies, adapter=AsyncWebhookAdapter(
+        #     self.bot.session))  # Initializing webhook with AsyncWebhookAdapter
         await ctx.reply(embed=lobby_embed)
-        return await webhook.send(embed=lobby_embed, username="Goose Overseer")  # Executing webhook.
+        # return await webhook.send(embed=lobby_embed, username="Goose Overseer")  # Executing webhook.
 
     @commands.command(pass_context=True)
     @commands.cooldown(1, cd_commands, commands.BucketType.user)
@@ -655,10 +655,10 @@ class LobbyFinderModule(commands.Cog):
         return await ctx.reply(f"Successfuly edited lobby name of `{data[1]}` to `{target_field}`.")
 
 
-def setup(bot):
+async def setup(bot):
     sql_connection = sl.connect("Goose.db")
     sql_connection.execute(
         "CREATE TABLE IF NOT EXISTS MP_LOBBIES(guild_id int, lobby_name str, host_name int, start_time_epoch int, discord_invite str, schedule str, minimum_players int, description str,author_id int,is_active int, global_visibility str, primary key (guild_id, lobby_name))")
     sql_connection.commit()
     sql_connection.close()
-    bot.add_cog(LobbyFinderModule(bot))
+    await bot.add_cog(LobbyFinderModule(bot))

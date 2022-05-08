@@ -33,5 +33,5 @@ class eventCog(commands.Cog):
         return await webhook.send(embed=server_embed, username="Goose Overseer")  # Executing webhook.
 
 
-def setup(bot):
-    bot.add_cog(eventCog(bot))
+async def setup(bot):
+    await bot.add_cog(eventCog(bot))
