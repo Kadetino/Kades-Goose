@@ -4,7 +4,7 @@ from discord.app_commands import Choice  # Slash command choices
 from discord.ext import commands  # Discord BOT
 import sqlite3 as sl  # SQLite database
 from random import randint  # Random number generation for economy
-from config import prefix, cd_commands  # Global settings
+from config import prefix  # Global settings
 from time import time  # Epoch timestamp
 import datetime  # Timestamps in embeds
 
@@ -65,6 +65,8 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     @app_commands.command(name="profile", description="Просмотреть профиль.")
     @app_commands.describe(member="Пользователь, чей профиль вы хотите просмотреть.")
     async def display_user_profile(self, ctx: discord.Interaction, member: discord.Member = None):
+        # TODO показывать доступные награды daily, weekly, monthly, work
+        # ToDO доработать показ нетворфа
         # Check if user argument was provided
         if member is None:
             member = ctx.user
@@ -90,12 +92,14 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                            f"улучшение5: {data[7]}\n" \
                            f"улучшение6: {data[8]}\n" \
                            f"улучшение7: {data[9]}"
-            total_info = data[0] + data[1]
-            price = 500
-            for i in range(3, 10):
-                total_info += round(data[i] * price * 0.8)
-                price = price * 2 + 100
-            total_info = f"🦚 {total_info}"
+            # total_info = data[0] + data[1]
+            # price = 500
+            # # TODO
+            # for i in range(3, 10):
+            #     total_info += round(data[i] * price * 0.8)
+            #     price = price * 2 + 100
+            # total_info = f"🦚 {total_info}"
+            total_info = "Упс, что-то пошло не так"
 
         # Reply embed
         reply_embed = discord.Embed(title=f"Профиль {member.name}",
@@ -258,7 +262,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                                    icon_url=ctx.guild.icon)
             return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
 
-    @app_commands.command(name="leaderboard", description="Просмотреть таблицу лидеров.")
+    @app_commands.command(name="leaderboard", description="Просмотреть таблицу лидеров. Work in progress.")
     async def economyboard(self, ctx: discord.Interaction):
         # TODO
         # Init
@@ -428,7 +432,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     @app_commands.command(name="buy_upgrade", description="Купить одно улучшение за 🦚.")
     @app_commands.describe(upgrade="Улучшение, которые вы купите за 🦚")
     @app_commands.choices(upgrade=[
-        Choice(name='Список стоимости улучшений', value="help"),
+        Choice(name='Список стоимости покупки улучшений', value="help"),
         Choice(name='Банк', value="bank"),
         Choice(name='Улучшение1', value="upgrade1"),
         Choice(name='Улучшение2', value="upgrade2"),
@@ -507,7 +511,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             upgrade_level = data[1]
 
             # Calculate price
-            upgrade_level_price = 200 + upgrade_level * 30
+            upgrade_level_price = 200 + (upgrade_level + 1) * 30
 
             # Check if enough funds
             if author_cookies < upgrade_level_price:  # Not enough funds
@@ -558,7 +562,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             upgrade_level = data[1]
 
             # Calculate price
-            upgrade_level_price = 400 + upgrade_level * 60
+            upgrade_level_price = 400 + (upgrade_level + 1) * 60
 
             # Check if enough funds
             if author_cookies < upgrade_level_price:  # Not enough funds
@@ -609,7 +613,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             upgrade_level = data[1]
 
             # Calculate price
-            upgrade_level_price = 800 + upgrade_level * 90
+            upgrade_level_price = 800 + (upgrade_level + 1) * 90
 
             # Check if enough funds
             if author_cookies < upgrade_level_price:  # Not enough funds
@@ -660,7 +664,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             upgrade_level = data[1]
 
             # Calculate price
-            upgrade_level_price = 1600 + upgrade_level * 120
+            upgrade_level_price = 1600 + (upgrade_level + 1) * 120
 
             # Check if enough funds
             if author_cookies < upgrade_level_price:  # Not enough funds
@@ -711,7 +715,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             upgrade_level = data[1]
 
             # Calculate price
-            upgrade_level_price = 3200 + upgrade_level * 150
+            upgrade_level_price = 3200 + (upgrade_level + 1) * 150
 
             # Check if enough funds
             if author_cookies < upgrade_level_price:  # Not enough funds
@@ -762,7 +766,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             upgrade_level = data[1]
 
             # Calculate price
-            upgrade_level_price = 6400 + upgrade_level * 180
+            upgrade_level_price = 6400 + (upgrade_level + 1) * 180
 
             # Check if enough funds
             if author_cookies < upgrade_level_price:  # Not enough funds
@@ -813,7 +817,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             upgrade_level = data[1]
 
             # Calculate price
-            upgrade_level_price = 12800 + upgrade_level * 210
+            upgrade_level_price = 12800 + (upgrade_level + 1) * 210
 
             # Check if enough funds
             if author_cookies < upgrade_level_price:  # Not enough funds
@@ -863,31 +867,30 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             sql_connection.close()
 
             # Calculate prices
-            price_bank = f"🦚 {200 * 2 ** (data[0]+1)}"
-            price_upg1 = f"🦚 {200 + (data[1]+1) * 30}"
-            price_upg2 = f"🦚 {400 + (data[2]+1) * 60}"
-            price_upg3 = f"🦚 {800 + (data[3]+1) * 90}"
-            price_upg4 = f"🦚 {1600 + (data[4]+1) * 120}"
-            price_upg5 = f"🦚 {3200 + (data[5]+1) * 150}"
-            price_upg6 = f"🦚 {6400 + (data[6]+1) * 180}"
-            price_upg7 = f"🦚 {12800 + (data[7]+1) * 210}"
+            price_bank = f"🦚 {200 * 2 ** (data[0] + 1)}"
+            price_upg1 = f"🦚 {200 + (data[1] + 1) * 30}"
+            price_upg2 = f"🦚 {400 + (data[2] + 1) * 60}"
+            price_upg3 = f"🦚 {800 + (data[3] + 1) * 90}"
+            price_upg4 = f"🦚 {1600 + (data[4] + 1) * 120}"
+            price_upg5 = f"🦚 {3200 + (data[5] + 1) * 150}"
+            price_upg6 = f"🦚 {6400 + (data[6] + 1) * 180}"
+            price_upg7 = f"🦚 {12800 + (data[7] + 1) * 210}"
 
             # Reply embed
-            reply_embed = discord.Embed(title=f"Стоимость улучшений для {ctx.user}",
+            reply_embed = discord.Embed(title=f"Стоимость покупки улучшений для {ctx.user}",
                                         colour=discord.Colour.green())
             reply_embed.timestamp = datetime.datetime.utcnow()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
-            reply_embed.add_field(name=f"Цена банка `{data[0]+1}` уровня:", value=price_bank, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение1 `{data[1]+1}` уровня:", value=price_upg1, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение2 `{data[2]+1}` уровня:", value=price_upg2, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение3 `{data[3]+1}` уровня:", value=price_upg3, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение4 `{data[4]+1}` уровня:", value=price_upg4, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение5 `{data[5]+1}` уровня:", value=price_upg5, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение6 `{data[6]+1}` уровня:", value=price_upg6, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение7 `{data[7]+1}` уровня:", value=price_upg7, inline=False)
-
+            reply_embed.add_field(name=f"Цена банка `{data[0] + 1}` уровня:", value=price_bank, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение1 `{data[1] + 1}` уровня:", value=price_upg1, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение2 `{data[2] + 1}` уровня:", value=price_upg2, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение3 `{data[3] + 1}` уровня:", value=price_upg3, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение4 `{data[4] + 1}` уровня:", value=price_upg4, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение5 `{data[5] + 1}` уровня:", value=price_upg5, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение6 `{data[6] + 1}` уровня:", value=price_upg6, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение7 `{data[7] + 1}` уровня:", value=price_upg7, inline=False)
 
             return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
 
@@ -895,12 +898,150 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
         else:
             return await ctx.response.send_message("Error", ephemeral=True)
 
-    @commands.command(name="sell_upgrade", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def sell_upgrade(self, ctx: commands.Context, target_upgrade: str, target_quantity: int):
-        # TODO
-        return
+    @app_commands.command(name="sell_upgrade",
+                          description="Продать одно улучшение за 🦚. Цена продажи - 80% от цены покупки.")
+    @app_commands.describe(upgrade="Улучшение, которые вы продадите за 🦚")
+    @app_commands.choices(upgrade=[
+        # Choice(name='Список стоимости продажи улучшений', value="help"),
+        Choice(name='Улучшение1', value="upgrade1"),
+        Choice(name='Улучшение2', value="upgrade2"),
+        Choice(name='Улучшение3', value="upgrade3"),
+        Choice(name='Улучшение4', value="upgrade4"),
+        Choice(name='Улучшение5', value="upgrade5"),
+        Choice(name='Улучшение6', value="upgrade6"),
+        Choice(name='Улучшение7', value="upgrade7"),
+    ])
+    async def sell_upgrade(self, ctx: discord.Interaction, upgrade: str):
+        # Database connection and default value
+        sql_connection = sl.connect("Goose.db")
+
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, ctx.user.id))
+
+        # Upgrade - upgrade1
+        if upgrade == "upgrade1":
+            sql_query = f"SELECT upgrade1 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
+            data = sql_connection.execute(sql_query).fetchone()
+            upgrade_level = data[0]
+            upgrade_name = "Улучшение1"
+
+        # Upgrade - upgrade2
+        elif upgrade == "upgrade2":
+            sql_query = f"SELECT upgrade2 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
+            data = sql_connection.execute(sql_query).fetchone()
+            upgrade_level = data[0]
+            upgrade_name = "Улучшение2"
+
+        # Upgrade - upgrade3
+        elif upgrade == "upgrade3":
+            sql_query = f"SELECT upgrade3 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
+            data = sql_connection.execute(sql_query).fetchone()
+            upgrade_level = data[0]
+            upgrade_name = "Улучшение3"
+
+        # Upgrade - upgrade4
+        elif upgrade == "upgrade4":
+            sql_query = f"SELECT upgrade4 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
+            data = sql_connection.execute(sql_query).fetchone()
+            upgrade_level = data[0]
+            upgrade_name = "Улучшение4"
+
+        # Upgrade - upgrade5
+        elif upgrade == "upgrade5":
+            sql_query = f"SELECT upgrade5 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
+            data = sql_connection.execute(sql_query).fetchone()
+            upgrade_level = data[0]
+            upgrade_name = "Улучшение5"
+
+        # Upgrade - upgrade6
+        elif upgrade == "upgrade6":
+            sql_query = f"SELECT upgrade6 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
+            data = sql_connection.execute(sql_query).fetchone()
+            upgrade_level = data[0]
+            upgrade_name = "Улучшение6"
+
+        # Upgrade - upgrade7
+        elif upgrade == "upgrade7":
+            sql_query = f"SELECT upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
+            data = sql_connection.execute(sql_query).fetchone()
+            upgrade_level = data[0]
+            upgrade_name = "Улучшение7"
+
+        # # Upgrade - Help
+        # elif upgrade == "help":
+        #     # Info retrieval
+        #     data = sql_connection.execute(
+        #         f"SELECT cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+        #     sql_connection.close()
+        #
+        #     # Calculate prices
+        #     price_upg1 = f"🦚 {round((200 * (2 ** (1 - 1)) + upgrade_level * 30 * 1)*0.8)}"
+        #     price_upg2 = f"🦚 {round((200 * (2 ** (2 - 1)) + upgrade_level * 30 * 2)*0.8)}"
+        #     price_upg3 = f"🦚 {round((200 * (2 ** (3 - 1)) + upgrade_level * 30 * 3)*0.8)}"
+        #     price_upg4 = f"🦚 {round((200 * (2 ** (4 - 1)) + upgrade_level * 30 * 4)*0.8)}"
+        #     price_upg5 = f"🦚 {round((200 * (2 ** (5 - 1)) + upgrade_level * 30 * 5)*0.8)}"
+        #     price_upg6 = f"🦚 {round((200 * (2 ** (6 - 1)) + upgrade_level * 30 * 6)*0.8)}"
+        #     price_upg7 = f"🦚 {round((200 * (2 ** (7 - 1)) + upgrade_level * 30 * 7)*0.8)}"
+        #
+        #     # Reply embed
+        #     reply_embed = discord.Embed(title=f"Стоимость продажи улучшений для {ctx.user}",
+        #                                 colour=discord.Colour.green())
+        #     reply_embed.timestamp = datetime.datetime.utcnow()
+        #     reply_embed.set_thumbnail(url=ctx.user.avatar)
+        #     reply_embed.set_footer(text=f"{ctx.guild.name}",
+        #                            icon_url=ctx.guild.icon)
+        #     reply_embed.add_field(name=f"Цена улучшение1 `{data[1]}` уровня:", value=price_upg1, inline=False)
+        #     reply_embed.add_field(name=f"Цена улучшение2 `{data[2]}` уровня:", value=price_upg2, inline=False)
+        #     reply_embed.add_field(name=f"Цена улучшение3 `{data[3]}` уровня:", value=price_upg3, inline=False)
+        #     reply_embed.add_field(name=f"Цена улучшение4 `{data[4]}` уровня:", value=price_upg4, inline=False)
+        #     reply_embed.add_field(name=f"Цена улучшение5 `{data[5]}` уровня:", value=price_upg5, inline=False)
+        #     reply_embed.add_field(name=f"Цена улучшение6 `{data[6]}` уровня:", value=price_upg6, inline=False)
+        #     reply_embed.add_field(name=f"Цена улучшение7 `{data[7]}` уровня:", value=price_upg7, inline=False)
+        #
+        #     return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+        # Error?
+        else:
+            return await ctx.response.send_message("Error", ephemeral=True)
+
+        # Nothing to sell
+        if upgrade_level == 0:
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Нечего продавать",
+                                        description=f"<@{ctx.user.id}>, вы не можете продать уровень этого улучшения, так как вы не владете ими.",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+        # Calculate price
+        sell_price = round((200 * (2 ** (int(upgrade[-1]) - 1)) + upgrade_level * 30 * int(upgrade[-1])) * 0.8)
+
+        # Update database
+        sql_connection.execute(
+            f"UPDATE ECONOMY SET {upgrade} = {upgrade_level - 1} WHERE guild_id = ? AND user_id = ?",
+            (ctx.guild.id, ctx.user.id))
+        sql_connection.execute(
+            f"UPDATE ECONOMY SET cookie_counter = cookie_counter + {sell_price} WHERE guild_id = ? AND user_id = ?",
+            (ctx.guild.id, ctx.user.id))
+
+        # Close
+        sql_connection.commit()
+        sql_connection.close()
+
+        # Reply embed
+        reply_embed = discord.Embed(title=f"✅ Успешная продажа",
+                                    description=f"<@{ctx.user.id}> успешно продаёт `{upgrade_name} {upgrade_level}` за 🦚 {sell_price}.",
+                                    colour=discord.Colour.green())
+        reply_embed.timestamp = datetime.datetime.utcnow()
+        reply_embed.set_footer(text=f"{ctx.guild.name}",
+                               icon_url=ctx.guild.icon)
+
+        return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
     @app_commands.command(name="steal", description="Украсть 🦚 из кошелька другого пользователя.")
     @app_commands.describe(member="Пользователь, у которого вы хотите украсть 🦚.")
@@ -1162,12 +1303,118 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                                    icon_url=ctx.guild.icon)
             return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
-    @commands.command(name="work", pass_context=True)
-    @commands.cooldown(1, cd_commands, commands.BucketType.guild)
-    @commands.guild_only()
-    async def work(self, ctx: commands.Context):
-        # TODO and maybe increase command cooldown. and include upgrade calculation here
-        return
+    @app_commands.command(name="work", description="Работа и получить 🦚 за приобретённые улучшения. Work in progress.")
+    async def work(self, ctx: discord.Interaction):
+        # Сonnecting database
+        sql_connection = sl.connect('Goose.db')
+
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, ctx.user.id))
+
+        # Check if there is message cooldown
+        last_daily_bonus_received_epoch = sql_connection.execute(
+            f"SELECT last_access FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+            0]
+        epoch_timestamp_right_now = int(time())
+        if epoch_timestamp_right_now < last_daily_bonus_received_epoch + 3600:
+            # Close connection
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Ошибка",
+                                        description=f"Работа ещё не появилась. Вернитесь <t:{last_daily_bonus_received_epoch + 3600}:R>",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+        else:
+            # Calculate income
+            gained_from_work = randint(250, 500)
+            amount_gained = gained_from_work
+            upg1_income = sql_connection.execute(
+                f"SELECT upgrade1 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+                              0] * 5
+            amount_gained += upg1_income
+            upg2_income = sql_connection.execute(
+                f"SELECT upgrade2 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+                              0] * 15
+            amount_gained += upg2_income
+            upg3_income = sql_connection.execute(
+                f"SELECT upgrade3 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+                              0] * 35
+            amount_gained += upg3_income
+            upg4_income = sql_connection.execute(
+                f"SELECT upgrade4 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+                              0] * 75
+            amount_gained += upg4_income
+            upg5_income = sql_connection.execute(
+                f"SELECT upgrade5 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+                              0] * 170
+            amount_gained += upg5_income
+            upg6_income = sql_connection.execute(
+                f"SELECT upgrade6 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+                              0] * 370
+            amount_gained += upg6_income
+            upg7_income = sql_connection.execute(
+                f"SELECT upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+                              0] * 495
+            amount_gained += upg7_income
+            # Update database
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET last_access = {epoch_timestamp_right_now} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter + {amount_gained} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+            sql_connection.commit()
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"💰 Работа",
+                                        colour=discord.Colour.gold())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            reply_embed.add_field(name=f"Доход от работы:",
+                                  value=f"🦚 {gained_from_work}",
+                                  inline=False)
+            if upg1_income > 0:
+                reply_embed.add_field(name=f"Доход от улучшение1:",
+                                      value=f"🦚 {upg1_income} = 5 x {upg1_income / 5}",
+                                      inline=False)
+            if upg2_income > 0:
+                reply_embed.add_field(name=f"Доход от улучшение2:",
+                                      value=f"🦚 {upg2_income} = 15 x {upg2_income / 15}",
+                                      inline=False)
+            if upg3_income > 0:
+                reply_embed.add_field(name=f"Доход от улучшение3:",
+                                      value=f"🦚 {upg3_income} = 35 x {upg3_income / 35}",
+                                      inline=False)
+            if upg4_income > 0:
+                reply_embed.add_field(name=f"Доход от улучшение4:",
+                                      value=f"🦚 {upg4_income} = 75 x {upg4_income / 75}",
+                                      inline=False)
+            if upg5_income > 0:
+                reply_embed.add_field(name=f"Доход от улучшение5:",
+                                      value=f"🦚 {upg5_income} = 170 x {upg5_income / 170}",
+                                      inline=False)
+            if upg6_income > 0:
+                reply_embed.add_field(name=f"Доход от улучшение6:",
+                                      value=f"🦚 {upg6_income} = 370 x {upg6_income / 370}",
+                                      inline=False)
+            if upg7_income > 0:
+                reply_embed.add_field(name=f"Доход от улучшение7:",
+                                      value=f"🦚 {upg7_income} = 495 x {upg7_income / 495}",
+                                      inline=False)
+            reply_embed.add_field(name="Итого:",
+                                  value=f"Вы заработали 🦚 {amount_gained}.",
+                                  inline=False)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
 
 async def setup(bot):

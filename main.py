@@ -33,9 +33,12 @@ class GooseBot(commands.Bot):
         for ext in self.initial_extensions:
             await self.load_extension(ext)
 
-        # Slash commands
+        # Slash commands - Goose refuge
         self.tree.copy_global_to(guild=discord.Object(id=950688544433778689))
         await self.tree.sync(guild=discord.Object(id=950688544433778689))
+        # Slash commands
+        self.tree.copy_global_to(guild=discord.Object(id=664124313997148170))
+        await self.tree.sync(guild=discord.Object(id=664124313997148170))
 
     async def close(self):
         await super().close()
@@ -49,7 +52,7 @@ class GooseBot(commands.Bot):
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 bot = GooseBot()
 bot.run(token)
-# bot.remove_command('help')  # help command probably needs to be reworked
+bot.remove_command('help')  # help command probably needs to be reworked
 
 # For Duels and webhooks
 # warnings.filterwarnings("ignore", category=DeprecationWarning)
