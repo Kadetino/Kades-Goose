@@ -1,7 +1,5 @@
 # Project specific
-searchEventLog.txt
 config.py
-logs/
 .idea/
 
 # Byte-compiled / optimized / DLL files
