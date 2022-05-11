@@ -16,15 +16,10 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     @commands.Cog.listener('on_message')
     async def on_message_give_peacocks(self, user_message: discord.message.Message):
         """Gain peacocks per sent message. Cooldown 10 seconds. Bonus points for using peacock emote."""
-        # print("Message: ", user_message)
-        # print("Content: ", str(user_message.content))
-        # print("Guild id: ", str(user_message.guild.id))
-        # print("Author id: ", str(user_message.author.id))
-
         # Checks and connecting database
         if user_message.author.bot or user_message.content.startswith(prefix):
             return
-        sql_connection = sl.connect('Goose.db')
+        sql_connection = sl.connect('Peacock.db')
 
         # Add user to database if he wasn't there before
         sql_connection.execute(
@@ -72,7 +67,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             member = ctx.user
 
         # Database connection
-        sql_connection = sl.connect("Goose.db")
+        sql_connection = sl.connect("Peacock.db")
 
         # Profile retrieval
         data = sql_connection.execute(
@@ -92,14 +87,8 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                            f"улучшение5: {data[7]}\n" \
                            f"улучшение6: {data[8]}\n" \
                            f"улучшение7: {data[9]}"
-            # total_info = data[0] + data[1]
-            # price = 500
-            # # TODO
-            # for i in range(3, 10):
-            #     total_info += round(data[i] * price * 0.8)
-            #     price = price * 2 + 100
-            # total_info = f"🦚 {total_info}"
-            total_info = "Упс, что-то пошло не так"
+
+            total_info = f"~ 🦚 {data[0]+data[1]}"
 
         # Reply embed
         reply_embed = discord.Embed(title=f"Профиль {member.name}",
@@ -111,14 +100,14 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
         reply_embed.add_field(name=f"Кошелёк:", value=member_cookies, inline=False)
         reply_embed.add_field(name=f"Банк:", value=bank_info, inline=False)
         reply_embed.add_field(name=f"Улучшения:", value=upgrade_info, inline=False)
-        reply_embed.add_field(name=f"`Итого:`", value=total_info, inline=False)
+        reply_embed.add_field(name=f"`Кошелёк+Банк:`", value=total_info, inline=False)
 
         return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
     @app_commands.command(name="daily", description="Получить ежедневный бонус.")
     async def daily_bonus(self, ctx: discord.Interaction):
         # Сonnecting database
-        sql_connection = sl.connect('Goose.db')
+        sql_connection = sl.connect('Peacock.db')
 
         # Add user to database if he wasn't there before
         sql_connection.execute(
@@ -162,12 +151,12 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
-            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
     @app_commands.command(name="weekly", description="Получить еженедельный бонус.")
     async def weekly_bonus(self, ctx: discord.Interaction):
         # Connecting database
-        sql_connection = sl.connect('Goose.db')
+        sql_connection = sl.connect('Peacock.db')
 
         # Add user to database if he wasn't there before
         sql_connection.execute(
@@ -211,12 +200,12 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
-            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
     @app_commands.command(name="monthly", description="Получить ежемесячный бонус.")
     async def monthly_bonus(self, ctx: discord.Interaction):
         # Connecting database
-        sql_connection = sl.connect('Goose.db')
+        sql_connection = sl.connect('Peacock.db')
 
         # Add user to database if he wasn't there before
         sql_connection.execute(
@@ -253,20 +242,20 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             sql_connection.close()
 
             # Reply embed
-            reply_embed = discord.Embed(title=f"💰 Бонус месяца>",
+            reply_embed = discord.Embed(title=f"💰 Бонус месяца",
                                         description=f"Вы получили еженедельную награду в 🦚 1500.",
                                         colour=discord.Colour.gold())
             reply_embed.timestamp = datetime.datetime.utcnow()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
-            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
     @app_commands.command(name="leaderboard", description="Просмотреть таблицу лидеров. Work in progress.")
     async def economyboard(self, ctx: discord.Interaction):
         # TODO
         # Init
-        sql_connection = sl.connect('Goose.db')
+        sql_connection = sl.connect('Peacock.db')
         # Add user to database if he wasn't there before
         sql_connection.execute(
             "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
@@ -369,7 +358,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
 
         # Connection to database and retrieving authors peacocks
-        sql_connection = sl.connect('Goose.db')
+        sql_connection = sl.connect('Peacock.db')
         author_cookies = sql_connection.execute(
             f"SELECT cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
             0]
@@ -444,7 +433,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     ])
     async def buy_upgrade(self, ctx: discord.Interaction, upgrade: str):
         # Database connection
-        sql_connection = sl.connect("Goose.db")
+        sql_connection = sl.connect("Peacock.db")
 
         # Add user to database if he wasn't there before
         sql_connection.execute(
@@ -494,7 +483,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
                 # Reply embed
                 reply_embed = discord.Embed(title=f"✅ Успешная покупка",
-                                            description=f"<@{ctx.user.id}> успешно приобретает `Уровень банка {upgrade_level}` за 🦚 {upgrade_level_price}.\nВместимость банка <@{ctx.user.id}> теперь 🦚 {upgrade_level * 400}.",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `Уровень банка {upgrade_level}` за 🦚 {upgrade_level_price}.\nВместимость банка теперь 🦚 {upgrade_level * 400}.",
                                             colour=discord.Colour.green())
                 reply_embed.timestamp = datetime.datetime.utcnow()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
@@ -902,7 +891,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                           description="Продать одно улучшение за 🦚. Цена продажи - 80% от цены покупки.")
     @app_commands.describe(upgrade="Улучшение, которые вы продадите за 🦚")
     @app_commands.choices(upgrade=[
-        # Choice(name='Список стоимости продажи улучшений', value="help"),
+        Choice(name='Список стоимости продажи улучшений', value="help"),
         Choice(name='Улучшение1', value="upgrade1"),
         Choice(name='Улучшение2', value="upgrade2"),
         Choice(name='Улучшение3', value="upgrade3"),
@@ -913,7 +902,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     ])
     async def sell_upgrade(self, ctx: discord.Interaction, upgrade: str):
         # Database connection and default value
-        sql_connection = sl.connect("Goose.db")
+        sql_connection = sl.connect("Peacock.db")
 
         # Add user to database if he wasn't there before
         sql_connection.execute(
@@ -969,38 +958,37 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             upgrade_level = data[0]
             upgrade_name = "Улучшение7"
 
-        # # Upgrade - Help
-        # elif upgrade == "help":
-        #     # Info retrieval
-        #     data = sql_connection.execute(
-        #         f"SELECT cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
-        #     sql_connection.close()
-        #
-        #     # Calculate prices
-        #     price_upg1 = f"🦚 {round((200 * (2 ** (1 - 1)) + upgrade_level * 30 * 1)*0.8)}"
-        #     price_upg2 = f"🦚 {round((200 * (2 ** (2 - 1)) + upgrade_level * 30 * 2)*0.8)}"
-        #     price_upg3 = f"🦚 {round((200 * (2 ** (3 - 1)) + upgrade_level * 30 * 3)*0.8)}"
-        #     price_upg4 = f"🦚 {round((200 * (2 ** (4 - 1)) + upgrade_level * 30 * 4)*0.8)}"
-        #     price_upg5 = f"🦚 {round((200 * (2 ** (5 - 1)) + upgrade_level * 30 * 5)*0.8)}"
-        #     price_upg6 = f"🦚 {round((200 * (2 ** (6 - 1)) + upgrade_level * 30 * 6)*0.8)}"
-        #     price_upg7 = f"🦚 {round((200 * (2 ** (7 - 1)) + upgrade_level * 30 * 7)*0.8)}"
-        #
-        #     # Reply embed
-        #     reply_embed = discord.Embed(title=f"Стоимость продажи улучшений для {ctx.user}",
-        #                                 colour=discord.Colour.green())
-        #     reply_embed.timestamp = datetime.datetime.utcnow()
-        #     reply_embed.set_thumbnail(url=ctx.user.avatar)
-        #     reply_embed.set_footer(text=f"{ctx.guild.name}",
-        #                            icon_url=ctx.guild.icon)
-        #     reply_embed.add_field(name=f"Цена улучшение1 `{data[1]}` уровня:", value=price_upg1, inline=False)
-        #     reply_embed.add_field(name=f"Цена улучшение2 `{data[2]}` уровня:", value=price_upg2, inline=False)
-        #     reply_embed.add_field(name=f"Цена улучшение3 `{data[3]}` уровня:", value=price_upg3, inline=False)
-        #     reply_embed.add_field(name=f"Цена улучшение4 `{data[4]}` уровня:", value=price_upg4, inline=False)
-        #     reply_embed.add_field(name=f"Цена улучшение5 `{data[5]}` уровня:", value=price_upg5, inline=False)
-        #     reply_embed.add_field(name=f"Цена улучшение6 `{data[6]}` уровня:", value=price_upg6, inline=False)
-        #     reply_embed.add_field(name=f"Цена улучшение7 `{data[7]}` уровня:", value=price_upg7, inline=False)
-        #
-        #     return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+        # Upgrade - Help
+        elif upgrade == "help":
+            # Info retrieval
+            data = sql_connection.execute(
+                f"SELECT upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()
+            sql_connection.close()
+            # Calculate prices
+            price_upg1 = f"🦚 {0.8 * (200 + data[0] * 30)}"
+            price_upg2 = f"🦚 {0.8 * (400 + data[1] * 60)}"
+            price_upg3 = f"🦚 {0.8 * (800 + data[2] * 90)}"
+            price_upg4 = f"🦚 {0.8 * (1600 + data[3] * 120)}"
+            price_upg5 = f"🦚 {0.8 * (3200 + data[4] * 150)}"
+            price_upg6 = f"🦚 {0.8 * (6400 + data[5] * 180)}"
+            price_upg7 = f"🦚 {0.8 * (12800 + data[6] * 210)}"
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"Стоимость продажи улучшений для {ctx.user}",
+                                        colour=discord.Colour.green())
+            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.set_thumbnail(url=ctx.user.avatar)
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+            reply_embed.add_field(name=f"Цена улучшение1 `{data[0]}` уровня:", value=price_upg1, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение2 `{data[1]}` уровня:", value=price_upg2, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение3 `{data[2]}` уровня:", value=price_upg3, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение4 `{data[3]}` уровня:", value=price_upg4, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение5 `{data[4]}` уровня:", value=price_upg5, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение6 `{data[5]}` уровня:", value=price_upg6, inline=False)
+            reply_embed.add_field(name=f"Цена улучшение7 `{data[6]}` уровня:", value=price_upg7, inline=False)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
 
         # Error?
         else:
@@ -1010,7 +998,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
         if upgrade_level == 0:
             # Reply embed
             reply_embed = discord.Embed(title=f"❌ Нечего продавать",
-                                        description=f"<@{ctx.user.id}>, вы не можете продать уровень этого улучшения, так как вы не владете ими.",
+                                        description=f"<@{ctx.user.id}>, вы не можете продать уровень этого улучшения, так как вы не владеете им.",
                                         colour=discord.Colour.red())
             reply_embed.timestamp = datetime.datetime.utcnow()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
@@ -1070,7 +1058,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
 
         # Connection to database
-        sql_connection = sl.connect('Goose.db')
+        sql_connection = sl.connect('Peacock.db')
 
         # Add user to database if he wasn't there before
         sql_connection.execute(
@@ -1185,7 +1173,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
                 # Reply embed
                 reply_embed = discord.Embed(title=f"❌ Катастрофическое ограбление {member.name}",
-                                            description=f"Ограбление <@{ctx.user.id}> было предотвращено яростным вельш-корги.\n<@{ctx.user.id}> потерял 🦚 {cookies_lost_on_failure}.",
+                                            description=f"Ограбление было предотвращено яростным вельш-корги.\n<@{ctx.user.id}> потерял 🦚 {cookies_lost_on_failure}.",
                                             colour=discord.Colour.red())
                 reply_embed.timestamp = datetime.datetime.utcnow()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
@@ -1197,7 +1185,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     @app_commands.describe(amount="Количество 🦚, которое вы хотите положить в банк.")
     async def save_peacocks_in_bank(self, ctx: discord.Interaction, amount: int):
         # Database connection
-        sql_connection = sl.connect("Goose.db")
+        sql_connection = sl.connect("Peacock.db")
 
         # Information retrieval
         data = sql_connection.execute(
@@ -1247,7 +1235,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             # Close
             sql_connection.close()
             # Reply embed
-            reply_embed = discord.Embed(title=f"✅ Успешное пополнение банка",
+            reply_embed = discord.Embed(title=f"🏦 Успешное пополнение банка",
                                         description=f"<@{ctx.user.id}> положил 🦚 {amount} в банк.",
                                         colour=discord.Colour.green())
             reply_embed.timestamp = datetime.datetime.utcnow()
@@ -1260,7 +1248,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     @app_commands.describe(amount="Количество 🦚, которое вы хотите забрать из банка.")
     async def withdraw_peacocks_from_bank(self, ctx: discord.Interaction, amount: int):
         # Database connection
-        sql_connection = sl.connect("Goose.db")
+        sql_connection = sl.connect("Peacock.db")
 
         # Information retrieval
         author_bank_cookies = sql_connection.execute(
@@ -1294,7 +1282,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             # Close
             sql_connection.close()
             # Reply embed
-            reply_embed = discord.Embed(title=f"✅ Успешное изъятие средств из банка",
+            reply_embed = discord.Embed(title=f"🏦 Успешное изъятие средств из банка",
                                         description=f"<@{ctx.user.id}> забрал 🦚 {amount} из банка.",
                                         colour=discord.Colour.green())
             reply_embed.timestamp = datetime.datetime.utcnow()
@@ -1306,7 +1294,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     @app_commands.command(name="work", description="Работа и получить 🦚 за приобретённые улучшения. Work in progress.")
     async def work(self, ctx: discord.Interaction):
         # Сonnecting database
-        sql_connection = sl.connect('Goose.db')
+        sql_connection = sl.connect('Peacock.db')
 
         # Add user to database if he wasn't there before
         sql_connection.execute(
@@ -1417,9 +1405,48 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
 
+class peacockAdminEconomyCog(commands.GroupCog, name="adm_economy"):
+    def __init__(self, bot):
+        self.bot = bot
+
+    @app_commands.command(name="create_peacocks", description="Создать 🦚 для пользователя.")
+    @app_commands.describe(amount="Количество 🦚, которое вы хотите предоставить пользователю.",
+                           target="Пользователь, кто получит 🦚.")
+    @app_commands.checks.has_permissions(administrator=True)
+    async def create_peacocks(self, ctx: discord.Interaction, target: discord.Member, amount: int):
+        # Сonnecting database
+        sql_connection = sl.connect('Peacock.db')
+
+        # Database update
+        sql_connection.execute(
+            f"UPDATE ECONOMY SET cookie_counter = cookie_counter + {amount} WHERE guild_id = ? AND user_id = ?",
+            (ctx.guild.id, target.id))
+
+        # Close
+        sql_connection.commit()
+        sql_connection.close()
+
+        # Reply embed
+        reply_embed = discord.Embed(title=f"Создание 🦚 валюты",
+                                    description=f"🦚 {amount}\nбыло создано для {target}",
+                                    colour=discord.Colour.green())
+        reply_embed.timestamp = datetime.datetime.utcnow()
+        reply_embed.set_thumbnail(url=ctx.user.avatar)
+        reply_embed.set_footer(text=f"{ctx.guild.name}",
+                               icon_url=ctx.guild.icon)
+        return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+    @create_peacocks.error
+    async def on_test_error(self, interaction: discord.Interaction, error: app_commands.AppCommandError):
+        if isinstance(error, app_commands.MissingPermissions):
+            return await interaction.response.send_message(str(error), ephemeral=True)
+
+
 async def setup(bot):
-    sql_connection = sl.connect('Goose.db')
+    sql_connection = sl.connect('Peacock.db')
     sql_connection.execute(
         f"CREATE TABLE IF NOT EXISTS ECONOMY (guild_id int, user_id int, cookie_counter int, cookie_jar_storage int, cookie_jar_storage_level int, upgrade1 int, upgrade2 int, upgrade3 int, upgrade4 int, upgrade5 int, upgrade6 int, upgrade7 int, last_access int, daily_bonus int, weekly_bonus int, monthly_bonus int, message_cooldown int, last_theft_attempt int, primary key (guild_id, user_id))")
+    sql_connection.commit()
     sql_connection.close()
     await bot.add_cog(peacockEconomyCog(bot))
+    await bot.add_cog(peacockAdminEconomyCog(bot))

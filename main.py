@@ -25,7 +25,8 @@ class GooseBot(commands.Bot):
             # "cogs.event_module",
             # "cogs.EU4Ideas_module",
             "cogs.misc",
-            "cogs.peacock_economy"
+            "cogs.peacock_economy",
+            "cogs.Duel_module"
         ]
 
     async def setup_hook(self):
@@ -36,9 +37,9 @@ class GooseBot(commands.Bot):
         # Slash commands - Goose refuge
         self.tree.copy_global_to(guild=discord.Object(id=950688544433778689))
         await self.tree.sync(guild=discord.Object(id=950688544433778689))
-        # Slash commands
-        self.tree.copy_global_to(guild=discord.Object(id=664124313997148170))
-        await self.tree.sync(guild=discord.Object(id=664124313997148170))
+        # # Slash commands
+        # self.tree.copy_global_to(guild=discord.Object(id=664124313997148170))
+        # await self.tree.sync(guild=discord.Object(id=664124313997148170))
 
     async def close(self):
         await super().close()
@@ -46,14 +47,11 @@ class GooseBot(commands.Bot):
 
     async def on_ready(self):
         print('Logged on as {0.user}!'.format(bot))
-        await bot.change_presence(activity=discord.Game(name="Honk! Honk!"))
+        # await bot.change_presence(activity=discord.Game(name="Honk! Honk!"))
 
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 bot = GooseBot()
-bot.run(token)
-bot.remove_command('help')  # help command probably needs to be reworked
+bot.remove_command('help')
 
-# For Duels and webhooks
-# warnings.filterwarnings("ignore", category=DeprecationWarning)
-# bot.session = aiohttp.ClientSession()
+bot.run(token)
