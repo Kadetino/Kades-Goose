@@ -243,7 +243,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
             # Reply embed
             reply_embed = discord.Embed(title=f"💰 Бонус месяца",
-                                        description=f"Вы получили еженедельную награду в 🦚 1500.",
+                                        description=f"Вы получили ежемесячную награду в 🦚 1500.",
                                         colour=discord.Colour.gold())
             reply_embed.timestamp = datetime.datetime.utcnow()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
@@ -1437,7 +1437,7 @@ class peacockAdminEconomyCog(commands.GroupCog, name="adm_economy"):
         return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
     @create_peacocks.error
-    async def on_test_error(self, interaction: discord.Interaction, error: app_commands.AppCommandError):
+    async def on_user_missing_permissions_error(self, interaction: discord.Interaction, error: app_commands.AppCommandError):
         if isinstance(error, app_commands.MissingPermissions):
             return await interaction.response.send_message(str(error), ephemeral=True)
 
