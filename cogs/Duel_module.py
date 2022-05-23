@@ -300,6 +300,21 @@ class DuelModule(commands.GroupCog, name="duel"):
 
         return await ctx.response.send_message(embed=embed, ephemeral=False)
 
+    @duel.error
+    async def on_bot_missing_permissions_error(self, ctx: discord.Interaction, error: app_commands.AppCommandError):
+        # Reply embed
+        reply_embed = discord.Embed(title=f"❌ Дуэль не состоялась",
+                                    description=f"Бот не может замьютить пользователя с более авторитетной ролью.",
+                                    colour=discord.Colour.red())
+        reply_embed.timestamp = datetime.datetime.utcnow()
+        reply_embed.set_footer(text=f"{ctx.guild.name}",
+                               icon_url=ctx.guild.icon)
+        # Print error
+        print(f"Guild: {ctx.guild.name} - {ctx.guild.id} | User: {ctx.user.name} - {ctx.user.id} | {str(error)}")
+
+        # Reply
+        return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
 
 async def setup(bot):
     sql_connection = sl.connect('Peacock.db')
