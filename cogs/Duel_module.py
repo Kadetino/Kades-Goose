@@ -6,7 +6,7 @@ import discord  # Discord API wrapper
 from discord import app_commands  # Slash commands
 from discord.app_commands import Choice  # Slash command choices
 from discord.ext import commands  # Discord BOT
-
+import localisation as loc
 
 class DuelModule(commands.GroupCog, name="duel"):
     def __init__(self, bot):
@@ -52,7 +52,7 @@ class DuelModule(commands.GroupCog, name="duel"):
             reply_embed = discord.Embed(title=f"❌ Дуэль не состоялась",
                                         description=f"Хотя бы один из участников находится в голосовом чате.",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -72,7 +72,7 @@ class DuelModule(commands.GroupCog, name="duel"):
             reply_embed = discord.Embed(title=f"❌ Дуэль не состоялась",
                                         description=f"Хотя бы один из участников дуэли отказывается участвовать в ней.\nИспользуйте слэш-команду, чтобы поменять согласие на участие в дуэлях.",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -103,7 +103,7 @@ class DuelModule(commands.GroupCog, name="duel"):
         reply_embed = discord.Embed(title=f"⚔️Дуэль: {ctx.user} vs {member}",
                                     description=f"<@{winner_user.id}> побеждает в дуэли против <@{muted_user.id}>!",
                                     colour=discord.Colour.gold())
-        reply_embed.timestamp = datetime.datetime.utcnow()
+        reply_embed.timestamp = loc.moscow_timezone()
         reply_embed.set_thumbnail(url=winner_user.avatar)
         reply_embed.set_footer(text=f"{ctx.guild.name}",
                                icon_url=ctx.guild.icon)
@@ -236,7 +236,7 @@ class DuelModule(commands.GroupCog, name="duel"):
         embed.add_field(name="Согласие", value=str(optout))
         embed.add_field(name="Ранг", value=f"{rank}")
         embed.set_thumbnail(url=member.avatar)
-        embed.timestamp = datetime.datetime.utcnow()
+        embed.timestamp = loc.moscow_timezone()
         embed.set_footer(text=f"{ctx.guild.name}",
                          icon_url=ctx.guild.icon)
 
@@ -306,7 +306,7 @@ class DuelModule(commands.GroupCog, name="duel"):
         reply_embed = discord.Embed(title=f"❌ Дуэль не состоялась",
                                     description=f"Бот не может замьютить пользователя с более авторитетной ролью.",
                                     colour=discord.Colour.red())
-        reply_embed.timestamp = datetime.datetime.utcnow()
+        reply_embed.timestamp = loc.moscow_timezone()
         reply_embed.set_footer(text=f"{ctx.guild.name}",
                                icon_url=ctx.guild.icon)
         # Print error

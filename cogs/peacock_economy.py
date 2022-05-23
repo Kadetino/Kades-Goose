@@ -8,6 +8,8 @@ from config import prefix  # Global settings
 from time import time  # Epoch timestamp
 import datetime  # Timestamps in embeds
 
+import localisation as loc
+
 
 class peacockEconomyCog(commands.GroupCog, name="economy"):
     def __init__(self, bot):
@@ -93,7 +95,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
         # Reply embed
         reply_embed = discord.Embed(title=f"Профиль {member.name}",
                                     colour=discord.Colour.gold())
-        reply_embed.timestamp = datetime.datetime.utcnow()
+        reply_embed.timestamp = loc.moscow_timezone()
         reply_embed.set_thumbnail(url=member.avatar)
         reply_embed.set_footer(text=f"{ctx.guild.name}",
                                icon_url=ctx.guild.icon)
@@ -127,7 +129,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Бонус дня",
                                         description=f"Вы уже получили свой ежедневный бонус. Вернитесь <t:{last_daily_bonus_received_epoch + 24 * 3600}:R>",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -147,7 +149,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"💰 Бонус дня",
                                         description=f"Вы получили ежедневную награду в 🦚 400.",
                                         colour=discord.Colour.gold())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -176,7 +178,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Бонус недели",
                                         description=f"Вы уже получили свой еженедельный бонус. Вернитесь <t:{last_weekly_bonus_received_epoch + 7 * 24 * 3600}:R>",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -196,7 +198,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"💰 Бонус недели",
                                         description=f"Вы получили еженедельную награду в 🦚 750.",
                                         colour=discord.Colour.gold())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -225,7 +227,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Бонус месяца",
                                         description=f"Вы уже получили свой ежемесячный бонус. Вернитесь <t:{last_weekly_bonus_received_epoch + 30 * 24 * 3600}:R>",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -245,7 +247,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"💰 Бонус месяца",
                                         description=f"Вы получили ежемесячную награду в 🦚 1500.",
                                         colour=discord.Colour.gold())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -254,8 +256,9 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     @app_commands.command(name="leaderboard", description="Просмотреть таблицу лидеров. Work in progress.")
     async def economyboard(self, ctx: discord.Interaction):
         # TODO
-        # Init
+        # Connect to database
         sql_connection = sl.connect('Peacock.db')
+
         # Add user to database if he wasn't there before
         sql_connection.execute(
             "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
@@ -263,7 +266,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
         # Get data and close
         data = sql_connection.execute(
-            f"select user_id, cookie_counter, cookie_jar_storage from ECONOMY where guild_id = {ctx.guild.id}").fetchall()
+            f"select user_id, cookie_counter, cookie_jar_storage, last_access, daily_bonus, weekly_bonus, monthly_bonus, last_theft_attempt from ECONOMY where guild_id = {ctx.guild.id}").fetchall()
         sql_connection.commit()
         sql_connection.close()
 
@@ -272,8 +275,10 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             return await ctx.response.send_message("Nothing to show.", ephemeral=True)
 
         # Calculate total amount of peacocks
-        storage = []
+        storage = []  # place to store tuples
         author_entry = "Error"
+
+        # Go through data
         for line in data:
             total_peacocks = line[1] + line[2]
             # Get user by his id
@@ -282,10 +287,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             if user is None:
                 continue
             # Adding value to storage
-            storage.append((f"{user}", total_peacocks))
-            # # Save variable if it was the author
-            # if ctx.author.id == line[0]:
-            #     author_entry = f"You: `#{len(storage)}` {user}: 🦚 {total_peacocks}"
+            storage.append((f"{user}", total_peacocks, line[1], line[2]))
 
         # Sort storage for leaderboard
         storage.sort(key=lambda y: y[1], reverse=True)
@@ -308,27 +310,27 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             # Start adding fields
             if i == 0:
                 embed.add_field(name=f":first_place: {storage[i][0]}",
-                                value=f"🦚 {storage[i][1]} peacocks",
+                                value=f"Всего: 🦚 {storage[i][1]}\nКошелёк: 🦚 {storage[i][2]}\nБанк: 🦚 {storage[i][3]}",
                                 inline=False)
             elif i == 1:
                 embed.add_field(name=f":second_place: {storage[i][0]}",
-                                value=f"🦚 {storage[i][1]} peacocks",
+                                value=f"Всего: 🦚 {storage[i][1]}\nКошелёк: 🦚 {storage[i][2]}\nБанк: 🦚 {storage[i][3]}",
                                 inline=False)
             elif i == 2:
                 embed.add_field(name=f":third_place: {storage[i][0]}",
-                                value=f"🦚 {storage[i][1]} peacocks",
+                                value=f"Всего: 🦚 {storage[i][1]}\nКошелёк: 🦚 {storage[i][2]}\nБанк: 🦚 {storage[i][3]}",
                                 inline=False)
             else:
                 embed.add_field(name=f"`#{i + 1}` {storage[i][0]}",
-                                value=f"🦚 {storage[i][1]} peacocks",
+                                value=f"Всего: 🦚 {storage[i][1]}\nКошелёк: 🦚 {storage[i][2]}\nБанк: 🦚 {storage[i][3]}",
                                 inline=False)
 
         # Embed: Icon and description on how it works
         embed.set_thumbnail(url=ctx.guild.icon)
-        embed.add_field(name=f"❓ How it works?",
-                        value=f"You get 🦚 for your messages, `{prefix}daily`, `{prefix}weekly` or `{prefix}monthly`. Bonus points if you user 🦚 emoji in your messages!",
+        embed.add_field(name=f"❓ Как это работает?",
+                        value=f"Вы получаете 🦚 павлинов за отправленные сообщения и различные слэш-команды.",
                         inline=False)
-        embed.timestamp = datetime.datetime.utcnow()
+        embed.timestamp = loc.moscow_timezone()
         embed.set_footer(text=f"{ctx.user}",
                          icon_url=ctx.user.avatar)
 
@@ -343,7 +345,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Недопустимый пользователь",
                                         description=f"Боты не люди.",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
             return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
@@ -352,7 +354,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Недопустимый пользователь",
                                         description=f"Вы не можете перевести самому себе.",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
             return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
@@ -375,7 +377,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                                         description=f"<@{ctx.user.id}>, у вас недостаточно 🦚 для перевода другому человеку.\nВы имеете 🦚 {author_cookies} в кошельке.\nВам необходимо иметь сумму перевода и заплатить 5% от неё как комиссию.",
                                         colour=discord.Colour.red())
             reply_embed.set_thumbnail(url=ctx.user.avatar)
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
 
@@ -389,7 +391,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                                         description=f"<@{member.id}> получил 🦚 {amount} от <@{ctx.user.id}>.\n\nКомиссия была 5% 🦚.",
                                         colour=discord.Colour.green())
             reply_embed.set_thumbnail(url=ctx.user.avatar)
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
 
@@ -423,13 +425,13 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     @app_commands.choices(upgrade=[
         Choice(name='Список стоимости покупки улучшений', value="help"),
         Choice(name='Банк', value="bank"),
-        Choice(name='Улучшение1', value="upgrade1"),
-        Choice(name='Улучшение2', value="upgrade2"),
-        Choice(name='Улучшение3', value="upgrade3"),
-        Choice(name='Улучшение4', value="upgrade4"),
-        Choice(name='Улучшение5', value="upgrade5"),
-        Choice(name='Улучшение6', value="upgrade6"),
-        Choice(name='Улучшение7', value="upgrade7"),
+        Choice(name=f'Улучшение 1 - {loc.upg1}', value="upgrade1"),
+        Choice(name=f'Улучшение 2 - {loc.upg2}', value="upgrade2"),
+        Choice(name=f'Улучшение 3 - {loc.upg3}', value="upgrade3"),
+        Choice(name=f'Улучшение 4 - {loc.upg4}', value="upgrade4"),
+        Choice(name=f'Улучшение 5 - {loc.upg5}', value="upgrade5"),
+        Choice(name=f'Улучшение 6 - {loc.upg6}', value="upgrade6"),
+        Choice(name=f'Улучшение 7 - {loc.upg7}', value="upgrade7"),
     ])
     async def buy_upgrade(self, ctx: discord.Interaction, upgrade: str):
         # Database connection
@@ -460,7 +462,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
                                             description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень банка.\nВаш кошелёк: 🦚 {author_cookies}\nЦена банка уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -485,7 +487,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"✅ Успешная покупка",
                                             description=f"<@{ctx.user.id}> успешно приобретает `Уровень банка {upgrade_level}` за 🦚 {upgrade_level_price}.\nВместимость банка теперь 🦚 {upgrade_level * 400}.",
                                             colour=discord.Colour.green())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -511,7 +513,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
                                             description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -534,9 +536,9 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
                 # Reply embed
                 reply_embed = discord.Embed(title=f"✅ Успешная покупка",
-                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение1 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `{loc.upg1} {upgrade_level}` за 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.green())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -562,7 +564,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
                                             description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -585,9 +587,9 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
                 # Reply embed
                 reply_embed = discord.Embed(title=f"✅ Успешная покупка",
-                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение2 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `{loc.upg2} {upgrade_level}` за 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.green())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -613,7 +615,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
                                             description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -636,9 +638,9 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
                 # Reply embed
                 reply_embed = discord.Embed(title=f"✅ Успешная покупка",
-                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение3 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `{loc.upg3} {upgrade_level}` за 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.green())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -664,7 +666,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
                                             description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -687,9 +689,9 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
                 # Reply embed
                 reply_embed = discord.Embed(title=f"✅ Успешная покупка",
-                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение4 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `{loc.upg4} {upgrade_level}` за 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.green())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -715,7 +717,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
                                             description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -738,9 +740,9 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
                 # Reply embed
                 reply_embed = discord.Embed(title=f"✅ Успешная покупка",
-                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение5 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `{loc.upg5} {upgrade_level}` за 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.green())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -766,7 +768,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
                                             description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -789,9 +791,9 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
                 # Reply embed
                 reply_embed = discord.Embed(title=f"✅ Успешная покупка",
-                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение6 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `{loc.upg6} {upgrade_level}` за 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.green())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -817,7 +819,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
                                             description=f"<@{ctx.user.id}>, вы не можете купить следующий уровень этого улучшения.\nВаш кошелёк: 🦚 {author_cookies}\nЦена этого улучшения уровня `{upgrade_level + 1}`: 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -840,9 +842,9 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
                 # Reply embed
                 reply_embed = discord.Embed(title=f"✅ Успешная покупка",
-                                            description=f"<@{ctx.user.id}> успешно приобретает `Улучшение7 {upgrade_level}` за 🦚 {upgrade_level_price}.",
+                                            description=f"<@{ctx.user.id}> успешно приобретает `{loc.upg7} {upgrade_level}` за 🦚 {upgrade_level_price}.",
                                             colour=discord.Colour.green())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -868,18 +870,18 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             # Reply embed
             reply_embed = discord.Embed(title=f"Стоимость покупки улучшений для {ctx.user}",
                                         colour=discord.Colour.green())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
             reply_embed.add_field(name=f"Цена банка `{data[0] + 1}` уровня:", value=price_bank, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение1 `{data[1] + 1}` уровня:", value=price_upg1, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение2 `{data[2] + 1}` уровня:", value=price_upg2, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение3 `{data[3] + 1}` уровня:", value=price_upg3, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение4 `{data[4] + 1}` уровня:", value=price_upg4, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение5 `{data[5] + 1}` уровня:", value=price_upg5, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение6 `{data[6] + 1}` уровня:", value=price_upg6, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение7 `{data[7] + 1}` уровня:", value=price_upg7, inline=False)
+            reply_embed.add_field(name=f"Цена `{loc.upg1}` `{data[1] + 1}` уровня:", value=price_upg1, inline=False)
+            reply_embed.add_field(name=f"Цена `{loc.upg2}` `{data[2] + 1}` уровня:", value=price_upg2, inline=False)
+            reply_embed.add_field(name=f"Цена `{loc.upg3}` `{data[3] + 1}` уровня:", value=price_upg3, inline=False)
+            reply_embed.add_field(name=f"Цена `{loc.upg4}` `{data[4] + 1}` уровня:", value=price_upg4, inline=False)
+            reply_embed.add_field(name=f"Цена `{loc.upg5}` `{data[5] + 1}` уровня:", value=price_upg5, inline=False)
+            reply_embed.add_field(name=f"Цена `{loc.upg6}` `{data[6] + 1}` уровня:", value=price_upg6, inline=False)
+            reply_embed.add_field(name=f"Цена `{loc.upg7}` `{data[7] + 1}` уровня:", value=price_upg7, inline=False)
 
             return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
 
@@ -891,14 +893,14 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                           description="Продать одно улучшение за 🦚. Цена продажи - 80% от цены покупки.")
     @app_commands.describe(upgrade="Улучшение, которые вы продадите за 🦚")
     @app_commands.choices(upgrade=[
-        Choice(name='Список стоимости продажи улучшений', value="help"),
-        Choice(name='Улучшение1', value="upgrade1"),
-        Choice(name='Улучшение2', value="upgrade2"),
-        Choice(name='Улучшение3', value="upgrade3"),
-        Choice(name='Улучшение4', value="upgrade4"),
-        Choice(name='Улучшение5', value="upgrade5"),
-        Choice(name='Улучшение6', value="upgrade6"),
-        Choice(name='Улучшение7', value="upgrade7"),
+        Choice(name=f'Список стоимости продажи улучшений', value="help"),
+        Choice(name=f'Улучшение 1 - {loc.upg1}', value="upgrade1"),
+        Choice(name=f'Улучшение 2 - {loc.upg2}', value="upgrade2"),
+        Choice(name=f'Улучшение 3 - {loc.upg3}', value="upgrade3"),
+        Choice(name=f'Улучшение 4 - {loc.upg4}', value="upgrade4"),
+        Choice(name=f'Улучшение 5 - {loc.upg5}', value="upgrade5"),
+        Choice(name=f'Улучшение 6 - {loc.upg6}', value="upgrade6"),
+        Choice(name=f'Улучшение 7 - {loc.upg7}', value="upgrade7"),
     ])
     async def sell_upgrade(self, ctx: discord.Interaction, upgrade: str):
         # Database connection and default value
@@ -914,49 +916,49 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             sql_query = f"SELECT upgrade1 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
             data = sql_connection.execute(sql_query).fetchone()
             upgrade_level = data[0]
-            upgrade_name = "Улучшение1"
+            upgrade_name = f"`{loc.upg1}`"
 
         # Upgrade - upgrade2
         elif upgrade == "upgrade2":
             sql_query = f"SELECT upgrade2 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
             data = sql_connection.execute(sql_query).fetchone()
             upgrade_level = data[0]
-            upgrade_name = "Улучшение2"
+            upgrade_name = f"`{loc.upg2}`"
 
         # Upgrade - upgrade3
         elif upgrade == "upgrade3":
             sql_query = f"SELECT upgrade3 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
             data = sql_connection.execute(sql_query).fetchone()
             upgrade_level = data[0]
-            upgrade_name = "Улучшение3"
+            upgrade_name = f"`{loc.upg3}`"
 
         # Upgrade - upgrade4
         elif upgrade == "upgrade4":
             sql_query = f"SELECT upgrade4 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
             data = sql_connection.execute(sql_query).fetchone()
             upgrade_level = data[0]
-            upgrade_name = "Улучшение4"
+            upgrade_name = f"`{loc.upg4}`"
 
         # Upgrade - upgrade5
         elif upgrade == "upgrade5":
             sql_query = f"SELECT upgrade5 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
             data = sql_connection.execute(sql_query).fetchone()
             upgrade_level = data[0]
-            upgrade_name = "Улучшение5"
+            upgrade_name = f"`{loc.upg5}`"
 
         # Upgrade - upgrade6
         elif upgrade == "upgrade6":
             sql_query = f"SELECT upgrade6 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
             data = sql_connection.execute(sql_query).fetchone()
             upgrade_level = data[0]
-            upgrade_name = "Улучшение6"
+            upgrade_name = f"`{loc.upg6}`"
 
         # Upgrade - upgrade7
         elif upgrade == "upgrade7":
             sql_query = f"SELECT upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}"
             data = sql_connection.execute(sql_query).fetchone()
             upgrade_level = data[0]
-            upgrade_name = "Улучшение7"
+            upgrade_name = f"`{loc.upg7}`"
 
         # Upgrade - Help
         elif upgrade == "help":
@@ -974,19 +976,42 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             price_upg7 = f"🦚 {0.8 * (12800 + data[6] * 210)}"
 
             # Reply embed
+            any_fields_shown = False
             reply_embed = discord.Embed(title=f"Стоимость продажи улучшений для {ctx.user}",
                                         colour=discord.Colour.green())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
-            reply_embed.add_field(name=f"Цена улучшение1 `{data[0]}` уровня:", value=price_upg1, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение2 `{data[1]}` уровня:", value=price_upg2, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение3 `{data[2]}` уровня:", value=price_upg3, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение4 `{data[3]}` уровня:", value=price_upg4, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение5 `{data[4]}` уровня:", value=price_upg5, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение6 `{data[5]}` уровня:", value=price_upg6, inline=False)
-            reply_embed.add_field(name=f"Цена улучшение7 `{data[6]}` уровня:", value=price_upg7, inline=False)
+            if data[0]!= 0:
+                reply_embed.add_field(name=f"Цена улучшения 1 - `{loc.upg1}` `{data[0]}` уровня:", value=price_upg1, inline=False)
+                any_fields_shown = True
+            if data[1] != 0:
+                reply_embed.add_field(name=f"Цена улучшения 2 - `{loc.upg2}` `{data[1]}` уровня:", value=price_upg2, inline=False)
+                any_fields_shown = True
+            if data[2]!= 0:
+                reply_embed.add_field(name=f"Цена улучшения 3 - `{loc.upg3}` `{data[2]}` уровня:", value=price_upg3, inline=False)
+                any_fields_shown = True
+            if data[3]!= 0:
+                reply_embed.add_field(name=f"Цена улучшения 4 - `{loc.upg4}` `{data[3]}` уровня:", value=price_upg4, inline=False)
+                any_fields_shown = True
+            if data[4]!= 0:
+                reply_embed.add_field(name=f"Цена улучшения 5 - `{loc.upg5}` `{data[4]}` уровня:", value=price_upg5, inline=False)
+                any_fields_shown = True
+            if data[5]!= 0:
+                reply_embed.add_field(name=f"Цена улучшения 6 - {loc.upg6}` `{data[5]}` уровня:", value=price_upg6, inline=False)
+                any_fields_shown = True
+            if data[6] != 0:
+                reply_embed.add_field(name=f"Цена улучшения 7 - `{loc.upg7}` `{data[6]}` уровня:", value=price_upg7, inline=False)
+                any_fields_shown = True
+            if not any_fields_shown:
+                reply_embed = discord.Embed(title=f"Стоимость продажи улучшений для {ctx.user}",
+                                            description="Вам нечего продавать.",
+                                            colour=discord.Colour.green())
+                reply_embed.timestamp = loc.moscow_timezone()
+                reply_embed.set_thumbnail(url=ctx.user.avatar)
+                reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                       icon_url=ctx.guild.icon)
 
             return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
 
@@ -1000,7 +1025,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Нечего продавать",
                                         description=f"<@{ctx.user.id}>, вы не можете продать уровень этого улучшения, так как вы не владеете им.",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
 
@@ -1023,9 +1048,9 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
         # Reply embed
         reply_embed = discord.Embed(title=f"✅ Успешная продажа",
-                                    description=f"<@{ctx.user.id}> успешно продаёт `{upgrade_name} {upgrade_level}` за 🦚 {sell_price}.",
+                                    description=f"<@{ctx.user.id}> успешно продаёт {upgrade_name} `{upgrade_level}` за 🦚 {sell_price}.",
                                     colour=discord.Colour.green())
-        reply_embed.timestamp = datetime.datetime.utcnow()
+        reply_embed.timestamp = loc.moscow_timezone()
         reply_embed.set_footer(text=f"{ctx.guild.name}",
                                icon_url=ctx.guild.icon)
 
@@ -1040,7 +1065,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Недопустимый пользователь",
                                         description=f"Вы не можете украсть у самого себя.",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
 
@@ -1051,7 +1076,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Недопустимый пользователь",
                                         description=f"Вы не можете украсть у бота.",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
 
@@ -1077,7 +1102,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Попробуйте позже",
                                         description=f"<@{ctx.user.id}>, вы уже попытались ограбить пользователя ранее. Попробуйте снова <t:{last_attempted_theft_epoch + 10 * 60}:R>",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
 
@@ -1107,7 +1132,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Кошелёк {member.name} пуст",
                                             description=f"<@{member.id}> не имеет 🦚 в кошельке.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -1135,7 +1160,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"🕵️ Успешное ограбление {member.name}",
                                             description=f"<@{ctx.user.id}> украл 🦚 {cookies_stolen} у <@{member.id}>.",
                                             colour=discord.Colour.green())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -1151,7 +1176,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Неудачное ограбление {member.name}",
                                             description=f"<@{ctx.user.id}> испугался и ничего не украл у <@{member.id}>.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -1175,7 +1200,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 reply_embed = discord.Embed(title=f"❌ Катастрофическое ограбление {member.name}",
                                             description=f"Ограбление было предотвращено яростным вельш-корги.\n<@{ctx.user.id}> потерял 🦚 {cookies_lost_on_failure}.",
                                             colour=discord.Colour.red())
-                reply_embed.timestamp = datetime.datetime.utcnow()
+                reply_embed.timestamp = loc.moscow_timezone()
                 reply_embed.set_footer(text=f"{ctx.guild.name}",
                                        icon_url=ctx.guild.icon)
 
@@ -1202,7 +1227,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
                                         description=f"<@{ctx.user.id}>, вы не можете положить 🦚 {amount} в банк - у вас всего 🦚 {author_wallet} в вашем кошельке.",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -1216,7 +1241,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Недостаточно места в банке",
                                         description=f"<@{ctx.user.id}>, вы не можете положить 🦚 {amount} в банк - у вас есть место только для 🦚 {author_bank_level * 400 - author_bank_cookies} в вашем банке.",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -1238,7 +1263,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"🏦 Успешное пополнение банка",
                                         description=f"<@{ctx.user.id}> положил 🦚 {amount} в банк.",
                                         colour=discord.Colour.green())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -1263,7 +1288,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Недостаточно средств в банке",
                                         description=f"<@{ctx.user.id}>, вы не можете забрать 🦚 {amount} - у вас всего 🦚 {author_bank_cookies} в банке.",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -1285,7 +1310,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"🏦 Успешное изъятие средств из банка",
                                         description=f"<@{ctx.user.id}> забрал 🦚 {amount} из банка.",
                                         colour=discord.Colour.green())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -1314,7 +1339,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed = discord.Embed(title=f"❌ Ошибка",
                                         description=f"Работа ещё не появилась. Вернитесь <t:{last_daily_bonus_received_epoch + 3600}:R>",
                                         colour=discord.Colour.red())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -1364,7 +1389,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             # Reply embed
             reply_embed = discord.Embed(title=f"💰 Работа",
                                         colour=discord.Colour.gold())
-            reply_embed.timestamp = datetime.datetime.utcnow()
+            reply_embed.timestamp = loc.moscow_timezone()
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
@@ -1372,27 +1397,27 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                                   value=f"🦚 {gained_from_work}",
                                   inline=False)
             if upg1_income > 0:
-                reply_embed.add_field(name=f"Доход от улучшение1:",
+                reply_embed.add_field(name=f"Доход от `{loc.upg1}`:",
                                       value=f"🦚 {upg1_income} = 5 x {upg1_income / 5}",
                                       inline=False)
             if upg2_income > 0:
-                reply_embed.add_field(name=f"Доход от улучшение2:",
+                reply_embed.add_field(name=f"Доход от `{loc.upg2}`:",
                                       value=f"🦚 {upg2_income} = 15 x {upg2_income / 15}",
                                       inline=False)
             if upg3_income > 0:
-                reply_embed.add_field(name=f"Доход от улучшение3:",
+                reply_embed.add_field(name=f"Доход от `{loc.upg3}`:",
                                       value=f"🦚 {upg3_income} = 35 x {upg3_income / 35}",
                                       inline=False)
             if upg4_income > 0:
-                reply_embed.add_field(name=f"Доход от улучшение4:",
+                reply_embed.add_field(name=f"Доход от `{loc.upg4}`:",
                                       value=f"🦚 {upg4_income} = 75 x {upg4_income / 75}",
                                       inline=False)
             if upg5_income > 0:
-                reply_embed.add_field(name=f"Доход от улучшение5:",
+                reply_embed.add_field(name=f"Доход от `{loc.upg5}`:",
                                       value=f"🦚 {upg5_income} = 170 x {upg5_income / 170}",
                                       inline=False)
             if upg6_income > 0:
-                reply_embed.add_field(name=f"Доход от улучшение6:",
+                reply_embed.add_field(name=f"Доход от `{loc.upg6}`:",
                                       value=f"🦚 {upg6_income} = 370 x {upg6_income / 370}",
                                       inline=False)
             if upg7_income > 0:
@@ -1427,10 +1452,10 @@ class peacockAdminEconomyCog(commands.GroupCog, name="adm_economy"):
         sql_connection.close()
 
         # Reply embed
-        reply_embed = discord.Embed(title=f"Создание 🦚 валюты",
+        reply_embed = discord.Embed(title=f"Создание валюты",
                                     description=f"🦚 {amount}\nбыло создано для {target}",
                                     colour=discord.Colour.green())
-        reply_embed.timestamp = datetime.datetime.utcnow()
+        reply_embed.timestamp = loc.moscow_timezone()
         reply_embed.set_thumbnail(url=ctx.user.avatar)
         reply_embed.set_footer(text=f"{ctx.guild.name}",
                                icon_url=ctx.guild.icon)
