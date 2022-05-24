@@ -6,7 +6,6 @@ import sqlite3 as sl  # SQLite database
 from random import randint  # Random number generation for economy
 from config import prefix  # Global settings
 from time import time  # Epoch timestamp
-import datetime  # Timestamps in embeds
 
 import localisation as loc
 
@@ -74,6 +73,8 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
         # Profile retrieval
         data = sql_connection.execute(
             f"SELECT cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {member.id}").fetchone()
+        cooldown_data = sql_connection.execute(
+            f"SELECT last_access, last_theft_attempt, daily_bonus, weekly_bonus, monthly_bonus FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {member.id}").fetchone()
         sql_connection.close()
 
         # Nothing found
@@ -82,15 +83,31 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
         else:
             member_cookies = f"🦚 {data[0]}"
             bank_info = f"🦚 {data[1]} из {data[2] * 400}"
-            upgrade_info = f"улучшение1: {data[3]}\n" \
-                           f"улучшение2: {data[4]}\n" \
-                           f"улучшение3: {data[5]}\n" \
-                           f"улучшение4: {data[6]}\n" \
-                           f"улучшение5: {data[7]}\n" \
-                           f"улучшение6: {data[8]}\n" \
-                           f"улучшение7: {data[9]}"
-
+            upgrade_info = f"`{loc.upg1}`: {data[3]} уровень\n" \
+                           f"`{loc.upg2}`: {data[4]} уровень\n" \
+                           f"`{loc.upg3}`: {data[5]} уровень\n" \
+                           f"`{loc.upg4}`: {data[6]} уровень\n" \
+                           f"`{loc.upg5}`: {data[7]} уровень\n" \
+                           f"`{loc.upg6}`: {data[8]} уровень\n" \
+                           f"`{loc.upg7}`: {data[9]} уровень\n"
+#todo
             total_info = f"~ 🦚 {data[0]+data[1]}"
+            cooldown_info = ""
+            # Work timer
+            if cooldown_data[0] + 3600 < int(time()):
+                cooldown_info += ", `/work`"
+            # Daily bonus timer
+            if cooldown_data[2] + 24*3600 < int(time()):
+                cooldown_info += ", `/daily`"
+            # Weekly bonus timer
+            if cooldown_data[3] + 7*24*3600 < int(time()):
+                cooldown_info += ", `/weekly`"
+            # Monthly bonus timer
+            if cooldown_data[3] + 30*24*3600 < int(time()):
+                cooldown_info += ", `/monthly`"
+            # Theft timer
+            if cooldown_data[1] + 10*60 < int(time()):
+                cooldown_info += ", `/steal`"
 
         # Reply embed
         reply_embed = discord.Embed(title=f"Профиль {member.name}",
@@ -102,7 +119,11 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
         reply_embed.add_field(name=f"Кошелёк:", value=member_cookies, inline=False)
         reply_embed.add_field(name=f"Банк:", value=bank_info, inline=False)
         reply_embed.add_field(name=f"Улучшения:", value=upgrade_info, inline=False)
-        reply_embed.add_field(name=f"`Кошелёк+Банк:`", value=total_info, inline=False)
+        reply_embed.add_field(name=f"Кошелёк+Банк:", value=total_info, inline=False)
+        # Make cooldown_info fancy and add field
+        if cooldown_info != "":
+            cooldown_info = f"Вам доступны следующие награды: {cooldown_info[2::]}."
+            reply_embed.add_field(name=f"Награды:", value=cooldown_info, inline=False)
 
         return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
@@ -255,7 +276,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
 
     @app_commands.command(name="leaderboard", description="Просмотреть таблицу лидеров. Work in progress.")
     async def economyboard(self, ctx: discord.Interaction):
-        # TODO
+        # TODO view more than 10 entries. Buttons?
         # Connect to database
         sql_connection = sl.connect('Peacock.db')
 
@@ -295,7 +316,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
         # Author stats
         for i in range(len(storage)):
             if storage[i][0] == str(ctx.user):
-                author_entry = f"Your position: `#{i + 1}` {ctx.user}: 🦚 {storage[i][1]}"
+                author_entry = f"Ваша позиция: `#{i + 1}` {ctx.user}: 🦚 {storage[i][1]}"
                 break
 
         # Discord embed
@@ -1376,6 +1397,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                 f"SELECT upgrade7 FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
                               0] * 495
             amount_gained += upg7_income
+
             # Update database
             sql_connection.execute(
                 f"UPDATE ECONOMY SET last_access = {epoch_timestamp_right_now} WHERE guild_id = ? AND user_id = ?",

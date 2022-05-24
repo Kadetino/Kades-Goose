@@ -1,6 +1,6 @@
 import datetime
 
-# Peacock economy module
+# Peacock economy module - names
 upg1 = "Друг павлиновод"
 upg2 = "Просторный загон"
 upg3 = "Белый павлин"
