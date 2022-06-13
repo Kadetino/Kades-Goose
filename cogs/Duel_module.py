@@ -6,7 +6,7 @@ import discord  # Discord API wrapper
 from discord import app_commands  # Slash commands
 from discord.app_commands import Choice  # Slash command choices
 from discord.ext import commands  # Discord BOT
-import localisation as loc
+import cog_settings.peacock_economy_settings as loc
 
 
 class DuelModule(commands.GroupCog, name="duel"):

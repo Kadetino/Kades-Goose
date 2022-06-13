@@ -1,4 +1,5 @@
 import discord  # Discord API wrapper
+from discord import app_commands
 from discord.ext import commands  # Discord BOT
 import aiohttp  # For direct API requests and webhooks
 import warnings  # For direct API requests and webhooks
@@ -24,12 +25,21 @@ class GooseBot(commands.Bot):
         # Cogs
         self.initial_extensions = [
             # "cogs.Lobby_finder_module",
-            # "cogs.event_module",
+            "cogs.event_module",
             # "cogs.EU4Ideas_module",
             "cogs.misc",
             "cogs.peacock_economy",
-            "cogs.Duel_module"
+            "cogs.Duel_module",
         ]
+
+        @self.tree.error
+        async def on_app_command_error(interaction: discord.Interaction, error: app_commands.AppCommandError):
+            """Error handler"""
+            if isinstance(error, app_commands.MissingPermissions):
+                return await interaction.response.send_message(str(error), ephemeral=True)
+            else:
+                print(str(error))
+                return await interaction.response.send_message("Unknown error.", ephemeral=True)
 
     async def setup_hook(self):
         # Cogs
@@ -51,10 +61,12 @@ class GooseBot(commands.Bot):
         print('Logged on as {0.user}!'.format(bot))
         # await bot.change_presence(activity=discord.Game(name="Honk! Honk!"))
 
+
+
     async def on_guild_join(self, guild):
         """Send to goose server webhook, which servers bot has joined."""
         # Webhook
-        webhook = discord.Webhook.from_url(webhookJoinLeave, session=aiohttp.ClientSession())
+        webhook = discord.Webhook.from_url(webhookJoinLeave, session=self.session)
         # Discord embed
         server_embed = discord.Embed(title="New server!", description=f'{bot.user.name} has been added to: {guild}',
                                      colour=discord.Colour.green())
@@ -65,7 +77,7 @@ class GooseBot(commands.Bot):
     async def on_guild_remove(self, guild):
         """Send to goose server webhook, which servers bot has left."""
         # Webhook
-        webhook = discord.Webhook.from_url(webhookJoinLeave, session=aiohttp.ClientSession())
+        webhook = discord.Webhook.from_url(webhookJoinLeave, session=self.session)
         # Discord embed
         server_embed = discord.Embed(title="Farewell...",
                                      description=f'{bot.user.name} has left: {guild}',

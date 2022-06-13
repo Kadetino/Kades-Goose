@@ -1,22 +1,36 @@
 import discord  # Discord API wrapper
+from discord import app_commands
 from discord.ext import commands  # Discord BOT
+
+# class buttonHandler(discord.ui.View):
+#     @discord.ui.button(label="yepa",
+#                        style=discord.ButtonStyle.success,
+#                        emoji="🏭")
+#     async def button(self, interaction:discord.Interaction,button:discord.ui.Button):
+#         await interaction.response.edit_message(content="OOOOO")
 
 
 class utilityCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
-    @commands.guild_only()
-    @commands.cooldown(1, 5, commands.BucketType.guild)
-    async def supportGoose(self, ctx: commands.Context):
-        """Bot command with information about ways on how to support Goose development."""
+    @app_commands.command(name="support_bot", description="Информация о том, как поддержать бота.")
+    async def supportGoose(self, ctx: discord.Interaction):
+        support_embed = discord.Embed(title="Поддержать бота!",
+                                      description="Если вам нравится бот и вы хотите его поддержать, "
+                                                  "то вот как это можно сделать.",
+                                      colour=discord.Colour.gold())
+        # support_embed.add_field(name=f"`Metamask`", value="0xe2d321ebb477d14d2d38D97c9d2D39dC97A262Eb", inline=False)
+        support_embed.set_thumbnail(url=self.bot.user.avatar)
+        view = discord.ui.View()
+        view.add_item(discord.ui.Button(label="Qiwi",
+                                        url="https://qiwi.com/n/CLUST224",
+                                        emoji="🥝"))
+        view.add_item(discord.ui.Button(label="Ko-fi",
+                                        url="https://ko-fi.com/kadetino",
+                                        emoji="☕"))
 
-        message = "If you like the bot, consider supporting us!"
-        support_embed = discord.Embed(title="Support the Goose!", description=message, colour=discord.Colour.gold())
-        # support_embed.add_field(name=f"`Ko-fi`", value="https://ko-fi.com/kadetino", inline=False)
-        support_embed.add_field(name=f"`Metamask`", value="0xe2d321ebb477d14d2d38D97c9d2D39dC97A262Eb", inline=False)
-        return await ctx.reply(embed=support_embed)
+        return await ctx.response.send_message(embed=support_embed, view=view)
 
     @commands.command()
     @commands.is_owner()
