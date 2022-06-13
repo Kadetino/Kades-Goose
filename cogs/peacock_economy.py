@@ -6,6 +6,7 @@ import sqlite3 as sl  # SQLite database
 from random import randint  # Random number generation for economy
 from config import prefix  # Global settings
 from time import time  # Epoch timestamp
+import datetime  # Shop - timeout
 
 import localisation as loc
 
@@ -61,8 +62,6 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
     @app_commands.command(name="profile", description="Просмотреть профиль.")
     @app_commands.describe(member="Пользователь, чей профиль вы хотите просмотреть.")
     async def display_user_profile(self, ctx: discord.Interaction, member: discord.Member = None):
-        # TODO показывать доступные награды daily, weekly, monthly, work
-        # ToDO доработать показ нетворфа
         # Check if user argument was provided
         if member is None:
             member = ctx.user
@@ -90,23 +89,22 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
                            f"`{loc.upg5}`: {data[7]} уровень\n" \
                            f"`{loc.upg6}`: {data[8]} уровень\n" \
                            f"`{loc.upg7}`: {data[9]} уровень\n"
-#todo
-            total_info = f"~ 🦚 {data[0]+data[1]}"
+            total_info = f"~ 🦚 {data[0] + data[1]}"
             cooldown_info = ""
             # Work timer
-            if cooldown_data[0] + 3600 < int(time()):
+            if cooldown_data[0] + 3600 * 2 < int(time()):
                 cooldown_info += ", `/work`"
             # Daily bonus timer
-            if cooldown_data[2] + 24*3600 < int(time()):
+            if cooldown_data[2] + 24 * 3600 < int(time()):
                 cooldown_info += ", `/daily`"
             # Weekly bonus timer
-            if cooldown_data[3] + 7*24*3600 < int(time()):
+            if cooldown_data[3] + 7 * 24 * 3600 < int(time()):
                 cooldown_info += ", `/weekly`"
             # Monthly bonus timer
-            if cooldown_data[3] + 30*24*3600 < int(time()):
+            if cooldown_data[3] + 30 * 24 * 3600 < int(time()):
                 cooldown_info += ", `/monthly`"
             # Theft timer
-            if cooldown_data[1] + 10*60 < int(time()):
+            if cooldown_data[1] + 10 * 60 < int(time()):
                 cooldown_info += ", `/steal`"
 
         # Reply embed
@@ -1004,26 +1002,33 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             reply_embed.set_thumbnail(url=ctx.user.avatar)
             reply_embed.set_footer(text=f"{ctx.guild.name}",
                                    icon_url=ctx.guild.icon)
-            if data[0]!= 0:
-                reply_embed.add_field(name=f"Цена улучшения 1 - `{loc.upg1}` `{data[0]}` уровня:", value=price_upg1, inline=False)
+            if data[0] != 0:
+                reply_embed.add_field(name=f"Цена улучшения 1 - `{loc.upg1}` `{data[0]}` уровня:", value=price_upg1,
+                                      inline=False)
                 any_fields_shown = True
             if data[1] != 0:
-                reply_embed.add_field(name=f"Цена улучшения 2 - `{loc.upg2}` `{data[1]}` уровня:", value=price_upg2, inline=False)
+                reply_embed.add_field(name=f"Цена улучшения 2 - `{loc.upg2}` `{data[1]}` уровня:", value=price_upg2,
+                                      inline=False)
                 any_fields_shown = True
-            if data[2]!= 0:
-                reply_embed.add_field(name=f"Цена улучшения 3 - `{loc.upg3}` `{data[2]}` уровня:", value=price_upg3, inline=False)
+            if data[2] != 0:
+                reply_embed.add_field(name=f"Цена улучшения 3 - `{loc.upg3}` `{data[2]}` уровня:", value=price_upg3,
+                                      inline=False)
                 any_fields_shown = True
-            if data[3]!= 0:
-                reply_embed.add_field(name=f"Цена улучшения 4 - `{loc.upg4}` `{data[3]}` уровня:", value=price_upg4, inline=False)
+            if data[3] != 0:
+                reply_embed.add_field(name=f"Цена улучшения 4 - `{loc.upg4}` `{data[3]}` уровня:", value=price_upg4,
+                                      inline=False)
                 any_fields_shown = True
-            if data[4]!= 0:
-                reply_embed.add_field(name=f"Цена улучшения 5 - `{loc.upg5}` `{data[4]}` уровня:", value=price_upg5, inline=False)
+            if data[4] != 0:
+                reply_embed.add_field(name=f"Цена улучшения 5 - `{loc.upg5}` `{data[4]}` уровня:", value=price_upg5,
+                                      inline=False)
                 any_fields_shown = True
-            if data[5]!= 0:
-                reply_embed.add_field(name=f"Цена улучшения 6 - {loc.upg6}` `{data[5]}` уровня:", value=price_upg6, inline=False)
+            if data[5] != 0:
+                reply_embed.add_field(name=f"Цена улучшения 6 - {loc.upg6}` `{data[5]}` уровня:", value=price_upg6,
+                                      inline=False)
                 any_fields_shown = True
             if data[6] != 0:
-                reply_embed.add_field(name=f"Цена улучшения 7 - `{loc.upg7}` `{data[6]}` уровня:", value=price_upg7, inline=False)
+                reply_embed.add_field(name=f"Цена улучшения 7 - `{loc.upg7}` `{data[6]}` уровня:", value=price_upg7,
+                                      inline=False)
                 any_fields_shown = True
             if not any_fields_shown:
                 reply_embed = discord.Embed(title=f"Стоимость продажи улучшений для {ctx.user}",
@@ -1352,7 +1357,7 @@ class peacockEconomyCog(commands.GroupCog, name="economy"):
             f"SELECT last_access FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
             0]
         epoch_timestamp_right_now = int(time())
-        if epoch_timestamp_right_now < last_daily_bonus_received_epoch + 3600:
+        if epoch_timestamp_right_now < last_daily_bonus_received_epoch + 3600 * 2:
             # Close connection
             sql_connection.close()
 
@@ -1475,18 +1480,306 @@ class peacockAdminEconomyCog(commands.GroupCog, name="adm_economy"):
 
         # Reply embed
         reply_embed = discord.Embed(title=f"Создание валюты",
-                                    description=f"🦚 {amount}\nбыло создано для {target}",
+                                    description=f"🦚 {amount} было создано для {target}",
                                     colour=discord.Colour.green())
         reply_embed.timestamp = loc.moscow_timezone()
-        reply_embed.set_thumbnail(url=ctx.user.avatar)
         reply_embed.set_footer(text=f"{ctx.guild.name}",
                                icon_url=ctx.guild.icon)
         return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
     @create_peacocks.error
-    async def on_user_missing_permissions_error(self, interaction: discord.Interaction, error: app_commands.AppCommandError):
+    async def on_user_missing_permissions_error(self, interaction: discord.Interaction,
+                                                error: app_commands.AppCommandError):
         if isinstance(error, app_commands.MissingPermissions):
             return await interaction.response.send_message(str(error), ephemeral=True)
+
+    @app_commands.command(name="remove_peacocks_wallet", description="Забрать 🦚 из кошелька пользователя.")
+    @app_commands.describe(amount="Количество 🦚, которое вы забрать у пользователя.",
+                           target="Пользователь, кто потеряет из своего кошелька 🦚.")
+    @app_commands.checks.has_permissions(administrator=True)
+    async def remove_peacocks_wallet(self, ctx: discord.Interaction, target: discord.Member, amount: int):
+        # Сonnecting database
+        sql_connection = sl.connect('Peacock.db')
+
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, target.id))
+
+        target_cookies = sql_connection.execute(
+            f"SELECT cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {target.id}").fetchone()[
+            0]
+
+        # Database update
+        if amount < target_cookies:
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {amount} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, target.id))
+        else:
+            amount = target_cookies
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_counter = 0 WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, target.id))
+
+        # Close
+        sql_connection.commit()
+        sql_connection.close()
+
+        # Reply embed
+        reply_embed = discord.Embed(title=f"Изъятие валюты",
+                                    description=f"🦚 {amount} было забрано из кошелька {target}",
+                                    colour=discord.Colour.green())
+        reply_embed.timestamp = loc.moscow_timezone()
+        reply_embed.set_footer(text=f"{ctx.guild.name}",
+                               icon_url=ctx.guild.icon)
+        return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+    @remove_peacocks_wallet.error
+    async def on_user_missing_permissions_error(self, interaction: discord.Interaction,
+                                                error: app_commands.AppCommandError):
+        if isinstance(error, app_commands.MissingPermissions):
+            return await interaction.response.send_message(str(error), ephemeral=True)
+
+    @app_commands.command(name="remove_peacocks_bank", description="Забрать 🦚 из банка пользователя.")
+    @app_commands.describe(amount="Количество 🦚, которое вы забрать у пользователя.",
+                           target="Пользователь, кто потеряет из своего банка 🦚.")
+    @app_commands.checks.has_permissions(administrator=True)
+    async def remove_peacocks_bank(self, ctx: discord.Interaction, target: discord.Member, amount: int):
+        # Сonnecting database
+        sql_connection = sl.connect('Peacock.db')
+
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, target.id))
+
+        target_cookies = sql_connection.execute(
+            f"SELECT cookie_jar_storage FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {target.id}").fetchone()[
+            0]
+
+        # Database update
+        if amount < target_cookies:
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_jar_storage = cookie_jar_storage - {amount} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, target.id))
+        else:
+            amount = target_cookies
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_jar_storage = 0 WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, target.id))
+
+        # Close
+        sql_connection.commit()
+        sql_connection.close()
+
+        # Reply embed
+        reply_embed = discord.Embed(title=f"Изъятие валюты из банка",
+                                    description=f"🦚 {amount} было забрано из банка {target}",
+                                    colour=discord.Colour.green())
+        reply_embed.timestamp = loc.moscow_timezone()
+        reply_embed.set_footer(text=f"{ctx.guild.name}",
+                               icon_url=ctx.guild.icon)
+        return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
+
+    @remove_peacocks_bank.error
+    async def on_user_missing_permissions_error(self, interaction: discord.Interaction,
+                                                error: app_commands.AppCommandError):
+        if isinstance(error, app_commands.MissingPermissions):
+            return await interaction.response.send_message(str(error), ephemeral=True)
+
+
+class peacockEconomyShop(commands.GroupCog, name="shop"):
+    def __init__(self, bot):
+        self.bot = bot
+
+    @app_commands.command(name="buy_role", description="Купить роль за 🦚.")
+    @app_commands.describe(role="Улучшение, которые вы купите за 🦚")
+    @app_commands.choices(role=[
+        Choice(name='Абонемент в архив грехов', value="role0"),
+        Choice(name=f'Писарь грехов', value="role1"),
+        Choice(name=f'Османский', value="role2"),
+        Choice(name=f'Прусский', value="role3"),
+        Choice(name=f'Нидерландский', value="role4"),
+        Choice(name=f'Гордость', value="role5"),
+        Choice(name=f'Who?', value="role6"),
+    ])
+    async def buy_role(self, ctx: discord.Interaction, role: str):
+        # Database connection
+        sql_connection = sl.connect("Peacock.db")
+
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, ctx.user.id))
+
+        # Info retrieval
+        author_cookies = sql_connection.execute(
+            f"SELECT cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+            0]
+        choice_role_dict = {
+            "role0": loc.archive_role,
+            "role1": loc.sin_writer_role,
+            "role2": loc.ottoman_role,
+            "role3": loc.prussian_role,
+            "role4": loc.dutch_role,
+            "role5": loc.pride_role,
+            "role6": loc.dzen_role,
+        }
+        # Role ID
+        role_id = choice_role_dict[role]
+        # Price of role
+        price = loc.shop_role_pricelist[role_id]
+        # Role object
+        role = discord.Object(role_id)
+        # Role flag
+        already_has_this_role = False
+        for member_role in ctx.user.roles:
+            if member_role.id == role_id:
+                already_has_this_role = True
+
+        # Check if member already has this role
+        if already_has_this_role:
+            # Close
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Ошибка",
+                                        description=f"<@{ctx.user.id}>, у вас уже есть эта роль.",
+                                        colour=discord.Colour.dark_gold())
+            reply_embed.timestamp = loc.moscow_timezone()
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+        # Check if enough funds
+        elif author_cookies < price:  # Not enough funds
+            # Close
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                        description=f"<@{ctx.user.id}>, вы не можете купить данную роль.\nВаш кошелёк: 🦚 `{author_cookies}`\nЦена роли: 🦚 `{price}`.",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = loc.moscow_timezone()
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+        else:
+            # Update
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {price} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+
+            # Close
+            sql_connection.commit()
+            sql_connection.close()
+
+            # Give role
+            await ctx.user.add_roles(role, reason="Купил роль за 🦚")
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"✅ Успешная покупка",
+                                        description=f"<@{ctx.user.id}> успешно приобретает новую роль за 🦚 {price}.",
+                                        colour=discord.Colour.green())
+            reply_embed.timestamp = loc.moscow_timezone()
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+
+    @app_commands.command(name="timeout", description=" за 🦚.")
+    @app_commands.describe(timeout_duration="Улучшение, которые вы купите за 🦚")
+    @app_commands.choices(timeout_duration=[
+        Choice(name='Убрать мут с участника', value=0),
+        Choice(name='1 минута', value=1),
+        Choice(name=f'10 минут', value=10),
+        Choice(name=f'30 минут', value=30),
+        Choice(name=f'1 час', value=60),
+        Choice(name=f'24 часа', value=60 * 24),
+    ])
+    async def buy_upgrade(self, ctx: discord.Interaction, target: discord.Member, timeout_duration: int):
+        # Database connection
+        sql_connection = sl.connect("Peacock.db")
+
+        # Add user to database if he wasn't there before
+        sql_connection.execute(
+            "INSERT OR IGNORE INTO ECONOMY (guild_id, user_id, cookie_counter, cookie_jar_storage, cookie_jar_storage_level, upgrade1, upgrade2, upgrade3, upgrade4, upgrade5, upgrade6, upgrade7, last_access, daily_bonus, weekly_bonus, monthly_bonus, message_cooldown, last_theft_attempt) VALUES (?,?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)",
+            (ctx.guild.id, ctx.user.id))
+
+        # Info retrieval
+        author_cookies = sql_connection.execute(
+            f"SELECT cookie_counter FROM ECONOMY WHERE guild_id = {ctx.guild.id} AND user_id = {ctx.user.id}").fetchone()[
+            0]
+        price = 2000 * timeout_duration if timeout_duration != 0 else 10000
+
+        # Check if target is muted and someone wants to mute them again
+        if target.is_timed_out() and timeout_duration != 0:
+            # Close
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Ошибка",
+                                        description=f"<@{target.id}> уже имеет мут.",
+                                        colour=discord.Colour.dark_gold())
+            reply_embed.timestamp = loc.moscow_timezone()
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+        elif not target.is_timed_out() and timeout_duration == 0:
+            # Close
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Ошибка",
+                                        description=f"<@{target.id}> не имеет мут.",
+                                        colour=discord.Colour.dark_gold())
+            reply_embed.timestamp = loc.moscow_timezone()
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+        # Check if enough funds
+        elif author_cookies < price:  # Not enough funds
+            # Close
+            sql_connection.close()
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"❌ Недостаточно средств",
+                                        description=f"<@{ctx.user.id}>, вы не можете купить данную услугу.\nВаш кошелёк: 🦚 `{author_cookies}`\nЦена услуги: 🦚 `{price}`.",
+                                        colour=discord.Colour.red())
+            reply_embed.timestamp = loc.moscow_timezone()
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=True)
+        else:
+            # Update
+            sql_connection.execute(
+                f"UPDATE ECONOMY SET cookie_counter = cookie_counter - {price} WHERE guild_id = ? AND user_id = ?",
+                (ctx.guild.id, ctx.user.id))
+
+            # Close
+            sql_connection.commit()
+            sql_connection.close()
+
+            # Timeout
+            timeout = datetime.datetime.now().astimezone() + datetime.timedelta(minutes=timeout_duration)
+            await target.edit(timed_out_until=timeout)
+
+            # Reply embed
+            reply_embed = discord.Embed(title=f"✅ Успешная покупка мута для {target}",
+                                        description=f"<@{ctx.user.id}> успешно приобретает мут для <@{target.id}> на `{timeout_duration}` минут за 🦚 {price}.",
+                                        colour=discord.Colour.green()) if timeout_duration != 0 else discord.Embed(
+                title=f"✅ Успешная покупка снятия мута для {target}",
+                description=f"<@{ctx.user.id}> успешно приобретает снятие мута для <@{target.id}> за 🦚 {price}.",
+                colour=discord.Colour.green())
+            reply_embed.timestamp = loc.moscow_timezone()
+            reply_embed.set_footer(text=f"{ctx.guild.name}",
+                                   icon_url=ctx.guild.icon)
+
+            return await ctx.response.send_message(embed=reply_embed, ephemeral=False)
 
 
 async def setup(bot):
@@ -1497,3 +1790,4 @@ async def setup(bot):
     sql_connection.close()
     await bot.add_cog(peacockEconomyCog(bot))
     await bot.add_cog(peacockAdminEconomyCog(bot))
+    await bot.add_cog(peacockEconomyShop(bot))

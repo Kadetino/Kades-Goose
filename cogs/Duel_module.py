@@ -8,6 +8,7 @@ from discord.app_commands import Choice  # Slash command choices
 from discord.ext import commands  # Discord BOT
 import localisation as loc
 
+
 class DuelModule(commands.GroupCog, name="duel"):
     def __init__(self, bot):
         self.bot = bot
